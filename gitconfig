@@ -1,6 +1,6 @@
 [user]
-	name = Even Brenden
-	email = evenbrenden@gmail.com
+    name = Even Brenden
+    email = evenbrenden@gmail.com
 [color]
     branch = auto
     diff = auto
@@ -20,10 +20,10 @@
     changed = green
     untracked = cyan
 [core]
-	excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore
 [push]
     default = simple
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 [merge]
-	tool = vimdiff
+    tool = vimdiff

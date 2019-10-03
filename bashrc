@@ -67,8 +67,3 @@ PS1="$HC$FYEL\u$FMAG\h$FCYN\$(parse_git_branch)$FWHT\w $RS"
 
 # locale
 export LC_ALL=en_US.UTF-8
-
-# system specific .bashrc-stuff
-if [ -f ~/.bash_system_specific ]; then
-    source ~/.bash_system_specific
-fi
