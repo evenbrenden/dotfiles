@@ -36,8 +36,8 @@
       src = fetchFromGitHub {
         owner = "evenbrenden";
         repo = "runcom";
-        rev = "e7cbf1491b5b779139bd16d6a186de7269b2c581";
-        sha256 = "0zdjq88nlq34vxvg23cd29dmas23zrvsk8cwliij0ksyhi2c6r0j";
+        rev = "6c7cfded2a48dba58c96d259d754d269048a9138";
+        sha256 = "1fiwmpx191mmhzsahx5zzx8fb0glngsfiss71r3rwq2lza907izm";
       };
     in
     {
@@ -47,8 +47,12 @@
           USER=evenbrenden
           DEST=/home/$USER
           SRC="${src}"
-          cp $SRC/bashrc $DEST/.bashrc
+          cp $SRC/nixos/bashrc $DEST/.bashrc
+          cp $SRC/bashrc_common $DEST/.bashrc_common
           cp $SRC/gitconfig $DEST/.gitconfig
+          cp $SRC/gitignore $DEST/.gitignore
+          cp $SRC/vimrc $DEST/.vimrc
+          cp -r $SRC/kde/config/ $DEST/.config/
           '';
         deps = [];
       };
