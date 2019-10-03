@@ -36,8 +36,8 @@
       src = fetchFromGitHub {
         owner = "evenbrenden";
         repo = "runcom";
-        rev = "6c7cfded2a48dba58c96d259d754d269048a9138";
-        sha256 = "1fiwmpx191mmhzsahx5zzx8fb0glngsfiss71r3rwq2lza907izm";
+        rev = "64ea0a6f71bf8a5b80909c9ba197fa79645db63b":
+        sha256 = "1h80xxs97r9w3x8z2w4n23wvzd9ifccajbfvg859pyz3z6skk7wx";
       };
     in
     {
@@ -53,6 +53,7 @@
           cp $SRC/vimrc $DEST/.vimrc
           cp $SRC/nixos/bashrc $DEST/.bashrc
           cp -r $SRC/nixos/config/ $DEST/.config/
+          cp -r $SRC/nixos/local/ $DEST/.local/
           '';
         deps = [];
       };
