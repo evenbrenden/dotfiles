@@ -1,0 +1,3 @@
+[Desktop Entry]
+Name=Jottad
+Exec=systemd-run --user --unit=jottad jottad

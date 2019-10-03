@@ -1,0 +1,8 @@
+#!/bin/bash
+
+function insync_manage_selective_sync {
+    TEMP=$TERM
+    TERM=linux
+    insync manage_selective_sync "$1"
+    TERM=$TEMP
+}
