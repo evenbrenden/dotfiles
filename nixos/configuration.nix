@@ -47,12 +47,12 @@
           USER=evenbrenden
           DEST=/home/$USER
           SRC="${src}"
-          cp $SRC/nixos/bashrc $DEST/.bashrc
           cp $SRC/bashrc_common $DEST/.bashrc_common
           cp $SRC/gitconfig $DEST/.gitconfig
           cp $SRC/gitignore $DEST/.gitignore
           cp $SRC/vimrc $DEST/.vimrc
-          cp -r $SRC/kde/config/ $DEST/.config/
+          cp $SRC/nixos/bashrc $DEST/.bashrc
+          cp -r $SRC/nixos/config/ $DEST/.config/
           '';
         deps = [];
       };
