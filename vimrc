@@ -3,26 +3,26 @@ set softtabstop=0
 set expandtab
 set shiftwidth=4
 set smarttab
-set splitright
-set nu
-set hlsearch
-set ruler
-set showtabline=2
-set path+=./**
 set backspace=indent,eol,start
+set hlsearch
+set path=.
 set smartcase
 set ignorecase
+set splitright
+set ruler
+set nu
 set wildmenu
+set showtabline=2
 set background=dark
 syntax on
 
-" autocomplete: ctrl+p
+" autocomplete with ctrl+p
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
-" only autocomplete current buffer
+" only do autocomplete for the current buffer
 set complete=.
 
-" show and remove trailing whitespace
+" show and remove trailing whitespace with ,w
 let mapleader=","
 map <silent><Leader>w :%s/\s\+$//<CR>
 hi ExtraWhitespace ctermbg=red guibg=red
