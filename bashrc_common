@@ -2,45 +2,28 @@
 [ -z "$PS1" ] && return
 
 # enable programmable completion features
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
-
-# dont put duplicate lines or lines starting with space in the history
-HISTCONTROL=ignoreboth
-# set history length
-HISTSIZE=1000
-HISTFILESIZE=2000
-# up/down history search
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
-# append to the history file, don't overwrite it
-shopt -s histappend
+[ -f /etc/bash_completion ] && . /etc/bash_completion
 
 # check the window size after each command and, if necessary, update the values of LINES and COLUMNS
 shopt -s checkwinsize
 
-# make less more friendly for non-text input files
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-# always ignore case and output raw characters in less
+# set locale
+export LC_ALL=en_US.UTF-8
+
+# history stuff
+HISTCONTROL=ignoreboth
+HISTSIZE=8000
+HISTFILESIZE=8000
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+shopt -s histappend
+
+# less stuff
 export LESS=-Ri
 
-# ls
+# ls stuff
 alias ls='ls -AG'
 export LSCOLORS=ExFxcxdxbxexexabagacad
-
-# enable color support in grep
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# git prompt helper
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
 
 # set prompt
 RS="\[\033[0m\]"    # reset
@@ -63,7 +46,7 @@ BBLE="\[\033[44m\]" # background blue
 BMAG="\[\033[45m\]" # background magenta
 BCYN="\[\033[46m\]" # background cyan
 BWHT="\[\033[47m\]" # background white
-PS1="$HC$FYEL\u$FMAG\h$FCYN\$(parse_git_branch)$FWHT\w $RS"
-
-# locale
-export LC_ALL=en_US.UTF-8
+function current_git_branch_name {
+  git branch 2> /dev/null | grep \* | cut -d ' ' -f2
+}
+PS1="$HC$FYEL\u$FMAG\h$FCYN\$(current_git_branch_name)$FWHT\w $RS"
