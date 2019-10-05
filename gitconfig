@@ -1,24 +1,6 @@
 [user]
     name = Even Brenden
     email = evenbrenden@gmail.com
-[color]
-    branch = auto
-    diff = auto
-    status = auto
-    grep = auto
-[color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
-[color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red
-    new = cyan
-[color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
 [core]
     excludesfile = ~/.gitignore
 [push]
