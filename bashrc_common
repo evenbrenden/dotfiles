@@ -25,8 +25,9 @@ export LESS=-Ri
 alias ls='ls -AG'
 export LSCOLORS=ExFxcxdxbxexexabagacad
 
-# vi stuff
+# editor stuff
 alias vi=vim
+export EDITOR=vi
 
 # set prompt
 RS="\[\033[0m\]"    # reset
