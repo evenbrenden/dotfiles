@@ -8,6 +8,7 @@ set hlsearch
 set path=.
 set smartcase
 set ignorecase
+set autoindent
 set splitright
 set ruler
 set nu
