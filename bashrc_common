@@ -22,7 +22,11 @@ shopt -s histappend
 export LESS=-Ri
 
 # ls stuff
-alias ls='ls -AG'
+if [ $OSTYPE = "darwin15" ]; then
+    alias ls='ls -AG'
+else
+    alias ls='ls -A --color=auto'
+fi
 export LSCOLORS=ExFxcxdxbxexexabagacad
 
 # editor stuff
