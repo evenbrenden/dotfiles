@@ -2,5 +2,17 @@
 Font=Monospace,12,-1,5,50,0,0,0,0,0
 
 [General]
-Name=evenbrenden
+Name=temporary
 Parent=FALLBACK/
+
+[Interaction Options]
+AutoCopySelectedText=true
+CopyTextAsHTML=false
+MiddleClickPasteMode=1
+MouseWheelZoomEnabled=false
+TrimLeadingSpacesInSelectedText=true
+TrimTrailingSpacesInSelectedText=true
+
+[Scrolling]
+HistoryMode=1
+HistorySize=10000
