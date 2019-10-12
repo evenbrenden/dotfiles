@@ -15,3 +15,6 @@ Window-Maximized 1200x1920=true
 Window-Maximized 600x800=true
 Window-Maximized 768x1280=true
 Window-Maximized 800x1280=true
+
+[KonsoleWindow]
+ShowMenuBarByDefault=false
