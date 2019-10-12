@@ -8,7 +8,7 @@ Parent=FALLBACK/
 [Interaction Options]
 AutoCopySelectedText=true
 CopyTextAsHTML=false
-MiddleClickPasteMode=1
+MiddleClickPasteMode=0
 MouseWheelZoomEnabled=false
 TrimLeadingSpacesInSelectedText=true
 TrimTrailingSpacesInSelectedText=true
