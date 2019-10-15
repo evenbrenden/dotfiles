@@ -23,9 +23,9 @@ export LESS=-Ri
 
 # ls stuff
 if [[ $OSTYPE == *"darwin"* ]]; then
-    alias ls='ls -AG'
+    alias ls='ls -AGh'
 else
-    alias ls='ls -A --color=auto'
+    alias ls='ls -Ah --color=auto'
 fi
 export LSCOLORS=ExFxcxdxbxexexabagacad
 
