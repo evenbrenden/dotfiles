@@ -8,7 +8,6 @@
 shopt -s checkwinsize
 
 # set locale
-export LC_ALL=en_US.UTF-8
 
 # history stuff
 HISTCONTROL=ignoreboth
@@ -21,8 +20,9 @@ shopt -s histappend
 # less stuff
 export LESS=-Ri
 
-# ls stuff
+# misc os-dependent stuff
 if [[ $OSTYPE == *"darwin"* ]]; then
+    export LC_ALL=en_US.UTF-8
     alias ls='ls -AGh'
 else
     alias ls='ls -Ah --color=auto'
