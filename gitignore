@@ -8,3 +8,4 @@ __pycache__
 .stack-work
 .DS_Store
 .vscode/
+*.swp
