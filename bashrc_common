@@ -25,7 +25,6 @@ if [[ $OSTYPE == *"darwin"* ]]; then
     export LSCOLORS=ExFxcxdxbxegedabagacad
 else
     alias ls='ls -Ah --color=auto'
-    export LS_COLORS="ow=01;90:di=01;90"
 fi
 
 # editor stuff
