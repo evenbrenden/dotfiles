@@ -18,14 +18,15 @@ shopt -s histappend
 # less stuff
 export LESS=-Ri
 
-# misc os-dependent stuff
+# macos/linux diffs
 if [[ $OSTYPE == *"darwin"* ]]; then
     export LC_ALL=en_US.UTF-8
-    alias ls='ls -AGh'
+    alias ls='ls -AhG'
+    export LSCOLORS=ExFxcxdxbxegedabagacad
 else
     alias ls='ls -Ah --color=auto'
+    export LS_COLORS="ow=01;90:di=01;90"
 fi
-export LSCOLORS=ExFxcxdxbxexexabagacad
 
 # editor stuff
 alias vi=vim
