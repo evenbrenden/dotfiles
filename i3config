@@ -6,7 +6,7 @@ font pango:monospace 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec sakura
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -136,4 +136,4 @@ bar {
         status_command i3status
 }
 
-exec termite
+exec sakura
