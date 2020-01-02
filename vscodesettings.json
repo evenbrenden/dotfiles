@@ -1,0 +1,12 @@
+{
+    "window.zoomLevel": 1,
+    "editor.occurrencesHighlight": false,
+    "editor.renderLineHighlight": "none",
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.highlightActiveIndentGuide": false,
+    "workbench.editor.highlightModifiedTabs": true,
+    "editor.renderIndentGuides": false,
+    "editor.cursorBlinking": "solid",
+    "editor.cursorStyle": "block",
+    "editor.minimap.enabled": false
+}
