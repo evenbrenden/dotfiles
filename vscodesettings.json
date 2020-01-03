@@ -1,5 +1,5 @@
 {
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "editor.occurrencesHighlight": false,
     "editor.renderLineHighlight": "none",
     "editor.copyWithSyntaxHighlighting": false,
@@ -8,5 +8,7 @@
     "editor.renderIndentGuides": false,
     "editor.cursorBlinking": "solid",
     "editor.cursorStyle": "block",
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "editor.matchBrackets": "never",
+    "editor.links": false
 }
