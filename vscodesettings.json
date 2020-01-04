@@ -9,6 +9,6 @@
     "editor.cursorBlinking": "solid",
     "editor.cursorStyle": "block",
     "editor.minimap.enabled": false,
-    "editor.matchBrackets": "never",
+    "editor.matchBrackets": false,
     "editor.links": false
 }
