@@ -10,5 +10,6 @@
     "editor.cursorStyle": "block",
     "editor.minimap.enabled": false,
     "editor.matchBrackets": false,
-    "editor.links": false
+    "editor.links": false,
+    "workbench.editor.enablePreview": false
 }
