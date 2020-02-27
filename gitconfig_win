@@ -1,9 +1,0 @@
-[user]
-    name = Even Brenden
-    email = evenbrenden@gmail.com
-[core]
-    excludesfile = ~/.gitignore
-    whitespace = trailing-space,space-before-tab
-    autocrlf = true
-[push]
-    default = simple
