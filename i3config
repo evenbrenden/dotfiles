@@ -19,7 +19,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # lock screen
-bindsym $mod+z exec i3lock
+bindsym $mod+z exec i3lock --color 000000
 
 # keyboard layouts
 bindsym $mod+k exec setxkbmap -layout us
