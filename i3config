@@ -11,11 +11,6 @@ bindsym $mod+Return exec sakura
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# audio control
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 3dB+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 3dB- unmute
-bindsym XF86AudioMute exec amixer -q -D pulse set Master toggle
-
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -29,6 +24,11 @@ bindsym $mod+z exec i3lock --color 000000
 # keyboard layouts
 bindsym $mod+k exec setxkbmap -layout us
 bindsym $mod+l exec setxkbmap -layout no
+
+# audio control
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 3dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 3dB- unmute
+bindsym XF86AudioMute exec amixer -q -D pulse set Master toggle
 
 # hide edge borders for single-window workspaces
 hide_edge_borders smart
