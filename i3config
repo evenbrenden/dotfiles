@@ -26,9 +26,14 @@ bindsym $mod+k exec setxkbmap -layout us
 bindsym $mod+l exec setxkbmap -layout no
 
 # audio control
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 3dB+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 3dB- unmute
 bindsym XF86AudioMute exec amixer -q -D pulse set Master toggle
+bindsym XF86AudioLowerVolume exec amixer -q set Master 3dB- unmute
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 3dB+ unmute
+bindsym XF86AudioMicMute exec amixer -q set Capture toggle
+
+# brightness control
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20
 
 # hide edge borders for single-window workspaces
 hide_edge_borders smart
