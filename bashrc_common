@@ -30,7 +30,7 @@ fi
 
 # editor stuff
 alias vi=vim
-export EDITOR=vi
+export EDITOR=vim
 
 # set prompt
 RS="\[\033[0m\]"    # reset
