@@ -31,10 +31,6 @@ bindsym XF86AudioRaiseVolume exec amixer -q set Master 3dB+ unmute
 exec amixer set "Mic Mute-LED Mode" "Follow Capture"
 bindsym XF86AudioMicMute exec amixer -q set Capture toggle
 
-# brightness control
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20
-
 # hide edge borders for single-window workspaces
 hide_edge_borders smart
 
