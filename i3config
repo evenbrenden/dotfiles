@@ -28,7 +28,7 @@ bindsym $mod+k exec bash ~/toggle_keyboard_layout.sh
 bindsym XF86AudioMute exec amixer -q -D pulse set Master toggle
 bindsym XF86AudioLowerVolume exec amixer -q set Master 3dB- unmute
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 3dB+ unmute
-exec amixer set "Mic Mute-LED Mode" "Follow Capture"
+exec amixer set 'Mic Mute-LED Mode' 'Follow Mute'
 bindsym XF86AudioMicMute exec amixer -q set Capture toggle
 
 # hide edge borders for single-window workspaces
