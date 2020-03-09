@@ -19,11 +19,10 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # lock screen
-bindsym $mod+z exec i3lock --color 000000
+bindsym $mod+l exec i3lock --color 000000
 
-# keyboard layouts
-bindsym $mod+k exec setxkbmap -layout us
-bindsym $mod+l exec setxkbmap -layout no
+# keyboard layout control
+bindsym $mod+k exec ~/toggle_keyboard_layout.sh
 
 # audio control
 bindsym XF86AudioMute exec amixer -q -D pulse set Master toggle
