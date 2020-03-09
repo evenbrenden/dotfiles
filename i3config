@@ -29,6 +29,7 @@ bindsym $mod+l exec setxkbmap -layout no
 bindsym XF86AudioMute exec amixer -q -D pulse set Master toggle
 bindsym XF86AudioLowerVolume exec amixer -q set Master 3dB- unmute
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 3dB+ unmute
+exec amixer set "Mic Mute-LED Mode" "Follow Capture"
 bindsym XF86AudioMicMute exec amixer -q set Capture toggle
 
 # brightness control
