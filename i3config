@@ -37,6 +37,10 @@ bindsym $mod+Ctrl+6 exec xrandr --dpi 96
 bindsym $mod+Ctrl+7 exec xrandr --dpi 120
 bindsym $mod+Ctrl+8 exec xrandr --dpi 144
 
+# brightness control
+bindsym XF86MonBrightnessDown exec python3 ~/adjust.brightness.py down
+bindsym XF86MonBrightnessUp exec python3 ~/adjust.brightness.py up
+
 # hide edge borders for single-window workspaces
 hide_edge_borders smart
 
