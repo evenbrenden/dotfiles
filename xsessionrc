@@ -1,1 +1,2 @@
 xsetroot -solid "#000000"
+export XDG_DATA_HOME=$HOME/.nix-profile/share
