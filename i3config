@@ -31,6 +31,12 @@ bindsym XF86AudioRaiseVolume exec amixer -q set Master 3dB+ unmute
 exec amixer set 'Mic Mute-LED Mode' 'Follow Mute'
 bindsym XF86AudioMicMute exec amixer -q set Capture toggle
 
+# things xrandr
+bindsym $mod+Ctrl+a exec autorandr --change
+bindsym $mod+Ctrl+6 exec xrandr --dpi 96
+bindsym $mod+Ctrl+7 exec xrandr --dpi 120
+bindsym $mod+Ctrl+8 exec xrandr --dpi 144
+
 # hide edge borders for single-window workspaces
 hide_edge_borders smart
 
