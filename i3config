@@ -152,4 +152,5 @@ bar {
         status_command i3status
 }
 
+# start off with a terminal session
 exec sakura
