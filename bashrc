@@ -59,7 +59,9 @@ function current_git_branch_name {
 PS1="$HC$FYEL\u$FMAG\h$FCYN\$(current_git_branch_name)$FWHT\w $RS"
 
 # workaround for dotnet core installed via nix (https://wiki.archlinux.org/index.php/.NET_Core)
-export DOTNET_ROOT=$(dotnet --info | grep 'Base Path' | sed -e 's/^[ ]*Base Path:[ ]*\(.*\)sdk.*/\1/')
+if [[ $(command -v dotnet) ]]; then
+    export DOTNET_ROOT=$(dotnet --info | grep 'Base Path' | sed -e 's/^[ ]*Base Path:[ ]*\(.*\)sdk.*/\1/')
+fi
 
 # make sure you have glibcLocales installed via nix (https://github.com/NixOS/nixpkgs/issues/38991)
 export LOCALE_ARCHIVE=$HOME/.nix-profile/lib/locale/locale-archive
