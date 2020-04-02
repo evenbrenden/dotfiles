@@ -42,5 +42,6 @@ load {
 }
 
 disk "/" {
+        prefix = decimal
         format = "%avail"
 }
