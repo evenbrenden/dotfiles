@@ -158,4 +158,5 @@ bar {
 
 # start some programs
 exec sakura
-exec nm-applet
+exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-power-manager
