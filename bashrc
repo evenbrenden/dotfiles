@@ -64,4 +64,6 @@ if [[ $(command -v dotnet) ]]; then
 fi
 
 # make sure you have glibcLocales installed via nix (https://github.com/NixOS/nixpkgs/issues/38991)
-export LOCALE_ARCHIVE=$HOME/.nix-profile/lib/locale/locale-archive
+if [[ ! $(cat /etc/issue) =~ "NixOS" ]]; then
+    export LOCALE_ARCHIVE=$HOME/.nix-profile/lib/locale/locale-archive
+fi
