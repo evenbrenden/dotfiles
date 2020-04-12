@@ -13,19 +13,23 @@ general {
 
 order += "disk /"
 order += "volume master"
-order += "keyboard_layout"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery all"
-order += "sysdata"
 order += "load"
 order += "tztime local"
 
-keyboard_layout {
-    layouts = ["us", "no"]
-    color_us = "#ffffff"
-    color_no = "#ffffff"
-    cache_timeout = 1
+disk "/" {
+    prefix_type = decimal
+    format = "%avail"
+}
+
+volume master {
+    format = "%volume"
+    format_muted = "muted"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
 }
 
 wireless _first_ {
@@ -42,27 +46,10 @@ battery all {
     format = "%status %percentage %remaining"
 }
 
-tztime local {
-    format = "%Y-%m-%d %H:%M:%S"
-}
-
-sysdata {
-    format = "{mem_used_percent}%"
-}
-
 load {
     format = "%1min"
 }
 
-volume master {
-    format = "%volume"
-    format_muted = "muted"
-    device = "default"
-    mixer = "Master"
-    mixer_idx = 0
-}
-
-disk "/" {
-    prefix_type = decimal
-    format = "%avail"
+tztime local {
+    format = "%Y-%m-%d %H:%M:%S"
 }
