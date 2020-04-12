@@ -29,13 +29,13 @@ keyboard_layout {
 }
 
 wireless _first_ {
-    format_up = "W: %essid %ip"
-    format_down = "W: down"
+    format_up = "%essid %ip"
+    format_down = "down"
 }
 
 ethernet _first_ {
-    format_up = "E: %ip (%speed)"
-    format_down = "E: down"
+    format_up = "%ip (%speed)"
+    format_down = "down"
 }
 
 battery all {
