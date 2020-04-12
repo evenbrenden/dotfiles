@@ -22,7 +22,8 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+l exec i3lock --color 000000
 
 # change keyboard layout
-bindsym $mod+k exec python3 ~/toggle_keyboard_layout.py
+bindsym $mod+k exec setxkbmap -layout us
+bindsym $mod+Shift+k exec setxkbmap -layout no
 
 # audio control
 bindsym XF86AudioMute exec amixer -q -D pulse set Master toggle

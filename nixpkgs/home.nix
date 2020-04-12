@@ -50,7 +50,6 @@ in
     ".gitignore".source = ./dotfiles/gitignore;
     ".gitconfig".source = ./dotfiles/gitconfig;
     ".driverc".source = ./dotfiles/driverc;
-    "toggle_keyboard_layout.py".source = ./dotfiles/toggle_keyboard_layout.py;
     "adjust_brightness.py".source = ./dotfiles/adjust_brightness.py;
     "notifications.py".source = ./dotfiles/notifications.py;
   };
