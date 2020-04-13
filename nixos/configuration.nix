@@ -51,6 +51,7 @@ in
       dbeaver
       dos2unix
       drive
+      dunst
       firefox
       gimp
       git
@@ -58,6 +59,7 @@ in
       jetbrains.rider
       networkmanagerapplet
       nomacs
+      libnotify
       libsForQt5.vlc
       linuxConsoleTools
       postman
