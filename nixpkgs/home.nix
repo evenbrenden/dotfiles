@@ -43,6 +43,7 @@ in
       "sakura/sakura.conf".source = ./dotfiles/sakura.conf;
       "i3/config".source = ./dotfiles/i3config;
       "i3status/config".source = ./dotfiles/i3status;
+      "dunst/dunstrc".source = ./dotfiles/dunstrc;
     };
   };
   home.file = {
