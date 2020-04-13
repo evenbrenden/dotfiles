@@ -8,7 +8,7 @@ do
     KEYBOARD_LAYOUT=$(setxkbmap -query | awk '/layout/{print $2}')
     KEYBOARD_LAYOUT_COLOR="#ff00ff"
 
-    NOTIFICATIONS_STATE_FILE="notifications.state"
+    NOTIFICATIONS_STATE_FILE=~/notifications.state
     NOTIFICATIONS_STATE=$(cat $NOTIFICATIONS_STATE_FILE)
     if [[ $NOTIFICATIONS_STATE = "off" ]]; then
         NOTIFICATIONS_STATE_COLOR="#ff0000"

@@ -51,7 +51,7 @@ in
     ".gitconfig".source = ./dotfiles/gitconfig;
     ".driverc".source = ./dotfiles/driverc;
     "adjust_brightness.py".source = ./dotfiles/adjust_brightness.py;
-    "notifications.py".source = ./dotfiles/notifications.py;
+    "toggle_notifications.py".source = ./dotfiles/toggle_notifications.py;
     "toggle_keyboard_layout.py".source = ./dotfiles/toggle_keyboard_layout.py;
     "i3status.sh".source = ./dotfiles/i3status.sh;
   };
