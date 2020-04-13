@@ -1,25 +1,32 @@
 #!/usr/bin/python3
 
+import os.path
 import sys
-import time
 import subprocess
 
-delay_seconds = 1
-error_msg = 'On or off?'
+state_path = 'notifications.state'
+state_on = 'on'
+state_off = 'off'
 
-if (len(sys.argv) != 2):
-    print(error_msg)
-    sys.exit(1)
+# if state file no exists then create it (defaults to state off)
+if not os.path.isfile(state_path):
+    with open(state_path, 'w') as file:
+        file.write(state_off)
 
-what = sys.argv[1]
-delay_ms = delay_seconds * 1000
+# toggle state (defaults to state on)
+with open(state_path, 'r+') as file:
+    contents = file.read()
+    state = contents.rstrip()
 
-if (what == 'on'):
-    subprocess.run(['notify-send', 'DUNST_COMMAND_RESUME'], stdout=subprocess.PIPE)
-    subprocess.run(['notify-send', 'Mas på', '--expire-time', str(delay_ms)], stdout=subprocess.PIPE)
-elif (what == 'off'):
-    subprocess.run(['notify-send', 'Mas av', '--expire-time', str(delay_ms)], stdout=subprocess.PIPE)
-    time.sleep(delay_seconds)
-    subprocess.run(['notify-send', 'DUNST_COMMAND_PAUSE'], stdout=subprocess.PIPE)
-else:
-    print(error_msg)
+    if state == state_on:
+        subprocess.run(['notify-send', 'DUNST_COMMAND_PAUSE'], stdout=subprocess.PIPE)
+        new_state = state_off
+    else:
+        subprocess.run(['notify-send', 'DUNST_COMMAND_RESUME'], stdout=subprocess.PIPE)
+        new_state = state_on
+
+    file.seek(0)
+    file.write(new_state)
+    file.truncate()
+
+    subprocess.run(['pkill', '-x', '-USR1', 'i3status'], stdout=subprocess.PIPE)
