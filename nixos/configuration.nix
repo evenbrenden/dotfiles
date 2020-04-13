@@ -67,6 +67,7 @@ in
       python37Packages.virtualenv
       remmina
       sakura
+      shellcheck
       slack
       spotify
       unstable.dotnet-sdk_3
