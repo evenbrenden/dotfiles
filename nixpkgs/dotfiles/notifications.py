@@ -29,4 +29,5 @@ with open(state_path, 'r+') as file:
     file.write(new_state)
     file.truncate()
 
+    # https://forum.manjaro.org/t/i3-unable-to-force-i3status-refresh-with-killall/27730
     subprocess.run(['pkill', '-x', '-USR1', 'i3status'], stdout=subprocess.PIPE)

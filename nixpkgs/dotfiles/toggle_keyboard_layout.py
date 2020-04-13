@@ -15,4 +15,5 @@ if (layout == 'us'):
 else:
     new = 'us'
 subprocess.run(['setxkbmap', '-layout', new], stdout=subprocess.PIPE)
+# https://forum.manjaro.org/t/i3-unable-to-force-i3status-refresh-with-killall/27730
 subprocess.run(['pkill', '-x', '-USR1', 'i3status'], stdout=subprocess.PIPE)
