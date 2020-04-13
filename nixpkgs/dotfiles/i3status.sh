@@ -3,7 +3,7 @@
 # https://docs.slackware.com/howtos:window_managers:keyboard_layout_in_i3
 i3status | while :
 do
-    read line
+    read -r line
 
     KEYBOARD_LAYOUT=$(setxkbmap -query | awk '/layout/{print $2}')
     KEYBOARD_LAYOUT_COLOR="#ff00ff"
