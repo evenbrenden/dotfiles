@@ -26,14 +26,15 @@ elif len(sys.argv) == 1:
     except FileNotFoundError:
         pass
 
-# set new dunst state and write to (or create) state file
+# write to (or create) state file
 with open(state_path, 'w') as file:
-    if new_state == state_on:
-        subprocess.run(['notify-send', 'DUNST_COMMAND_RESUME'], stdout=subprocess.PIPE)
-    elif new_state == state_off:
-        subprocess.run(['notify-send', 'DUNST_COMMAND_PAUSE'], stdout=subprocess.PIPE)
-
     file.write(new_state)
 
-    # https://forum.manjaro.org/t/i3-unable-to-force-i3status-refresh-with-killall/27730
-    subprocess.run(['pkill', '-x', '-USR1', 'i3status'], stdout=subprocess.PIPE)
+# signal new dunst state
+if new_state == state_on:
+    subprocess.run(['notify-send', 'DUNST_COMMAND_RESUME'], stdout=subprocess.PIPE)
+elif new_state == state_off:
+    subprocess.run(['notify-send', 'DUNST_COMMAND_PAUSE'], stdout=subprocess.PIPE)
+
+# refresh i3status
+subprocess.run(['pkill', '-x', '-USR1', 'i3status'], stdout=subprocess.PIPE)
