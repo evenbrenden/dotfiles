@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 
-import os.path
 import sys
 import subprocess
 
-state_path =  os.path.expanduser('~/notifications.state')
+state_path =  '/tmp/dunst-status'
 state_on = 'on'
 state_off = 'off'
 
