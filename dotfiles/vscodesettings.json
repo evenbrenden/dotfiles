@@ -11,6 +11,5 @@
     "editor.matchBrackets": false,
     "editor.links": false,
     "workbench.editor.enablePreview": false,
-    "files.trimTrailingWhitespace": true,
-    "diffEditor.ignoreTrimWhitespace": false
+    "FSharp.useSdkScripts": true
 }
