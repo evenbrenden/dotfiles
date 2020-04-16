@@ -8,15 +8,16 @@ do
     KEYBOARD_LAYOUT=$(setxkbmap -query | awk '/layout/{print $2}')
     KEYBOARD_LAYOUT_COLOR="#ff00ff"
 
-    NOTIFICATIONS_STATE_FILE=/tmp/dunst-status
-    NOTIFICATIONS_STATE=$(cat $NOTIFICATIONS_STATE_FILE)
-    if [[ $NOTIFICATIONS_STATE = "off" ]]; then
-        NOTIFICATIONS_STATE_COLOR="#ff0000"
-    else
+    NOTIFICATIONS_RUNNING=$(dunstctl running)
+    if [[ $NOTIFICATIONS_RUNNING = "true" ]]; then
+        NOTIFICATIONS_STATE_PRINT="on"
         NOTIFICATIONS_STATE_COLOR="#ffffff"
+    elif [[ $NOTIFICATIONS_RUNNING = "false" ]]; then
+        NOTIFICATIONS_STATE_PRINT="off"
+        NOTIFICATIONS_STATE_COLOR="#ff0000"
     fi
 
-    data="[{ \"full_text\": \"$NOTIFICATIONS_STATE\", \"color\":\"$NOTIFICATIONS_STATE_COLOR\" }, \
+    data="[{ \"full_text\": \"$NOTIFICATIONS_STATE_PRINT\", \"color\":\"$NOTIFICATIONS_STATE_COLOR\" }, \
         { \"full_text\": \"$KEYBOARD_LAYOUT\", \"color\":\"$KEYBOARD_LAYOUT_COLOR\" },"
     echo "${line/[/$data}" || exit 1
 done
