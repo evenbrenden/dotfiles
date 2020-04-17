@@ -55,8 +55,10 @@ in
       firefox
       gimp
       git
+      gparted
       irssi
       jetbrains.rider
+      jotta-cli
       networkmanagerapplet
       nomacs
       libnotify
