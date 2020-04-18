@@ -50,7 +50,6 @@ in
       curl
       dbeaver
       dos2unix
-      drive
       dunst
       firefox
       gimp
@@ -67,6 +66,7 @@ in
       postman
       python3
       python37Packages.virtualenv
+      rclone
       remmina
       sakura
       shellcheck
