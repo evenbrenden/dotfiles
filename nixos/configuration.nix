@@ -43,6 +43,7 @@ in
 
   environment = {
     systemPackages = with pkgs; [
+      abcde
       arandr
       autorandr
       cabal-install
