@@ -39,6 +39,7 @@ in
         config = config.nixpkgs.config;
       };
     };
+    chromium.enableWideVine = true;
   };
 
   environment = {
