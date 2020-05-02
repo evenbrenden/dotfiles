@@ -103,7 +103,7 @@ in
 
   users.users.evenbrenden = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "network-manager" "vboxusers" ];
+    extraGroups = [ "wheel" "networkmanager" "audio" "video" "vboxusers" ];
   };
 
   virtualisation.virtualbox.guest = {
