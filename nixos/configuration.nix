@@ -115,11 +115,9 @@ in
     layout = "us,no";
     libinput.enable = true;
     libinput.tapping = true;
-    displayManager = {
-      slim = {
-        enable = true;
-        defaultUser = "evenbrenden";
-      };
+    displayManager.lightdm = {
+      background = "#000000";
+      greeters.gtk.indicators = [ "~host" "~spacer" "~session" "~language" "~clock" "~power" ];
     };
     windowManager.i3.enable = true;
     desktopManager = {
