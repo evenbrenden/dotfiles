@@ -84,7 +84,6 @@ in
       # virtualboxExtpack
       vscode
       xorg.xdpyinfo
-      linuxPackages.virtualboxGuestAdditions
     ];
     pathsToLink = [ "/libexec" ]; # For i3
   };
@@ -104,11 +103,6 @@ in
   users.users.evenbrenden = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "video" "vboxusers" ];
-  };
-
-  virtualisation.virtualbox.guest = {
-    enable = true;
-    x11 = true;
   };
 
   services.xserver = {
