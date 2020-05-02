@@ -61,7 +61,7 @@ in
       gparted
       irssi
       jetbrains.rider
-      jotta-cli
+      unstable.jotta-cli
       networkmanagerapplet
       nomacs
       libnotify
