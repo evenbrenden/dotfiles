@@ -136,5 +136,5 @@ in
   services.openssh.permitRootLogin = "no";
   services.haveged.enable = true;
 
-  system.stateVersion = "19.09";
+  system.stateVersion = "20.03";
 }
