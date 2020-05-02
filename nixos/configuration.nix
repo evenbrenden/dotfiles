@@ -15,6 +15,7 @@ in
       name = "root";
       device = "/dev/sda3";
       preLVM = true;
+      allowDiscards = true;
     }
   ];
 
