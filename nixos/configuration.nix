@@ -22,6 +22,7 @@ in
   boot.loader.grub.version = 2;
   boot.loader.grub.device = "/dev/sda";
   boot.initrd.checkJournalingFS = false;
+  boot.loader.systemd-boot.configurationLimit = 120;
 
   networking.hostName = "naxos";
   networking.networkmanager.enable = true;
