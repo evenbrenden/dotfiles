@@ -2,6 +2,8 @@ Sources:
 
 - https://gist.github.com/martijnvermaat/76f2e24d0239470dd71050358b4d5134
 - https://myme.no/posts/2019-07-01-nixos-into-the-deep-end.html
+- https://chris-martin.org/2015/installing-nixos
+- https://bluishcoder.co.nz/2014/05/14/installing-nixos-with-encrypted-root-on-thinkpad-w540.html
 - https://nixos.org/nixos/manual/index.html#sec-installation
 
 First things first:
