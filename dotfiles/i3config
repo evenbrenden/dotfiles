@@ -21,9 +21,9 @@ bindsym $mod+l exec i3lock --color 000000
 bindsym $mod+k exec python3 ~/toggle_keyboard_layout.py
 
 # audio control
-bindsym XF86AudioMute exec amixer -q -D pulse set Master toggle
-bindsym XF86AudioLowerVolume exec amixer -q set Master 3dB- unmute
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 3dB+ unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+bindsym XF86AudioLowerVolume exec amixer -q set Master 3%-
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 3%+
 bindsym XF86AudioMicMute exec amixer -q set Capture toggle
 
 # things xrandr
