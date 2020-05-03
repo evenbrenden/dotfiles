@@ -10,14 +10,13 @@ in
     ./hardware-configuration.nix
   ];
 
-  boot.initrd.luks.devices = [
-    {
-      name = "root";
+  boot.initrd.luks.devices = {
+    root = {
       device = "/dev/nvme0n1p1";
       preLVM = true;
       allowDiscards = true;
-    }
-  ];
+    };
+  };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
