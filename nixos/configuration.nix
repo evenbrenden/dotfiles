@@ -106,13 +106,15 @@ in
     layout = "us,no";
     libinput.enable = true;
     libinput.tapping = true;
-    displayManager.lightdm = {
-      background = "#000000";
-      greeters.gtk.indicators = [ "~host" "~spacer" "~session" "~language" "~clock" "~power" ];
+    displayManager = {
+      defaultSession = "xfce+i3";
+      lightdm = {
+        background = "#000000";
+        greeters.gtk.indicators = [ "~host" "~spacer" "~session" "~language" "~clock" "~power" ];
+      };
     };
     windowManager.i3.enable = true;
     desktopManager = {
-      default = "xfce";
       xterm.enable = false;
       xfce = {
         enable = true;
