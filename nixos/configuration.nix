@@ -125,8 +125,7 @@ in
     };
   };
 
-  services.openssh.enable = true;
-  services.openssh.permitRootLogin = "no";
+  services.openssh.enable = false;
 
   system.stateVersion = "20.03";
 }
