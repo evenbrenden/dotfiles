@@ -11,36 +11,35 @@
 - Disable Secure Boot
 
 #### All things disk
-    $ parted /dev/sda -- mklabel gpt
-    $ parted /dev/sda -- mkpart primary 512MiB -17GiB
-    $ parted /dev/sda -- mkpart primary linux-swap -17GiB 100%
-    $ parted /dev/sda -- mkpart ESP fat32 1MiB 512MiB
-    $ parted /dev/sda -- set 3 boot on
+    $ sudo parted /dev/nvme0n1 -- mklabel gpt
+    $ sudo parted /dev/nvme0n1 -- mkpart primary 512MiB -17717092864B # Alignment blah
+    $ sudo parted /dev/nvme0n1 -- mkpart primary linux-swap -17717092352B 100% # This is on the upside of 16.5GiB
+    $ sudo parted /dev/nvme0n1 -- mkpart ESP fat32 1MiB 512MiB
+    $ sudo parted /dev/nvme0n1 -- set 3 boot on
     
-    $ cryptsetup luksFormat /dev/sda1
-    $ cryptsetup luksOpen /dev/sda1 enc-pv
-    $ pvcreate /dev/mapper/enc-pv
-    $ vgcreate vg /dev/mapper/enc-pv
-    $ lvcreate -L 17G -n swap vg
-    $ lvcreate -l '100%FREE' -n root vg
+    $ sudo cryptsetup luksFormat /dev/nvme0n1p1
+    $ sudo cryptsetup luksOpen /dev/nvme0n1p1 enc-pv
+    $ sudo pvcreate /dev/mapper/enc-pv
+    $ sudo vgcreate vg /dev/mapper/enc-pv
+    $ sudo lvcreate -L 17717092352B -n swap vg
+    $ sudo lvcreate -l '100%FREE' -n root vg
     
-    $ mkfs.ext4 -L naxos /dev/sda1
-    $ mkswap -L swap /dev/sda2
-    $ mkfs.fat -F 32 -n boot /dev/sda3
+    $ sudo mkfs.ext4 -L naxos /dev/vg/root
+    $ sudo mkswap -L swap /dev/vg/swap
+    $ sudo mkfs.fat -F 32 -n BOOT /dev/nvme0n1p3
     
-    $ mount /dev/disk/by-label/naxos /mnt
-    $ mkdir -p /mnt/boot
-    $ mount /dev/disk/by-label/boot /mnt/boot
+    $ sudo mount /dev/disk/by-label/naxos /mnt
+    $ sudo mkdir -p /mnt/boot
+    $ sudo mount /dev/disk/by-label/BOOT /mnt/boot
 
 #### Need a network connection during install
-- Add
+- Create `/etc/wpa_supplicant.conf` with
   ```
   network={
     ssid="****"
     psk="****"
   }
   ```
-  to `/etc/wpa_supplicant.conf`
 - Start it up with `systemctl start wpa_supplicant`
 
 #### Configure and install
