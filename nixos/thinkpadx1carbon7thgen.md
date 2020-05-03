@@ -12,21 +12,20 @@
 
 #### All things disk
     $ sudo parted /dev/nvme0n1 -- mklabel gpt
-    $ sudo parted /dev/nvme0n1 -- mkpart primary 512MiB -17717092864B # Alignment blah
-    $ sudo parted /dev/nvme0n1 -- mkpart primary linux-swap -17717092352B 100% # This is on the upside of 16.5GiB
+    $ sudo parted /dev/nvme0n1 -- mkpart primary 512MiB 100%
     $ sudo parted /dev/nvme0n1 -- mkpart ESP fat32 1MiB 512MiB
-    $ sudo parted /dev/nvme0n1 -- set 3 boot on
+    $ sudo parted /dev/nvme0n1 -- set 2 boot on
     
     $ sudo cryptsetup luksFormat /dev/nvme0n1p1
     $ sudo cryptsetup luksOpen /dev/nvme0n1p1 enc-pv
     $ sudo pvcreate /dev/mapper/enc-pv
     $ sudo vgcreate vg /dev/mapper/enc-pv
-    $ sudo lvcreate -L 17717092352B -n swap vg
+    $ sudo lvcreate -L 16.5GiB -n swap vg
     $ sudo lvcreate -l '100%FREE' -n root vg
     
     $ sudo mkfs.ext4 -L naxos /dev/vg/root
     $ sudo mkswap -L swap /dev/vg/swap
-    $ sudo mkfs.fat -F 32 -n BOOT /dev/nvme0n1p3
+    $ sudo mkfs.fat -F 32 -n BOOT /dev/nvme0n1p2
     
     $ sudo mount /dev/disk/by-label/naxos /mnt
     $ sudo mkdir -p /mnt/boot
