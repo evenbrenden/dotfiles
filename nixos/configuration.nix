@@ -13,22 +13,21 @@ in
   boot.initrd.luks.devices = [
     {
       name = "root";
-      device = "/dev/sda3";
+      device = "/dev/nvme0n1p1";
       preLVM = true;
       allowDiscards = true;
     }
   ];
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
-  boot.loader.grub.device = "/dev/sda";
-  boot.initrd.checkJournalingFS = false;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.configurationLimit = 120;
 
+  networking.useDHCP = false;
+  networking.interfaces.enp0s31f6.useDHCP = true;
+  networking.interfaces.wlp0s20f3.useDHCP = true;
   networking.hostName = "naxos";
   networking.networkmanager.enable = true;
-
-  security.rngd.enable = false;
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
@@ -128,7 +127,6 @@ in
 
   services.openssh.enable = true;
   services.openssh.permitRootLogin = "no";
-  services.haveged.enable = true;
 
   system.stateVersion = "20.03";
 }
