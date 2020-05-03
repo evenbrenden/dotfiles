@@ -91,10 +91,8 @@ in
   nix.gc.automatic = true;
   nix.gc.dates = "04:00";
 
-  i18n = {
-    consoleFont = "Lat2-Terminus16";
-    defaultLocale = "en_US.UTF-8";
-  };
+  console.font = "Lat2-Terminus16";
+  i18n.defaultLocale = "en_US.UTF-8";
 
   time.timeZone = "Europe/Amsterdam";
 
