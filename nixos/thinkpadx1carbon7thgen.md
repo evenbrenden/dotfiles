@@ -40,7 +40,7 @@
     psk="****"
   }
   ```
-- Start it up with `systemctl start wpa_supplicant`
+- Start it up with `sudo systemctl start wpa_supplicant`
 
 #### Configure and install
     $ sudo nixos-generate-config --root /mnt
