@@ -87,7 +87,6 @@ in
       vscode
       xorg.xdpyinfo
     ];
-    pathsToLink = [ "/libexec" ]; # For i3
   };
 
   programs.ssh.startAgent = true;
