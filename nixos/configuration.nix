@@ -66,7 +66,7 @@ in
       git
       gparted
       irssi
-      unstable.jotta-cli
+      jetbrains.rider
       networkmanagerapplet
       nomacs
       libnotify
@@ -82,6 +82,7 @@ in
       slack
       spotify
       unstable.dotnet-sdk_3
+      unstable.jotta-cli
       unstable.teams
       unzip
       veracrypt
