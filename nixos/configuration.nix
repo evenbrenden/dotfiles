@@ -10,17 +10,25 @@ in
     ./hardware-configuration.nix
   ];
 
-  boot.initrd.luks.devices = {
-    root = {
-      device = "/dev/nvme0n1p1";
-      preLVM = true;
-      allowDiscards = true;
+  boot = {
+    initrd.luks.devices = {
+      root = {
+        device = "/dev/nvme0n1p1";
+        preLVM = true;
+        allowDiscards = true;
+      };
     };
+    loader = {
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 120;
+      };
+      efi.canTouchEfiVariables = true;
+    };
+    extraModprobeConfig = ''
+      options snd slots=snd-hda-intel
+    '';
   };
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.configurationLimit = 120;
 
   networking.useDHCP = false;
   networking.interfaces.enp0s31f6.useDHCP = true;
