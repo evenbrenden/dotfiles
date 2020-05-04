@@ -38,7 +38,7 @@ in
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
-  nixpkgs.config.pulseaudio = true; # https://nixos.wiki/wiki/Xfce
+  nixpkgs.config.pulseaudio = true; # Explicit PulseAudio support in applications
 
   nixpkgs.config = {
     allowUnfree = true;
