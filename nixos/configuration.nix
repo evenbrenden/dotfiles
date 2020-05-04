@@ -25,9 +25,6 @@ in
       };
       efi.canTouchEfiVariables = true;
     };
-    extraModprobeConfig = ''
-      options snd slots=snd-hda-intel
-    '';
   };
 
   networking.useDHCP = false;
