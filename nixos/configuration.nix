@@ -105,6 +105,8 @@ in
     extraGroups = [ "wheel" "networkmanager" "audio" "video" "vboxusers" ];
   };
 
+  services.dbus.socketActivated = true;
+  services.openssh.enable = false;
   services.xserver = {
     enable = true;
     layout = "us,no";
@@ -127,8 +129,6 @@ in
       };
     };
   };
-
-  services.openssh.enable = false;
 
   system.stateVersion = "20.03";
 }
