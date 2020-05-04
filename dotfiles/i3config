@@ -21,9 +21,9 @@ bindsym $mod+l exec i3lock --color 000000
 bindsym $mod+k exec python3 ~/toggle_keyboard_layout.py
 
 # audio control
-bindsym XF86AudioMute exec amixer -q set Master toggle # Skipping -c 0 or else it won't unmute
-bindsym XF86AudioLowerVolume exec amixer -q -c 0 set Master 3dB-
-bindsym XF86AudioRaiseVolume exec amixer -q -c 0 set Master 3dB+
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -3dB
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +3dB
 bindsym XF86AudioMicMute exec amixer -q -c 0 set Capture toggle
 exec amixer -q -c 0 set 'Mic Mute-LED Mode' 'Follow Mute'
 
