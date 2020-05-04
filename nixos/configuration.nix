@@ -66,7 +66,6 @@ in
       git
       gparted
       irssi
-      jetbrains.rider
       unstable.jotta-cli
       networkmanagerapplet
       nomacs
