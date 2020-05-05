@@ -11,7 +11,6 @@ in
   ];
 
   boot = {
-    blacklistedKernelModules = [ "btusb" ];
     initrd.luks.devices = {
       root = {
         device = "/dev/nvme0n1p1";
@@ -39,6 +38,10 @@ in
   sound.enable = true;
   hardware.pulseaudio.enable = true;
   nixpkgs.config.pulseaudio = true; # Explicit PulseAudio support in applications
+
+  hardware.bluetooth.enable = true;
+  hardware.enableAllFirmware = true;
+  hardware.enableRedistributableFirmware = true;
 
   nixpkgs.config = {
     allowUnfree = true;
