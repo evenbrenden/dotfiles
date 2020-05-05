@@ -117,7 +117,7 @@ in
   services.openssh.enable = false;
   services.xserver = {
     enable = true;
-    layout = "us,no";
+    layout = "us";
     libinput = {
       enable = true;
       tapping = true;
