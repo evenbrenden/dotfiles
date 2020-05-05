@@ -29,19 +29,25 @@ in
 
   swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
 
-  networking.useDHCP = false;
-  networking.interfaces.enp0s31f6.useDHCP = true;
-  networking.interfaces.wlp0s20f3.useDHCP = true;
-  networking.hostName = "naxos";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "naxos";
+    interfaces = {
+      enp0s31f6.useDHCP = true;
+      wlp0s20f3.useDHCP = true;
+    };
+    networkmanager.enable = true;
+    useDHCP = false;
+  };
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
   nixpkgs.config.pulseaudio = true; # Explicit PulseAudio support in applications
 
-  hardware.bluetooth.enable = true;
-  hardware.enableAllFirmware = true;
-  hardware.enableRedistributableFirmware = true;
+  hardware = {
+    bluetooth.enable = true;
+    enableAllFirmware = true;
+    enableRedistributableFirmware = true;
+  };
 
   nixpkgs.config = {
     allowUnfree = true;
@@ -113,8 +119,10 @@ in
   services.xserver = {
     enable = true;
     layout = "us,no";
-    libinput.enable = true;
-    libinput.tapping = true;
+    libinput = {
+      enable = true;
+      tapping = true;
+    };
     displayManager = {
       defaultSession = "none+i3";
       lightdm = {
