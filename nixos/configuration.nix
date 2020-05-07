@@ -25,6 +25,7 @@ in
       };
       efi.canTouchEfiVariables = true;
     };
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
