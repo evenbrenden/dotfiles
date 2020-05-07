@@ -126,6 +126,8 @@ in
     displayManager = {
       defaultSession = "none+i3";
       lightdm = {
+        autoLogin.enable = true;
+        autoLogin.user = "evenbrenden";
         background = "#000000";
         greeters.gtk.indicators = [ "~host" "~spacer" "~session" "~language" "~clock" "~power" ];
      };
