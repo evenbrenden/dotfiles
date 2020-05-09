@@ -11,25 +11,26 @@
 - Disable Secure Boot
 
 #### All things disk
-    $ sudo parted /dev/nvme0n1 -- mklabel gpt
-    $ sudo parted /dev/nvme0n1 -- mkpart primary 512MiB 100%
-    $ sudo parted /dev/nvme0n1 -- mkpart ESP fat32 1MiB 512MiB
-    $ sudo parted /dev/nvme0n1 -- set 2 boot on
-    
-    $ sudo cryptsetup luksFormat /dev/nvme0n1p1
-    $ sudo cryptsetup luksOpen /dev/nvme0n1p1 enc-pv
-    $ sudo pvcreate /dev/mapper/enc-pv
-    $ sudo vgcreate vg /dev/mapper/enc-pv
-    $ sudo lvcreate -L 16.5GiB -n swap vg
-    $ sudo lvcreate -l '100%FREE' -n root vg
-    
-    $ sudo mkfs.ext4 -L naxos /dev/vg/root
-    $ sudo mkswap -L swap /dev/vg/swap
-    $ sudo mkfs.fat -F 32 -n BOOT /dev/nvme0n1p2
-    
-    $ sudo mount /dev/disk/by-label/naxos /mnt
-    $ sudo mkdir -p /mnt/boot
-    $ sudo mount /dev/disk/by-label/BOOT /mnt/boot
+    $ su
+    $ parted /dev/nvme0n1 -- mklabel gpt
+    $ parted /dev/nvme0n1 -- mkpart primary 512MiB 100%
+    $ parted /dev/nvme0n1 -- mkpart ESP fat32 1MiB 512MiB
+    $ parted /dev/nvme0n1 -- set 2 boot on
+
+    $ cryptsetup luksFormat /dev/nvme0n1p1
+    $ cryptsetup luksOpen /dev/nvme0n1p1 enc-pv
+    $ pvcreate /dev/mapper/enc-pv
+    $ vgcreate vg /dev/mapper/enc-pv
+    $ lvcreate -L 16.5GiB -n swap vg
+    $ lvcreate -l '100%FREE' -n root vg
+
+    $ mkfs.ext4 -L naxos /dev/vg/root
+    $ mkswap -L swap /dev/vg/swap
+    $ mkfs.fat -F 32 -n BOOT /dev/nvme0n1p2
+
+    $ mount /dev/disk/by-label/naxos /mnt
+    $ mkdir -p /mnt/boot
+    $ mount /dev/disk/by-label/BOOT /mnt/boot
 
 #### Need a network connection during install
 - Create `/etc/wpa_supplicant.conf` with
@@ -39,11 +40,11 @@
     psk="****"
   }
   ```
-- Start it up with `sudo systemctl start wpa_supplicant`
+- Start it up with `systemctl start wpa_supplicant`
 
 #### Configure and install
-    $ sudo nixos-generate-config --root /mnt
+    $ nixos-generate-config --root /mnt
     $ nix-env -iA nixos.git
     $ git clone https://github.com/evenbrenden/dotfiles
-    $ sudo cp dotfiles/nixos/configuration.nix /mnt/etc/nixos/configuration.nix
-    $ sudo nixos-install
+    $ cp dotfiles/nixos/configuration.nix /mnt/etc/nixos/configuration.nix
+    $ nixos-install
