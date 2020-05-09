@@ -122,11 +122,14 @@ in
     extraGroups = [ "wheel" "networkmanager" "audio" "video" "vboxusers" ];
   };
 
+  fonts.fontconfig.dpi = 144;
+
   services.dbus.socketActivated = true;
   services.openssh.enable = false;
   services.xserver = {
     enable = true;
     layout = "us";
+    dpi = 144;
     libinput = {
       enable = true;
       tapping = true;
