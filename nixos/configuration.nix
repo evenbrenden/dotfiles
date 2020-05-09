@@ -41,7 +41,15 @@ in
   };
 
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio = {
+    enable = true;
+    # Need this for sof-hda-dsp until PulseAudio 14
+    extraConfig = ''
+        load-module module-alsa-sink device=hw:0,0 channels=4
+        load-module module-alsa-source device=hw:0,6 channels=4
+    '';
+  };
+
   nixpkgs.config.pulseaudio = true; # Explicit PulseAudio support in applications
 
   hardware = {
