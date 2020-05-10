@@ -130,15 +130,13 @@ in
       headphonesIn = {
         event = "jack/headphone HEADPHONE plug";
         action = ''
-            export PATH="$PATH:/run/current-system/sw/bin/"
-            amixer -c 0 set 'Bass Speaker' off
+            /run/current-system/sw/bin/amixer -c 0 set 'Bass Speaker' off
         '';
       };
       headphonesOut = {
         event = "jack/headphone HEADPHONE unplug";
         action = ''
-            export PATH="$PATH:/run/current-system/sw/bin/"
-            amixer -c 0 set 'Bass Speaker' on
+            /run/current-system/sw/bin/amixer -c 0 set 'Bass Speaker' on
         '';
       };
     };
