@@ -150,6 +150,7 @@ bar {
 # start some programs
 exec sakura
 exec --no-startup-id nm-applet
+exec --no-startup-id dunst
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xfce4-volumed-pulse
 exec python3 ~/notifications.py on
