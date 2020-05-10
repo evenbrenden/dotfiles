@@ -18,20 +18,20 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+l exec i3lock --color 000000
 
 # change keyboard layout
-bindsym $mod+k exec python3 ~/toggle_keyboard_layout.py
+bindsym $mod+k exec --no-startup-id python3 ~/toggle_keyboard_layout.py
 
 # things xrandr
-bindsym $mod+Ctrl+a exec autorandr --change
-bindsym $mod+Ctrl+6 exec xrandr --dpi 96
-bindsym $mod+Ctrl+7 exec xrandr --dpi 120
-bindsym $mod+Ctrl+8 exec xrandr --dpi 144
+bindsym $mod+Ctrl+a exec --no-startup-id autorandr --change
+bindsym $mod+Ctrl+6 exec --no-startup-id xrandr --dpi 96
+bindsym $mod+Ctrl+7 exec --no-startup-id xrandr --dpi 120
+bindsym $mod+Ctrl+8 exec --no-startup-id xrandr --dpi 144
 
 # brightness control
-bindsym XF86MonBrightnessDown exec python3 ~/adjust_brightness.py down
-bindsym XF86MonBrightnessUp exec python3 ~/adjust_brightness.py up
+bindsym XF86MonBrightnessDown exec --no-startup-id python3 ~/adjust_brightness.py down
+bindsym XF86MonBrightnessUp exec --no-startup-id python3 ~/adjust_brightness.py up
 
 # notifications control
-bindsym $mod+n exec python3 ~/notifications.py
+bindsym $mod+n exec --no-startup-id python3 ~/notifications.py
 
 # hide edge borders for single-window workspaces
 hide_edge_borders smart
@@ -153,4 +153,4 @@ exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xfce4-volumed-pulse
-exec python3 ~/notifications.py on
+exec --no-startup-id python3 ~/notifications.py on
