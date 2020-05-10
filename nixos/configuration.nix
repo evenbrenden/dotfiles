@@ -49,7 +49,6 @@ in
         load-module module-alsa-source device=hw:0,6 channels=4
     '';
   };
-
   nixpkgs.config.pulseaudio = true; # Explicit PulseAudio support in applications
 
   hardware = {
