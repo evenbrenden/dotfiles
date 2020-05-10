@@ -142,32 +142,34 @@ in
     };
   };
 
-  services.dbus.socketActivated = true;
-  services.openssh.enable = false;
-  services.xserver = {
-    enable = true;
-    layout = "us";
-    dpi = 144;
-    libinput = {
+  services = {
+    dbus.socketActivated = true;
+    openssh.enable = false;
+    xserver = {
       enable = true;
-      tapping = true;
-    };
-    displayManager = {
-      defaultSession = "none+i3";
-      lightdm = {
-        autoLogin.enable = true;
-        autoLogin.user = "evenbrenden";
-        background = "#000000";
-        greeters.gtk.indicators = [ "~host" "~spacer" "~session" "~language" "~clock" "~power" ];
-     };
-    };
-    windowManager.i3.enable = true;
-    desktopManager = {
-      xterm.enable = false;
-      xfce = {
+      layout = "us";
+      dpi = 144;
+      libinput = {
         enable = true;
-        noDesktop = true;
-        enableXfwm = false;
+        tapping = true;
+      };
+      displayManager = {
+        defaultSession = "none+i3";
+        lightdm = {
+          autoLogin.enable = true;
+          autoLogin.user = "evenbrenden";
+          background = "#000000";
+          greeters.gtk.indicators = [ "~host" "~spacer" "~session" "~language" "~clock" "~power" ];
+       };
+      };
+      windowManager.i3.enable = true;
+      desktopManager = {
+        xterm.enable = false;
+        xfce = {
+          enable = true;
+          noDesktop = true;
+          enableXfwm = false;
+        };
       };
     };
   };
