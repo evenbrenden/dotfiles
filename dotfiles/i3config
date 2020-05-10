@@ -20,6 +20,13 @@ bindsym $mod+l exec i3lock --color 000000
 # change keyboard layout
 bindsym $mod+k exec --no-startup-id python3 ~/toggle_keyboard_layout.py
 
+# audio control
+bindsym XF86AudioMute exec --no-startup-id amixer -q -c 0 set Master toggle && pkill -x -USR1 i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q -c 0 set Master 3dB- && pkill -x -USR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q -c 0 set Master 3dB+ && pkill -x -USR1 i3status
+bindsym XF86AudioMicMute exec --no-startup-id amixer -q -c 0 set Capture toggle
+exec --no-startup-id amixer -q -c 0 set 'Mic Mute-LED Mode' 'Follow Mute'
+
 # things xrandr
 bindsym $mod+Ctrl+a exec --no-startup-id autorandr --change
 bindsym $mod+Ctrl+6 exec --no-startup-id xrandr --dpi 96
@@ -152,5 +159,4 @@ exec sakura
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id xfce4-volumed-pulse
 exec --no-startup-id python3 ~/notifications.py on
