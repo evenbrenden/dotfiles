@@ -83,6 +83,7 @@ in
       gimp
       git
       gparted
+      hsetroot
       irssi
       jetbrains.rider
       networkmanagerapplet
@@ -145,6 +146,7 @@ in
   services = {
     dbus.socketActivated = true;
     openssh.enable = false;
+    picom.enable = true;
     xserver = {
       enable = true;
       layout = "us";
@@ -160,7 +162,11 @@ in
           autoLogin.user = "evenbrenden";
           background = "#000000";
           greeters.gtk.indicators = [ "~host" "~spacer" "~session" "~language" "~clock" "~power" ];
-       };
+        };
+        # Because xsetroot does not work with Picom
+        sessionCommands = ''
+            hsetroot -solid #000000
+        '';
       };
       windowManager.i3.enable = true;
       desktopManager = {
