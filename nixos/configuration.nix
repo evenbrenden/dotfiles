@@ -124,6 +124,26 @@ in
 
   fonts.fontconfig.dpi = 144;
 
+  services.acpid = {
+    enable = true;
+    handlers = {
+      headphonesIn = {
+        event = "jack/headphone HEADPHONE plug";
+        action = ''
+            export PATH="$PATH:/run/current-system/sw/bin/"
+            amixer -c 0 set 'Bass Speaker' off
+        '';
+      };
+      headphonesOut = {
+        event = "jack/headphone HEADPHONE unplug";
+        action = ''
+            export PATH="$PATH:/run/current-system/sw/bin/"
+            amixer -c 0 set 'Bass Speaker' on
+        '';
+      };
+    };
+  };
+
   services.dbus.socketActivated = true;
   services.openssh.enable = false;
   services.xserver = {
