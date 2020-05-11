@@ -44,7 +44,6 @@ in
       "i3/config".source = ./dotfiles/i3config;
       "i3status/config".source = ./dotfiles/i3status;
       "dunst/dunstrc".source = ./dotfiles/dunstrc;
-      "xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml".source = ./dotfiles/xfce4-power-manager.xml;
     };
   };
   home.file = {
