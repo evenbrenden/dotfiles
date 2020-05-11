@@ -122,8 +122,6 @@ in
     extraGroups = [ "wheel" "networkmanager" "audio" "video" "vboxusers" ];
   };
 
-  fonts.fontconfig.dpi = 144;
-
   services.acpid = {
     enable = true;
     handlers = {
