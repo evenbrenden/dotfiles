@@ -176,5 +176,6 @@ in
     };
   };
 
+  # Currently on nixos-unstable (need sof-firmware)
   system.stateVersion = "20.03";
 }
