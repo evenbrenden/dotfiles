@@ -86,7 +86,6 @@ in
       irssi
       jetbrains.rider
       networkmanagerapplet
-      nomacs
       libnotify
       libsForQt5.vlc
       linuxConsoleTools
