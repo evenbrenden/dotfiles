@@ -99,7 +99,6 @@ in
       shellcheck
       slack
       spotify
-      steam
       unstable.dotnet-sdk_3
       unstable.jotta-cli
       unstable.teams
@@ -110,10 +109,6 @@ in
       xorg.xdpyinfo
     ];
   };
-
-  # For Steam
-  hardware.steam-hardware.enable = true;
-  hardware.opengl.driSupport32Bit = true;
 
   programs.ssh.startAgent = true;
 
