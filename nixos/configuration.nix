@@ -89,6 +89,7 @@ in
       libnotify
       libsForQt5.vlc
       linuxConsoleTools
+      playerctl
       postman
       python3
       python37Packages.virtualenv
