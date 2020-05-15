@@ -110,6 +110,11 @@ in
     ];
   };
 
+  virtualisation.virtualbox.host = {
+    enableExtensionPack = true;
+    enable = true;
+  };
+
   programs.ssh.startAgent = true;
 
   nix.gc.automatic = true;
