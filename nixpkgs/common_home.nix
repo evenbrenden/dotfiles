@@ -54,6 +54,7 @@ in
     "adjust_brightness.py".source = ./dotfiles/adjust_brightness.py;
     "notifications.py".source = ./dotfiles/notifications.py;
     "toggle_keyboard_layout.py".source = ./dotfiles/toggle_keyboard_layout.py;
+    "toggle_keyboard_backlight.py".source = ./dotfiles/toggle_keyboard_backlight.py;
     "i3status.sh".source = ./dotfiles/i3status.sh;
   };
 }

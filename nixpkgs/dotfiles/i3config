@@ -43,6 +43,9 @@ bindsym $mod+Ctrl+8 exec --no-startup-id xrandr --dpi 144
 bindsym XF86MonBrightnessDown exec --no-startup-id python3 ~/adjust_brightness.py down
 bindsym XF86MonBrightnessUp exec --no-startup-id python3 ~/adjust_brightness.py up
 
+# keyboard backlight control
+bindsym $mod+b exec --no-startup-id python3 ~/toggle_keyboard_backlight.py
+
 # notifications control
 bindsym $mod+n exec --no-startup-id python3 ~/notifications.py
 
