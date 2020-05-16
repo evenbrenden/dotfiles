@@ -72,6 +72,7 @@ in
       abcde
       arandr
       autorandr
+      brightnessctl
       cabal-install
       chromium
       curl
