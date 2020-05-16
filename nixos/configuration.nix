@@ -104,7 +104,6 @@ in
       unstable.teams
       unzip
       veracrypt
-      virtualboxWithExtpack
       vscode
       xorg.xdpyinfo
     ];
