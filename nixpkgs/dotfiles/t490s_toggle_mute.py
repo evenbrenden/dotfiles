@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-#import sys
 import subprocess
 
 subprocess.run(['amixer', '-q', '-D', 'pulse', 'set', 'Master', 'toggle'], stdout=subprocess.PIPE)
