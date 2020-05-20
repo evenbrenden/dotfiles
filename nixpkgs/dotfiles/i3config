@@ -26,7 +26,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q -c 0 set Master 3dB-
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q -c 0 set Master 3dB+ && pkill -x -USR1 i3status
 bindsym XF86AudioMicMute exec --no-startup-id amixer -q -c 0 set Capture toggle
 exec --no-startup-id amixer -q -c 0 set 'Mic Mute-LED Mode' 'Follow Mute'
-exec --no-startup-id amixer -q -c 0 sset Master off
+exec --no-startup-id amixer -q -c 0 sset Master on && amixer -q -c 0 sset Master off
 # Needs to be like this to force the LED to get in sync with the actual state on boot (for some reason)
 exec --no-startup-id amixer -q -c 0 sset Capture cap && amixer -q -c 0 sset Capture nocap
 
