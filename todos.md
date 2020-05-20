@@ -1,0 +1,2 @@
+* Since the headphones might be plugged or unplugged while the machine is off, I want to check the headphone jack plug state and update speaker state accordingly on boot. Haven't found a way to do this using sof-firmware. Workaround is to toggle the (bass) speaker manually. Might be fixed with PulseAudio 14.
+* When using a headset with microphone, the external microphone is not automatically used by programs. Want to automate this switch using ACPI events. Workaround is to manually route it right using pavucontrol. Might be fixed with PulseAudio 14.
