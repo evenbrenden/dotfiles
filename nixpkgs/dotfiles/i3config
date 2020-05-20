@@ -29,6 +29,7 @@ exec --no-startup-id amixer -q -c 0 set 'Mic Mute-LED Mode' 'Follow Mute'
 # force the mic mute LED to get in sync with the actual state on boot (need this for some reason)
 exec --no-startup-id amixer -q -c 0 sset Capture cap && amixer -q -c 0 sset Capture nocap
 exec --no-startup-id amixer -q -c 0 sset Master on && amixer -q -c 0 sset Master off # for completeness
+# TODO: Check headphone jack plug state and update (bass) speaker state accordingly (on sof-firmware)
 
 # playback control
 bindsym XF86AudioPlay exec playerctl play-pause

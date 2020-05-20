@@ -130,6 +130,7 @@ in
     extraGroups = [ "wheel" "networkmanager" "audio" "video" "vboxusers" ];
   };
 
+  # TODO: Toggle external mic too (needs to be done manually using pavucontrol now)
   services.acpid = {
     enable = true;
     handlers = {
