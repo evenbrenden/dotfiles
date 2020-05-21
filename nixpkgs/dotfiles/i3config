@@ -22,13 +22,10 @@ bindsym $mod+k exec --no-startup-id python3 ~/toggle_keyboard_layout.py
 
 # audio control
 bindsym XF86AudioMute exec --no-startup-id python3 ~/toggle_mute.py
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q -c 0 set Master 3dB- && pkill -x -USR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q -c 0 set Master 3dB+ && pkill -x -USR1 i3status
-bindsym XF86AudioMicMute exec --no-startup-id amixer -q -c 0 set Capture toggle
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -3dB
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3dB
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 exec --no-startup-id amixer -q -c 0 set 'Mic Mute-LED Mode' 'Follow Mute'
-# force the mic mute LED to get in sync with the actual state on boot (need this for some reason)
-exec --no-startup-id amixer -q -c 0 sset Capture cap && amixer -q -c 0 sset Capture nocap
-exec --no-startup-id amixer -q -c 0 sset Master on && amixer -q -c 0 sset Master off # for completeness
 
 # playback control
 bindsym XF86AudioPlay exec playerctl play-pause
