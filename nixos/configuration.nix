@@ -44,14 +44,7 @@ in
   };
 
   sound.enable = true;
-  hardware.pulseaudio = {
-    enable = true;
-    # Need this for sof-hda-dsp until PulseAudio 14
-    extraConfig = ''
-        load-module module-alsa-sink device=hw:0,0 channels=4
-        load-module module-alsa-source device=hw:0,6 channels=4
-    '';
-  };
+  hardware.pulseaudio.enable = true;
   nixpkgs.config.pulseaudio = true; # Explicit PulseAudio support in applications
 
   hardware = {
@@ -128,24 +121,6 @@ in
   users.users.evenbrenden = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "video" "vboxusers" ];
-  };
-
-  services.acpid = {
-    enable = true;
-    handlers = {
-      headphonesIn = {
-        event = "jack/headphone HEADPHONE plug";
-        action = ''
-            /run/current-system/sw/bin/amixer -q -c 0 set 'Bass Speaker' off
-        '';
-      };
-      headphonesOut = {
-        event = "jack/headphone HEADPHONE unplug";
-        action = ''
-            /run/current-system/sw/bin/amixer -q -c 0 set 'Bass Speaker' on
-        '';
-      };
-    };
   };
 
   services = {
