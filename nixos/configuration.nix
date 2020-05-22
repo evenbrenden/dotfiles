@@ -53,6 +53,8 @@ in
     enableRedistributableFirmware = true;
   };
 
+  nixpkgs.overlays = [ (import ./pulseaudio-13.99.nix) ];
+
   nixpkgs.config = {
     allowUnfree = true;
     packageOverrides = pkgs: {
