@@ -72,7 +72,7 @@ in
       autorandr
       brightnessctl
       cabal-install
-      chromium
+      # chromium
       curl
       dbeaver
       dos2unix
@@ -83,11 +83,12 @@ in
       gparted
       hsetroot
       irssi
-      jetbrains.rider
+      # jetbrains.rider
       networkmanagerapplet
       libnotify
       libsForQt5.vlc
       linuxConsoleTools
+      # nomacs
       playerctl
       postman
       python3
@@ -162,6 +163,5 @@ in
     };
   };
 
-  # Currently on nixos-unstable (need sof-firmware)
   system.stateVersion = "20.03";
 }
