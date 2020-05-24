@@ -47,17 +47,6 @@ in
   hardware.pulseaudio.enable = true;
   nixpkgs.config.pulseaudio = true; # Explicit PulseAudio support in applications
 
-  system.activationScripts = {
-    alsa = {
-      text = ''
-          export PATH=$PATH:/run/current-system/sw/bin
-          amixer -q -c 0 set 'Mic Mute-LED Mode' 'Follow Mute'
-          amixer -q -c 0 set 'Auto-Mute Mode' 'Disabled'
-      '';
-      deps = [];
-    };
-  };
-
   hardware = {
     bluetooth.enable = true;
     enableAllFirmware = true;
