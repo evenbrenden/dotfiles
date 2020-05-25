@@ -88,7 +88,7 @@ in
       libnotify
       libsForQt5.vlc
       linuxConsoleTools
-      # nomacs
+      nomacs
       playerctl
       postman
       python3
