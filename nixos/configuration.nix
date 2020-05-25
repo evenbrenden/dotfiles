@@ -74,7 +74,7 @@ in
       autorandr
       brightnessctl
       cabal-install
-      # chromium
+      chromium
       curl
       dbeaver
       dos2unix
