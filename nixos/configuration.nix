@@ -53,7 +53,9 @@ in
     enableRedistributableFirmware = true;
   };
 
-  nixpkgs.overlays = [ (import ./pulseaudio-13.99.nix) ];
+  nixpkgs.overlays = [
+    (import ./pulseaudio.nix)
+  ];
 
   nixpkgs.config = {
     allowUnfree = true;
