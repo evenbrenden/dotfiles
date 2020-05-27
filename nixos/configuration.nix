@@ -54,7 +54,8 @@ in
   };
 
   nixpkgs.overlays = [
-    (import ./pulseaudio.nix)
+    (import ../overlays/pulseaudio.nix)
+    (import ../overlays/jetbrains_old.nix)
   ];
 
   nixpkgs.config = {
@@ -85,7 +86,6 @@ in
       gparted
       hsetroot
       irssi
-      # jetbrains.rider
       networkmanagerapplet
       libnotify
       libsForQt5.vlc
