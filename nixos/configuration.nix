@@ -86,6 +86,7 @@ in
       gparted
       hsetroot
       irssi
+      jetbrains.rider
       networkmanagerapplet
       libnotify
       libsForQt5.vlc
