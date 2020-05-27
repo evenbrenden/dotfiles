@@ -1,6 +1,7 @@
 (self: super:
   {
     pulseaudio = super.pulseaudio.overrideAttrs (_: rec {
+      name = super.pulseaudio.name;
       version = "13.99";
 
       src = super.fetchurl {
