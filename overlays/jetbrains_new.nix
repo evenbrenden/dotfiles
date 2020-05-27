@@ -6,6 +6,7 @@ in
     jetbrains = super.jetbrains // {
       rider = super.jetbrains.rider.overrideDerivation (_: {
         name = "rider-${version}";
+        version = "${version}";
 
         src = super.fetchurl {
           url = "https://download.jetbrains.com/rider/JetBrains.Rider-${version}.tar.gz";
