@@ -1,7 +1,7 @@
 (self: super:
   {
     pulseaudio = super.pulseaudio.overrideAttrs (_: rec {
-      name = super.pulseaudio.name; # This is still not right
+      name = builtins.replaceStrings [super.pulseaudio.version] [version] super.pulseaudio.name;
       version = "13.99";
 
       src = super.fetchurl {
@@ -9,7 +9,7 @@
         sha256 = "030a7v0khp6w683km81c6vpch1687pvx2gvscnzkjq4f0z6138g6";
       };
 
-      postInstall = super.pulseaudio.postInstall; # ...but for some reason this is
+      postInstall = super.pulseaudio.postInstall;
     });
   }
 )
