@@ -30,12 +30,7 @@
 
   networking = {
     hostName = "naxos";
-    interfaces = {
-      enp0s31f6.useDHCP = true;
-      wlp0s20f3.useDHCP = true;
-    };
     networkmanager.enable = true;
-    useDHCP = false;
   };
 
   sound.enable = true;
