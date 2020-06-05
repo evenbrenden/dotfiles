@@ -1,10 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  unstableTarball =
-    fetchTarball
-      https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
-in
 {
   imports = [
     ./hardware-configuration.nix
@@ -60,11 +55,6 @@ in
 
   nixpkgs.config = {
     allowUnfree = true;
-    packageOverrides = pkgs: {
-      unstable = import unstableTarball {
-        config = config.nixpkgs.config;
-      };
-    };
     chromium.enableWideVine = true;
   };
 
@@ -102,9 +92,9 @@ in
       shellcheck
       slack
       spotify
-      unstable.dotnet-sdk_3
-      unstable.jotta-cli
-      unstable.teams
+      dotnet-sdk_3
+      jotta-cli
+      teams
       unzip
       veracrypt
       vscode
