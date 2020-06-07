@@ -1,9 +1,9 @@
 (self: super:
   {
     pulseaudio = super.callPackage
-      ({ libOnly ? false }:
+      ({ libOnly ? false, ... }@args:
 
-      super.pulseaudio.overrideAttrs (_: rec {
+      (super.pulseaudio.override args).overrideAttrs (_: rec {
         name = "${if libOnly then "lib" else ""}pulseaudio-${version}";
         version = "13.99";
 
