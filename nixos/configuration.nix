@@ -46,6 +46,7 @@
   nixpkgs.overlays = [
     (import ../overlays/pulseaudio.nix)
     (import ../overlays/jetbrains_old.nix)
+    (import ../overlays/sof-firmware.nix)
   ];
 
   nixpkgs.config = {
