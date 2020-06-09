@@ -4,8 +4,10 @@
       pname = "sof-firmware";
       version = "1.5";
 
-      src = super.fetchzip {
-        url = "https://github.com/thesofproject/sof-bin/archive/stable-v${version}.zip";
+      src = super.fetchFromGitHub {
+        owner = "thesofproject";
+        repo = "sof-bin";
+        rev = "e6d11bf44f0c7ad6032d201e753aa254bb075ee7";
         sha256 = "11vs7ncsysj77j6s9dskyxbbx92kz9xf003p5gdxxql5l9m7fqkw";
       };
 
@@ -17,11 +19,6 @@
         VERSION=v${version}
 
         echo "Installing Intel firmware and topology $VERSION to $INTEL_PATH"
-
-        # wipe previous releases
-        rm -rf ''${ROOT}/''${INTEL_PATH}/sof/*
-        rm -rf ''${ROOT}/''${INTEL_PATH}/sof-tplg-*
-        rm -rf ''${ROOT}/''${INTEL_PATH}/sof-tplg
 
         # copy to destination
         cd lib/firmware
