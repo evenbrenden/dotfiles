@@ -57,6 +57,7 @@
   environment = {
     systemPackages = with pkgs; [
       abcde
+      alsaTools
       arandr
       autorandr
       brightnessctl
