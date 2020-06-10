@@ -43,6 +43,16 @@
     enableRedistributableFirmware = true;
   };
 
+  # https://gist.github.com/hamidzr/dd81e429dc86f4327ded7a2030e7d7d9#gistcomment-3335436
+  system.activationScripts = {
+    hda-verb = {
+      text = ''
+        /run/current-system/sw/bin/hda-verb /dev/snd/hwC0D0 0x17 SET_CONNECT_SEL 1
+      '';
+      deps = [];
+    };
+  };
+
   nixpkgs.overlays = [
     (import ../overlays/pulseaudio.nix)
     (import ../overlays/jetbrains_old.nix)
