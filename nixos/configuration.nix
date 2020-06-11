@@ -44,6 +44,7 @@
   };
 
   # https://gist.github.com/hamidzr/dd81e429dc86f4327ded7a2030e7d7d9#gistcomment-3335436
+  # ((...) SET_CONNECT_SEL 0 to revert)
   system.activationScripts = {
     hda-verb = {
       text = ''
