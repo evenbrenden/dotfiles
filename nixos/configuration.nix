@@ -51,6 +51,11 @@
   hardware.pulseaudio.enable = true;
   nixpkgs.config.pulseaudio = true; # Explicit PulseAudio support in applications
 
+  # Y this no work?
+  hardware.pulseaudio.extraConfig = ''
+    set-default-source alsa_input.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__hw_sofhdadsp__source
+  '';
+
   hardware = {
     bluetooth.enable = true;
     enableAllFirmware = true;
