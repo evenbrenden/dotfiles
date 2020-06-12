@@ -24,6 +24,20 @@
       "fs.inotify.max_user_watches" = 524288;
     };
     kernelPackages = pkgs.linuxPackages_latest;
+    kernelPatches = [
+      {
+        name = "alsa-hda-realtek-fix-1";
+        patch = ./0001-ALSA-hda-realtek-Fix-Lenovo-Thinkpad-X1-Carbon-7th-q.patch;
+      }
+      {
+        name = "alsa-hda-realtek-fix-2";
+        patch = ./0002-ALSA-hda-realtek-Fix-Lenovo-Thinkpad-X1-Carbon-7th-q.patch;
+      }
+      {
+        name = "alsa-hda-realtek-fix-3";
+        patch = ./0003-Rename-some-controls-for-the-benefit-of-pulseaudio.patch;
+      }
+    ];
   };
 
   swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
@@ -42,18 +56,6 @@
     enableAllFirmware = true;
     enableRedistributableFirmware = true;
   };
-
-  # https://gist.github.com/hamidzr/dd81e429dc86f4327ded7a2030e7d7d9#gistcomment-3335436
-  # ((...) SET_CONNECT_SEL 0 to revert)
-  system.activationScripts = {
-    hda-verb = {
-      text = ''
-        /run/current-system/sw/bin/hda-verb /dev/snd/hwC0D0 0x17 SET_CONNECT_SEL 1
-      '';
-      deps = [];
-    };
-  };
-
   nixpkgs.overlays = [
     (import ../overlays/jetbrains_old.nix)
     (import ../overlays/pulseaudio.nix)
