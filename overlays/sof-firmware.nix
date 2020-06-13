@@ -2,45 +2,21 @@
   {
     sof-firmware = super.sof-firmware.overrideAttrs (_: rec {
       pname = "sof-firmware";
-      version = "1.5";
+      version = "1.5.1";
 
       src = super.fetchFromGitHub {
         owner = "thesofproject";
         repo = "sof-bin";
-        rev = "e6d11bf44f0c7ad6032d201e753aa254bb075ee7";
-        sha256 = "11vs7ncsysj77j6s9dskyxbbx92kz9xf003p5gdxxql5l9m7fqkw";
+        rev = "ae61d2778b0a0f47461a52da0d1f191f651e0763";
+        sha256 = "0j6bpwz49skvdvian46valjw4anwlrnkq703n0snkbngmq78prba";
       };
 
       installPhase = ''
         mkdir -p $out/lib/firmware/intel
-
-        ROOT=$out
-        INTEL_PATH=lib/firmware/intel
-        VERSION=v${version}
-
-        echo "Installing Intel firmware and topology $VERSION to $INTEL_PATH"
-
-        # copy to destination
-        cd lib/firmware
-        cp -rf intel ''${ROOT}/lib/firmware
-
-        # add symlinks
-        cd ''${ROOT}/''${INTEL_PATH}/sof
-
-        ln -s ''${VERSION}/sof-bdw-''${VERSION}.ri sof-bdw.ri
-        ln -s ''${VERSION}/sof-byt-''${VERSION}.ri sof-byt.ri
-        ln -s ''${VERSION}/sof-cht-''${VERSION}.ri sof-cht.ri
-        ln -s ''${VERSION}/intel-signed/sof-apl-''${VERSION}.ri sof-apl.ri
-        ln -s ''${VERSION}/intel-signed/sof-apl-''${VERSION}.ri sof-glk.ri
-        ln -s ''${VERSION}/intel-signed/sof-cnl-''${VERSION}.ri sof-cfl.ri
-        ln -s ''${VERSION}/intel-signed/sof-cnl-''${VERSION}.ri sof-cnl.ri
-        ln -s ''${VERSION}/intel-signed/sof-cnl-''${VERSION}.ri sof-cml.ri
-        ln -s ''${VERSION}/intel-signed/sof-icl-''${VERSION}.ri sof-icl.ri
-
-        cd ..
-        ln -s sof-tplg-''${VERSION} sof-tplg
-
-        echo "Done installing Intel firmware and topology ''$VERSION"
+        substituteInPlace go.sh \
+          --replace 'ROOT=' 'ROOT=$out' \
+          --replace 'VERSION=$(git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3| cut -d"-" -f 2)' 'VERSION=v${version}'
+        ./go.sh
       '';
     });
   }
