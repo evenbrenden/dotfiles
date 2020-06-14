@@ -13,9 +13,10 @@
 
       installPhase = ''
         mkdir -p $out/lib/firmware/intel
-        substituteInPlace go.sh \
-          --replace 'ROOT=' 'ROOT=$out' \
-          --replace 'VERSION=$(git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3| cut -d"-" -f 2)' 'VERSION=v${version}'
+
+        sed -i 's/ROOT=.*$/ROOT=$out/g' go.sh
+        sed -i 's/VERSION=.*$/VERSION=v${version}/g' go.sh
+
         ./go.sh
       '';
     });
