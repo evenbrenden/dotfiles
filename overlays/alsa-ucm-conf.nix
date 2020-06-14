@@ -6,7 +6,7 @@
       installPhase = ''
         runHook preInstall
 
-        git apply ${./x1c7.patch}
+        git apply ${./alsa-ucm-conf-x1c7.patch}
 
         mkdir -p $out/share/alsa
         cp -r ucm ucm2 $out/share/alsa
