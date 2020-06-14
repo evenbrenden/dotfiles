@@ -60,7 +60,6 @@
     (import ../overlays/jetbrains_old.nix)
     (import ../overlays/pulseaudio.nix)
     (import ../overlays/sof-firmware.nix)
-    (import ../overlays/alsa-ucm-conf.nix)
   ];
 
   nixpkgs.config = {
