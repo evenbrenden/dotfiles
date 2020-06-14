@@ -55,6 +55,5 @@ in
     "notifications.py".source = ./dotfiles/notifications.py;
     "toggle_keyboard_layout.py".source = ./dotfiles/toggle_keyboard_layout.py;
     "i3status.sh".source = ./dotfiles/i3status.sh;
-    "if_headset_mute_speakers.sh".source = ./dotfiles/if_headset_mute_speakers.sh;
   };
 }
