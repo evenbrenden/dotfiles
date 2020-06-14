@@ -31,11 +31,7 @@
       }
       {
         name = "alsa-hda-realtek-fix-2";
-        patch = ./0002-ALSA-hda-realtek-Fix-Lenovo-Thinkpad-X1-Carbon-7th-q.patch;
-      }
-      {
-        name = "alsa-hda-realtek-fix-3";
-        patch = ./0003-Rename-some-controls-for-the-benefit-of-pulseaudio.patch;
+        patch = ./0002-ALSA-hda-realtek-Replace-Lenovo-Thinkpad-X1-Carbon-7.patch;
       }
     ];
   };
@@ -60,6 +56,7 @@
     (import ../overlays/jetbrains_old.nix)
     (import ../overlays/pulseaudio.nix)
     (import ../overlays/sof-firmware.nix)
+    (import ../overlays/alsa-ucm-conf.nix)
   ];
 
   nixpkgs.config = {
