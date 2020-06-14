@@ -163,6 +163,9 @@ bar {
 exec --no-startup-id amixer -q -c 0 set 'Mic Mute-LED Mode' 'Follow Mute'
 exec --no-startup-id amixer -q -c 0 set 'Auto-Mute Mode' 'Disabled'
 
+# headset-connected-on-boot hack
+exec --no-startup-id bash if_headset_mute_speakers.sh
+
 # start some programs
 exec sakura
 exec --no-startup-id nm-applet
