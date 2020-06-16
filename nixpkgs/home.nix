@@ -17,7 +17,7 @@ in
     man.enable = false;
     neovim = with pkgs.vimPlugins; {
       enable = true;
-      extraConfig = pkgs.lib.strings.fileContents ./dotfiles/vimrc;
+      extraConfig = pkgs.lib.strings.fileContents ./dotfiles/init.vim;
       plugins = [
         vim-airline
         vim-fsharp
