@@ -16,8 +16,6 @@ set wildmenu
 set showtabline=2
 set background=dark
 syntax on
-
-" set leader to ,
 let mapleader=","
 
 " autocomplete with ctrl+p
@@ -31,6 +29,3 @@ noremap <silent><Leader>w :%s/\s\+$//<CR>
 hi ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-
-" pathogen
-silent! call pathogen#infect()
