@@ -17,6 +17,9 @@ set showtabline=2
 set background=dark
 syntax on
 
+" set leader to ,
+let mapleader=","
+
 " autocomplete with ctrl+p
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
@@ -24,8 +27,7 @@ set completeopt=menuone,menu,longest,preview
 set complete=.
 
 " show and remove trailing whitespace with ,w
-let mapleader=","
-map <silent><Leader>w :%s/\s\+$//<CR>
+noremap <silent><Leader>w :%s/\s\+$//<CR>
 hi ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
