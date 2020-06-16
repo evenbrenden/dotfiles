@@ -29,8 +29,8 @@ else
 fi
 
 # editor stuff
-alias vi=vim
-export EDITOR=vim
+alias vi=nvim
+export EDITOR=nvim
 
 # set prompt
 RS="\[\033[0m\]"    # reset

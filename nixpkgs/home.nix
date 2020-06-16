@@ -15,7 +15,7 @@ in
   programs = {
     home-manager.enable = true;
     man.enable = false;
-    vim = with pkgs.vimPlugins; {
+    neovim = with pkgs.vimPlugins; {
       enable = true;
       extraConfig = pkgs.lib.strings.fileContents ./dotfiles/vimrc;
       plugins = [
