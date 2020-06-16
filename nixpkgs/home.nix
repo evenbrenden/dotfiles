@@ -20,11 +20,12 @@ in
       extraConfig = pkgs.lib.strings.fileContents ./dotfiles/vimrc;
       plugins = [
         vim-airline
-        vim-gitgutter
-        tcomment_vim
-        vim-nix
         vim-fsharp
+        vim-gitgutter
+        vim-markdown
+        vim-nix
         vim-pico8-syntax
+        tcomment_vim
       ];
     };
   };
