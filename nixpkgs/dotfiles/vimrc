@@ -29,3 +29,7 @@ noremap <silent><Leader>w :%s/\s\+$//<CR>
 hi ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+
+" vim-markdown
+let g:vim_markdown_conceal_code_blocks = 1
+set conceallevel=2
