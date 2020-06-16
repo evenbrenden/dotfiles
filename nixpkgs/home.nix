@@ -10,15 +10,6 @@ let
       sha256 = "0vlr90x4rp30a98k0g1g0fmwmp0slblp74fr8zaclyvbc8kwzimc";
     };
   };
-  vim-pico8-syntax = pkgs.vimUtils.buildVimPlugin {
-    name = "vim-pico-syntax";
-    src = pkgs.fetchFromGitHub {
-      owner = "justinj";
-      repo = "vim-pico8-syntax";
-      rev = "dbdd92fad0533eeaeaea844815d4de11e9507ce7";
-      sha256 = "0say0bb74rdbabgsf7rrbm8x841pmgh80fwr6kn94fgphr3vhm0s";
-    };
-  };
 in
 {
   programs = {
