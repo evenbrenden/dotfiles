@@ -57,11 +57,11 @@
     description = "Headphones clicks fix";
     documentation = [ "https://gist.github.com/hamidzr/dd81e429dc86f4327ded7a2030e7d7d9#gistcomment-3154512" ];
     script = ''
-      until [ -e /dev/snd/hwC0D0 ]; do sleep 5; done
       hda-verb /dev/snd/hwC0D0 0x1d SET_PIN_WIDGET_CONTROL 0x0
     '';
     path = [ pkgs.alsaTools ];
-    wantedBy = [ "multi-user.target" ];
+    after = [ "multi-user.target" ];
+    wantedBy = [ "sound.target" ];
   };
 
   nixpkgs.overlays = [
