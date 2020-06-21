@@ -64,12 +64,14 @@
       after = [ "multi-user.target" ];
       wantedBy = [ "sound.target" ];
     };
-    mute-speakers-if-headset-is-plugged-in = {
-      description = "Mute speakers if headset is plugged in";
-      script = builtins.readFile ./mute_speakers_if_headset_is_plugged_in.sh;
-      path = [ pkgs.alsaUtils pkgs.gawk ];
-      after = [ "multi-user.target" ];
-      wantedBy = [ "sound.target" ];
+  };
+  systemd.user.services = {
+    headphones-port-fix = {
+      description = "Set pulseaudio sink port to headphones (if plugged in) or speakers (if not)";
+      script = builtins.readFile ./pulseaudio-set-sink-port.sh;
+      path = [ pkgs.pulseaudio ];
+      after = [ "default.target" ];
+      wantedBy = [ "default.target" ];
     };
   };
 
