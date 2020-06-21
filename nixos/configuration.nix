@@ -66,12 +66,14 @@
     };
   };
   systemd.user.services = {
-    headphones-port-fix = {
-      description = "Set pulseaudio sink port to headphones (if plugged in) or speakers (if not)";
-      script = builtins.readFile ./pulseaudio-set-sink-port.sh;
-      path = [ pkgs.pulseaudio ];
+    set-pulseaudio-sink-port = {
+      description = "Set pulseaudio sink port";
+      script = ''
+        python3 ${./set_pulseaudio_sink_port.py}
+      '';
+      path = [ pkgs.pulseaudio pkgs.python3 ];
       after = [ "default.target" ];
-      wantedBy = [ "default.target" ];
+      wantedBy = [ "pulseaudio.service" ];
     };
   };
 
