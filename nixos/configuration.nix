@@ -75,6 +75,17 @@
       after = [ "default.target" ];
       wantedBy = [ "pulseaudio.service" ];
     };
+    jiggle-mic-mute-led = {
+      description = "Jiggle mic mute LED";
+      script = ''
+        pactl set-source-mute @DEFAULT_SOURCE@ toggle
+        pactl set-source-mute @DEFAULT_SOURCE@ toggle
+      '';
+      path = [ pkgs.pulseaudio ];
+      after = [ "default.target" ];
+      wantedBy = [ "pulseaudio.service" ];
+    };
+
   };
 
   nixpkgs.overlays = [
