@@ -14,10 +14,6 @@ headphones = ports.partition(headphones_name)[2]
 closed = headphones.splitlines()[0]
 available = not 'not available' in closed
 
-file = open('/home/evenbrenden/testfile.txt', 'w')
-file.write('Hello World ' + str(available))
-file.close()
-
 if available:
     jiggle_port = speaker_name
     target_port = headphones_name
