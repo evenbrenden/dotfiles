@@ -34,6 +34,7 @@
         patch = ./0002-ALSA-hda-realtek-Replace-Lenovo-Thinkpad-X1-Carbon-7.patch;
       }
     ];
+    supportedFilesystems = [ "ntfs" ];
   };
 
   swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
