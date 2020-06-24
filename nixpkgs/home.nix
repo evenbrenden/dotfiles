@@ -36,6 +36,7 @@ in
       "i3/config".source = ./dotfiles/i3config;
       "i3status/config".source = ./dotfiles/i3status;
       "dunst/dunstrc".source = ./dotfiles/dunstrc;
+      "autorandr".source = ./dotfiles/autorandr;
     };
   };
   home.file = {
