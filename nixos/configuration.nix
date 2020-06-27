@@ -44,15 +44,15 @@
     networkmanager.enable = true;
   };
 
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-  nixpkgs.config.pulseaudio = true; # Explicit PulseAudio support in applications
-
   hardware = {
     bluetooth.enable = true;
     enableAllFirmware = true;
     enableRedistributableFirmware = true;
   };
+
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
+  nixpkgs.config.pulseaudio = true; # Explicit PulseAudio support in applications
 
   systemd.services = {
     headphones-clicks-fix = {
@@ -113,6 +113,7 @@
       curl
       dbeaver
       dos2unix
+      dotnet-sdk_3
       dunst
       firefox
       gimp
@@ -121,6 +122,7 @@
       hsetroot
       irssi
       jetbrains.rider
+      jotta-cli
       networkmanagerapplet
       libnotify
       libsForQt5.vlc
@@ -136,8 +138,6 @@
       shellcheck
       slack
       spotify
-      dotnet-sdk_3
-      jotta-cli
       teams
       unzip
       veracrypt
