@@ -116,6 +116,7 @@
       dotnet-sdk_3
       dunst
       firefox
+      fzf
       gimp
       git
       gparted
