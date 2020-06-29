@@ -181,7 +181,7 @@
         lightdm = {
           autoLogin.enable = true;
           autoLogin.user = "evenbrenden";
-          background = "#000000";
+          background = ./nothing.png;
           greeters.gtk.indicators = [ "~host" "~spacer" "~session" "~language" "~clock" "~power" ];
         };
         # Because xsetroot does not work with Picom
