@@ -86,7 +86,6 @@
       after = [ "default.target" ];
       wantedBy = [ "pulseaudio.service" ];
     };
-
   };
 
   nixpkgs.overlays = [
