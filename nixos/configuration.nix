@@ -107,9 +107,6 @@
 
   programs.ssh.startAgent = true;
 
-  nix.gc.automatic = true;
-  nix.gc.dates = "04:00";
-
   time.timeZone = "Europe/Amsterdam";
 
   users.users.evenbrenden = {
