@@ -116,6 +116,7 @@
 
   services = {
     dbus.socketActivated = true;
+    fwupd.enable = true;
     openssh.enable = false;
     picom.enable = true;
     xserver = {
