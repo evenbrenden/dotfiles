@@ -28,7 +28,7 @@
           hda-verb /dev/snd/hwC0D0 0x20 SET_PROC_COEF 0x3717
         '';
         path = [ pkgs.alsaTools ];
-        after = [ "multi-user.target" ];
+        after = [ "multi-user.target" "sound.target" "graphical.target" ];
         wantedBy = [ "sound.target" ];
       };
     };
