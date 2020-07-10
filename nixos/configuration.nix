@@ -46,7 +46,7 @@
   nixpkgs.config.pulseaudio = true; # Explicit PulseAudio support in applications
 
   nixpkgs.overlays = [
-    (import ../overlays/jetbrains_old.nix)
+    (import ../overlays/jetbrains_2019.3.4.nix)
   ];
 
   nixpkgs.config = {
