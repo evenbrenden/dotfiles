@@ -121,6 +121,14 @@
     openssh.enable = false;
     picom.enable = true;
     xserver = {
+      xautolock = {
+        enable = true;
+        enableNotifier = true;
+        locker = ''${pkgs.i3lock}/bin/i3lock --color 000000'';
+        notifier = ''${pkgs.libnotify}/bin/notify-send "Locking in 10s"'';
+        notify = 10;
+        time = 10;
+      };
       enable = true;
       layout = "us";
       dpi = 144;
