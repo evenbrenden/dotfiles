@@ -77,6 +77,7 @@
       irssi
       jetbrains.rider
       jotta-cli
+      jq
       networkmanagerapplet
       libnotify
       libsForQt5.vlc
@@ -98,6 +99,7 @@
       veracrypt
       vscode
       xorg.xdpyinfo
+      zip
     ];
   };
 
