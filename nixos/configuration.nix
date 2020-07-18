@@ -87,7 +87,7 @@
       python3
       python37Packages.virtualenv
       rclone
-      (callPackage (import ./../nixpkgs/pkgs/rclone-sync.nix) {})
+      (callPackage (import ./../pkgs/rclone-sync.nix) {})
       remmina
       sakura
       shellcheck
