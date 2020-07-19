@@ -27,8 +27,8 @@
           hda-verb /dev/snd/hwC0D0 0x1d SET_PIN_WIDGET_CONTROL 0x0
         '';
         path = [ pkgs.alsaTools ];
-        after = [ "multi-user.target" "sound.target" "graphical.target" ];
-        wantedBy = [ "sound.target" ];
+        after = [ "multi-user.target" "sound.target" "graphical.target" "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
+        wantedBy = [ "sound.target" "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
       };
     };
     user.services = {
