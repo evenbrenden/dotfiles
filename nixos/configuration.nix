@@ -85,6 +85,7 @@
       nomacs
       playerctl
       postman
+      power-calibrate
       python3
       python37Packages.virtualenv
       rclone
@@ -150,16 +151,12 @@
         # Because xsetroot does not work with Picom
         sessionCommands = ''
             hsetroot -solid #000000
+            xset -dpms
         '';
       };
       windowManager.i3.enable = true;
     };
   };
-
-  systemd.targets.sleep.enable = false;
-  systemd.targets.suspend.enable = false;
-  systemd.targets.hibernate.enable = false;
-  systemd.targets.hybrid-sleep.enable = false;
 
   system.stateVersion = "20.03";
 }
