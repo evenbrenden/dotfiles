@@ -167,5 +167,6 @@ exec --no-startup-id amixer -q -c 0 set 'Auto-Mute Mode' 'Disabled'
 exec sakura
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
-exec --no-startup-id xfce4-power-manager
+exec --no-startup-id xfce4-power-manager # For Ubuntu
+exec --no-startup-id upower-notify # For NixOS
 exec --no-startup-id python3 ~/bin/notifications.py on

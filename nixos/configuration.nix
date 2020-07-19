@@ -72,6 +72,7 @@
       fzf
       gimp
       git
+      go-upower-notify
       gparted
       hsetroot
       irssi
@@ -123,6 +124,7 @@
     fwupd.enable = true;
     openssh.enable = false;
     picom.enable = true;
+    upower.enable = true;
     xserver = {
       xautolock = {
         enable = true;
@@ -155,11 +157,6 @@
       windowManager.i3.enable = true;
     };
   };
-
-  systemd.targets.sleep.enable = false;
-  systemd.targets.suspend.enable = false;
-  systemd.targets.hibernate.enable = false;
-  systemd.targets.hybrid-sleep.enable = false;
 
   system.stateVersion = "20.03";
 }
