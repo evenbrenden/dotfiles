@@ -158,5 +158,10 @@
     };
   };
 
+  services.logind.extraConfig = ''
+    IdleAction=hybrid-sleep
+    IdleActionSec=900
+  '';
+
   system.stateVersion = "20.03";
 }
