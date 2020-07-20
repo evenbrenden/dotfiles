@@ -6,6 +6,11 @@
     pkgs.power-calibrate
   ];
 
+  programs.xss-lock = {
+    enable = true;
+    lockerCommand = ''${pkgs.i3lock}/bin/i3lock --color 000000'';
+  };
+
   services = {
     logind = {
       extraConfig = ''
