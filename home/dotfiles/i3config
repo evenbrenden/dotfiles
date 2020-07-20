@@ -17,6 +17,9 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # lock screen
 bindsym $mod+l exec i3lock --color 000000
 
+# sleep
+bindsym $mod+Ctrl+s exec systemctl hybrid-sleep
+
 # change keyboard layout
 bindsym $mod+k exec --no-startup-id python3 ~/bin/toggle_keyboard_layout.py
 
