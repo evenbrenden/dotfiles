@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 # No battery actions or notifications (i3status is sufficient)
 # No lid actions (screen shuts off on lid close anyway)
@@ -21,7 +21,6 @@ in
         lidSwitchDocked = "ignore";
         lidSwitchExternalPower = "ignore";
       };
-      tlp.enable = true;
       xserver = {
         displayManager.sessionCommands = ''
           xset -dpms
@@ -37,5 +36,7 @@ in
         };
       };
     };
+    services.tlp.enable = true;
+    boot.extraModulePackages = [ config.boot.kernelPackages.acpi_call ]; # For ThinkPads x TLP
   }
 
