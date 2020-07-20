@@ -6,16 +6,18 @@
 # Lock and sleep on inactivity (all power buttons ignored)
 
 let
-  timeout = 15;
-  notify = 30;
+  sleep_time = 30; # minutes
+  lock_time = 15; # minutes
+  lock_notify = 30; # seconds
 in
   {
     environment.systemPackages = [ pkgs.brightnessctl ];
     services = {
       logind = {
+        # This doesn't seem to work
         extraConfig = ''
           IdleAction=hybrid-sleep
-          IdleActionSec=${toString timeout}min
+          IdleActionSec=${toString sleep_time}min
         '';
         lidSwitch = "ignore";
         lidSwitchDocked = "ignore";
@@ -30,9 +32,9 @@ in
           enableNotifier = true;
           extraOptions = [ "-secure" ];
           locker = ''${pkgs.i3lock}/bin/i3lock --color 000000'';
-          notifier = ''${pkgs.libnotify}/bin/notify-send "Lock (and sleep) in ${toString notify}s"'';
-          notify = notify;
-          time = timeout;
+          notifier = ''${pkgs.libnotify}/bin/notify-send "Locking in ${toString lock_notify} seconds"'';
+          notify = lock_notify;
+          time = lock_time;
         };
       };
     };
