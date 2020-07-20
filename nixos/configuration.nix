@@ -61,7 +61,6 @@
       alsaTools
       arandr
       autorandr
-      brightnessctl
       cabal-install
       chromium
       curl
@@ -147,16 +146,6 @@
         '';
       };
       windowManager.i3.enable = true;
-    };
-
-    logind.lidSwitch = "lock";
-    xserver.xautolock = {
-        enable = true;
-        enableNotifier = true;
-        locker = ''${pkgs.i3lock}/bin/i3lock --color 000000'';
-        notifier = ''${pkgs.libnotify}/bin/notify-send "Locking in 10s"'';
-        notify = 10;
-        time = 10;
     };
   };
 
