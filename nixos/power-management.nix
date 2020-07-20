@@ -2,7 +2,9 @@
 
 {
   # Until I can figure out how to install acpi-call (for TLP)
-  environment.systemPackages = [ pkgs.power-calibrate ];
+  environment.systemPackages = [
+    pkgs.power-calibrate
+  ];
 
   services = {
     logind = {
