@@ -156,7 +156,7 @@
         locker = ''${pkgs.i3lock}/bin/i3lock --color 000000'';
         notifier = ''${pkgs.libnotify}/bin/notify-send "Locking in 10s"'';
         notify = 10;
-        time = 10; # Less than sleep timeout (i.e. cheap lock-on-sleep)
+        time = 10;
     };
   };
 
