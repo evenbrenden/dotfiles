@@ -11,21 +11,19 @@
     initrd.luks.devices = {
       root = {
         device = "/dev/nvme0n1p1";
-        preLVM = true;
         allowDiscards = true;
+        preLVM = true;
       };
     };
+    kernel.sysctl."fs.inotify.max_user_watches" = 524288;
+    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
+      efi.canTouchEfiVariables = true;
       systemd-boot = {
         enable = true;
         configurationLimit = 50;
       };
-      efi.canTouchEfiVariables = true;
     };
-    kernel.sysctl = {
-      "fs.inotify.max_user_watches" = 524288;
-    };
-    kernelPackages = pkgs.linuxPackages_latest;
     supportedFilesystems = [ "ntfs" ];
   };
 
@@ -46,14 +44,14 @@
   hardware.pulseaudio.enable = true;
   nixpkgs.config.pulseaudio = true; # Explicit PulseAudio support in applications
 
-  nixpkgs.overlays = [
-    (import ../overlays/jetbrains_2019.3.4.nix)
-  ];
-
   nixpkgs.config = {
     allowUnfree = true;
     chromium.enableWideVine = true;
   };
+
+  nixpkgs.overlays = [
+    (import ../overlays/jetbrains_2019.3.4.nix)
+  ];
 
   environment = {
     systemPackages = with pkgs; [
@@ -103,19 +101,19 @@
     ];
   };
 
+  programs.ssh.startAgent = true;
+
   virtualisation.virtualbox.host = {
     enableExtensionPack = true;
     enable = true;
   };
 
-  programs.ssh.startAgent = true;
-
-  time.timeZone = "Europe/Amsterdam";
-
   users.users.evenbrenden = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "video" "vboxusers" ];
   };
+
+  time.timeZone = "Europe/Amsterdam";
 
   services = {
     dbus.socketActivated = true;
@@ -126,12 +124,6 @@
 
     xserver = {
       enable = true;
-      layout = "us";
-      dpi = 144;
-      libinput = {
-        enable = true;
-        tapping = true;
-      };
       displayManager = {
         defaultSession = "none+i3";
         lightdm = {
@@ -144,6 +136,12 @@
         sessionCommands = ''
           hsetroot -solid #000000
         '';
+      };
+      dpi = 144;
+      layout = "us";
+      libinput = {
+        enable = true;
+        tapping = true;
       };
       windowManager.i3.enable = true;
     };
