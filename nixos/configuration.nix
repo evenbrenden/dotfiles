@@ -2,7 +2,8 @@
 
 {
   imports = [
-    ./x1c7_audio_hacks.nix
+    ./x1c7-audio-hacks.nix
+    ./power-management.nix
     ./hardware-configuration.nix
   ];
 
@@ -85,7 +86,6 @@
       nomacs
       playerctl
       postman
-      power-calibrate
       python3
       python37Packages.virtualenv
       rclone
@@ -124,15 +124,8 @@
     fwupd.enable = true;
     openssh.enable = false;
     picom.enable = true;
+
     xserver = {
-      xautolock = {
-        enable = true;
-        enableNotifier = true;
-        locker = ''${pkgs.i3lock}/bin/i3lock --color 000000'';
-        notifier = ''${pkgs.libnotify}/bin/notify-send "Locking in 10s"'';
-        notify = 10;
-        time = 10;
-      };
       enable = true;
       layout = "us";
       dpi = 144;
@@ -150,18 +143,22 @@
         };
         # Because xsetroot does not work with Picom
         sessionCommands = ''
-            hsetroot -solid #000000
-            xset -dpms
+          hsetroot -solid #000000
         '';
       };
       windowManager.i3.enable = true;
     };
-  };
 
-  services.logind.extraConfig = ''
-    IdleAction=hybrid-sleep
-    IdleActionSec=900
-  '';
+    logind.lidSwitch = "lock";
+    xserver.xautolock = {
+        enable = true;
+        enableNotifier = true;
+        locker = ''${pkgs.i3lock}/bin/i3lock --color 000000'';
+        notifier = ''${pkgs.libnotify}/bin/notify-send "Locking in 10s"'';
+        notify = 10;
+        time = 10;
+    };
+  };
 
   system.stateVersion = "20.03";
 }
