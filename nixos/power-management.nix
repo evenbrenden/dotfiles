@@ -1,29 +1,41 @@
 { pkgs, ... }:
 
-{
-  # Until I can figure out how to install acpi-call (for TLP)
-  environment.systemPackages = [
-    pkgs.power-calibrate
-  ];
+# No battery actions or notifications (i3status is sufficient)
+# No lid actions (screen shuts off on lid close anyway)
+# No display power management (manual brightness control)
+# Lock and sleep on inactivity (all power buttons ignored)
 
-  programs.xss-lock = {
-    enable = true;
-    lockerCommand = ''${pkgs.i3lock}/bin/i3lock --color 000000'';
-  };
-
-  services = {
-    logind = {
-      extraConfig = ''
-        IdleAction=hybrid-sleep
-        IdleActionSec=900
-      '';
+let
+  timeout = 15;
+  notify = 30;
+in
+  {
+    environment.systemPackages = [ pkgs.brightnessctl ];
+    services = {
+      logind = {
+        extraConfig = ''
+          IdleAction=hybrid-sleep
+          IdleActionSec=${toString timeout}min
+        '';
+        lidSwitch = "ignore";
+        lidSwitchDocked = "ignore";
+        lidSwitchExternalPower = "ignore";
+      };
+      tlp.enable = true;
+      xserver = {
+        displayManager.sessionCommands = ''
+          xset -dpms
+        '';
+        xautolock = {
+          enable = true;
+          enableNotifier = true;
+          extraOptions = [ "-secure" ];
+          locker = ''${pkgs.i3lock}/bin/i3lock --color 000000'';
+          notifier = ''${pkgs.libnotify}/bin/notify-send "Lock (and sleep) in ${toString notify}s"'';
+          notify = notify;
+          time = timeout;
+        };
+      };
     };
-    tlp.enable = true;
-    xserver = {
-      displayManager.sessionCommands = ''
-        xset -dpms
-      '';
-    };
-  };
-}
+  }
 
