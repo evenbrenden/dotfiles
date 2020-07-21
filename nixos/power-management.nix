@@ -28,6 +28,7 @@ in
       };
       xserver = {
         displayManager.sessionCommands = ''
+          xset s off
           xset -dpms
         '';
         xautolock = {
