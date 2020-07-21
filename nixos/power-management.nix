@@ -3,7 +3,9 @@
 # No battery actions or notifications (i3status is sufficient)
 # No lid actions (screen shuts off on lid close anyway)
 # No display power management (manual brightness control)
-# Lock on inactivity (no sleep just shutdown with i3 key bind)
+# Lock on inactivity (for security)
+# Make sure screen is locked on sleep (using xss-lock)
+# Sleep and shutdown on command only (using i3 key binds)
 # Let TLP do its thing (whatever it is) in the background
 
 let
@@ -12,6 +14,11 @@ let
 in
   {
     environment.systemPackages = [ pkgs.brightnessctl ];
+
+    programs.xss-lock = {
+      enable = true;
+      lockerCommand = ''${pkgs.i3lock}/bin/i3lock --color 000000'';
+    };
 
     services = {
       logind = {
