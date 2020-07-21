@@ -17,9 +17,6 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # lock screen
 bindsym $mod+l exec i3lock --color 000000
 
-# shutdown
-bindsym $mod+Shift+Ctrl+s exec shutdown now
-
 # change keyboard layout
 bindsym $mod+k exec --no-startup-id python3 ~/bin/toggle_keyboard_layout.py
 
@@ -133,8 +130,8 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session and can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# shutdown
+bindsym $mod+Shift+s exec bash ~/bin/shutdown_dialog.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

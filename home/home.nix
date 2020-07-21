@@ -47,5 +47,6 @@ in
     "bin/notifications.py".source = ./dotfiles/notifications.py;
     "bin/toggle_keyboard_layout.py".source = ./dotfiles/toggle_keyboard_layout.py;
     "bin/i3status.sh".source = ./dotfiles/i3status.sh;
+    "bin/shutdown_dialog.sh".source = ./dotfiles/shutdown_dialog.sh;
   };
 }
