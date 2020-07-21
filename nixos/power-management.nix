@@ -3,7 +3,7 @@
 # No battery actions or notifications (i3status is sufficient)
 # No lid actions (screen shuts off on lid close anyway)
 # No display power management (manual brightness control)
-# Lock on inactivity (for security)
+# Lock on inactivity (using i3lock directly) (for security)
 # Make sure screen is locked on sleep (using xss-lock)
 # Sleep and shutdown on command only (using i3 key binds)
 # Let TLP do its thing (whatever it is) in the background
