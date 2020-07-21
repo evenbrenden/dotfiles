@@ -3,7 +3,7 @@
 # No battery actions or notifications (i3status is sufficient)
 # No lid actions (screen shuts off on lid close anyway)
 # No display power management (manual brightness control)
-# Lock inactivity (and sleep on i3wm keyboard binding)
+# Lock on inactivity (no sleep just shutdown with i3 key bind)
 
 let
   lock_time = 15; # minutes
