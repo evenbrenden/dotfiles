@@ -14,9 +14,6 @@ bindsym $mod+Shift+q kill
 # start dmenu
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# lock screen
-bindsym $mod+l exec i3lock --color 000000
-
 # change keyboard layout
 bindsym $mod+k exec --no-startup-id python3 ~/bin/toggle_keyboard_layout.py
 
@@ -130,8 +127,14 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session and can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
+# lock screen
+bindsym $mod+l exec i3lock --color 000000
+
+# sleep
+bindsym $mod+Shift+s exec systemctl hybrid-sleep
+
 # shutdown
-bindsym $mod+Shift+s exec bash ~/bin/shutdown_dialog.sh
+bindsym $mod+Shift+e exec bash ~/bin/shutdown_dialog.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
