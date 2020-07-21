@@ -4,6 +4,7 @@
 # No lid actions (screen shuts off on lid close anyway)
 # No display power management (manual brightness control)
 # Lock on inactivity (no sleep just shutdown with i3 key bind)
+# Let TLP do its thing (whatever it is) in the background
 
 let
   lock_time = 15; # minutes
