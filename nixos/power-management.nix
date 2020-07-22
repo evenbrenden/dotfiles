@@ -24,7 +24,6 @@ in
           xset s off
           xset -dpms
         '';
-        # can be disabled and reenabled with systemctl
         xautolock = {
           enable = true;
           enableNotifier = true;
