@@ -1,12 +1,5 @@
 { config, pkgs, ... }:
 
-# No battery actions or notifications (status bar tells all)
-# No lid actions (screen powers off when lid is closed)
-# No screen saver or DPMS (manual brightness control)
-# No inactivity actions (except lock for security)
-# Lock on sleep (thanx xss-lock)
-# Let TLP do its thing (whatever it is)
-
 let
   lock_time = 60; # minutes
   lock_notify = 60; # seconds
