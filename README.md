@@ -1,1 +1,1 @@
-![](madman.jpg)
+![](README.jpg)
