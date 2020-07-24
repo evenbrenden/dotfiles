@@ -7,7 +7,6 @@ in
   {
     environment.systemPackages = [ pkgs.brightnessctl ];
 
-    # nixpkgs PR #93764 (since loginctl lock-session should trigger xss-lock) (only need this for lock on sleep though)
     programs.xss-lock = {
       enable = true;
       lockerCommand = ''${pkgs.i3lock}/bin/i3lock --color 000000'';
@@ -15,7 +14,6 @@ in
 
     services = {
       logind = {
-        # nixpkgs PR #93764 (since xss-lock handles the session login idle hint) (no idle action desired now though)
         extraConfig = "IdleAction=ignore";
         lidSwitch = "ignore";
         lidSwitchDocked = "ignore";
@@ -30,7 +28,7 @@ in
           enable = true;
           enableNotifier = true;
           extraOptions = [ "-secure" ];
-          # nixpkgs PR #93764 (use loginctl lock-session $XDG_SESSION_ID if merged) (works just fine with this setup though)
+          # nixpkgs PR #93764 (use loginctl lock-session $XDG_SESSION_ID if merged)
           locker = ''${pkgs.i3lock}/bin/i3lock --color 000000'';
           notifier = ''${pkgs.libnotify}/bin/notify-send "Lock in ${toString lock_notify} seconds"'';
           notify = lock_notify;
