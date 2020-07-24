@@ -128,13 +128,10 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # lock screen
-bindsym $mod+l exec i3lock --color 000000
+bindsym $mod+Shift+l exec i3lock --color 000000
 
 # sleep
 bindsym $mod+Shift+s exec systemctl hybrid-sleep
-
-# shutdown
-bindsym $mod+Shift+x exec bash ~/bin/shutdown_dialog.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
