@@ -7,7 +7,7 @@ in
   {
     environment.systemPackages = [ pkgs.brightnessctl ];
 
-    # nixpkgs issue #67350 (only need this for lock on sleep though)
+    # nixpkgs issue #67350 (since loginctl lock-session should trigger xss-lock) (only need this for lock on sleep though)
     programs.xss-lock = {
       enable = true;
       lockerCommand = ''${pkgs.i3lock}/bin/i3lock --color 000000'';
@@ -15,6 +15,7 @@ in
 
     services = {
       logind = {
+        # nixpkgs issue #67350 (since xss-lock handles the session login idle hint) (no idle action desired now though)
         extraConfig = "IdleAction=ignore";
         lidSwitch = "ignore";
         lidSwitchDocked = "ignore";
