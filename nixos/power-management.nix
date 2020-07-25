@@ -14,7 +14,6 @@ in
 
     services = {
       logind = {
-        extraConfig = "IdleAction=ignore";
         lidSwitch = "ignore";
         lidSwitchDocked = "ignore";
         lidSwitchExternalPower = "ignore";
