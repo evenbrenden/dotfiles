@@ -7,6 +7,7 @@
     ./hardware-configuration.nix
   ];
 
+  # Disk and the likes
   boot = {
     initrd.luks.devices = {
       root = {
@@ -26,33 +27,27 @@
     };
     supportedFilesystems = [ "ntfs" ];
   };
-
   swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
+  networking.hostName = "naxos";
 
-  networking = {
-    hostName = "naxos";
-    networkmanager.enable = true;
-  };
-
+  # Sound
   hardware = {
     bluetooth.enable = true;
     enableAllFirmware = true;
     enableRedistributableFirmware = true;
   };
-
   sound.enable = true;
   hardware.pulseaudio.enable = true;
   nixpkgs.config.pulseaudio = true; # Explicit PulseAudio support in applications
 
+  # Programs
   nixpkgs.config = {
     allowUnfree = true;
     chromium.enableWideVine = true;
   };
-
   nixpkgs.overlays = [
     (import ../overlays/jetbrains_2019.3.4.nix)
   ];
-
   environment = {
     systemPackages = with pkgs; [
       abcde
@@ -100,30 +95,30 @@
       zip
     ];
   };
-
+  networking.networkmanager.enable = true;
   programs.ssh.startAgent = true;
-
+  services.openssh.enable = false;
+  services.fwupd.enable = true;
+  services.picom.enable = true;
   virtualisation.virtualbox.host = {
     enableExtensionPack = true;
     enable = true;
   };
 
+  # User
   users.users.evenbrenden = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "video" "vboxusers" ];
   };
-
   time.timeZone = "Europe/Amsterdam";
+  services.fprintd.enable = true;
 
+  # Display et al.
   services = {
-    dbus.socketActivated = true;
-    fprintd.enable = true;
-    fwupd.enable = true;
-    openssh.enable = false;
-    picom.enable = true;
-
     xserver = {
       enable = true;
+      dpi = 144;
+      layout = "us";
       displayManager = {
         defaultSession = "none+i3";
         lightdm = {
@@ -137,8 +132,6 @@
           hsetroot -solid #000000
         '';
       };
-      dpi = 144;
-      layout = "us";
       libinput = {
         enable = true;
         tapping = true;
@@ -147,5 +140,8 @@
     };
   };
 
+  # Misc
+  services.dbus.socketActivated = true;
   system.stateVersion = "20.03";
 }
+
