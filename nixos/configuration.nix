@@ -62,15 +62,16 @@
       zip
     ];
   };
-  networking.networkmanager.enable = true;
   programs.ssh.startAgent = true;
   services.openssh.enable = false;
+  services.fprintd.enable = true;
   services.fwupd.enable = true;
   services.picom.enable = true;
   virtualisation.virtualbox.host = {
     enableExtensionPack = true;
     enable = true;
   };
+  networking.networkmanager.enable = true;
 
   # User
   users.users.evenbrenden = {
@@ -78,7 +79,6 @@
     extraGroups = [ "wheel" "networkmanager" "audio" "video" "vboxusers" ];
   };
   time.timeZone = "Europe/Amsterdam";
-  services.fprintd.enable = true;
 
   # Display et al.
   services = {
