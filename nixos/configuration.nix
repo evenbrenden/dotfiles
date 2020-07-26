@@ -78,7 +78,6 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "video" "vboxusers" ];
   };
-  time.timeZone = "Europe/Amsterdam";
 
   # Display et al.
   services = {
@@ -138,10 +137,11 @@
     supportedFilesystems = [ "ntfs" ];
   };
   swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
-  networking.hostName = "naxos";
 
   # Misc
+  networking.hostName = "naxos";
   services.dbus.socketActivated = true;
   system.stateVersion = "20.03";
+  time.timeZone = "Europe/Amsterdam";
 }
 
