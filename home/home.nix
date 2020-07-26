@@ -1,6 +1,24 @@
 { config, pkgs, ... }:
 
 {
+  services.screen-locker =
+    let
+      lock-time = 60; # minutes
+      lock-notify = 60; # seconds
+    in
+      {
+        enable = true;
+        inactiveInterval = lock-time;
+        xautolockExtraOptions = [
+          "-secure"
+          "-notify"
+          "${toString lock-notify}"
+          "-notifier"
+          "'${pkgs.libnotify}/bin/notify-send \"Lock in ${toString lock-notify} seconds\"'"
+        ];
+        lockCmd = ''${pkgs.i3lock}/bin/i3lock --color 000000'';
+      };
+
   programs = {
     home-manager.enable = true;
     man.enable = false;
