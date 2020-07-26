@@ -27,7 +27,7 @@ in
           enable = true;
           enableNotifier = true;
           extraOptions = [ "-secure" ];
-          # nixpkgs PR #93764 (use loginctl lock-session $XDG_SESSION_ID if merged)
+          # nixpkgs PR #93764 (will currently try to lock an already locked screen but thats ok)
           locker = ''${pkgs.i3lock}/bin/i3lock --color 000000'';
           notifier = ''${pkgs.libnotify}/bin/notify-send "Lock in ${toString lock_notify} seconds"'';
           notify = lock_notify;
