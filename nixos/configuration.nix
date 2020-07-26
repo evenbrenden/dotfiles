@@ -7,39 +7,6 @@
     ./hardware-configuration.nix
   ];
 
-  # Disk and the likes
-  boot = {
-    initrd.luks.devices = {
-      root = {
-        device = "/dev/nvme0n1p1";
-        allowDiscards = true;
-        preLVM = true;
-      };
-    };
-    kernel.sysctl."fs.inotify.max_user_watches" = 524288;
-    kernelPackages = pkgs.linuxPackages_latest;
-    loader = {
-      efi.canTouchEfiVariables = true;
-      systemd-boot = {
-        enable = true;
-        configurationLimit = 50;
-      };
-    };
-    supportedFilesystems = [ "ntfs" ];
-  };
-  swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
-  networking.hostName = "naxos";
-
-  # Sound
-  hardware = {
-    bluetooth.enable = true;
-    enableAllFirmware = true;
-    enableRedistributableFirmware = true;
-  };
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-  nixpkgs.config.pulseaudio = true; # Explicit PulseAudio support in applications
-
   # Programs
   nixpkgs.config = {
     allowUnfree = true;
@@ -139,6 +106,39 @@
       windowManager.i3.enable = true;
     };
   };
+
+  # Sound
+  hardware = {
+    bluetooth.enable = true;
+    enableAllFirmware = true;
+    enableRedistributableFirmware = true;
+  };
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
+  nixpkgs.config.pulseaudio = true; # Explicit PulseAudio support in applications
+
+  # Disk and the likes
+  boot = {
+    initrd.luks.devices = {
+      root = {
+        device = "/dev/nvme0n1p1";
+        allowDiscards = true;
+        preLVM = true;
+      };
+    };
+    kernel.sysctl."fs.inotify.max_user_watches" = 524288;
+    kernelPackages = pkgs.linuxPackages_latest;
+    loader = {
+      efi.canTouchEfiVariables = true;
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 50;
+      };
+    };
+    supportedFilesystems = [ "ntfs" ];
+  };
+  swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
+  networking.hostName = "naxos";
 
   # Misc
   services.dbus.socketActivated = true;
