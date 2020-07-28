@@ -20,6 +20,7 @@
 
   systemd = {
     services = {
+      # There are clicks on the headphones jack when there's transient silence. This makes them less noticable, but not completely gone.
       headphones-clicks-fix = {
         description = "Headphones clicks fix";
         documentation = [ "https://gist.github.com/hamidzr/dd81e429dc86f4327ded7a2030e7d7d9#gistcomment-3154512" ];
