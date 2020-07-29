@@ -20,9 +20,12 @@
 
   systemd = {
     services = {
-      # There are clicks on the headphones jack when there's transient silence. This makes them less noticable, but not completely gone.
-      headphones-clicks-fix = {
-        description = "Headphones clicks fix";
+      # There are clicks on right channel of the headphone jack when there's
+      # transient silence. This can be heard in the beginning of the the clip
+      # in https://youtu.be/2ZrWHtvSog4. Running the following command makes
+      # them less noticable, but not completely gone. It's not that bad tbh.
+      reduce-headphone-jack-clicks = {
+        description = "Reduce headphone jack clicks";
         documentation = [ "https://gist.github.com/hamidzr/dd81e429dc86f4327ded7a2030e7d7d9#gistcomment-3154512" ];
         script = ''
           hda-verb /dev/snd/hwC0D0 0x1d SET_PIN_WIDGET_CONTROL 0x0
