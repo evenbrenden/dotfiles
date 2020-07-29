@@ -26,8 +26,10 @@
       # them less noticable, but not completely gone. It's not that bad tbh.
       reduce-headphone-jack-clicks = {
         description = "Reduce headphone jack clicks";
-        documentation = [ "https://gist.github.com/hamidzr/dd81e429dc86f4327ded7a2030e7d7d9#gistcomment-3154512" ];
         script = ''
+          # Played around with hda-analyzer and found that this makes a difference
+          hda-verb /dev/snd/hwC0D0 0x1a SET_PIN_WIDGET_CONTROL 0x0
+          # https://gist.github.com/hamidzr/dd81e429dc86f4327ded7a2030e7d7d9#gistcomment-3154512
           hda-verb /dev/snd/hwC0D0 0x1d SET_PIN_WIDGET_CONTROL 0x0
         '';
         path = [ pkgs.alsaTools ];
