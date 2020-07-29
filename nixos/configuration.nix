@@ -64,7 +64,7 @@
   };
   programs.ssh.startAgent = true;
   services.openssh.enable = false;
-  services.fprintd.enable = true;
+  services.fprintd.enable = false;
   services.fwupd.enable = true;
   services.picom.enable = true;
   virtualisation.virtualbox.host = {
