@@ -29,6 +29,7 @@
       dotnet-sdk_3
       dunst
       firefox
+      flameshot
       fzf
       gimp
       git
