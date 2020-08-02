@@ -12,9 +12,6 @@
     allowUnfree = true;
     chromium.enableWideVine = true;
   };
-  nixpkgs.overlays = [
-    (import ../overlays/jetbrains_2019.3.4.nix)
-  ];
   environment = {
     systemPackages = with pkgs; [
       abcde
