@@ -2,10 +2,9 @@
 
 {
   boot.kernelPatches = [
-    # https://github.com/gobenji/thinkpad-x1-gen7-sound
     {
       name = "alsa-hda-realtek-fix";
-      patch = ./alsa-hda-realtek-fix-linux-5.7.11.patch;
+      patch = ./0002-ALSA-hda-realtek-Replace-Lenovo-Thinkpad-X1-Carbon-7.patch;
     }
   ];
 
