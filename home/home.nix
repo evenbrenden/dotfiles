@@ -19,15 +19,15 @@
             };
           };
         in
-          [
-            vim-airline
-            vim-fsharp
-            vim-gitgutter
-            vim-markdown
-            vim-nix
-            vim-pico8-syntax
-            tcomment_vim
-          ];
+        [
+          vim-airline
+          vim-fsharp
+          vim-gitgutter
+          vim-markdown
+          vim-nix
+          vim-pico8-syntax
+          tcomment_vim
+        ];
     };
   };
   home.packages = with pkgs;
