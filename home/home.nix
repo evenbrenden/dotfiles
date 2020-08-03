@@ -44,6 +44,7 @@
     in
     [
       autorandr
+      brightnessctl
       dunst_pinned
       networkmanagerapplet
       libnotify
