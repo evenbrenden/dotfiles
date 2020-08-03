@@ -40,7 +40,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id python3 ~/bin/adjust_brightne
 bindsym XF86MonBrightnessUp exec --no-startup-id python3 ~/bin/adjust_brightness.py up
 
 # notifications control
-bindsym $mod+n exec --no-startup-id python3 ~/bin/notifications.py
+bindsym $mod+n exec --no-startup-id dunstctl set-paused toggle && pkill -x -USR1 i3status
 
 # hide edge borders for single-window workspaces
 hide_edge_borders smart
@@ -164,4 +164,3 @@ exec --no-startup-id amixer -q -c 0 set 'Auto-Mute Mode' 'Disabled'
 exec sakura
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
-exec --no-startup-id python3 ~/bin/notifications.py on
