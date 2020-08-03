@@ -1,15 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  dunst_bleeding = pkgs.dunst.overrideAttrs (oldAttrs: rec {
-    src = pkgs.fetchFromGitHub {
-      owner = "dunst-project";
-      repo = "dunst";
-      rev = "fb2ffd425e2cfe42de0c633bcdf3a0203bfef90d";
-      sha256 = "0qv85vpcvfp4d2rc79zilrzqfvjq5l1fai938mfnizqa7yawcci0";
-    };
-  });
-in
 {
   imports = [
     ./x1c7-audio-hacks.nix
@@ -37,7 +27,6 @@ in
       dbeaver
       dos2unix
       dotnet-sdk_3
-      dunst_bleeding
       firefox
       fzf
       gimp

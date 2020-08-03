@@ -40,7 +40,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id python3 ~/bin/adjust_brightne
 bindsym XF86MonBrightnessUp exec --no-startup-id python3 ~/bin/adjust_brightness.py up
 
 # notifications control
-bindsym $mod+n exec python3 ~/toggle_notifications.py
+bindsym $mod+n exec --no-startup-id dunstctl set-paused toggle && pkill -x -USR1 i3status
 
 # hide edge borders for single-window workspaces
 hide_edge_borders smart

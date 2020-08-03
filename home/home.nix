@@ -30,6 +30,19 @@
           ];
     };
   };
+  home.packages =
+    let
+      dunst = pkgs.dunst.overrideAttrs (oldAttrs: rec {
+        version = "1.5.0";
+        src = pkgs.fetchFromGitHub {
+          owner = "dunst-project";
+          repo = "dunst";
+          rev = "52d67616f1dcd9d4201de3f8096cbc2c09dbf1dd";
+          sha256 = "0irwkqcgwkqaylcpvqgh25gn2ysbdm2kydipxfzcq1ddj9ns6f9c";
+        };
+      });
+    in
+      [ dunst ];
 
   xdg = {
     enable = true;
@@ -46,7 +59,6 @@
     ".gitignore".source = ./dotfiles/gitignore;
     ".gitconfig".source = ./dotfiles/gitconfig;
     "bin/adjust_brightness.py".source = ./dotfiles/adjust_brightness.py;
-    "bin/notifications.py".source = ./dotfiles/notifications.py;
     "bin/toggle_keyboard_layout.py".source = ./dotfiles/toggle_keyboard_layout.py;
     "bin/i3status.sh".source = ./dotfiles/i3status.sh;
   };
