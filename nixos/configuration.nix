@@ -17,7 +17,6 @@
       abcde
       alsaTools
       arandr
-      autorandr
       cabal-install
       chromium
       curl
@@ -35,19 +34,15 @@
       jetbrains.rider
       jotta-cli
       jq
-      networkmanagerapplet
-      libnotify
       libsForQt5.vlc
       linuxConsoleTools
       nomacs
-      playerctl
       postman
       python3
       python37Packages.virtualenv
       rclone
       (callPackage (import ./../pkgs/rclone-sync.nix) {})
       remmina
-      sakura
       shellcheck
       slack
       spotify

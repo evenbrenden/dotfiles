@@ -30,9 +30,9 @@
           ];
     };
   };
-  home.packages =
+  home.packages = with pkgs;
     let
-      dunst = pkgs.dunst.overrideAttrs (oldAttrs: rec {
+      dunst_pinned = pkgs.dunst.overrideAttrs (oldAttrs: rec {
         version = "1.5.0";
         src = pkgs.fetchFromGitHub {
           owner = "dunst-project";
@@ -42,7 +42,14 @@
         };
       });
     in
-      [ dunst ];
+    [
+      autorandr
+      dunst_pinned
+      networkmanagerapplet
+      libnotify
+      playerctl
+      sakura
+    ];
 
   xdg = {
     enable = true;
