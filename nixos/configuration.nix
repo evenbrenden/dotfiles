@@ -53,7 +53,7 @@
       slack
       spotify
       teams
-      transmission
+      transmission-gtk
       unzip
       veracrypt
       vscode
