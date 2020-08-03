@@ -8,11 +8,11 @@ do
     KEYBOARD_LAYOUT=$(setxkbmap -query | awk '/layout/{print $2}')
     KEYBOARD_LAYOUT_COLOR="#ff00ff"
 
-    NOTIFICATIONS_RUNNING=$(dunstctl running)
-    if [[ $NOTIFICATIONS_RUNNING = "true" ]]; then
+    NOTIFICATIONS_PAUSED=$(dunstctl is-paused)
+    if [[ $NOTIFICATIONS_PAUSED = "false" ]]; then
         NOTIFICATIONS_STATE_PRINT="on"
         NOTIFICATIONS_STATE_COLOR="#ffffff"
-    elif [[ $NOTIFICATIONS_RUNNING = "false" ]]; then
+    elif [[ $NOTIFICATIONS_PAUSED = "true" ]]; then
         NOTIFICATIONS_STATE_PRINT="off"
         NOTIFICATIONS_STATE_COLOR="#ff0000"
     fi
