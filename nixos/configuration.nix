@@ -35,7 +35,6 @@
       jotta-cli
       jq
       libsForQt5.vlc
-      linuxConsoleTools
       nomacs
       postman
       python3
