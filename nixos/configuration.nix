@@ -24,7 +24,6 @@
       dbeaver
       dos2unix
       dotnet-sdk_3
-      dunst
       firefox
       flameshot
       fzf
