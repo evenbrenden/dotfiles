@@ -3,18 +3,13 @@
 {
   boot.kernelPatches = [
     {
-      name = "alsa-hda-realtek-fix-1";
-      patch = ./0001-ALSA-hda-realtek-Fix-Lenovo-Thinkpad-X1-Carbon-7th-q.patch;
-    }
-    {
-      name = "alsa-hda-realtek-fix-2";
+      name = "alsa-hda-realtek-fix";
       patch = ./0002-ALSA-hda-realtek-Replace-Lenovo-Thinkpad-X1-Carbon-7.patch;
     }
   ];
 
   nixpkgs.overlays = [
     (import ../overlays/pulseaudio.nix)
-    (import ../overlays/sof-firmware.nix)
     (import ../overlays/alsa-ucm-conf.nix)
   ];
 
@@ -60,3 +55,4 @@
     };
   };
 }
+
