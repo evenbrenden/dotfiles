@@ -50,6 +50,7 @@
       remmina
       shellcheck
       slack
+      snes9x-gtk
       spotify
       teams
       transmission-gtk
