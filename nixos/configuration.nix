@@ -4,6 +4,7 @@
   imports = [
     ./x1c7-audio-hacks.nix
     ./power-management.nix
+    ./anti-screen-tearing.nix
     ./hardware-configuration.nix
   ];
 
@@ -63,7 +64,6 @@
   services.openssh.enable = false;
   services.fprintd.enable = false;
   services.fwupd.enable = true;
-  services.picom.enable = true;
   virtualisation.virtualbox.host = {
     enableExtensionPack = true;
     enable = true;
