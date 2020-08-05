@@ -52,6 +52,7 @@ in
         "i3status/config".source = ./dotfiles/i3status;
         "dunst/dunstrc".source = ./dotfiles/dunstrc;
         "autorandr".source = ./dotfiles/autorandr;
+        "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
       };
     };
     home.file = {
