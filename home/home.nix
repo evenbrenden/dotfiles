@@ -59,7 +59,6 @@ in
       ".bashrc".source = ./dotfiles/bashrc;
       ".gitignore".source = ./dotfiles/gitignore;
       ".gitconfig".source = ./dotfiles/gitconfig;
-      "bin/adjust_brightness.py".source = ./dotfiles/adjust_brightness.py;
       "bin/toggle_keyboard_layout.py".source = ./dotfiles/toggle_keyboard_layout.py;
       "bin/i3status.sh".source = ./dotfiles/i3status.sh;
     };

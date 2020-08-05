@@ -36,8 +36,8 @@ bindsym $mod+Ctrl+7 exec --no-startup-id xrandr --dpi 120
 bindsym $mod+Ctrl+8 exec --no-startup-id xrandr --dpi 144
 
 # brightness control
-bindsym XF86MonBrightnessDown exec --no-startup-id python3 ~/bin/adjust_brightness.py down
-bindsym XF86MonBrightnessUp exec --no-startup-id python3 ~/bin/adjust_brightness.py up
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
 
 # notifications control
 bindsym $mod+n exec --no-startup-id dunstctl set-paused toggle && pkill -x -USR1 i3status
