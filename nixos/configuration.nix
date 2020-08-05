@@ -12,23 +12,19 @@
     allowUnfree = true;
     chromium.enableWideVine = true;
   };
-  nixpkgs.overlays = [
-    (import ../overlays/jetbrains_2019.3.4.nix)
-  ];
   environment = {
     systemPackages = with pkgs; [
       abcde
       alsaTools
       arandr
-      autorandr
       cabal-install
       chromium
       curl
       dbeaver
       dos2unix
       dotnet-sdk_3
-      dunst
       firefox
+      flameshot
       fzf
       gimp
       git
@@ -38,23 +34,19 @@
       jetbrains.rider
       jotta-cli
       jq
-      networkmanagerapplet
-      libnotify
       libsForQt5.vlc
-      linuxConsoleTools
       nomacs
-      playerctl
       postman
       python3
       python37Packages.virtualenv
       rclone
       (callPackage (import ./../pkgs/rclone-sync.nix) {})
       remmina
-      sakura
       shellcheck
       slack
       spotify
       teams
+      transmission-gtk
       unzip
       veracrypt
       vscode
@@ -64,7 +56,7 @@
   };
   programs.ssh.startAgent = true;
   services.openssh.enable = false;
-  services.fprintd.enable = true;
+  services.fprintd.enable = false;
   services.fwupd.enable = true;
   services.picom.enable = true;
   virtualisation.virtualbox.host = {
@@ -87,9 +79,9 @@
       layout = "us";
       displayManager = {
         defaultSession = "none+i3";
+        autoLogin.enable = true;
+        autoLogin.user = "evenbrenden";
         lightdm = {
-          autoLogin.enable = true;
-          autoLogin.user = "evenbrenden";
           background = ./nothing.png;
           greeters.gtk.indicators = [ "~host" "~spacer" "~session" "~language" "~clock" "~power" ];
         };
@@ -126,7 +118,7 @@
       };
     };
     kernel.sysctl."fs.inotify.max_user_watches" = 524288;
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_5_7;
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot = {
