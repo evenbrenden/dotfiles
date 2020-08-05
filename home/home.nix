@@ -1,7 +1,11 @@
 { config, ... }:
 
 let
-  pkgs = import <nixpkgs-unstable> {};
+  pinnedNixpkgs = import(builtins.fetchTarball {
+    name = "nixos-unstable-a45f68ccac";
+    url = "https://github.com/nixos/nixpkgs/archive/a45f68ccac476dc37ddf294530538f2f2cce5a92.tar.gz";
+    sha256 = "0i19mrky9m73i601hczyfk25qqyr3j75idb72imdz55szc4vavzc";
+  }) {};
 in
   {
     programs = {
@@ -9,12 +13,12 @@ in
       man.enable = false;
       neovim = {
         enable = true;
-        extraConfig = pkgs.lib.strings.fileContents ./dotfiles/init.vim;
-        plugins = with pkgs.vimPlugins;
+        extraConfig = pinnedNixpkgs.lib.strings.fileContents ./dotfiles/init.vim;
+        plugins = with pinnedNixpkgs.vimPlugins;
           let
-            vim-fsharp = pkgs.vimUtils.buildVimPlugin {
+            vim-fsharp = pinnedNixpkgs.vimUtils.buildVimPlugin {
               name = "vim-fsharp";
-              src = pkgs.fetchFromGitHub {
+              src = pinnedNixpkgs.fetchFromGitHub {
                 owner = "wsdjeg";
                 repo = "vim-fsharp";
                 rev = "a4255ba4866fa5aba91fec342f98964cffbbc542";
@@ -33,7 +37,7 @@ in
           ];
       };
     };
-    home.packages = with pkgs;
+    home.packages = with pinnedNixpkgs;
       [
         autorandr
         brightnessctl
