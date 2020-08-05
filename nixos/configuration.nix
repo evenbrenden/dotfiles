@@ -40,6 +40,7 @@
       jq
       libsForQt5.vlc
       nomacs
+      pavucontrol
       postman
       python3
       python37Packages.virtualenv
