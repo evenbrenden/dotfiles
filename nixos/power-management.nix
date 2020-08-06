@@ -37,4 +37,3 @@
   services.tlp.enable = false;
   # boot.extraModulePackages = [ config.boot.kernelPackages.acpi_call ]; # For ThinkPads x TLP
 }
-
