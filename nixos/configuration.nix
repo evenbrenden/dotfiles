@@ -8,10 +8,6 @@
     ./hardware-configuration.nix
   ];
 
-  # Source
-  nix.nixPath =
-    [ "nixpkgs=${import ../pinned-nixpkgs.nix}" ];
-
   # Programs
   nixpkgs.config = {
     allowUnfree = true;
@@ -138,8 +134,8 @@
 
   # Misc
   networking.hostName = "naxos";
+  nix.nixPath = [ "nixpkgs=${builtins.readFile ../nixpkgs.url}" ];
   services.dbus.socketActivated = true;
   system.stateVersion = "20.03";
   time.timeZone = "Europe/Amsterdam";
 }
-
