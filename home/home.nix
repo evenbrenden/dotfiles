@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  pinnedNixpkgs = import(import ./pinned_nixpkgs.nix) {};
+  pinnedNixpkgs = import(import ../pinned-nixpkgs.nix) {};
 in
   {
     programs = {
@@ -53,6 +53,7 @@ in
         "dunst/dunstrc".source = ./dotfiles/dunstrc;
         "autorandr".source = ./dotfiles/autorandr;
         "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
+        "nixpkgs/config.nix".source = ./dotfiles/config.nix;
       };
     };
     home.file = {

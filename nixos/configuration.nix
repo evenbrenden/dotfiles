@@ -10,7 +10,7 @@
 
   # Source
   nix.nixPath =
-    [ "nixpkgs=${import ../pinned_nixpkgs.nix}" ];
+    [ "nixpkgs=${import ../pinned-nixpkgs.nix}" ];
 
   # Programs
   nixpkgs.config = {
