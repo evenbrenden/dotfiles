@@ -156,7 +156,6 @@ bar {
     colors {
         focused_workspace #4c9978 #287755 #ffffff
     }
-    status_command bash ~/bin/i3status.sh
 }
 
 # set colors
