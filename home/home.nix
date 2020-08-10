@@ -58,7 +58,6 @@
     };
   };
   home.file = {
-    "nixpkgs.url".source = ../nixpkgs.url;
     ".bashrc".source = ./dotfiles/bashrc;
     ".gitignore".source = ./dotfiles/gitignore;
     ".gitconfig".source = ./dotfiles/gitconfig;
