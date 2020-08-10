@@ -58,7 +58,10 @@
     };
   };
   home.file = {
-    ".bashrc".source = ./dotfiles/bashrc;
+    ".bashrc".text = with builtins;
+      (readFile ./dotfiles/bashrc)
+      +
+      "export NIXPKGS=${readFile ../nixpkgs.url}";
     ".gitignore".source = ./dotfiles/gitignore;
     ".gitconfig".source = ./dotfiles/gitconfig;
     "bin/toggle_keyboard_layout.py".source = ./dotfiles/toggle_keyboard_layout.py;
