@@ -37,6 +37,7 @@
       dunst
       networkmanagerapplet
       libnotify
+      lsb-release
       playerctl
       sakura
     ];
