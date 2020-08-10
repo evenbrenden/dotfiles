@@ -61,7 +61,7 @@
     ".bashrc".text = with builtins;
       (readFile ./dotfiles/bashrc)
       +
-      # Meant to replace channels and NIX_PATH
+      # Meant to replace channels and NIX_PATH (Nix flakes pending)
       ''export NIXPKGS=${readFile ../nixpkgs.url}'';
     ".gitignore".source = ./dotfiles/gitignore;
     ".gitconfig".source = ./dotfiles/gitconfig;
