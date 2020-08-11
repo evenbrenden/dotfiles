@@ -23,7 +23,6 @@
       curl
       dbeaver
       dos2unix
-      dotnet-sdk_3
       firefox
       flameshot
       fzf

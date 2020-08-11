@@ -11,7 +11,6 @@
     [
       curl
       dbeaver
-      dotnet-sdk_3
       git
       postman
       rclone
