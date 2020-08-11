@@ -46,10 +46,6 @@
     enable = true;
     configFile = {
       "sakura/sakura.conf".source = ./dotfiles/sakura.conf;
-      "i3/config".source =
-        if config.home.username == "evenbrenden"
-        then ./dotfiles/i3config-me
-        else ./dotfiles/i3config-u;
       "i3status/config".source = ./dotfiles/i3status;
       "dunst/dunstrc".source = ./dotfiles/dunstrc;
       "autorandr".source = ./dotfiles/autorandr;
