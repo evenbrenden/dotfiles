@@ -11,6 +11,7 @@
     [
       curl
       dbeaver
+      dotnet
       git
       postman
       rclone

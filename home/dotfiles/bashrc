@@ -57,8 +57,3 @@ function current_git_branch_name {
   git branch 2> /dev/null | grep \* | sed "s/^* //"
 }
 PS1="$HC$FYEL\u$FMAG\h$FCYN\$(current_git_branch_name)$FWHT\w $RS"
-
-# workaround for dotnet core installed via nix (https://wiki.archlinux.org/index.php/.NET_Core)
-if [[ $(command -v dotnet) ]]; then
-    export DOTNET_ROOT=$(dotnet --info | grep 'Base Path' | sed -e 's/^[ ]*Base Path:[ ]*\(.*\)sdk.*/\1/')
-fi
