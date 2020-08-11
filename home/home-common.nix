@@ -32,13 +32,7 @@
   };
   home.packages = with pkgs;
     [
-      autorandr
-      brightnessctl
-      dunst
-      networkmanagerapplet
-      libnotify
       lsb-release
-      playerctl
       sakura
     ];
 
