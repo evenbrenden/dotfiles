@@ -1,2 +1,0 @@
-[[ -s ~/.bashrc ]] && source ~/.bashrc
-. ~/.nix-profile/etc/profile.d/nix.sh
