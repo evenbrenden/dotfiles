@@ -32,6 +32,7 @@
   };
   home.packages = with pkgs;
     [
+      dotnet-sdk_3
       lsb-release
       sakura
     ];
@@ -51,8 +52,8 @@
     ".bashrc".text =
       (builtins.readFile ./dotfiles/bashrc)
       +
-      # Workaround for .NET Core SDK (+tools) installed with Nix (https://wiki.archlinux.org/index.php/.NET_Core)
-      "[[ $(command -v dotnet) ]] && export DOTNET_ROOT=${pkgs.dotnet-sdk_3} && PATH=$PATH:$HOME/.dotnet/tools";
+      # Workaround for .NET Core SDK installed with Nix (https://wiki.archlinux.org/index.php/.NET_Core)
+      "export DOTNET_ROOT=${pkgs.dotnet-sdk_3}; PATH=$PATH:$HOME/.dotnet/tools";
     ".gitignore".source = ./dotfiles/gitignore;
     ".gitconfig".source = ./dotfiles/gitconfig;
     "bin/toggle_keyboard_layout.py".source = ./dotfiles/toggle_keyboard_layout.py;
