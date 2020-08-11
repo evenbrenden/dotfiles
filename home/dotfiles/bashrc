@@ -62,8 +62,3 @@ PS1="$HC$FYEL\u$FMAG\h$FCYN\$(current_git_branch_name)$FWHT\w $RS"
 if [[ $(command -v dotnet) ]]; then
     export DOTNET_ROOT=$(dotnet --info | grep 'Base Path' | sed -e 's/^[ ]*Base Path:[ ]*\(.*\)sdk.*/\1/')
 fi
-
-# make sure you have glibcLocales installed via nix (https://github.com/NixOS/nixpkgs/issues/38991)
-if [[ $(lsb_release -is) != \"NixOS\" ]]; then
-    export LOCALE_ARCHIVE=$HOME/.nix-profile/lib/locale/locale-archive
-fi
