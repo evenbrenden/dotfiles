@@ -27,4 +27,5 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 if [ -e /home/n644794/.nix-profile/etc/profile.d/nix.sh ]; then . /home/n644794/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
+# For dmenu to discover desktop files for programs installed via Nix
 XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"
