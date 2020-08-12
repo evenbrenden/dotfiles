@@ -13,12 +13,11 @@
     allowUnfree = true;
     chromium.enableWideVine = true;
   };
-  environment = {
-    systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs;
+    [
       alsaTools
       hsetroot
     ];
-  };
   programs.ssh.startAgent = true;
   services.openssh.enable = false;
   services.fprintd.enable = false;
