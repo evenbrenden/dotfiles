@@ -34,7 +34,6 @@
     [
       # For dotfiles
       dotnet-sdk_3
-      lsb-release
       sakura
 
       # User programs
@@ -51,12 +50,12 @@
   xdg = {
     enable = true;
     configFile = {
-      "sakura/sakura.conf".source = ./dotfiles/sakura.conf;
-      "i3status/config".source = ./dotfiles/i3status;
-      "dunst/dunstrc".source = ./dotfiles/dunstrc;
       "autorandr".source = ./dotfiles/autorandr;
-      "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
+      "dunst/dunstrc".source = ./dotfiles/dunstrc;
+      "i3status/config".source = ./dotfiles/i3status;
       "nixpkgs/config.nix".source = ./dotfiles/config.nix;
+      "sakura/sakura.conf".source = ./dotfiles/sakura.conf;
+      "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
     };
   };
   home.file = rec {
@@ -64,10 +63,10 @@
       (builtins.readFile ./dotfiles/bashrc)
       +
       # Workaround for .NET Core SDK installed with Nix (https://wiki.archlinux.org/index.php/.NET_Core)
-      "export DOTNET_ROOT=${pkgs.dotnet-sdk_3}; PATH=$PATH:$HOME/.dotnet/tools";
+      ''export DOTNET_ROOT=${pkgs.dotnet-sdk_3}; PATH=$PATH:$HOME/.dotnet/tools'';
     ".gitignore".source = ./dotfiles/gitignore;
     ".gitconfig".source = ./dotfiles/gitconfig;
-    "bin/toggle_keyboard_layout.py".source = ./dotfiles/toggle_keyboard_layout.py;
     "bin/i3status.sh".source = ./dotfiles/i3status.sh;
+    "bin/toggle_keyboard_layout.py".source = ./dotfiles/toggle_keyboard_layout.py;
   };
 }
