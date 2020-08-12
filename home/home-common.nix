@@ -32,9 +32,20 @@
   };
   home.packages = with pkgs;
     [
+      # For dotfiles
       dotnet-sdk_3
       lsb-release
       sakura
+
+      # User programs
+      curl
+      dbeaver
+      git
+      postman
+      rclone
+      remmina
+      unzip
+      zip
     ];
 
   xdg = {
