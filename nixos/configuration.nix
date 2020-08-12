@@ -18,7 +18,6 @@
       alsaTools
       gparted
       hsetroot
-      pavucontrol
     ];
   };
   programs.ssh.startAgent = true;

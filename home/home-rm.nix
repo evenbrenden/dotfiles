@@ -5,7 +5,7 @@
 
   home.packages = with pkgs;
     [
-      # For HM dotfiles
+      # For dotfiles
       autorandr
       brightnessctl
       dunst
@@ -31,6 +31,7 @@
       jq
       libsForQt5.vlc
       nomacs
+      pavucontrol
       postman
       python3
       python37Packages.virtualenv
