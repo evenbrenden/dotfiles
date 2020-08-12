@@ -25,6 +25,7 @@
       fzf
       gimp
       git
+      gparted
       irssi
       jetbrains.rider
       jotta-cli
