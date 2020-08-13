@@ -5,8 +5,11 @@ import os
 import subprocess
 import fileinput
 
-remote = 'gdrive'
+if len(sys.argv) != 2:
+    print("Usage: rclone-sync [remote]")
+    exit(0)
 
+remote = sys.argv[1]
 local_path = os.getcwd()
 user = os.getlogin()
 base_path = '/home/' + user + '/' + remote + '/'
@@ -20,7 +23,7 @@ stderr = output.stderr.decode()
 print(stdout)
 print(stderr)
 
-if '0 differences found' in stderr:
+if ('Failed to create file system' in stderr) or ('0 differences found' in stderr):
     exit(0)
 
 while True:
