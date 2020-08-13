@@ -67,11 +67,8 @@
     {
       ".bashrc".text =
         (builtins.readFile ./dotfiles/bashrc)
-        +
-        dotnet_root
-        +
-        dotnet_tools;
-      ".profile".text = dotnet_root;
+        + dotnet_root + dotnet_tools;
+      ".profile".text = dotnet_root + dotnet_tools;
       ".gitignore".source = ./dotfiles/gitignore;
       ".gitconfig".source = ./dotfiles/gitconfig;
       "bin/i3status.sh".source = ./dotfiles/i3status.sh;
