@@ -58,15 +58,23 @@
       "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
     };
   };
-  home.file = rec {
-    ".bashrc".text =
-      (builtins.readFile ./dotfiles/bashrc)
-      +
+  home.file =
+    let
       # Workaround for .NET Core SDK installed with Nix (https://wiki.archlinux.org/index.php/.NET_Core)
-      ''export DOTNET_ROOT=${pkgs.dotnet-sdk_3}; PATH=$PATH:$HOME/.dotnet/tools'';
-    ".gitignore".source = ./dotfiles/gitignore;
-    ".gitconfig".source = ./dotfiles/gitconfig;
-    "bin/i3status.sh".source = ./dotfiles/i3status.sh;
-    "bin/toggle_keyboard_layout.py".source = ./dotfiles/toggle_keyboard_layout.py;
-  };
+      dotnet_root = "export DOTNET_ROOT=${pkgs.dotnet-sdk_3}\n";
+      dotnet_tools = "PATH=$PATH:${config.home.homeDirectory}/.dotnet/tools\n";
+    in
+    {
+      ".bashrc".text =
+        (builtins.readFile ./dotfiles/bashrc)
+        +
+        dotnet_root
+        +
+        dotnet_tools;
+      ".profile".text = dotnet_root;
+      ".gitignore".source = ./dotfiles/gitignore;
+      ".gitconfig".source = ./dotfiles/gitconfig;
+      "bin/i3status.sh".source = ./dotfiles/i3status.sh;
+      "bin/toggle_keyboard_layout.py".source = ./dotfiles/toggle_keyboard_layout.py;
+    };
 }
