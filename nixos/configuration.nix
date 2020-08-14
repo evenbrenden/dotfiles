@@ -81,7 +81,7 @@
       };
     };
     kernel.sysctl."fs.inotify.max_user_watches" = 524288;
-    kernelPackages = pkgs.linuxPackages_5_7;
+    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot = {
