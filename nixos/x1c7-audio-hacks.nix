@@ -20,13 +20,15 @@
   };
 
   nixpkgs.overlays = [
+    # PulseAudio 13.99
     (import ../overlays/pulseaudio.nix)
   ];
 
   systemd = {
     user.services = {
-      set-pulseaudio-sink-port = {
-        description = "Set pulseaudio sink port";
+      # So that headphone jack is made right on boot
+      jiggle-headphone-jack = {
+        description = "Jiggle headphone jack";
         script = ''
           python3 ${./set_pulseaudio_sink_port.py}
         '';
@@ -34,6 +36,7 @@
         after = [ "default.target" ];
         wantedBy = [ "pulseaudio.service" ];
       };
+      # So that mic mute LED is made right on boot
       jiggle-mic-mute-led = {
         description = "Jiggle mic mute LED";
         script = ''
