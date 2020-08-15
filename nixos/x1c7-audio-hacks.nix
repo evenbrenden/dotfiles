@@ -25,6 +25,23 @@
   ];
 
   systemd = {
+    services = {
+      # This addresses the "(...) slight "pop" in headphones when content volume transitions to/from 0."
+      # It attenuates the pops to the point that they are virtually inaudible. Note that the pops are
+      # "Also present on mainline and in Windows."
+      attenuate-headphone-pops = {
+        description = "Attenuate headphone pops";
+        script = ''
+          # https://gist.github.com/hamidzr/dd81e429dc86f4327ded7a2030e7d7d9#gistcomment-3154512
+          hda-verb /dev/snd/hwC0D0 0x1d SET_PIN_WIDGET_CONTROL 0x0
+          # This was found using hda-analyzer and has the same effect (both are needed)
+          hda-verb /dev/snd/hwC0D0 0x1a SET_PIN_WIDGET_CONTROL 0x0
+        '';
+        path = [ pkgs.alsaTools ];
+        after = [ "multi-user.target" "sound.target" "graphical.target" "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
+        wantedBy = [ "sound.target" "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
+      };
+    };
     user.services = {
       # So that headphone jack is made right on boot
       jiggle-headphone-jack = {
