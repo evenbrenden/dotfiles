@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 
+let
+  userName = "evenbrenden";
+  hostName = "naxos";
+in
 {
   imports = [
     ./common-configuration.nix
@@ -7,15 +11,15 @@
     ./x1c7-hardware-configuration.nix
   ];
 
-  users.users.evenbrenden = {
+  users.users.${userName} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "video" "vboxusers" ];
   };
 
   services.xserver.displayManager.autoLogin = {
     enable = true;
-    user = "evenbrenden";
+    user = "${userName}";
   };
 
-  networking.hostName = "naxos";
+  networking.hostName = "${hostName}";
 }
