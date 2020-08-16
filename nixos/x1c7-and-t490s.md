@@ -1,4 +1,4 @@
-### Installing NixOS on my ThinkPad X1 Carbon Gen 7
+### Installing NixOS on my ThinkPad X1 Carbon Gen 7 and T490s
 
 #### Sources
 - https://gist.github.com/martijnvermaat/76f2e24d0239470dd71050358b4d5134
@@ -24,11 +24,11 @@
     # lvcreate -L 16.5GiB -n swap vg
     # lvcreate -l '100%FREE' -n root vg
 
-    # mkfs.ext4 -L naxos /dev/vg/root
+    # mkfs.ext4 -L [hostname] /dev/vg/root
     # mkswap -L swap /dev/vg/swap
     # mkfs.fat -F 32 -n BOOT /dev/nvme0n1p2
 
-    # mount /dev/disk/by-label/naxos /mnt
+    # mount /dev/disk/by-label/[hostname] /mnt
     # mkdir -p /mnt/boot
     # mount /dev/disk/by-label/BOOT /mnt/boot
 

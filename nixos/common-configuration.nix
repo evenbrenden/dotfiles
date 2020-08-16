@@ -2,10 +2,8 @@
 
 {
   imports = [
-    ./x1c7-audio-hacks.nix
     ./power-management.nix
     ./anti-screen-tearing.nix
-    ./hardware-configuration.nix
   ];
 
   # Programs
@@ -28,12 +26,6 @@
   };
   networking.networkmanager.enable = true;
 
-  # User
-  users.users.evenbrenden = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "audio" "video" "vboxusers" ];
-  };
-
   # Display et al.
   services = {
     xserver = {
@@ -42,8 +34,6 @@
       layout = "us";
       displayManager = {
         defaultSession = "none+i3";
-        autoLogin.enable = true;
-        autoLogin.user = "evenbrenden";
         lightdm = {
           background = ./nothing.png;
           greeters.gtk.indicators = [ "~host" "~spacer" "~session" "~language" "~clock" "~power" ];
@@ -94,7 +84,6 @@
   swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
 
   # Misc
-  networking.hostName = "naxos";
   services.dbus.socketActivated = true;
   system.stateVersion = "20.03";
   time.timeZone = "Europe/Amsterdam";
