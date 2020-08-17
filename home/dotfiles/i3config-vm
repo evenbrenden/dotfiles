@@ -7,3 +7,9 @@ bar {
 
 # set colors
 client.focused #4c9978 #287755 #ffffff #2ef49e #287755
+
+# set background
+exec --no-startup-id xsetroot -solid "#000000"
+
+# start terminal
+exec sakura
