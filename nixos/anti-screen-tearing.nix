@@ -2,7 +2,7 @@
 
 {
   services.picom = {
-    backend = "glx";
+    backend = "glx"; # For xsecurelock
     enable = true;
     vSync = false;
   };
