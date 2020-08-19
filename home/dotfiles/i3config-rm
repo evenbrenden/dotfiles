@@ -11,7 +11,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # things xrandr
-bindsym $mod+Ctrl+a exec --no-startup-id autorandr --change
+bindsym $mod+Ctrl+a exec --no-startup-id autorandr --change --default mobile
 bindsym $mod+Ctrl+6 exec --no-startup-id xrandr --dpi 96
 bindsym $mod+Ctrl+7 exec --no-startup-id xrandr --dpi 120
 bindsym $mod+Ctrl+8 exec --no-startup-id xrandr --dpi 144
