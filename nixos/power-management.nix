@@ -3,7 +3,7 @@
 {
   programs.xss-lock = {
     enable = true;
-    lockerCommand = ''${pkgs.i3lock}/bin/i3lock --color 000000'';
+    lockerCommand = ''${pkgs.i3lock-color}/bin/i3lock-color --color 000000 --pass-screen-keys'';
   };
 
   services = {
