@@ -3,7 +3,7 @@
 {
   programs.xss-lock = {
     enable = true;
-    lockerCommand = ''${pkgs.callPackage (import ../pkgs/xsecurelock-wrapper.nix) {}}/bin/xsecurelock-wrapper'';
+    lockerCommand = ''env XSECURELOCK_KEY_XF86Display_COMMAND='${pkgs.autorandr}/bin/autorandr --change' ${pkgs.xsecurelock}/bin/xsecurelock'';
   };
 
   services = {
