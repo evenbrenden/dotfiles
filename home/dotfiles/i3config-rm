@@ -10,6 +10,9 @@ bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# wifi control
+bindsym XF86WLAN exec --no-startup-id python3 ~/bin/toggle_wifi.py
+
 # things xrandr
 bindsym $mod+Ctrl+a exec --no-startup-id autorandr --change
 bindsym $mod+Ctrl+6 exec --no-startup-id xrandr --dpi 96

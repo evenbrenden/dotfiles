@@ -72,5 +72,6 @@
       ".gitconfig".source = ./dotfiles/gitconfig;
       "bin/i3status.sh".source = ./dotfiles/i3status.sh;
       "bin/toggle_keyboard_layout.py".source = ./dotfiles/toggle_keyboard_layout.py;
+      "bin/toggle_wifi.py".source = ./dotfiles/toggle_wifi.py;
     };
 }
