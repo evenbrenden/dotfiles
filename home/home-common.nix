@@ -40,7 +40,6 @@
       curl
       dbeaver
       git
-      i3lock-color
       postman
       rclone
       remmina
