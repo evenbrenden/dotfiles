@@ -3,7 +3,7 @@
 {
   programs.xss-lock = {
     enable = true;
-    lockerCommand = ''${pkgs.i3lock}/bin/i3lock --color 000000'';
+    lockerCommand = ''${pkgs.callPackage (import ../pkgs/xsecurelock-wrapper.nix) {}}/bin/xsecurelock-wrapper'';
   };
 
   services = {
