@@ -2,6 +2,7 @@
 
 {
   services.picom = {
+    backend = "glx";
     enable = true;
     vSync = false;
   };
