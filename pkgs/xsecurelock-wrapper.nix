@@ -2,7 +2,6 @@
 
 stdenv.mkDerivation {
   name = "xsecurelock-wrapper";
-  buildInputs = [ pkgs.xsecurelock ];
   unpackPhase = ":";
   installPhase = ''
     install -m755 -D ${./xsecurelock-wrapper.sh} $out/bin/xsecurelock-wrapper
