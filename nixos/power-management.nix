@@ -3,7 +3,7 @@
 {
   programs.xss-lock = {
     enable = true;
-    lockerCommand = ''env XSECURELOCK_KEY_XF86Display_COMMAND='${pkgs.autorandr}/bin/autorandr --change' ${pkgs.xsecurelock}/bin/xsecurelock'';
+    lockerCommand = ''env XSECURELOCK_DISCARD_FIRST_KEYPRESS=0 XSECURELOCK_KEY_XF86Display_COMMAND='${pkgs.autorandr}/bin/autorandr --change' ${pkgs.xsecurelock}/bin/xsecurelock'';
   };
 
   services = {
