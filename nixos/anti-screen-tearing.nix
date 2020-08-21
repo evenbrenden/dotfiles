@@ -7,6 +7,7 @@
     vSync = false;
     settings.paint-on-overlay = true;
   };
+
   services.xserver = {
     deviceSection = ''
       Option "TearFree" "true"

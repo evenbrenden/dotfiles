@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  # Programs
   programs = {
     home-manager.enable = true;
     man.enable = false;
@@ -47,6 +48,7 @@
       zip
     ];
 
+  # Actual dotfiles
   xdg = {
     enable = true;
     configFile = {
