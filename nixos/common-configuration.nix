@@ -84,7 +84,10 @@
   swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
 
   # Misc
-  fonts.enableDefaultFonts = true;
+  fonts = {
+    enableDefaultFonts = true;
+    fontconfig.allowBitmaps = false; # Fixes some blocky fonts in Firefox
+  };
   services.dbus.socketActivated = true;
   system.stateVersion = "20.03";
   time.timeZone = "Europe/Amsterdam";
