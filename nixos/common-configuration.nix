@@ -84,6 +84,7 @@
   swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
 
   # Misc
+  fonts.enableDefaultFonts = true;
   services.dbus.socketActivated = true;
   system.stateVersion = "20.03";
   time.timeZone = "Europe/Amsterdam";
