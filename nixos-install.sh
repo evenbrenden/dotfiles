@@ -6,7 +6,7 @@ if [[ $# -ne 1 ]]; then
 fi
 
 if [[ $1 == 't490s' ]]; then
-    config='../nrk-work-pc-config/t490s-configuration.nix'
+    config="$HOME/src/nrk-work-pc-config/$1-configuration.nix"
 else
     config="nixos/$1-configuration.nix"
 fi
