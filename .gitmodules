@@ -1,0 +1,3 @@
+[submodule "nixos/t490s"]
+	path = nixos/t490s
+	url = git@github.com:evenbrenden/t490s
