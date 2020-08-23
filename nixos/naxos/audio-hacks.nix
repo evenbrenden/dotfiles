@@ -3,7 +3,7 @@
 {
   boot = {
     kernelPatches = [
-      # https://github.com/gobenji/thinkpad-x1-gen7-sound (adfee57)
+      # https://github.com/gobenji/thinkpad-x1-gen7-sound (a9d0ccd308)
       {
         name = "alsa-hda-realtek-fix";
         patch = ./0001-ALSA-hda-realtek-Add-control-fixup-for-Lenovo-Thinkp.patch;
