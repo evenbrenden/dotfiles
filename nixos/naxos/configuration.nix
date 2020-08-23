@@ -7,7 +7,7 @@ in
 {
   imports = [
     ../common-configuration.nix
-    ./audio-hacks.nix
+    ./x1c7-audio-hacks.nix
     ./x1c7-hardware-configuration.nix
   ];
 
