@@ -5,7 +5,7 @@ if [[ $# -ne 1 ]]; then
     exit 1
 fi
 
-config="nixos/$1-configuration.nix"
+config="nixos/$1/configuration.nix"
 if [[ ! -f $config ]]; then
     echo "$config not found"
     exit 1;
