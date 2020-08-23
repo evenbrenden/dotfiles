@@ -8,7 +8,7 @@ in
   imports = [
     ../common-configuration.nix
     ./audio-hacks.nix
-    ./hardware-configuration.nix
+    ./x1c7-hardware-configuration.nix
   ];
 
   users.users.${userName} = {
