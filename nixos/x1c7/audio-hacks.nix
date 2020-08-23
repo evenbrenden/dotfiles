@@ -21,7 +21,7 @@
 
   nixpkgs.overlays = [
     # PulseAudio 13.99
-    (import ../overlays/pulseaudio.nix)
+    (import ../../overlays/pulseaudio.nix)
   ];
 
   systemd = {
