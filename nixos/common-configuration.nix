@@ -11,11 +11,6 @@
     allowUnfree = true;
     chromium.enableWideVine = true;
   };
-  environment.systemPackages = with pkgs;
-    [
-      alsaTools
-      hsetroot
-    ];
   programs.ssh.startAgent = true;
   services.openssh.enable = false;
   services.fprintd.enable = false;
@@ -40,7 +35,7 @@
         };
         # Because xsetroot does not work with Picom
         sessionCommands = ''
-          hsetroot -solid #000000
+          ${pkgs.hsetroot}/bin/hsetroot -solid #000000
         '';
       };
       libinput = {
