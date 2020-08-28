@@ -14,10 +14,10 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86WLAN exec --no-startup-id python3 ~/bin/toggle_wifi.py
 
 # things xrandr
-bindsym $mod+Ctrl+a exec --no-startup-id autorandr --change
-bindsym $mod+Ctrl+6 exec --no-startup-id xrandr --dpi 96
-bindsym $mod+Ctrl+7 exec --no-startup-id xrandr --dpi 120
-bindsym $mod+Ctrl+8 exec --no-startup-id xrandr --dpi 144
+bindsym $mod+Ctrl+a exec --no-startup-id autorandr --change; restart
+bindsym $mod+Ctrl+6 exec --no-startup-id xrandr --dpi 96; restart
+bindsym $mod+Ctrl+7 exec --no-startup-id xrandr --dpi 120; restart
+bindsym $mod+Ctrl+8 exec --no-startup-id xrandr --dpi 144; restart
 
 # brightness control
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
