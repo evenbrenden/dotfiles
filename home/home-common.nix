@@ -45,6 +45,7 @@
       rclone
       remmina
       unzip
+      xclip
       zip
     ];
 
