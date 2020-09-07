@@ -3,6 +3,10 @@
 {
   imports = [ ../home-common.nix ];
 
+  nixpkgs.overlays = [
+    (import ../../overlays/jetbrains.rider.nix)
+  ];
+
   home.packages = with pkgs;
     [
       # For dotfiles
