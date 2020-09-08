@@ -3,15 +3,12 @@
 {
   boot = {
     kernelPatches = [
-      # https://github.com/gobenji/thinkpad-x1-gen7-sound (a9d0ccd308)
+      # https://lore.kernel.org/alsa-devel/s5hlfhsbn0u.wl-tiwai@suse.de/ (will be in v5.9-rc4)
       {
-        name = "alsa-hda-realtek-fix";
-        patch = ./0001-ALSA-hda-realtek-Add-control-fixup-for-Lenovo-Thinkp.patch;
+        name = "Add-control-fixup-for-Lenovo-Thinkpad-X1-Carbon-7th";
+        patch = ./b79de57b4378a93115307be6962d05b099eb0f37..6a6660d049f88b89fd9a4b9db3581b245f7782fa.patch;
       }
     ];
-    extraModprobeConfig = ''options snd_sof_intel_hda_common hda_model=alc285-tpx1-dual-speakers'';
-    # Debug option for verifying that the fixup has been applied
-    kernelParams = [ "snd_hda_codec.dyndbg=+p" ];
   };
 
   nixpkgs.overlays = [
