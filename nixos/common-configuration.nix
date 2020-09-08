@@ -15,11 +15,10 @@
   services.openssh.enable = false;
   services.fprintd.enable = false;
   services.fwupd.enable = true;
-  # Currently not building
-  # virtualisation.virtualbox.host = {
-  #   enableExtensionPack = true;
-  #   enable = true;
-  # };
+  virtualisation.virtualbox.host = {
+    enableExtensionPack = true;
+    enable = true;
+  };
   networking.networkmanager.enable = true;
 
   # Display et al.
