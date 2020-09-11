@@ -4,7 +4,9 @@
   programs.xss-lock = {
     enable = true;
     extraOptions = [ "--transfer-sleep-lock" ];
-    # https://github.com/google/xsecurelock/issues/97
+    # https://github.com/google/xsecurelock/issues/97 => XSECURELOCK_NO_COMPOSITE=1
+    # "This switches to a more traditional way of locking, but may allow desktop
+    # notifications to be visible on top of the screen lock. Not recommended."
     lockerCommand = ''
       env \
       XSECURELOCK_NO_COMPOSITE=1 \
