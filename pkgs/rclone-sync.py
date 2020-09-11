@@ -17,7 +17,7 @@ split = local_path.partition(base_path)
 relative = split[-1]
 remote_path = remote + ':' + relative
 
-output = subprocess.run(['rclone', 'check', remote_path, local_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+output = subprocess.run(['@rclone@', 'check', remote_path, local_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 stdout = output.stdout.decode()
 stderr = output.stderr.decode()
 print(stdout)
@@ -34,10 +34,10 @@ while True:
 
     if answer == 'up':
         print()
-        subprocess.run(['rclone', 'sync', '--create-empty-src-dirs', '--verbose', local_path, remote_path], stdout=subprocess.PIPE)
+        subprocess.run(['@rclone@', 'sync', '--create-empty-src-dirs', '--verbose', local_path, remote_path], stdout=subprocess.PIPE)
         exit(0)
     elif answer == 'down':
         print()
-        subprocess.run(['rclone', 'sync', '--create-empty-src-dirs', '--verbose', remote_path, local_path], stdout=subprocess.PIPE)
+        subprocess.run(['@rclone@', 'sync', '--create-empty-src-dirs', '--verbose', remote_path, local_path], stdout=subprocess.PIPE)
         exit(0)
 
