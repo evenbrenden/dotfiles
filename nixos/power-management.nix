@@ -4,6 +4,7 @@
   programs.xss-lock = {
     enable = true;
     extraOptions = [ "--transfer-sleep-lock" ];
+    # https://github.com/google/xsecurelock/issues/97
     lockerCommand = ''
       env \
       XSECURELOCK_NO_COMPOSITE=1 \
