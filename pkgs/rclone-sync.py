@@ -23,7 +23,9 @@ stderr = output.stderr.decode()
 print(stdout)
 print(stderr)
 
-if ('Failed to create file system' in stderr) or ('0 differences found' in stderr):
+if ('Failed to create file system' in stderr or
+    '0 differences found' in stderr or
+    'directory not found' in stderr):
     exit(0)
 
 while True:
