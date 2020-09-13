@@ -10,4 +10,3 @@ stdenv.mkDerivation {
       --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.rclone ]}
   '';
 }
-

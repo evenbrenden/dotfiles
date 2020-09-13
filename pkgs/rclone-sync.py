@@ -42,4 +42,3 @@ while True:
         print()
         subprocess.run(['rclone', 'sync', '--create-empty-src-dirs', '--verbose', remote_path, local_path], stdout=subprocess.PIPE)
         exit(0)
-
