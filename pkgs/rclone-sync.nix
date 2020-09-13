@@ -2,12 +2,12 @@
 
 stdenv.mkDerivation {
   name = "rclone-sync";
-  buildInputs = [ pkgs.python37 ];
+  nativeBuildInputs = [ pkgs.makeWrapper ];
+  propagatedBuildInputs = [ pkgs.python37 ];
   unpackPhase = ":";
   installPhase = ''
-    install -m755 -D ${./rclone-sync.py} $out/bin/rclone-sync
-    export rclone=${pkgs.rclone}/bin/rclone
-    substituteAllInPlace $out/bin/rclone-sync
+    makeWrapper ${./rclone-sync.py} $out/bin/rclone-sync \
+      --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.rclone ]}
   '';
 }
 
