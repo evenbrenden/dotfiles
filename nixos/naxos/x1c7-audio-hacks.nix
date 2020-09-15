@@ -1,16 +1,6 @@
 { pkgs, ... }:
 
 {
-  boot = {
-    kernelPatches = [
-      # https://lore.kernel.org/alsa-devel/s5hlfhsbn0u.wl-tiwai@suse.de/ (will be in v5.9-rc4)
-      {
-        name = "Add-control-fixup-for-Lenovo-Thinkpad-X1-Carbon-7th";
-        patch = ./b79de57b4378a93115307be6962d05b099eb0f37..6a6660d049f88b89fd9a4b9db3581b245f7782fa.patch;
-      }
-    ];
-  };
-
   nixpkgs.overlays = [
     # PulseAudio 13.99
     (import ../../overlays/pulseaudio.nix)
