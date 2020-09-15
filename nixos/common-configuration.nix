@@ -53,7 +53,13 @@
     enableRedistributableFirmware = true;
   };
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio = {
+    enable = true;
+    package = pkgs.pulseaudio.override {
+      bluetoothSupport = true;
+    };
+    extraModules = [ pkgs.pulseaudio-modules-bt ];
+  };
   nixpkgs.config.pulseaudio = true; # Explicit PulseAudio support in applications
 
   # Disk and the likes
