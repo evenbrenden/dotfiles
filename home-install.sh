@@ -11,7 +11,7 @@ if [[ ! -f $config ]]; then
     exit 1;
 fi
 
-nixpkgs=$(cat nixpkgs-home.url)
+nixpkgs=$(cat nixpkgs.url)
 home-manager -f $config -I nixpkgs=$nixpkgs switch \
     && i3-msg reload \
     && i3-msg restart
