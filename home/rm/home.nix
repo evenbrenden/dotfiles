@@ -32,7 +32,7 @@
       jetbrains.rider
       jotta-cli
       jq
-      libsForQt5.vlc
+      libsForQt514.vlc # Waiting for unbroken libsForQt5.vlc
       nomacs
       pavucontrol
       python3
