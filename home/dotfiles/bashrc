@@ -11,7 +11,9 @@ shopt -s checkwinsize
 HISTCONTROL=ignoreboth
 HISTSIZE=8000
 HISTFILESIZE=8000
+bind '"\eOA": history-search-backward'
 bind '"\e[A": history-search-backward'
+bind '"\eOB": history-search-forward'
 bind '"\e[B": history-search-forward'
 shopt -s histappend
 
