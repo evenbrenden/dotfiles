@@ -28,6 +28,7 @@
           vim-nix
           vim-pico8-syntax
           tcomment_vim
+          fzf-vim
         ];
     };
   };
