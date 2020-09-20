@@ -44,6 +44,7 @@
       spotify
       teams
       transmission-gtk
+      udiskie
       veracrypt
       vscode
     ];
