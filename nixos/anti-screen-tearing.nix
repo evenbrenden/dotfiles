@@ -4,7 +4,7 @@
   services.picom = {
     backend = "xr_glx_hybrid"; # For xsecurelock
     enable = true;
-    vSync = false;
+    vSync = true;
   };
 
   services.xserver = {
