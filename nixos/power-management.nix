@@ -4,13 +4,8 @@
   programs.xss-lock = {
     enable = true;
     extraOptions = [ "--transfer-sleep-lock" ];
-    # https://github.com/google/xsecurelock/issues/97 => XSECURELOCK_NO_COMPOSITE=1
-    # "This switches to a more traditional way of locking, but may allow desktop
-    # notifications to be visible on top of the screen lock. Not recommended."
-    # For comparison, given the default backend, this is how i3lock behaves too.
     lockerCommand = ''
       env \
-      XSECURELOCK_NO_COMPOSITE=1 \
       XSECURELOCK_DISCARD_FIRST_KEYPRESS=0 \
       XSECURELOCK_KEY_XF86Display_COMMAND='${pkgs.autorandr}/bin/autorandr --change' \
       ${pkgs.xsecurelock}/bin/xsecurelock
