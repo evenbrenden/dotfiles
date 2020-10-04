@@ -30,17 +30,18 @@
       '';
       xautolock =
         let
-          lock-time = 60; # minutes
-          lock-notify = 60; # seconds
+          lock-time-mins = 60;
+          lock-notify-secs = 60;
+          lock-notify-ms = 1000 * lock-notify-secs;
         in
           {
             enable = true;
             enableNotifier = true;
             extraOptions = [ "-secure" ];
             locker = ''${pkgs.systemd}/bin/loginctl lock-session $XDG_SESSION_ID'';
-            notifier = ''${pkgs.libnotify}/bin/notify-send "Lock in ${toString lock-notify} seconds"'';
-            notify = lock-notify;
-            time = lock-time;
+            notifier = ''${pkgs.libnotify}/bin/notify-send --expire-time=${toString lock-notify-ms} "Lock in ${toString lock-notify-secs} seconds"'';
+            notify = lock-notify-secs;
+            time = lock-time-mins;
           };
     };
   };
