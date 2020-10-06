@@ -98,6 +98,7 @@
     enableDefaultFonts = true;
     fontconfig.allowBitmaps = false; # Fixes some blocky fonts in Firefox
   };
+  networking.firewall.enable = true;
   services.dbus.socketActivated = true;
   system.stateVersion = "20.03";
   time.timeZone = "Europe/Amsterdam";
