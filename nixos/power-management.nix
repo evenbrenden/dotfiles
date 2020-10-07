@@ -25,7 +25,7 @@
       '';
       xautolock = {
         enable = true;
-        enableNotifier = false;
+        extraOptions = [ "-secure" ];
         locker = ''${pkgs.systemd}/bin/loginctl lock-session $XDG_SESSION_ID'';
         time = 15; # Minutes
       };
