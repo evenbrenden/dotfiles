@@ -27,7 +27,7 @@
         enable = true;
         enableNotifier = false;
         locker = ''${pkgs.systemd}/bin/loginctl lock-session $XDG_SESSION_ID'';
-        time = 60; # Minutes
+        time = 15; # Minutes
       };
     };
   };
