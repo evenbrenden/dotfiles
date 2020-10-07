@@ -23,6 +23,7 @@
         xset s off
         xset -dpms
       '';
+      # Temporarily disable with: systemctl --user stop xautolock.service
       xautolock = {
         enable = true;
         extraOptions = [ "-secure" ];
