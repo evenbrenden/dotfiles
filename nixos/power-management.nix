@@ -23,21 +23,12 @@
         xset s off
         xset -dpms
       '';
-      xautolock =
-        let
-          lock-time-mins = 60;
-          lock-notify-secs = 60;
-          lock-notify-ms = 1000 * lock-notify-secs;
-        in
-          {
-            enable = true;
-            enableNotifier = true;
-            extraOptions = [ "-secure" ];
-            locker = ''${pkgs.systemd}/bin/loginctl lock-session $XDG_SESSION_ID'';
-            notifier = ''${pkgs.libnotify}/bin/notify-send --expire-time=${toString lock-notify-ms} "Lock in ${toString lock-notify-secs} seconds"'';
-            notify = lock-notify-secs;
-            time = lock-time-mins;
-          };
+      xautolock = {
+        enable = true;
+        enableNotifier = false;
+        locker = ''${pkgs.systemd}/bin/loginctl lock-session $XDG_SESSION_ID'';
+        time = 60; # Minutes
+      };
     };
   };
 
