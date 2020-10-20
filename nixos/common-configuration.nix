@@ -8,8 +8,8 @@
 
   # Programs
   nixpkgs.overlays = [
-    # Skipping i3wm 4.18.2 (https://github.com/i3/i3/issues/4159)
-    (import ../overlays/i3wm.nix)
+    # Skipping i3 4.18.2 (https://github.com/i3/i3/issues/4159)
+    (import ../overlays/i3.nix)
   ];
   nixpkgs.config = {
     allowUnfree = true;
