@@ -21,14 +21,15 @@
           };
         in
         [
+          fzf-vim
+          tcomment_vim
           vim-airline
           vim-fsharp
           vim-gitgutter
           vim-markdown
           vim-nix
           vim-pico8-syntax
-          tcomment_vim
-          fzf-vim
+          wmgraphviz-vim
         ];
     };
   };
