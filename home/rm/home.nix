@@ -28,6 +28,7 @@
       fzf
       gimp
       gparted
+      graphviz # For xdot
       irssi
       jetbrains.rider
       jotta-cli
@@ -37,6 +38,7 @@
       pavucontrol
       python3
       python37Packages.virtualenv
+      python37Packages.xdot
       (callPackage (import ../../pkgs/rclone-sync.nix) {})
       shellcheck
       slack
