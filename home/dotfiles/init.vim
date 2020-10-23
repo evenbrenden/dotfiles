@@ -18,7 +18,7 @@ set background=dark
 set guicursor=
 syntax on
 let mapleader=","
-let maplocalleader="\\"
+let maplocalleader="."
 
 " write to current file with ,s
 noremap <silent><Leader>s :w<CR>
