@@ -38,3 +38,6 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 " vim-markdown
 let g:vim_markdown_conceal_code_blocks = 1
 set conceallevel=2
+
+" wmgraphviz.vim
+let g:WMGraphviz_output = "svg"
