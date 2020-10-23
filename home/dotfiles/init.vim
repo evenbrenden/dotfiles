@@ -19,6 +19,9 @@ set guicursor=
 syntax on
 let mapleader=","
 
+" write to current file with ,s
+noremap <silent><Leader>s :w<CR>
+
 " autocomplete with ctrl+p
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
