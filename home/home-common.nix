@@ -50,8 +50,6 @@
       xclip
       zip
     ];
-  imports = [ ./vim-fsharp-lsp.nix ];
-  programs.vim-fsharp-lsp.enable = false;
 
   # Actual dotfiles
   xdg = {
