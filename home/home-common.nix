@@ -2,6 +2,9 @@
 
 {
   # Programs
+  programs.vim-fsharp-lsp.enable = true;
+  imports = [ ./vim-fsharp-lsp.nix ];
+
   programs = {
     home-manager.enable = true;
     man.enable = false;
