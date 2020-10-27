@@ -2,9 +2,6 @@
 
 {
   # Programs
-  programs.vim-fsharp-lsp.enable = true;
-  imports = [ ./vim-fsharp-lsp.nix ];
-
   programs = {
     home-manager.enable = true;
     man.enable = false;
@@ -53,6 +50,8 @@
       xclip
       zip
     ];
+  imports = [ ./vim-fsharp-lsp.nix ];
+  programs.vim-fsharp-lsp.enable = false;
 
   # Actual dotfiles
   xdg = {
