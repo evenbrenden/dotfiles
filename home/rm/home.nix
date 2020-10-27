@@ -5,6 +5,7 @@
 
   nixpkgs.overlays = [
     (import ../../overlays/jetbrains.rider.nix)
+    (import ../../overlays/jotta-cli.nix)
   ];
 
   home.packages = with pkgs;
