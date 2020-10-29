@@ -52,5 +52,5 @@ load {
 }
 
 tztime local {
-    format = "W%W %Y-%m-%d %H:%M:%S"
+    format = "W%V %Y-%m-%d %H:%M:%S"
 }
