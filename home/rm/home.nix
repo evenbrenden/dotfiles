@@ -39,7 +39,7 @@
       pavucontrol
       python3
       python37Packages.virtualenv
-      (callPackage (import ../../pkgs/rclone-sync.nix) {})
+      (callPackage (import ../../pkgs/rclone-sync) {})
       shellcheck
       slack
       snes9x-gtk
