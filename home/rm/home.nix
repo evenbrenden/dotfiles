@@ -48,8 +48,26 @@
       transmission-gtk
       udiskie
       veracrypt
-      vscode
     ];
+    programs.vscode = {
+      enable = true;
+      extensions = [ (pkgs.callPackage (import ../../pkgs/ms-vsliveshare-vsliveshare) {}) ];
+      userSettings = {
+        "editor.occurrencesHighlight" = true;
+        "editor.renderLineHighlight" = "none";
+        "editor.copyWithSyntaxHighlighting" = false;
+        "editor.highlightActiveIndentGuide" = false;
+        "workbench.editor.highlightModifiedTabs" = true;
+        "editor.renderIndentGuides" = false;
+        "editor.cursorBlinking" = "solid";
+        "editor.cursorStyle" = "block";
+        "editor.minimap.enabled" = false;
+        "editor.matchBrackets" = "never";
+        "editor.links" = false;
+        "workbench.editor.enablePreview" = false;
+        "FSharp.useSdkScripts" = true;
+      };
+    };
 
   xdg.configFile."i3/config".text = with builtins;
     (readFile ../dotfiles/i3config-common)
