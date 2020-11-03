@@ -49,7 +49,6 @@
       udiskie
       veracrypt
       vscode
-      (callPackage (import ../../pkgs/ms-vsliveshare-vsliveshare.nix) {})
     ];
 
   xdg.configFile."i3/config".text = with builtins;
