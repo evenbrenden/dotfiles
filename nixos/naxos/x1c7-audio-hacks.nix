@@ -2,7 +2,7 @@
 
 {
   nixpkgs.overlays = [
-    # PulseAudio 13.99
+    # Waiting for PulseAudio 14 (https://wiki.archlinux.org/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_7)#Audio)
     (import ../../overlays/pulseaudio.nix)
   ];
 
