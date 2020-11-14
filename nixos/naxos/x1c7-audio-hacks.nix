@@ -4,6 +4,8 @@
   nixpkgs.overlays = [
     # Waiting for PulseAudio 14 (https://wiki.archlinux.org/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_7)#Audio)
     (import ../../overlays/pulseaudio.nix)
+    # Reviewing https://github.com/NixOS/nixpkgs/pull/103778 ("sof-firmware: 1.5.1 -> 1.6")
+    (import ../../overlays/sof-firmware.nix)
   ];
 
   systemd = {
