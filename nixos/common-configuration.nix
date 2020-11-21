@@ -7,10 +7,6 @@
   ];
 
   # Programs
-  nixpkgs.overlays = [
-    # Waiting for 4.18.3 (https://github.com/i3/i3/issues/4159)
-    (import ../overlays/i3.nix)
-  ];
   nixpkgs.config = {
     allowUnfree = true;
     chromium.enableWideVine = true;
@@ -99,7 +95,6 @@
     fontconfig.allowBitmaps = false; # Fixes some blocky fonts in Firefox
   };
   networking.firewall.enable = true;
-  services.dbus.socketActivated = true;
   system.stateVersion = "20.03";
   time.timeZone = "Europe/Amsterdam";
 }
