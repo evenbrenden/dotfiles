@@ -3,14 +3,11 @@
 {
   imports = [
     ../home-common.nix
-    ./vscode.nix
   ];
 
   nixpkgs.overlays = [
     # JetBrains releases Rider quite often (so nixpkgs is usually behind)
     (import ../../overlays/jetbrains.rider.nix)
-    # Waiting for 0.7.35160 (https://github.com/jotta/jotta-cli-issues/issues/111)
-    (import ../../overlays/jotta-cli.nix)
   ];
 
   home.packages = with pkgs; [
