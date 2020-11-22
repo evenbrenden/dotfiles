@@ -52,7 +52,16 @@
     transmission-gtk
     udiskie
     veracrypt
-  ];
+  ]
+  ++
+  (
+    let
+      renoisePath = ./rns_324_linux_x86_64.tar.gz;
+    in
+      lib.lists.optional
+      (builtins.pathExists renoisePath)
+      (renoise.override { releasePath = renoisePath; })
+  );
 
   xdg.configFile."i3/config".text = with builtins;
     (readFile ../dotfiles/i3config-common)
