@@ -9,12 +9,16 @@ in
     ../common-configuration.nix
     ./x1c7-audio-hacks.nix
     ./x1c7-hardware-configuration.nix
+    ./musnix
   ];
 
   # Steam
   programs.steam.enable = true;
   hardware.steam-hardware.enable = true;
   hardware.opengl.driSupport32Bit = true;
+
+  # DAW
+  musnix.enable = true;
 
   users.users.${userName} = {
     isNormalUser = true;
