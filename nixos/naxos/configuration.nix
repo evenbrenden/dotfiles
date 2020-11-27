@@ -19,6 +19,10 @@ in
 
   # DAW
   musnix.enable = true;
+  environment.systemPackages = with pkgs;
+    (lib.lists.optional
+    (builtins.pathExists ./Diva_144_9775_Linux.tar.xz)
+    (callPackage ./u-he-diva.nix {}));
 
   users.users.${userName} = {
     isNormalUser = true;
