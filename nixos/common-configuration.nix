@@ -66,7 +66,6 @@
     enable = true;
     package = pkgs.pulseaudio.override {
       bluetoothSupport = true;
-      jackaudioSupport = true;
     };
     extraModules = [ pkgs.pulseaudio-modules-bt ];
   };

@@ -23,15 +23,10 @@ in
     (lib.lists.optional
     (builtins.pathExists ./Diva_144_9775_Linux.tar.xz)
     (callPackage ./u-he-diva.nix {}));
-  services.jack = {
-    jackd.enable = true;
-    alsa.enable = false;
-    loopback.enable = true;
-  };
 
   users.users.${userName} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "audio" "video" "vboxusers" "jackaudio" ];
+    extraGroups = [ "wheel" "networkmanager" "audio" "video" "vboxusers" ];
   };
 
   services.xserver.displayManager.autoLogin = {
