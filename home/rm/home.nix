@@ -52,6 +52,9 @@
     transmission-gtk
     udiskie
     veracrypt
+
+    # DAW
+    ardour
   ]
   ++
   (
