@@ -19,6 +19,9 @@ in
 
   # DAW
   musnix.enable = true;
+  # If a program that needs exclusive ALSA access to an external audio card,
+  # just disable that interface for PulseAudio and use the internal audio card
+  # for other programs (could use JACK to get around this, won't bother atm).
 
   users.users.${userName} = {
     isNormalUser = true;
