@@ -1,13 +1,10 @@
 { config, pkgs, ... }:
 
-let
-  renoisePath = ./rns_324_linux_x86_64.tar.gz;
-  hasRenoise = builtins.pathExists renoisePath;
-in
 {
   imports = [
     ../home-common.nix
     ./vscode.nix
+    ./daw
   ];
 
   nixpkgs.overlays = [
@@ -56,23 +53,7 @@ in
     transmission-gtk
     udiskie
     veracrypt
-
-    # DAW
-    ardour
-  ]
-  ++
-  (
-    lib.lists.optional
-    hasRenoise
-    (renoise.override { releasePath = renoisePath; })
-  );
-
-  # Terrible workaround until I can figure out how to make the desktop item
-  # supplied with the Renoise tarball to work when installed via the package
-  xdg.dataFile =
-    pkgs.lib.attrsets.optionalAttrs
-    hasRenoise
-    { "applications/renoise.desktop".source = ./renoise.desktop; };
+  ];
 
   xdg.configFile."i3/config".text = with builtins;
     (readFile ../dotfiles/i3config-common)
