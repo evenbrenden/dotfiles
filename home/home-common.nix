@@ -33,20 +33,55 @@
         ];
     };
   };
+  nixpkgs.overlays = [
+    # Waiting for 0.8.36055 (https://github.com/jotta/jotta-cli-issues/issues/111)
+    (import ../overlays/jotta-cli.nix)
+  ];
   home.packages = with pkgs;
     [
       # For dotfiles
+      autorandr
+      brightnessctl
       dotnet-sdk_3
+      dunst
+      networkmanagerapplet
+      libnotify
+      playerctl
       sakura
 
       # User programs
+      abcde
+      arandr
+      cabal-install
+      chromium
       curl
-      dbeaver
+      dos2unix
+      firefox
+      flameshot
+      fzf
+      gimp
       git
-      postman
+      gparted
+      graphviz
+      irssi
+      jotta-cli
+      jq
+      vlc
+      nomacs
+      pavucontrol
+      python3
+      python37Packages.virtualenv
       rclone
-      remmina
+      (callPackage (import ../pkgs/rclone-sync) {})
+      shellcheck
+      slack
+      snes9x-gtk
+      spotify
+      teams
+      transmission-gtk
+      udiskie
       unzip
+      veracrypt
       xclip
       zip
     ];
