@@ -6,42 +6,6 @@
   ];
 
   home.packages = with pkgs; [
-
-    # For dotfiles
-    autorandr
-    brightnessctl
-    dunst
-    networkmanagerapplet
-    libnotify
-    playerctl
-
-    # User programs
-    abcde
-    arandr
-    chromium
-    dos2unix
-    firefox
-    flameshot
-    fzf
-    gimp
-    gparted
-    graphviz
-    irssi
-    jq
-    vlc
-    nomacs
-    pavucontrol
-    python3
-    python37Packages.virtualenv
-    (callPackage (import ../../pkgs/rclone-sync) {})
-    shellcheck
-    snes9x-gtk
-    spotify
-    transmission-gtk
-    udiskie
-    veracrypt
-
-    # DAW
     ardour
     (renoise.override { releasePath = ./rns_324_linux_x86_64.tar.gz; })
   ];
