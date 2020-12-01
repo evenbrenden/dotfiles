@@ -4,8 +4,7 @@
   programs.vscode = {
     enable = true;
     extensions =
-      # Waiting for the Live Share extension to hit the channels (it's all new)
-      [ (pkgs.callPackage (import ../../pkgs/ms-vsliveshare-vsliveshare) {}) ]
+      [ pkgs.vscode-extensions.ms-vsliveshare.vsliveshare ]
       ++
       pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
