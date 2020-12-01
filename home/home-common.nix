@@ -33,10 +33,6 @@
         ];
     };
   };
-  nixpkgs.overlays = [
-    # Waiting for 0.8.36055 (https://github.com/jotta/jotta-cli-issues/issues/111)
-    (import ../overlays/jotta-cli.nix)
-  ];
   home.packages = with pkgs;
     [
       # For dotfiles
@@ -64,7 +60,7 @@
       gparted
       graphviz
       irssi
-      jotta-cli
+      jotta-cli # Waiting for 0.8.36055 (https://github.com/jotta/jotta-cli-issues/issues/111)
       jq
       vlc
       nomacs
