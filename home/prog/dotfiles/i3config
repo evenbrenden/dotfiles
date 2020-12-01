@@ -1,7 +1,13 @@
 # start i3bar to display a workspace bar
 bar {
     status_command bash ~/bin/i3status.sh
+    colors {
+        focused_workspace #994c78 #772855 #ffffff
+    }
 }
+
+# set colors
+client.focused #994c78 #772855 #ffffff #f42e9e #772855
 
 # set some alsa state
 exec --no-startup-id amixer -q -c 0 set 'Mic Mute-LED Mode' 'Follow Mute'
