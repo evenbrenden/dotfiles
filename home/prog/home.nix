@@ -12,7 +12,7 @@
 
   home.packages = with pkgs; [
     dbeaver
-    dotnet-sdk_3
+    dotnet-sdk_5
     jetbrains.rider
     postman
     remmina
@@ -21,7 +21,7 @@
   home.file =
     let
       # Workaround for .NET Core SDK installed with Nix (https://wiki.archlinux.org/index.php/.NET_Core)
-      dotnet_root = "export DOTNET_ROOT=${pkgs.dotnet-sdk_3}\n";
+      dotnet_root = "export DOTNET_ROOT=${pkgs.dotnet-sdk_5}\n";
       dotnet_tools = "PATH=$PATH:${config.home.homeDirectory}/.dotnet/tools\n";
     in
     {
