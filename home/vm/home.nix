@@ -10,6 +10,8 @@
   # Note that on some distros you might want to uninstall dunst (or else you might
   # get a warning on every home-manager switch)
 
+  home.file.".bashrc".text = builtins.readFile ../dotfiles/bashrc;
+
   xdg.configFile."i3/config".text = with builtins;
     (readFile ../dotfiles/i3config-common)
     +
