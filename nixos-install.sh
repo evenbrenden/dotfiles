@@ -11,5 +11,5 @@ if [[ ! -f $config ]]; then
     exit 1;
 fi
 
-nixpkgs=$(cat nixpkgs-nixos.url)
+nixpkgs=$(cat nixos-nixpkgs.url)
 sudo nixos-rebuild -I nixos-config=$config -I nixpkgs=$nixpkgs switch
