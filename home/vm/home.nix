@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ../home-common.nix ];
+  imports = [
+    ../home-common.nix
+    ../dotnet.nix
+  ];
 
   # This is only so that dmenu is able to list programs that are installed with Nix
   programs.bash.enable = true; # So that session variables are sourced in ~/.profile
