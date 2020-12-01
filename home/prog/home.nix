@@ -3,7 +3,6 @@
 {
   imports = [
     ../home-common.nix
-    ./vscode.nix
   ];
 
   nixpkgs.overlays = [
