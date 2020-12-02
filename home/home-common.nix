@@ -93,8 +93,7 @@
     };
   };
   home.file = {
-    # .text => file is being prepended/appended to elsewhere
-    ".bashrc".text = builtins.readFile ./dotfiles/bashrc;
+    ".bashrc".text = builtins.readFile ./dotfiles/bashrc; # .text => file is being prepended/appended to elsewhere
     ".gitignore".source = ./dotfiles/gitignore;
     ".gitconfig".source = ./dotfiles/gitconfig;
     "bin/i3status.sh".source = ./dotfiles/i3status.sh;
