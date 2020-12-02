@@ -81,7 +81,7 @@
       zip
     ];
 
-  # Actual dotfiles
+  # Actual dotfiles (not managed home-manager style)
   xdg = {
     enable = true;
     configFile = {
