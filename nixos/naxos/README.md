@@ -1,4 +1,4 @@
-### Installing NixOS on my ThinkPad X1 Carbon Gen 7 and T490s
+### Installing NixOS on my ThinkPad X1 Carbon Gen 7
 
 #### Sources
 - https://gist.github.com/martijnvermaat/76f2e24d0239470dd71050358b4d5134
