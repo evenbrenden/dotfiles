@@ -19,10 +19,6 @@
   services.openssh.enable = false;
   services.fprintd.enable = false;
   services.fwupd.enable = true;
-  virtualisation.virtualbox.host = {
-    enableExtensionPack = true;
-    enable = true;
-  };
   networking.networkmanager.enable = true;
 
   # For Chromecast to work (https://github.com/NixOS/nixpkgs/issues/49630)
