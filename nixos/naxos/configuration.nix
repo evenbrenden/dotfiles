@@ -29,5 +29,10 @@ in
     };
   };
 
+  virtualisation.virtualbox.host = {
+    enableExtensionPack = true;
+    enable = true;
+  };
+
   networking.hostName = "${hostName}";
 }
