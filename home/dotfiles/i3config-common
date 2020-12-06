@@ -156,3 +156,6 @@ bindsym $mod+Shift+s exec systemctl hybrid-sleep
 
 # unmount all
 bindsym $mod+Shift+u exec --no-startup-id udiskie-umount --all
+
+# choose the right display
+exec --no-startup-id autorandr --change
