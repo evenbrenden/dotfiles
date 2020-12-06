@@ -18,9 +18,12 @@ in
     extraGroups = [ "wheel" "networkmanager" "audio" "video" "vboxusers" ];
   };
 
-  services.xserver.displayManager.autoLogin = {
-    enable = true;
-    user = "${userName}";
+  services.xserver = {
+    dpi = 96;
+    displayManager.autoLogin = {
+      enable = true;
+      user = "${userName}";
+    };
   };
 
   networking.hostName = "${hostName}";
