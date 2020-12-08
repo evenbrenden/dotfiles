@@ -46,4 +46,6 @@
     # nix run nixos.git
     # git clone https://github.com/evenbrenden/dotfiles
     # nixos-generate-config --dir dotfiles/nixos/[hostname]
-    # nixos-install -I nixos-config=dotfiles/nixos/[hostname]/configuration.nix -I nixpkgs=$(cat dotfiles/nixos-nixpkgs.url)
+    # nixos-install \
+        -I nixos-config=dotfiles/nixos/[hostname]/configuration.nix \
+        -I nixpkgs=$(cat dotfiles/nixos-nixpkgs.url)
