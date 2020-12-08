@@ -8,7 +8,7 @@ in
   imports = [
     ../common-configuration.nix
     ./x1c7-audio-hacks.nix
-    ./x1c7-hardware-configuration.nix
+    ./hardware-configuration.nix
   ];
 
   # Steam
