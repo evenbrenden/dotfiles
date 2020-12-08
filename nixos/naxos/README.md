@@ -40,7 +40,7 @@
     psk="****"
   }
   ```
-- Start it up with `systemctl start wpa_supplicant`
+- Start it up with `systemctl start wpa_supplicant.service`
 
 #### Configure and install
     # nix run nixos.git
