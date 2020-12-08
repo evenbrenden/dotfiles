@@ -46,5 +46,5 @@
     # nixos-generate-config --root /mnt
     # nix run nixos.git
     # git clone https://github.com/evenbrenden/dotfiles
-    # [Merge ./dotfiles/nixos/[hostname]/ with /mnt/etc/nixos/]
+    # [Merge dotfiles/nixos/[hostname] into /mnt/etc/nixos]
     # nixos-install
