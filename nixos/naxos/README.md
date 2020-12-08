@@ -44,7 +44,7 @@
 
 #### Configure and install
     # nixos-generate-config --root /mnt
-    # nix-env -iA nixos.git
+    # nix run nixos.git
     # git clone https://github.com/evenbrenden/dotfiles
-    # cp dotfiles/nixos/configuration.nix /mnt/etc/nixos/configuration.nix
+    # [Merge ./dotfiles/nixos/[hostname]/ with /mnt/etc/nixos/]
     # nixos-install
