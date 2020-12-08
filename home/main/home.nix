@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../home-common.nix
+    ../common-home.nix
     ./vscode.nix
     ../dotnet.nix
   ];
