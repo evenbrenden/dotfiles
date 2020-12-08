@@ -74,7 +74,6 @@
       spotify
       teams
       transmission-gtk
-      udiskie
       unzip
       veracrypt
       xclip

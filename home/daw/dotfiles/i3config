@@ -13,4 +13,3 @@ client.focused #4c9978 #287755 #ffffff #2ef49e #287755
 exec sakura
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
-exec --no-startup-id udiskie
