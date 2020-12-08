@@ -43,8 +43,7 @@
 - Start it up with `systemctl start wpa_supplicant`
 
 #### Configure and install
-    # nixos-generate-config --root /mnt
     # nix run nixos.git
     # git clone https://github.com/evenbrenden/dotfiles
-    # [Merge dotfiles/nixos/[hostname] into /mnt/etc/nixos]
-    # nixos-install
+    # nixos-generate-config --dir dotfiles/nixos/[hostname]
+    # nixos-install -I nixos-config=dotfiles/nixos/[hostname]/configuration.nix -I nixpkgs=$(cat dotfiles/nixos-nixpkgs.url)
