@@ -48,9 +48,13 @@
 
 #### Configure
 - `# nixos-generate-config --dir .` and compare with `dotfiles` (see if there's anything interesting)
-- `networking.wireless.enable = true` (and do the `wpa_supplicant` thing again on first boot for WLAN)
+- Set `networking.wireless.enable = true` (for WLAN on first boot)
 
 #### Install
     # nixos-install \
         -I nixos-config=[path to the final configuration] \
         -I nixpkgs=[URL to the current nixpkgs archive]
+        
+#### First boot
+- `su - root` and change root and user passwords
+- Do the `wpa_supplicant` thing again (for WLAN)
