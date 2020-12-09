@@ -16,11 +16,14 @@ in
   hardware.steam-hardware.enable = true;
   hardware.opengl.driSupport32Bit = true;
 
+  # User
   users.users.${userName} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "video" "vboxusers" ];
   };
+  networking.hostName = "${hostName}";
 
+  # X
   services.xserver = {
     dpi = 144;
     displayManager.autoLogin = {
@@ -29,10 +32,18 @@ in
     };
   };
 
+  # VM
   virtualisation.virtualbox.host = {
     enableExtensionPack = true;
     enable = true;
   };
 
-  networking.hostName = "${hostName}";
+  # Disk
+  boot.initrd.luks.devices.root = {
+    device = "/dev/nvme0n1p1";
+    allowDiscards = true;
+    preLVM = true;
+  };
+
+  system.stateVersion = "20.03";
 }
