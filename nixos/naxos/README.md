@@ -47,9 +47,9 @@
     # git clone https://github.com/evenbrenden/dotfiles
 
 #### Configure
-- Run `# nixos-generate-config --dir .` and compare with `dotfiles` (see if there's anything interesting)
+- `# nixos-generate-config --dir .` and compare with `dotfiles` (see if there's anything interesting)
 
 #### Install
     # nixos-install \
-        -I nixos-config=dotfiles/nixos/[hostname]/configuration.nix \
-        -I nixpkgs=$(cat dotfiles/nixos-nixpkgs.url)
+        -I nixos-config=[path to the final configuration] \
+        -I nixpkgs=[URL to the current nixpkgs archive]
