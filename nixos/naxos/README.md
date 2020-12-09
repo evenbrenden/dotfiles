@@ -51,5 +51,5 @@
 
 #### Install
     # nixos-install \
-      -I nixos-config=dotfiles/nixos/[hostname]/configuration.nix \
-      -I nixpkgs=$(cat dotfiles/nixos-nixpkgs.url)
+          -I nixos-config=dotfiles/nixos/[hostname]/configuration.nix \
+          -I nixpkgs=$(cat dotfiles/nixos-nixpkgs.url)
