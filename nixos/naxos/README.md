@@ -47,7 +47,7 @@
     # git clone https://github.com/evenbrenden/dotfiles
 
 #### Configure
-- Run `# nixos-generate-config --dir .` and compare with `dotfiles`
+- Run `# nixos-generate-config --dir .` and compare with `dotfiles` (see if there's anything interesting)
 
 #### Install
     # nixos-install \
