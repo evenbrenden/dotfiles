@@ -56,5 +56,5 @@
         -I nixpkgs=[URL to the current nixpkgs archive]
         
 #### First boot
-- `su - root` and change root and user passwords
-- Do the `wpa_supplicant` thing again (for WLAN)
+- Change passwords with `su - root` and `passwd [username]`
+- Do the `wpa_supplicant` thing (above) again (for WLAN)
