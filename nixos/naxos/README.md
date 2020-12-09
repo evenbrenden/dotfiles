@@ -32,7 +32,7 @@
     # mkdir -p /mnt/boot
     # mount /dev/disk/by-label/BOOT /mnt/boot
 
-#### Need a network connection during install
+#### Need WLAN during install
 - Create `/etc/wpa_supplicant.conf` with
   ```
   network={
@@ -48,6 +48,9 @@
 
 #### Configure
 - `# nixos-generate-config --dir .` and compare with `dotfiles` (see if there's anything interesting)
+- For WLAN on first boot, either:
+    - Set `networking.wireless.enable = true` and do the `wpa_supplicant` thing above
+    - Set `networking.networkmanager.enable = true` and make use of the `nm-cli` tool
 
 #### Install
     # nixos-install \
