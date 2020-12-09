@@ -42,10 +42,14 @@
   ```
 - Start it up with `systemctl start wpa_supplicant.service`
 
-#### Configure and install
+#### Clone dotfiles
     # nix run nixos.git
     # git clone https://github.com/evenbrenden/dotfiles
-    # nixos-generate-config --dir dotfiles/nixos/[hostname]
+
+#### Configure
+- Run `# nixos-generate-config --dir .` and compare with `dotfiles`
+
+#### Install
     # nixos-install \
-        -I nixos-config=dotfiles/nixos/[hostname]/configuration.nix \
-        -I nixpkgs=$(cat dotfiles/nixos-nixpkgs.url)
+      -I nixos-config=dotfiles/nixos/[hostname]/configuration.nix \
+      -I nixpkgs=$(cat dotfiles/nixos-nixpkgs.url)
