@@ -68,13 +68,6 @@
 
   # Disk and the likes
   boot = {
-    initrd.luks.devices = {
-      root = {
-        device = "/dev/nvme0n1p1";
-        allowDiscards = true;
-        preLVM = true;
-      };
-    };
     kernel.sysctl."fs.inotify.max_user_watches" = 524288;
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
@@ -95,6 +88,5 @@
   };
   networking.firewall.enable = true;
   services.dbus.socketActivated = true;
-  system.stateVersion = "20.03";
   time.timeZone = "Europe/Amsterdam";
 }
