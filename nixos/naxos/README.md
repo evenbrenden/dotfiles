@@ -57,4 +57,4 @@
         
 #### First boot
 - Change passwords with `su - root` and `passwd [username]`
-- Do the `wpa_supplicant` thing (above) again (for WLAN)
+- Do the `wpa_supplicant` thing (above) again (for an ad-hoc WLAN)
