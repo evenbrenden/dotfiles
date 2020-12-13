@@ -19,7 +19,6 @@
         xset s off
         xset -dpms
       '';
-      # Temporarily disable with: xautolock -disable
       xautolock = {
         enable = true;
         locker = ''${pkgs.systemd}/bin/loginctl lock-session $XDG_SESSION_ID'';
