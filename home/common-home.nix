@@ -79,6 +79,7 @@
       xclip
       zip
     ];
+  services.network-manager-applet.enable = true;
 
   # Actual dotfiles (not managed home-manager style)
   xdg = {

@@ -12,7 +12,3 @@ client.focused #994c78 #772855 #ffffff #f42e9e #772855
 # set some alsa state
 exec --no-startup-id amixer -q -c 0 set 'Mic Mute-LED Mode' 'Follow Mute'
 exec --no-startup-id amixer -q -c 0 set 'Auto-Mute Mode' 'Disabled'
-
-# start some programs
-exec sakura
-exec --no-startup-id nm-applet
