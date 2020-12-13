@@ -13,11 +13,7 @@
   };
 
   services = {
-    logind = {
-      lidSwitch = "ignore";
-      lidSwitchDocked = "ignore";
-      lidSwitchExternalPower = "ignore";
-    };
+    logind.lidSwitch = "ignore";
     xserver = {
       displayManager.sessionCommands = ''
         xset s off
