@@ -146,7 +146,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
 
 # notifications control
-bindsym $mod+n exec --no-startup-id dunstctl set-paused toggle && pkill -x -USR1 i3status
+bindsym $mod+Shift+n exec --no-startup-id dunstctl set-paused toggle && pkill -x -USR1 i3status
 
 # lock screen
 bindsym $mod+Shift+l exec loginctl lock-session $XDG_SESSION_ID
