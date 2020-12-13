@@ -10,6 +10,8 @@
   nixpkgs.overlays = [
     # Waiting for 4.18.3 (https://github.com/i3/i3/issues/4159)
     (import ../overlays/i3.nix)
+    # Fork of peti/xautolock with added status feature (from kkopec/xautolock)
+    (import ../overlays/xautolock.nix)
   ];
   nixpkgs.config = {
     allowUnfree = true;

@@ -151,6 +151,9 @@ bindsym $mod+n exec --no-startup-id dunstctl set-paused toggle && pkill -x -USR1
 # lock screen
 bindsym $mod+Shift+l exec loginctl lock-session $XDG_SESSION_ID
 
+# toggle auto lock
+bindsym $mod+Shift+a exec --no-startup-id xautolock -toggle && pkill -x -USR1 i3status
+
 # sleep
 bindsym $mod+Shift+s exec systemctl hybrid-sleep
 
