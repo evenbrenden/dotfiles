@@ -12,4 +12,3 @@ client.focused #4c9978 #287755 #ffffff #2ef49e #287755
 # start some programs
 exec sakura
 exec --no-startup-id nm-applet
-exec --no-startup-id dunst
