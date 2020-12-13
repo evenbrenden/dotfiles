@@ -39,7 +39,6 @@
       autorandr
       brightnessctl
       dunst
-      networkmanagerapplet
       libnotify
       playerctl
       sakura
