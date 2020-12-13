@@ -14,6 +14,12 @@ in
   # DAW
   musnix.enable = true;
 
+  # Internal sound card quirk
+  hardware.pulseaudio.extraConfig = ''
+    set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo+input:analog-stereo
+    set-card-profile alsa_card.usb-Focusrite_Scarlett_8i6_USB_00007200-00 off
+  '';
+
   # User
   users.users.${userName} = {
     isNormalUser = true;
