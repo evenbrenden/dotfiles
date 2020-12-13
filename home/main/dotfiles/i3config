@@ -16,4 +16,3 @@ exec --no-startup-id amixer -q -c 0 set 'Auto-Mute Mode' 'Disabled'
 # start some programs
 exec sakura
 exec --no-startup-id nm-applet
-exec --no-startup-id dunst
