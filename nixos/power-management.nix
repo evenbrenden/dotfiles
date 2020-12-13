@@ -14,6 +14,10 @@
 
   services = {
     logind.lidSwitch = "ignore";
+    upower = {
+      enable = true;
+      criticalPowerAction = "PowerOff";
+    };
     xserver = {
       displayManager.sessionCommands = ''
         xset s off
