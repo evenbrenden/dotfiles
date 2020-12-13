@@ -38,7 +38,7 @@
       # For dotfiles
       autorandr
       brightnessctl
-      dunst
+      dunst # For dunstctl
       libnotify
       playerctl
       sakura
