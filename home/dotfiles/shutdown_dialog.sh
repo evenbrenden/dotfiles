@@ -1,8 +1,12 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-while [ "$select" != "No" -a "$select" != "Yes" ]; do
-    select=$(echo -e 'No\nYes' | dmenu -i -p "Shut down?")
+Q="Shut it down?"
+NO="No"
+YES="Yes"
+
+while [ "$select" != "$NO" -a "$select" != "$YES" ]; do
+    select=$(echo -e "$NO\n$YES" | dmenu -i -p "$Q")
     [ -z "$select" ] && exit 0
 done
-[ "$select" = "No" ] && exit 0
+[ "$select" = "$NO" ] && exit 0
 i3-msg exec shutdown now
