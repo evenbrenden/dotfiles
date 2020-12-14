@@ -1,26 +1,26 @@
+# modifier = windows key
 set $mod Mod4
 
+# font for all i3 things
 font pango:monospace 12
+
+# terminal launcher
+bindsym $mod+Return exec sakura
+
+# dmenu launcher
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # use mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec sakura
+# keep current window focused no matter where the mouse pointer is
+focus_follows_mouse no
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
-# change keyboard layout
-bindsym $mod+k exec --no-startup-id python3 ~/bin/toggle_keyboard_layout.py
-
 # hide edge borders for single-window workspaces
 hide_edge_borders smart
-
-focus_follows_mouse no
 
 # window navigation
 bindsym $mod+Left focus left
@@ -117,7 +117,6 @@ mode "resize" {
     bindsym Escape mode "default"
     bindsym $mod+r mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
 # audio control
@@ -144,6 +143,9 @@ bindsym $mod+Ctrl+8 exec --no-startup-id xrandr --dpi 144
 # brightness control
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
+
+# change keyboard layout
+bindsym $mod+k exec --no-startup-id python3 ~/bin/toggle_keyboard_layout.py
 
 # notifications control
 bindsym $mod+n exec --no-startup-id dunstctl set-paused toggle && pkill -x -USR1 i3status
