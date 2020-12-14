@@ -12,20 +12,6 @@
     '';
   };
 
-  services = {
-    logind.lidSwitch = "ignore";
-    upower = {
-      enable = true;
-      criticalPowerAction = "PowerOff";
-    };
-    xserver = {
-      displayManager.sessionCommands = ''
-        xset s off
-        xset -dpms
-      '';
-    };
-  };
-
   # Temporarily disable with: systemctl --user stop xidlehook.service
   systemd.user.services.xidlehook =
     let
@@ -43,4 +29,9 @@
         Restart = "always";
       };
     };
+
+  services.xserver.displayManager.sessionCommands = ''
+    xset s off
+    xset -dpms
+  '';
 }

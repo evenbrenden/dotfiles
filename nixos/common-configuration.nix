@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./power-management.nix
+    ./screen-locking.nix
     ./anti-screen-tearing.nix
   ];
 
@@ -80,6 +80,15 @@
     supportedFilesystems = [ "ntfs" ];
   };
   swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
+
+  # Power management
+  services = {
+    logind.lidSwitch = "ignore";
+    upower = {
+      enable = true;
+      criticalPowerAction = "PowerOff";
+    };
+  };
 
   # Misc
   fonts = {
