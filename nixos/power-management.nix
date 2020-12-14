@@ -23,12 +23,24 @@
         xset s off
         xset -dpms
       '';
-      # Temporarily disable with: xautolock -disable
-      xautolock = {
-        enable = true;
-        locker = ''${pkgs.systemd}/bin/loginctl lock-session $XDG_SESSION_ID'';
-        time = 15; # Minutes
-      };
     };
   };
+
+  # Temporarily disable with: systemctl --user stop xidlehook.service
+  systemd.user.services.xidlehook =
+    let
+      timeout_secs = 15 * 60;
+      lock_command = "${pkgs.systemd}/bin/loginctl lock-session $XDG_SESSION_ID";
+      canceller = "";
+      options = "--not-when-fullscreen";
+    in
+    {
+      description = "xidlehook service";
+      wantedBy = [ "graphical-session.target" ];
+      partOf = [ "graphical-session.target" ];
+      serviceConfig = {
+        ExecStart = "${pkgs.xidlehook}/bin/xidlehook ${options} --timer ${toString timeout_secs} \"${lock_command}\" \"${canceller}\"";
+        Restart = "always";
+      };
+    };
 }
