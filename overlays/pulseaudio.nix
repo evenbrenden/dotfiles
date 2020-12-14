@@ -5,11 +5,11 @@
 
       (super.pulseaudio.override args).overrideAttrs (_: rec {
         name = "${if libOnly then "lib" else ""}pulseaudio-${version}";
-        version = "13.99";
+        version = "14.0";
 
         src = super.fetchurl {
-          url = "http://freedesktop.org/software/pulseaudio/releases/pulseaudio-${version}.1.tar.xz";
-          sha256 = "030a7v0khp6w683km81c6vpch1687pvx2gvscnzkjq4f0z6138g6";
+          url = "http://freedesktop.org/software/pulseaudio/releases/pulseaudio-${version}.tar.xz";
+          sha256 = "0qf20rgg0ysrnvg3359j56ndls07qmfn5rsy9r85bc42jdfpfd58";
         };
 
         postInstall = super.lib.optionalString libOnly ''
