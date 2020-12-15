@@ -6,6 +6,17 @@
   ];
 
   home.packages = with pkgs; [
+
+    # Plugins
+    carla
+    espeak-ng
+    infamousPlugins
+    soundfont-fluid
+    surge
+    vocproc
+    zynaddsubfx
+
+    # Programs
     ardour
     (renoise.override { releasePath = ./rns_324_linux_x86_64.tar.gz; })
   ];
