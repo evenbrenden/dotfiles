@@ -6,8 +6,6 @@ let
   # https://github.com/fsprojects/fsharp-language-server#installation
   fsharp-language-server = "${config.home.homeDirectory}/bin/fsharp-language-server/FSharpLanguageServer.dll";
 
-  # Also tried FsAutoComplete (and hit https://github.com/fsharp/FsAutoComplete/issues/583)
-
   cfg = config.programs.vim-fsharp-lsp;
 in
   {
