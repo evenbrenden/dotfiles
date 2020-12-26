@@ -13,10 +13,10 @@ general {
 }
 
 order += "volume master"
-order += "disk /"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery all"
+order += "disk /"
 order += "load"
 order += "tztime local"
 
@@ -45,6 +45,12 @@ ethernet _first_ {
 
 battery all {
     format = "%status %percentage %remaining"
+    format_down = ""
+    integer_battery_capacity = true
+    status_chr = "charging"
+    status_bat = "battery"
+    status_unk = "unknown"
+    status_full = "full"
 }
 
 load {
@@ -52,5 +58,5 @@ load {
 }
 
 tztime local {
-    format = "W%V %Y-%m-%d %H:%M:%S"
+    format = "week %V %Y-%m-%d %H:%M:%S"
 }
