@@ -15,6 +15,7 @@ in
   programs.steam.enable = true;
   hardware.steam-hardware.enable = true;
   hardware.opengl.driSupport32Bit = true;
+  environment.systemPackages = [ pkgs.steam-run ];
 
   # User
   users.users.${userName} = {
