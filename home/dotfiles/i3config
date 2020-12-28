@@ -170,9 +170,5 @@ bindsym $mod+Shift+s exec systemctl hybrid-sleep
 # choose the right display
 exec --no-startup-id autorandr --change
 
-# set some alsa state
-exec --no-startup-id amixer -q -c 0 set 'Mic Mute-LED Mode' 'Follow Mute'
-exec --no-startup-id amixer -q -c 0 set 'Auto-Mute Mode' 'Disabled'
-
 # open up a terminal
 exec sakura
