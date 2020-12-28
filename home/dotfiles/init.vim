@@ -20,9 +20,6 @@ syntax on
 let mapleader=","
 let maplocalleader="."
 
-" write to current file with ,s
-noremap <silent><Leader>s :w<CR>
-
 " autocomplete with ctrl+p
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
@@ -35,9 +32,11 @@ hi ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 
+" vim-fzf
+noremap <silent><Leader>f :Files<CR>
+
 " vim-markdown
-let g:vim_markdown_conceal_code_blocks = 1
-set conceallevel=2
+let g:vim_markdown_folding_disabled = 1
 
 " wmgraphviz.vim
 let g:WMGraphviz_output = "svg"
