@@ -54,7 +54,7 @@
     # nixos-install \
         -I nixos-config=[path to the final configuration] \
         -I nixpkgs=[URL to the current nixpkgs archive]
-        
+
 #### First boot
 - Change passwords with `su - root` and then `passwd [username]`
 - Do the `wpa_supplicant` thing (above) again (for permanent WLAN)
