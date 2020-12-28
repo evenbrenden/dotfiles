@@ -32,9 +32,4 @@
   # Terrible workaround until I can figure out how to make the desktop item
   # supplied with the Renoise tarball to work when installed via the package
   xdg.dataFile."applications/renoise.desktop".source = ./renoise.desktop;
-
-  xdg.configFile."i3/config".text = with builtins;
-    (readFile ../dotfiles/i3config-common)
-    +
-    (readFile ./dotfiles/i3config);
 }
