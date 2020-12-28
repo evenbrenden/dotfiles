@@ -1,8 +1,0 @@
-# start i3bar to display a workspace bar
-bar {
-    status_command bash ~/bin/i3status.sh
-}
-
-# set some alsa state
-exec --no-startup-id amixer -q -c 0 set 'Mic Mute-LED Mode' 'Follow Mute'
-exec --no-startup-id amixer -q -c 0 set 'Auto-Mute Mode' 'Disabled'

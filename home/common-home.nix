@@ -91,6 +91,7 @@
     configFile = {
       "autorandr".source = ./dotfiles/autorandr;
       "dunst/dunstrc".source = ./dotfiles/dunstrc;
+      "i3/config".source = ./dotfiles/i3config;
       "i3status/config".source = ./dotfiles/i3status;
       "sakura/sakura.conf".source = ./dotfiles/sakura.conf;
       "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
