@@ -7,6 +7,7 @@ in
 {
   imports = [
     ../common-configuration.nix
+    ../laptop-alsa-state.nix
     ./x1c7-audio-hacks.nix
     ./hardware-configuration.nix
   ];
@@ -38,12 +39,6 @@ in
     enableExtensionPack = true;
     enable = true;
   };
-
-  # Sound
-  system.activationScripts.asound = ''
-    ${pkgs.alsaUtils}/bin/amixer -q -c 0 set 'Mic Mute-LED Mode' 'Follow Mute'
-    ${pkgs.alsaUtils}/bin/amixer -q -c 0 set 'Auto-Mute Mode' 'Disabled'
-  '';
 
   # Disk
   boot.initrd.luks.devices.root = {
