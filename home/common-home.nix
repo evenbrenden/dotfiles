@@ -72,6 +72,7 @@
       slack
       snes9x-gtk
       spotify
+      standardnotes
       teams
       transmission-gtk
       unzip
