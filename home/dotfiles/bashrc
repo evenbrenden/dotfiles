@@ -34,6 +34,9 @@ fi
 alias vi=nvim
 export EDITOR=nvim
 
+# xclip default clipboard
+alias xclip='xclip -selection clipboard'
+
 # set prompt
 RS="\[\033[0m\]"    # reset
 HC="\[\033[1m\]"    # hicolor
