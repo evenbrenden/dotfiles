@@ -48,7 +48,6 @@
       arandr
       cabal-install
       chromium
-      (callPackage (import ../pkgs/cryptomator) {})
       curl
       dos2unix
       firefox
