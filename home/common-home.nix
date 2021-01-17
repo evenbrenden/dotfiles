@@ -53,6 +53,7 @@
       dos2unix
       firefox
       flameshot
+      fff
       fzf
       gimp
       git
