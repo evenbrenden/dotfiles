@@ -8,13 +8,7 @@
   home.packages = with pkgs; [
 
     # Plugins
-    carla
-    espeak-ng
-    infamousPlugins
-    soundfont-fluid
-    surge
-    vocproc
-    zynaddsubfx
+    carla # For SoundFonts
 
     # Programs
     ardour
