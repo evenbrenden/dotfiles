@@ -7,10 +7,6 @@
   ];
 
   # Programs
-  nixpkgs.overlays = [
-    # Waiting for 4.18.3 (https://github.com/i3/i3/issues/4159)
-    (import ../overlays/i3.nix)
-  ];
   nixpkgs.config = {
     allowUnfree = true;
     chromium.enableWideVine = true;
@@ -69,7 +65,7 @@
   # Disk and the likes
   boot = {
     kernel.sysctl."fs.inotify.max_user_watches" = 524288;
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_5_9; # https://github.com/nixos/nixpkgs/issues/107648
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot = {
@@ -96,6 +92,5 @@
     fontconfig.allowBitmaps = false; # Fixes some blocky fonts in Firefox
   };
   networking.firewall.enable = true;
-  services.dbus.socketActivated = true;
   time.timeZone = "Europe/Amsterdam";
 }
