@@ -2,6 +2,9 @@
 
 {
   # Programs
+  nixpkgs.overlays = [
+    (import ../overlays/jotta-cli.nix) # 0.9.38023
+  ];
   programs = {
     home-manager.enable = true;
     man.enable = false;
@@ -59,7 +62,7 @@
       gparted
       graphviz
       irssi
-      jotta-cli # Waiting for 0.8.36055 (https://github.com/jotta/jotta-cli-issues/issues/111)
+      jotta-cli
       jq
       vlc
       nomacs
