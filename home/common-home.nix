@@ -75,7 +75,7 @@
       slack
       snes9x-gtk
       spotify
-      (callPackage (import ../pkgs/standardnotes) {}) # https://github.com/tasmo/nixpkgs/commit/601784d1ec0665d625812e11bf69a7d5e88da514
+      (callPackage (import ../pkgs/standardnotes) {}) # https://github.com/NixOS/nixpkgs/pull/106392#issuecomment-766825478
       teams
       transmission-gtk
       unzip
