@@ -47,6 +47,7 @@
       sakura
 
       # User programs
+      p7zip
       abcde
       arandr
       cabal-install
@@ -78,10 +79,8 @@
       (callPackage (import ../pkgs/standardnotes) {}) # https://github.com/NixOS/nixpkgs/pull/106392#issuecomment-766825478
       teams
       transmission-gtk
-      unzip
       veracrypt
       xclip
-      zip
     ];
 
   # Services
