@@ -65,7 +65,7 @@
       irssi
       jotta-cli
       jq
-      vlc
+      libreoffice
       nomacs
       pavucontrol
       python3
@@ -80,6 +80,7 @@
       teams
       transmission-gtk
       veracrypt
+      vlc
       xclip
     ];
 
