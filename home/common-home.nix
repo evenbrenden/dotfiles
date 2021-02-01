@@ -89,30 +89,6 @@
     network-manager-applet.enable = true;
   };
   systemd.user.startServices = true;
-  systemd.user.services.rclone-gdrive-mount =
-    let
-      remote = "gdrive";
-      mountPoint = "${config.home.homeDirectory}/${remote}";
-    in
-    {
-      Install = {
-        WantedBy = ["default.target"];
-      };
-      Service = {
-        Environment = "PATH=/run/wrappers/bin/";
-        ExecStart = "${pkgs.rclone}/bin/rclone mount --vfs-cache-mode writes ${remote}: ${mountPoint}";
-        ExecStartPre = "/run/current-system/sw/bin/mkdir -p ${mountPoint}";
-        ExecStop = "/run/wrappers/bin/fusermount -u ${mountPoint}";
-        Restart = "always";
-        RestartSec = "10s";
-        Type = "notify";
-      };
-      Unit = {
-        After = "network-online.target";
-        Description = "rclone Google Drive mount";
-        Wants = "network-online.target";
-      };
-    };
 
   # Actual dotfiles (not managed home-manager style)
   xdg = {
