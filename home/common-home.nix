@@ -91,7 +91,7 @@
   systemd.user.startServices = true;
   systemd.user.services.rclone-jotta-mount =
     let
-      remote = "jcrypt";
+      remote = "gdrive";
       mountPoint = "${config.home.homeDirectory}/${remote}";
     in
     {
