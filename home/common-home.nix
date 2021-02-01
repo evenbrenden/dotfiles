@@ -91,7 +91,8 @@
   systemd.user.startServices = true;
   systemd.user.services.rclone-jotta-mount =
     let
-      mountLocation = "${config.home.homeDirectory}/jotta";
+      remote = "jcrypt";
+      mountPoint = "${config.home.homeDirectory}/${remote}";
     in
     {
       Install = {
@@ -99,9 +100,9 @@
       };
       Service = {
         Environment = "PATH=/run/wrappers/bin/";
-        ExecStart = "${pkgs.rclone}/bin/rclone mount --vfs-cache-mode writes jotta: ${mountLocation}";
-        ExecStartPre = "/run/current-system/sw/bin/mkdir -p ${mountLocation}";
-        ExecStop = "/run/wrappers/bin/fusermount -u ${mountLocation}";
+        ExecStart = "${pkgs.rclone}/bin/rclone mount --vfs-cache-mode writes ${remote}: ${mountPoint}";
+        ExecStartPre = "/run/current-system/sw/bin/mkdir -p ${mountPoint}";
+        ExecStop = "/run/wrappers/bin/fusermount -u ${mountPoint}";
         Restart = "always";
         RestartSec = "10s";
         Type = "notify";
