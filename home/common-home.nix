@@ -71,7 +71,6 @@
       python3
       python37Packages.virtualenv
       rclone
-      (callPackage (import ../pkgs/rclone-sync) {})
       shellcheck
       slack
       snes9x-gtk
@@ -89,6 +88,30 @@
     dunst.enable = true;
     network-manager-applet.enable = true;
   };
+  systemd.user.startServices = true;
+  systemd.user.services.rclone-jotta-mount =
+    let
+      mountLocation = "${config.home.homeDirectory}/jotta";
+    in
+    {
+      Install = {
+        WantedBy = ["default.target"];
+      };
+      Service = {
+        Environment = "PATH=/run/wrappers/bin/";
+        ExecStart = "${pkgs.rclone}/bin/rclone mount --vfs-cache-mode writes jotta: ${mountLocation}";
+        ExecStartPre = "/run/current-system/sw/bin/mkdir -p ${mountLocation}";
+        ExecStop = "/run/wrappers/bin/fusermount -u ${mountLocation}";
+        Restart = "always";
+        RestartSec = "10s";
+        Type = "notify";
+      };
+      Unit = {
+        After = "network-online.target";
+        Description = "rclone JottaCloud mount";
+        Wants = "network-online.target";
+      };
+    };
 
   # Actual dotfiles (not managed home-manager style)
   xdg = {
