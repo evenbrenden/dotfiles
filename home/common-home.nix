@@ -89,7 +89,7 @@
     network-manager-applet.enable = true;
   };
   systemd.user.startServices = true;
-  systemd.user.services.rclone-jotta-mount =
+  systemd.user.services.rclone-gdrive-mount =
     let
       remote = "gdrive";
       mountPoint = "${config.home.homeDirectory}/${remote}";
@@ -109,7 +109,7 @@
       };
       Unit = {
         After = "network-online.target";
-        Description = "rclone JottaCloud mount";
+        Description = "rclone Google Drive mount";
         Wants = "network-online.target";
       };
     };
