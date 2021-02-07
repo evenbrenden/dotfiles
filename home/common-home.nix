@@ -67,10 +67,12 @@
       jq
       libreoffice
       nomacs
+      pandoc
       pavucontrol
       python3
       python37Packages.virtualenv
       rclone
+      # retext # Broken
       shellcheck
       slack
       snes9x-gtk
