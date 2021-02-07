@@ -3,7 +3,7 @@
 {
   # Programs
   nixpkgs.overlays = [
-    (import ../overlays/jotta-cli.nix) # 0.9.38023
+    (import ../overlays/jotta-cli.nix) # 0.9.39536
   ];
   programs = {
     home-manager.enable = true;
