@@ -16,7 +16,6 @@ set wildmenu
 set showtabline=2
 set background=dark
 set guicursor=
-set textwidth=80
 syntax on
 let mapleader=","
 let maplocalleader="."
@@ -32,6 +31,10 @@ noremap <silent><Leader>w :%s/\s\+$//<CR>
 hi ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+
+" conditional text wrap
+au BufRead,BufNewFile *.md setlocal textwidth=72
+au BufRead,BufNewFile *.txt setlocal textwidth=72
 
 " vim-fzf
 noremap <silent><Leader>f :Files<CR>
