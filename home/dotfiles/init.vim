@@ -16,6 +16,7 @@ set wildmenu
 set showtabline=2
 set background=dark
 set guicursor=
+set textwidth=80
 syntax on
 let mapleader=","
 let maplocalleader="."
@@ -36,6 +37,7 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 noremap <silent><Leader>f :Files<CR>
 
 " vim-markdown
+set conceallevel=2
 let g:vim_markdown_folding_disabled = 1
 
 " wmgraphviz.vim
