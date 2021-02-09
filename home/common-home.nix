@@ -72,6 +72,7 @@
       python3
       python37Packages.virtualenv
       rclone
+      (libsForQt5.callPackage (import ../pkgs/retext) {}) # Broken (python-markdown fails), make PR removing both overrides
       shellcheck
       slack
       snes9x-gtk
