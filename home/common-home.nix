@@ -75,6 +75,7 @@
       (libsForQt5.callPackage (import ../pkgs/retext) {}) # https://github.com/NixOS/nixpkgs/pull/112529 + https://github.com/NixOS/nixpkgs/pull/112530
       shellcheck
       slack
+      smartmontools
       snes9x-gtk
       spotify
       (callPackage (import ../pkgs/standardnotes) {}) # https://github.com/NixOS/nixpkgs/pull/106392#issuecomment-766825478
