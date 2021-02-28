@@ -47,9 +47,9 @@
       sakura
 
       # User programs
-      p7zip
       abcde
       arandr
+      audacity
       cabal-install
       chromium
       curl
@@ -67,6 +67,7 @@
       jq
       libreoffice
       nomacs
+      p7zip
       pandoc
       pavucontrol
       python3
