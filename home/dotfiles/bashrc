@@ -37,8 +37,10 @@ export EDITOR=nvim
 # xclip default clipboard
 alias xclip='xclip -selection clipboard'
 
-# rclone sync interactive
-alias rclone-sync='rclone sync -i'
+# interactive file ops
+alias cp='cp --interactive'
+alias mv='mv --interactive'
+alias rclone-sync='rclone sync --interactive'
 
 # set prompt
 RS="\[\033[0m\]"    # reset
