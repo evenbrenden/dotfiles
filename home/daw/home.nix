@@ -9,10 +9,11 @@
 
     # Plugins
     carla # For SoundFonts
+    (callPackage (import ../../pkgs/fabla) {})
+    lsp-plugins
 
     # Programs
     ardour
-    (callPackage (import ../../pkgs/fabla) {})
     (renoise.override {
         releasePath = builtins.fetchTarball {
           url = "file://${builtins.toString ./.}/rns_324_linux_x86_64.tar.gz";
