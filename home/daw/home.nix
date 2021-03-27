@@ -9,7 +9,6 @@
 
     # Plugins
     carla # For SoundFonts
-    (callPackage (import ../../pkgs/fabla) {})
     lsp-plugins
 
     # Programs
