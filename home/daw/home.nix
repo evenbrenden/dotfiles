@@ -14,6 +14,7 @@
 
     # Programs
     ardour
+    reaper
     (renoise.override {
         releasePath = builtins.fetchTarball {
           url = "file://${builtins.toString ./.}/rns_324_linux_x86_64.tar.gz";
