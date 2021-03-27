@@ -8,11 +8,10 @@
   home.packages = with pkgs; [
 
     # Plugins
-    carla # For SoundFonts
-    lsp-plugins
+    carla # For SoundFont player
+    lsp-plugins # For IR plugin
 
     # Programs
-    ardour
     reaper
     (renoise.override {
         releasePath = builtins.fetchTarball {
