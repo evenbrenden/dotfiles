@@ -12,6 +12,7 @@
     lsp-plugins # For IR plugin
 
     # Programs
+    polyphone
     reaper
     (renoise.override {
         releasePath = builtins.fetchTarball {
