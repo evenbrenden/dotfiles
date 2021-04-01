@@ -5,6 +5,10 @@
     ../common-home.nix
   ];
 
+  nixpkgs.overlays = [
+    (import ../../overlays/reaper.nix) # 6.26
+  ];
+
   home.packages = with pkgs; [
 
     # Plugins
