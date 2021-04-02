@@ -14,6 +14,7 @@
     # Plugins
     carla # For SoundFont player
     lsp-plugins # For IR plugin
+    (callPackage (import ../../pkgs/sfizz) {}) # For SFZs (https://lmms.io/forum/viewtopic.php?t=32538#p68958)
 
     # Programs
     polyphone
