@@ -12,9 +12,9 @@
   home.packages = with pkgs; [
 
     # Plugins
-    carla # For SoundFont player
-    lsp-plugins # For IR plugin
-    (callPackage (import ../../pkgs/sfizz) {}) # For SFZs (https://lmms.io/forum/viewtopic.php?t=32538#p68958)
+    carla # For SoundFonts (FluidSynth)
+    lsp-plugins # For IR plugins
+    (callPackage (import ../../pkgs/sfizz) {})
 
     # Programs
     polyphone
