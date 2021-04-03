@@ -1,15 +1,13 @@
 { stdenv,
   fetchFromGitHub,
   cmake,
+  pkgconfig,
+  cairo,
+  gnome3,
   libjack2,
   libsndfile,
-  pkgconfig,
-  x11,
-  xorg,
-  xcb-util-cursor,
   libxkbcommon,
-  cairo,
-  gnome3 }:
+  xorg }:
 
 stdenv.mkDerivation rec {
   pname = "sfizz";
@@ -24,21 +22,22 @@ stdenv.mkDerivation rec {
   };
 
   postPatch = ''
-    substituteInPlace ./editor/external/vstgui4/vstgui/lib/platform/linux/x11fileselector.cpp \
+    substituteInPlace \
+      ./editor/external/vstgui4/vstgui/lib/platform/linux/x11fileselector.cpp \
       --replace '/usr/bin/zenity' '${gnome3.zenity}/bin/zenity'
   '';
 
   nativeBuildInputs = [ cmake pkgconfig ];
 
   buildInputs = [
+    cairo
     libjack2
     libsndfile
-    x11
-    xorg.xcbutil
-    xcb-util-cursor
-    xorg.xcbutilkeysyms
     libxkbcommon
-    cairo
+    xorg.libX11
+    xorg.xcbutil
+    xorg.xcbutilcursor
+    xorg.xcbutilkeysyms
   ];
 
   cmakeFlags = [
@@ -50,7 +49,7 @@ stdenv.mkDerivation rec {
     homepage = "https://github.com/sfztools/sfizz";
     description = "SFZ jack client and LV2 plugin";
     license = licenses.bsd2;
-    maintainers = [ maintainers.magnetophon ];
+    maintainers = [ maintainers.magnetophon maintainers.evenbrenden ];
     platforms = platforms.all;
     badPlatforms = platforms.darwin;
   };
