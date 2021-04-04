@@ -7,7 +7,6 @@
 
   nixpkgs.overlays = [
     (import ../../overlays/reaper.nix) # 6.26
-    (import ../../overlays/fluidsynth.nix) # 2.2.0
   ];
 
   home.packages = with pkgs;
