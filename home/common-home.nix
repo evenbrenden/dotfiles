@@ -22,10 +22,20 @@
               sha256 = "0vlr90x4rp30a98k0g1g0fmwmp0slblp74fr8zaclyvbc8kwzimc";
             };
           };
+          sfz-vim = pkgs.vimUtils.buildVimPlugin {
+            name = "sfz-vim";
+            src = pkgs.fetchFromGitHub {
+              owner = "sfztools";
+              repo = "sfz.vim";
+              rev = "4ec4ad05beacd1ec69dc37dc8137f92d4c673fef";
+              sha256 = "0brk6847n8wd8zb57wp7wjxyc7i3r0q29riv8ppy39j5lpdsbbss";
+            };
+          };
         in
         [
           fzf-vim
           tcomment_vim
+          sfz-vim
           vim-airline
           vim-fsharp
           vim-gitgutter
