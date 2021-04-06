@@ -6,7 +6,7 @@
   ];
 
   nixpkgs.overlays = [
-    (import ../../overlays/reaper.nix) # 6.26
+    (import ../../overlays/reaper.nix)
   ];
 
   home.packages = with pkgs;
@@ -27,7 +27,6 @@
 
     # Plugins
     (carla.override { fluidsynth = fluidsynth-220; }) # For SoundFonts (FluidSynth)
-    lsp-plugins # For IR plugins
     sfizz
 
     # Programs
