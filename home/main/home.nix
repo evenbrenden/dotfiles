@@ -12,8 +12,11 @@
   ];
 
   home.packages = with pkgs; [
+    azure-cli
     dbeaver
     jetbrains.rider
+    kubectl
+    kubectx
     postman
     remmina
   ];
