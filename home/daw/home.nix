@@ -44,4 +44,8 @@
   # Terrible workaround until I can figure out how to make the desktop item
   # supplied with the Renoise tarball to work when installed via the package
   xdg.dataFile."applications/renoise.desktop".source = ./renoise.desktop;
+
+  # Terrible workaround until I can figure out how to make the desktop item
+  # supplied with the Reaper tarball to work when installed via the package
+  xdg.dataFile."applications/cockos-reaper.desktop".source = ./cockos-reaper.desktop;
 }
