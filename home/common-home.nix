@@ -89,7 +89,7 @@
       smartmontools
       snes9x-gtk
       spotify
-      (callPackage (import ../pkgs/standardnotes) {}) # https://github.com/NixOS/nixpkgs/pull/106392#issuecomment-766825478
+      standardnotes
       teams
       transmission-gtk
       veracrypt
