@@ -83,7 +83,7 @@
       python3
       python37Packages.virtualenv
       rclone
-      (libsForQt5.callPackage (import ../pkgs/retext) {}) # https://github.com/NixOS/nixpkgs/pull/112529 + https://github.com/NixOS/nixpkgs/pull/112530
+      retext
       shellcheck
       slack
       smartmontools
