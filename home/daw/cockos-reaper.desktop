@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=REAPER
+Comment=REAPER
+Categories=Audio;Video;AudioVideo;AudioVideoEditing;Recorder;
+Exec="/nix/store/qxdz8d6h34kaliqj17n7yqa608lzaagp-reaper-6.26/opt/REAPER/reaper" %F
+Icon=cockos-reaper
+MimeType=application/x-reaper-project;application/x-reaper-project-backup;application/x-reaper-theme
+StartupWMClass=REAPER
