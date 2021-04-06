@@ -40,7 +40,7 @@
       };
       libinput = {
         enable = true;
-        tapping = true;
+        touchpad.tapping = true;
       };
       windowManager.i3.enable = true;
     };
@@ -65,7 +65,7 @@
   # Disk and the likes
   boot = {
     kernel.sysctl."fs.inotify.max_user_watches" = 524288;
-    kernelPackages = pkgs.linuxPackages_5_9; # https://github.com/nixos/nixpkgs/issues/107648
+    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot = {
