@@ -28,7 +28,7 @@
     # Plugins
     (carla.override { fluidsynth = fluidsynth-220; }) # For SoundFonts (FluidSynth)
     lsp-plugins # For IR plugins
-    (callPackage (import ../../pkgs/sfizz) {})
+    sfizz
 
     # Programs
     polyphone
