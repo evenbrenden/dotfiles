@@ -7,7 +7,6 @@
   ];
 
   nixpkgs.overlays = [
-    # JetBrains releases Rider quite often (so nixpkgs is usually behind)
     (import ../../overlays/jetbrains.rider.nix)
   ];
 
