@@ -32,10 +32,6 @@ hi ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 
-" conditional text wrap
-au BufRead,BufNewFile *.md setlocal textwidth=72
-au BufRead,BufNewFile *.txt setlocal textwidth=72
-
 " vim-fzf
 noremap <silent><Leader>f :Files<CR>
 
