@@ -6,6 +6,7 @@
   ];
 
   nixpkgs.overlays = [
+    (import ../../overlays/calf.nix)
     (import ../../overlays/reaper.nix)
   ];
 
@@ -26,6 +27,7 @@
     in [
 
     # Plugins
+    calf
     (carla.override { fluidsynth = fluidsynth-220; })
     (pkgs.callPackage (import ../../pkgs/fluida) { fluidsynth = fluidsynth-220; })
     sfizz
