@@ -36,7 +36,7 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 noremap <silent><Leader>f :Files<CR>
 
 " vim-markdown
-set conceallevel=2
+set conceallevel=0
 let g:vim_markdown_folding_disabled = 1
 
 " wmgraphviz.vim
