@@ -6,7 +6,6 @@
   ];
 
   nixpkgs.overlays = [
-    (import ../../overlays/calf.nix)
     (import ../../overlays/reaper.nix)
   ];
 
