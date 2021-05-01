@@ -42,13 +42,10 @@
     )
   ];
 
-  # Terrible workaround until I can figure out how to make the desktop item
-  # supplied with the Renoise tarball to work when installed via the package
+  # Terrible workarounds until I can figure out how to make the desktop
+  # items supplied with the tarballs to work.
+  xdg.dataFile."applications/reaper.desktop".source = ./reaper.desktop;
   xdg.dataFile."applications/renoise.desktop".source = ./renoise.desktop;
-
-  # Terrible workaround until I can figure out how to make the desktop item
-  # supplied with the Reaper tarball to work when installed via the package
-  xdg.dataFile."applications/cockos-reaper.desktop".source = ./cockos-reaper.desktop;
 
   home.sessionVariables = {
     DSSI_PATH   = "$HOME/.dssi:$HOME/.nix-profile/lib/dssi:/run/current-system/sw/lib/dssi";
