@@ -40,7 +40,7 @@ alias xclip='xclip -selection clipboard'
 # interactive file ops
 alias cp='cp --interactive'
 alias mv='mv --interactive'
-alias rclone-sync='rclone sync --interactive'
+alias rclone-sync='rclone sync --create-empty-src-dirs --interactive'
 
 # set prompt
 RS="\[\033[0m\]"    # reset
