@@ -35,8 +35,8 @@
     reaper
     (renoise.override {
         releasePath = builtins.fetchTarball {
-          url = "file://${builtins.toString ./.}/rns_324_linux_x86_64.tar.gz";
-          sha256 = "0jwk9z62kk5dk95cbqasjrbag0qwvl2lix5k0pd98dmx05lxvbi5";
+          url = "file://${builtins.toString ./.}/rns_332_linux_x86_64.tar.gz";
+          sha256 = "04yjz6k5f71s1b9lybldbbf0m1m2slnn2i7lsxyqf5m3hzdapgd4";
         };
       }
     )
