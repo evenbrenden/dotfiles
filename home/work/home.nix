@@ -3,7 +3,7 @@
 {
   imports = [
     ../common-home.nix
-    ../dotnet.nix
+    ./dotnet.nix
   ];
 
   nixpkgs.overlays = [
