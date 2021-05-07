@@ -3,7 +3,6 @@
 {
   imports = [
     ../common-home.nix
-    ../dotnet.nix
   ];
 
   # This is only so that dmenu is able to list programs that are installed with Nix
