@@ -33,19 +33,11 @@
     # Programs
     polyphone
     reaper
-    (renoise.override {
-        releasePath = builtins.fetchTarball {
-          url = "file://${builtins.toString ./.}/rns_332_linux_x86_64.tar.gz";
-          sha256 = "04yjz6k5f71s1b9lybldbbf0m1m2slnn2i7lsxyqf5m3hzdapgd4";
-        };
-      }
-    )
   ];
 
-  # Terrible workarounds until I can figure out how to make the desktop
-  # items supplied with the tarballs to work.
+  # Terrible workaround until I can figure out how to make the desktop
+  # item supplied with the tarball to work.
   xdg.dataFile."applications/reaper.desktop".source = ./reaper.desktop;
-  xdg.dataFile."applications/renoise.desktop".source = ./renoise.desktop;
 
   home.sessionVariables = {
     DSSI_PATH   = "$HOME/.dssi:$HOME/.nix-profile/lib/dssi:/run/current-system/sw/lib/dssi";
