@@ -62,8 +62,9 @@
       curl
       dos2unix
       firefox
-      flameshot
       fff
+      flac
+      flameshot
       fzf
       gimp
       git
