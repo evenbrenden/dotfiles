@@ -5,10 +5,6 @@
     ../common-home.nix
   ];
 
-  nixpkgs.overlays = [
-    (import ../../overlays/reaper.nix)
-  ];
-
   home.packages = with pkgs;
     let
       fluidsynth-220 = pkgs.fluidsynth.overrideAttrs (_: rec {
@@ -32,12 +28,8 @@
 
     # Programs
     polyphone
-    reaper
+    (callPackage (import ./reaper.nix) {})
   ];
-
-  # Terrible workaround until I can figure out how to make the desktop
-  # item supplied with the tarball to work.
-  xdg.dataFile."applications/reaper.desktop".source = ./reaper.desktop;
 
   home.sessionVariables = {
     DSSI_PATH   = "$HOME/.dssi:$HOME/.nix-profile/lib/dssi:/run/current-system/sw/lib/dssi";
