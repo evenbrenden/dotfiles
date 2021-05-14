@@ -89,6 +89,7 @@
   # Misc
   fonts = {
     enableDefaultFonts = true;
+    fontDir.enable = true;
     fontconfig.allowBitmaps = false; # Fixes some blocky fonts in Firefox
   };
   networking.firewall.enable = true;
