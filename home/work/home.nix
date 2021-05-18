@@ -7,7 +7,7 @@
   ];
 
   nixpkgs.overlays = [
-    (import ../../overlays/jetbrains.rider.nix)
+    (import ./jetbrains.rider.nix)
   ];
 
   home.packages = with pkgs; [
