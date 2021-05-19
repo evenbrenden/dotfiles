@@ -65,6 +65,7 @@
   # Disk and the likes
   boot = {
     kernel.sysctl."fs.inotify.max_user_watches" = 524288;
+    kernelPackages = pkgs.linuxPackages_5_10; # Remove when default is 5.10
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot = {
