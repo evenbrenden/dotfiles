@@ -27,6 +27,7 @@
     sfizz
 
     # Programs
+    (callPackage (import ./sfz-flat.nix) {})
     polyphone
     (callPackage (import ./reaper.nix) {})
   ];
