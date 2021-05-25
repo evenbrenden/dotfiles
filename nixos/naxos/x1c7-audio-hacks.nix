@@ -1,11 +1,6 @@
 { pkgs, ... }:
 
 {
-  nixpkgs.overlays = [
-    # Reviewing https://github.com/NixOS/nixpkgs/pull/121181
-    (import ../../overlays/sof-firmware.nix)
-  ];
-
   systemd = {
     services =
       let
