@@ -20,12 +20,6 @@ in
     set-card-profile alsa_card.usb-Focusrite_Scarlett_8i6_USB_00007200-00 off
   '';
 
-  # Steam
-  programs.steam.enable = true;
-  hardware.steam-hardware.enable = true;
-  hardware.opengl.driSupport32Bit = true;
-  environment.systemPackages = [ pkgs.steam-run ];
-
   # User
   users.users.${userName} = {
     isNormalUser = true;
