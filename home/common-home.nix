@@ -71,7 +71,6 @@
       gparted
       graphviz
       irssi
-      jotta-cli
       jq
       libreoffice
       nomacs
