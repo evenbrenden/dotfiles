@@ -2,6 +2,9 @@
 
 {
   # Programs
+  nixpkgs.overlays = [
+    (import ./jotta-cli.nix)
+  ];
   programs = {
     home-manager.enable = true;
     man.enable = false;
@@ -71,6 +74,7 @@
       gparted
       graphviz
       irssi
+      jotta-cli
       jq
       libreoffice
       nomacs
