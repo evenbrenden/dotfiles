@@ -11,6 +11,9 @@ in
     ./musnix
   ];
 
+  # https://bugs.archlinux.org/task/70929
+  boot.kernelParams = [ "intel_iommu=off" ];
+
   # DAW
   musnix.enable = true;
 
