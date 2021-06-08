@@ -77,6 +77,7 @@
       jotta-cli
       jq
       libreoffice
+      marker
       nomacs
       p7zip
       pandoc
@@ -84,7 +85,6 @@
       python3
       python37Packages.virtualenv
       rclone
-      retext
       shellcheck
       slack
       smartmontools
