@@ -86,7 +86,6 @@
       jotta-cli
       jq
       libreoffice
-      marker
       nomacs
       p7zip
       pandoc
