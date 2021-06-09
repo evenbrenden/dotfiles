@@ -13,6 +13,15 @@
       extraConfig = pkgs.lib.strings.fileContents ./dotfiles/init.vim;
       plugins = with pkgs.vimPlugins;
         let
+          sfz-vim = pkgs.vimUtils.buildVimPlugin {
+            name = "sfz-vim";
+            src = pkgs.fetchFromGitHub {
+              owner = "sfztools";
+              repo = "sfz.vim";
+              rev = "4ec4ad05beacd1ec69dc37dc8137f92d4c673fef";
+              sha256 = "0brk6847n8wd8zb57wp7wjxyc7i3r0q29riv8ppy39j5lpdsbbss";
+            };
+          };
           vim-fsharp = pkgs.vimUtils.buildVimPlugin {
             name = "vim-fsharp";
             src = pkgs.fetchFromGitHub {
@@ -22,13 +31,13 @@
               sha256 = "0vlr90x4rp30a98k0g1g0fmwmp0slblp74fr8zaclyvbc8kwzimc";
             };
           };
-          sfz-vim = pkgs.vimUtils.buildVimPlugin {
-            name = "sfz-vim";
+          vim-markdown = pkgs.vimUtils.buildVimPluginFrom2Nix {
+            name = "vim-markdown";
             src = pkgs.fetchFromGitHub {
-              owner = "sfztools";
-              repo = "sfz.vim";
-              rev = "4ec4ad05beacd1ec69dc37dc8137f92d4c673fef";
-              sha256 = "0brk6847n8wd8zb57wp7wjxyc7i3r0q29riv8ppy39j5lpdsbbss";
+              owner = "evenbrenden";
+              repo = "vim-markdown";
+              rev = "988e7d540f48181fd11f558b82f1163f1ab16fc2";
+              sha256 = "0n69ykyd4a94hvqkhg3qrqix2bk4yi21p4s43kph9yh6zjj32jk3";
             };
           };
         in
