@@ -31,15 +31,6 @@
               sha256 = "0vlr90x4rp30a98k0g1g0fmwmp0slblp74fr8zaclyvbc8kwzimc";
             };
           };
-          vim-markdown = pkgs.vimUtils.buildVimPluginFrom2Nix {
-            name = "vim-markdown";
-            src = pkgs.fetchFromGitHub {
-              owner = "evenbrenden";
-              repo = "vim-markdown";
-              rev = "988e7d540f48181fd11f558b82f1163f1ab16fc2";
-              sha256 = "0n69ykyd4a94hvqkhg3qrqix2bk4yi21p4s43kph9yh6zjj32jk3";
-            };
-          };
         in
         [
           fzf-vim
