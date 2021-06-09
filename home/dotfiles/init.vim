@@ -35,8 +35,7 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 " vim-fzf
 noremap <silent><Leader>f :Files<CR>
 
-" vim-markdown
-let g:vim_markdown_folding_disabled=1
+" markdown
 set concealcursor=n
 set conceallevel=3
 function! ToggleConcealLevel()

@@ -32,7 +32,6 @@
         vim-airline
         vim-fsharp
         vim-gitgutter
-        vim-markdown
         vim-nix
         vim-pico8-syntax
         wmgraphviz-vim
