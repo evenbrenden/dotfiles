@@ -50,3 +50,6 @@ noremap <silent><Leader>c :call ToggleConcealLevel()<CR>
 
 " wmgraphviz.vim
 let g:WMGraphviz_output="svg"
+
+" yaml
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
