@@ -35,6 +35,7 @@
       flac
       flameshot
       fzf
+      ghostwriter
       gimp
       git
       gparted
@@ -76,6 +77,7 @@
     configFile = {
       "autorandr".source = ./dotfiles/autorandr;
       "dunst/dunstrc".source = ./dotfiles/dunstrc;
+      "ghostwriter/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
       "i3/config".source = ./dotfiles/i3config;
       "i3status/config".source = ./dotfiles/i3status;
       "sakura/sakura.conf".source = ./dotfiles/sakura.conf;
