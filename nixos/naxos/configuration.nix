@@ -12,9 +12,6 @@ in
     ./hardware-configuration.nix
   ];
 
-  # https://bugs.archlinux.org/task/70929
-  boot.kernelParams = [ "intel_iommu=off" ];
-
   # Steam
   programs.steam.enable = true;
   hardware.steam-hardware.enable = true;
