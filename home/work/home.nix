@@ -13,6 +13,7 @@
   home.packages = with pkgs; [
     azure-cli
     dbeaver
+    docker-compose
     jetbrains.rider
     kubectl
     kubectx
