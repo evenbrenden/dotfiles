@@ -156,7 +156,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
 
 # change keyboard layout
-bindsym $mod+k exec --no-startup-id python3 ~/bin/toggle_keyboard_layout.py
+bindsym $mod+k exec --no-startup-id bash ~/bin/toggle_keyboard_layout.sh
 
 # notifications control
 bindsym $mod+n exec --no-startup-id dunstctl set-paused toggle && pkill -x -USR1 i3status
