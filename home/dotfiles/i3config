@@ -143,7 +143,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # wifi control
-bindsym XF86WLAN exec --no-startup-id python3 ~/bin/toggle_wifi.py
+bindsym XF86WLAN exec --no-startup-id bash ~/bin/toggle_wifi.sh
 
 # things xrandr
 bindsym $mod+Ctrl+a exec --no-startup-id autorandr --change
