@@ -14,6 +14,7 @@
     azure-cli
     dbeaver
     docker-compose
+    inetutils
     jetbrains.rider
     kubectl
     kubectx
