@@ -85,6 +85,7 @@
     };
   };
   home.file = {
+    ".abcde.conf".source = ./dotfiles/abcde.conf;
     ".bashrc".text = builtins.readFile ./dotfiles/bashrc; # .text => file is being prepended/appended to elsewhere
     ".gitignore".source = ./dotfiles/gitignore;
     ".gitconfig".source = ./dotfiles/gitconfig;
