@@ -12,6 +12,8 @@ in
     ./hardware-configuration.nix
   ];
 
+  nixpkgs.overlays = [ (import ./sof-firmware.nix) ];
+
   # Steam
   programs.steam.enable = true;
   hardware.steam-hardware.enable = true;
