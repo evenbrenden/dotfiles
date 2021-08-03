@@ -12,24 +12,11 @@
         sha256 = "sha256-NPbzDXZoZVWriV3klemX59ACnAlb357A5V/GbmzshyA=";
       };
 
-      buildInputs = [
-        super.pkgs.alsaLib
-        super.pkgs.autoPatchelfHook
-        super.pkgs.rsync
-      ];
-
-      # Doesn't seem to make a difference for the firmware binaries. Just unnecessary?
-      # If not, we need a separate fixupPhase for patching and stripping the tools.
-      dontFixup = false;
-
-      # Tools would also need to be added to systemPackages (if firmware is installed).
       installPhase = ''
+        cd v${version}.x
         mkdir -p $out/lib/firmware/intel/
-        mkdir -p $out/bin/
-        export FW_DEST=$out/lib/firmware/intel
-        export TOOLS_DEST=$out/bin
-        ./install.sh v1.8.x/v1.8
-        rm -rf $out/bin # No thanks for now
+        cp -a sof-v${version} $out/lib/firmware/intel/sof
+        cp -a sof-tplg-v${version} $out/lib/firmware/intel/sof-tplg
       '';
     });
   }
