@@ -160,6 +160,7 @@ bindsym $mod+k exec --no-startup-id bash ~/bin/toggle_keyboard_layout.sh
 
 # notifications control
 bindsym $mod+n exec --no-startup-id dunstctl set-paused toggle && pkill -x -USR1 i3status
+bindsym $mod+c exec --no-startup-id dunstctl close
 
 # lock screen
 bindsym $mod+Shift+l exec loginctl lock-session $XDG_SESSION_ID
