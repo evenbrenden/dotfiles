@@ -18,6 +18,7 @@
     jetbrains.rider
     kubectl
     kubectx
+    kubelogin
     lastpass-cli
     postman
     remmina
