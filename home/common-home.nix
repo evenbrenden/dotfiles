@@ -7,6 +7,7 @@
   ];
   nixpkgs.overlays = [
     (import ./jotta-cli.nix)
+    (import ./signal-desktop.nix)
   ];
   programs = {
     home-manager.enable = true;
@@ -52,6 +53,7 @@
       python37Packages.virtualenv
       rclone
       shellcheck
+      signal-desktop
       slack
       smartmontools
       snes9x-gtk
