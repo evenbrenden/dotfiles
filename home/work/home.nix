@@ -12,6 +12,7 @@
 
   home.packages = with pkgs; [
     azure-cli
+    cifs-utils
     dbeaver
     docker-compose
     inetutils
