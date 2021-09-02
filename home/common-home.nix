@@ -39,6 +39,7 @@
       ghostwriter
       gimp
       git
+      (import ./git-replace.nix { inherit pkgs; })
       gparted
       graphviz
       irssi
