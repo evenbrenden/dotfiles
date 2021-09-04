@@ -12,10 +12,13 @@
     chromium.enableWideVine = true;
   };
   programs.ssh.startAgent = true;
-  services.openssh.enable = false;
-  services.fprintd.enable = false;
-  services.fwupd.enable = true;
   networking.networkmanager.enable = true;
+  services = {
+    blueman.enable = true;
+    fprintd.enable = false;
+    fwupd.enable = true;
+    openssh.enable = false;
+  };
 
   # For Chromecast to work (https://github.com/NixOS/nixpkgs/issues/49630)
   # -With Chromium, run: chromium --load-media-router-component-extension=1
