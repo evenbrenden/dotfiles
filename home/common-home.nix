@@ -68,10 +68,7 @@
     ];
 
   # Services
-  services = {
-    dunst.enable = true;
-    network-manager-applet.enable = true;
-  };
+  services.dunst.enable = true;
   systemd.user.startServices = true;
 
   # Actual dotfiles (not managed home-manager style)
