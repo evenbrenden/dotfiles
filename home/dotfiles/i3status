@@ -28,9 +28,6 @@ disk "/" {
 volume master {
     format = "%volume"
     format_muted = "mute"
-    # device = "hw:0"
-    # mixer = "Master"
-    # mixer_idx = 0
 }
 
 wireless _first_ {
