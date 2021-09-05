@@ -14,7 +14,6 @@
   programs.ssh.startAgent = true;
   networking.networkmanager.enable = true;
   services = {
-    blueman.enable = true;
     fprintd.enable = false;
     fwupd.enable = true;
     openssh.enable = false;
