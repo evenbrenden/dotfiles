@@ -31,12 +31,13 @@ volume master {
 }
 
 wireless _first_ {
-    format_up = "%essid"
+    format_up = "%essid (%quality)"
     format_down = "down"
+    format_quality = "%d%s"
 }
 
 ethernet _first_ {
-    format_up = "%ip"
+    format_up = "%ip (%speed)"
     format_down = "down"
 }
 
