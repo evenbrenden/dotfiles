@@ -32,6 +32,9 @@ hi ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 
+" fast refresh for vim-gitgutter
+set updatetime=100
+
 " vim-fzf
 noremap <silent><Leader>f :Files<CR>
 
