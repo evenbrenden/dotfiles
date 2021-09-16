@@ -47,6 +47,7 @@
       jq
       libreoffice
       nomacs
+      okular
       p7zip
       pandoc
       pavucontrol
