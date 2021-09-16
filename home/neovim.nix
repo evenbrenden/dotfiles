@@ -26,15 +26,38 @@
         };
       in
       [
-        fzf-vim
+        {
+          plugin = fzf-vim;
+          config = ''
+            noremap <silent><Leader>f :Files<CR>
+          '';
+        }
         tcomment_vim
         sfz-vim
         vim-airline
         vim-fsharp
-        vim-gitgutter
+        {
+          plugin = vim-gitgutter;
+          config = ''
+            set updatetime=100
+          '';
+        }
+        {
+          plugin = vim-markdown;
+          config = ''
+            noremap ze :set foldenable<CR>
+            noremap zd :set nofoldenable<CR>
+            set nofoldenable
+          '';
+        }
         vim-nix
         vim-pico8-syntax
-        wmgraphviz-vim
+        {
+          plugin = wmgraphviz-vim;
+          config = ''
+            let g:WMGraphviz_output="svg"
+          '';
+        }
       ];
   };
 }
