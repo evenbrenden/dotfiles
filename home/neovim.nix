@@ -42,14 +42,6 @@
             set updatetime=100
           '';
         }
-        {
-          plugin = vim-markdown;
-          config = ''
-            noremap ze :set foldenable<CR>
-            noremap zd :set nofoldenable<CR>
-            set nofoldenable
-          '';
-        }
         vim-nix
         vim-pico8-syntax
         {
