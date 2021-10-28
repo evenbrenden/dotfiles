@@ -35,7 +35,7 @@ in
 
   # X
   services.xserver = {
-    dpi = 96;
+    dpi = 120;
     displayManager.autoLogin = {
       enable = true;
       user = "${userName}";
