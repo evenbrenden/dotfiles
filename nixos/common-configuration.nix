@@ -29,6 +29,11 @@
     xserver = {
       enable = true;
       layout = "us";
+      extraLayouts.norwerty = {
+        description = "Norwerty";
+        languages   = [ "no" ];
+        symbolsFile = ./X11/xkb/symbols/norwerty;
+      };
       displayManager = {
         defaultSession = "none+i3";
         lightdm = {

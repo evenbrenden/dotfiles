@@ -3,7 +3,7 @@
 layout=$(setxkbmap -query | awk 'NR==3 {print $2}')
 
 if [[ $layout == 'us' ]]; then
-    setxkbmap -layout no
+    setxkbmap -layout norwerty
 else
     setxkbmap -layout us
 fi
