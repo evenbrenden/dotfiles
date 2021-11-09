@@ -15,6 +15,7 @@
     cifs-utils
     dbeaver
     docker-compose
+    freerdp
     inetutils
     jetbrains.rider
     kubectl
@@ -22,6 +23,5 @@
     kubelogin
     lastpass-cli
     postman
-    remmina
   ];
 }
