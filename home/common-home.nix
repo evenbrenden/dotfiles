@@ -10,6 +10,7 @@
     (import ./signal-desktop.nix)
   ];
   programs = {
+    direnv.enable = true;
     home-manager.enable = true;
     man.enable = false;
   };

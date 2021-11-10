@@ -42,6 +42,9 @@ alias cp='cp --interactive'
 alias mv='mv --interactive'
 alias rclone-sync='rclone sync --create-empty-src-dirs --interactive'
 
+# direnv
+eval "$(direnv hook bash)"
+
 # set prompt
 RS="\[\033[0m\]"    # reset
 HC="\[\033[1m\]"    # hicolor
