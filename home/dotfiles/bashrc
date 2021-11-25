@@ -46,6 +46,13 @@ alias rclone-sync='rclone sync --create-empty-src-dirs --interactive'
 # direnv
 eval "$(direnv hook bash)"
 
+# fff
+export FFF_FAV1=$HOME/Downloads
+export FFF_FAV2=/media/ted15/music
+# https://github.com/dylanaraps/fff/issues/180
+export FFF_KEY_BULK_RENAME="off"
+export FFF_KEY_BULK_RENAME_ALL="off"
+
 # set prompt
 RS="\[\033[0m\]"    # reset
 HC="\[\033[1m\]"    # hicolor
