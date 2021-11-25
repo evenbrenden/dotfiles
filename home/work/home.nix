@@ -21,7 +21,6 @@
     kubectl
     kubectx
     kubelogin
-    lastpass-cli
     postman
   ];
 }
