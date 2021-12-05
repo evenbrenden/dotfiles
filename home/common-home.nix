@@ -46,6 +46,7 @@
       irssi
       jotta-cli
       jq
+      libheif
       libreoffice
       nomacs
       okular
