@@ -5,10 +5,6 @@
   imports = [
     (import ./neovim.nix)
   ];
-  nixpkgs.overlays = [
-    (import ./jotta-cli.nix)
-    (import ./signal-desktop.nix)
-  ];
   programs = {
     direnv.enable = true;
     home-manager.enable = true;
@@ -44,7 +40,6 @@
       gparted
       graphviz
       irssi
-      jotta-cli
       jq
       libheif
       libreoffice
