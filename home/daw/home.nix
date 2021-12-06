@@ -5,30 +5,15 @@
     ../common-home.nix
   ];
 
-  home.packages = with pkgs;
-    let
-      fluidsynth-220 = pkgs.fluidsynth.overrideAttrs (_: rec {
-
-        name = "fluidsynth-${version}";
-        version = "2.2.0";
-
-        src = pkgs.fetchFromGitHub {
-          owner = "FluidSynth";
-          repo = "fluidsynth";
-          rev = "v${version}";
-          sha256 = "1769aqkw2hv9yfazyd8pmbfhyjk8k8bgdr63fz5w8zgr4n38cgqm";
-        };
-      });
-    in [
-
+  home.packages = with pkgs; [
     # Plugins
     calf
-    (carla.override { fluidsynth = fluidsynth-220; })
+    carla
     sfizz
 
     # Programs
     polyphone
-    (callPackage (import ./reaper.nix) {})
+    reaper
     (callPackage (import ./sfz-flat.nix) {})
   ];
 

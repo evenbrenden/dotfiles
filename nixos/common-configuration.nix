@@ -37,7 +37,7 @@
       displayManager = {
         defaultSession = "none+i3";
         lightdm = {
-          background = ./nothing.png; # Change when fix for issue #106109 is at hand
+          background = "#000000";
           greeters.gtk.indicators = [ "~host" "~spacer" "~session" "~language" "~clock" "~power" ];
         };
         # Because xsetroot does not work with Picom
