@@ -9,11 +9,12 @@ in
 
       if [[ $# -ne 2 ]]
       then
-        echo "Usage: git-replace FROM TO"
+        echo "Usage: git-replace WHAT WITH"
         exit 0
       fi
-      from=$1
-      to=$2
+      what=$1
+      with=$2
 
-      ${git} grep -l "$from" | xargs sed -i "s/$from/$to/g"
+      # Remember: Use single quotes and escape all things regex
+      ${git} grep -l "$what" | xargs sed -i s/"$what"/"$with"/g
     ''
