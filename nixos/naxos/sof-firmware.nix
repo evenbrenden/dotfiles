@@ -11,14 +11,6 @@
         rev = "v${version}";
         sha256 = "sha256-aEoLlP34rorllCdTneATlCHnmhJD/VABV9Uv4dDmShA=";
       };
-
-      installPhase = ''
-        cd "v${super.lib.versions.majorMinor version}.x"
-        mkdir -p $out/lib/firmware/intel/
-        cp -a sof-v${version} $out/lib/firmware/intel/sof
-        cp -a sof-tplg-v${version} $out/lib/firmware/intel/sof-tplg
-        runHook postInstall
-      '';
     });
   }
 )
