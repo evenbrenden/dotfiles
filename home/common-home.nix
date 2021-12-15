@@ -27,6 +27,7 @@
       cabal-install
       chromium
       curl
+      discord
       dos2unix
       firefox
       fff
