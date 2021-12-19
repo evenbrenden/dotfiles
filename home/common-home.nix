@@ -82,6 +82,7 @@
       "i3status/config".source = ./dotfiles/i3status;
       "sakura/sakura.conf".source = ./dotfiles/sakura.conf;
       "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
+      "VeraCrypt/Favorite Volumes.xml".source = ./dotfiles/veracrypt-favorite-volumes.xml;
     };
   };
   home.file = {
