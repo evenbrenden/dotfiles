@@ -37,9 +37,12 @@ in
   };
 
   # VM
-  virtualisation.virtualbox.host = {
-    enableExtensionPack = true;
-    enable = true;
+  virtualisation = {
+    docker.enable = true;
+    virtualbox.host = {
+      enableExtensionPack = true;
+      enable = true;
+    };
   };
 
   # Disk
