@@ -4,6 +4,7 @@
   imports = [
     ../common-home.nix
     ./dotnet.nix
+    ./vscode.nix
   ];
 
   nixpkgs.overlays = [
