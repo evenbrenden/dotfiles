@@ -24,7 +24,6 @@
       abcde
       arandr
       audacity
-      cabal-install
       chromium
       curl
       discord
@@ -34,6 +33,7 @@
       flac
       flameshot
       fzf
+      ghc
       ghostwriter
       gimp
       git
