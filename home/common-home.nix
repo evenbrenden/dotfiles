@@ -54,6 +54,7 @@
       rclone
       shellcheck
       signal-desktop
+      simplescreenrecorder
       slack
       smartmontools
       snes9x-gtk
