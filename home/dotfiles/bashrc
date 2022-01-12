@@ -43,9 +43,6 @@ alias cp='cp --interactive'
 alias mv='mv --interactive'
 alias rclone-sync='rclone sync --create-empty-src-dirs --interactive'
 
-# direnv
-eval "$(direnv hook bash)"
-
 # fff
 export FFF_FAV1=$HOME/Downloads
 export FFF_FAV2=/media/ted15/music
