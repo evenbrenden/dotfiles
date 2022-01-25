@@ -63,6 +63,7 @@
       transmission-gtk
       veracrypt
       vlc
+      wine
       whatsapp-for-linux
       xclip
     ];
