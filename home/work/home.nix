@@ -15,6 +15,7 @@
     cifs-utils
     dbeaver
     docker-compose
+    (import ./fantomasify.nix { inherit pkgs; })
     freerdp
     inetutils
     jetbrains.rider
