@@ -40,6 +40,7 @@
     jq
     libheif
     libreoffice
+    nixfmt
     nomacs
     okular
     p7zip
