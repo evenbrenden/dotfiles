@@ -3,8 +3,7 @@
 let
   userName = "evenbrenden";
   hostName = "naxos";
-in
-{
+in {
   imports = [
     ../common-configuration.nix
     ../laptop-alsa-state.nix

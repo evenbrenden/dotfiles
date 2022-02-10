@@ -2,11 +2,10 @@
 
 {
   systemd = {
-    services =
-      let
-        sleep_targets = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
-      in
-      {
+    services = let
+      sleep_targets =
+        [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
+    in {
       # This addresses the "(...) slight "pop" in headphones when content volume transitions to/from 0."
       # It attenuates the pops to the point that they are virtually inaudible
       # Note that the pops are "Also present on mainline and in Windows."
@@ -19,7 +18,8 @@
           hda-verb /dev/snd/hwC0D0 0x1a SET_PIN_WIDGET_CONTROL 0x0
         '';
         path = [ pkgs.alsaTools ];
-        after = [ "multi-user.target" "sound.target" "graphical.target" ] ++ sleep_targets;
+        after = [ "multi-user.target" "sound.target" "graphical.target" ]
+          ++ sleep_targets;
         wantedBy = [ "sound.target" ] ++ sleep_targets;
       };
     };
