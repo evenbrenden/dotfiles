@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ../common-home.nix ./dotnet.nix ];
+  imports = [ ../common-home.nix ./dotnet.nix ./vscode.nix ];
 
   nixpkgs.overlays = [ (import ./jetbrains.rider.nix) ];
 
