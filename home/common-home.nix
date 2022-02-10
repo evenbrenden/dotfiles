@@ -2,70 +2,67 @@
 
 {
   # Programs
-  imports = [
-    (import ./neovim.nix)
-  ];
+  imports = [ (import ./neovim.nix) ];
   programs = {
     home-manager.enable = true;
     man.enable = false;
   };
-  home.packages = with pkgs;
-    [
-      # For dotfiles
-      autorandr
-      brightnessctl
-      dunst # For dunstctl
-      libnotify
-      playerctl
-      sakura
+  home.packages = with pkgs; [
+    # For dotfiles
+    autorandr
+    brightnessctl
+    dunst # For dunstctl
+    libnotify
+    playerctl
+    sakura
 
-      # User programs
-      abcde
-      arandr
-      audacity
-      chromium
-      curl
-      discord
-      dos2unix
-      firefox
-      fff
-      flac
-      flameshot
-      fzf
-      ghc
-      ghostwriter
-      gimp
-      git
-      (import ./git-replace.nix { inherit pkgs; })
-      gparted
-      graphviz
-      irssi
-      jq
-      libheif
-      libreoffice
-      nomacs
-      okular
-      p7zip
-      pandoc
-      pavucontrol
-      python3
-      python37Packages.virtualenv
-      rclone
-      shellcheck
-      signal-desktop
-      simplescreenrecorder
-      slack
-      smartmontools
-      snes9x-gtk
-      spotify
-      standardnotes
-      teams
-      transmission-gtk
-      veracrypt
-      vlc
-      whatsapp-for-linux
-      xclip
-    ];
+    # User programs
+    abcde
+    arandr
+    audacity
+    chromium
+    curl
+    discord
+    dos2unix
+    firefox
+    fff
+    flac
+    flameshot
+    fzf
+    ghc
+    ghostwriter
+    gimp
+    git
+    (import ./git-replace.nix { inherit pkgs; })
+    gparted
+    graphviz
+    irssi
+    jq
+    libheif
+    libreoffice
+    nomacs
+    okular
+    p7zip
+    pandoc
+    pavucontrol
+    python3
+    python37Packages.virtualenv
+    rclone
+    shellcheck
+    signal-desktop
+    simplescreenrecorder
+    slack
+    smartmontools
+    snes9x-gtk
+    spotify
+    standardnotes
+    teams
+    transmission-gtk
+    veracrypt
+    vlc
+    whatsapp-for-linux
+    xclip
+  ];
 
   # Services
   services.dunst.enable = true;
@@ -82,17 +79,20 @@
       "i3status/config".source = ./dotfiles/i3status;
       "sakura/sakura.conf".source = ./dotfiles/sakura.conf;
       "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
-      "VeraCrypt/Favorite Volumes.xml".source = ./dotfiles/veracrypt-favorite-volumes.xml;
+      "VeraCrypt/Favorite Volumes.xml".source =
+        ./dotfiles/veracrypt-favorite-volumes.xml;
     };
   };
   home.file = {
     ".abcde.conf".source = ./dotfiles/abcde.conf;
-    ".bashrc".text = builtins.readFile ./dotfiles/bashrc; # .text => file is being prepended/appended to elsewhere
+    ".bashrc".text = builtins.readFile
+      ./dotfiles/bashrc; # .text => file is being prepended/appended to elsewhere
     ".ghci".source = ./dotfiles/ghci;
     ".gitignore".source = ./dotfiles/gitignore;
     ".gitconfig".source = ./dotfiles/gitconfig;
     "bin/i3status.sh".source = ./dotfiles/i3status.sh;
-    "bin/toggle_keyboard_layout.sh".source = ./dotfiles/toggle_keyboard_layout.sh;
+    "bin/toggle_keyboard_layout.sh".source =
+      ./dotfiles/toggle_keyboard_layout.sh;
     "bin/toggle_wifi.sh".source = ./dotfiles/toggle_wifi.sh;
   };
 }

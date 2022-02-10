@@ -1,6 +1,4 @@
-{ cmake,
-  pkgs,
-  stdenv }:
+{ cmake, pkgs, stdenv }:
 
 stdenv.mkDerivation rec {
   name = "sfz-flat";

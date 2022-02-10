@@ -3,13 +3,9 @@
 let
   userName = "evenbrenden";
   hostName = "gaucho";
-in
-{
-  imports = [
-    ../common-configuration.nix
-    ./hardware-configuration.nix
-    ./musnix
-  ];
+in {
+  imports =
+    [ ../common-configuration.nix ./hardware-configuration.nix ./musnix ];
 
   # DAW
   musnix.enable = true;

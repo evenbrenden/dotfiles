@@ -1,10 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./screen-locking.nix
-    ./anti-screen-tearing.nix
-  ];
+  imports = [ ./screen-locking.nix ./anti-screen-tearing.nix ];
 
   # Programs
   nixpkgs.config = {
@@ -31,14 +28,15 @@
       layout = "us";
       extraLayouts.norwerty = {
         description = "Norwerty";
-        languages   = [ "no" ];
+        languages = [ "no" ];
         symbolsFile = ./X11/xkb/symbols/norwerty;
       };
       displayManager = {
         defaultSession = "none+i3";
         lightdm = {
           background = "#000000";
-          greeters.gtk.indicators = [ "~host" "~spacer" "~session" "~language" "~clock" "~power" ];
+          greeters.gtk.indicators =
+            [ "~host" "~spacer" "~session" "~language" "~clock" "~power" ];
         };
         # Because xsetroot does not work with Picom
         sessionCommands = ''
@@ -62,12 +60,11 @@
   sound.enable = true;
   hardware.pulseaudio = {
     enable = true;
-    package = pkgs.pulseaudio.override {
-      bluetoothSupport = true;
-    };
+    package = pkgs.pulseaudio.override { bluetoothSupport = true; };
     extraModules = [ pkgs.pulseaudio-modules-bt ];
   };
-  nixpkgs.config.pulseaudio = true; # Explicit PulseAudio support in applications
+  nixpkgs.config.pulseaudio =
+    true; # Explicit PulseAudio support in applications
 
   # Disk and the likes
   boot = {
@@ -81,7 +78,7 @@
     };
     supportedFilesystems = [ "ntfs" ];
   };
-  swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
+  swapDevices = [{ device = "/dev/disk/by-label/swap"; }];
 
   # Power management
   services = {
