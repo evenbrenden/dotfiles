@@ -3,6 +3,7 @@
 {
   # Programs
   imports = [ (import ./neovim.nix) ];
+  nixpkgs.overlays = [ (import ./discord.nix) ];
   programs = {
     home-manager.enable = true;
     man.enable = false;
