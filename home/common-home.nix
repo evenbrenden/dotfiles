@@ -92,6 +92,7 @@
     ".ghci".source = ./dotfiles/ghci;
     ".gitignore".source = ./dotfiles/gitignore;
     ".gitconfig".source = ./dotfiles/gitconfig;
+    ".ssr/settings.conf".source = ./dotfiles/ssr.conf;
     "bin/i3status.sh".source = ./dotfiles/i3status.sh;
     "bin/toggle_keyboard_layout.sh".source =
       ./dotfiles/toggle_keyboard_layout.sh;
