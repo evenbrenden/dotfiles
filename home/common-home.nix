@@ -21,6 +21,7 @@
     abcde
     arandr
     audacity
+    haskellPackages.brittany
     chromium
     curl
     discord
@@ -41,6 +42,7 @@
     jq
     libheif
     libreoffice
+    nixfmt
     nomacs
     okular
     p7zip
