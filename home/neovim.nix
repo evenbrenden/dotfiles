@@ -25,10 +25,15 @@
           };
         };
       in [
+        fzf-vim
         {
-          plugin = fzf-vim;
+          plugin = neoformat;
           config = ''
-            noremap <silent><Leader>f :Files<CR>
+            let g:neoformat_haskell_brittany = {
+                \ 'exe': 'brittany',
+                \ 'args': ['--indent=4'],
+                \ }
+            let g:neoformat_enabled_haskell = ['brittany']
           '';
         }
         tcomment_vim
