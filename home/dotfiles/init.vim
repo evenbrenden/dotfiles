@@ -32,6 +32,9 @@ hi ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 
+" fzf
+noremap <silent><Leader>s :Files<CR>
+
 " markdown
 set concealcursor=n
 set conceallevel=3
@@ -43,6 +46,9 @@ function! ToggleConcealLevel()
     endif
 endfunction
 noremap <silent><Leader>c :call ToggleConcealLevel()<CR>
+
+" neoformat
+noremap <silent><Leader>f :Neoformat<CR>
 
 " yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
