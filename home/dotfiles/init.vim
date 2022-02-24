@@ -35,6 +35,12 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 " fzf
 noremap <silent><Leader>s :Files<CR>
 
+" lsp
+noremap ld :lua vim.lsp.buf.definition()<CR>
+noremap ls :lua vim.lsp.buf.hover()<CR>
+noremap lf :lua vim.lsp.buf.references()<CR>
+noremap lr :lua vim.lsp.buf.rename()<CR>
+
 " markdown
 set concealcursor=n
 set conceallevel=3
