@@ -24,6 +24,16 @@
             sha256 = "0vlr90x4rp30a98k0g1g0fmwmp0slblp74fr8zaclyvbc8kwzimc";
           };
         };
+        ionide-vim = pkgs.vimUtils.buildVimPlugin {
+          name = "ionide-vim";
+          src = pkgs.fetchFromGitHub {
+            owner = "ionide";
+            repo = "Ionide-vim";
+            rev = "6eb5de0b13cee781d0ccc0559d614ea032967293";
+            sha256 = "06psx9r82m29vs44r3n0diliiwg1dnv6gj0n6l9a9p5w2f68zjm7";
+          };
+        };
+
       in [
         fzf-vim
         {
@@ -37,6 +47,7 @@
             let g:neoformat_enabled_nix = ['nixfmt']
           '';
         }
+        ionide-vim # dotnet tool install -g fsautocomplete
         tcomment_vim
         sfz-vim
         vim-airline
