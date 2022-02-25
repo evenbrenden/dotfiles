@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 
+# Ionide status: FSAC is not updated when a file is edited
 {
   programs.neovim = {
     plugins = with pkgs.vimPlugins;
