@@ -32,6 +32,9 @@ hi ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 
+" deoplete
+let g:deoplete#enable_at_startup = 1
+
 " fzf
 noremap <silent><Leader>s :Files<CR>
 
