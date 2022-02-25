@@ -1,36 +1,31 @@
-set tabstop=8
-set softtabstop=0
-set expandtab
-set shiftwidth=4
-set smarttab
-set backspace=indent,eol,start
-set hlsearch
-set path=.
-set smartcase
-set ignorecase
 set autoindent
-set splitright
-set ruler
-set nu
-set wildmenu
-set showtabline=2
 set background=dark
-set guicursor=
+set backspace=indent,eol,start
+set expandtab
+set guicursor=""
+set hlsearch
+set ignorecase
+set nu
+set path=.
+set ruler
+set shiftwidth=4
+set showtabline=2
+set smartcase
+set smarttab
+set softtabstop=0
+set splitright
+set tabstop=8
+set wildmenu
+
 syntax on
+
 let mapleader=","
 let maplocalleader="."
 
-" autocomplete with ctrl+p
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+" autocomplete
 set completeopt=menuone,menu,longest,preview
-" only do autocomplete for the current buffer
 set complete=.
-
-" show and remove trailing whitespace
-noremap <silent><Leader>w :%s/\s\+$//<CR>
-hi ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
@@ -58,6 +53,11 @@ noremap <silent><Leader>c :call ToggleConcealLevel()<CR>
 
 " neoformat
 noremap <silent><Leader>f :Neoformat<CR>
+
+" trailing whitespace
+hi ExtraWhitespace ctermbg=red guibg=red
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+noremap <silent><Leader>w :%s/\s\+$//<CR>
 
 " yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
