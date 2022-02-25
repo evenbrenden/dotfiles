@@ -28,7 +28,17 @@ set complete=.
 autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
 " deoplete
-let g:deoplete#enable_at_startup = 1
+function! ToggleDeoplete()
+    if (s:deoplete == 0)
+        call deoplete#enable()
+        let s:deoplete=1
+    else
+        call deoplete#disable()
+        let s:deoplete=0
+    endif
+endfunction
+let s:deoplete=0
+noremap dp :call ToggleDeoplete()<CR>
 
 " fzf
 noremap <silent><Leader>s :Files<CR>
