@@ -15,6 +15,7 @@
         };
 
       in [
+        deoplete-nvim
         ionide-vim # dotnet tool install -g fsautocomplete
       ];
   };
