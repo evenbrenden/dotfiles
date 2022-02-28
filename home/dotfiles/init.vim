@@ -38,7 +38,7 @@ function! ToggleDeoplete()
     endif
 endfunction
 let s:deoplete=0
-noremap dp :call ToggleDeoplete()<CR>
+noremap <silent><Leader>d :call ToggleDeoplete()<CR>
 
 " fzf
 noremap <silent><Leader>s :Files<CR>
