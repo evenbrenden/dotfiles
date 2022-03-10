@@ -6,6 +6,8 @@ let
     ms-vsliveshare.vsliveshare
     ionide.ionide-fsharp
     ms-dotnettools.csharp
+    haskell.haskell
+    justusadam.language-haskell
   ];
   vscode-with-extensions =
     pkgs.vscode-with-extensions.override { vscodeExtensions = extensions; };
