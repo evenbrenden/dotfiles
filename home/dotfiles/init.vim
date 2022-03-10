@@ -43,6 +43,9 @@ noremap <silent><Leader>d :call ToggleDeoplete()<CR>
 " fzf
 noremap <silent><Leader>s :Files<CR>
 
+" graphviz
+noremap <silent><Leader>g :GraphvizCompile<CR>
+
 " lsp
 noremap ld :lua vim.lsp.buf.definition()<CR>
 noremap ls :lua vim.lsp.buf.hover()<CR>
