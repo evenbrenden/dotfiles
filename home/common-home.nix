@@ -22,6 +22,7 @@
     arandr
     audacity
     haskellPackages.brittany
+    cabal-install
     chromium
     curl
     discord
