@@ -62,6 +62,7 @@
     standardnotes
     teams
     transmission-gtk
+    tree
     veracrypt
     vlc
     whatsapp-for-linux
