@@ -33,6 +33,7 @@
     flameshot
     fzf
     ghc
+    ghcid
     ghostwriter
     gimp
     git
