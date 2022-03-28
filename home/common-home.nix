@@ -53,6 +53,7 @@
     python3
     python37Packages.virtualenv
     rclone
+    ripgrep # For fzf
     shellcheck
     signal-desktop
     simplescreenrecorder
