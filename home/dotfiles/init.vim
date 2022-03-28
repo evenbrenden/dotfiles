@@ -28,10 +28,11 @@ set complete=.
 autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
 " fzf
-noremap <silent><Leader>s :Files<CR>
+noremap <silent><leader>f :Files<CR>
+noremap <silent><leader>g :Rg<CR>
 
 " graphviz
-noremap <silent><Leader>g :GraphvizCompile<CR>
+noremap <silent><localleader>g :GraphvizCompile<CR>
 
 " lsp
 noremap ld :lua vim.lsp.buf.definition()<CR>
@@ -49,15 +50,15 @@ function! ToggleConcealLevel()
         set conceallevel=0
     endif
 endfunction
-noremap <silent><Leader>c :call ToggleConcealLevel()<CR>
+noremap <silent><localleader>c :call ToggleConcealLevel()<CR>
 
 " neoformat
-noremap <silent><Leader>f :Neoformat<CR>
+noremap <silent><localleader>f :Neoformat<CR>
 
 " trailing whitespace
 hi ExtraWhitespace ctermbg=red guibg=red
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-noremap <silent><Leader>w :%s/\s\+$//<CR>
+noremap <silent><leader>w :%s/\s\+$//<CR>
 
 " yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
