@@ -18,10 +18,10 @@
         vim-fsharp = pkgs.vimUtils.buildVimPlugin {
           name = "vim-fsharp";
           src = pkgs.fetchFromGitHub {
-            owner = "wsdjeg";
+            owner = "PhilT";
             repo = "vim-fsharp";
-            rev = "a4255ba4866fa5aba91fec342f98964cffbbc542";
-            sha256 = "0vlr90x4rp30a98k0g1g0fmwmp0slblp74fr8zaclyvbc8kwzimc";
+            rev = "ef3b89768dbd7cb944cad0fb5131342d95ab58d6";
+            sha256 = "1k9rdpf0c9hag6b10l8b8k92563vx2f4jdm5mbz7cl2g8p3xb3c6";
           };
         };
 
