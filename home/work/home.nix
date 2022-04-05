@@ -17,6 +17,8 @@
     kubectl
     kubectx
     kubelogin
+    openapi-generator-cli
+    python39Packages.openapi-spec-validator
     postman
   ];
 }
