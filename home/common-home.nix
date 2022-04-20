@@ -40,6 +40,8 @@
     (import ./git-replace.nix { inherit pkgs; })
     gparted
     graphviz
+    haskellPackages.implicit-hie
+    haskell-language-server
     irssi
     jq
     libheif
