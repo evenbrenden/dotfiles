@@ -60,9 +60,9 @@ noremap <silent><localleader>c :call ToggleConcealLevel()<CR>
 noremap <silent><localleader>f :Neoformat<CR>
 
 " trailing whitespace
-hi ExtraWhitespace ctermbg=red guibg=red
+highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-noremap <silent><leader>w :%s/\s\+$//<CR>
+noremap <silent><leader>w :%s/\s\+$//e<CR>
 
 " yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
