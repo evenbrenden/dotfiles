@@ -35,9 +35,10 @@ noremap <silent><leader>g :Rg<CR>
 noremap <silent><localleader>g :GraphvizCompile<CR>
 
 " hls
-lua require'lspconfig'.hls.setup{}
+lua require'lspconfig'.hls.setup{autostart = false}
 
 " lsp
+noremap lx :LspStart<CR>
 noremap ld :lua vim.lsp.buf.definition()<CR>
 noremap ls :lua vim.lsp.buf.hover()<CR>
 noremap lf :lua vim.lsp.buf.references()<CR>
