@@ -38,6 +38,7 @@
             let g:neoformat_enabled_nix = ['nixfmt']
           '';
         }
+        nvim-lspconfig
         tcomment_vim
         sfz-vim
         vim-airline
