@@ -34,10 +34,8 @@ noremap <silent><leader>g :Rg<CR>
 " graphviz
 noremap <silent><localleader>g :GraphvizCompile<CR>
 
-" hls
-lua require'lspconfig'.hls.setup{autostart = false}
-
 " lsp
+lua require'lspconfig'.hls.setup{autostart = false}
 noremap lx :LspStart<CR>
 noremap ld :lua vim.lsp.buf.definition()<CR>
 noremap ls :lua vim.lsp.buf.hover()<CR>
