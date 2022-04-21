@@ -35,6 +35,7 @@ noremap <silent><leader>g :Rg<CR>
 noremap <silent><localleader>g :GraphvizCompile<CR>
 
 " lsp
+lua require'lspconfig'.fsautocomplete.setup{autostart = false, cmd = { "fsautocomplete", "--background-service-enabled" }}
 lua require'lspconfig'.hls.setup{autostart = false}
 noremap lx :LspStart<CR>
 noremap ld :lua vim.lsp.buf.definition()<CR>
