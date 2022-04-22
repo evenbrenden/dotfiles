@@ -2,12 +2,12 @@
   jetbrains = super.jetbrains // {
     rider = super.jetbrains.rider.overrideDerivation (_: rec {
       name = "rider-${version}";
-      version = "2021.3.1";
+      version = "2021.3.4";
 
       src = super.fetchurl {
         url =
           "https://download.jetbrains.com/rider/JetBrains.Rider-${version}.tar.gz";
-        sha256 = "0c788xvcd5b9jafz2yyllj1pzgc9ry3pg82qi8glghvimjnk1cfd";
+        sha256 = "0g20wan79qwrm8ml1ns0ma3fcqajjmixzk5sgj0n4dhkzszkq4qj";
       };
     });
   };
