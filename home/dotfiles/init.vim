@@ -40,7 +40,7 @@ noremap lx :LspStart<CR>
 noremap ld :lua vim.lsp.buf.definition()<CR>
 noremap ls :lua vim.lsp.buf.hover()<CR>
 noremap lf :lua vim.lsp.buf.references()<CR>
-noremap lr :lua vim.lsp.buf.rename()<CR>
+" noremap lr :lua vim.lsp.buf.rename()<CR>
 
 " markdown
 set concealcursor=n
