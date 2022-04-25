@@ -37,10 +37,12 @@ noremap <silent><localleader>g :GraphvizCompile<CR>
 " lsp
 lua require'lspconfig'.hls.setup{autostart = false}
 noremap lx :LspStart<CR>
+noremap lc :lua vim.lsp.buf.code_action()<CR>
 noremap ld :lua vim.lsp.buf.definition()<CR>
-noremap ls :lua vim.lsp.buf.hover()<CR>
-noremap lf :lua vim.lsp.buf.references()<CR>
-" noremap lr :lua vim.lsp.buf.rename()<CR>
+noremap lv :lua vim.lsp.buf.hover()<CR>
+noremap lr :lua vim.lsp.buf.references()<CR>
+noremap le :lua vim.lsp.buf.rename()<CR>
+noremap lt :lua vim.lsp.buf.type_definition()<CR>
 
 " markdown
 set concealcursor=n
