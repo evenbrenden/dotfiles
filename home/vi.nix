@@ -7,6 +7,16 @@
     extraConfig = pkgs.lib.strings.fileContents ./dotfiles/init.vim;
     plugins = with pkgs.vimPlugins;
       let
+        nvim-lspconfig = pkgs.vimUtils.buildVimPluginFrom2Nix {
+          pname = "nvim-lspconfig";
+          version = "2022-04-17";
+          src = pkgs.fetchFromGitHub {
+            owner = "neovim";
+            repo = "nvim-lspconfig";
+            rev = "99596a8cabb050c6eab2c049e9acde48f42aafa4";
+            sha256 = "1x9b87d965q9a7a726dw6q6k0lady04acg0n4c1shjwin7cl6kx9";
+          };
+        };
         sfz-vim = pkgs.vimUtils.buildVimPlugin {
           name = "sfz-vim";
           src = pkgs.fetchFromGitHub {
