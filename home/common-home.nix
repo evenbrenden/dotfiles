@@ -3,7 +3,11 @@
 {
   # Programs
   imports = [ ./vi.nix ];
-  nixpkgs.overlays = [ (import ./discord.nix) (import ./signal-desktop.nix) ];
+  nixpkgs.overlays = [
+    (import ./discord.nix)
+    (import ./signal-desktop.nix)
+    (import ./haskell-language-server.nix)
+  ];
   programs = {
     home-manager.enable = true;
     man.enable = false;
