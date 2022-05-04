@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./screen-locking.nix ./anti-screen-tearing.nix ];
+  imports = [ ./display.nix ./screen-locking.nix ];
 
   # Programs
   nixpkgs.config = {
@@ -20,36 +20,6 @@
   # -With Chromium, run: chromium --load-media-router-component-extension=1
   # -With VLC, temporarily disable firewall: systemctl stop firewall.service
   services.avahi.enable = true; # Needed for Chromium
-
-  # Display et al.
-  services = {
-    xserver = {
-      enable = true;
-      layout = "us";
-      extraLayouts.norwerty = {
-        description = "Norwerty";
-        languages = [ "no" ];
-        symbolsFile = ./X11/xkb/symbols/norwerty;
-      };
-      displayManager = {
-        defaultSession = "none+i3";
-        lightdm = {
-          background = "#000000";
-          greeters.gtk.indicators =
-            [ "~host" "~spacer" "~session" "~language" "~clock" "~power" ];
-        };
-        # Because xsetroot does not work with Picom
-        sessionCommands = ''
-          ${pkgs.hsetroot}/bin/hsetroot -solid #000000
-        '';
-      };
-      libinput = {
-        enable = true;
-        touchpad.tapping = true;
-      };
-      windowManager.i3.enable = true;
-    };
-  };
 
   # Sound
   hardware = {
