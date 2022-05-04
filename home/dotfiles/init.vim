@@ -28,8 +28,13 @@ set complete=.
 autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
 " fzf
-noremap <silent><leader>f :Files<CR>
-noremap <silent><leader>g :Rg<CR>
+noremap <silent><leader>f :GFiles<CR>
+noremap <silent><leader>g :GGrep<CR>
+" https://github.com/junegunn/fzf.vim#example-git-grep-wrapper
+command! -bang -nargs=* GGrep
+    \ call fzf#vim#grep(
+    \     'git grep --line-number -- '.shellescape(<q-args>), 0,
+    \     fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
 
 " graphviz
 noremap <silent><localleader>g :GraphvizCompile<CR>
