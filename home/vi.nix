@@ -4,6 +4,10 @@
   nixpkgs.overlays = [ (import ./neovim.nix) ];
   programs.neovim = {
     enable = true;
+    # NB! extraConfig is inserted after the plugin-specific configs. Since I am
+    # setting the leader keys in extraConfig and since key mappings using
+    # leaders must be set after setting the leader keys, key mappings using
+    # leaders must be set in extraConfig and not in the plugin-specific configs.
     extraConfig = pkgs.lib.strings.fileContents ./dotfiles/init.vim;
     plugins = with pkgs.vimPlugins;
       let
@@ -37,7 +41,16 @@
         };
 
       in [
-        fzf-vim
+        {
+          plugin = fzf-vim;
+          config = ''
+            " https://github.com/junegunn/fzf.vim#example-git-grep-wrapper
+            command! -bang -nargs=* GGrep
+              \ call fzf#vim#grep(
+              \   'git grep --line-number -- '.shellescape(<q-args>), 0,
+              \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+          '';
+        }
         {
           plugin = neoformat;
           config = ''
@@ -49,7 +62,12 @@
             let g:neoformat_enabled_nix = ['nixfmt']
           '';
         }
-        nvim-lspconfig
+        {
+          plugin = nvim-lspconfig;
+          config = ''
+            lua require('neovim-config')
+          '';
+        }
         tcomment_vim
         sfz-vim
         vim-airline
