@@ -40,14 +40,6 @@ lua require('neovim-config')
 " markdown
 set concealcursor=n
 set conceallevel=3
-function! ToggleConcealLevel()
-    if (&conceallevel == 0)
-        set conceallevel=3
-    else
-        set conceallevel=0
-    endif
-endfunction
-noremap <silent><localleader>c :call ToggleConcealLevel()<CR>
 
 " neoformat
 noremap <silent><localleader>f :Neoformat<CR>
