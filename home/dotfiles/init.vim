@@ -46,8 +46,9 @@ noremap <silent><localleader>f :Neoformat<CR>
 
 " trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-noremap <silent><leader>w :%s/\s\+$//e<CR>
+noremap <silent>w1 :match ExtraWhitespace /\s\+\%#\@<!$/<CR>
+noremap <silent>w0 :match<CR>
+noremap <silent>wd :%s/\s\+$//e<CR>
 
 " yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
