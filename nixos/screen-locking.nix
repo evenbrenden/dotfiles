@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 
+# This can be moved to home-manager
 {
   programs.xss-lock = {
     enable = true;
