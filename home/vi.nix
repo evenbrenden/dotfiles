@@ -70,4 +70,7 @@
         }
       ];
   };
+  # https://github.com/nix-community/home-manager/pull/2716
+  xdg.configFile."nvim/lua/neovim-config.lua".source =
+    ./dotfiles/neovim-config.lua;
 }
