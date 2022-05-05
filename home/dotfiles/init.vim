@@ -37,6 +37,7 @@ noremap <silent><localleader>g :GraphvizCompile<CR>
 " markdown
 set concealcursor=n
 set conceallevel=3
+let g:vim_markdown_conceal_code_blocks = 1
 
 " neoformat
 noremap <silent><localleader>f :Neoformat<CR>
