@@ -2,11 +2,10 @@
 
 {
   # Programs
-  imports = [ ./vi.nix ];
+  imports = [ ./vi/vi.nix ];
   nixpkgs.overlays = [
     (import ./discord.nix)
     (import ./signal-desktop.nix)
-    (import ./haskell-language-server.nix)
   ];
   programs = {
     home-manager.enable = true;
@@ -45,7 +44,6 @@
     gparted
     graphviz
     haskellPackages.implicit-hie # gen-hie
-    haskell-language-server
     hlint
     irssi
     jq
