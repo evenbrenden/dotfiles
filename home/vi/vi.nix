@@ -1,14 +1,16 @@
 { config, pkgs, ... }:
 
 {
-  nixpkgs.overlays = [ (import ./neovim.nix) ];
+  home.packages = [ pkgs.haskell-language-server ];
+  nixpkgs.overlays =
+    [ (import ./neovim.nix) (import ./haskell-language-server.nix) ];
   programs.neovim = {
     enable = true;
     # NB! extraConfig is inserted after the plugin-specific configs. Since I am
     # setting the leader keys in extraConfig and since key mappings using
     # leaders must be set after setting the leader keys, key mappings using
     # leaders must be set in extraConfig and not in the plugin-specific configs.
-    extraConfig = pkgs.lib.strings.fileContents ./dotfiles/init.vim;
+    extraConfig = pkgs.lib.strings.fileContents ../dotfiles/init.vim;
     plugins = with pkgs.vimPlugins;
       let
         nvim-lspconfig = pkgs.vimUtils.buildVimPluginFrom2Nix {
@@ -91,5 +93,5 @@
   };
   # https://github.com/nix-community/home-manager/pull/2716
   xdg.configFile."nvim/lua/neovim-config.lua".source =
-    ./dotfiles/neovim-config.lua;
+    ../dotfiles/neovim-config.lua;
 }
