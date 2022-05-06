@@ -7,7 +7,8 @@ From preservim/vim-markdown at 9068655.
 
 This enables code block and link concealment in LSP popups.
 
-Note that popup width = width of unconcealed Markdown.
+Popup width = width of unconcealed Markdown, because there needs to be
+room for any text that can be unconcealed.
 ---
  runtime/ftplugin/markdown.vim | 913 ++++++++++++++++++++++++++++++++--
  runtime/syntax/markdown.vim   | 317 ++++++------
