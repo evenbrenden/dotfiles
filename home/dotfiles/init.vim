@@ -40,8 +40,16 @@ noremap <silent><localleader>g :GraphvizCompile<CR>
 
 " markdown
 set concealcursor=nc
-set conceallevel=3
+set conceallevel=0
 set nofoldenable
+function! ToggleConcealLevel()
+    if (&conceallevel == 0)
+        set conceallevel=3
+    else
+        set conceallevel=0
+    endif
+endfunction
+noremap <silent><localleader>c :call ToggleConcealLevel()<CR>
 
 " neoformat
 noremap <silent><localleader>f :Neoformat<CR>
