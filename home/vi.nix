@@ -78,6 +78,7 @@
             set updatetime=100
           '';
         }
+        vim-markdown
         vim-nix
         vim-pico8-syntax
         {
