@@ -24,7 +24,7 @@ let maplocalleader="."
 
 " colors
 set termguicolors
-colorscheme darkblue
+highlight Pmenu ctermbg=darkmagenta guibg=darkmagenta
 
 " completion
 set completeopt=menuone,menu,longest,preview
