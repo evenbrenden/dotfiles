@@ -46,6 +46,7 @@
     graphviz
     haskellPackages.implicit-hie
     haskell-language-server
+    hlint
     irssi
     jq
     libheif
