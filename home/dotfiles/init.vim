@@ -39,7 +39,7 @@ noremap <silent><leader>g :GGrep<CR>
 noremap <silent><localleader>g :GraphvizCompile<CR>
 
 " markdown
-set concealcursor=n
+set concealcursor=nc
 set conceallevel=3
 set nofoldenable
 
