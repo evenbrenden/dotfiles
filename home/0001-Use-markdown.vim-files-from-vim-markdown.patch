@@ -4,6 +4,10 @@ Date: Fri, 6 May 2022 13:50:14 +0200
 Subject: [PATCH 1/1] Use markdown.vim files from vim-markdown
 
 From preservim/vim-markdown at 9068655.
+
+This enables code block and link concealment in LSP popups.
+
+Note that popup width = width of unconcealed Markdown.
 ---
  runtime/ftplugin/markdown.vim | 913 ++++++++++++++++++++++++++++++++--
  runtime/syntax/markdown.vim   | 317 ++++++------
