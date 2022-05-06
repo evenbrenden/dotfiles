@@ -44,7 +44,7 @@
     (import ./git-replace.nix { inherit pkgs; })
     gparted
     graphviz
-    haskellPackages.implicit-hie
+    haskellPackages.implicit-hie # gen-hie
     haskell-language-server
     hlint
     irssi
