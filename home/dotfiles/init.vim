@@ -22,6 +22,10 @@ syntax on
 let mapleader=","
 let maplocalleader="."
 
+" colors
+set termguicolors
+colorscheme darkblue
+
 " completion
 set completeopt=menuone,menu,longest,preview
 set complete=.
