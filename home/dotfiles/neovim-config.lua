@@ -1,7 +1,7 @@
 -- LSP
 
--- Note that popup width = width of unconcealed Markdown, because there needs to be room for any text that can be shown.
--- Focus a popup by running its LSP command twice, and set the conceal level to zero to show all text.
+-- Note that popup width = width of unconcealed Markdown, because that is the text that is actually in there.
+-- Focus a popup by running its LSP command twice, and set the conceal level to 0 to show the raw Markdown.
 
 local opts = { noremap = true, silent = true }
 
