@@ -40,11 +40,11 @@ noremap <silent><localleader>g :GraphvizCompile<CR>
 
 " markdown
 set concealcursor=nc
-set conceallevel=0
+set conceallevel=2
 set nofoldenable
 function! ToggleConcealLevel()
     if (&conceallevel == 0)
-        set conceallevel=3
+        set conceallevel=2
     else
         set conceallevel=0
     endif
