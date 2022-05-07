@@ -1,4 +1,7 @@
--- lsp
+-- LSP
+
+-- Note that popup width = width of unconcealed Markdown, because there needs to be room for any text that can be shown.
+-- Focus a popup by running its LSP command twice, and set the conceal level to zero to show all text.
 
 local opts = { noremap = true, silent = true }
 
@@ -33,7 +36,7 @@ require('lspconfig')['hls'].setup {
     on_attach = on_attach,
     autostart = true,
     flags = {
-        -- This will be the default in neovim 0.7+
+        -- This will be the default in neovim 0.7+.
         debounce_text_changes = 150,
     }
 }

@@ -6,8 +6,7 @@ Subject: [PATCH 1/1] Use markdown.vim files from vim-markdown
 From preservim/vim-markdown at 9068655.
 
 I'm doing this because I want to be able to turn on code block and link
-concealment in LSP popups. Note that popup width = width of unconcealed
-Markdown, because there needs to be room for any text that can be shown.
+concealment in LSP popups.
 ---
  runtime/ftplugin/markdown.vim | 913 ++++++++++++++++++++++++++++++++--
  runtime/syntax/markdown.vim   | 317 ++++++------
