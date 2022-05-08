@@ -1,8 +1,5 @@
 -- LSP
 
--- Note that popup width = width of unconcealed Markdown, because that is the text that is actually in there.
--- Focus a popup by running its LSP command twice, and set the conceal level to 0 to show the raw Markdown.
-
 local opts = { noremap = true, silent = true }
 
 vim.api.nvim_set_keymap('n', 'l1', '<cmd>LspStart<CR>', opts)
