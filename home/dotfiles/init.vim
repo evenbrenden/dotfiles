@@ -40,7 +40,6 @@ noremap <silent><localleader>g :GraphvizCompile<CR>
 
 " markdown
 set concealcursor=nc
-set nofoldenable
 
 " neoformat
 noremap <silent><localleader>f :Neoformat<CR>
