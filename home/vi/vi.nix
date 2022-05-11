@@ -43,7 +43,6 @@
         };
 
       in [
-        vim-markdown
         {
           plugin = fzf-vim;
           config = ''
