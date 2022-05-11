@@ -22,14 +22,14 @@ syntax on
 let mapleader=","
 let maplocalleader="."
 
-" colors
-set termguicolors
-highlight Pmenu ctermbg=darkmagenta guibg=darkmagenta
-
-" completion
+" buffer completion
 set completeopt=menuone,menu,longest,preview
 set complete=.
 autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+
+" colors
+set termguicolors
+highlight Pmenu ctermbg=darkmagenta guibg=darkmagenta
 
 " fzf
 noremap <silent><leader>f :GFiles<CR>
