@@ -29,26 +29,7 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', key_opts)
 end
 
--- https://www.reddit.com/r/neovim/comments/uiqkra/is_it_possible_to_add_filetype_for_lsphover/
-function hover(_, result, ctx, config)
-    local util = require 'vim.lsp.util'
-    config = config or {}
-    config.focus_id = ctx.method
-    if not (result and result.contents) then
-        -- return { 'No information available' }
-        return
-    end
-    local markdown_lines = util.convert_input_to_markdown_lines(result.contents)
-    markdown_lines = util.trim_empty_lines(markdown_lines)
-    if vim.tbl_isempty(markdown_lines) then
-        -- return { 'No information available' }
-        return
-    end
-    local bufnr, winnr = util.open_floating_preview(markdown_lines, "markdown", config)
-    vim.api.nvim_buf_set_option(bufnr, 'filetype', 'markdown') -- :set syntax markdown
-    return bufnr, winnr
-end
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(hover, { max_width = 80 })
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { max_width = 80 })
 
 require('lspconfig')['hls'].setup {
     on_attach = on_attach,
