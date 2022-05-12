@@ -3,7 +3,7 @@
 {
   home.packages = [ pkgs.haskell-language-server ];
   nixpkgs.overlays =
-    [ (import ./neovim.nix) (import ./haskell-language-server.nix) ];
+    [ (import ./haskell-language-server.nix) (import ./neovim.nix) ];
   programs.neovim = {
     enable = true;
     # NB! extraConfig is inserted after the plugin-specific configs. Since I am
@@ -64,12 +64,7 @@
             let g:neoformat_enabled_nix = ['nixfmt']
           '';
         }
-        {
-          plugin = nvim-lspconfig;
-          config = ''
-            lua require('neovim-config')
-          '';
-        }
+        nvim-lspconfig
         tcomment_vim
         sfz-vim
         vim-airline
