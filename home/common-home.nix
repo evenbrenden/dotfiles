@@ -59,6 +59,7 @@
     python3
     python37Packages.virtualenv
     python39Packages.autopep8
+    python39Packages.python-lsp-server
     rclone
     ripgrep # For fzf
     shellcheck
