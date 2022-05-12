@@ -21,5 +21,7 @@ else:
     jiggle_port = headphones_name
     target_port = speaker_name
 
-subprocess.run(['pactl', 'set-sink-port', sink_name, '[Out] ' + jiggle_port], stdout=subprocess.PIPE)
-subprocess.run(['pactl', 'set-sink-port', sink_name, '[Out] ' + target_port], stdout=subprocess.PIPE)
+subprocess.run(['pactl', 'set-sink-port', sink_name,
+               '[Out] ' + jiggle_port], stdout=subprocess.PIPE)
+subprocess.run(['pactl', 'set-sink-port', sink_name,
+               '[Out] ' + target_port], stdout=subprocess.PIPE)
