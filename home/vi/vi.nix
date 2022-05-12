@@ -61,6 +61,7 @@
                 \ 'args': ['--indent=4'],
                 \ }
             let g:neoformat_enabled_haskell = ['brittany']
+            let g:neoformat_enabled_lua = ['luaformat']
             let g:neoformat_enabled_nix = ['nixfmt']
           '';
         }
