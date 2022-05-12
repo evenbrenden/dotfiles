@@ -58,6 +58,7 @@
     pavucontrol
     python3
     python37Packages.virtualenv
+    python39Packages.autopep8
     rclone
     ripgrep # For fzf
     shellcheck
