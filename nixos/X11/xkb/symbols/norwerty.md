@@ -1,4 +1,4 @@
-# norwerty
+# Norwerty
 
 ![https://tobiasvl.github.io/norwerty/](norwerty-linux.svg)
 
