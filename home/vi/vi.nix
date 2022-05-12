@@ -13,6 +13,7 @@
     extraConfig = pkgs.lib.strings.fileContents ../dotfiles/init.vim;
     plugins = with pkgs.vimPlugins;
       let
+        completion = [ cmp-buffer cmp-nvim-lsp nvim-cmp vim-vsnip ];
         nvim-lspconfig = pkgs.vimUtils.buildVimPluginFrom2Nix {
           pname = "nvim-lspconfig";
           version = "2022-04-17";
@@ -87,7 +88,7 @@
             let g:WMGraphviz_output="svg"
           '';
         }
-      ];
+      ] ++ completion;
   };
   # https://github.com/nix-community/home-manager/pull/2716
   xdg.configFile."nvim/lua/neovim-config.lua".source =

@@ -22,11 +22,6 @@ syntax on
 let mapleader=","
 let maplocalleader="."
 
-" buffer completion
-set completeopt=menuone,menu,longest,preview
-set complete=.
-autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-
 " colors
 set termguicolors
 highlight Pmenu ctermbg=darkmagenta guibg=darkmagenta
