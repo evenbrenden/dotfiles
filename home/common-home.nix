@@ -49,6 +49,7 @@
     jq
     libheif
     libreoffice
+    luaformatter
     nixfmt
     nomacs
     okular
