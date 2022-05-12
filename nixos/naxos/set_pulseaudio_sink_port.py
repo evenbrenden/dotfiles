@@ -8,11 +8,11 @@ speaker_name = 'Speaker'
 
 output = subprocess.run(['pactl', 'list', 'sinks'], stdout=subprocess.PIPE)
 verbose = output.stdout.decode()
-sink = verbose.partition(sink_name)[2];
+sink = verbose.partition(sink_name)[2]
 ports = sink.partition('Ports')[2]
 headphones = ports.partition(headphones_name)[2]
 closed = headphones.splitlines()[0]
-available = not 'not available' in closed
+available = 'not available' not in closed
 
 if available:
     jiggle_port = speaker_name
