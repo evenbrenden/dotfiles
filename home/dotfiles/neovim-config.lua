@@ -32,10 +32,6 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { 
 require('lspconfig')['hls'].setup {
     on_attach = on_attach,
     autostart = true,
-    flags = {
-        -- This will be the default in neovim 0.7+.
-        debounce_text_changes = 150,
-    }
 }
 
 -- Completion
