@@ -1,4 +1,4 @@
--- All LSP
+-- LSP
 local key_opts = {noremap = true, silent = true}
 
 vim.api.nvim_set_keymap('n', 'l1', '<cmd>LspStart<CR>', key_opts)
@@ -57,10 +57,7 @@ end
 vim.lsp.handlers["textDocument/hover"] =
     vim.lsp.with(vim.lsp.handlers.hover, {max_width = 85})
 
--- HLS LSP
-require('lspconfig')['hls'].setup {on_attach = on_attach}
-
--- Python LSP
+require'lspconfig'.hls.setup {on_attach = on_attach}
 require'lspconfig'.pylsp.setup {on_attach = on_attach}
 
 -- Completion
