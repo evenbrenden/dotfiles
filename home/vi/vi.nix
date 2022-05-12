@@ -41,7 +41,6 @@
             sha256 = "1k9rdpf0c9hag6b10l8b8k92563vx2f4jdm5mbz7cl2g8p3xb3c6";
           };
         };
-
       in [
         {
           plugin = fzf-vim;
