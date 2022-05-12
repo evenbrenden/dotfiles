@@ -4,7 +4,7 @@ local key_opts = {noremap = true, silent = true}
 vim.api.nvim_set_keymap('n', 'l1', '<cmd>LspStart<CR>', key_opts)
 vim.api.nvim_set_keymap('n', 'l0', '<cmd>LspStop<CR>', key_opts)
 
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
 
     vim.api.nvim_set_keymap('n', '<space>e',
                             '<cmd>lua vim.diagnostic.open_float()<CR>', key_opts)
