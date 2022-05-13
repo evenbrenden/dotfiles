@@ -1,30 +1,6 @@
-set autoindent
-set background=dark
-set backspace=indent,eol,start
-set expandtab
-set guicursor=""
-set hlsearch
-set ignorecase
-set nu
-set path=.
-set ruler
-set shiftwidth=4
-set showtabline=2
-set smartcase
-set smarttab
-set softtabstop=0
-set splitright
-set tabstop=8
-set wildmenu
-
-syntax on
-
 " colors
 set termguicolors
 highlight Pmenu ctermbg=darkmagenta guibg=darkmagenta
-
-" markdown
-set concealcursor=nc
 
 " trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
