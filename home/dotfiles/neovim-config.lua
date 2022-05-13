@@ -59,6 +59,7 @@ vim.lsp.handlers["textDocument/hover"] =
 
 require'lspconfig'.hls.setup {on_attach = on_attach}
 require'lspconfig'.pylsp.setup {on_attach = on_attach}
+require'lspconfig'.rnix.setup {on_attach = on_attach}
 
 -- Completion
 

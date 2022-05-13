@@ -59,6 +59,7 @@
     python39Packages.python-lsp-server
     rclone
     ripgrep # For fzf
+    rnix-lsp
     shellcheck
     signal-desktop
     simplescreenrecorder
