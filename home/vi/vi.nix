@@ -21,7 +21,7 @@
     # setting the leader keys in extraConfig and since key mappings using
     # leaders must be set after setting the leader keys, key mappings using
     # leaders must be set in extraConfig and not in the plugin-specific configs.
-    extraConfig = pkgs.lib.strings.fileContents ../dotfiles/init.vim;
+    extraConfig = pkgs.lib.strings.fileContents ../dotfiles/neovim-init.vim;
     plugins = with pkgs.vimPlugins;
       let
         completion = [ cmp-buffer cmp-nvim-lsp nvim-cmp vim-vsnip ];
@@ -102,8 +102,7 @@
   # https://github.com/nix-community/home-manager/pull/2716
   xdg.configFile."nvim/lua/neovim-completion.lua".source =
     ../dotfiles/neovim-completion.lua;
-  xdg.configFile."nvim/lua/neovim-config.lua".source =
-    ../dotfiles/neovim-config.lua;
-  xdg.configFile."nvim/lua/neovim-lsp.lua".source =
-    ../dotfiles/neovim-lsp.lua;
+  xdg.configFile."nvim/lua/neovim-init.lua".source =
+    ../dotfiles/neovim-init.lua;
+  xdg.configFile."nvim/lua/neovim-lsp.lua".source = ../dotfiles/neovim-lsp.lua;
 }
