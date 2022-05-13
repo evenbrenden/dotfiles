@@ -61,6 +61,7 @@
     ripgrep # For fzf
     rnix-lsp
     shellcheck
+    shfmt
     signal-desktop
     simplescreenrecorder
     slack
