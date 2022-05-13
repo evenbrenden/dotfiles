@@ -17,10 +17,6 @@
     [ (import ./haskell-language-server.nix) (import ./neovim.nix) ];
   programs.neovim = {
     enable = true;
-    # NB! extraConfig is inserted after the plugin-specific configs. Since I am
-    # setting the leader keys in extraConfig and since key mappings using
-    # leaders must be set after setting the leader keys, key mappings using
-    # leaders must be set in extraConfig and not in the plugin-specific configs.
     extraConfig = pkgs.lib.strings.fileContents ../dotfiles/neovim-init.vim;
     plugins = with pkgs.vimPlugins;
       let
@@ -54,49 +50,17 @@
           };
         };
       in [
-        {
-          plugin = fzf-vim;
-          config = ''
-            " https://github.com/junegunn/fzf.vim#example-git-grep-wrapper
-            command! -bang -nargs=* GGrep
-              \ call fzf#vim#grep(
-              \   'git grep --line-number -- '.shellescape(<q-args>), 0,
-              \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
-          '';
-        }
-        {
-          plugin = neoformat;
-          config = ''
-            let g:neoformat_enabled_python = ['autopep8']
-            let g:neoformat_enabled_haskell = ['brittany']
-            let g:neoformat_haskell_brittany = {
-                \ 'exe': 'brittany',
-                \ 'args': ['--indent=4'],
-                \ }
-            let g:neoformat_enabled_lua = ['luaformat']
-            let g:neoformat_enabled_nix = ['nixfmt']
-            let g:neoformat_enabled_shell = ['shfmt']
-          '';
-        }
+        fzf-vim
+        neoformat
         nvim-lspconfig
         tcomment_vim
         sfz-vim
         vim-airline
         vim-fsharp
-        {
-          plugin = vim-gitgutter;
-          config = ''
-            set updatetime=100
-          '';
-        }
+        vim-gitgutter
         vim-nix
         vim-pico8-syntax
-        {
-          plugin = wmgraphviz-vim;
-          config = ''
-            let g:WMGraphviz_output="svg"
-          '';
-        }
+        wmgraphviz-vim
       ] ++ completion;
   };
   # https://github.com/nix-community/home-manager/pull/2716
