@@ -1,7 +1,21 @@
 { config, pkgs, ... }:
 
+let
+  formatting = with pkgs; [
+    haskellPackages.brittany
+    luaformatter
+    nixfmt
+    python39Packages.autopep8
+    shfmt
+  ];
+  lsp = with pkgs; [
+    haskell-language-server
+    python39Packages.python-lsp-server
+    rnix-lsp
+  ];
+in
 {
-  home.packages = [ pkgs.haskell-language-server ];
+  home.packages = formatting ++ lsp;
   nixpkgs.overlays =
     [ (import ./haskell-language-server.nix) (import ./neovim.nix) ];
   programs.neovim = {
