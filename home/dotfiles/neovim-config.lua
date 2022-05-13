@@ -1,6 +1,20 @@
--- LSP
 local key_opts = {noremap = true, silent = true}
 
+-- Leaders
+vim.g.mapleader = ","
+vim.g.maplocalleader = "."
+
+-- fzf
+vim.api.nvim_set_keymap("n", "<leader>f", ":GFiles<CR>", key_opts)
+vim.api.nvim_set_keymap("n", "<leader>g", ":GGrep<CR>", key_opts)
+
+-- GraphViz
+vim.api.nvim_set_keymap("n", "<localleader>g", ":GraphvizCompile<CR>", key_opts)
+
+-- Neoformat
+vim.api.nvim_set_keymap("n", "<localleader>f", ":Neoformat<CR>", key_opts)
+
+-- LSP
 vim.api.nvim_set_keymap('n', 'l1', '<cmd>LspStart<CR>', key_opts)
 vim.api.nvim_set_keymap('n', 'l0', '<cmd>LspStop<CR>', key_opts)
 
@@ -62,7 +76,6 @@ require'lspconfig'.pylsp.setup {on_attach = on_attach}
 require'lspconfig'.rnix.setup {on_attach = on_attach}
 
 -- Completion
-
 -- https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#vim-vsnip
 local has_words_before = function()
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))

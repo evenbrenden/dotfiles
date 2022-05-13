@@ -19,25 +19,12 @@ set wildmenu
 
 syntax on
 
-let mapleader=","
-let maplocalleader="."
-
 " colors
 set termguicolors
 highlight Pmenu ctermbg=darkmagenta guibg=darkmagenta
 
-" fzf
-noremap <silent><leader>f :GFiles<CR>
-noremap <silent><leader>g :GGrep<CR>
-
-" graphviz
-noremap <silent><localleader>g :GraphvizCompile<CR>
-
 " markdown
 set concealcursor=nc
-
-" neoformat
-noremap <silent><localleader>f :Neoformat<CR>
 
 " trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
