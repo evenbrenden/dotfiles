@@ -1,27 +1,31 @@
 { config, pkgs, ... }:
 
-{
-  # Programs
-  imports = [ ./vi/vi.nix ];
-  nixpkgs.overlays = [ (import ./discord.nix) (import ./signal-desktop.nix) ];
-  programs = {
-    home-manager.enable = true;
-    man.enable = false;
-  };
-  home.packages = with pkgs; [
-    # For dotfiles
+let
+  for-dotfiles = with pkgs; [
     autorandr
     brightnessctl
     dunst # For dunstctl
     libnotify
     playerctl
     sakura
-
-    # User programs
+  ];
+  programming = with pkgs; [
+    cabal-install
+    ghc
+    ghcid
+    git
+    (import ./git-replace.nix { inherit pkgs; })
+    graphviz
+    haskellPackages.implicit-hie # gen-hie
+    hlint
+    python3
+    python37Packages.virtualenv
+    shellcheck
+  ];
+  user-programs = with pkgs; [
     abcde
     arandr
     audacity
-    cabal-install
     chromium
     curl
     discord
@@ -31,37 +35,19 @@
     flac
     flameshot
     fzf
-    ghc
-    ghcid
     ghostwriter
     gimp
-    git
-    (import ./git-replace.nix { inherit pkgs; })
     gparted
-    graphviz
-    haskellPackages.brittany
-    haskellPackages.implicit-hie # gen-hie
-    hlint
     irssi
     jq
     libheif
     libreoffice
-    luaformatter
-    nixfmt
     nomacs
     okular
     p7zip
     pandoc
     pavucontrol
-    python3
-    python37Packages.virtualenv
-    python39Packages.autopep8
-    python39Packages.python-lsp-server
     rclone
-    ripgrep # For fzf
-    rnix-lsp
-    shellcheck
-    shfmt
     signal-desktop
     simplescreenrecorder
     slack
@@ -77,7 +63,16 @@
     whatsapp-for-linux
     xclip
   ];
-
+in
+{
+  # Programs
+  imports = [ ./vi/vi.nix ];
+  nixpkgs.overlays = [ (import ./discord.nix) (import ./signal-desktop.nix) ];
+  programs = {
+    home-manager.enable = true;
+    man.enable = false;
+  };
+  home.packages = for-dotfiles ++ programming ++ user-programs;
   # Services
   services.dunst.enable = true;
   systemd.user.startServices = true;
