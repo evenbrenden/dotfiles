@@ -10,11 +10,8 @@
         python39Packages.autopep8
         shfmt
       ];
-      lsp = [
-        haskell-language-server
-        python39Packages.python-lsp-server
-        rnix-lsp
-      ];
+      lsp =
+        [ haskell-language-server python39Packages.python-lsp-server rnix-lsp ];
     in formatting ++ lsp;
   nixpkgs.overlays =
     [ (import ./haskell-language-server.nix) (import ./neovim.nix) ];
