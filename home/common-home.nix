@@ -3,10 +3,7 @@
 {
   # Programs
   imports = [ ./vi/vi.nix ];
-  nixpkgs.overlays = [
-    (import ./discord.nix)
-    (import ./signal-desktop.nix)
-  ];
+  nixpkgs.overlays = [ (import ./discord.nix) (import ./signal-desktop.nix) ];
   programs = {
     home-manager.enable = true;
     man.enable = false;
@@ -24,7 +21,6 @@
     abcde
     arandr
     audacity
-    haskellPackages.brittany
     cabal-install
     chromium
     curl
@@ -43,6 +39,7 @@
     (import ./git-replace.nix { inherit pkgs; })
     gparted
     graphviz
+    haskellPackages.brittany
     haskellPackages.implicit-hie # gen-hie
     hlint
     irssi
