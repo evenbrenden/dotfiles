@@ -89,6 +89,10 @@
       ] ++ completion;
   };
   # https://github.com/nix-community/home-manager/pull/2716
+  xdg.configFile."nvim/lua/neovim-completion.lua".source =
+    ../dotfiles/neovim-completion.lua;
   xdg.configFile."nvim/lua/neovim-config.lua".source =
     ../dotfiles/neovim-config.lua;
+  xdg.configFile."nvim/lua/neovim-lsp.lua".source =
+    ../dotfiles/neovim-lsp.lua;
 }
