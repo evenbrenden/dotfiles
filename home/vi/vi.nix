@@ -70,15 +70,15 @@
         {
           plugin = neoformat;
           config = ''
-            let g:neoformat_enabled_haskell = ['autopep8']
+            let g:neoformat_enabled_python = ['autopep8']
             let g:neoformat_enabled_haskell = ['brittany']
-            let g:neoformat_enabled_lua = ['luaformat']
-            let g:neoformat_enabled_nix = ['nixfmt']
-            let g:neoformat_enabled_nix = ['shfmt']
             let g:neoformat_haskell_brittany = {
                 \ 'exe': 'brittany',
                 \ 'args': ['--indent=4'],
                 \ }
+            let g:neoformat_enabled_lua = ['luaformat']
+            let g:neoformat_enabled_nix = ['nixfmt']
+            let g:neoformat_enabled_shell = ['shfmt']
           '';
         }
         nvim-lspconfig
