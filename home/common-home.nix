@@ -1,69 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  for-dotfiles = with pkgs; [
-    autorandr
-    brightnessctl
-    dunst # For dunstctl
-    libnotify
-    playerctl
-    sakura
-  ];
-  programming = with pkgs; [
-    cabal-install
-    ghc
-    ghcid
-    git
-    (import ./git-replace.nix { inherit pkgs; })
-    graphviz
-    haskellPackages.implicit-hie # gen-hie
-    hlint
-    python3
-    python37Packages.virtualenv
-    shellcheck
-  ];
-  user-programs = with pkgs; [
-    abcde
-    arandr
-    audacity
-    chromium
-    curl
-    discord
-    dos2unix
-    firefox
-    fff
-    flac
-    flameshot
-    fzf
-    ghostwriter
-    gimp
-    gparted
-    irssi
-    jq
-    libheif
-    libreoffice
-    nomacs
-    okular
-    p7zip
-    pandoc
-    pavucontrol
-    rclone
-    signal-desktop
-    simplescreenrecorder
-    slack
-    smartmontools
-    snes9x-gtk
-    spotify
-    standardnotes
-    teams
-    transmission-gtk
-    tree
-    veracrypt
-    vlc
-    whatsapp-for-linux
-    xclip
-  ];
-in
 {
   # Programs
   imports = [ ./vi/vi.nix ];
@@ -72,7 +8,72 @@ in
     home-manager.enable = true;
     man.enable = false;
   };
-  home.packages = for-dotfiles ++ programming ++ user-programs;
+  home.packages = with pkgs;
+    let
+      for-dotfiles = [
+        autorandr
+        brightnessctl
+        dunst # For dunstctl
+        libnotify
+        playerctl
+        sakura
+      ];
+      programming = [
+        cabal-install
+        ghc
+        ghcid
+        git
+        (import ./git-replace.nix { inherit pkgs; })
+        graphviz
+        haskellPackages.implicit-hie # gen-hie
+        hlint
+        python3
+        python37Packages.virtualenv
+        shellcheck
+      ];
+      user-programs = [
+        abcde
+        arandr
+        audacity
+        chromium
+        curl
+        discord
+        dos2unix
+        firefox
+        fff
+        flac
+        flameshot
+        fzf
+        ghostwriter
+        gimp
+        gparted
+        irssi
+        jq
+        libheif
+        libreoffice
+        nomacs
+        okular
+        p7zip
+        pandoc
+        pavucontrol
+        rclone
+        signal-desktop
+        simplescreenrecorder
+        slack
+        smartmontools
+        snes9x-gtk
+        spotify
+        standardnotes
+        teams
+        transmission-gtk
+        tree
+        veracrypt
+        vlc
+        whatsapp-for-linux
+        xclip
+      ];
+    in for-dotfiles ++ programming ++ user-programs;
+
   # Services
   services.dunst.enable = true;
   systemd.user.startServices = true;
