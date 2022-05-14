@@ -53,7 +53,7 @@ local on_attach = function(_, bufnr)
                                 key_opts)
 end
 
-vim.lsp.handlers["textDocument/hover"] =
+vim.lsp.handlers['textDocument/hover'] =
     vim.lsp.with(vim.lsp.handlers.hover, {max_width = 85})
 
 lspconfig = require 'lspconfig'
