@@ -24,6 +24,10 @@ vim.opt.splitright = true
 vim.opt.tabstop = 8
 vim.opt.wildmenu = true
 
+-- Colors
+vim.opt.termguicolors = true
+vim.cmd('highlight Pmenu ctermbg=darkmagenta guibg=darkmagenta')
+
 -- Better Whitespace
 vim.api.nvim_set_keymap("n", "wd", ":StripWhitespace<CR>", key_opts)
 vim.api.nvim_set_keymap("n", "wt", ":ToggleWhitespace<CR>", key_opts)
@@ -56,6 +60,9 @@ vim.g.neoformat_haskell_brittany = {exe = 'brittany', args = {'--indent=2'}}
 vim.g.neoformat_enabled_lua = {'luaformat'}
 vim.g.neoformat_enabled_nix = {'nixfmt'}
 vim.g.neoformat_enabled_shell = {'shfmt'}
+
+-- YAML
+vim.cmd('autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab')
 
 require 'neovim-completion'
 require 'neovim-lsp'
