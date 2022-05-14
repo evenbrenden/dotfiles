@@ -24,6 +24,10 @@ vim.opt.splitright = true
 vim.opt.tabstop = 8
 vim.opt.wildmenu = true
 
+-- Better Whitespace
+vim.api.nvim_set_keymap("n", "wd", ":StripWhitespace<CR>", key_opts)
+vim.api.nvim_set_keymap("n", "wt", ":ToggleWhitespace<CR>", key_opts)
+
 -- fzf
 vim.api.nvim_set_keymap("n", "<leader>f", ":GFiles<CR>", key_opts)
 vim.api.nvim_set_keymap("n", "<leader>g", ":GGrep<CR>", key_opts)

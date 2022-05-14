@@ -56,6 +56,7 @@
         tcomment_vim
         sfz-vim
         vim-airline
+        vim-better-whitespace
         vim-fsharp
         vim-gitgutter
         vim-nix
