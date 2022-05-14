@@ -17,7 +17,10 @@
     [ (import ./haskell-language-server.nix) (import ./neovim.nix) ];
   programs.neovim = {
     enable = true;
-    extraConfig = pkgs.lib.strings.fileContents ../dotfiles/neovim-init.vim;
+    # https://github.com/nix-community/home-manager/pull/2716
+    extraConfig = ''
+      lua require 'neovim-init'
+    '';
     plugins = with pkgs.vimPlugins;
       let
         completion = [ cmp-buffer cmp-nvim-lsp nvim-cmp vim-vsnip ];
@@ -64,7 +67,6 @@
         wmgraphviz-vim
       ] ++ completion;
   };
-  # https://github.com/nix-community/home-manager/pull/2716
   xdg.configFile."nvim/lua/neovim-completion.lua".source =
     ../dotfiles/neovim-completion.lua;
   xdg.configFile."nvim/lua/neovim-init.lua".source =
