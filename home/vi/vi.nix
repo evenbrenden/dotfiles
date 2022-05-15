@@ -10,8 +10,12 @@
         python39Packages.autopep8
         shfmt
       ];
-      lsp =
-        [ haskell-language-server python39Packages.python-lsp-server rnix-lsp ];
+      lsp = [
+        glow
+        haskell-language-server
+        python39Packages.python-lsp-server
+        rnix-lsp
+      ];
     in formatting ++ lsp;
   nixpkgs.overlays =
     [ (import ./haskell-language-server.nix) (import ./neovim.nix) ];
@@ -24,6 +28,15 @@
     plugins = with pkgs.vimPlugins;
       let
         completion = [ cmp-buffer cmp-nvim-lsp nvim-cmp vim-vsnip ];
+        glow-hover = pkgs.vimUtils.buildVimPlugin {
+          name = "glow-hover";
+          src = pkgs.fetchFromGitHub {
+            owner = "JASONews";
+            repo = "glow-hover.nvim";
+            rev = "c8d0cae5d05c658f4701425b05f1432121092c68";
+            sha256 = "04cif3frm4xfzc5rllp57zn11wi6pkydd7swghq3pcavgfmiykm4";
+          };
+        };
         nvim-lspconfig = pkgs.vimUtils.buildVimPluginFrom2Nix {
           pname = "nvim-lspconfig";
           version = "2022-04-17";
@@ -54,6 +67,7 @@
         };
       in [
         fzf-vim
+        glow-hover
         neoformat
         nvim-lspconfig
         tcomment_vim
