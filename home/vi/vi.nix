@@ -43,13 +43,13 @@
             sha256 = "0brk6847n8wd8zb57wp7wjxyc7i3r0q29riv8ppy39j5lpdsbbss";
           };
         };
-        vim-fsharp = pkgs.vimUtils.buildVimPlugin {
-          name = "vim-fsharp";
+        neofsharp-vim = pkgs.vimUtils.buildVimPlugin {
+          name = "neofsharp.vim";
           src = pkgs.fetchFromGitHub {
-            owner = "PhilT";
-            repo = "vim-fsharp";
-            rev = "ef3b89768dbd7cb944cad0fb5131342d95ab58d6";
-            sha256 = "1k9rdpf0c9hag6b10l8b8k92563vx2f4jdm5mbz7cl2g8p3xb3c6";
+            owner = "adelarsq";
+            repo = "neofsharp.vim";
+            rev = "85d02f1dba209bbbad53ec9a41423e94672a5da5";
+            sha256 = "06d52qr5wiar2j39nddnmqjh065xdzhlrx51sgm8d9g24akj8kq9";
           };
         };
       in [
@@ -60,7 +60,7 @@
         sfz-vim
         vim-airline
         vim-better-whitespace
-        vim-fsharp
+        neofsharp-vim
         vim-gitgutter
         vim-nix
         vim-pico8-syntax
