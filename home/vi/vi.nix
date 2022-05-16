@@ -67,8 +67,8 @@
         wmgraphviz-vim
       ] ++ completion;
   };
-  xdg.configFile."nvim/lua/neovim-completion.lua".source =
-    ../dotfiles/neovim-completion.lua;
+  xdg.configFile."nvim/lua/neovim-cmp.lua".source =
+    ../dotfiles/neovim-cmp.lua;
   xdg.configFile."nvim/lua/neovim-init.lua".source =
     ../dotfiles/neovim-init.lua;
   xdg.configFile."nvim/lua/neovim-lsp.lua".source = ../dotfiles/neovim-lsp.lua;
