@@ -8,4 +8,4 @@
 ## Things that are already documented but that I'm afraid I'll forget
 
 - `gx` will open up a link at the cursor in a browser.
-- `<C-w>w` will focus the next window (like a popup).
+- `<C-w>w` will focus the next window (e.g. a popup).
