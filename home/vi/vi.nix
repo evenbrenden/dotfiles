@@ -12,8 +12,7 @@
       ];
       lsp =
         [ haskell-language-server python39Packages.python-lsp-server rnix-lsp ];
-      telescope = [ fd ripgrep ] ++ tree-sitter-all;
-      tree-sitter-all = [ clang nodejs tree-sitter ];
+      telescope = [ fd ripgrep ];
     in formatting ++ lsp ++ telescope;
   nixpkgs.overlays =
     [ (import ./haskell-language-server.nix) (import ./neovim.nix) ];
@@ -54,18 +53,6 @@
             sha256 = "06d52qr5wiar2j39nddnmqjh065xdzhlrx51sgm8d9g24akj8kq9";
           };
         };
-        # https://github.com/nvim-treesitter/nvim-treesitter/pull/1905
-        nvim-treesitter = pkgs.vimUtils.buildVimPluginFrom2Nix {
-          pname = "nvim-treesitter";
-          version = "2022-05-13";
-          src = pkgs.fetchFromGitHub {
-            owner = "nvim-treesitter";
-            repo = "nvim-treesitter";
-            rev = "f1373051e554cc4642cda719c8023e4e8508eb2d";
-            sha256 = "1jfcjwyp57scwj164pxzh376mh2i4nx2sxx0gpihl3r4m067gb84";
-          };
-        };
-        telescope = [ nvim-treesitter telescope-nvim ];
         vim-airline = pkgs.vimUtils.buildVimPluginFrom2Nix {
           pname = "vim-airline";
           version = "2022-05-06";
@@ -84,11 +71,12 @@
         vim-better-whitespace
         sfz-vim
         tcomment_vim
+        telescope-nvim
         vim-gitgutter
         vim-nix
         vim-pico8-syntax
         wmgraphviz-vim
-      ] ++ completion ++ telescope;
+      ] ++ completion;
   };
   xdg.configFile."nvim/lua/neovim-cmp.lua".source = ../dotfiles/neovim-cmp.lua;
   xdg.configFile."nvim/lua/neovim-init.lua".source =
