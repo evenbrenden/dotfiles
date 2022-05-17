@@ -52,6 +52,16 @@
             sha256 = "06d52qr5wiar2j39nddnmqjh065xdzhlrx51sgm8d9g24akj8kq9";
           };
         };
+        vim-airline = pkgs.vimUtils.buildVimPluginFrom2Nix {
+          pname = "vim-airline";
+          version = "2022-05-06";
+          src = pkgs.fetchFromGitHub {
+            owner = "vim-airline";
+            repo = "vim-airline";
+            rev = "c4655701431a9c79704c827fd88a4783ec946879";
+            sha256 = "1qsr3kkfx5vbhmnym0id2h9mph8bw6g75vwpqfi9vfmbg4fddh3l";
+          };
+        };
       in [
         fzf-vim
         neoformat
@@ -67,8 +77,7 @@
         wmgraphviz-vim
       ] ++ completion;
   };
-  xdg.configFile."nvim/lua/neovim-cmp.lua".source =
-    ../dotfiles/neovim-cmp.lua;
+  xdg.configFile."nvim/lua/neovim-cmp.lua".source = ../dotfiles/neovim-cmp.lua;
   xdg.configFile."nvim/lua/neovim-init.lua".source =
     ../dotfiles/neovim-init.lua;
   xdg.configFile."nvim/lua/neovim-lsp.lua".source = ../dotfiles/neovim-lsp.lua;
