@@ -36,9 +36,10 @@ vim.api.nvim_set_keymap('n', 'wt', ':ToggleWhitespace<CR>', key_opts)
 vim.api.nvim_set_keymap('n', '<leader>f', ':GFiles<CR>', key_opts)
 vim.api.nvim_set_keymap('n', '<leader>g', ':GGrep<CR>', key_opts)
 -- https://github.com/junegunn/fzf.vim#example-git-grep-wrapper
-vim.cmd("command! -bang -nargs=* GGrep call fzf#vim#grep('git grep --line-nu" ..
-            "mber -- '.shellescape(<q-args>), 0, fzf#vim#with_preview({'dir'" ..
-            ": systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)")
+vim.cmd(
+    [[command! -bang -nargs=* GGrep call fzf#vim#grep('git grep --line-numb]] ..
+        [[er -- '.shellescape(<q-args>), 0, fzf#vim#with_preview({'dir': sy]] ..
+        [[stemlist('git rev-parse --show-toplevel')[0]}), <bang>0)]])
 
 -- GitGutter
 vim.opt.updatetime = 100
