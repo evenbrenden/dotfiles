@@ -35,15 +35,6 @@
             sha256 = "1x9b87d965q9a7a726dw6q6k0lady04acg0n4c1shjwin7cl6kx9";
           };
         };
-        sfz-vim = pkgs.vimUtils.buildVimPlugin {
-          name = "sfz-vim";
-          src = pkgs.fetchFromGitHub {
-            owner = "sfztools";
-            repo = "sfz.vim";
-            rev = "4ec4ad05beacd1ec69dc37dc8137f92d4c673fef";
-            sha256 = "0brk6847n8wd8zb57wp7wjxyc7i3r0q29riv8ppy39j5lpdsbbss";
-          };
-        };
         neofsharp-vim = pkgs.vimUtils.buildVimPlugin {
           name = "neofsharp.vim";
           src = pkgs.fetchFromGitHub {
@@ -51,6 +42,15 @@
             repo = "neofsharp.vim";
             rev = "85d02f1dba209bbbad53ec9a41423e94672a5da5";
             sha256 = "06d52qr5wiar2j39nddnmqjh065xdzhlrx51sgm8d9g24akj8kq9";
+          };
+        };
+        sfz-vim = pkgs.vimUtils.buildVimPlugin {
+          name = "sfz-vim";
+          src = pkgs.fetchFromGitHub {
+            owner = "sfztools";
+            repo = "sfz.vim";
+            rev = "4ec4ad05beacd1ec69dc37dc8137f92d4c673fef";
+            sha256 = "0brk6847n8wd8zb57wp7wjxyc7i3r0q29riv8ppy39j5lpdsbbss";
           };
         };
         vim-airline = pkgs.vimUtils.buildVimPluginFrom2Nix {
