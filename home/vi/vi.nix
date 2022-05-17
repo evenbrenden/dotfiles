@@ -71,7 +71,7 @@
         vim-better-whitespace
         sfz-vim
         tcomment_vim
-        telescope-nvim
+        telescope-nvim # Drop optional nvim-treesitter dependency
         vim-gitgutter
         vim-nix
         vim-pico8-syntax
