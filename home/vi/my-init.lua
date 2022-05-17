@@ -62,8 +62,8 @@ vim.cmd('autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab')
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 
-require 'neovim-cmp'
+require 'my-cmp'
 setupCompletion()
 
-require 'neovim-lsp'
+require 'my-lsp'
 setupLSP(key_opts)
