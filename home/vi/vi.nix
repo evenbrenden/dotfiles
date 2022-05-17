@@ -12,7 +12,8 @@
       ];
       lsp =
         [ haskell-language-server python39Packages.python-lsp-server rnix-lsp ];
-    in formatting ++ lsp;
+      telescope = [ fd ripgrep ];
+    in formatting ++ lsp ++ telescope;
   nixpkgs.overlays =
     [ (import ./haskell-language-server.nix) (import ./neovim.nix) ];
   programs.neovim = {
@@ -52,6 +53,7 @@
             sha256 = "06d52qr5wiar2j39nddnmqjh065xdzhlrx51sgm8d9g24akj8kq9";
           };
         };
+        telescope = [ nvim-treesitter telescope-nvim ];
         vim-airline = pkgs.vimUtils.buildVimPluginFrom2Nix {
           pname = "vim-airline";
           version = "2022-05-06";
@@ -63,7 +65,6 @@
           };
         };
       in [
-        fzf-vim
         neoformat
         nvim-lspconfig
         tcomment_vim
@@ -75,7 +76,7 @@
         vim-nix
         vim-pico8-syntax
         wmgraphviz-vim
-      ] ++ completion;
+      ] ++ completion ++ telescope;
   };
   xdg.configFile."nvim/lua/neovim-cmp.lua".source = ../dotfiles/neovim-cmp.lua;
   xdg.configFile."nvim/lua/neovim-init.lua".source =

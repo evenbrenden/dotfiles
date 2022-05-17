@@ -32,15 +32,6 @@ vim.cmd('highlight Pmenu ctermbg=darkmagenta guibg=darkmagenta')
 vim.api.nvim_set_keymap('n', 'wd', ':StripWhitespace<CR>', key_opts)
 vim.api.nvim_set_keymap('n', 'wt', ':ToggleWhitespace<CR>', key_opts)
 
--- fzf
-vim.api.nvim_set_keymap('n', '<leader>f', ':GFiles<CR>', key_opts)
-vim.api.nvim_set_keymap('n', '<leader>g', ':GGrep<CR>', key_opts)
--- https://github.com/junegunn/fzf.vim#example-git-grep-wrapper
-vim.cmd(
-    [[command! -bang -nargs=* GGrep call fzf#vim#grep('git grep --line-numb]] ..
-        [[er -- '.shellescape(<q-args>), 0, fzf#vim#with_preview({'dir': sy]] ..
-        [[stemlist('git rev-parse --show-toplevel')[0]}), <bang>0)]])
-
 -- GitGutter
 vim.opt.updatetime = 100
 
@@ -59,6 +50,10 @@ vim.g.neoformat_haskell_brittany = {exe = 'brittany', args = {'--indent=2'}}
 vim.g.neoformat_enabled_lua = {'luaformat'}
 vim.g.neoformat_enabled_nix = {'nixfmt'}
 vim.g.neoformat_enabled_shell = {'shfmt'}
+
+-- Telescope
+vim.api.nvim_set_keymap('n', '<leader>f', ':Telescope find_files<CR>', key_opts)
+vim.api.nvim_set_keymap('n', '<leader>g', ':Telescope live_grep<CR>', key_opts)
 
 -- YAML
 vim.cmd('autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab')
