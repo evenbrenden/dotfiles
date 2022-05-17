@@ -20,7 +20,7 @@
     enable = true;
     # https://github.com/nix-community/home-manager/pull/2716
     extraConfig = ''
-      lua require 'neovim-init'
+      lua require 'my-init'
     '';
     plugins = with pkgs.vimPlugins;
       let
@@ -78,8 +78,7 @@
         wmgraphviz-vim
       ] ++ completion;
   };
-  xdg.configFile."nvim/lua/neovim-cmp.lua".source = ../dotfiles/neovim-cmp.lua;
-  xdg.configFile."nvim/lua/neovim-init.lua".source =
-    ../dotfiles/neovim-init.lua;
-  xdg.configFile."nvim/lua/neovim-lsp.lua".source = ../dotfiles/neovim-lsp.lua;
+  xdg.configFile."nvim/lua/my-cmp.lua".source = ./my-cmp.lua;
+  xdg.configFile."nvim/lua/my-init.lua".source = ./my-init.lua;
+  xdg.configFile."nvim/lua/my-lsp.lua".source = ./my-lsp.lua;
 }
