@@ -66,12 +66,12 @@
         };
       in [
         neoformat
+        neofsharp-vim
         nvim-lspconfig
-        tcomment_vim
-        sfz-vim
         vim-airline
         vim-better-whitespace
-        neofsharp-vim
+        sfz-vim
+        tcomment_vim
         vim-gitgutter
         vim-nix
         vim-pico8-syntax
