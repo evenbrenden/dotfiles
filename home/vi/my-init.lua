@@ -39,6 +39,9 @@ vim.opt.updatetime = 100
 vim.api.nvim_set_keymap('n', '<localleader>g', ':GraphvizCompile<CR>', key_opts)
 vim.g.WMGraphviz_output = 'svg'
 
+-- HOCON
+vim.cmd('autocmd BufNewFile,BufRead *.hocon set ft=hocon')
+
 -- Markdown
 vim.opt.concealcursor = 'nc'
 
