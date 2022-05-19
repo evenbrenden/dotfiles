@@ -87,6 +87,7 @@
         sfz-vim
         tcomment_vim
         vim-gitgutter
+        vim-hocon
         vim-nix
         vim-pico8-syntax
         wmgraphviz-vim
