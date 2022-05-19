@@ -26,7 +26,7 @@ vim.opt.wildmenu = true
 
 -- Colors
 vim.opt.termguicolors = true
-vim.cmd('highlight Pmenu ctermbg=darkmagenta guibg=darkmagenta')
+vim.api.nvim_set_hl(0, 'Pmenu', {bg = '#8B008B'})
 
 -- Better Whitespace
 vim.api.nvim_set_keymap('n', 'wd', ':StripWhitespace<CR>', key_opts)
