@@ -12,6 +12,7 @@ vim.opt.expandtab = true
 vim.opt.guicursor = ''
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
+vim.opt.spell = false
 vim.opt.nu = true
 vim.opt.path = ''
 vim.opt.ruler = true
