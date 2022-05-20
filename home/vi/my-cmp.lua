@@ -36,6 +36,8 @@ function setupCompletion()
                     feedkey('<Plug>(vsnip-jump-prev)', '')
                 end
             end, {'i', 's'}),
+            ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), {'i', 'c'}),
+            ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), {'i', 'c'}),
             ['<CR>'] = cmp.mapping.confirm {
                 behavior = cmp.ConfirmBehavior.Select
             }
