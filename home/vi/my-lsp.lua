@@ -1,4 +1,3 @@
--- TODO https://www.reddit.com/r/neovim/comments/tx40m2/is_it_possible_to_improve_lsp_hover_look/
 function setupLSP(key_opts)
 
     vim.api.nvim_set_keymap('n', 'l1', '<cmd>LspStart<CR>', key_opts)
