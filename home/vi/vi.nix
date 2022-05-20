@@ -96,7 +96,4 @@
   xdg.configFile."nvim/lua/my-cmp.lua".source = ./my-cmp.lua;
   xdg.configFile."nvim/lua/my-init.lua".source = ./my-init.lua;
   xdg.configFile."nvim/lua/my-lsp.lua".source = ./my-lsp.lua;
-  xdg.configFile."nvim/syntax/lsp_markdown.vim".source =
-    ./syntax/lsp_markdown.vim;
-  xdg.configFile."nvim/syntax/mkdc.vim".source = ./syntax/mkdc.vim;
 }
