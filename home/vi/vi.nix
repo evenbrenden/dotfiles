@@ -82,10 +82,10 @@
         neoformat
         neofsharp-vim
         nvim-lspconfig
-        vim-airline
-        vim-better-whitespace
         sfz-vim
         tcomment_vim
+        vim-airline
+        vim-better-whitespace
         vim-gitgutter
         vim-hocon
         vim-markdown
