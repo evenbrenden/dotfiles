@@ -60,8 +60,10 @@ function setupLSP(key_opts)
     end
 
     vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-                                                 vim.lsp.handlers.hover,
-                                                 {max_width = 85})
+                                                 vim.lsp.handlers.hover, {
+            max_width = 85,
+            stylize_markdown = false
+        })
 
     lspconfig = require 'lspconfig'
     lspconfig.hls.setup {on_attach = on_attach}
