@@ -45,6 +45,8 @@ vim.cmd('autocmd BufNewFile,BufRead *.hocon set ft=hocon')
 
 -- Markdown
 vim.opt.concealcursor = 'nc'
+vim.opt.conceallevel = 2
+vim.opt.foldenable = false
 
 -- Neoformat
 vim.api.nvim_set_keymap('n', '<localleader>f', ':Neoformat<CR>', key_opts)
