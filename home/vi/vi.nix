@@ -27,7 +27,7 @@
       in formatting ++ lsp ++ telescope;
     plugins = with pkgs.vimPlugins;
       let
-        completion = [ cmp-buffer cmp-nvim-lsp nvim-cmp vim-vsnip ];
+        completion = [ cmp-buffer cmp_luasnip cmp-nvim-lsp luasnip nvim-cmp ];
         nvim-lspconfig = pkgs.vimUtils.buildVimPluginFrom2Nix {
           pname = "nvim-lspconfig";
           version = "2022-04-17";
