@@ -27,7 +27,6 @@
       in formatting ++ lsp ++ telescope;
     plugins = with pkgs.vimPlugins;
       let
-        completion = [ cmp-buffer cmp_luasnip cmp-nvim-lsp luasnip nvim-cmp ];
         nvim-lspconfig = pkgs.vimUtils.buildVimPluginFrom2Nix {
           pname = "nvim-lspconfig";
           version = "2022-04-17";
@@ -92,9 +91,8 @@
         vim-nix
         vim-pico8-syntax
         wmgraphviz-vim
-      ] ++ completion ++ telescope;
+      ] ++ telescope;
   };
-  xdg.configFile."nvim/lua/my-cmp.lua".source = ./my-cmp.lua;
   xdg.configFile."nvim/lua/my-init.lua".source = ./my-init.lua;
   xdg.configFile."nvim/lua/my-lsp.lua".source = ./my-lsp.lua;
 }

@@ -19,6 +19,8 @@ function setupLSP(key_opts)
                                 '<cmd>lua vim.diagnostic.setloclist()<CR>',
                                 key_opts)
 
+        vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
         vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD',
                                     '<cmd>lua vim.lsp.buf.declaration()<CR>',
                                     key_opts)
