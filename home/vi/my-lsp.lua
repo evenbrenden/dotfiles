@@ -59,13 +59,9 @@ function setupLSP(key_opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f',
                                     '<cmd>lua vim.lsp.buf.formatting()<CR>',
                                     key_opts)
-    end
 
-    vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-                                                 vim.lsp.handlers.hover, {
-            max_width = 85,
-            stylize_markdown = false
-        })
+        require'glow-hover'.setup {max_width = 85}
+    end
 
     lspconfig = require 'lspconfig'
     lspconfig.hls.setup {on_attach = on_attach}
