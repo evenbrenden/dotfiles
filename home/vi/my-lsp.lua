@@ -1,4 +1,3 @@
--- TODO https://www.reddit.com/r/neovim/comments/tx40m2/is_it_possible_to_improve_lsp_hover_look/
 function setupLSP(key_opts)
 
     vim.api.nvim_set_keymap('n', 'l1', '<cmd>LspStart<CR>', key_opts)
@@ -19,6 +18,7 @@ function setupLSP(key_opts)
                                 '<cmd>lua vim.diagnostic.setloclist()<CR>',
                                 key_opts)
 
+        -- https://github.com/haskell/haskell-language-server/pull/2848
         vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
         vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD',
@@ -60,6 +60,7 @@ function setupLSP(key_opts)
                                     '<cmd>lua vim.lsp.buf.formatting()<CR>',
                                     key_opts)
 
+        -- https://www.reddit.com/r/neovim/comments/tx40m2/is_it_possible_to_improve_lsp_hover_look/
         require'glow-hover'.setup {max_width = 85}
     end
 
