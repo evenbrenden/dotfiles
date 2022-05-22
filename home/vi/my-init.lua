@@ -25,6 +25,9 @@ vim.opt.splitright = true
 vim.opt.tabstop = 8
 vim.opt.wildmenu = true
 
+-- ALWAYS use the clipboard for ALL operations
+vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
+
 -- Close popup menu => close preview window
 vim.cmd(
     'autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif')
