@@ -31,7 +31,13 @@ vim.cmd(
 
 -- Colors
 vim.opt.termguicolors = true
-vim.api.nvim_set_hl(0, 'Pmenu', {bg = '#600060'})
+vim.cmd('colorscheme default')
+local popupColors = {fg = '#c0c0c0', bg = '#600060'}
+local selectionColors = {fg = '#ffffff', bg = '#808080'}
+vim.api.nvim_set_hl(0, 'Pmenu', popupColors)
+vim.api.nvim_set_hl(0, 'PmenuSel', selectionColors)
+vim.api.nvim_set_hl(0, 'TabLine', selectionColors)
+vim.api.nvim_set_hl(0, 'Visual', selectionColors)
 
 -- Better Whitespace
 vim.api.nvim_set_keymap('n', 'wd', ':StripWhitespace<CR>', key_opts)
