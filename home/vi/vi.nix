@@ -17,7 +17,11 @@
           python39Packages.autopep8
           shfmt
         ];
-        fzf-hoogle-vim = [ fzf haskellPackages.hoogle jq ];
+        fzf-hoogle-vim = [
+          fzf
+          haskellPackages.hoogle # hoogle generate
+          jq
+        ];
         lsp = [
           glow
           haskell-language-server
