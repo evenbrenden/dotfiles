@@ -61,7 +61,7 @@ function SetupLSP(key_opts)
                                     key_opts)
 
         -- https://www.reddit.com/r/neovim/comments/tx40m2/is_it_possible_to_improve_lsp_hover_look/
-        require'glow-hover'.setup {max_width = 85}
+        require'glow-hover'.setup {border = 'none', max_width = 85}
     end
 
     local lspconfig = require 'lspconfig'
