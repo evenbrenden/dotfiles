@@ -62,7 +62,12 @@ augroup END
 vim.opt.updatetime = 100
 
 -- GraphViz
-vim.api.nvim_set_keymap('n', '<localleader>g', ':GraphvizCompile<CR>', key_opts)
+vim.cmd([[
+augroup GraphVizMaps
+  autocmd!
+  autocmd FileType dot nnoremap <buffer> <localleader>g :GraphvizCompile<CR>
+augroup END
+]])
 vim.g.WMGraphviz_output = 'svg'
 
 -- HOCON
