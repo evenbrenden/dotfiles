@@ -1,4 +1,4 @@
-function setupLSP(key_opts)
+function SetupLSP(key_opts)
 
     vim.api.nvim_set_keymap('n', 'l1', '<cmd>LspStart<CR>', key_opts)
     vim.api.nvim_set_keymap('n', 'l0', '<cmd>LspStop<CR>', key_opts)
@@ -64,7 +64,7 @@ function setupLSP(key_opts)
         require'glow-hover'.setup {max_width = 85}
     end
 
-    lspconfig = require 'lspconfig'
+    local lspconfig = require 'lspconfig'
     lspconfig.hls.setup {on_attach = on_attach}
     lspconfig.pylsp.setup {on_attach = on_attach}
     lspconfig.rnix.setup {on_attach = on_attach}
