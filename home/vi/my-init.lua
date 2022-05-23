@@ -29,7 +29,6 @@ vim.opt.wildmenu = true
 vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
 
 -- Completion
-vim.opt.complete = '.,w,b,u,i,t'
 vim.opt.completeopt = 'menu'
 
 -- Colors
