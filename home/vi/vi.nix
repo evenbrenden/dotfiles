@@ -17,6 +17,7 @@
           python39Packages.autopep8
           shfmt
         ];
+        fzf-hoogle-vim = [ fzf haskellPackages.hoogle jq ];
         lsp = [
           glow
           haskell-language-server
@@ -24,9 +25,21 @@
           rnix-lsp
         ];
         telescope = [ clang fd nodejs ripgrep tree-sitter ];
-      in formatting ++ lsp ++ telescope;
+      in fzf-hoogle-vim ++ formatting ++ lsp ++ telescope;
     plugins = with pkgs.vimPlugins;
       let
+        fzf-hoogle-vim = [
+          (pkgs.vimUtils.buildVimPluginFrom2Nix {
+            name = "fzf-hoogle-vim";
+            src = pkgs.fetchFromGitHub {
+              owner = "monkoose";
+              repo = "fzf-hoogle.vim";
+              rev = "16c08d1534aea2cd1cea1a1e20783bd22f634c77";
+              sha256 = "0k7cdi00ixqdkqmyqnapn5aplyn0w78iwvm7ifyi9j3smz57hzhf";
+            };
+          })
+          fzf-vim
+        ];
         glow-hover = pkgs.vimUtils.buildVimPlugin {
           name = "glow-hover";
           src = pkgs.fetchFromGitHub {
@@ -101,8 +114,9 @@
         vim-nix
         vim-pico8-syntax
         wmgraphviz-vim
-      ] ++ telescope;
+      ] ++ fzf-hoogle-vim ++ telescope;
   };
+  home.file.".cache/fzf-hoogle.vim/placeholder".text = ""; # mkdir
   xdg.configFile."nvim/lua/my-init.lua".source = ./my-init.lua;
   xdg.configFile."nvim/lua/my-lsp.lua".source = ./my-lsp.lua;
 }

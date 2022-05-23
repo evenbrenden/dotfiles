@@ -46,6 +46,16 @@ vim.api.nvim_set_hl(0, 'Visual', selectionColors)
 vim.api.nvim_set_keymap('n', 'wd', ':StripWhitespace<CR>', key_opts)
 vim.api.nvim_set_keymap('n', 'wt', ':ToggleWhitespace<CR>', key_opts)
 
+-- fzf-hoogle.vim
+vim.cmd([[let g:hoogle_fzf_cache_file = '~/.cache/fzf-hoogle.vim/cache.json']])
+vim.api.nvim_set_keymap('n', '<leader>h', ':Hoogle<CR>', key_opts)
+vim.cmd([[
+augroup HoogleMaps
+  autocmd!
+  autocmd FileType haskell nnoremap <buffer> H :Hoogle <C-r><C-w><CR>
+augroup END
+]])
+
 -- GitGutter
 vim.opt.updatetime = 100
 
