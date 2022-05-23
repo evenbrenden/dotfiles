@@ -30,9 +30,7 @@ vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
 
 -- Completion
 vim.opt.complete = '.,w,b,u,i,t'
-vim.opt.completeopt = 'menu,preview'
-vim.cmd(
-    'autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif')
+vim.opt.completeopt = 'menu'
 
 -- Colors
 vim.opt.termguicolors = true
