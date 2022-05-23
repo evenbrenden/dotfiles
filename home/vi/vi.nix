@@ -23,6 +23,7 @@
           haskell-language-server
           python39Packages.python-lsp-server
           rnix-lsp
+          sumneko-lua-language-server
         ];
         telescope = [ clang fd nodejs ripgrep tree-sitter ];
       in fzf-hoogle-vim ++ formatting ++ lsp ++ telescope;
