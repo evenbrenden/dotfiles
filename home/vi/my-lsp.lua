@@ -18,7 +18,7 @@ function SetupLSP(key_opts)
                                 '<cmd>lua vim.diagnostic.setloclist()<cr>',
                                 key_opts)
 
-        -- https://github.com/haskell/haskell-language-server/pull/2848
+        -- Note that \n has the digraph LF and is printed as ^@ in completion items
         vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
         vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD',
