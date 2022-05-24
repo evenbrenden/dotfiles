@@ -31,6 +31,9 @@ vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
 -- Clear highlighted search matches
 vim.api.nvim_set_keymap('n', '<leader><space>', ':noh<CR>', key_opts)
 
+-- Completion
+vim.opt.completeopt = 'menu'
+
 -- Colors
 vim.opt.termguicolors = true
 vim.cmd('colorscheme default')
@@ -94,9 +97,6 @@ vim.cmd('autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab')
 -- Nope
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
-
-require 'my-cmp'
-setupCompletion()
 
 require 'my-lsp'
 SetupLSP(key_opts)
