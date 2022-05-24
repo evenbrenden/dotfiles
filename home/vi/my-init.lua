@@ -29,7 +29,7 @@ vim.opt.wildmenu = true
 vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
 
 -- Clear highlighted search matches
-vim.api.nvim_set_keymap('n', '<leader><space>', ':noh<CR>', key_opts)
+vim.api.nvim_set_keymap('n', '<leader><space>', ':noh<cr>', key_opts)
 
 -- Completion
 vim.opt.completeopt = 'menu'
@@ -45,16 +45,16 @@ vim.api.nvim_set_hl(0, 'TabLine', selectionColors)
 vim.api.nvim_set_hl(0, 'Visual', selectionColors)
 
 -- Better Whitespace
-vim.api.nvim_set_keymap('n', 'wd', ':StripWhitespace<CR>', key_opts)
-vim.api.nvim_set_keymap('n', 'wt', ':ToggleWhitespace<CR>', key_opts)
+vim.api.nvim_set_keymap('n', 'wd', ':StripWhitespace<cr>', key_opts)
+vim.api.nvim_set_keymap('n', 'wt', ':ToggleWhitespace<cr>', key_opts)
 
 -- fzf-hoogle.vim
 vim.cmd([[let g:hoogle_fzf_cache_file = '~/.cache/fzf-hoogle.vim/cache.json']])
-vim.api.nvim_set_keymap('n', '<leader>h', ':Hoogle<CR>', key_opts)
+vim.api.nvim_set_keymap('n', '<leader>h', ':Hoogle<cr>', key_opts)
 vim.cmd([[
 augroup HoogleMaps
   autocmd!
-  autocmd FileType haskell nnoremap <buffer> H :Hoogle <C-r><C-w><CR>
+  autocmd FileType haskell nnoremap <buffer> H :Hoogle <C-r><C-w><cr>
 augroup END
 ]])
 
@@ -65,7 +65,7 @@ vim.opt.updatetime = 100
 vim.cmd([[
 augroup GraphVizMaps
   autocmd!
-  autocmd FileType dot nnoremap <buffer> <localleader>g :GraphvizCompile<CR>
+  autocmd FileType dot nnoremap <buffer> <localleader>g :GraphvizCompile<cr>
 augroup END
 ]])
 vim.g.WMGraphviz_output = 'svg'
@@ -79,7 +79,7 @@ vim.opt.conceallevel = 2
 vim.opt.foldenable = false
 
 -- Neoformat
-vim.api.nvim_set_keymap('n', '<localleader>f', ':Neoformat<CR>', key_opts)
+vim.api.nvim_set_keymap('n', '<localleader>f', ':Neoformat<cr>', key_opts)
 vim.g.neoformat_enabled_python = {'autopep8'}
 vim.g.neoformat_enabled_haskell = {'brittany'}
 vim.g.neoformat_haskell_brittany = {exe = 'brittany', args = {'--indent=2'}}
@@ -88,8 +88,8 @@ vim.g.neoformat_enabled_nix = {'nixfmt'}
 vim.g.neoformat_enabled_shell = {'shfmt'}
 
 -- Telescope
-vim.api.nvim_set_keymap('n', '<leader>f', ':Telescope find_files<CR>', key_opts)
-vim.api.nvim_set_keymap('n', '<leader>g', ':Telescope live_grep<CR>', key_opts)
+vim.api.nvim_set_keymap('n', '<leader>f', ':Telescope find_files<cr>', key_opts)
+vim.api.nvim_set_keymap('n', '<leader>g', ':Telescope live_grep<cr>', key_opts)
 
 -- YAML
 vim.cmd('autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab')
