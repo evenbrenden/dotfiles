@@ -28,6 +28,9 @@ vim.opt.wildmenu = true
 -- ALWAYS use the clipboard for ALL operations
 vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
 
+-- Clear highlighted search matches
+vim.api.nvim_set_keymap('n', '<leader><space>', ':noh<CR>', key_opts)
+
 -- Colors
 vim.opt.termguicolors = true
 vim.cmd('colorscheme default')
