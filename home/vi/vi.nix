@@ -33,21 +33,6 @@
       in fzf-hoogle-vim ++ formatting ++ lsp ++ telescope;
     plugins = with pkgs.vimPlugins;
       let
-        completion = [
-          cmp-buffer
-          cmp_luasnip
-          cmp-nvim-lsp
-          luasnip
-          (pkgs.vimUtils.buildVimPluginFrom2Nix {
-            name = "nvim-cmp";
-            src = pkgs.fetchFromGitHub {
-              owner = "evenbrenden";
-              repo = "nvim-cmp";
-              rev = "d5ab13910a95108210cd9d1926e70bda629f31a0";
-              sha256 = "1g6qykk1iqymmvffwl5rifycv348z4dgm5rr8jkx5lc5ajvadxgi";
-            };
-          })
-        ];
         fzf-hoogle-vim = [
           (pkgs.vimUtils.buildVimPluginFrom2Nix {
             name = "fzf-hoogle-vim";
@@ -134,10 +119,9 @@
         vim-nix
         vim-pico8-syntax
         wmgraphviz-vim
-      ] ++ completion ++ fzf-hoogle-vim ++ telescope;
+      ] ++ fzf-hoogle-vim ++ telescope;
   };
   home.file.".cache/fzf-hoogle.vim/placeholder".text = ""; # mkdir
-  xdg.configFile."nvim/lua/my-cmp.lua".source = ./my-cmp.lua;
   xdg.configFile."nvim/lua/my-init.lua".source = ./my-init.lua;
   xdg.configFile."nvim/lua/my-lsp.lua".source = ./my-lsp.lua;
 }
