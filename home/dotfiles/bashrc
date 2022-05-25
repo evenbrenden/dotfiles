@@ -4,9 +4,6 @@
 # enable programmable completion features
 [ -f /etc/bash_completion ] && . /etc/bash_completion
 
-# needed to make resizing work for some programs
-shopt -s checkwinsize
-
 # history stuff
 HISTCONTROL=ignoreboth
 HISTSIZE=8000
