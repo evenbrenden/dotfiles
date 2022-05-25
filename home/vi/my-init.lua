@@ -76,6 +76,15 @@ vim.cmd('autocmd BufNewFile,BufRead *.hocon set ft=hocon')
 -- Markdown
 vim.opt.concealcursor = 'nc'
 vim.opt.conceallevel = 2
+ToggleConcealLevel = function()
+    if vim.opt.conceallevel:get() == 0 then
+        vim.opt.conceallevel = 2
+    else
+        vim.opt.conceallevel = 0
+    end
+end
+vim.api.nvim_set_keymap('n', '<localleader>c', ':lua ToggleConcealLevel()<cr>',
+                        key_opts)
 vim.opt.foldenable = false
 
 -- Neoformat
