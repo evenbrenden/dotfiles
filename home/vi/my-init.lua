@@ -54,7 +54,7 @@ vim.api.nvim_set_keymap('n', '<localleader>h', ':Hoogle<cr>', key_opts)
 vim.cmd([[
 augroup HoogleMaps
   autocmd!
-  autocmd FileType haskell nnoremap <buffer> H :Hoogle <C-r><C-w><cr>
+  autocmd FileType haskell nnoremap <buffer> H :Hoogle <c-r><c-w><cr>
 augroup END
 ]])
 
