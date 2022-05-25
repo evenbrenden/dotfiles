@@ -25,7 +25,7 @@ function SetupLSP(key_opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi',
                                     ':lua vim.lsp.buf.implementation()<cr>',
                                     key_opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>',
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<c-k>',
                                     ':lua vim.lsp.buf.signature_help()<cr>',
                                     key_opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wa',
