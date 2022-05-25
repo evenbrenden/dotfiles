@@ -1,8 +1,5 @@
 function SetupLSP(key_opts)
 
-    vim.api.nvim_set_keymap('n', 'l1', '<cmd>LspStart<cr>', key_opts)
-    vim.api.nvim_set_keymap('n', 'l0', '<cmd>LspStop<cr>', key_opts)
-
     local on_attach = function(_, bufnr)
 
         vim.api.nvim_set_keymap('n', '<space>e',
