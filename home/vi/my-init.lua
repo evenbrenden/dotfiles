@@ -50,10 +50,10 @@ vim.api.nvim_set_keymap('n', 'wt', ':ToggleWhitespace<cr>', key_opts)
 
 -- fzf-hoogle.vim
 vim.g.hoogle_fzf_cache_file = '~/.cache/fzf-hoogle.vim/cache.json'
-vim.api.nvim_set_keymap('n', '<localleader>h', ':Hoogle<cr>', key_opts)
 vim.cmd([[
 augroup HoogleMaps
   autocmd!
+  autocmd FileType haskell nnoremap <buffer> <localleader>h :Hoogle<cr>
   autocmd FileType haskell nnoremap <buffer> H :Hoogle <c-r><c-w><cr>
 augroup END
 ]])
