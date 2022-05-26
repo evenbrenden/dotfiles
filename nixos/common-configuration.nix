@@ -65,5 +65,11 @@
     fontconfig.allowBitmaps = false; # Fixes some blocky fonts in Firefox
   };
   networking.firewall.enable = true;
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
   time.timeZone = "Europe/Amsterdam";
 }
