@@ -2,54 +2,54 @@ function SetupLSP(key_opts)
 
     local on_attach = function(_, bufnr)
 
-        vim.api.nvim_set_keymap('n', '<space>e',
-                                ':lua vim.diagnostic.open_float()<cr>', key_opts)
+        vim.api.nvim_set_keymap('n', '<Space>e',
+                                ':lua vim.diagnostic.open_float()<CR>', key_opts)
         vim.api.nvim_set_keymap('n', '[d',
-                                ':lua vim.diagnostic.goto_prev()<cr>', key_opts)
+                                ':lua vim.diagnostic.goto_prev()<CR>', key_opts)
         vim.api.nvim_set_keymap('n', ']d',
-                                ':lua vim.diagnostic.goto_next()<cr>', key_opts)
-        vim.api.nvim_set_keymap('n', '<space>q',
-                                ':lua vim.diagnostic.setloclist()<cr>', key_opts)
+                                ':lua vim.diagnostic.goto_next()<CR>', key_opts)
+        vim.api.nvim_set_keymap('n', '<Space>q',
+                                ':lua vim.diagnostic.setloclist()<CR>', key_opts)
 
         -- Note that \n has the digraph LF and is printed as ^@ in completion items
         vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
         vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD',
-                                    ':lua vim.lsp.buf.declaration()<cr>',
+                                    ':lua vim.lsp.buf.declaration()<CR>',
                                     key_opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd',
-                                    ':lua vim.lsp.buf.definition()<cr>',
+                                    ':lua vim.lsp.buf.definition()<CR>',
                                     key_opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K',
-                                    ':lua vim.lsp.buf.hover()<cr>', key_opts)
+                                    ':lua vim.lsp.buf.hover()<CR>', key_opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi',
-                                    ':lua vim.lsp.buf.implementation()<cr>',
+                                    ':lua vim.lsp.buf.implementation()<CR>',
                                     key_opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<c-k>',
-                                    ':lua vim.lsp.buf.signature_help()<cr>',
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>',
+                                    ':lua vim.lsp.buf.signature_help()<CR>',
                                     key_opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wa',
-                                    ':lua vim.lsp.buf.add_workspace_folder()<cr>',
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Space>wa',
+                                    ':lua vim.lsp.buf.add_workspace_folder()<CR>',
                                     key_opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wr',
-                                    ':lua vim.lsp.buf.remove_workspace_folder()<cr>',
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Space>wr',
+                                    ':lua vim.lsp.buf.remove_workspace_folder()<CR>',
                                     key_opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wl',
-                                    ':lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>',
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Space>wl',
+                                    ':lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',
                                     key_opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>D',
-                                    ':lua vim.lsp.buf.type_definition()<cr>',
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Space>D',
+                                    ':lua vim.lsp.buf.type_definition()<CR>',
                                     key_opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn',
-                                    ':lua vim.lsp.buf.rename()<cr>', key_opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca',
-                                    ':lua vim.lsp.buf.code_action()<cr>',
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Space>rn',
+                                    ':lua vim.lsp.buf.rename()<CR>', key_opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Space>ca',
+                                    ':lua vim.lsp.buf.code_action()<CR>',
                                     key_opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr',
-                                    ':lua vim.lsp.buf.references()<cr>',
+                                    ':lua vim.lsp.buf.references()<CR>',
                                     key_opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f',
-                                    ':lua vim.lsp.buf.formatting()<cr>',
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Space>f',
+                                    ':lua vim.lsp.buf.formatting()<CR>',
                                     key_opts)
 
         -- https://www.reddit.com/r/neovim/comments/tx40m2/is_it_possible_to_improve_lsp_hover_look/
