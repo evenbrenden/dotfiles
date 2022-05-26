@@ -51,7 +51,7 @@ vim.api.nvim_set_keymap('n', 'wt', ':ToggleWhitespace<CR>', key_opts)
 -- fzf-hoogle.vim
 vim.g.hoogle_fzf_cache_file = '~/.cache/fzf-hoogle.vim/cache.json'
 vim.cmd([[
-augroup HoogleMaps
+augroup hoogle
   autocmd!
   autocmd FileType haskell nnoremap <buffer> <LocalLeader>h :Hoogle<CR>
   autocmd FileType haskell nnoremap <buffer> H :Hoogle <C-r><C-w><CR>
@@ -63,7 +63,7 @@ vim.opt.updatetime = 100
 
 -- GraphViz
 vim.cmd([[
-augroup GraphVizMaps
+augroup graphviz
   autocmd!
   autocmd FileType dot nnoremap <buffer> <LocalLeader>g :GraphvizCompile<CR>
 augroup END
@@ -71,7 +71,12 @@ augroup END
 vim.g.WMGraphviz_output = 'svg'
 
 -- HOCON
-vim.cmd('autocmd BufNewFile,BufRead *.hocon set ft=hocon')
+vim.cmd([[
+augroup hocon
+  autocmd!
+  autocmd BufNewFile,BufRead *.hocon set ft=hocon
+augroup END
+]])
 
 -- Markdown
 vim.opt.concealcursor = 'nc'
@@ -101,7 +106,12 @@ vim.api.nvim_set_keymap('n', '<Leader>f', ':Telescope find_files<CR>', key_opts)
 vim.api.nvim_set_keymap('n', '<Leader>g', ':Telescope live_grep<CR>', key_opts)
 
 -- YAML
-vim.cmd('autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab')
+vim.cmd([[
+augroup yaml
+  autocmd!
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+augroup END
+]])
 
 -- Nope
 vim.g.loaded_perl_provider = 0
