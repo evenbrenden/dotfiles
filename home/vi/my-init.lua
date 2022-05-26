@@ -47,6 +47,10 @@ vim.api.nvim_set_hl(0, 'Visual', selectionColors)
 -- Better Whitespace
 vim.api.nvim_set_keymap('n', 'wd', ':StripWhitespace<CR>', key_opts)
 vim.api.nvim_set_keymap('n', 'wt', ':ToggleWhitespace<CR>', key_opts)
+-- Defaults minus markdown
+vim.g.better_whitespace_filetypes_blacklist = {
+    'diff', 'git', 'gitcommit', 'unite', 'qf', 'help', 'fugitive'
+}
 
 -- fzf-hoogle.vim
 vim.g.hoogle_fzf_cache_file = '~/.cache/fzf-hoogle.vim/cache.json'
