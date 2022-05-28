@@ -5,6 +5,6 @@ in pkgs.writeScriptBin "fantomasify" ''
 
   for file in $(git diff --name-only)
   do
-      dotnet fantomas $file
+      dotnet fantomas "$file"
   done
 ''
