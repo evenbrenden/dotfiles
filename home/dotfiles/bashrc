@@ -6,8 +6,8 @@
 
 # history stuff
 HISTCONTROL=erasedups:ignoredups:ignorespace
-HISTSIZE=8000
-HISTFILESIZE=8000
+HISTFILESIZE=100000
+HISTSIZE=10000
 bind '"\eOA": history-search-backward'
 bind '"\e[A": history-search-backward'
 bind '"\eOB": history-search-forward'
