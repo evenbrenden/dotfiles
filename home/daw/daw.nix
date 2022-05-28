@@ -1,17 +1,16 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    # Plugins
-    calf
-    carla
-    sfizz
+  home.packages = with pkgs;
+    let
+      plugins = [
+        calf
+        carla
+        sfizz
 
-    # Programs
-    polyphone
-    reaper
-    (callPackage (import ./sfz-flat.nix) { })
-  ];
+      ];
+      programs = [ polyphone reaper (callPackage (import ./sfz-flat.nix) { }) ];
+    in plugins ++ programs;
 
   home.sessionVariables = {
     DSSI_PATH =
