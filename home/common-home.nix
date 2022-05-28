@@ -5,6 +5,11 @@
   imports = [ ./vi/vi.nix ];
   nixpkgs.overlays = [ (import ./discord.nix) (import ./signal-desktop.nix) ];
   programs = {
+    bash = {
+      enable = true;
+      initExtra = builtins.readFile ./dotfiles/bashrc;
+      shellOptions = [ ]; # Set in initExtra
+    };
     home-manager.enable = true;
     man.enable = false;
   };
@@ -95,8 +100,6 @@
   };
   home.file = {
     ".abcde.conf".source = ./dotfiles/abcde.conf;
-    ".bashrc".text = builtins.readFile
-      ./dotfiles/bashrc; # .text => file is being prepended/appended to elsewhere
     ".ghci".source = ./dotfiles/ghci;
     ".gitignore".source = ./dotfiles/gitignore;
     ".gitconfig".source = ./dotfiles/gitconfig;
