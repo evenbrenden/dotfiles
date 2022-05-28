@@ -63,6 +63,6 @@ BMAG="\[\033[45m\]" # background magenta
 BCYN="\[\033[46m\]" # background cyan
 BWHT="\[\033[47m\]" # background white
 function current_git_branch_name {
-    git branch 2>/dev/null | grep \* | sed "s/^* //"
+    git branch 2>/dev/null | grep '\*' | sed 's/^* //'
 }
 PS1="$HC$FYEL\u$FMAG\h$FCYN\$(current_git_branch_name)$FWHT\w $RS"
