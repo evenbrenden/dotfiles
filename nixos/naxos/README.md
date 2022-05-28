@@ -1,17 +1,20 @@
-### Installing NixOS on my ThinkPad X1 Carbon Gen 7
+# Installing NixOS on my ThinkPad X1 Carbon Gen 7
 
-#### Sources
+## Sources
+
 - https://gist.github.com/martijnvermaat/76f2e24d0239470dd71050358b4d5134
 - https://myme.no/posts/2019-07-01-nixos-into-the-deep-end.html
 - https://chris-martin.org/2015/installing-nixos
 - https://bluishcoder.co.nz/2014/05/14/installing-nixos-with-encrypted-root-on-thinkpad-w540.html
 - https://nixos.org/nixos/manual/index.html#sec-installation
 
-#### First things first
+## First things first
+
 - Create installer USB with `dd if=nixos-minimal-20.03.1619.ab3adfe1c76-x86_64-linux.iso of=/dev/sda`
 - Disable Secure Boot
 
-#### All things disk
+## All things disk
+
     # parted /dev/nvme0n1 -- mklabel gpt
     # parted /dev/nvme0n1 -- mkpart primary 512MiB 100%
     # parted /dev/nvme0n1 -- mkpart ESP fat32 1MiB 512MiB
@@ -32,7 +35,8 @@
     # mkdir -p /mnt/boot
     # mount /dev/disk/by-label/BOOT /mnt/boot
 
-#### Need WLAN during install
+## Need WLAN during install
+
 - Create `/etc/wpa_supplicant.conf` with
   ```
   network={
@@ -42,19 +46,23 @@
   ```
 - Start it up with `systemctl start wpa_supplicant.service`
 
-#### Clone dotfiles
+## Clone dotfiles
+
     # nix run nixos.git
     # git clone https://github.com/evenbrenden/dotfiles
 
-#### Configure
+## Configure
+
 - `# nixos-generate-config --dir .` and compare with `dotfiles` (see if there's anything interesting)
 - Set `networking.wireless.enable = true` (for WLAN on first boot)
 
-#### Install
+## Install
+
     # nixos-install \
         -I nixos-config=[path to the final configuration] \
         -I nixpkgs=[URL to the current nixpkgs archive]
 
-#### First boot
+## First boot
+
 - Change passwords with `su - root` and then `passwd [username]`
 - Do the `wpa_supplicant` thing (above) again (for permanent WLAN)
