@@ -5,7 +5,7 @@
 [ -f /etc/bash_completion ] && . /etc/bash_completion
 
 # history stuff
-HISTCONTROL=ignoreboth
+HISTCONTROL=erasedups:ignoredups:ignorespace
 HISTSIZE=8000
 HISTFILESIZE=8000
 bind '"\eOA": history-search-backward'
