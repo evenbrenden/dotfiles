@@ -30,7 +30,7 @@
         git
         (import ./git-replace.nix { inherit pkgs; })
         graphviz
-        haskellPackages.implicit-hie # gen-hie
+        haskellPackages.implicit-hie
         hlint
         python3
         python37Packages.virtualenv
