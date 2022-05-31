@@ -1,13 +1,5 @@
 # Installing NixOS on my ThinkPad X1 Carbon Gen 7
 
-## Sources
-
-- https://gist.github.com/martijnvermaat/76f2e24d0239470dd71050358b4d5134
-- https://myme.no/posts/2019-07-01-nixos-into-the-deep-end.html
-- https://chris-martin.org/2015/installing-nixos
-- https://bluishcoder.co.nz/2014/05/14/installing-nixos-with-encrypted-root-on-thinkpad-w540.html
-- https://nixos.org/nixos/manual/index.html#sec-installation
-
 ## First things first
 
 - Create installer USB with `dd if=nixos-minimal-20.03.1619.ab3adfe1c76-x86_64-linux.iso of=/dev/sda`
@@ -60,9 +52,17 @@
 
     # nixos-install \
         -I nixos-config=[path to the final configuration] \
-        -I nixpkgs=[URL to the current nixpkgs archive]
+        -I nixpkgs=[URL to the pinned nixpkgs archive]
 
 ## First boot
 
 - Change passwords with `su - root` and then `passwd [username]`
 - Do the `wpa_supplicant` thing (above) again (for permanent WLAN)
+
+## Sources
+
+- https://gist.github.com/martijnvermaat/76f2e24d0239470dd71050358b4d5134
+- https://myme.no/posts/2019-07-01-nixos-into-the-deep-end.html
+- https://chris-martin.org/2015/installing-nixos
+- https://bluishcoder.co.nz/2014/05/14/installing-nixos-with-encrypted-root-on-thinkpad-w540.html
+- https://nixos.org/nixos/manual/index.html#sec-installation
