@@ -55,6 +55,7 @@
         ghc
         ghcid
         git
+        git-crypt
         (import ./git-replace.nix { inherit pkgs; })
         graphviz
         haskellPackages.implicit-hie
