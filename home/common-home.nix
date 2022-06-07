@@ -29,7 +29,6 @@
 
   # Programs
   imports = [ ./daw/daw.nix ./vi/vi.nix ./work/work.nix ];
-  nixpkgs.overlays = [ (import ./discord.nix) (import ./signal-desktop.nix) ];
   programs = {
     bash = {
       enable = true;
