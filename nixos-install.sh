@@ -5,7 +5,12 @@ if [[ $# -ne 1 ]]; then
     exit 1
 fi
 
-config="nixos/$1/configuration.nix"
+if [[ $1 == 'work' ]]; then
+    config="$1/nixos/configuration.nix"
+else
+    config="nixos/$1/configuration.nix"
+fi
+
 if [[ ! -f $config ]]; then
     echo "$config not found"
     exit 1;

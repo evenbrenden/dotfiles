@@ -1,5 +1,5 @@
 [submodule "nixos/work"]
-	path = nixos/work
+	path = work
 	url = git@github.com:evenbrenden/work
 [submodule "nixos/naxos/musnix"]
 	path = nixos/gaucho/musnix
