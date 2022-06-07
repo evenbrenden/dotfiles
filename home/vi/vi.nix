@@ -4,7 +4,6 @@
   nixpkgs.overlays = [ (import ./neovim.nix) ];
   programs.neovim = {
     enable = true;
-    # https://github.com/nix-community/home-manager/pull/2716
     extraConfig = ''
       lua require 'my-init'
     '';
