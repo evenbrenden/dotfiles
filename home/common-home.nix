@@ -6,7 +6,6 @@
     enable = true;
     configFile = {
       "autorandr".source = ./dotfiles/autorandr;
-      "dunst/dunstrc".source = ./dotfiles/dunstrc;
       "ghostwriter/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
       "i3/config".source = ./dotfiles/i3config;
       "i3status/config".source = ./dotfiles/i3status;
@@ -107,6 +106,9 @@
     in for-dotfiles ++ programming ++ user-programs;
 
   # Services
-  services.dunst.enable = true;
+  services.dunst = {
+    enable = true;
+    configFile = ./dotfiles/dunstrc;
+  };
   systemd.user.startServices = true;
 }
