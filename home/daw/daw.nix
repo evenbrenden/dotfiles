@@ -9,7 +9,7 @@
         sfizz
 
       ];
-      programs = [ polyphone reaper (callPackage (import ./sfz-flat.nix) { }) ];
+      programs = [ polyphone reaper ];
     in plugins ++ programs;
 
   home.sessionVariables = {
