@@ -69,6 +69,10 @@
     binaryCachePublicKeys =
       [ "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=" ];
     binaryCaches = [ "https://cache.iog.io" ];
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
   };
   time.timeZone = "Europe/Amsterdam";
   users.users.root.initialHashedPassword =
