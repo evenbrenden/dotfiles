@@ -28,7 +28,7 @@
   };
 
   # Programs
-  imports = [ ./daw/daw.nix ./vi/vi.nix ./work/work.nix ];
+  imports = [ ./daw.nix ./vi/vi.nix ./work/work.nix ];
   programs = {
     bash = {
       enable = true;

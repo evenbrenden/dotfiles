@@ -33,7 +33,7 @@
       extraLayouts.norwerty = {
         description = "Norwerty";
         languages = [ "no" ];
-        symbolsFile = ./X11/xkb/symbols/norwerty;
+        symbolsFile = ./norwerty/norwerty;
       };
       layout = "us";
       libinput = {
