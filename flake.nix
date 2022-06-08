@@ -2,8 +2,9 @@
   description = "evenbrenden/dotfiles";
 
   inputs = {
-    nixpkgs.url =
-      "github:NixOS/nixpkgs/d9794b04bffb468b886c553557489977ae5f4c65";
+    # nix flake lock --update-input nixpkgs
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
+    # nix flake lock --update-input home-manager
     home-manager.url = "github:nix-community/home-manager/release-22.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
