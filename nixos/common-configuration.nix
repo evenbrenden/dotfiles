@@ -47,7 +47,6 @@
     };
     supportedFilesystems = [ "ntfs" ];
   };
-  swapDevices = [{ device = "/dev/disk/by-label/swap"; }];
 
   # Power management
   services = {

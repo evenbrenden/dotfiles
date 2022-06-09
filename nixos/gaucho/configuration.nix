@@ -44,6 +44,7 @@ in {
     allowDiscards = true;
     preLVM = true;
   };
+  swapDevices = [{ device = "/dev/disk/by-label/swap"; }];
 
   system.stateVersion = "20.09";
 }
