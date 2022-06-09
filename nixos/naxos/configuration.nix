@@ -6,7 +6,7 @@ let
 in {
   imports = [
     ../common-configuration.nix
-    ./laptop-alsa-state.nix
+    ../laptop-alsa-state.nix
     ./x1c7-audio-hacks.nix
     ./hardware-configuration.nix
   ];
