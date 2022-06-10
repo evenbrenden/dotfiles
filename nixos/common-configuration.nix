@@ -35,16 +35,9 @@
   nixpkgs.config.pulseaudio =
     true; # Explicit PulseAudio support in applications
 
-  # Disk and the likes
+  # Disk and boot
   boot = {
     kernel.sysctl."fs.inotify.max_user_watches" = 524288;
-    loader = {
-      efi.canTouchEfiVariables = true;
-      systemd-boot = {
-        enable = true;
-        configurationLimit = 50;
-      };
-    };
     supportedFilesystems = [ "ntfs" ];
   };
 

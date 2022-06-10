@@ -42,11 +42,20 @@ in {
     };
   };
 
-  # Disk
-  boot.initrd.luks.devices.root = {
-    device = "/dev/nvme0n1p1";
-    allowDiscards = true;
-    preLVM = true;
+  # Disk and boot
+  boot = {
+    initrd.luks.devices.root = {
+      device = "/dev/nvme0n1p1";
+      allowDiscards = true;
+      preLVM = true;
+    };
+    loader = {
+      efi.canTouchEfiVariables = true;
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 50;
+      };
+    };
   };
   swapDevices = [{ device = "/dev/disk/by-label/swap"; }];
 
