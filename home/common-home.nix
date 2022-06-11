@@ -6,7 +6,6 @@
     enable = true;
     configFile = {
       "autorandr".source = ./dotfiles/autorandr;
-      "ghostwriter/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
       "i3/config".source = ./dotfiles/i3config;
       "i3status/config".source = ./dotfiles/i3status;
       "sakura/sakura.conf".source = ./dotfiles/sakura.conf;
@@ -75,7 +74,6 @@
         flac
         flameshot
         fzf
-        ghostwriter
         gimp
         gparted
         irssi
