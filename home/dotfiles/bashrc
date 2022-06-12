@@ -37,7 +37,7 @@ alias mv='mv --interactive'
 alias rclone-sync='rclone sync --create-empty-src-dirs --interactive'
 
 # fff
-export FFF_FAV1=$HOME/Downloads
+export FFF_FAV1="$HOME"/Downloads
 export FFF_FAV2=/media/ted15/music
 # https://github.com/dylanaraps/fff/issues/180
 export FFF_KEY_BULK_RENAME="off"
