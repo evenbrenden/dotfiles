@@ -31,6 +31,10 @@
       in fzf-hoogle-vim ++ formatting ++ lsp ++ telescope;
     plugins = with pkgs.vimPlugins;
       let
+        defaultish = pkgs.vimUtils.buildVimPlugin {
+          name = "defaultish";
+          src = ./defaultish;
+        };
         fzf-hoogle-vim = [
           (pkgs.vimUtils.buildVimPluginFrom2Nix {
             name = "fzf-hoogle-vim";
@@ -72,6 +76,7 @@
         };
         telescope = [ nvim-treesitter telescope-nvim ];
       in [
+        defaultish
         glow-hover
         neoformat
         neofsharp-vim
