@@ -37,6 +37,7 @@ vim.opt.completeopt = 'menu'
 vim.opt.termguicolors = true
 vim.opt.background = 'dark'
 vim.cmd('colorscheme default')
+-- Some tweaks to the colors coming from the terminal
 local popupColors = {fg = '#c0c0c0', bg = '#600060'}
 local selectionColors = {fg = '#ffffff', bg = '#808080'}
 vim.api.nvim_set_hl(0, 'Pmenu', popupColors)
