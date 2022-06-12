@@ -76,9 +76,11 @@
         neoformat
         neofsharp-vim
         nvim-lspconfig
+        nvim-solarized-lua
         sfz-vim
         tcomment_vim
         vim-airline
+        vim-airline-themes
         vim-better-whitespace
         vim-gitgutter
         vim-hocon
