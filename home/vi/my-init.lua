@@ -6,7 +6,6 @@ vim.g.maplocalleader = '.'
 
 -- Settings
 vim.opt.autoindent = true
-vim.opt.background = 'dark'
 vim.opt.backspace = 'indent,eol,start'
 vim.opt.expandtab = true
 vim.opt.guicursor = ''
@@ -36,6 +35,7 @@ vim.opt.completeopt = 'menu'
 
 -- Colors
 vim.opt.termguicolors = true
+vim.opt.background = 'dark'
 vim.cmd('colorscheme default')
 local popupColors = {fg = '#c0c0c0', bg = '#600060'}
 local selectionColors = {fg = '#ffffff', bg = '#808080'}
