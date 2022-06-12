@@ -21,6 +21,7 @@
           jq
         ];
         lsp = [
+          glow
           haskell-language-server
           python39Packages.python-lsp-server
           rnix-lsp
@@ -42,6 +43,15 @@
           })
           fzf-vim
         ];
+        glow-hover = pkgs.vimUtils.buildVimPlugin {
+          name = "glow-hover";
+          src = pkgs.fetchFromGitHub {
+            owner = "JASONews";
+            repo = "glow-hover.nvim";
+            rev = "c8d0cae5d05c658f4701425b05f1432121092c68";
+            sha256 = "04cif3frm4xfzc5rllp57zn11wi6pkydd7swghq3pcavgfmiykm4";
+          };
+        };
         neofsharp-vim = pkgs.vimUtils.buildVimPlugin {
           name = "neofsharp.vim";
           src = pkgs.fetchFromGitHub {
@@ -62,6 +72,7 @@
         };
         telescope = [ nvim-treesitter telescope-nvim ];
       in [
+        glow-hover
         neoformat
         neofsharp-vim
         nvim-lspconfig
