@@ -52,13 +52,9 @@ function SetupLSP(key_opts)
                                     ':lua vim.lsp.buf.formatting()<CR>',
                                     key_opts)
 
+        -- https://www.reddit.com/r/neovim/comments/tx40m2/is_it_possible_to_improve_lsp_hover_look/
+        require'glow-hover'.setup {border = 'none', max_width = 85}
     end
-
-    vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-                                                 vim.lsp.handlers.hover, {
-            max_width = 85,
-            stylize_markdown = false
-        })
 
     local lspconfig = require 'lspconfig'
     lspconfig.hls.setup {on_attach = on_attach}
