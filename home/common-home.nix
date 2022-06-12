@@ -20,6 +20,7 @@
     ".gitignore".source = ./dotfiles/gitignore;
     ".gitconfig".source = ./dotfiles/gitconfig;
     ".ssr/settings.conf".source = ./dotfiles/ssr.conf;
+    "bin/git-prompt.sh".source = ./dotfiles/git-prompt.sh;
     "bin/i3status.sh".source = ./dotfiles/i3status.sh;
     "bin/toggle_keyboard_layout.sh".source =
       ./dotfiles/toggle_keyboard_layout.sh;
