@@ -34,9 +34,9 @@ vim.api.nvim_set_keymap('n', '<Leader><Space>', ':noh<CR>', key_opts)
 vim.opt.completeopt = 'menu'
 
 -- Colors
-vim.opt.termguicolors = true
 vim.opt.background = 'dark'
 vim.cmd('colorscheme default')
+vim.opt.termguicolors = true
 -- Some tweaks to the colors coming from the terminal
 local popupColors = {fg = '#C0C0C0', bg = '#600060'}
 local selectionColors = {fg = '#FFFFFF', bg = '#808080'}
@@ -54,7 +54,6 @@ vim.g.better_whitespace_filetypes_blacklist = {
 }
 
 -- fzf-hoogle.vim
-vim.g.hoogle_fzf_cache_file = '~/.cache/fzf-hoogle.vim/cache.json'
 vim.cmd([[
 augroup hoogle
   autocmd!
@@ -62,6 +61,7 @@ augroup hoogle
   autocmd FileType haskell nnoremap <buffer> H :Hoogle <C-r><C-w><CR>
 augroup END
 ]])
+vim.g.hoogle_fzf_cache_file = '~/.cache/fzf-hoogle.vim/cache.json'
 
 -- GitGutter
 vim.opt.updatetime = 100
