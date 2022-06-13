@@ -35,17 +35,14 @@ vim.opt.completeopt = 'menu'
 
 -- Colors
 vim.opt.termguicolors = true
+vim.opt.background = 'dark'
 vim.cmd('colorscheme defaultish')
-ToggleBGAndCS = function()
-    if vim.opt.background:get() == 'dark' then
-        vim.opt.background = 'light'
-        vim.cmd('colorscheme peachpuff')
-    else
-        vim.opt.background = 'dark'
-        vim.cmd('colorscheme defaultish')
-    end
-end
-vim.api.nvim_set_keymap('n', '<C-B>', ':lua ToggleBGAndCS()<CR>', key_opts)
+vim.api.nvim_set_keymap('n', '<C-D>',
+                        ':set background=dark | colorscheme defaultish<CR>',
+                        key_opts)
+vim.api.nvim_set_keymap('n', '<C-B>',
+                        ':set background=light | colorscheme peachpuff<CR>',
+                        key_opts)
 
 -- Better Whitespace
 vim.api.nvim_set_keymap('n', 'wd', ':StripWhitespace<CR>', key_opts)
