@@ -37,12 +37,6 @@ vim.opt.completeopt = 'menu'
 vim.opt.termguicolors = true
 vim.opt.background = 'dark'
 vim.cmd('colorscheme defaultish')
-vim.api.nvim_set_keymap('n', '<C-D>',
-                        ':set background=dark | colorscheme defaultish<CR>',
-                        key_opts)
-vim.api.nvim_set_keymap('n', '<C-B>',
-                        ':set background=light | colorscheme peachpuff<CR>',
-                        key_opts)
 
 -- Better Whitespace
 vim.api.nvim_set_keymap('n', 'wd', ':StripWhitespace<CR>', key_opts)
