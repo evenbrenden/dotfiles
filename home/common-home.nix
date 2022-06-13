@@ -67,6 +67,7 @@
         arandr
         audacity
         chromium
+        colorpicker
         curl
         discord
         dos2unix
