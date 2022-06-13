@@ -48,6 +48,7 @@
         libnotify
         playerctl
         sakura
+        xrandr-invert-colors
       ];
       programming = [
         cabal-install
