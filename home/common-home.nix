@@ -60,8 +60,8 @@
         haskellPackages.implicit-hie
         hlint
         python3
-        python37Packages.virtualenv
         shellcheck
+        virtualenv
       ];
       user-programs = [
         abcde
