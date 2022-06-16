@@ -1,4 +1,4 @@
-{ userName }:
+{ username }:
 
 {
   virtualisation = {
@@ -9,5 +9,5 @@
       enableExtensionPack = false;
     };
   };
-  users.users.${userName}.extraGroups = [ "docker" "vboxusers" ];
+  users.users.${username}.extraGroups = [ "docker" "vboxusers" ];
 }

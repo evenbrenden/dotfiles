@@ -1,13 +1,13 @@
 { config, pkgs, ... }:
 
 let
-  userName = "evenbrenden";
+  username = "evenbrenden";
   hostName = "naxos";
 in {
   imports = [
     ../common-configuration.nix
     ../laptop-alsa-state.nix
-    (import ../../nixos/virtualisation.nix { userName = userName; })
+    (import ../../nixos/virtualisation.nix { username = username; })
     ./hardware-configuration.nix
     ./x1c7-audio-hacks.nix
   ];
@@ -19,7 +19,7 @@ in {
   environment.systemPackages = [ pkgs.steam-run ];
 
   # User
-  users.users.${userName} = {
+  users.users.${username} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
   };
@@ -30,7 +30,7 @@ in {
     dpi = 144;
     displayManager.autoLogin = {
       enable = true;
-      user = "${userName}";
+      user = "${username}";
     };
   };
 
