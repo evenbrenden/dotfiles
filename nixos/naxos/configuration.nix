@@ -7,7 +7,7 @@ in {
   imports = [
     ../common-configuration.nix
     ../laptop-alsa-state.nix
-    ../virtualisation.nix
+    (import ../../nixos/virtualisation.nix { userName = userName; })
     ./hardware-configuration.nix
     ./x1c7-audio-hacks.nix
   ];
@@ -21,7 +21,7 @@ in {
   # User
   users.users.${userName} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "audio" "video" "vboxusers" ];
+    extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
   };
   networking.hostName = "${hostName}";
 
