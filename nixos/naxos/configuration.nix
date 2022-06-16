@@ -7,8 +7,9 @@ in {
   imports = [
     ../common-configuration.nix
     ../laptop-alsa-state.nix
-    ./x1c7-audio-hacks.nix
+    ../virtualisation.nix
     ./hardware-configuration.nix
+    ./x1c7-audio-hacks.nix
   ];
 
   # Steam
@@ -30,15 +31,6 @@ in {
     displayManager.autoLogin = {
       enable = true;
       user = "${userName}";
-    };
-  };
-
-  # VM
-  virtualisation = {
-    docker.enable = true;
-    virtualbox.host = {
-      enableExtensionPack = true;
-      enable = true;
     };
   };
 
