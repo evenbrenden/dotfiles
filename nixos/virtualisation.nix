@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ userName }:
 
 {
   virtualisation = {
@@ -9,4 +9,5 @@
       enableExtensionPack = false;
     };
   };
+  users.users.${userName}.extraGroups = [ "docker" "vboxusers" ];
 }
