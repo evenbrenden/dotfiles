@@ -2,7 +2,7 @@
 
 let
   username = "evenbrenden";
-  hostName = "gaucho";
+  hostname = "gaucho";
 in {
   imports =
     [ ../common-configuration.nix ./hardware-configuration.nix ./musnix ];
@@ -27,7 +27,7 @@ in {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
   };
-  networking.hostName = "${hostName}";
+  networking.hostName = "${hostname}";
 
   # X
   services.xserver = {

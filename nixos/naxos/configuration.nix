@@ -2,7 +2,7 @@
 
 let
   username = "evenbrenden";
-  hostName = "naxos";
+  hostname = "naxos";
 in {
   imports = [
     ../common-configuration.nix
@@ -23,7 +23,7 @@ in {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
   };
-  networking.hostName = "${hostName}";
+  networking.hostName = "${hostname}";
 
   # X
   services.xserver = {
