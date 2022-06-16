@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  userName = "evenbrenden";
+  username = "evenbrenden";
   hostName = "gaucho";
 in {
   imports =
@@ -23,7 +23,7 @@ in {
   environment.systemPackages = [ pkgs.steam-run ];
 
   # User
-  users.users.${userName} = {
+  users.users.${username} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "video" "vboxusers" ];
   };
@@ -34,7 +34,7 @@ in {
     dpi = 120;
     displayManager.autoLogin = {
       enable = true;
-      user = "${userName}";
+      user = "${username}";
     };
   };
 
