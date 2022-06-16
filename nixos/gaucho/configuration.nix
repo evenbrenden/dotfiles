@@ -25,7 +25,7 @@ in {
   # User
   users.users.${username} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "audio" "video" "vboxusers" ];
+    extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
   };
   networking.hostName = "${hostName}";
 
