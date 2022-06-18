@@ -46,5 +46,5 @@ export FFF_KEY_BULK_RENAME_ALL="off"
 # set prompt
 source "$HOME"/bin/git-prompt.sh
 DEFAULT_PS1_DUMP="\n\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "
-GIT_BRANCH_NAME="\$(__git_ps1 '\[\e[3m\](%s)\[\e[0m\] ')"
+GIT_BRANCH_NAME="\$(__git_ps1 '\[\e[3m\](%s)\[\033[0m\] ')"
 PS1="$DEFAULT_PS1_DUMP""$GIT_BRANCH_NAME"
