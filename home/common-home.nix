@@ -44,7 +44,6 @@
       for-dotfiles = [
         autorandr
         brightnessctl
-        dunst # For dunstctl
         libnotify
         playerctl
         sakura
