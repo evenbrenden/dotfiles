@@ -7,3 +7,5 @@ if [[ $state == 'enabled' ]]; then
 else
     nmcli radio wifi on
 fi
+
+pkill -x -USR1 i3status
