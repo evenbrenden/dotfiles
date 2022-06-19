@@ -20,11 +20,11 @@
     ".gitignore".source = ./dotfiles/gitignore;
     ".gitconfig".source = ./dotfiles/gitconfig;
     ".ssr/settings.conf".source = ./dotfiles/ssr.conf;
-    "bin/git-prompt.sh".source = ./dotfiles/git-prompt.sh;
-    "bin/i3status.sh".source = ./dotfiles/i3status.sh;
+    "bin/git-prompt.sh".source = ./dotfiles/bin/git-prompt.sh;
+    "bin/i3status.sh".source = ./dotfiles/bin/i3status.sh;
     "bin/toggle_keyboard_layout.sh".source =
-      ./dotfiles/toggle_keyboard_layout.sh;
-    "bin/toggle_wifi.sh".source = ./dotfiles/toggle_wifi.sh;
+      ./dotfiles/bin/toggle_keyboard_layout.sh;
+    "bin/toggle_wifi.sh".source = ./dotfiles/bin/toggle_wifi.sh;
   };
 
   # Programs
