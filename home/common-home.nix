@@ -94,7 +94,7 @@
         smartmontools
         snes9x-gtk
         spotify
-        standardnotes
+        (callPackage ./standardnotes.nix { })
         teams
         transmission-gtk
         tree
