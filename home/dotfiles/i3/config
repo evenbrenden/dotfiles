@@ -127,7 +127,7 @@ bindsym $mod+r mode "resize"
 
 # start i3bar to display a workspace bar
 bar {
-    status_command bash ~/bin/i3status.sh
+    status_command i3quo
     colors {
         focused_workspace #4c9978 #287755 #ffffff
     }
@@ -149,7 +149,7 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # wifi control
-bindsym XF86WLAN exec --no-startup-id bash ~/bin/toggle_wifi.sh
+bindsym XF86WLAN exec --no-startup-id toggle_wifi
 
 # things xrandr
 bindsym $mod+Ctrl+a exec --no-startup-id autorandr --change
@@ -163,7 +163,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
 
 # change keyboard layout
-bindsym $mod+k exec --no-startup-id bash ~/bin/toggle_keyboard_layout.sh
+bindsym $mod+k exec --no-startup-id toggle_keyboard_layout
 
 # notifications control
 bindsym $mod+n exec --no-startup-id dunstctl set-paused toggle && pkill -x -USR1 i3status

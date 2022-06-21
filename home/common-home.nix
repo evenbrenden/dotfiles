@@ -6,8 +6,8 @@
     enable = true;
     configFile = {
       "autorandr".source = ./dotfiles/autorandr;
-      "i3/config".source = ./dotfiles/i3config;
-      "i3status/config".source = ./dotfiles/i3status;
+      "i3/config".source = ./dotfiles/i3/config;
+      "i3status/config".source = ./dotfiles/i3/statusconfig;
       "sakura/sakura.conf".source = ./dotfiles/sakura.conf;
       "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
       "VeraCrypt/Favorite Volumes.xml".source =
@@ -20,10 +20,6 @@
     ".gitignore".source = ./dotfiles/gitignore;
     ".gitconfig".source = ./dotfiles/gitconfig;
     ".ssr/settings.conf".source = ./dotfiles/ssr.conf;
-    "bin/i3status.sh".source = ./dotfiles/bin/i3status.sh;
-    "bin/toggle_keyboard_layout.sh".source =
-      ./dotfiles/bin/toggle_keyboard_layout.sh;
-    "bin/toggle_wifi.sh".source = ./dotfiles/bin/toggle_wifi.sh;
   };
 
   # Programs
@@ -46,9 +42,14 @@
       for-dotfiles = [
         autorandr
         brightnessctl
+        (pkgs.writeScriptBin "i3quo" (builtins.readFile ./dotfiles/i3/i3quo.sh))
         libnotify
         playerctl
         sakura
+        (pkgs.writeScriptBin "toggle_keyboard_layout"
+          (builtins.readFile ./dotfiles/i3/toggle_keyboard_layout.sh))
+        (pkgs.writeScriptBin "toggle_wifi"
+          (builtins.readFile ./dotfiles/i3/toggle_wifi.sh))
         xrandr-invert-colors
       ];
       programming = [
