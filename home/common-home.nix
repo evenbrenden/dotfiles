@@ -20,7 +20,6 @@
     ".gitignore".source = ./dotfiles/gitignore;
     ".gitconfig".source = ./dotfiles/gitconfig;
     ".ssr/settings.conf".source = ./dotfiles/ssr.conf;
-    "bin/git-prompt.sh".source = ./dotfiles/bin/git-prompt.sh;
     "bin/i3status.sh".source = ./dotfiles/bin/i3status.sh;
     "bin/toggle_keyboard_layout.sh".source =
       ./dotfiles/bin/toggle_keyboard_layout.sh;
@@ -33,7 +32,10 @@
   programs = {
     bash = {
       enable = true;
-      initExtra = builtins.readFile ./dotfiles/bashrc;
+      initExtra = builtins.concatStringsSep "\n" [
+        "source ${pkgs.git}/share/git/contrib/completion/git-prompt.sh"
+        (builtins.readFile ./dotfiles/bashrc)
+      ];
       shellOptions = [ ]; # Set in initExtra
     };
     home-manager.enable = true;
