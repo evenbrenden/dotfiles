@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#! /usr/bin/env bash
 
 layout=$(setxkbmap -query | awk 'NR==3 {print $2}')
 
