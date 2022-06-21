@@ -3,9 +3,6 @@
 # do all of this only if running interactively
 [[ $- == *i* ]] || return
 
-# enable programmable completion features
-[ -f /etc/bash_completion ] && . /etc/bash_completion
-
 # history stuff
 HISTCONTROL=erasedups:ignoredups:ignorespace
 HISTFILESIZE=100000
