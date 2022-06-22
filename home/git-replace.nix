@@ -5,8 +5,8 @@ in pkgs.writeScriptBin "git-replace" ''
 
   if [[ $# -ne 2 ]]
   then
-    echo "Usage: git-replace WHAT WITH"
-    exit 0
+      echo "Usage: git-replace WHAT WITH"
+      exit 0
   fi
   what=$1
   with=$2
