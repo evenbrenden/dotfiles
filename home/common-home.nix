@@ -43,14 +43,12 @@
         autorandr
         brightnessctl
         git # For git-prompt.sh
-        (pkgs.writeScriptBin "i3quo" (builtins.readFile ./dotfiles/i3/i3quo.sh))
+        (import ./dotfiles/i3/i3quo.nix { inherit pkgs; })
         libnotify
         playerctl
         sakura
-        (pkgs.writeScriptBin "toggle_keyboard_layout"
-          (builtins.readFile ./dotfiles/i3/toggle_keyboard_layout.sh))
-        (pkgs.writeScriptBin "toggle_wifi"
-          (builtins.readFile ./dotfiles/i3/toggle_wifi.sh))
+        (import ./dotfiles/i3/toggle_keyboard_layout.nix { inherit pkgs; })
+        (import ./dotfiles/i3/toggle_wifi.nix { inherit pkgs; })
         xrandr-invert-colors
       ];
       programming = [
