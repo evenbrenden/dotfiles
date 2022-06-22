@@ -42,6 +42,7 @@
       for-dotfiles = [
         autorandr
         brightnessctl
+        git # For git-prompt.sh
         (pkgs.writeScriptBin "i3quo" (builtins.readFile ./dotfiles/i3/i3quo.sh))
         libnotify
         playerctl
