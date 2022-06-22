@@ -27,7 +27,6 @@ in pkgs.writeScriptBin "i3quo" ''
       KEYBOARD_ITEM="{ \"full_text\": \"$KEYBOARD_LAYOUT\", \"color\":\"$KEYBOARD_LAYOUT_COLOR\" }"
 
       data="[$NOTIFY_ITEM, $KEYBOARD_ITEM,"
-      # https://nixos.org/manual/nix/stable/expressions/language-values.html
       echo "''${line/[/$data}" || exit 1
   done
 ''
