@@ -2,7 +2,8 @@
 let
   awk = "${pkgs.gawk}/bin/awk";
   dunstctl =
-    "PATH=$PATH:${pkgs.dbus}/bin ${pkgs.dunst}/bin/dunstctl"; # Needs dbus-send
+    let dunstctl-prefix = "PATH=$PATH:${pkgs.dbus}/bin"; # Needs dbus-send
+    in "${dunstctl-prefix} ${pkgs.dunst}/bin/dunstctl";
   i3status = "${pkgs.i3status}/bin/i3status";
   setxkbmap = "${pkgs.xorg.setxkbmap}/bin/setxkbmap";
 in pkgs.writeScriptBin "i3quo" ''
