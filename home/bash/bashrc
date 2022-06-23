@@ -39,8 +39,3 @@ export FFF_FAV2=/media/ted15/music
 # https://github.com/dylanaraps/fff/issues/180
 export FFF_KEY_BULK_RENAME="off"
 export FFF_KEY_BULK_RENAME_ALL="off"
-
-# set prompt
-DEFAULT_PS1_DUMP="\n\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "
-GIT_BRANCH_NAME="\$(__git_ps1 '\[\e[3m\](%s)\[\033[0m\] ')"
-PS1="$DEFAULT_PS1_DUMP""$GIT_BRANCH_NAME"
