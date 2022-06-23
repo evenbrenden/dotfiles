@@ -35,7 +35,6 @@
         autorandr
         brightnessctl
         (import ./dotfiles/i3/i3quo.nix { inherit pkgs; })
-        libnotify
         playerctl
         sakura
         (import ./dotfiles/i3/toggle_keyboard_layout.nix { inherit pkgs; })
