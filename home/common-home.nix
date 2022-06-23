@@ -23,17 +23,9 @@
   };
 
   # Programs
-  imports = [ ./daw.nix ./vi/vi.nix ./work/work.nix ];
+  imports = [ ./bash/bash.nix ./daw.nix ./vi/vi.nix ./work/work.nix ];
   nixpkgs.overlays = [ (import ./discord.nix) ];
   programs = {
-    bash = {
-      enable = true;
-      initExtra = builtins.concatStringsSep "\n" [
-        "source ${pkgs.git}/share/git/contrib/completion/git-prompt.sh"
-        (builtins.readFile ./dotfiles/bashrc)
-      ];
-      shellOptions = [ ]; # Set in initExtra
-    };
     home-manager.enable = true;
     man.enable = false;
   };
@@ -42,7 +34,6 @@
       for-dotfiles = [
         autorandr
         brightnessctl
-        git # For git-prompt.sh
         (import ./dotfiles/i3/i3quo.nix { inherit pkgs; })
         libnotify
         playerctl
