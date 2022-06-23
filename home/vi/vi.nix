@@ -20,6 +20,7 @@
           haskellPackages.hoogle # hoogle generate
           jq
         ];
+        git-gutter = [ git ];
         lsp = [
           glow
           haskell-language-server
@@ -28,7 +29,7 @@
           sumneko-lua-language-server
         ];
         telescope = [ clang fd nodejs ripgrep tree-sitter ];
-      in fzf-hoogle-vim ++ formatting ++ lsp ++ telescope;
+      in formatting ++ fzf-hoogle-vim ++ git-gutter ++ lsp ++ telescope;
     plugins = with pkgs.vimPlugins;
       let
         defaultish = pkgs.vimUtils.buildVimPlugin {
