@@ -6,8 +6,6 @@
     enable = true;
     configFile = {
       "autorandr".source = ./dotfiles/autorandr;
-      "i3/config".source = ./dotfiles/i3/config;
-      "i3status/config".source = ./dotfiles/i3/statusconfig;
       "sakura/sakura.conf".source = ./dotfiles/sakura.conf;
       "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
       "VeraCrypt/Favorite Volumes.xml".source =
@@ -23,7 +21,8 @@
   };
 
   # Programs
-  imports = [ ./bash/bash.nix ./daw.nix ./vi/vi.nix ./work/work.nix ];
+  imports =
+    [ ./bash/bash.nix ./daw.nix ./i3/i3.nix ./vi/vi.nix ./work/work.nix ];
   nixpkgs.overlays = [ (import ./discord.nix) ];
   programs = {
     home-manager.enable = true;
@@ -31,16 +30,6 @@
   };
   home.packages = with pkgs;
     let
-      for-dotfiles = [
-        autorandr
-        brightnessctl
-        (import ./dotfiles/i3/i3quo.nix { inherit pkgs; })
-        playerctl
-        sakura
-        (import ./dotfiles/i3/toggle_keyboard_layout.nix { inherit pkgs; })
-        (import ./dotfiles/i3/toggle_wifi.nix { inherit pkgs; })
-        xrandr-invert-colors
-      ];
       programming = [
         cabal-install
         ghc
@@ -54,7 +43,7 @@
         shellcheck
         virtualenv
       ];
-      user-programs = [
+      miscellaneous = [
         abcde
         arandr
         audacity
@@ -80,6 +69,7 @@
         pandoc
         pavucontrol
         rclone
+        sakura
         signal-desktop
         simplescreenrecorder
         slack
@@ -95,7 +85,7 @@
         whatsapp-for-linux
         xclip
       ];
-    in for-dotfiles ++ programming ++ user-programs;
+    in programming ++ miscellaneous;
 
   # Services
   services.dunst = {
