@@ -10,8 +10,6 @@ pkgs.writeShellApplication {
     xorg.setxkbmap
   ];
   text = ''
-    #! /usr/bin/env bash
-
     # https://docs.slackware.com/howtos:window_managers:keyboard_layout_in_i3
     i3status | while :; do
         read -r line
