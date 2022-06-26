@@ -1,13 +1,13 @@
 { pkgs, ... }:
 
 let
-  aliases-file-ops = {
+  aliases-coreutils = {
     cp = "cp --interactive";
+    ls = "ls -Ah --color=auto";
     mv = "mv --interactive";
     rm = "rm --interactive=once";
   };
   aliases-misc = {
-    ls = "ls -Ah --color=auto";
     rclone-sync = "rclone sync --create-empty-src-dirs --interactive";
     xclip = "xclip -selection clipboard";
   };
@@ -46,7 +46,7 @@ in {
       shell-variables-fff
       shell-variables-misc
     ];
-    shellAliases = aliases-file-ops // aliases-misc;
+    shellAliases = aliases-coreutils // aliases-misc;
     shellOptions = [ "histappend" ];
   };
   home.packages = with pkgs; [
