@@ -13,7 +13,7 @@ in {
       PATH=$PATH:${config.home.homeDirectory}/.dotnet/tools
     '';
   in {
-    initExtra = dotnet_root + dotnet_tools;
+    bashrcExtra = dotnet_root + dotnet_tools;
     profileExtra = dotnet_root + dotnet_tools;
   };
 }
