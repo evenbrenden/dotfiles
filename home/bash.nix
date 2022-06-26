@@ -33,7 +33,6 @@ let
   shell-variables-misc = ''
     export EDITOR=nvim
     export LESS=-Ri
-    export LS_COLORS='di=1;34:ln=1;35:so=1;32:pi=1;33:ex=1;31:bd=1;36:cd=1;36:su=1;31:sg=1;31:tw=1;34:ow=1;34'
   '';
 in {
   programs.bash = {
