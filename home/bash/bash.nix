@@ -10,11 +10,14 @@ let
 in {
   programs.bash = {
     enable = true;
+    historyControl = [ "erasedups" "ignoredups" "ignorespace" ];
+    historyFileSize = 100000;
+    historySize = 10000;
     initExtra = builtins.concatStringsSep "\n" [
       set-prompt
       (builtins.readFile ./bashrc)
     ];
-    shellOptions = [ ]; # Set in initExtra
+    shellOptions = [ "histappend" ];
   };
   home.packages = [
     pkgs.git # For git-prompt.sh
