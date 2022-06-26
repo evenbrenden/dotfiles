@@ -9,7 +9,6 @@ let
   aliases-misc = {
     ls = "ls -Ah --color=auto";
     rclone-sync = "rclone sync --create-empty-src-dirs --interactive";
-    vi = "nvim";
     xclip = "xclip -selection clipboard";
   };
   history-search = ''
@@ -51,7 +50,10 @@ in {
     shellAliases = aliases-file-ops // aliases-misc;
     shellOptions = [ "histappend" ];
   };
-  home.packages = [
-    pkgs.git # For git-prompt.sh
+  home.packages = with pkgs; [
+    fff
+    git # For git-prompt.sh
+    rclone
+    xclip
   ];
 }
