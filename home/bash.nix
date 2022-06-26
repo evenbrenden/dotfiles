@@ -32,7 +32,7 @@ let
   '';
   shell-variables-misc = ''
     export EDITOR=nvim
-    export LESS=-Ri
+    export LESS=-i
   '';
 in {
   programs.bash = {
