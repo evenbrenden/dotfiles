@@ -93,6 +93,9 @@
         vim-pico8-syntax
         wmgraphviz-vim
       ] ++ fzf-hoogle-vim ++ telescope;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
   };
   home.file.".cache/fzf-hoogle.vim/placeholder".text = ""; # mkdir
   xdg.configFile."nvim/lua/my-init.lua".source = ./my-init.lua;
