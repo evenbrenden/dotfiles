@@ -9,9 +9,6 @@ let
   };
   aliases-misc = {
     rclone-sync = "rclone sync --create-empty-src-dirs --interactive";
-    vi = "nvim";
-    vim = "nvim";
-    vimdiff = "nvim -d";
     xclip = "xclip -selection clipboard";
   };
   history-search = ''
