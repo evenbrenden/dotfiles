@@ -68,6 +68,7 @@
         p7zip
         pandoc
         pavucontrol
+        rclone
         sakura
         signal-desktop
         simplescreenrecorder
@@ -82,6 +83,7 @@
         veracrypt
         vlc
         whatsapp-for-linux
+        xclip
       ];
     in programming ++ miscellaneous;
 

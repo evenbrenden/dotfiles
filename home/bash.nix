@@ -49,10 +49,8 @@ in {
     shellAliases = aliases-coreutils // aliases-misc;
     shellOptions = [ "histappend" ];
   };
-  home.packages = with pkgs; [
-    fff
-    git # For git-prompt.sh
-    rclone
-    xclip
-  ];
+  home.packages = with pkgs;
+    [
+      git # For git-prompt.sh
+    ];
 }
