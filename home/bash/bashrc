@@ -1,17 +1,8 @@
-#!/usr/bin/env bash
-
-# do all of this only if running interactively
-[[ $- == *i* ]] || return
-
 # history stuff
-HISTCONTROL=erasedups:ignoredups:ignorespace
-HISTFILESIZE=100000
-HISTSIZE=10000
 bind '"\eOA": history-search-backward'
 bind '"\e[A": history-search-backward'
 bind '"\eOB": history-search-forward'
 bind '"\e[B": history-search-forward'
-shopt -s histappend
 
 # less stuff
 export LESS=-Ri
