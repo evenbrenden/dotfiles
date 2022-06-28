@@ -83,6 +83,7 @@
         neofsharp-vim
         nvim-lspconfig
         sfz-vim
+        suda-vim
         tcomment_vim
         vim-airline
         vim-better-whitespace
