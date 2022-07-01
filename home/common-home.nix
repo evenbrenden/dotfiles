@@ -31,14 +31,10 @@
   home.packages = with pkgs;
     let
       programming = [
-        cabal-install
         ghc
-        ghcid
         git
         (import ./git-replace.nix { inherit pkgs; })
         graphviz
-        haskellPackages.implicit-hie
-        hlint
         python3
         shellcheck
         virtualenv
