@@ -22,6 +22,7 @@
         ];
         git-gutter = [ git ];
         lsp = [
+          cabal-install
           glow
           haskell-language-server
           python39Packages.python-lsp-server
