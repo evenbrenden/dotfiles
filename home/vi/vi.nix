@@ -24,7 +24,7 @@
         lsp = [
           cabal-install
           glow
-          haskell-language-server
+          haskell-language-server # Do :LspInfo to see which one
           python39Packages.python-lsp-server
           rnix-lsp
           sumneko-lua-language-server
