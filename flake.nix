@@ -17,6 +17,7 @@
         inherit system;
         config = { allowUnfree = true; };
       };
+      pinned = { nix.registry.nixpkgs.flake = nixpkgs; };
       utils = import ./utils.nix {
         pkgs = pkgs;
         home-manager = home-manager;
@@ -28,15 +29,15 @@
         # sudo nixos-rebuild switch --flake path:$(pwd)#[configuration]
         gaucho = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./nixos/gaucho/configuration.nix ];
+          modules = [ ./nixos/gaucho/configuration.nix pinned ];
         };
         naxos = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./nixos/naxos/configuration.nix ];
+          modules = [ ./nixos/naxos/configuration.nix pinned ];
         };
         work = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./work/nixos/configuration.nix ];
+          modules = [ ./work/nixos/configuration.nix pinned ];
         };
       };
       homeConfigurations = let
