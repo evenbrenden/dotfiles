@@ -21,7 +21,10 @@
         inherit system;
         config = { allowUnfree = true; };
       };
-      pinned-nixpkgs = { nix.registry.nixpkgs.flake = nixpkgs; };
+      nixos-common-configuration = [
+        ./nixos/common-configuration.nix
+        { nix.registry.nixpkgs.flake = nixpkgs; }
+      ];
       utils = import ./utils.nix {
         pkgs = pkgs;
         home-manager = home-manager;
@@ -33,20 +36,20 @@
       nixosConfigurations = {
         gaucho = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [
-            ./nixos/gaucho/configuration.nix
-            pinned-nixpkgs
-            musnix.nixosModules.musnix
-          ];
-          specialArgs = { inherit inputs; };
+          modules =
+            [ ./nixos/gaucho/configuration.nix musnix.nixosModules.musnix ]
+            ++ nixos-common-configuration;
+          specialArgs = { inherit inputs; }; # For musnix
         };
         naxos = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./nixos/naxos/configuration.nix pinned-nixpkgs ];
+          modules = [ ./nixos/naxos/configuration.nix ]
+            ++ nixos-common-configuration;
         };
         work = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./work/nixos/configuration.nix pinned-nixpkgs ];
+          modules = [ ./work/nixos/configuration.nix ]
+            ++ nixos-common-configuration;
         };
       };
       # home-manager switch --flake path:$(pwd)#[user]-[configuration]

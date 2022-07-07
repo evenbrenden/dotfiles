@@ -4,7 +4,7 @@ let
   username = "evenbrenden";
   hostname = "gaucho";
 in {
-  imports = [ ../common-configuration.nix ./hardware-configuration.nix ];
+  imports = [ ./hardware-configuration.nix ];
 
   # DAW
   musnix.enable = true;
