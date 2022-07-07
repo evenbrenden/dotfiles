@@ -23,7 +23,6 @@
   # Programs
   imports =
     [ ./bash.nix ./daw.nix ./i3/i3.nix ./vi/vi.nix ../work/home/home.nix ];
-  nixpkgs.overlays = [ (import ./discord.nix) ];
   programs = {
     home-manager.enable = true;
     man.enable = false;
