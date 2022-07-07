@@ -1,6 +1,7 @@
 {
   description = "evenbrenden/dotfiles";
 
+  # nix flake update
   inputs = {
     # nix flake lock --update-input nixpkgs
     nixpkgs.url = "nixpkgs/nixos-22.05";
@@ -28,8 +29,8 @@
         stateVersion = stateVersion;
       };
     in {
+      # sudo nixos-rebuild switch --flake path:$(pwd)#[configuration]
       nixosConfigurations = {
-        # sudo nixos-rebuild switch --flake path:$(pwd)#[configuration]
         gaucho = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
@@ -48,8 +49,8 @@
           modules = [ ./work/nixos/configuration.nix pinned ];
         };
       };
+      # home-manager switch --flake path:$(pwd)#[user]-[configuration]
       homeConfigurations = let
-        # home-manager switch --flake path:$(pwd)#[user]-[configuration]
         users = [ "evenbrenden" (builtins.readFile ./work/names/workid) ];
         configs = [
           {
