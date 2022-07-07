@@ -7,9 +7,12 @@
     # nix flake lock --update-input home-manager
     home-manager.url = "github:nix-community/home-manager/release-22.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    # nix flake lock --update-input musnix
+    musnix.url = "github:musnix/musnix";
+    musnix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, musnix, ... }@inputs:
     let
       system = "x86_64-linux";
       stateVersion = "22.05";
@@ -29,7 +32,12 @@
         # sudo nixos-rebuild switch --flake path:$(pwd)#[configuration]
         gaucho = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./nixos/gaucho/configuration.nix pinned ];
+          modules = [
+            ./nixos/gaucho/configuration.nix
+            pinned
+            musnix.nixosModules.musnix
+          ];
+          specialArgs = { inherit inputs; };
         };
         naxos = nixpkgs.lib.nixosSystem {
           inherit system;
