@@ -5,6 +5,7 @@ let
   hostname = "naxos";
 in {
   imports = [
+    ../common-configuration.nix
     ../laptop-alsa-state.nix
     (import ../virtualisation.nix { username = username; })
     ./hardware-configuration.nix
