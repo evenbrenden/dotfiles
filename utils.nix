@@ -6,7 +6,7 @@
       # [ { username = "user"; } ]
       usernames = map (x: { username = x; }) users;
       mkUserConfigs = username: map (x: x // username) configs;
-      # [ { username = "username"; label ="label"; config = ./config; } ]
+      # [ { username = "username"; label ="label"; config = ./config; extraModules = ./extraModule; } ]
       usersConfigs = pkgs.lib.flatten (map mkUserConfigs usernames);
       mkHomeConfig = x: {
         name = "${x.username}-${x.label}";
@@ -15,6 +15,7 @@
           username = x.username;
           homeDirectory = "/home/${x.username}";
           configuration = x.config;
+          extraModules = x.extraModules;
         };
       };
       # { "username-label" = ...; }

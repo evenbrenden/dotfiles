@@ -48,17 +48,19 @@
           modules = [ ./work/nixos/configuration.nix pinned-nixpkgs ];
         };
       };
-      # home-manager switch --flake path:$(pwd)#[user]-[configuration]
+      # home-manager switch --flake path:$(pwd)#[user]-[label]
       homeConfigurations = let
         users = [ "evenbrenden" (builtins.readFile ./work/names/workid) ];
         configs = [
           {
             label = "linux";
-            config = import ./home/host-types/generic-linux.nix;
+            config = ./home/common-home.nix;
+            extraModules = [{ targets.genericLinux.enable = true; }];
           }
           {
             label = "nixos";
-            config = import ./home/host-types/nixos.nix;
+            config = ./home/common-home.nix;
+            extraModules = [ ];
           }
         ];
       in utils.mkHomeConfigs users configs;
