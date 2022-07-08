@@ -54,12 +54,12 @@
         configs = [
           {
             label = "linux";
-            config = ./home/common-home.nix;
+            config = ./home/home.nix;
             extraModules = [{ targets.genericLinux.enable = true; }];
           }
           {
             label = "nixos";
-            config = ./home/common-home.nix;
+            config = ./home/home.nix;
             extraModules = [ ];
           }
         ];
