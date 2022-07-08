@@ -38,7 +38,6 @@
             pinned-nixpkgs
             musnix.nixosModules.musnix
           ];
-          specialArgs = { inherit inputs; }; # For musnix
         };
         naxos = nixpkgs.lib.nixosSystem {
           inherit system;
