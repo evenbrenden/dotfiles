@@ -17,6 +17,7 @@
     let
       system = "x86_64-linux";
       stateVersion = "22.05";
+      # https://discourse.nixos.org/t/using-nixpkgs-legacypackages-system-vs-import/17462/3
       pkgs = import nixpkgs {
         inherit system;
         config = { allowUnfree = true; };
