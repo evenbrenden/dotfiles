@@ -79,6 +79,7 @@
       in [
         defaultish
         glow-hover
+        markdown-preview-nvim
         neoformat
         neofsharp-vim
         nvim-lspconfig
