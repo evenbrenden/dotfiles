@@ -90,13 +90,6 @@ vim.api.nvim_set_keymap('n', '<LocalLeader>c', ':lua ToggleConcealLevel()<CR>',
                         key_opts)
 vim.opt.foldenable = false
 
--- MarkdownPreview
-vim.g.mkdp_page_title = 'Markdown Preview'
-vim.g.mkdp_open_to_the_world = 0
-vim.g.mkdp_open_ip = ''
-vim.api.nvim_set_keymap('n', '<LocalLeader>p', ':MarkdownPreviewToggle<CR>',
-                        key_opts)
-
 -- Neoformat
 vim.api.nvim_set_keymap('n', '<LocalLeader>f', ':Neoformat<CR>', key_opts)
 vim.g.neoformat_enabled_python = {'autopep8'}
