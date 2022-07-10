@@ -6,7 +6,6 @@
     enable = true;
     configFile = {
       "autorandr".source = ./dotfiles/autorandr;
-      "ghostwriter/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
       "sakura/sakura.conf".source = ./dotfiles/sakura.conf;
       "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
       "VeraCrypt/Favorite Volumes.xml".source =
@@ -53,7 +52,6 @@
         flac
         flameshot
         fzf
-        ghostwriter
         gimp
         gparted
         irssi
