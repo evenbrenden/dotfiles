@@ -21,8 +21,7 @@
   };
 
   # Programs
-  imports =
-    [ ./bash.nix ./daw.nix ./i3/i3.nix ./vi/vi.nix ../work/home/work.nix ];
+  imports = [ ./bash.nix ./daw.nix ./i3/i3.nix ./vi/vi.nix ];
   programs = {
     home-manager.enable = true;
     man.enable = false;
