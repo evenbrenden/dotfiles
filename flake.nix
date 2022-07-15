@@ -11,9 +11,12 @@
     # nix flake lock --update-input musnix
     musnix.url = "github:musnix/musnix";
     musnix.inputs.nixpkgs.follows = "nixpkgs";
+    # nix flake lock --update-input svpn-login
+    svpn-login.url = "github:evenbrenden/svpn-login";
+    svpn-login.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, musnix, ... }@inputs:
+  outputs = { nixpkgs, home-manager, musnix, svpn-login, ... }@inputs:
     let
       system = "x86_64-linux";
       stateVersion = "22.05";
@@ -46,7 +49,11 @@
         };
         work = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./work/nixos/configuration.nix pinned-nixpkgs ];
+          modules = [
+            ./work/nixos/configuration.nix
+            pinned-nixpkgs
+            ({ pkgs, ... }: { nixpkgs.overlays = [ svpn-login.overlay ]; })
+          ];
         };
       };
       # home-manager switch --flake path:$(pwd)#[user]-[label]
