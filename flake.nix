@@ -3,15 +3,12 @@
 
   # nix flake update
   inputs = {
-    # nix flake lock --update-input nixpkgs
+    # nix flake lock --update-input [input]
     nixpkgs.url = "nixpkgs/nixos-22.05";
-    # nix flake lock --update-input home-manager
     home-manager.url = "github:nix-community/home-manager/release-22.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    # nix flake lock --update-input musnix
     musnix.url = "github:musnix/musnix";
     musnix.inputs.nixpkgs.follows = "nixpkgs";
-    # nix flake lock --update-input svpn-login
     svpn-login.url = "github:evenbrenden/svpn-login";
     svpn-login.inputs.nixpkgs.follows = "nixpkgs";
   };
