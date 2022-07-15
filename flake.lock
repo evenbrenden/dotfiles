@@ -60,7 +60,28 @@
       "inputs": {
         "home-manager": "home-manager",
         "musnix": "musnix",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "svpn-login": "svpn-login"
+      }
+    },
+    "svpn-login": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1657874136,
+        "narHash": "sha256-8d7hohxarcklD2q2JjUidhuM7wTgmeUk1Xq392cZ/Xg=",
+        "owner": "evenbrenden",
+        "repo": "svpn-login",
+        "rev": "1c4b7728f4b9e6bd3595b47ca7de4081817c180f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "evenbrenden",
+        "repo": "svpn-login",
+        "type": "github"
       }
     }
   },
