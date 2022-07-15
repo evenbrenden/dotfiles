@@ -9,11 +9,9 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     musnix.url = "github:musnix/musnix";
     musnix.inputs.nixpkgs.follows = "nixpkgs";
-    svpn-login.url = "github:evenbrenden/svpn-login";
-    svpn-login.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, musnix, svpn-login, ... }@inputs:
+  outputs = { nixpkgs, home-manager, musnix, ... }@inputs:
     let
       system = "x86_64-linux";
       stateVersion = "22.05";
@@ -44,18 +42,10 @@
           inherit system;
           modules = [ ./nixos/naxos/configuration.nix pinned-nixpkgs ];
         };
-        work = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./work/nixos/configuration.nix
-            pinned-nixpkgs
-            ({ pkgs, ... }: { nixpkgs.overlays = [ svpn-login.overlay ]; })
-          ];
-        };
       };
       # home-manager switch --flake path:$(pwd)#[user]-[label]
       homeConfigurations = let
-        users = [ "evenbrenden" (builtins.readFile ./work/names/workid) ];
+        users = [ "evenbrenden" ];
         configs = [
           {
             label = "linux";
