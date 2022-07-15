@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.overlays = [ (import ./neovim.nix) ];
   programs.neovim = {
     enable = true;
     extraConfig = ''
