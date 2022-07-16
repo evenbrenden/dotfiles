@@ -69,14 +69,6 @@ augroup END
 ]])
 vim.g.WMGraphviz_output = 'svg'
 
--- HOCON
-vim.cmd([[
-augroup hocon
-  autocmd!
-  autocmd BufNewFile,BufRead *.hocon set ft=hocon
-augroup END
-]])
-
 -- Markdown
 vim.opt.concealcursor = 'nc'
 vim.opt.conceallevel = 2

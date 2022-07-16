@@ -78,7 +78,6 @@
         vim-airline
         vim-better-whitespace
         vim-gitgutter
-        vim-hocon
         vim-markdown
         vim-nix
         vim-pico8-syntax
