@@ -29,6 +29,7 @@
   home.packages = with pkgs;
     let
       programming = [
+        docker-compose
         ghc
         git
         (import ./git-replace.nix { inherit pkgs; })
