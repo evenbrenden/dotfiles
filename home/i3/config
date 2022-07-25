@@ -169,6 +169,9 @@ bindsym $mod+k exec --no-startup-id toggle_keyboard_layout
 bindsym $mod+n exec --no-startup-id dunstctl set-paused toggle && pkill -x -USR1 i3status
 bindsym $mod+c exec --no-startup-id dunstctl close
 
+# print screen
+bindsym $mod+p exec --no-startup-id flameshot full -p ~/Downloads/
+
 # lock screen
 bindsym $mod+Shift+l exec --no-startup-id loginctl lock-session $XDG_SESSION_ID
 
