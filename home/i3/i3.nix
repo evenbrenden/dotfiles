@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     autorandr
     brightnessctl
+    flameshot
     (import ./i3quo.nix { inherit pkgs; })
     playerctl
     sakura
