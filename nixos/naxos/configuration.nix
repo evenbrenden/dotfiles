@@ -11,6 +11,7 @@ in {
     ./hardware-configuration.nix
     ./x1c7-audio-hacks.nix
   ];
+  nixpkgs.overlays = [ (import ./sof-firmware.nix) ];
 
   # Steam
   programs.steam.enable = true;
