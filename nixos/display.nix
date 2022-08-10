@@ -25,8 +25,14 @@
             [ "~host" "~spacer" "~session" "~language" "~clock" "~power" ];
         };
         # Because xsetroot does not work with Picom
-        sessionCommands = ''
+        sessionCommands = let
+          xresources = pkgs.writeText "Xresources" ''
+            Xcursor.theme: Adwaita
+            Xcursor.size: 32
+          '';
+        in ''
           ${pkgs.hsetroot}/bin/hsetroot -solid #000000
+          ${pkgs.xorg.xrdb}/bin/xrdb -merge <${xresources}
         '';
       };
       enable = true;
