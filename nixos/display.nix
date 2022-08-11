@@ -24,7 +24,7 @@
           greeters.gtk.indicators =
             [ "~host" "~spacer" "~session" "~language" "~clock" "~power" ];
         };
-        # Because xsetroot does not work with Picom
+        # hsetroot because xsetroot does not work with Picom
         sessionCommands = let
           xresources = pkgs.writeText "Xresources" ''
             Xcursor.theme: Adwaita
