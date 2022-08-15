@@ -55,7 +55,6 @@
     enableDefaultFonts = true;
     fontconfig.allowBitmaps = false; # Fixes some blocky fonts in Firefox
   };
-  hardware.video.hidpi.enable = true;
   networking.firewall.enable = true;
   nix = {
     # Binary cache for haskell.nix
