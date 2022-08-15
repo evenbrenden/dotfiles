@@ -37,6 +37,9 @@ in {
     };
   };
 
+  # Display
+  hardware.video.hidpi.enable = true;
+
   # Disk and boot
   boot = {
     initrd.luks.devices.root = {
