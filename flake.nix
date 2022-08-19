@@ -11,7 +11,7 @@
     musnix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, musnix, ... }@inputs:
+  outputs = { nixpkgs, home-manager, musnix, ... }:
     let
       system = "x86_64-linux";
       stateVersion = "22.05";
