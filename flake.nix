@@ -20,14 +20,13 @@
       pkgs = import nixpkgs-stable {
         inherit system;
         config.allowUnfree = true;
-        overlays = [
-          (final: prev: {
-            unstable = import nixpkgs-unstable {
-              inherit system;
-              config.allowUnfree = true;
-            };
-          })
-        ];
+        overlays = [ overlay-unstable ];
+      };
+      overlay-unstable = final: prev: {
+        unstable = import nixpkgs-unstable {
+          inherit system;
+          config.allowUnfree = true;
+        };
       };
       pinned-nixpkgs = { nix.registry.nixpkgs.flake = nixpkgs-stable; };
       utils = import ./utils.nix {
@@ -50,6 +49,16 @@
         naxos = nixpkgs-stable.lib.nixosSystem {
           inherit system;
           modules = [ ./nixos/naxos/configuration.nix pinned-nixpkgs ];
+        };
+        work = nixpkgs-stable.lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./nixos/work/configuration.nix
+            ({ config, pkgs, ... }: {
+              nixpkgs.overlays = [ overlay-unstable ];
+            })
+            pinned-nixpkgs
+          ];
         };
       };
       # home-manager switch --flake path:$(pwd)#[user]-[label]
