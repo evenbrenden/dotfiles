@@ -45,7 +45,7 @@
         chromium
         colorpicker
         curl
-        discord
+        unstable.discord
         dos2unix
         firefox
         fff

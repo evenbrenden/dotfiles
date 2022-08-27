@@ -4,23 +4,32 @@
   # nix flake update
   inputs = {
     # nix flake lock --update-input [input]
-    nixpkgs.url = "nixpkgs/nixos-22.05";
+    nixpkgs-stable.url = "nixpkgs/nixos-22.05";
+    nixpkgs-unstable.url = "nixpkgs/nixpkgs-unstable";
     home-manager.url = "github:nix-community/home-manager/release-22.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs-stable";
     musnix.url = "github:musnix/musnix";
-    musnix.inputs.nixpkgs.follows = "nixpkgs";
+    musnix.inputs.nixpkgs.follows = "nixpkgs-stable";
   };
 
-  outputs = { nixpkgs, home-manager, musnix, ... }:
+  outputs = { nixpkgs-stable, nixpkgs-unstable, home-manager, musnix, ... }:
     let
       system = "x86_64-linux";
       stateVersion = "22.05";
       # https://discourse.nixos.org/t/using-nixpkgs-legacypackages-system-vs-import/17462/3
-      pkgs = import nixpkgs {
+      pkgs = import nixpkgs-stable {
         inherit system;
-        config = { allowUnfree = true; };
+        config.allowUnfree = true;
+        overlays = [
+          (final: prev: {
+            unstable = import nixpkgs-unstable {
+              inherit system;
+              config.allowUnfree = true;
+            };
+          })
+        ];
       };
-      pinned-nixpkgs = { nix.registry.nixpkgs.flake = nixpkgs; };
+      pinned-nixpkgs = { nix.registry.nixpkgs.flake = nixpkgs-stable; };
       utils = import ./utils.nix {
         pkgs = pkgs;
         home-manager = home-manager;
@@ -30,7 +39,7 @@
     in {
       # sudo nixos-rebuild switch --flake path:$(pwd)#[configuration]
       nixosConfigurations = {
-        gaucho = nixpkgs.lib.nixosSystem {
+        gaucho = nixpkgs-stable.lib.nixosSystem {
           inherit system;
           modules = [
             ./nixos/gaucho/configuration.nix
@@ -38,7 +47,7 @@
             musnix.nixosModules.musnix
           ];
         };
-        naxos = nixpkgs.lib.nixosSystem {
+        naxos = nixpkgs-stable.lib.nixosSystem {
           inherit system;
           modules = [ ./nixos/naxos/configuration.nix pinned-nixpkgs ];
         };
