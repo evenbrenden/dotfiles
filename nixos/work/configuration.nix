@@ -15,6 +15,7 @@ in {
     (unstable.google-cloud-sdk.withExtraComponents
       [ unstable.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     kubectl
+    nodejs
   ];
   programs.appgate-sdp.enable = true;
 
