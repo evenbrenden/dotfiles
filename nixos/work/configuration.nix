@@ -36,6 +36,7 @@ in {
         enable = true;
         user = "${username}";
       };
+      dpi = 120;
     };
   };
 
