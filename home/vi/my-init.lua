@@ -97,10 +97,11 @@ vim.api.nvim_set_keymap('n', '<Leader>r', ':%s/\\<<C-r><C-w>\\>//g<Left><Left>',
                         key_opts)
 
 -- Telescope
-vim.api.nvim_set_keymap('n', '<Leader>f', ':Telescope find_files<CR>', key_opts)
-vim.api.nvim_set_keymap('n', '<Leader>g', ':Telescope live_grep<CR>', key_opts)
-vim.api.nvim_set_keymap('n', '<F2>',
-                        ':Telescope grep_string search=<C-R><C-W><CR>', key_opts)
+vim.api
+    .nvim_set_keymap('n', '<Leader>ff', ':Telescope find_files<CR>', key_opts)
+vim.api.nvim_set_keymap('n', '<Leader>lg', ':Telescope live_grep<CR>', key_opts)
+vim.api.nvim_set_keymap('n', '<Leader>gs',
+                        ':Telescope grep_string search=<C-r><C-w><CR>', key_opts)
 
 -- YAML
 vim.cmd([[
