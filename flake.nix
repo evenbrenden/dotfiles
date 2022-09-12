@@ -36,7 +36,7 @@
         stateVersion = stateVersion;
       };
     in {
-      # sudo nixos-rebuild switch --flake path:$(pwd)#[configuration]
+      # sudo nixos-rebuild switch --flake .#[configuration]
       nixosConfigurations = {
         gaucho = nixpkgs-stable.lib.nixosSystem {
           inherit system;
@@ -61,7 +61,7 @@
           ];
         };
       };
-      # home-manager switch --flake path:$(pwd)#[user]-[label]
+      # home-manager switch --flake .#[user]-[label]
       homeConfigurations = let
         users = [ "evenbrenden" ];
         configs = [
