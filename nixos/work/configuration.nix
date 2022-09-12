@@ -12,6 +12,7 @@ in {
 
   # Programs
   environment.systemPackages = with pkgs; [
+    asdf
     (unstable.google-cloud-sdk.withExtraComponents
       [ unstable.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     kubectl
