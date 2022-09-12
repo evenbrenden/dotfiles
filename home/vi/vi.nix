@@ -10,7 +10,7 @@
     extraPackages = with pkgs;
       let
         formatting = [
-          haskellPackages.brittany
+          haskellPackages.fourmolu
           luaformatter
           nixfmt
           python39Packages.autopep8
