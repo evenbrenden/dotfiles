@@ -86,8 +86,8 @@ vim.opt.foldenable = false
 -- Neoformat
 vim.api.nvim_set_keymap('n', '<LocalLeader>f', ':Neoformat<CR>', key_opts)
 vim.g.neoformat_enabled_python = {'autopep8'}
-vim.g.neoformat_enabled_haskell = {'brittany'}
-vim.g.neoformat_haskell_brittany = {exe = 'brittany', args = {'--indent=4'}}
+vim.g.neoformat_enabled_haskell = {'ormolu'}
+vim.g.neoformat_haskell_ormolu = {exe = 'fourmolu'}
 vim.g.neoformat_enabled_lua = {'luaformat'}
 vim.g.neoformat_enabled_nix = {'nixfmt'}
 vim.g.neoformat_enabled_shell = {'shfmt'}
