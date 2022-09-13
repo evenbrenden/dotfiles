@@ -1,6 +1,6 @@
 comma-style: trailing
 diff-friendly-import-export: true
 indent-wheres: true
-indentation: 2
+indentation: 4
 record-brace-space: true
 respectful: true
