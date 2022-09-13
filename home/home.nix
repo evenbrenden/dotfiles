@@ -6,6 +6,7 @@
     enable = true;
     configFile = {
       "autorandr".source = ./dotfiles/autorandr;
+      "fourmolu.yaml".source = ./dotfiles/fourmolu.yaml;
       "sakura/sakura.conf".source = ./dotfiles/sakura.conf;
       "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
       "VeraCrypt/Favorite Volumes.xml".source =
