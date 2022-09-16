@@ -18,6 +18,8 @@ in {
       [ unstable.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     kubectl
     nodejs
+    vault
+    yarn
   ];
   programs.appgate-sdp.enable = true;
 
