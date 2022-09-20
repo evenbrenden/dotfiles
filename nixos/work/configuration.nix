@@ -28,7 +28,10 @@ in {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
   };
-  networking.hostName = "${hostname}";
+  networking = {
+    hostName = "${hostname}";
+    hosts = { "127.0.0.1" = [ "local.finn.no" ]; };
+  };
 
   # Services
   services = {
