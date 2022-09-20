@@ -6,7 +6,8 @@ let
 in {
   imports = [
     ../common-configuration.nix
-    (import ../virtualisation.nix { username = username; })
+    # Broken with current kernel
+    # (import ../virtualisation.nix { username = username; })
     ./hardware-configuration.nix
   ];
 
@@ -47,25 +48,42 @@ in {
     };
   };
 
-  # Boot
+  # Boot and hardware
   boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi = {
-        canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot/efi";
-      };
-    };
+    extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
+    kernelModules = [ "acpi_call" "amdgpu" ];
+    # For mainline support of rtw89 wireless networking
+    kernelPackages = lib.mkIf (lib.versionOlder pkgs.linux.version "5.16")
+      pkgs.linuxPackages_latest;
+    kernelParams = [ "acpi_backlight=native" "mem_sleep_default=deep" ];
     initrd = {
-      luks.devices = {
-        "luks-274c1723-863d-4437-87e5-2c3a9446fc9d".device =
-          "/dev/disk/by-uuid/274c1723-863d-4437-87e5-2c3a9446fc9d";
-        "luks-274c1723-863d-4437-87e5-2c3a9446fc9d".keyFile =
+      luks = {
+        devices."luks-0d9eb120-e084-40ca-b784-551ddc6de0b5".device =
+          "/dev/disk/by-uuid/0d9eb120-e084-40ca-b784-551ddc6de0b5";
+        devices."luks-0d9eb120-e084-40ca-b784-551ddc6de0b5".keyFile =
           "/crypto_keyfile.bin";
       };
       secrets = { "/crypto_keyfile.bin" = null; };
     };
+    loader = {
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot/efi";
+      };
+      systemd-boot.enable = true;
+    };
   };
+  environment.variables.AMD_VULKAN_ICD = lib.mkDefault "RADV";
+  hardware = {
+    firmware = [ pkgs.rtw89-firmware ];
+    opengl = {
+      driSupport = lib.mkDefault true;
+      driSupport32Bit = lib.mkDefault true;
+      extraPackages = with pkgs; [ rocm-opencl-icd rocm-opencl-runtime amdvlk ];
+      extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
+    };
+  };
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   # Misc
   nixpkgs.config.allowUnfree = true;
