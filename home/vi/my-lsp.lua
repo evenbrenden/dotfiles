@@ -72,4 +72,11 @@ function SetupLSP(key_opts)
             }
         }
     }
+    lspconfig.tsserver.setup {
+        on_attach = on_attach,
+        cmd = {
+            'typescript-language-server', '--stdio', '--tsserver-path',
+            'tsserver'
+        }
+    }
 end
