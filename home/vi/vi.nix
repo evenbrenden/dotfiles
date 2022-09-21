@@ -27,6 +27,8 @@
           python39Packages.python-lsp-server
           rnix-lsp
           sumneko-lua-language-server
+          nodePackages.typescript
+          nodePackages.typescript-language-server
         ];
         telescope = [ clang fd nodejs ripgrep tree-sitter ];
       in formatting ++ fzf-hoogle-vim ++ git-gutter ++ lsp ++ telescope;
