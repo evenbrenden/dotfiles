@@ -17,6 +17,7 @@ in {
     dbeaver
     (unstable.google-cloud-sdk.withExtraComponents
       [ unstable.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+    k9s
     kubectl
     nodejs
     vault
