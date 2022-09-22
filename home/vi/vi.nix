@@ -13,6 +13,7 @@
           haskellPackages.fourmolu
           luaformatter
           nixfmt
+          nodePackages.prettier
           python39Packages.autopep8
           shfmt
         ];

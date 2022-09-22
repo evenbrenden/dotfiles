@@ -91,6 +91,7 @@ vim.g.neoformat_haskell_ormolu = {exe = 'fourmolu'}
 vim.g.neoformat_enabled_lua = {'luaformat'}
 vim.g.neoformat_enabled_nix = {'nixfmt'}
 vim.g.neoformat_enabled_shell = {'shfmt'}
+vim.g.neoformat_enabled_typescript = {'prettier'}
 
 -- Search and replace
 vim.api.nvim_set_keymap('n', '<Leader>r', ':%s/\\<<C-r><C-w>\\>//g<Left><Left>',
