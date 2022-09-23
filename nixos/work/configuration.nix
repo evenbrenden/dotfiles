@@ -13,13 +13,11 @@ in {
 
   # Programs
   environment.systemPackages = with pkgs; [
-    asdf-vm
     dbeaver
     (unstable.google-cloud-sdk.withExtraComponents
       [ unstable.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     k9s
     kubectl
-    nodejs
     vault
     yarn
   ];
