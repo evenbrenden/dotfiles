@@ -30,11 +30,7 @@
       };
       nix-settings = {
         nix = {
-          nixPath = [
-            "nixpkgs=${nixpkgs-stable}"
-            "nixos-config=/etc/nixos/configuration.nix"
-            "/nix/var/nix/profiles/per-user/root/channels"
-          ];
+          nixPath = [ "nixpkgs=${nixpkgs-stable}" ];
           registry.nixpkgs.flake = nixpkgs-stable;
         };
       };
