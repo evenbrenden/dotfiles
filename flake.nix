@@ -28,7 +28,16 @@
           config.allowUnfree = true;
         };
       };
-      pinned-nixpkgs = { nix.registry.nixpkgs.flake = nixpkgs-stable; };
+      nix-settings = {
+        nix = {
+          nixPath = [
+            "nixpkgs=${nixpkgs-stable}"
+            "nixos-config=/etc/nixos/configuration.nix"
+            "/nix/var/nix/profiles/per-user/root/channels"
+          ];
+          registry.nixpkgs.flake = nixpkgs-stable;
+        };
+      };
       utils = import ./utils.nix {
         pkgs = pkgs;
         home-manager = home-manager;
@@ -42,13 +51,13 @@
           inherit system;
           modules = [
             ./nixos/gaucho/configuration.nix
-            pinned-nixpkgs
+            nix-settings
             musnix.nixosModules.musnix
           ];
         };
         naxos = nixpkgs-stable.lib.nixosSystem {
           inherit system;
-          modules = [ ./nixos/naxos/configuration.nix pinned-nixpkgs ];
+          modules = [ ./nixos/naxos/configuration.nix nix-settings ];
         };
         work = nixpkgs-stable.lib.nixosSystem {
           inherit system;
@@ -57,7 +66,7 @@
             ({ config, pkgs, ... }: {
               nixpkgs.overlays = [ overlay-unstable ];
             })
-            pinned-nixpkgs
+            nix-settings
           ];
         };
       };
