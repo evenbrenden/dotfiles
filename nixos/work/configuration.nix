@@ -1,3 +1,7 @@
+# Known issues with T14s Gen 1 AMD:
+# - Mic mute LED doesn't always follow default source.
+# - xrandr-invert-colors doesn't always work properly.
+
 { config, lib, pkgs, ... }:
 
 let
