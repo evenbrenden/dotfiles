@@ -7,6 +7,7 @@ pkgs.writeShellApplication {
     dbus # dunstctl needs dbus-send
     dunst
     i3status
+    pulseaudio
     xorg.setxkbmap
   ];
   text = ''
@@ -28,7 +29,17 @@ pkgs.writeShellApplication {
         KEYBOARD_LAYOUT_COLOR='#ff00ff'
         KEYBOARD_ITEM="{ \"full_text\": \"$KEYBOARD_LAYOUT\", \"color\":\"$KEYBOARD_LAYOUT_COLOR\" }"
 
-        data="[$NOTIFY_ITEM, $KEYBOARD_ITEM,"
+        MIC_MUTED=$(pactl get-source-mute @DEFAULT_SOURCE@ | awk '{print $2}')
+        if [[ $MIC_MUTED = 'yes' ]]; then
+            MIC_MUTE_PRINT='off'
+            MIC_MUTE_COLOR='#ffffff'
+        elif [[ $MIC_MUTED = 'no' ]]; then
+            MIC_MUTE_PRINT='mic'
+            MIC_MUTE_COLOR='#ff0000'
+        fi
+        MIC_MUTE_ITEM="{ \"full_text\": \"$MIC_MUTE_PRINT\", \"color\":\"$MIC_MUTE_COLOR\" }"
+
+        data="[$NOTIFY_ITEM, $KEYBOARD_ITEM, $MIC_MUTE_ITEM,"
         echo "''${line/[/$data}" || exit 1
     done
   '';
