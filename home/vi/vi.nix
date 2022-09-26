@@ -25,6 +25,7 @@
         git-gutter = [ git ];
         lsp = [
           haskell-language-server # Do :LspInfo to see which one
+          java-language-server
           python39Packages.python-lsp-server
           rnix-lsp
           sumneko-lua-language-server
