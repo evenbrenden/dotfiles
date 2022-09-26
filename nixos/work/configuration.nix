@@ -10,10 +10,14 @@ let
 in {
   imports = [
     ../common-configuration.nix
-    # Broken with current kernel
-    # (import ../virtualisation.nix { username = username; })
+    # VirtualBox is broken with current kernel
+    (import ../virtualisation.nix { username = username; })
     ./hardware-configuration.nix
   ];
+
+  # Virtualisation
+  virtualisation.docker.enable = true;
+  users.users.${username}.extraGroups = [ "docker" ];
 
   # Programs
   environment.systemPackages = with pkgs; [
