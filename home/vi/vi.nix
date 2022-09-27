@@ -24,7 +24,7 @@
         ];
         git-gutter = [ git ];
         lsp = [
-          haskell-language-server # Do :LspInfo to see which one
+          unstable.haskell-language-server
           java-language-server
           python39Packages.python-lsp-server
           rnix-lsp
