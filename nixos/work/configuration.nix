@@ -54,6 +54,8 @@ in {
 
   # Boot and hardware
   boot = {
+    # https://wiki.archlinux.org/title/Lenovo_ThinkPad_T14_(AMD)_Gen_1#Wireless
+    extraModprobeConfig = "options iwlwifi 11n_disable=8";
     extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
     kernelModules = [ "acpi_call" "amdgpu" ];
     # For mainline support of rtw89 wireless networking
