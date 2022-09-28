@@ -60,10 +60,6 @@ function SetupLSP(key_opts)
 
     local lspconfig = require 'lspconfig'
     lspconfig.hls.setup {on_attach = on_attach}
-    lspconfig.java_language_server.setup {
-        on_attach = on_attach,
-        cmd = {"java-language-server"}
-    }
     lspconfig.pylsp.setup {on_attach = on_attach}
     lspconfig.rnix.setup {on_attach = on_attach}
     lspconfig.sumneko_lua.setup {
