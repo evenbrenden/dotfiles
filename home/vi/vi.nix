@@ -25,7 +25,6 @@
         git-gutter = [ git ];
         lsp = [
           unstable.haskell-language-server
-          java-language-server
           python39Packages.python-lsp-server
           rnix-lsp
           sumneko-lua-language-server
