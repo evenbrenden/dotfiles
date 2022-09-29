@@ -11,8 +11,7 @@ in {
   imports = [
     ../common-configuration.nix
     # VirtualBox is broken with current kernel
-    # (import ../virtualisation.nix { username = username; })
-    (import ./docker.nix { username = username; })
+    (import ../virtualisation.nix { username = username; })
     ./hardware-configuration.nix
   ];
 
