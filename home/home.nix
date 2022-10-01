@@ -1,7 +1,14 @@
 { config, pkgs, ... }:
 
 {
-  # Dotfiles
+  # Dotfiles and XDG
+  home.file = {
+    ".abcde.conf".source = ./dotfiles/abcde.conf;
+    ".ghci".source = ./dotfiles/ghci;
+    ".gitignore".source = ./dotfiles/gitignore;
+    ".gitconfig".source = ./dotfiles/gitconfig;
+    ".ssr/settings.conf".source = ./dotfiles/ssr.conf;
+  };
   xdg = {
     enable = true;
     configFile = {
@@ -12,13 +19,26 @@
       "VeraCrypt/Favorite Volumes.xml".source =
         ./dotfiles/veracrypt-favorite-volumes.xml;
     };
-  };
-  home.file = {
-    ".abcde.conf".source = ./dotfiles/abcde.conf;
-    ".ghci".source = ./dotfiles/ghci;
-    ".gitignore".source = ./dotfiles/gitignore;
-    ".gitconfig".source = ./dotfiles/gitconfig;
-    ".ssr/settings.conf".source = ./dotfiles/ssr.conf;
+    mimeApps = {
+      enable = true;
+      associations.added = {
+        "image/png" = [ "nomacs.desktop" ];
+        "x-scheme-handler/magnet" =
+          [ "userapp-transmission-gtk-53HUO0.desktop" ];
+      };
+      defaultApplications = {
+        "application/pdf" = [ "firefox.desktop" ];
+        "text/html" = [ "firefox.desktop" ];
+        "x-scheme-handler/about" = [ "firefox.desktop" ];
+        "x-scheme-handler/http" = [ "firefox.desktop" ];
+        "x-scheme-handler/https" = [ "firefox.desktop" ];
+        "x-scheme-handler/magnet" =
+          [ "userapp-transmission-gtk-53HUO0.desktop" ];
+        "x-scheme-handler/msteams" = [ "teams.desktop" ];
+        "x-scheme-handler/postman" = [ "Postman.desktop" ];
+        "x-scheme-handler/unknown" = [ "firefox.desktop" ];
+      };
+    };
   };
 
   # Programs
