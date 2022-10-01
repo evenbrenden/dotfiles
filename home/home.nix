@@ -21,10 +21,6 @@
     };
     mimeApps = {
       enable = true;
-      associations.added = {
-        "image/png" = [ "nomacs.desktop" ];
-        "x-scheme-handler/magnet" = [ "transmission-gtk.desktop" ];
-      };
       defaultApplications = {
         "application/pdf" = [ "firefox.desktop" ];
         "text/html" = [ "firefox.desktop" ];
