@@ -22,7 +22,7 @@
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "application/pdf" = [ "firefox.desktop" ];
+        "application/pdf" = [ "okularApplication_pdf.desktop" ];
         "text/html" = [ "firefox.desktop" ];
         "x-scheme-handler/about" = [ "firefox.desktop" ];
         "x-scheme-handler/http" = [ "firefox.desktop" ];
