@@ -20,7 +20,9 @@ let
   prompt = ''
     source ${pkgs.git}/share/git/contrib/completion/git-prompt.sh
     DEFAULT_PS1='\n\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] '
-    SHELL_LEVEL='[$SHLVL] '
+    if [ "$SHLVL" != '1' ]; then
+      SHELL_LEVEL="\[\e[3m\]($SHLVL)\[\033[0m\] "
+    fi
     GIT_INFO='\[\e[3m\](%s)\[\033[0m\] '
     PROMPT_COMMAND='__git_ps1 "$DEFAULT_PS1$SHELL_LEVEL" "" "$GIT_INFO"'
   '';
