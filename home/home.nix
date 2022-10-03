@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  # Dotfiles and XDG
+  # Dotfiles
   home.file = {
     ".abcde.conf".source = ./dotfiles/abcde.conf;
     ".ghci".source = ./dotfiles/ghci;
@@ -19,30 +19,10 @@
       "VeraCrypt/Favorite Volumes.xml".source =
         ./dotfiles/veracrypt-favorite-volumes.xml;
     };
-    mimeApps = {
-      enable = true;
-      defaultApplications = {
-        "application/pdf" = [ "okularApplication_pdf.desktop" ];
-        "application/x-extension-htm" = [ "firefox.desktop" ];
-        "application/x-extension-html" = [ "firefox.desktop" ];
-        "application/x-extension-shtml" = [ "firefox.desktop" ];
-        "application/x-extension-xhtml" = [ "firefox.desktop" ];
-        "application/x-extension-xht" = [ "firefox.desktop" ];
-        "application/xhtml+xml" = [ "firefox.desktop" ];
-        "text/html" = [ "firefox.desktop" ];
-        "x-scheme-handler/about" = [ "firefox.desktop" "appgate.desktop" ];
-        "x-scheme-handler/chrome" = [ "firefox.desktop" ];
-        "x-scheme-handler/http" = [ "firefox.desktop" ];
-        "x-scheme-handler/https" = [ "firefox.desktop" ];
-        "x-scheme-handler/magnet" = [ "transmission-gtk.desktop" ];
-        "x-scheme-handler/msteams" = [ "teams.desktop" ];
-        "x-scheme-handler/unknown" = [ "firefox.desktop" "appgate.desktop" ];
-      };
-    };
   };
 
   # Programs
-  imports = [ ./bash.nix ./daw.nix ./i3/i3.nix ./vi/vi.nix ];
+  imports = [ ./bash.nix ./daw.nix ./i3/i3.nix ./mimeapps.nix ./vi/vi.nix ];
   programs = {
     home-manager.enable = true;
     man.enable = false;
