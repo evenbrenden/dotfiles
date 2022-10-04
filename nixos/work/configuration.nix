@@ -1,6 +1,7 @@
-# Known issues with T14s Gen 1 AMD:
+# Known issues with this T14s Gen 1 AMD:
 # - Mic mute LED doesn't always follow default source.
-# - xrandr-invert-colors doesn't always work properly.
+# - xrandr-invert-colors doesn't work properly.
+# - Wireless works, but randomly loses connections.
 
 { config, lib, pkgs, ... }:
 
@@ -53,8 +54,6 @@ in {
 
   # Boot and hardware
   boot = {
-    # https://wiki.archlinux.org/title/Network_configuration/Wireless#iwlwifi
-    extraModprobeConfig = "options iwlwifi 11n_disable=1 swcrypto=1";
     extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
     kernelModules = [ "acpi_call" "amdgpu" ];
     # For mainline support of rtw89 wireless networking
@@ -80,7 +79,7 @@ in {
   };
   environment.variables.AMD_VULKAN_ICD = lib.mkDefault "RADV";
   hardware = {
-    firmware = [ pkgs.rtw89-firmware ];
+    firmware = [ pkgs.rtw89-firmware ]; # Wireless
     opengl = {
       driSupport = lib.mkDefault true;
       driSupport32Bit = lib.mkDefault true;
