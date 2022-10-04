@@ -6,7 +6,6 @@ let
 in {
   imports = [
     ../common-configuration.nix
-    # VirtualBox is broken with current kernel
     (import ../virtualisation.nix { username = username; })
     ./hardware-configuration.nix
   ];
