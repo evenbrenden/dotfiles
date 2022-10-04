@@ -2,6 +2,7 @@
 # - Mic mute LED doesn't always follow default source.
 # - xrandr-invert-colors doesn't work properly.
 # - Wireless works, but randomly loses connections.
+# - https://forums.lenovo.com/t5/Other-Linux-Discussions/I2C-error-after-upgrading-ThinkPad-T14-AMD-to-1-36-BIOS/m-p/5119910
 
 { config, lib, pkgs, ... }:
 
