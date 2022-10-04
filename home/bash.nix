@@ -24,7 +24,7 @@ let
       SHELL_LEVEL="\[\e[3m\]($SHLVL)\[\033[0m\] "
     fi
     GIT_INFO='\[\e[3m\](%s)\[\033[0m\] '
-    PROMPT_COMMAND='__git_ps1 "$DEFAULT_PS1$SHELL_LEVEL" "" "$GIT_INFO"'
+    PROMPT_COMMAND='__git_ps1 "$DEFAULT_PS1" "$SHELL_LEVEL" "$GIT_INFO"'
   '';
   shell-variables-fff = ''
     export FFF_FAV1=~/Downloads
