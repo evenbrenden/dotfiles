@@ -50,6 +50,7 @@
         graphviz
         python3
         shellcheck
+        tig
         virtualenv
       ];
       miscellaneous = [
