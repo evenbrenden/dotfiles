@@ -27,6 +27,10 @@ vim.opt.wildmenu = true
 -- ALWAYS use the clipboard for ALL operations
 vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
 
+-- Auto-save
+vim.api.nvim_set_keymap('n', '<Leader>a', ':AutoSaveToggle<CR>', key_opts)
+vim.g.auto_save_events = {"TextChanged", "TextChangedI"}
+
 -- Clear highlighted search matches
 vim.api.nvim_set_keymap('n', '<Leader><Space>', ':noh<CR>', key_opts)
 
