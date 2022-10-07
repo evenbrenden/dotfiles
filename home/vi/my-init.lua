@@ -64,7 +64,8 @@ vim.opt.updatetime = 100
 vim.cmd([[
 augroup graphviz
   autocmd!
-  autocmd FileType dot nnoremap <buffer> <LocalLeader>g :GraphvizCompile<CR>
+  autocmd FileType dot nnoremap <buffer> <LocalLeader>gc :GraphvizCompile<CR>
+  autocmd FileType dot nnoremap <buffer> <LocalLeader>gi :GraphvizInteractive<CR>
 augroup END
 ]])
 vim.g.WMGraphviz_output = 'svg'
