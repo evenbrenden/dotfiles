@@ -70,6 +70,15 @@
           };
         };
         telescope = [ nvim-treesitter telescope-nvim ];
+        vim-auto-save = pkgs.vimUtils.buildVimPlugin {
+          name = "vim-auto-save";
+          src = pkgs.fetchFromGitHub {
+            owner = "907th";
+            repo = "vim-auto-save";
+            rev = "2e3e54ea4c0fc946c21b0a4ee4c1c295ba736ee8";
+            sha256 = "sha256-sCUEGcIyJHs/Qqgl6246ZWcNokTR0h9+AA6SYzyMhtU=";
+          };
+        };
       in [
         defaultish
         neoformat
@@ -79,6 +88,7 @@
         suda-vim
         tcomment_vim
         vim-airline
+        vim-auto-save
         vim-better-whitespace
         vim-gitgutter
         vim-markdown
