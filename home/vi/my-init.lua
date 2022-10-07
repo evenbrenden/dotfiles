@@ -105,6 +105,9 @@ vim.api.nvim_set_keymap('n', '<Leader>g', ':Telescope live_grep<CR>', key_opts)
 vim.api.nvim_set_keymap('n', '<Leader>s',
                         ':Telescope grep_string search=<C-r><C-w><CR>', key_opts)
 
+-- Write to file
+vim.api.nvim_set_keymap('n', '<Leader>w', ':w', key_opts)
+
 -- YAML
 vim.cmd([[
 augroup yaml
