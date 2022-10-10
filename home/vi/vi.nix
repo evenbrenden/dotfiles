@@ -90,6 +90,8 @@
         vim-airline
         vim-auto-save
         vim-better-whitespace
+        vim-dispatch
+        vim-dispatch-neovim
         vim-gitgutter
         vim-markdown
         vim-nix
