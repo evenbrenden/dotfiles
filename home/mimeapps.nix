@@ -10,8 +10,11 @@
       "application/x-extension-shtml" = [ "firefox.desktop" ];
       "application/x-extension-xhtml" = [ "firefox.desktop" ];
       "application/x-extension-xht" = [ "firefox.desktop" ];
-      "image/svg+xml" = [ "org.nomacs.ImageLounge.desktop" ];
       "application/xhtml+xml" = [ "firefox.desktop" ];
+      "image/gif" = [ "org.nomacs.ImageLounge.desktop" ];
+      "image/jpeg" = [ "org.nomacs.ImageLounge.desktop" ];
+      "image/png" = [ "org.nomacs.ImageLounge.desktop" ];
+      "image/svg+xml" = [ "org.nomacs.ImageLounge.desktop" ];
       "text/html" = [ "firefox.desktop" ];
       "x-scheme-handler/about" = [ "firefox.desktop" "appgate.desktop" ];
       "x-scheme-handler/chrome" = [ "firefox.desktop" ];
