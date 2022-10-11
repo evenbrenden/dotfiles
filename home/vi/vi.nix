@@ -81,6 +81,7 @@
         };
       in [
         defaultish
+        kotlin-vim
         neoformat
         neofsharp-vim
         nvim-lspconfig
