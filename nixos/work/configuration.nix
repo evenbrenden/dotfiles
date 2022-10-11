@@ -18,6 +18,7 @@ in {
     jetbrains.idea-community
     k9s
     kubectl
+    sbt
     vault
     yarn
   ];
