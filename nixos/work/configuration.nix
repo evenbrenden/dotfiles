@@ -20,7 +20,6 @@ in {
     k9s
     kubectl
     sbt
-    scala
     vault
     yarn
   ];
