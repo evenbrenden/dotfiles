@@ -15,10 +15,12 @@ in {
     dbeaver
     (unstable.google-cloud-sdk.withExtraComponents
       [ unstable.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+    jdk
     jetbrains.idea-community
     k9s
     kubectl
     sbt
+    scala
     vault
     yarn
   ];
