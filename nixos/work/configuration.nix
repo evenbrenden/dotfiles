@@ -7,6 +7,7 @@ in {
   imports = [
     ../common-configuration.nix
     (import ../virtualisation.nix { username = username; })
+    ./yubikey.nix
     ./hardware-configuration.nix
   ];
 
@@ -22,7 +23,6 @@ in {
     sbt
     vault
     yarn
-    yubioath-desktop
   ];
   programs.appgate-sdp.enable = true;
 
