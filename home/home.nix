@@ -96,7 +96,6 @@
         vlc
         whatsapp-for-linux
         xclip
-        yubioath-desktop
       ];
     in programming ++ miscellaneous;
 

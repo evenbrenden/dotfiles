@@ -22,6 +22,7 @@ in {
     sbt
     vault
     yarn
+    yubioath-desktop
   ];
   programs.appgate-sdp.enable = true;
 
