@@ -97,6 +97,7 @@
         vim-markdown
         vim-nix
         vim-pico8-syntax
+        purescript-vim
         wmgraphviz-vim
       ] ++ fzf-hoogle-vim ++ telescope;
     viAlias = true;
