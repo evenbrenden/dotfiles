@@ -3,12 +3,7 @@
 {
   home.packages = with pkgs;
     let
-      plugins = [
-        calf
-        carla
-        sfizz
-
-      ];
+      plugins = [ calf carla sfizz ];
       programs = [ polyphone reaper ];
     in plugins ++ programs;
 
