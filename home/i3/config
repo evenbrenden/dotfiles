@@ -102,6 +102,9 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # move the current workspace to the next output
 bindsym $mod+x move workspace to output next
 
+# toggle sticky for the current floating window
+bindsym $mod+y sticky toggle
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
