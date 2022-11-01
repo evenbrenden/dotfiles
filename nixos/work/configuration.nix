@@ -20,6 +20,7 @@ in {
     jetbrains.idea-community
     k9s
     kubectl
+    postman
     sbt
     vault
     yarn
