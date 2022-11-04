@@ -15,7 +15,6 @@
           nixfmt
           nodePackages.prettier
           python39Packages.autopep8
-          scalafmt
           shfmt
         ];
         fzf-hoogle-vim = [
