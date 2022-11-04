@@ -26,7 +26,7 @@
         git-gutter = [ git ];
         lsp = [
           unstable.haskell-language-server
-          metals
+          metals # Try not importing the sbt build
           python39Packages.python-lsp-server
           rnix-lsp
           sumneko-lua-language-server
