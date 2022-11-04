@@ -15,6 +15,7 @@
           nixfmt
           nodePackages.prettier
           python39Packages.autopep8
+          scalafmt
           shfmt
         ];
         fzf-hoogle-vim = [
@@ -25,6 +26,7 @@
         git-gutter = [ git ];
         lsp = [
           unstable.haskell-language-server
+          metals
           python39Packages.python-lsp-server
           rnix-lsp
           sumneko-lua-language-server

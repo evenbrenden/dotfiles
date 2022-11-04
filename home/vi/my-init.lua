@@ -97,6 +97,7 @@ vim.g.neoformat_enabled_haskell = {'ormolu'}
 vim.g.neoformat_haskell_ormolu = {exe = 'fourmolu'}
 vim.g.neoformat_enabled_lua = {'luaformat'}
 vim.g.neoformat_enabled_nix = {'nixfmt'}
+vim.g.neoformat_enabled_scala = {'scalafmt'}
 vim.g.neoformat_enabled_shell = {'shfmt'}
 vim.g.neoformat_enabled_typescript = {'prettier'}
 
