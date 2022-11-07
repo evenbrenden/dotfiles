@@ -20,6 +20,8 @@ in {
     jetbrains.idea-community
     k9s
     kubectl
+    nodejs-18_x
+    nodePackages.pnpm
     postman
     sbt
     vault
