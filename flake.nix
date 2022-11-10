@@ -30,7 +30,7 @@
       };
       nix-settings = {
         nix = {
-          nixPath = [ "nixpkgs=${nixpkgs-stable}" ];
+          nixPath = [ "nixpkgs=${nixpkgs-unstable}" ];
           registry.nixpkgs.flake = nixpkgs-stable;
         };
       };
