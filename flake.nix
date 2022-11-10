@@ -31,7 +31,7 @@
       nix-settings = {
         nix = {
           nixPath = [ "nixpkgs=${nixpkgs-unstable}" ];
-          registry.nixpkgs.flake = nixpkgs-stable;
+          registry.nixpkgs.flake = nixpkgs-unstable;
         };
       };
       utils = import ./utils.nix {
