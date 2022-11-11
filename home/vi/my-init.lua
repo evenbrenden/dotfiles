@@ -6,7 +6,6 @@ vim.g.maplocalleader = '.'
 
 -- Settings
 vim.opt.autoindent = true
-vim.opt.autowriteall = true
 vim.opt.backspace = 'indent,eol,start'
 vim.opt.expandtab = true
 vim.opt.guicursor = ''
