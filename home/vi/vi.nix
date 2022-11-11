@@ -99,6 +99,7 @@
         vim-markdown
         vim-nix
         vim-pico8-syntax
+        vim-vinegar
         purescript-vim
         wmgraphviz-vim
       ] ++ fzf-hoogle-vim ++ telescope;
