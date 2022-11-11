@@ -101,6 +101,11 @@ vim.g.neoformat_enabled_scala = {'scalafmt'}
 vim.g.neoformat_enabled_shell = {'shfmt'}
 vim.g.neoformat_enabled_typescript = {'prettier'}
 
+-- Netrw
+vim.g.netrw_keepdir = 0
+vim.g.netrw_winsize = 30
+vim.api.nvim_set_keymap('n', '<Leader>e', ':Lexplore<CR>', key_opts)
+
 -- Search and replace
 vim.api.nvim_set_keymap('n', '<Leader>r', ':%s/\\<<C-r><C-w>\\>//g<Left><Left>',
                         key_opts)
