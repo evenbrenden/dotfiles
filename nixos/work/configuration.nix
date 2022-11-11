@@ -20,8 +20,6 @@ in {
     jetbrains.idea-community
     k9s
     kubectl
-    unstable.nodejs
-    unstable.nodePackages.pnpm
     postman
     sbt
     vault
