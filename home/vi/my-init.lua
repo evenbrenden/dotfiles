@@ -101,6 +101,24 @@ vim.g.neoformat_enabled_scala = {'scalafmt'}
 vim.g.neoformat_enabled_shell = {'shfmt'}
 vim.g.neoformat_enabled_typescript = {'prettier'}
 
+-- nvim-tree.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+require("nvim-tree").setup({
+    renderer = {
+        icons = {
+            show = {
+                file = false,
+                folder = false,
+                folder_arrow = false,
+                git = false
+            }
+        }
+    },
+    view = {adaptive_size = true}
+})
+vim.api.nvim_set_keymap('n', '<Leader>t', ':NvimTreeToggle<CR>', key_opts)
+
 -- Search and replace
 vim.api.nvim_set_keymap('n', '<Leader>r', ':%s/\\<<C-r><C-w>\\>//g<Left><Left>',
                         key_opts)
