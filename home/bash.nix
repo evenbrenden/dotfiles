@@ -17,9 +17,6 @@ let
     bind '"\eOB": history-search-forward'
     bind '"\e[B": history-search-forward'
   '';
-  path = ''
-    export PATH=$PATH:$HOME/.local/bin
-  '';
   prompt = ''
     source ${pkgs.git}/share/git/contrib/completion/git-prompt.sh
     DEFAULT_PS1='\n\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] '
@@ -48,7 +45,6 @@ in {
     historySize = 10000;
     initExtra = builtins.concatStringsSep "\n" [
       history-search
-      path
       prompt
       shell-variables-fff
       shell-variables-misc
