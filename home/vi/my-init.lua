@@ -10,6 +10,7 @@ vim.opt.autowriteall = true
 vim.opt.backspace = 'indent,eol,start'
 vim.opt.expandtab = true
 vim.opt.guicursor = ''
+vim.opt.hidden = true
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.spell = false
