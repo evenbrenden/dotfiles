@@ -102,6 +102,9 @@ vim.g.neoformat_enabled_scala = {'scalafmt'}
 vim.g.neoformat_enabled_shell = {'shfmt'}
 vim.g.neoformat_enabled_typescript = {'prettier'}
 
+-- Netrw
+vim.api.nvim_set_keymap('n', '<Leader>e', ':Explore<CR>', key_opts)
+
 -- Search and replace
 vim.api.nvim_set_keymap('n', '<Leader>r', ':%s/\\<<C-r><C-w>\\>//g<Left><Left>',
                         key_opts)
