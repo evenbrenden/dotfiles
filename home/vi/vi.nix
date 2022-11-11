@@ -62,6 +62,15 @@
             sha256 = "06d52qr5wiar2j39nddnmqjh065xdzhlrx51sgm8d9g24akj8kq9";
           };
         };
+        nvim-tree-lua = pkgs.vimUtils.buildVimPlugin {
+          name = "nvim-tree.lua";
+          src = pkgs.fetchFromGitHub {
+            owner = "kyazdani42";
+            repo = "nvim-tree.lua";
+            rev = "7e892767bdd9660b7880cf3627d454cfbc701e9b";
+            sha256 = "sha256-n/EIlpVbcU7St0lBOb4dUm0EkwcNiZRpfZTrpDjdiUo=";
+          };
+        };
         sfz-vim = pkgs.vimUtils.buildVimPlugin {
           name = "sfz-vim";
           src = pkgs.fetchFromGitHub {
@@ -87,6 +96,7 @@
         neoformat
         neofsharp-vim
         nvim-lspconfig
+        nvim-tree-lua
         sfz-vim
         suda-vim
         tcomment_vim
