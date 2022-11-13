@@ -31,7 +31,7 @@
             Xcursor.size: 32
           '';
         in ''
-          ${pkgs.hsetroot}/bin/hsetroot -solid #000000
+          ${pkgs.hsetroot}/bin/hsetroot -tile ${./wp.jpeg}
           ${pkgs.xorg.xrdb}/bin/xrdb -merge <${xresources}
         '';
       };
