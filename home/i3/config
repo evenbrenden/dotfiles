@@ -132,6 +132,7 @@ bindsym $mod+r mode "resize"
 bar {
     status_command i3quo
     colors {
+        background #222222
         focused_workspace #4c9978 #287755 #ffffff
     }
 }
