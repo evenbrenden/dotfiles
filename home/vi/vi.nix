@@ -25,7 +25,7 @@
         ];
         git-gutter = [ git ];
         lsp = [
-          unstable.haskell-language-server
+          haskell-language-server
           metals
           python39Packages.python-lsp-server
           rnix-lsp
