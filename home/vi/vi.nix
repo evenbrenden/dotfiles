@@ -83,6 +83,7 @@
         };
       in [
         defaultish
+        idris-vim
         kotlin-vim
         neoformat
         neofsharp-vim
