@@ -84,6 +84,7 @@
       in [
         defaultish
         idris-vim
+        idris2-vim
         kotlin-vim
         neoformat
         neofsharp-vim
