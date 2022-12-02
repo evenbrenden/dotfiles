@@ -5,8 +5,6 @@
   home.file = {
     ".abcde.conf".source = ./dotfiles/abcde.conf;
     ".ghci".source = ./dotfiles/ghci;
-    ".gitignore".source = ./dotfiles/gitignore;
-    ".gitconfig".source = ./dotfiles/gitconfig;
     ".ssr/settings.conf".source = ./dotfiles/ssr.conf;
   };
   xdg = {
@@ -23,7 +21,8 @@
   };
 
   # Programs
-  imports = [ ./bash.nix ./daw.nix ./i3/i3.nix ./mimeapps.nix ./vi/vi.nix ];
+  imports =
+    [ ./bash.nix ./daw.nix ./git.nix ./i3/i3.nix ./mimeapps.nix ./vi/vi.nix ];
   nixpkgs.overlays = with pkgs; [
     (import ./discord.nix)
     # https://github.com/NixOS/nixpkgs/pull/182069#issuecomment-1213432500
@@ -47,17 +46,8 @@
   };
   home.packages = with pkgs;
     let
-      programming = [
-        docker-compose
-        ghc
-        git
-        (import ./git-replace.nix { inherit pkgs; })
-        graphviz
-        python3
-        shellcheck
-        tig
-        virtualenv
-      ];
+      programming =
+        [ docker-compose ghc graphviz python3 shellcheck virtualenv ];
       miscellaneous = [
         abcde
         arandr
