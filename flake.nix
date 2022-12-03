@@ -16,6 +16,7 @@
     let
       system = "x86_64-linux";
       stateVersion = "22.05";
+      # https://discourse.nixos.org/t/nix-run-refuses-to-evaluate-unfree-packages-even-though-allowunfree-true-in-my-config/13653/5
       # https://discourse.nixos.org/t/using-nixpkgs-legacypackages-system-vs-import/17462/3
       pkgs = import nixpkgs-stable {
         inherit system;
