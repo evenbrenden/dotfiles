@@ -31,7 +31,7 @@
       nix-settings = {
         nix = {
           nixPath = [ "nixpkgs=${nixpkgs-unstable}" ];
-          # IDK Y but need --impure for unfree SW
+          # IDK Y but need --impure for unfree SW with e.g. nix shell
           registry.nixpkgs.flake = nixpkgs-unstable;
         };
       };
