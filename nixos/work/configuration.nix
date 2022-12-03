@@ -91,6 +91,5 @@ in {
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   # Misc
-  nixpkgs.config.allowUnfree = true;
   system.stateVersion = "22.05";
 }
