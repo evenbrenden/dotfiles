@@ -31,7 +31,6 @@
       nix-settings = {
         nix = {
           nixPath = [ "nixpkgs=${nixpkgs-unstable}" ];
-          # https://discourse.nixos.org/t/nix-run-refuses-to-evaluate-unfree-packages-even-though-allowunfree-true-in-my-config/13653
           registry.nixpkgs.flake = nixpkgs-unstable;
         };
       };

@@ -5,6 +5,7 @@
 
   # Programs
   nixpkgs.config = {
+    # https://discourse.nixos.org/t/nix-run-refuses-to-evaluate-unfree-packages-even-though-allowunfree-true-in-my-config/13653/5
     allowUnfree = true;
     chromium.enableWideVine = true;
   };
