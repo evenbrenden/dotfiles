@@ -35,12 +35,6 @@
           registry.nixpkgs.flake = nixpkgs-unstable;
         };
       };
-      utils = import ./utils.nix {
-        pkgs = pkgs;
-        home-manager = home-manager;
-        system = system;
-        stateVersion = stateVersion;
-      };
     in {
       # sudo nixos-rebuild switch --flake .#[configuration]
       nixosConfigurations = {
@@ -70,21 +64,21 @@
           ];
         };
       };
-      # home-manager switch --flake .#[user]-[label]
+      # home-manager switch --flake .#[configuration]
       homeConfigurations = let
-        users = [ "evenbrenden" ];
-        configs = [
-          {
-            label = "linux";
-            config = ./home/home.nix;
+        baseConfiguration = {
+          inherit pkgs system;
+          username = username;
+          homeDirectory = "/home/${username}";
+          configuration = ./home/home.nix;
+        };
+        username = "evenbrenden";
+      in {
+        linux = home-manager.lib.homeManagerConfiguration (baseConfiguration
+          // {
             extraModules = [{ targets.genericLinux.enable = true; }];
-          }
-          {
-            label = "nixos";
-            config = ./home/home.nix;
-            extraModules = [ ];
-          }
-        ];
-      in utils.mkHomeConfigs users configs;
+          });
+        nixos = home-manager.lib.homeManagerConfiguration baseConfiguration;
+      };
     };
 }
