@@ -37,33 +37,25 @@
       };
     in {
       # sudo nixos-rebuild switch --flake .#[configuration]
-      nixosConfigurations = {
-        gaucho = nixpkgs-stable.lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./nixos/gaucho/configuration.nix
-            musnix.nixosModules.musnix
-            nix-settings
-            { nixpkgs.pkgs = pkgs; }
-          ];
+      nixosConfigurations =
+        let commonModules = [ nix-settings { nixpkgs.pkgs = pkgs; } ];
+        in {
+          gaucho = nixpkgs-stable.lib.nixosSystem {
+            inherit system;
+            modules = commonModules ++ [
+              ./nixos/gaucho/configuration.nix
+              musnix.nixosModules.musnix
+            ];
+          };
+          naxos = nixpkgs-stable.lib.nixosSystem {
+            inherit system;
+            modules = commonModules ++ [ ./nixos/naxos/configuration.nix ];
+          };
+          work = nixpkgs-stable.lib.nixosSystem {
+            inherit system;
+            modules = commonModules ++ [ ./nixos/work/configuration.nix ];
+          };
         };
-        naxos = nixpkgs-stable.lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./nixos/naxos/configuration.nix
-            nix-settings
-            { nixpkgs.pkgs = pkgs; }
-          ];
-        };
-        work = nixpkgs-stable.lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./nixos/work/configuration.nix
-            nix-settings
-            { nixpkgs.pkgs = pkgs; }
-          ];
-        };
-      };
       # home-manager switch --flake .#[configuration]
       homeConfigurations = let
         baseConfiguration = {
