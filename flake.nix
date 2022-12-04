@@ -48,22 +48,25 @@
           inherit system;
           modules = [
             ./nixos/gaucho/configuration.nix
-            nix-settings
             musnix.nixosModules.musnix
+            nix-settings
+            { nixpkgs.pkgs = pkgs; }
           ];
         };
         naxos = nixpkgs-stable.lib.nixosSystem {
           inherit system;
-          modules = [ ./nixos/naxos/configuration.nix nix-settings ];
+          modules = [
+            ./nixos/naxos/configuration.nix
+            nix-settings
+            { nixpkgs.pkgs = pkgs; }
+          ];
         };
         work = nixpkgs-stable.lib.nixosSystem {
           inherit system;
           modules = [
             ./nixos/work/configuration.nix
-            ({ config, pkgs, ... }: {
-              nixpkgs.overlays = [ overlay-unstable ];
-            })
             nix-settings
+            { nixpkgs.pkgs = pkgs; }
           ];
         };
       };
