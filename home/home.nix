@@ -23,7 +23,6 @@
   # Programs
   imports =
     [ ./bash.nix ./daw.nix ./git.nix ./i3/i3.nix ./mimeapps.nix ./vi/vi.nix ];
-  nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = with pkgs; [
     (import ./discord.nix)
     # https://github.com/NixOS/nixpkgs/pull/182069#issuecomment-1213432500
@@ -100,4 +99,7 @@
     configFile = ./dotfiles/dunstrc;
   };
   systemd.user.startServices = true;
+
+  # Misc
+  nixpkgs.config.allowUnfree = true;
 }
