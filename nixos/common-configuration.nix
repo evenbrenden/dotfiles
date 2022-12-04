@@ -4,10 +4,7 @@
   imports = [ ./display.nix ./screen-locking.nix ];
 
   # Programs
-  nixpkgs.config = {
-    allowUnfree = true;
-    chromium.enableWideVine = true;
-  };
+  nixpkgs.config.chromium.enableWideVine = true;
   programs.ssh.startAgent = true;
   networking.networkmanager.enable = true;
   services = {
@@ -67,6 +64,7 @@
       experimental-features = nix-command flakes
     '';
   };
+  nixpkgs.config.allowUnfree = true;
   time.timeZone = "Europe/Amsterdam";
   users.users.root.initialHashedPassword =
     "$6$v.fIgZCsq1yKDoVm$LZqzWgHJk9BmP3tmOhyVPsVbMhQzzAEOluMe6cV37YvYEPZwU0yIiH1i9lG1L9f68CyY9TXMfzfHV81X80RGR1";
