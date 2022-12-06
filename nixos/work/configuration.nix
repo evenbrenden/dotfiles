@@ -14,8 +14,8 @@ in {
   # Programs
   environment.systemPackages = with pkgs; [
     dbeaver
-    (unstable.google-cloud-sdk.withExtraComponents
-      [ unstable.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+    (google-cloud-sdk.withExtraComponents
+      [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     jdk
     jetbrains.idea-community
     k9s

@@ -76,7 +76,7 @@
         pavucontrol
         rclone
         sakura
-        unstable.signal-desktop
+        signal-desktop
         simplescreenrecorder
         slack
         smartmontools

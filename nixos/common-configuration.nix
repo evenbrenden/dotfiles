@@ -55,9 +55,11 @@
   networking.firewall.enable = true;
   nix = {
     # Binary cache for haskell.nix
-    binaryCachePublicKeys =
-      [ "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=" ];
-    binaryCaches = [ "https://cache.iog.io" ];
+    settings = {
+      trusted-public-keys =
+        [ "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=" ];
+      substituters = [ "https://cache.iog.io" ];
+    };
     # Enable flakes
     package = pkgs.nixFlakes;
     extraOptions = ''

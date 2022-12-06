@@ -4,9 +4,9 @@
   # nix flake update
   inputs = {
     # nix flake lock --update-input [input]
-    nixpkgs-stable.url = "nixpkgs/nixos-22.05";
+    nixpkgs-stable.url = "nixpkgs/nixos-22.11";
     nixpkgs-unstable.url = "nixpkgs/nixpkgs-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-22.05";
+    home-manager.url = "github:nix-community/home-manager/release-22.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-stable";
     musnix.url = "github:musnix/musnix";
     musnix.inputs.nixpkgs.follows = "nixpkgs-stable";
@@ -57,19 +57,25 @@
         };
       # home-manager switch --flake .#[configuration]
       homeConfigurations = let
-        baseConfiguration = {
-          inherit pkgs system;
-          username = username;
-          homeDirectory = "/home/${username}";
-          configuration = ./home/home.nix;
-        };
-        username = "evenbrenden";
+        commonModules = [
+          {
+            home = rec {
+              username = "evenbrenden";
+              homeDirectory = "/home/${username}";
+              stateVersion = "22.05";
+            };
+          }
+          ./home/home.nix
+        ];
       in {
-        linux = home-manager.lib.homeManagerConfiguration (baseConfiguration
-          // {
-            extraModules = [{ targets.genericLinux.enable = true; }];
-          });
-        nixos = home-manager.lib.homeManagerConfiguration baseConfiguration;
+        linux = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = commonModules ++ [{ targets.genericLinux.enable = true; }];
+        };
+        nixos = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = commonModules;
+        };
       };
     };
 }
