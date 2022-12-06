@@ -44,6 +44,7 @@ in {
     clamav.daemon.enable = true;
     fstrim.enable = lib.mkDefault true;
     gnome.gnome-keyring.enable = true; # For Appgate SDP
+    udisks2.enable = true;
     xserver = {
       displayManager.autoLogin = {
         enable = true;
