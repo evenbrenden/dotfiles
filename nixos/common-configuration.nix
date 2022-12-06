@@ -11,6 +11,7 @@
     fprintd.enable = false;
     fwupd.enable = true;
     openssh.enable = false;
+    udisks2.enable = true;
   };
 
   # For Chromecast to work (https://github.com/NixOS/nixpkgs/issues/49630)
