@@ -40,27 +40,7 @@
           name = "defaultish";
           src = ./defaultish;
         };
-        fzf-hoogle-vim = [
-          (pkgs.vimUtils.buildVimPluginFrom2Nix {
-            name = "fzf-hoogle-vim";
-            src = pkgs.fetchFromGitHub {
-              owner = "monkoose";
-              repo = "fzf-hoogle.vim";
-              rev = "16c08d1534aea2cd1cea1a1e20783bd22f634c77";
-              sha256 = "0k7cdi00ixqdkqmyqnapn5aplyn0w78iwvm7ifyi9j3smz57hzhf";
-            };
-          })
-          fzf-vim
-        ];
-        neofsharp-vim = pkgs.vimUtils.buildVimPlugin {
-          name = "neofsharp.vim";
-          src = pkgs.fetchFromGitHub {
-            owner = "adelarsq";
-            repo = "neofsharp.vim";
-            rev = "85d02f1dba209bbbad53ec9a41423e94672a5da5";
-            sha256 = "06d52qr5wiar2j39nddnmqjh065xdzhlrx51sgm8d9g24akj8kq9";
-          };
-        };
+        fzf-hoogle = [ fzf-hoogle-vim fzf-vim ];
         sfz-vim = pkgs.vimUtils.buildVimPlugin {
           name = "sfz-vim";
           src = pkgs.fetchFromGitHub {
@@ -71,22 +51,12 @@
           };
         };
         telescope = [ nvim-treesitter telescope-nvim ];
-        vim-auto-save = pkgs.vimUtils.buildVimPlugin {
-          name = "vim-auto-save";
-          src = pkgs.fetchFromGitHub {
-            owner = "907th";
-            repo = "vim-auto-save";
-            rev = "2e3e54ea4c0fc946c21b0a4ee4c1c295ba736ee8";
-            sha256 = "sha256-sCUEGcIyJHs/Qqgl6246ZWcNokTR0h9+AA6SYzyMhtU=";
-          };
-        };
       in [
         defaultish
         idris-vim
         idris2-vim
         kotlin-vim
         neoformat
-        neofsharp-vim
         nvim-lspconfig
         sfz-vim
         suda-vim
@@ -102,7 +72,7 @@
         vim-pico8-syntax
         purescript-vim
         wmgraphviz-vim
-      ] ++ fzf-hoogle-vim ++ telescope;
+      ] ++ fzf-hoogle ++ telescope;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
