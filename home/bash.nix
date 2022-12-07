@@ -1,14 +1,13 @@
 { pkgs, ... }:
 
 let
-  aliases-coreutils = {
+  aliases = {
     cp = "cp --interactive";
+    diff = "diff --color=auto";
     ls = "ls -Ah --color=auto";
     mv = "mv --interactive";
-    rm = "rm --interactive=once";
-  };
-  aliases-misc = {
     rclone-sync = "rclone sync --create-empty-src-dirs --interactive";
+    rm = "rm --interactive=once";
     xclip = "xclip -selection clipboard";
   };
   history-search = ''
@@ -53,7 +52,7 @@ in {
       shell-variables-fff
       shell-variables-misc
     ];
-    shellAliases = aliases-coreutils // aliases-misc;
+    shellAliases = aliases;
     shellOptions = [ "histappend" ];
   };
   home.packages = with pkgs;
