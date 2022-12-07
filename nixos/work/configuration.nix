@@ -25,7 +25,7 @@ in {
     sbt
     vault
     yarn
-    xml2
+    xmlformat
   ];
   programs.appgate-sdp.enable = true;
 
