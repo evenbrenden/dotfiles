@@ -98,7 +98,17 @@
     enable = true;
     configFile = ./dotfiles/dunstrc;
   };
-  systemd.user.startServices = true;
+  services.parcellite.enable = true;
+  systemd.user = {
+    startServices = true;
+    # https://github.com/nix-community/home-manager/issues/2064#issuecomment-887300055
+    targets.tray = {
+      Unit = {
+        Description = "Home Manager System Tray";
+        Requires = [ "graphical-session-pre.target" ];
+      };
+    };
+  };
 
   # Misc
   nixpkgs.config.allowUnfree = true;
