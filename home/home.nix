@@ -60,7 +60,6 @@
         firefox
         fff
         flac
-        flameshot
         fzf
         ghostwriter
         gimp
@@ -94,11 +93,17 @@
     in programming ++ miscellaneous;
 
   # Services
-  services.dunst = {
-    enable = true;
-    configFile = ./dotfiles/dunstrc;
+  services = {
+    dunst = {
+      enable = true;
+      configFile = ./dotfiles/dunstrc;
+    };
+    flameshot = {
+      enable = true;
+      settings = { General = { showStartupLaunchMessage = false; }; };
+    };
+    parcellite.enable = true;
   };
-  services.parcellite.enable = true;
   systemd.user = {
     startServices = true;
     # https://github.com/nix-community/home-manager/issues/2064#issuecomment-887300055
