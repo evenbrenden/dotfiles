@@ -100,7 +100,12 @@
     };
     flameshot = {
       enable = true;
-      settings = { General = { showStartupLaunchMessage = false; }; };
+      settings = {
+        General = {
+          disabledTrayIcon = true;
+          showStartupLaunchMessage = false;
+        };
+      };
     };
     parcellite.enable = true;
   };
