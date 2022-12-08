@@ -1,13 +1,12 @@
-{ username }:
+{ pkgs, username }:
 
+# https://discourse.nixos.org/t/set-up-vagrant-with-libvirt-qemu-kvm-on-nixos/14653
 {
+  boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
+  environment.systemPackages = [ pkgs.vagrant ];
   virtualisation = {
     docker.enable = true;
-    virtualbox.host = {
-      enable = true;
-      # https://discourse.nixos.org/t/virtualbox-keeps-getting-rebuilt/6612
-      enableExtensionPack = false;
-    };
+    libvirtd.enable = true;
   };
-  users.users.${username}.extraGroups = [ "docker" "vboxusers" ];
+  users.users.${username}.extraGroups = [ "docker" "libvirtd" ];
 }
