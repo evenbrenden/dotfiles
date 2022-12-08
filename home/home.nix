@@ -118,7 +118,7 @@
     # Ctrl+Alt+H
     parcellite = {
       enable = true;
-      tray = false;
+      extraOptions = [ "--no-icon" ];
     };
   };
   systemd.user = {
