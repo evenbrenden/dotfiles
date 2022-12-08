@@ -9,18 +9,21 @@ in {
   options.services.parcellite = {
     enable = mkEnableOption "Parcellite";
 
+    extraOptions = mkOption {
+      type = types.listOf types.str;
+      default = [ ];
+      example = [ "--no-icon" ];
+      description = ''
+        Command line arguments passed to Parcellite.
+      '';
+    };
+
     package = mkOption {
       type = types.package;
       default = pkgs.parcellite;
       defaultText = literalExpression "pkgs.parcellite";
       example = literalExpression "pkgs.clipit";
       description = "Parcellite derivation to use.";
-    };
-
-    tray = mkOption {
-      type = types.bool;
-      default = true;
-      description = "Whether to display tray icon.";
     };
   };
 
@@ -43,8 +46,9 @@ in {
       Install = { WantedBy = [ "graphical-session.target" ]; };
 
       Service = {
-        ExecStart = toString ([ "${cfg.package}/bin/${cfg.package.pname}" ]
-          ++ optional (!cfg.tray) "--no-icon");
+        ExecStart = "${cfg.package}/bin/${cfg.package.pname} ${
+            lib.concatStringsSep " " cfg.extraOptions
+          }";
         Restart = "on-abort";
       };
     };
