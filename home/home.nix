@@ -115,7 +115,11 @@
         };
       };
     };
-    parcellite.enable = true; # Ctrl+Alt+H
+    # Ctrl+Alt+H
+    parcellite = {
+      enable = true;
+      tray = false;
+    };
   };
   systemd.user = {
     startServices = true;

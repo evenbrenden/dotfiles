@@ -1,5 +1,3 @@
-# TODO Add tray icon option and make PR
-
 { config, lib, pkgs, ... }:
 
 with lib;
@@ -17,6 +15,12 @@ in {
       defaultText = literalExpression "pkgs.parcellite";
       example = literalExpression "pkgs.clipit";
       description = "Parcellite derivation to use.";
+    };
+
+    tray = mkOption {
+      type = types.bool;
+      default = true;
+      description = "Whether to display tray icon.";
     };
   };
 
@@ -39,7 +43,8 @@ in {
       Install = { WantedBy = [ "graphical-session.target" ]; };
 
       Service = {
-        ExecStart = "${cfg.package}/bin/${cfg.package.pname} --no-icon";
+        ExecStart = toString ([ "${cfg.package}/bin/${cfg.package.pname}" ]
+          ++ optional (!cfg.tray) "--no-icon");
         Restart = "on-abort";
       };
     };
