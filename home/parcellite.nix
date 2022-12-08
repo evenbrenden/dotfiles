@@ -4,7 +4,10 @@
 
 with lib;
 
-let cfg = config.services.parcellite;
+let
+
+  cfg = config.services.parcellite;
+
 in {
   meta.maintainers = [ maintainers.gleber ];
 
