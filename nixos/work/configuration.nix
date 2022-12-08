@@ -6,7 +6,10 @@ let
 in {
   imports = [
     ../common-configuration.nix
-    (import ../virtualisation.nix { username = username; })
+    (import ../virtualisation.nix {
+      inherit pkgs;
+      inherit username;
+    })
     ./yubikey.nix
     ./hardware-configuration.nix
   ];

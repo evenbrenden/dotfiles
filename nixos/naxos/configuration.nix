@@ -7,7 +7,10 @@ in {
   imports = [
     ../common-configuration.nix
     ../laptop-alsa-state.nix
-    (import ../virtualisation.nix { username = username; })
+    (import ../virtualisation.nix {
+      inherit pkgs;
+      inherit username;
+    })
     ./hardware-configuration.nix
     ./x1c7-audio-hacks.nix
   ];
