@@ -21,8 +21,15 @@
   };
 
   # Programs
-  imports =
-    [ ./bash.nix ./daw.nix ./git.nix ./i3/i3.nix ./mimeapps.nix ./vi/vi.nix ];
+  imports = [
+    ./bash.nix
+    ./daw.nix
+    ./git.nix
+    ./i3/i3.nix
+    ./mimeapps.nix
+    ./parcellite.nix
+    ./vi/vi.nix
+  ];
   nixpkgs.overlays = with pkgs; [
     (import ./discord.nix)
     # https://github.com/NixOS/nixpkgs/pull/182069#issuecomment-1213432500
@@ -93,6 +100,7 @@
     in programming ++ miscellaneous;
 
   # Services
+  disabledModules = [ "services/parcellite.nix" ];
   services = {
     dunst = {
       enable = true;
@@ -107,7 +115,7 @@
         };
       };
     };
-    parcellite.enable = true;
+    parcellite.enable = true; # Ctrl+Alt+H
   };
   systemd.user = {
     startServices = true;
