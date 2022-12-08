@@ -1,3 +1,5 @@
+# https://github.com/nix-community/home-manager/pull/3483
+
 { config, lib, pkgs, ... }:
 
 with lib;
