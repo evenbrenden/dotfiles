@@ -55,27 +55,20 @@
             modules = commonModules ++ [ ./nixos/work/configuration.nix ];
           };
         };
-      # home-manager switch --flake .#[configuration]
-      homeConfigurations = let
-        commonModules = [
-          {
-            home = rec {
-              username = "evenbrenden";
-              homeDirectory = "/home/${username}";
-              stateVersion = "22.05";
-            };
-          }
-          ./home/home.nix
-        ];
-      in {
-        linux = home-manager.lib.homeManagerConfiguration {
+      # home-manager switch --flake .#evenbrenden
+      homeConfigurations.evenbrenden =
+        home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = commonModules ++ [{ targets.genericLinux.enable = true; }];
+          modules = [
+            {
+              home = rec {
+                username = "evenbrenden";
+                homeDirectory = "/home/${username}";
+                stateVersion = "22.05";
+              };
+            }
+            ./home/home.nix
+          ];
         };
-        nixos = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = commonModules;
-        };
-      };
     };
 }
