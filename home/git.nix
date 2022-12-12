@@ -29,6 +29,13 @@ in {
         };
       }
       {
+        condition = "hasconfig:remote.*.url:**/*codeberg.org*/**";
+        contents.user = {
+          name = "Even Brenden";
+          email = privateAddress.user + "@" + privateAddress.host;
+        };
+      }
+      {
         condition = "hasconfig:remote.*.url:**/*github.schibsted.io*/**";
         contents.user = {
           name = "Even Brenden";
