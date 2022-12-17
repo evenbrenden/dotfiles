@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, i3quo, ... }:
 
 {
   # Dotfiles

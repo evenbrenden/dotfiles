@@ -10,9 +10,11 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs-stable";
     musnix.url = "github:musnix/musnix";
     musnix.inputs.nixpkgs.follows = "nixpkgs-stable";
+    i3quo.url = "git+https://codeberg.org/evenbrenden/i3quo";
   };
 
-  outputs = { nixpkgs-stable, nixpkgs-unstable, home-manager, musnix, ... }:
+  outputs =
+    { nixpkgs-stable, nixpkgs-unstable, home-manager, musnix, i3quo, ... }:
     let
       system = "x86_64-linux";
       # https://discourse.nixos.org/t/using-nixpkgs-legacypackages-system-vs-import/17462/3
@@ -69,6 +71,7 @@
             }
             ./home/home.nix
           ];
+          extraSpecialArgs.i3quo = i3quo.packages.${system}.default;
         };
     };
 }
