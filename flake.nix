@@ -11,6 +11,7 @@
     musnix.url = "github:musnix/musnix";
     musnix.inputs.nixpkgs.follows = "nixpkgs-stable";
     i3quo.url = "git+https://codeberg.org/evenbrenden/i3quo";
+    i3quo.inputs.nixpkgs.follows = "nixpkgs-stable";
   };
 
   outputs =
