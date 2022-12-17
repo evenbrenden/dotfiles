@@ -22,7 +22,7 @@
       pkgs = import nixpkgs-stable {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ overlay-unstable i3quo.overlays.${system}.default ];
+        overlays = [ i3quo.overlay overlay-unstable ];
       };
       overlay-unstable = final: prev: {
         unstable = import nixpkgs-unstable {
