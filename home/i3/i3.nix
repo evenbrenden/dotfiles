@@ -1,4 +1,4 @@
-{ pkgs, i3quo, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
