@@ -22,6 +22,24 @@
         "type": "github"
       }
     },
+    "i3quo": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1671285617,
+        "narHash": "sha256-7n468Qx+siCTlR/paobXdFNeJIHqFBdKNePUI4r/kpU=",
+        "ref": "refs/heads/main",
+        "rev": "6fd40da363ed3da9275611fba45de417f69a140b",
+        "revCount": 34,
+        "type": "git",
+        "url": "https://codeberg.org/evenbrenden/i3quo"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/evenbrenden/i3quo"
+      }
+    },
     "musnix": {
       "inputs": {
         "nixpkgs": [
@@ -39,6 +57,22 @@
       "original": {
         "owner": "musnix",
         "repo": "musnix",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1670827406,
+        "narHash": "sha256-nLNk7uiLbhbvb4TVz67XK7+Ezr1zcWYDWmNrWGmEUqA=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "ffca9ffaaafb38c8979068cee98b2644bd3f14cb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
         "type": "github"
       }
     },
@@ -75,6 +109,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "i3quo": "i3quo",
         "musnix": "musnix",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable"

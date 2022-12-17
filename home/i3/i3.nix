@@ -1,11 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, i3quo, ... }:
 
 {
   home.packages = with pkgs; [
     autorandr
     brightnessctl
     flameshot
-    (import ./i3quo.nix { inherit pkgs; })
+    i3quo
     playerctl
     sakura
     (import ./toggle_keyboard_layout.nix { inherit pkgs; })
