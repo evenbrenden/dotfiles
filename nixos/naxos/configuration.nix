@@ -14,6 +14,16 @@ in {
     ./hardware-configuration.nix
     ./x1c7-audio-hacks.nix
   ];
+  nixpkgs.overlays = [
+    (self: super: {
+      sof-firmware = with super;
+        import ./sof-firmware.nix {
+          inherit fetchurl;
+          inherit lib;
+          inherit stdenvNoCC;
+        };
+    })
+  ];
 
   # Steam
   programs.steam.enable = true;
