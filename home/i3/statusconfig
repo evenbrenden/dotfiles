@@ -17,13 +17,9 @@ order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery all"
 order += "disk /"
+order += "memory"
 order += "load"
 order += "tztime local"
-
-disk "/" {
-    prefix_type = decimal
-    format = "%avail"
-}
 
 volume master {
     format = "%volume"
@@ -49,6 +45,15 @@ battery all {
     status_bat = "battery"
     status_unk = "unknown"
     status_full = "full"
+}
+
+disk "/" {
+    prefix_type = decimal
+    format = "%avail"
+}
+
+memory {
+    format = "%available"
 }
 
 load {
