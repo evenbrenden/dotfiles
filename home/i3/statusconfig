@@ -48,7 +48,7 @@ battery all {
 }
 
 disk "/" {
-    prefix_type = decimal
+    prefix_type = binary
     format = "%avail"
 }
 
