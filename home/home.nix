@@ -54,7 +54,7 @@
   home.packages = with pkgs;
     let
       programming =
-        [ docker-compose ghc graphviz python3 shellcheck virtualenv ];
+        [ docker docker-compose ghc graphviz python3 shellcheck virtualenv ];
       miscellaneous = [
         abcde
         arandr
