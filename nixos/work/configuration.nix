@@ -24,6 +24,7 @@ in {
     k9s
     kubectl
     nodejs
+    nodePackages.pnpm
     postman
     sbt
     vault
