@@ -19,7 +19,15 @@ in {
       pull.rebase = true;
       push.default = "simple";
     };
-    ignores = [ ".direnv/" ".envrc" "*.swp" ];
+    ignores = let
+      metals = [
+        ".bloop/"
+        ".metals/"
+        "project/.bloop/"
+        "project/metals.sbt"
+        "project/project/"
+      ];
+    in [ ".direnv/" ".envrc" "*.swp" ] ++ metals;
     includes = [
       {
         condition = "hasconfig:remote.*.url:**/*github.com*/**";
