@@ -38,6 +38,7 @@
         libs = old.libs + ":" + lib.makeLibraryPath [ pkgs.nss_latest ];
       });
     })
+    (import ./metals.nix)
   ];
   programs = {
     direnv = {
