@@ -10,7 +10,7 @@ bindsym $mod+Return exec sakura
 # dmenu launcher
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -sb #007755'
 
-# use mouse+$mod to drag floating windows to their wanted position
+# use mouse+$mod to move (left-click) or resize (right-click) floating windows
 floating_modifier $mod
 
 # keep current window focused no matter where the mouse pointer is
