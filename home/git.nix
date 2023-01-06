@@ -27,8 +27,8 @@ in {
         "project/metals.sbt"
         "project/project/"
       ];
-      neovim = [ ".luarc.json" ];
-    in [ ".direnv/" ".envrc" "*.swp" ] ++ metals ++ neovim;
+      sumneko_lua = [ ".luarc.json" ];
+    in [ ".direnv/" ".envrc" "*.swp" ] ++ metals ++ sumneko_lua;
     includes = [
       {
         condition = "hasconfig:remote.*.url:**/*github.com*/**";

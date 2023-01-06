@@ -28,6 +28,10 @@ vim.opt.wildmenu = true
 -- ALWAYS use the clipboard for ALL operations
 vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
 
+-- Yank relative path of current file
+vim.api.nvim_set_keymap('n', '<Leader>rp', ":call setreg('+', expand('%'))<CR>",
+                        key_opts)
+
 -- Auto-save
 vim.api.nvim_set_keymap('n', '<Leader>a', ':AutoSaveToggle<CR>', key_opts)
 vim.g.auto_save_events = {"TextChanged", "TextChangedI"}
@@ -125,10 +129,6 @@ augroup yaml
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 augroup END
 ]])
-
--- Yank relative path of current file
-vim.api.nvim_set_keymap('n', '<Leader>rp', ":call setreg('+', expand('%'))<CR>",
-                        key_opts)
 
 -- Nope
 vim.g.loaded_perl_provider = 0
