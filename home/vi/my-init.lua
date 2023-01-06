@@ -32,6 +32,14 @@ vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
 vim.api.nvim_set_keymap('n', '<Leader>a', ':AutoSaveToggle<CR>', key_opts)
 vim.g.auto_save_events = {"TextChanged", "TextChangedI"}
 
+-- Better Whitespace
+vim.api.nvim_set_keymap('n', 'wd', ':StripWhitespace<CR>', key_opts)
+vim.api.nvim_set_keymap('n', 'wt', ':ToggleWhitespace<CR>', key_opts)
+-- Defaults minus markdown
+vim.g.better_whitespace_filetypes_blacklist = {
+    'diff', 'git', 'gitcommit', 'unite', 'qf', 'help', 'fugitive'
+}
+
 -- Clear highlighted search matches
 vim.api.nvim_set_keymap('n', '<Leader><Space>', ':noh<CR>', key_opts)
 
@@ -43,14 +51,6 @@ vim.api.nvim_set_keymap('i', '<C-o>', '<C-x><C-o>', {noremap = true})
 vim.opt.termguicolors = true
 vim.opt.background = 'dark'
 vim.cmd('colorscheme defaultish')
-
--- Better Whitespace
-vim.api.nvim_set_keymap('n', 'wd', ':StripWhitespace<CR>', key_opts)
-vim.api.nvim_set_keymap('n', 'wt', ':ToggleWhitespace<CR>', key_opts)
--- Defaults minus markdown
-vim.g.better_whitespace_filetypes_blacklist = {
-    'diff', 'git', 'gitcommit', 'unite', 'qf', 'help', 'fugitive'
-}
 
 -- fzf-hoogle.vim
 vim.cmd([[
