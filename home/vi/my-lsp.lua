@@ -51,6 +51,10 @@ function SetupLSP(key_opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Space>f',
                                     ':lua vim.lsp.buf.formatting()<CR>',
                                     key_opts)
+
+        -- Telescope
+        vim.api.nvim_set_keymap('n', '<LocalLeader>s',
+                                ':Telescope lsp_workspace_symbols<CR>', key_opts)
     end
 
     -- https://www.reddit.com/r/neovim/comments/tx40m2/is_it_possible_to_improve_lsp_hover_look/
