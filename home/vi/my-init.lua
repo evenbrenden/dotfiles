@@ -117,6 +117,8 @@ vim.api.nvim_set_keymap('n', '<Leader>f', ':Telescope find_files<CR>', key_opts)
 vim.api.nvim_set_keymap('n', '<Leader>g', ':Telescope live_grep<CR>', key_opts)
 vim.api.nvim_set_keymap('n', '<Leader>s',
                         ':Telescope grep_string search=<C-r><C-w><CR>', key_opts)
+vim.api.nvim_set_keymap('n', '<LocalLeader>s',
+                        ':Telescope lsp_workspace_symbols<CR>', key_opts)
 
 -- YAML
 vim.cmd([[
