@@ -126,6 +126,10 @@ augroup yaml
 augroup END
 ]])
 
+-- Yank relative path of current file
+vim.api.nvim_set_keymap('n', '<Leader>rp', ":call setreg('+', expand('%'))<CR>",
+                        key_opts)
+
 -- Nope
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
