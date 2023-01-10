@@ -58,6 +58,7 @@
         kotlin-vim
         neoformat
         nvim-lspconfig
+        nvim-solarized-lua
         sfz-vim
         suda-vim
         tcomment_vim
