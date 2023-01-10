@@ -53,8 +53,8 @@ vim.api.nvim_set_keymap('i', '<C-o>', '<C-x><C-o>', {noremap = true})
 
 -- Colors
 vim.opt.termguicolors = true
-vim.opt.background = 'dark'
-vim.cmd('colorscheme defaultish')
+vim.opt.background = 'light'
+vim.cmd('colorscheme solarized')
 
 -- fzf-hoogle.vim
 vim.cmd([[
