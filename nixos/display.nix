@@ -19,11 +19,6 @@
       '';
       displayManager = {
         defaultSession = "none+i3";
-        lightdm = {
-          background = "#000000";
-          greeters.gtk.indicators =
-            [ "~host" "~spacer" "~session" "~language" "~clock" "~power" ];
-        };
         # hsetroot because xsetroot does not work with Picom
         # Use stars.jpeg behind a not pitch black status bar
         sessionCommands = let
