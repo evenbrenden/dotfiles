@@ -25,13 +25,14 @@
             [ "~host" "~spacer" "~session" "~language" "~clock" "~power" ];
         };
         # hsetroot because xsetroot does not work with Picom
+        # Use stars.jpeg behind a not pitch black status bar
         sessionCommands = let
           xresources = pkgs.writeText "Xresources" ''
             Xcursor.theme: Adwaita
             Xcursor.size: 32
           '';
         in ''
-          ${pkgs.hsetroot}/bin/hsetroot -tile ${./wp.jpeg}
+          ${pkgs.hsetroot}/bin/hsetroot -tile ${./stars.jpeg}
           ${pkgs.xorg.xrdb}/bin/xrdb -merge <${xresources}
         '';
       };
