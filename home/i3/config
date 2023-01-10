@@ -189,6 +189,3 @@ bindsym $mod+Shift+s exec --no-startup-id systemctl hybrid-sleep
 
 # choose the right display
 exec --no-startup-id autorandr --change
-
-# open up a terminal
-exec sakura
