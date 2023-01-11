@@ -19,15 +19,13 @@
       '';
       displayManager = {
         defaultSession = "none+i3";
-        # hsetroot because xsetroot does not work with Picom
-        # Use stars.jpeg behind a not pitch black status bar
         sessionCommands = let
           xresources = pkgs.writeText "Xresources" ''
             Xcursor.theme: Adwaita
             Xcursor.size: 32
           '';
         in ''
-          ${pkgs.hsetroot}/bin/hsetroot -tile ${./stars.jpeg}
+          ${pkgs.hsetroot}/bin/hsetroot -add '#268BD2' -add '#1C689D' -gradient 200
           ${pkgs.xorg.xrdb}/bin/xrdb -merge <${xresources}
         '';
       };
