@@ -25,7 +25,7 @@
             Xcursor.size: 32
           '';
         in ''
-          ${pkgs.hsetroot}/bin/hsetroot -tile ${./wallpaper.jpeg}
+          ${pkgs.hsetroot}/bin/hsetroot -cover ${./wallpaper.jpeg}
           ${pkgs.xorg.xrdb}/bin/xrdb -merge <${xresources}
         '';
       };
