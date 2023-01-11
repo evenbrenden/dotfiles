@@ -25,7 +25,7 @@
             Xcursor.size: 32
           '';
         in ''
-          ${pkgs.hsetroot}/bin/hsetroot -tile ${./perfectly-clear-blue-sky.jpeg}
+          ${pkgs.hsetroot}/bin/hsetroot -tile ${./wallpaper.jpeg}
           ${pkgs.xorg.xrdb}/bin/xrdb -merge <${xresources}
         '';
       };
