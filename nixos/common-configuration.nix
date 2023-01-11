@@ -10,7 +10,8 @@
   services = {
     fprintd.enable = false;
     fwupd.enable = true;
-    gnome.at-spi2-core.enable = true; # https://github.com/NixOS/nixpkgs/issues/16327
+    gnome.at-spi2-core.enable =
+      true; # https://github.com/NixOS/nixpkgs/issues/16327
     openssh.enable = false;
     udisks2.enable = true;
   };
