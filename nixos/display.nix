@@ -26,6 +26,7 @@
           '';
         in ''
           ! Gradients does not work with big monitors (the first color is rendered as a solid)
+          ! I do not understand how the custom distance option works and I do not think I care
           ${pkgs.hsetroot}/bin/hsetroot -add '#268BD2' -add '#1C689D' -gradient 200
           ${pkgs.xorg.xrdb}/bin/xrdb -merge <${xresources}
         '';
