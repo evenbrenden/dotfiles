@@ -25,6 +25,7 @@
             Xcursor.size: 32
           '';
         in ''
+          ! Gradients does not work with big monitors (the first color is rendered as a solid)
           ${pkgs.hsetroot}/bin/hsetroot -add '#268BD2' -add '#1C689D' -gradient 200
           ${pkgs.xorg.xrdb}/bin/xrdb -merge <${xresources}
         '';
