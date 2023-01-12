@@ -29,7 +29,7 @@ vim.opt.wildmenu = true
 vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
 
 -- Yank relative path of current file
-vim.api.nvim_set_keymap('n', '<Leader>rp', ":call setreg('+', expand('%'))<CR>",
+vim.api.nvim_set_keymap('n', '<Leader>cp', ":call setreg('+', expand('%'))<CR>",
                         key_opts)
 
 -- Auto-save
