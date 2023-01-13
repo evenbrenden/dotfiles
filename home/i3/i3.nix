@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    autorandr
+    (import ./auto_x.nix { inherit pkgs; })
     brightnessctl
     flameshot
     i3quo

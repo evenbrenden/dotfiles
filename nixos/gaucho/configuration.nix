@@ -4,14 +4,7 @@ let
   username = "evenbrenden";
   hostname = "gaucho";
 in {
-  imports = [
-    ../common-configuration.nix
-    (import ../display.nix {
-      inherit pkgs;
-      home = config.users.users.${username}.home;
-    })
-    ./hardware-configuration.nix
-  ];
+  imports = [ ../common-configuration.nix ./hardware-configuration.nix ];
 
   # DAW
   musnix.enable = true;
