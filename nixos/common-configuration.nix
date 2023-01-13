@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./display.nix ./screen-locking.nix ];
+  imports = [ ./screen-locking.nix ];
 
   # Programs
   nixpkgs.config.chromium.enableWideVine = true;

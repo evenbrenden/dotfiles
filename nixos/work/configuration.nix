@@ -6,6 +6,10 @@ let
 in {
   imports = [
     ../common-configuration.nix
+    (import ../display.nix {
+      inherit pkgs;
+      home = config.users.users.${username}.home;
+    })
     (import ../virtualisation.nix {
       inherit pkgs;
       inherit username;
