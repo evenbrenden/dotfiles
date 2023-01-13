@@ -1,4 +1,4 @@
-{ pkgs, home, ... }:
+{ pkgs, ... }:
 
 # This can be moved to home-manager
 {
@@ -25,7 +25,6 @@
             Xcursor.size: 32
           '';
         in ''
-          ${pkgs.hsetroot}/bin/hsetroot -cover ${home}/wall.jpeg
           ${pkgs.xorg.xrdb}/bin/xrdb -merge <${xresources}
         '';
       };
