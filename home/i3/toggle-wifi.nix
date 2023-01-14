@@ -1,7 +1,7 @@
 { pkgs }:
 
 pkgs.writeShellApplication {
-  name = "toggle_wifi";
+  name = "toggle-wifi";
   runtimeInputs = with pkgs; [
     networkmanager
     procps # For pkill

@@ -1,7 +1,7 @@
 { pkgs }:
 
 pkgs.writeShellApplication {
-  name = "auto_x";
+  name = "auto-x";
   runtimeInputs = with pkgs; [ autorandr hsetroot ];
   text = ''
     autorandr --change

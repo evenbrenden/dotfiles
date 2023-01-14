@@ -155,12 +155,12 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # wifi control
-bindsym XF86WLAN exec --no-startup-id toggle_wifi
+bindsym XF86WLAN exec --no-startup-id toggle-wifi
 # For keyboards with no WLAN key
-bindsym $mod+Ctrl+w exec --no-startup-id toggle_wifi
+bindsym $mod+Ctrl+w exec --no-startup-id toggle-wifi
 
 # things xrandr
-bindsym $mod+Ctrl+a exec --no-startup-id auto_x
+bindsym $mod+Ctrl+a exec --no-startup-id auto-x
 bindsym $mod+Ctrl+6 exec --no-startup-id xrandr --dpi 96
 bindsym $mod+Ctrl+7 exec --no-startup-id xrandr --dpi 120
 bindsym $mod+Ctrl+8 exec --no-startup-id xrandr --dpi 144
@@ -171,7 +171,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
 
 # change keyboard layout
-bindsym $mod+k exec --no-startup-id toggle_keyboard_layout
+bindsym $mod+k exec --no-startup-id toggle-keyboard-layout
 
 # notifications control
 bindsym $mod+n exec --no-startup-id dunstctl set-paused toggle && pkill -x -USR1 i3status
@@ -188,4 +188,4 @@ bindsym $mod+Shift+l exec --no-startup-id loginctl lock-session $XDG_SESSION_ID
 bindsym $mod+Shift+s exec --no-startup-id systemctl hybrid-sleep
 
 # poke x
-exec --no-startup-id auto_x
+exec --no-startup-id auto-x

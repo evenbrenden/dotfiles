@@ -28,7 +28,7 @@
       jiggle-headphone-jack = {
         description = "Jiggle headphone jack";
         script = ''
-          python3 ${./set_pulseaudio_sink_port.py}
+          python3 ${./set-pulseaudio-sink-port.py}
         '';
         path = [ pkgs.pulseaudio pkgs.python3 ];
         after = [ "default.target" ];

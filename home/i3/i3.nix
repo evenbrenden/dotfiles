@@ -2,14 +2,14 @@
 
 {
   home.packages = with pkgs; [
-    (import ./auto_x.nix { inherit pkgs; })
+    (import ./auto-x.nix { inherit pkgs; })
     brightnessctl
     flameshot
     i3quo
     playerctl
     sakura
-    (import ./toggle_keyboard_layout.nix { inherit pkgs; })
-    (import ./toggle_wifi.nix { inherit pkgs; })
+    (import ./toggle-keyboard-layout.nix { inherit pkgs; })
+    (import ./toggle-wifi.nix { inherit pkgs; })
     xrandr-invert-colors
   ];
   xdg.configFile = {

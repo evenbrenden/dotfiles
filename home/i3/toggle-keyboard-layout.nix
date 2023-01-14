@@ -1,7 +1,7 @@
 { pkgs }:
 
 pkgs.writeShellApplication {
-  name = "toggle_keyboard_layout";
+  name = "toggle-keyboard-layout";
   runtimeInputs = with pkgs; [
     gawk
     procps # For pkill
