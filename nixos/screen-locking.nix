@@ -15,8 +15,8 @@
 
   # Temporarily disable with: systemctl --user stop xidlehook.service
   systemd.user.services.xidlehook = let
-    timeout_secs = 15 * 60;
-    lock_command = "${pkgs.systemd}/bin/loginctl lock-session $XDG_SESSION_ID";
+    timeout-secs = 15 * 60;
+    lock-command = "${pkgs.systemd}/bin/loginctl lock-session $XDG_SESSION_ID";
     canceller = "";
     options = "--not-when-fullscreen";
   in {
@@ -26,8 +26,8 @@
     serviceConfig = {
       ExecStart = ''
         ${pkgs.xidlehook}/bin/xidlehook ${options} --timer ${
-          toString timeout_secs
-        } "${lock_command}" "${canceller}"'';
+          toString timeout-secs
+        } "${lock-command}" "${canceller}"'';
       Restart = "always";
     };
   };

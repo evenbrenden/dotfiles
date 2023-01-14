@@ -3,7 +3,7 @@
 {
   systemd = {
     services = let
-      sleep_targets =
+      sleep-targets =
         [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
     in {
       # This addresses the "(...) slight "pop" in headphones when content volume transitions to/from 0."
@@ -19,8 +19,8 @@
         '';
         path = [ pkgs.alsaTools ];
         after = [ "multi-user.target" "sound.target" "graphical.target" ]
-          ++ sleep_targets;
-        wantedBy = [ "sound.target" ] ++ sleep_targets;
+          ++ sleep-targets;
+        wantedBy = [ "sound.target" ] ++ sleep-targets;
       };
     };
     user.services = {
