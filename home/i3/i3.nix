@@ -9,7 +9,7 @@
     sakura
     (import ./toggle-keyboard-layout.nix { inherit pkgs; })
     (import ./toggle-wifi.nix { inherit pkgs; })
-    (import ./xrandr-disable-primary.nix { inherit pkgs; })
+    (import ./xrandr-disable-primary-output.nix { inherit pkgs; })
     xrandr-invert-colors
   ];
   xdg.configFile = {
