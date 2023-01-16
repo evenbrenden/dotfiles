@@ -165,7 +165,7 @@ bindsym $mod+Ctrl+6 exec --no-startup-id xrandr --dpi 96
 bindsym $mod+Ctrl+7 exec --no-startup-id xrandr --dpi 120
 bindsym $mod+Ctrl+8 exec --no-startup-id xrandr --dpi 144
 bindsym $mod+i exec --no-startup-id xrandr-invert-colors
-# free seating
+# t14s free seating workaround
 bindsym $mod+Ctrl+o exec --no-startup-id xrandr --output eDP --off
 
 # brightness control
