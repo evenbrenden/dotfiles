@@ -36,10 +36,6 @@
       in formatting ++ fzf-hoogle-vim ++ git-gutter ++ lsp ++ telescope;
     plugins = with pkgs.vimPlugins;
       let
-        defaultish = pkgs.vimUtils.buildVimPlugin {
-          name = "defaultish";
-          src = ./defaultish;
-        };
         fzf-hoogle = [ fzf-hoogle-vim fzf-vim ];
         sfz-vim = pkgs.vimUtils.buildVimPlugin {
           name = "sfz-vim";
@@ -52,7 +48,6 @@
         };
         telescope = [ nvim-treesitter telescope-nvim ];
       in [
-        defaultish
         idris-vim
         idris2-vim
         kotlin-vim
