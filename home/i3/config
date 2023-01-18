@@ -102,6 +102,9 @@ bindsym $mod+x move workspace to output next
 # toggle sticky for the current floating window
 bindsym $mod+y sticky toggle
 
+# toggle gaps for wide screens
+bindsym $mod+g gaps horizontal current toggle 512
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
