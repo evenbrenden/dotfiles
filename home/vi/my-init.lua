@@ -36,13 +36,10 @@ vim.api.nvim_set_keymap('n', '<Leader>cp', ":call setreg('+', expand('%'))<CR>",
 vim.api.nvim_set_keymap('n', '<Leader>a', ':AutoSaveToggle<CR>', key_opts)
 vim.g.auto_save_events = {"TextChanged", "TextChangedI"}
 
--- Better Whitespace (weird mixed colors with markdown x nvim-solarized-lua)
+-- Better Whitespace
+-- https://www.markdownguide.org/basic-syntax#line-break-best-practices
 vim.api.nvim_set_keymap('n', 'wd', ':StripWhitespace<CR>', key_opts)
 vim.api.nvim_set_keymap('n', 'wt', ':ToggleWhitespace<CR>', key_opts)
--- Defaults minus markdown
-vim.g.better_whitespace_filetypes_blacklist = {
-    'diff', 'git', 'gitcommit', 'unite', 'qf', 'help', 'fugitive'
-}
 
 -- Clear highlighted search matches
 vim.api.nvim_set_keymap('n', '<Leader><Space>', ':noh<CR>', key_opts)
