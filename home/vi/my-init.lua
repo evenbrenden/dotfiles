@@ -36,7 +36,7 @@ vim.api.nvim_set_keymap('n', '<Leader>cp', ":call setreg('+', expand('%'))<CR>",
 vim.api.nvim_set_keymap('n', '<Leader>a', ':AutoSaveToggle<CR>', key_opts)
 vim.g.auto_save_events = {"TextChanged", "TextChangedI"}
 
--- Better Whitespace
+-- Better Whitespace (weird mixed colors with markdown x nvim-solarized-lua)
 vim.api.nvim_set_keymap('n', 'wd', ':StripWhitespace<CR>', key_opts)
 vim.api.nvim_set_keymap('n', 'wt', ':ToggleWhitespace<CR>', key_opts)
 -- Defaults minus markdown
