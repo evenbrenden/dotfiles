@@ -9,7 +9,7 @@
     extraPackages = with pkgs;
       let
         formatting = [
-          haskellPackages.fourmolu # Really old version atm
+          haskellPackages.fourmolu
           luaformatter
           nixfmt
           nodePackages.prettier
