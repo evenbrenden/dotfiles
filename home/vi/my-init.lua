@@ -99,10 +99,7 @@ vim.api.nvim_set_keymap('n', '<LocalLeader>f', ':Neoformat<CR>', key_opts)
 vim.api.nvim_set_keymap('v', '<LocalLeader>f', ":'<,'>Neoformat<CR>", key_opts)
 vim.g.neoformat_enabled_python = {'autopep8'}
 vim.g.neoformat_enabled_haskell = {'ormolu'}
-vim.g.neoformat_haskell_ormolu = {
-    exe = 'fourmolu',
-    args = {"--ghc-opt -pgmF=record-dot-preprocessor"}
-}
+vim.g.neoformat_haskell_ormolu = {exe = 'fourmolu'}
 vim.g.neoformat_enabled_lua = {'luaformat'}
 vim.g.neoformat_enabled_nix = {'nixfmt'}
 vim.g.neoformat_enabled_scala = {'scalafmt'}
