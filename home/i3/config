@@ -19,9 +19,6 @@ focus_follows_mouse no
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# hide edge borders for single-window workspaces
-hide_edge_borders smart
-
 # window navigation
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
