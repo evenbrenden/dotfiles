@@ -106,7 +106,7 @@ workspace_auto_back_and_forth yes
 bindsym $mod+y sticky toggle
 
 # toggle gaps for wide screens
-bindsym $mod+g gaps horizontal current toggle 512
+bindsym $mod+g gaps horizontal all toggle 512
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
