@@ -48,6 +48,9 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
+# always start with tabbed
+workspace_layout tabbed
+
 # toggle tiling/floating
 bindsym $mod+Shift+space floating toggle
 
