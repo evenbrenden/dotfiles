@@ -53,16 +53,6 @@ vim.opt.termguicolors = true
 vim.opt.background = 'light'
 vim.cmd('colorscheme solarized')
 
--- fzf-hoogle.vim
-vim.cmd([[
-augroup hoogle
-  autocmd!
-  autocmd FileType haskell nnoremap <buffer> <LocalLeader>h :Hoogle<CR>
-  autocmd FileType haskell nnoremap <buffer> H :Hoogle <C-r><C-w><CR>
-augroup END
-]])
-vim.g.hoogle_fzf_cache_file = '~/.cache/fzf-hoogle.vim/cache.json'
-
 -- GitGutter
 vim.opt.updatetime = 100
 

@@ -17,11 +17,6 @@
           scalafmt
           shfmt
         ];
-        fzf-hoogle-vim = [
-          fzf
-          haskellPackages.hoogle # hoogle generate
-          jq
-        ];
         git-gutter = [ git ];
         lsp = [
           haskell-language-server
@@ -33,10 +28,9 @@
           nodePackages.typescript-language-server
         ];
         telescope = [ clang fd nodejs ripgrep tree-sitter ];
-      in formatting ++ fzf-hoogle-vim ++ git-gutter ++ lsp ++ telescope;
+      in formatting ++ git-gutter ++ lsp ++ telescope;
     plugins = with pkgs.vimPlugins;
       let
-        fzf-hoogle = [ fzf-hoogle-vim fzf-vim ];
         sfz-vim = pkgs.vimUtils.buildVimPlugin {
           name = "sfz-vim";
           src = pkgs.fetchFromGitHub {
@@ -68,12 +62,11 @@
         vim-pico8-syntax
         purescript-vim
         wmgraphviz-vim
-      ] ++ fzf-hoogle ++ telescope;
+      ] ++ telescope;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
   };
-  home.file.".cache/fzf-hoogle.vim/placeholder".text = ""; # mkdir
   xdg.configFile."nvim/lua/my-init.lua".source = ./my-init.lua;
   xdg.configFile."nvim/lua/my-lsp.lua".source = ./my-lsp.lua;
 }
