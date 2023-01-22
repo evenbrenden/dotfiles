@@ -46,7 +46,7 @@ vim.api.nvim_set_keymap('n', '<Leader><Space>', ':noh<CR>', key_opts)
 
 -- Completion
 vim.opt.completeopt = 'menu'
-vim.api.nvim_set_keymap('i', '<C-o>', '<C-x><C-o>', {noremap = true})
+vim.api.nvim_set_keymap('i', '<C-o>', '<C-x><C-o>', {noremap = true}) -- omnifunc
 
 -- Colors
 vim.opt.termguicolors = true
