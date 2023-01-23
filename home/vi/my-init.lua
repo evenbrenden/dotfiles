@@ -45,6 +45,7 @@ vim.api.nvim_set_keymap('n', 'wt', ':ToggleWhitespace<CR>', key_opts)
 vim.api.nvim_set_keymap('n', '<Leader><Space>', ':noh<CR>', key_opts)
 
 -- Completion
+-- https://vi.stackexchange.com/a/2621
 vim.opt.completeopt = 'menu'
 vim.api.nvim_set_keymap('i', '<C-o>', '<C-x><C-o>', {noremap = true}) -- omnifunc
 
