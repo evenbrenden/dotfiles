@@ -26,8 +26,8 @@
           '';
         in ''
           ${pkgs.xorg.xrdb}/bin/xrdb -merge <${xresources}
-          ! "Light sea green"
-          ${pkgs.hsetroot}/bin/hsetroot -solid '#20B2AA'
+          ! "Chinese violet"
+          ${pkgs.hsetroot}/bin/hsetroot -solid '#856088'
         '';
       };
       enable = true;
