@@ -7,7 +7,7 @@
     flameshot
     i3quo
     playerctl
-    (import ./postrandr.nix { inherit pkgs; })
+    (import ./refresh-wallpaper.nix { inherit pkgs; })
     sakura
     (import ./toggle-keyboard-layout.nix { inherit pkgs; })
     (import ./toggle-wifi.nix { inherit pkgs; })
