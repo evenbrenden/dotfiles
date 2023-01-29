@@ -168,6 +168,7 @@ bindsym $mod+Ctrl+w exec --no-startup-id toggle-wifi
 # things xrandr
 bindsym $mod+Ctrl+a exec --no-startup-id autorandr --change && postrandr
 bindsym $mod+Ctrl+e exec --no-startup-id xrandr-disable-primary-output
+bindsym $mod+Ctrl+s exec --no-startup-id arandr && postrandr
 bindsym $mod+Ctrl+i exec --no-startup-id xrandr-invert-colors
 bindsym $mod+Ctrl+6 exec --no-startup-id xrandr --dpi 96
 bindsym $mod+Ctrl+7 exec --no-startup-id xrandr --dpi 120

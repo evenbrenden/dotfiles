@@ -58,7 +58,6 @@
         [ docker-compose ghc graphviz python3 shellcheck virtualenv ];
       miscellaneous = [
         abcde
-        arandr
         audacity
         chromium
         colorpicker
