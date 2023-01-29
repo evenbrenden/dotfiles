@@ -26,8 +26,6 @@
           '';
         in ''
           ${pkgs.xorg.xrdb}/bin/xrdb -merge <${xresources}
-          ! "Chinese violet"
-          ${pkgs.hsetroot}/bin/hsetroot -solid '#856088'
         '';
       };
       enable = true;
