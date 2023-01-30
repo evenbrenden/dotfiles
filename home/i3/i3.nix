@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     arandr
+    autorandr
     brightnessctl
     flameshot
     i3quo
