@@ -58,6 +58,7 @@
         [ docker-compose ghc graphviz python3 shellcheck virtualenv ];
       miscellaneous = [
         abcde
+        arandr
         audacity
         chromium
         colorpicker
@@ -80,6 +81,7 @@
         p7zip
         pandoc
         pavucontrol
+        (import ./refresh-wallpaper.nix { inherit pkgs; })
         rclone
         sakura
         signal-desktop

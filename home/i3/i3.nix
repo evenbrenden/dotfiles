@@ -2,17 +2,14 @@
 
 {
   home.packages = with pkgs; [
-    arandr
-    autorandr
+    (import ./auto-autorandr.nix { inherit pkgs; })
     brightnessctl
     flameshot
     i3quo
     playerctl
-    (import ./refresh-wallpaper.nix { inherit pkgs; })
     sakura
     (import ./toggle-keyboard-layout.nix { inherit pkgs; })
     (import ./toggle-wifi.nix { inherit pkgs; })
-    (import ./xrandr-disable-primary-output.nix { inherit pkgs; })
     xrandr-invert-colors
   ];
   xdg.configFile = {
