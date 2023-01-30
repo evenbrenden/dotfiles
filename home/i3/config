@@ -166,7 +166,7 @@ bindsym XF86WLAN exec --no-startup-id toggle-wifi
 bindsym $mod+Shift+w exec --no-startup-id toggle-wifi
 
 # things xrandr
-bindsym $mod+Ctrl+a exec --no-startup-id autorandr --force --change --common
+bindsym $mod+Ctrl+a exec --no-startup-id autorandr --force --change common
 bindsym $mod+Ctrl+i exec --no-startup-id xrandr-invert-colors
 bindsym $mod+Ctrl+6 exec --no-startup-id xrandr --dpi 96
 bindsym $mod+Ctrl+7 exec --no-startup-id xrandr --dpi 120
