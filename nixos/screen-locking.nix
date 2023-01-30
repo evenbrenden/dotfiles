@@ -8,7 +8,8 @@
     lockerCommand = ''
       env \
       XSECURELOCK_DISCARD_FIRST_KEYPRESS=0 \
-      XSECURELOCK_KEY_XF86Display_COMMAND='${pkgs.autorandr}/bin/autorandr --force --change common' \
+      XSECURELOCK_KEY_XF86Display_COMMAND='${pkgs.autorandr}/bin/autorandr --force --change clone-largest' \
+      XSECURELOCK_KEY_F7_COMMAND='${pkgs.autorandr}/bin/autorandr --force --change clone-largest' \
       ${pkgs.xsecurelock}/bin/xsecurelock
     '';
   };
