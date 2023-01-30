@@ -8,7 +8,7 @@
     lockerCommand = ''
       env \
       XSECURELOCK_DISCARD_FIRST_KEYPRESS=0 \
-      XSECURELOCK_KEY_XF86Display_COMMAND='${pkgs.autorandr}/bin/autorandr --change' \
+      XSECURELOCK_KEY_XF86Display_COMMAND='${pkgs.autorandr}/bin/autorandr --force --change common' \
       ${pkgs.xsecurelock}/bin/xsecurelock
     '';
   };

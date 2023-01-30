@@ -10,7 +10,7 @@
   xdg = {
     enable = true;
     configFile = {
-      "autorandr".source = ./dotfiles/autorandr;
+      "autorandr/postswitch".source = ./dotfiles/autorandr-postswitch;
       "fourmolu.yaml".source = ./dotfiles/fourmolu.yaml;
       "ghostwriter/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
       "sakura/sakura.conf".source = ./dotfiles/sakura.conf;
