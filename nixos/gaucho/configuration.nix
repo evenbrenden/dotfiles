@@ -30,11 +30,22 @@ in {
 
   # X
   services.xserver = {
-    dpi = 120;
-    displayManager.autoLogin = {
-      enable = true;
-      user = "${username}";
+    displayManager = {
+      autoLogin = {
+        enable = true;
+        user = "${username}";
+      };
+      sessionCommands = let
+        xresources = pkgs.writeText "Xresources" ''
+          Xcursor.size: 32
+          Xcursor.theme: Adwaita
+          Xft.dpi: 120
+        '';
+      in ''
+        ${pkgs.xorg.xrdb}/bin/xrdb -merge <${xresources}
+      '';
     };
+    dpi = 120;
   };
 
   # Display

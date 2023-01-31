@@ -17,17 +17,7 @@
       deviceSection = ''
         Option "TearFree" "true"
       '';
-      displayManager = {
-        defaultSession = "none+i3";
-        sessionCommands = let
-          xresources = pkgs.writeText "Xresources" ''
-            Xcursor.theme: Adwaita
-            Xcursor.size: 32
-          '';
-        in ''
-          ${pkgs.xorg.xrdb}/bin/xrdb -merge <${xresources}
-        '';
-      };
+      displayManager.defaultSession = "none+i3";
       enable = true;
       extraLayouts.norwerty = {
         description = "Norwerty";
