@@ -6,6 +6,10 @@ let
 in {
   imports = [
     ../common-configuration.nix
+    (import ../dpi.nix {
+      inherit pkgs;
+      dpi = 120;
+    })
     (import ../virtualisation.nix {
       inherit pkgs;
       inherit username;
@@ -42,30 +46,16 @@ in {
     hostName = "${hostname}";
     hosts = { "127.0.0.1" = [ "local.finn.no" ]; };
   };
+  services.xserver.displayManager.autoLogin = {
+    enable = true;
+    user = "${username}";
+  };
 
   # Services
   services = {
     clamav.daemon.enable = true;
     fstrim.enable = lib.mkDefault true;
     gnome.gnome-keyring.enable = true; # For Appgate SDP
-    xserver = {
-      displayManager = {
-        autoLogin = {
-          enable = true;
-          user = "${username}";
-        };
-        sessionCommands = let
-          xresources = pkgs.writeText "Xresources" ''
-            Xcursor.size: 32
-            Xcursor.theme: Adwaita
-            Xft.dpi: 120
-          '';
-        in ''
-          ${pkgs.xorg.xrdb}/bin/xrdb -merge <${xresources}
-        '';
-      };
-      dpi = 120;
-    };
   };
 
   # Boot and hardware

@@ -4,7 +4,14 @@ let
   username = "evenbrenden";
   hostname = "gaucho";
 in {
-  imports = [ ../common-configuration.nix ./hardware-configuration.nix ];
+  imports = [
+    ../common-configuration.nix
+    (import ../dpi.nix {
+      inherit pkgs;
+      dpi = 120;
+    })
+    ./hardware-configuration.nix
+  ];
 
   # DAW
   musnix.enable = true;
@@ -27,29 +34,10 @@ in {
     extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
   };
   networking.hostName = "${hostname}";
-
-  # X
-  services.xserver = {
-    displayManager = {
-      autoLogin = {
-        enable = true;
-        user = "${username}";
-      };
-      sessionCommands = let
-        xresources = pkgs.writeText "Xresources" ''
-          Xcursor.size: 32
-          Xcursor.theme: Adwaita
-          Xft.dpi: 120
-        '';
-      in ''
-        ${pkgs.xorg.xrdb}/bin/xrdb -merge <${xresources}
-      '';
-    };
-    dpi = 120;
+  services.xserver.displayManager.autoLogin = {
+    enable = true;
+    user = "${username}";
   };
-
-  # Display
-  hardware.video.hidpi.enable = true;
 
   # Disk and boot
   boot = {
