@@ -23,6 +23,8 @@
           xresources = pkgs.writeText "Xresources" ''
             Xcursor.size: 32
             Xcursor.theme: Adwaita
+            XTerm*faceName: DejaVu Sans Mono
+            XTerm*faceSize: 12
           '';
         in ''
           ${pkgs.xorg.xrdb}/bin/xrdb -merge <${xresources}
