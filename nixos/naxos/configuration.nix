@@ -6,6 +6,10 @@ let
 in {
   imports = [
     ../common-configuration.nix
+    (import ../dpi.nix {
+      inherit pkgs;
+      dpi = 144;
+    })
     ../laptop-alsa-state.nix
     (import ../virtualisation.nix {
       inherit pkgs;
@@ -37,25 +41,9 @@ in {
     extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
   };
   networking.hostName = "${hostname}";
-
-  # X
-  services.xserver = {
-    displayManager = {
-      autoLogin = {
-        enable = true;
-        user = "${username}";
-      };
-      sessionCommands = let
-        xresources = pkgs.writeText "Xresources" ''
-          Xcursor.size: 32
-          Xcursor.theme: Adwaita
-          Xft.dpi: 144
-        '';
-      in ''
-        ${pkgs.xorg.xrdb}/bin/xrdb -merge <${xresources}
-      '';
-    };
-    dpi = 144;
+  services.xserver.displayManager.autoLogin = {
+    enable = true;
+    user = "${username}";
   };
 
   # Disk and boot
