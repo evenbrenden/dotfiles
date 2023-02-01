@@ -2,12 +2,12 @@
 
 {
   home.packages = with pkgs; [
+    alacritty
     autorandr
     brightnessctl
     flameshot
     i3quo
     playerctl
-    sakura
     (import ./set-dpi.nix { inherit pkgs; })
     (import ./toggle-keyboard-layout.nix { inherit pkgs; })
     (import ./toggle-wifi.nix { inherit pkgs; })

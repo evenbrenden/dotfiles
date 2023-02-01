@@ -10,10 +10,10 @@
   xdg = {
     enable = true;
     configFile = {
+      "alacritty/alacritty.conf".source = ./dotfiles/alacritty.yml;
       "autorandr/postswitch".source = ./dotfiles/autorandr-postswitch;
       "fourmolu.yaml".source = ./dotfiles/fourmolu.yaml;
       "ghostwriter/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
-      "sakura/sakura.conf".source = ./dotfiles/sakura.conf;
       "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
       "VeraCrypt/Favorite Volumes.xml".source =
         ./dotfiles/veracrypt-favorite-volumes.xml;
@@ -83,7 +83,6 @@
         pavucontrol
         (import ./refresh-wallpaper.nix { inherit pkgs; })
         rclone
-        sakura
         signal-desktop
         simplescreenrecorder
         slack

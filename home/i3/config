@@ -5,7 +5,7 @@ set $mod Mod4
 font pango:monospace 12
 
 # terminal launcher
-bindsym $mod+Return exec sakura
+bindsym $mod+Return exec alacritty
 
 # dmenu launcher
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -sb #007755'
