@@ -10,7 +10,7 @@
   xdg = {
     enable = true;
     configFile = {
-      "alacritty/alacritty.conf".source = ./dotfiles/alacritty.yml;
+      "alacritty/alacritty.yml".source = ./dotfiles/alacritty.yml;
       "autorandr/postswitch".source = ./dotfiles/autorandr-postswitch;
       "fourmolu.yaml".source = ./dotfiles/fourmolu.yaml;
       "ghostwriter/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
