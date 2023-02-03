@@ -171,6 +171,8 @@ bindsym $mod+Ctrl+i exec --no-startup-id xrandr-invert-colors
 bindsym $mod+Ctrl+6 exec --no-startup-id set-dpi 96
 bindsym $mod+Ctrl+7 exec --no-startup-id set-dpi 120
 bindsym $mod+Ctrl+8 exec --no-startup-id set-dpi 144
+bindsym $mod+Ctrl+9 exec --no-startup-id set-dpi 168
+bindsym $mod+Ctrl+0 exec --no-startup-id set-dpi 192
 
 # brightness control
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
