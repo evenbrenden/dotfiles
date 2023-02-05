@@ -26,6 +26,11 @@ let
       SHELL_LEVEL="\[\e[3m\]($SHLVL)\[\033[0m\] "
     fi
     GIT_INFO='\[\e[3m\](%s)\[\033[0m\] '
+    GIT_PS1_SHOWDIRTYSTATE=1
+    GIT_PS1_SHOWSTASHSTATE=1
+    GIT_PS1_SHOWUNTRACKEDFILES=1
+    GIT_PS1_SHOWUPSTREAM="auto"
+    GIT_PS1_SHOWCOLORHINTS=1
     PROMPT_COMMAND='__git_ps1 "$DEFAULT_PS1" "$SHELL_LEVEL" "$GIT_INFO"'
   '';
   shell-variables-fff = ''
