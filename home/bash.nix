@@ -23,11 +23,12 @@ let
     source ${pkgs.git}/share/git/contrib/completion/git-prompt.sh
     DEFAULT_PS1='\n\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] '
     GIT_INFO='(%s)\[\033[0m\] '
+    GIT_PS1_SHOWCOLORHINTS=1
     GIT_PS1_SHOWDIRTYSTATE=1
     GIT_PS1_SHOWSTASHSTATE=1
     GIT_PS1_SHOWUNTRACKEDFILES=1
     GIT_PS1_SHOWUPSTREAM="auto"
-    GIT_PS1_SHOWCOLORHINTS=1
+    GIT_PS1_STATESEPARATOR=""
     PROMPT_COMMAND='__git_ps1 "$DEFAULT_PS1" "" "$GIT_INFO"'
   '';
   shell-variables-fff = ''
