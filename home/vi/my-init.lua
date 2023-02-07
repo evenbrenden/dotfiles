@@ -67,6 +67,14 @@ augroup END
 ]])
 vim.g.WMGraphviz_output = 'svg'
 
+-- Hoogle
+vim.api.nvim_set_keymap('n', '<LocalLeader>h',
+                        ':silent !xdg-open https://hoogle.haskell.org<CR>',
+                        key_opts)
+vim.api.nvim_set_keymap('n', 'gh',
+                        ':silent !xdg-open https://hoogle.haskell.org/?hoogle=<C-r><C-w><CR>',
+                        key_opts)
+
 -- Markdown
 vim.opt.concealcursor = 'nc'
 vim.opt.conceallevel = 2
