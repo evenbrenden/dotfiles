@@ -4,6 +4,7 @@ let
   aliases = {
     cp = "cp --interactive";
     diff = "diff --color=auto";
+    git-root = ''cd "$(git rev-parse --show-toplevel)"'';
     ls = "ls -Ah --color=auto";
     mv = "mv --interactive";
     rclone-sync = "rclone sync --create-empty-src-dirs --interactive";
