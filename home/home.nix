@@ -31,7 +31,6 @@
     ./vi/vi.nix
   ];
   nixpkgs.overlays = with pkgs; [
-    (import ./discord.nix)
     # https://github.com/NixOS/nixpkgs/pull/182069#issuecomment-1213432500
     (self: super: {
       firefox = super.firefox.overrideAttrs (old: {
@@ -63,7 +62,7 @@
         chromium
         colorpicker
         curl
-        discord
+        unstable.discord
         dos2unix
         firefox
         fff
