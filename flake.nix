@@ -58,7 +58,7 @@
             modules = commonModules ++ [ ./nixos/work/configuration.nix ];
           };
         };
-      # home-manager switch --flake .#evenbrenden
+      # home-manager switch --flake .#[username]
       homeConfigurations.evenbrenden =
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
