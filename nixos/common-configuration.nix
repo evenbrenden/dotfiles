@@ -10,8 +10,7 @@
   services = {
     fprintd.enable = false;
     fwupd.enable = true;
-    gnome.at-spi2-core.enable =
-      true; # https://github.com/NixOS/nixpkgs/issues/16327
+    gnome.at-spi2-core.enable = true; # https://github.com/NixOS/nixpkgs/issues/16327
     openssh.enable = false;
     udisks2.enable = true;
   };
@@ -33,8 +32,7 @@
     enable = true;
     package = pkgs.pulseaudio.override { bluetoothSupport = true; };
   };
-  nixpkgs.config.pulseaudio =
-    true; # Explicit PulseAudio support in applications
+  nixpkgs.config.pulseaudio = true; # Explicit PulseAudio support in applications
 
   # Disk and boot
   boot = {
@@ -60,8 +58,7 @@
   nix = {
     # Binary cache for haskell.nix
     settings = {
-      trusted-public-keys =
-        [ "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=" ];
+      trusted-public-keys = [ "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=" ];
       substituters = [ "https://cache.iog.io" ];
     };
     # Enable flakes

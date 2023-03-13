@@ -21,8 +21,7 @@ in {
   # Programs
   environment.systemPackages = with pkgs; [
     dbeaver
-    (google-cloud-sdk.withExtraComponents
-      [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+    (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     jdk
     jetbrains.idea-community
     k9s
@@ -63,15 +62,13 @@ in {
     extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
     kernelModules = [ "acpi_call" "amdgpu" ];
     # For mainline support of rtw89 wireless networking
-    kernelPackages = lib.mkIf (lib.versionOlder pkgs.linux.version "5.16")
-      pkgs.linuxPackages_latest;
+    kernelPackages = lib.mkIf (lib.versionOlder pkgs.linux.version "5.16") pkgs.linuxPackages_latest;
     kernelParams = [ "acpi_backlight=native" "mem_sleep_default=deep" ];
     initrd = {
       luks = {
         devices."luks-0d9eb120-e084-40ca-b784-551ddc6de0b5".device =
           "/dev/disk/by-uuid/0d9eb120-e084-40ca-b784-551ddc6de0b5";
-        devices."luks-0d9eb120-e084-40ca-b784-551ddc6de0b5".keyFile =
-          "/crypto_keyfile.bin";
+        devices."luks-0d9eb120-e084-40ca-b784-551ddc6de0b5".keyFile = "/crypto_keyfile.bin";
       };
       secrets = { "/crypto_keyfile.bin" = null; };
     };

@@ -1,8 +1,5 @@
 # https://github.com/NixOS/nixpkgs/pull/209496
-{ lib
-, fetchurl
-, stdenvNoCC
-}:
+{ lib, fetchurl, stdenvNoCC }:
 
 stdenvNoCC.mkDerivation rec {
   pname = "sof-firmware";

@@ -26,9 +26,7 @@
     partOf = [ "graphical-session.target" ];
     serviceConfig = {
       ExecStart = ''
-        ${pkgs.xidlehook}/bin/xidlehook ${options} --timer ${
-          toString timeout-secs
-        } "${lock-command}" "${canceller}"'';
+        ${pkgs.xidlehook}/bin/xidlehook ${options} --timer ${toString timeout-secs} "${lock-command}" "${canceller}"'';
       Restart = "always";
     };
   };

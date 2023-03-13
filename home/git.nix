@@ -20,13 +20,7 @@ in {
       push.default = "simple";
     };
     ignores = let
-      metals = [
-        ".bloop/"
-        ".metals/"
-        "project/.bloop/"
-        "project/metals.sbt"
-        "project/project/"
-      ];
+      metals = [ ".bloop/" ".metals/" "project/.bloop/" "project/metals.sbt" "project/project/" ];
       sumneko-lua = [ ".luarc.json" ];
     in [ ".direnv/" ".envrc" "*.swp" ] ++ metals ++ sumneko-lua;
     includes = [

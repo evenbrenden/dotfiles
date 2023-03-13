@@ -49,13 +49,7 @@ in {
     historyControl = [ "erasedups" "ignoredups" "ignorespace" ];
     historyFileSize = 100000;
     historySize = 10000;
-    initExtra = builtins.concatStringsSep "\n" [
-      history-search
-      path
-      prompt
-      shell-variables-fff
-      shell-variables-misc
-    ];
+    initExtra = builtins.concatStringsSep "\n" [ history-search path prompt shell-variables-fff shell-variables-misc ];
     shellAliases = aliases;
     shellOptions = [ "histappend" ];
   };

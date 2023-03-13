@@ -2,9 +2,7 @@
 
 {
   systemd = {
-    services = let
-      sleep-targets =
-        [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
+    services = let sleep-targets = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
     in {
       # This addresses the "(...) slight "pop" in headphones when content volume transitions to/from 0."
       # It attenuates the pops to the point that they are virtually inaudible
@@ -18,8 +16,7 @@
           hda-verb /dev/snd/hwC0D0 0x1a SET_PIN_WIDGET_CONTROL 0x0
         '';
         path = [ pkgs.alsaTools ];
-        after = [ "multi-user.target" "sound.target" "graphical.target" ]
-          ++ sleep-targets;
+        after = [ "multi-user.target" "sound.target" "graphical.target" ] ++ sleep-targets;
         wantedBy = [ "sound.target" ] ++ sleep-targets;
       };
     };
