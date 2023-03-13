@@ -33,10 +33,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    assertions = [
-      (lib.hm.assertions.assertPlatform "services.parcellite" pkgs
-        lib.platforms.linux)
-    ];
+    assertions = [ (lib.hm.assertions.assertPlatform "services.parcellite" pkgs lib.platforms.linux) ];
 
     home.packages = [ cfg.package ];
 
@@ -51,9 +48,7 @@ in {
       Install = { WantedBy = [ "graphical-session.target" ]; };
 
       Service = {
-        ExecStart = "${cfg.package}/bin/${cfg.package.pname} ${
-            lib.concatStringsSep " " cfg.extraOptions
-          }";
+        ExecStart = "${cfg.package}/bin/${cfg.package.pname} ${lib.concatStringsSep " " cfg.extraOptions}";
         Restart = "on-abort";
       };
     };

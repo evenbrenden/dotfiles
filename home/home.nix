@@ -15,8 +15,7 @@
       "fourmolu.yaml".source = ./dotfiles/fourmolu.yaml;
       "ghostwriter/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
       "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
-      "VeraCrypt/Favorite Volumes.xml".source =
-        ./dotfiles/veracrypt-favorite-volumes.xml;
+      "VeraCrypt/Favorite Volumes.xml".source = ./dotfiles/veracrypt-favorite-volumes.xml;
     };
     desktopEntries.spotify = {
       name = "Spotify";
@@ -25,21 +24,11 @@
   };
 
   # Programs
-  imports = [
-    ./bash.nix
-    ./daw.nix
-    ./git.nix
-    ./i3/i3.nix
-    ./mimeapps.nix
-    ./parcellite.nix
-    ./vi/vi.nix
-  ];
+  imports = [ ./bash.nix ./daw.nix ./git.nix ./i3/i3.nix ./mimeapps.nix ./parcellite.nix ./vi/vi.nix ];
   nixpkgs.overlays = with pkgs; [
     # https://github.com/NixOS/nixpkgs/pull/182069#issuecomment-1213432500
     (self: super: {
-      firefox = super.firefox.overrideAttrs (old: {
-        libs = old.libs + ":" + lib.makeLibraryPath [ pkgs.nss_latest ];
-      });
+      firefox = super.firefox.overrideAttrs (old: { libs = old.libs + ":" + lib.makeLibraryPath [ pkgs.nss_latest ]; });
     })
     (import ./metals.nix)
   ];
@@ -57,8 +46,7 @@
   };
   home.packages = with pkgs;
     let
-      programming =
-        [ docker-compose ghc graphviz python3 shellcheck virtualenv ];
+      programming = [ docker-compose ghc graphviz python3 shellcheck virtualenv ];
       miscellaneous = [
         abcde
         arandr

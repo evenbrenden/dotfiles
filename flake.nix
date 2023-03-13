@@ -14,8 +14,7 @@
     i3quo.inputs.nixpkgs.follows = "nixpkgs-stable";
   };
 
-  outputs =
-    { nixpkgs-stable, nixpkgs-unstable, home-manager, musnix, i3quo, ... }:
+  outputs = { nixpkgs-stable, nixpkgs-unstable, home-manager, musnix, i3quo, ... }:
     let
       system = "x86_64-linux";
       # https://discourse.nixos.org/t/using-nixpkgs-legacypackages-system-vs-import/17462/3
@@ -39,39 +38,34 @@
       };
     in {
       # sudo nixos-rebuild switch --flake .#[configuration]
-      nixosConfigurations =
-        let commonModules = [ nix-settings { nixpkgs.pkgs = pkgs; } ];
-        in {
-          gaucho = nixpkgs-stable.lib.nixosSystem {
-            inherit system;
-            modules = commonModules ++ [
-              ./nixos/gaucho/configuration.nix
-              musnix.nixosModules.musnix
-            ];
-          };
-          naxos = nixpkgs-stable.lib.nixosSystem {
-            inherit system;
-            modules = commonModules ++ [ ./nixos/naxos/configuration.nix ];
-          };
-          work = nixpkgs-stable.lib.nixosSystem {
-            inherit system;
-            modules = commonModules ++ [ ./nixos/work/configuration.nix ];
-          };
+      nixosConfigurations = let commonModules = [ nix-settings { nixpkgs.pkgs = pkgs; } ];
+      in {
+        gaucho = nixpkgs-stable.lib.nixosSystem {
+          inherit system;
+          modules = commonModules ++ [ ./nixos/gaucho/configuration.nix musnix.nixosModules.musnix ];
         };
+        naxos = nixpkgs-stable.lib.nixosSystem {
+          inherit system;
+          modules = commonModules ++ [ ./nixos/naxos/configuration.nix ];
+        };
+        work = nixpkgs-stable.lib.nixosSystem {
+          inherit system;
+          modules = commonModules ++ [ ./nixos/work/configuration.nix ];
+        };
+      };
       # home-manager switch --flake .#[username]
-      homeConfigurations.evenbrenden =
-        home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            {
-              home = rec {
-                username = "evenbrenden";
-                homeDirectory = "/home/${username}";
-                stateVersion = "22.05";
-              };
-            }
-            ./home/home.nix
-          ];
-        };
+      homeConfigurations.evenbrenden = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          {
+            home = rec {
+              username = "evenbrenden";
+              homeDirectory = "/home/${username}";
+              stateVersion = "22.05";
+            };
+          }
+          ./home/home.nix
+        ];
+      };
     };
 }
