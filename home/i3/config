@@ -106,7 +106,6 @@ bindsym $mod+x move workspace to output next
 bindsym $mod+y sticky toggle
 
 # size and resize gaps
-gaps horizontal 128
 bindsym $mod+minus gaps horizontal all minus 128
 bindsym $mod+plus gaps horizontal all plus 128
 
