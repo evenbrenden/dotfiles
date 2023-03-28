@@ -42,6 +42,7 @@ let
   shell-variables-misc = ''
     export EDITOR=nvim
     export LESS=-Ri
+    export OPENAI_API_KEY=
   '';
 in {
   programs.bash = {
