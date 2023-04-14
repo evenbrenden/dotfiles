@@ -1,11 +1,15 @@
 { pkgs, ... }:
 
 let
-  privateAddress = {
+  githubAddress = {
     user = "evenbrenden";
-    host = "gmail.com";
+    host = "users.noreply.github.com";
   };
-  workAddress = {
+  codebergAddress = {
+    user = "evenbrenden";
+    host = "noreply.codeberg.org";
+  };
+  schibstedAddress = {
     user = "even.steen.brenden";
     host = "schibsted.com";
   };
@@ -28,21 +32,21 @@ in {
         condition = "hasconfig:remote.*.url:**/*github.com*/**";
         contents.user = {
           name = "Even Brenden";
-          email = privateAddress.user + "@" + privateAddress.host;
+          email = githubAddress.user + "@" + githubAddress.host;
         };
       }
       {
         condition = "hasconfig:remote.*.url:**/*codeberg.org*/**";
         contents.user = {
           name = "Even Brenden";
-          email = privateAddress.user + "@" + privateAddress.host;
+          email = codebergAddress.user + "@" + codebergAddress.host;
         };
       }
       {
         condition = "hasconfig:remote.*.url:**/*github.schibsted.io*/**";
         contents.user = {
           name = "Even Brenden";
-          email = workAddress.user + "@" + workAddress.host;
+          email = schibstedAddress.user + "@" + schibstedAddress.host;
         };
       }
     ];
