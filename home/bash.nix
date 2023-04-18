@@ -42,7 +42,6 @@ let
   shell-variables-misc = ''
     export EDITOR=nvim
     export LESS=-Ri
-    FILE=$HOME/.openai_api_key && test -f $FILE && export OPENAI_API_KEY=$(cat $FILE)
   '';
 in {
   programs.bash = {
