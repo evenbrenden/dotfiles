@@ -31,16 +31,6 @@
       in formatting ++ git-gutter ++ lsp ++ telescope;
     plugins = with pkgs.vimPlugins;
       let
-        chatgpt = [ chatgpt-nvim nui-nvim plenary-nvim telescope-nvim ];
-        chatgpt-nvim = pkgs.vimUtils.buildVimPlugin {
-          name = "chatgpt.nvim";
-          src = pkgs.fetchFromGitHub {
-            owner = "jackMort";
-            repo = "ChatGPT.nvim";
-            rev = "8797871b5d11d256834b1c474ca9016dd0137dcb";
-            sha256 = "sha256-4o+XJ+RMDTZZeMbS9gvCAcire8MAriIpumx51jkEQls=";
-          };
-        };
         sfz-vim = pkgs.vimUtils.buildVimPlugin {
           name = "sfz-vim";
           src = pkgs.fetchFromGitHub {
@@ -72,7 +62,7 @@
         vim-pico8-syntax
         purescript-vim
         wmgraphviz-vim
-      ] ++ chatgpt ++ telescope;
+      ] ++ telescope;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;

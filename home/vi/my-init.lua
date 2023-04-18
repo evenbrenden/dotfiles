@@ -41,9 +41,6 @@ vim.g.auto_save_events = {"TextChanged", "TextChangedI"}
 vim.api.nvim_set_keymap('n', 'wd', ':StripWhitespace<CR>', key_opts)
 vim.api.nvim_set_keymap('n', 'wt', ':ToggleWhitespace<CR>', key_opts)
 
--- ChatGPT.nvim
-require("chatgpt").setup({keymaps = {submit = "<C-Space>"}})
-
 -- Clear highlighted search matches
 vim.api.nvim_set_keymap('n', '<Leader><Space>', ':noh<CR>', key_opts)
 
