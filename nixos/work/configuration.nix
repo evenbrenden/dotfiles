@@ -22,6 +22,7 @@ in {
   environment.systemPackages = with pkgs; [
     dbeaver
     (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+    insomnia
     jdk
     jetbrains.idea-community
     k9s
