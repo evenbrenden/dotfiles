@@ -31,6 +31,15 @@
       in formatting ++ git-gutter ++ lsp ++ telescope;
     plugins = with pkgs.vimPlugins;
       let
+        blue-mood-vim = pkgs.vimUtils.buildVimPlugin {
+          name = "blue-mood-vim";
+          src = pkgs.fetchFromGitHub {
+            owner = "lmintmate";
+            repo = "blue-mood-vim";
+            rev = "0f67002c46d785299c3fdc37d075c38ee1b78655";
+            sha256 = "sha256-PDciKSaxjHlhOk8ktXx8HjnfPCr9wgzCHebUjPlwj4M=";
+          };
+        };
         sfz-vim = pkgs.vimUtils.buildVimPlugin {
           name = "sfz-vim";
           src = pkgs.fetchFromGitHub {
@@ -42,6 +51,7 @@
         };
         telescope = [ nvim-treesitter telescope-nvim ];
       in [
+        blue-mood-vim
         idris-vim
         idris2-vim
         kotlin-vim

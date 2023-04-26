@@ -51,7 +51,7 @@ vim.api.nvim_set_keymap('i', '<C-o>', '<C-x><C-o>', {noremap = true}) -- omnifun
 -- Colors
 vim.opt.termguicolors = true
 vim.opt.background = 'light'
-vim.cmd('colorscheme solarized')
+vim.cmd('colorscheme blue-mood')
 
 -- GitGutter
 vim.opt.updatetime = 100
