@@ -103,6 +103,7 @@ vim.g.neoformat_enabled_typescript = {'prettier'}
 
 -- Netrw
 vim.g.netrw_preview = 1
+vim.g.netrw_winsize = 30
 vim.api.nvim_set_keymap('n', '<Leader>e', ':Explore<CR>', key_opts)
 
 -- Search and replace
