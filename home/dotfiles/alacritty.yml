@@ -1,27 +1,31 @@
+# https://github.com/alacritty/alacritty-theme/blob/master/themes/hyper.yaml
 colors:
   primary:
-    background: "#104e8b" # dodgerblue4
-    foreground: "#f5f5f5" # whitesmoke
+    background: "0x000000"
+    foreground: "0xffffff"
+  cursor:
+    text: "0xF81CE5"
+    cursor: "0xffffff"
 
   normal:
-    black: "#000000" # black
-    red: "#ff6347" # tomato
-    green: "#7fff00" # chartreusegreen
-    yellow: "#ffd700" # gold
-    blue: "#4f94cd" # steelblue3
-    magenta: "#ee82ee" # https://en.wikipedia.org/wiki/Shades_of_magenta#Web_color_violet
-    cyan: "#00cdcd" # cyan3
-    white: "#e1e1e1" # fg2
+    black: "0x000000"
+    red: "0xfe0100"
+    green: "0x33ff00"
+    yellow: "0xfeff00"
+    blue: "0x0066ff"
+    magenta: "0xcc00ff"
+    cyan: "0x00ffff"
+    white: "0xd0d0d0"
 
   bright:
-    black: "#bababa" # fg4
-    red: "#ff6347" # tomato
-    green: "#7fff00" # chartreusegreen
-    yellow: "#ffd700" # gold
-    blue: "#4f94cd" # steelblue3
-    magenta: "#ee82ee" # https://en.wikipedia.org/wiki/Shades_of_magenta#Web_color_violet
-    cyan: "#00cdcd" # cyan3
-    white: "#f5f5f5" # whitesmoke
+    black: "0x808080"
+    red: "0xfe0100"
+    green: "0x33ff00"
+    yellow: "0xfeff00"
+    blue: "0x0066ff"
+    magenta: "0xcc00ff"
+    cyan: "0x00ffff"
+    white: "0xFFFFFF"
 
 font:
   size: 12.0
