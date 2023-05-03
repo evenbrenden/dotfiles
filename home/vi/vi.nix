@@ -40,10 +40,6 @@
             sha256 = "sha256-PDciKSaxjHlhOk8ktXx8HjnfPCr9wgzCHebUjPlwj4M=";
           };
         };
-        defaultish = pkgs.vimUtils.buildVimPlugin {
-          name = "defaultish";
-          src = ./defaultish;
-        };
         sfz-vim = pkgs.vimUtils.buildVimPlugin {
           name = "sfz-vim";
           src = pkgs.fetchFromGitHub {
@@ -56,7 +52,6 @@
         telescope = [ nvim-treesitter telescope-nvim ];
       in [
         blue-mood-vim
-        defaultish
         idris-vim
         idris2-vim
         kotlin-vim
