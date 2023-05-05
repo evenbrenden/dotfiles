@@ -51,6 +51,7 @@ vim.api.nvim_set_keymap('i', '<C-o>', '<C-x><C-o>', {noremap = true}) -- omnifun
 -- Colors
 vim.opt.termguicolors = true
 vim.cmd('colorscheme blue-mood')
+vim.cmd('hi DiagnosticError guifg=#ee82ee') -- https://en.wikipedia.org/wiki/Shades_of_magenta#Web_color_violet
 
 -- GitGutter
 vim.opt.updatetime = 100
