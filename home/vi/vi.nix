@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  home.packages = [ pkgs.neovide ];
   programs.neovim = {
     enable = true;
     extraConfig = ''
