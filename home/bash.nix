@@ -40,7 +40,7 @@ let
     export FFF_KEY_BULK_RENAME_ALL="off"
   '';
   shell-variables-misc = ''
-    export EDITOR=nvim
+    export EDITOR=vi
     export LESS=-Ri
   '';
 in {
