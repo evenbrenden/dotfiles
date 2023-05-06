@@ -24,4 +24,6 @@ colors:
     white: "#f5f5f5" # whitesmoke
 
 font:
+  normal:
+    family: DejaVu Sans Mono
   size: 12.0
