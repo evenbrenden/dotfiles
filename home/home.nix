@@ -10,7 +10,6 @@
   xdg = {
     enable = true;
     configFile = {
-      "alacritty/alacritty.yml".source = ./dotfiles/alacritty.yml;
       "autorandr/postswitch".source = ./dotfiles/autorandr-postswitch;
       "fourmolu.yaml".source = ./dotfiles/fourmolu.yaml;
       "ghostwriter/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
@@ -24,7 +23,7 @@
   };
 
   # Programs
-  imports = [ ./bash.nix ./daw.nix ./git.nix ./i3/i3.nix ./mimeapps.nix ./parcellite.nix ./vi/vi.nix ];
+  imports = [ ./alacritty.nix ./bash.nix ./daw.nix ./git.nix ./i3/i3.nix ./mimeapps.nix ./parcellite.nix ./vi/vi.nix ];
   nixpkgs.overlays = with pkgs; [
     # https://github.com/NixOS/nixpkgs/pull/182069#issuecomment-1213432500
     (self: super: {
