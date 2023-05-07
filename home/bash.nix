@@ -44,7 +44,7 @@ let
     export FFF_KEY_BULK_RENAME_ALL="off"
   '';
   shell-variables-misc = ''
-    export EDITOR=neovide
+    export EDITOR='neovide --nofork'
     export LESS=-Ri
   '';
 in {
