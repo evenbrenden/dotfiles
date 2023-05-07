@@ -73,9 +73,6 @@
         purescript-vim
         wmgraphviz-vim
       ] ++ telescope;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
   };
   xdg.configFile."nvim/lua/my-init.lua".source = ./my-init.lua;
   xdg.configFile."nvim/lua/my-lsp.lua".source = ./my-lsp.lua;

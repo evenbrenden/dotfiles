@@ -6,9 +6,13 @@ let
     diff = "diff --color=auto";
     git-root = ''cd "$(git rev-parse --show-toplevel)"'';
     ls = "ls -Ah --color=auto";
+    nvim = "neovide";
     mv = "mv --interactive";
     rclone-sync = "rclone sync --create-empty-src-dirs --interactive";
     rm = "rm --interactive=once";
+    vi = "neovide";
+    vim = "neovide";
+    vimdiff = "neovide -- -d";
     xclip = "xclip -selection clipboard";
   };
   history-search = ''
@@ -40,7 +44,7 @@ let
     export FFF_KEY_BULK_RENAME_ALL="off"
   '';
   shell-variables-misc = ''
-    export EDITOR=vi
+    export EDITOR=neovide
     export LESS=-Ri
   '';
 in {
