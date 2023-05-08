@@ -51,8 +51,6 @@ vim.api.nvim_set_keymap('i', '<C-o>', '<C-x><C-o>', {noremap = true}) -- omnifun
 -- Colors
 vim.opt.termguicolors = true
 vim.cmd('colorscheme blue-mood')
-vim.cmd('highlight DiagnosticError guifg=#ff6347') -- tomato
-vim.cmd('highlight DiagnosticUnderlineError guisp=#ff6347') -- tomato
 
 -- GitGutter
 vim.opt.updatetime = 100

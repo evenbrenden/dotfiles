@@ -35,10 +35,10 @@
         blue-mood-vim = pkgs.vimUtils.buildVimPlugin {
           name = "blue-mood-vim";
           src = pkgs.fetchFromGitHub {
-            owner = "lmintmate";
+            owner = "evenbrenden";
             repo = "blue-mood-vim";
-            rev = "0f67002c46d785299c3fdc37d075c38ee1b78655";
-            sha256 = "sha256-PDciKSaxjHlhOk8ktXx8HjnfPCr9wgzCHebUjPlwj4M=";
+            rev = "57fa7d9e0f11b78179e59b27a89ccdf63e158e67";
+            sha256 = "sha256-C5u5M2aihTKpJO7u+AusouuoVT8sI4omtml2cKjomNQ=";
           };
         };
         sfz-vim = pkgs.vimUtils.buildVimPlugin {
