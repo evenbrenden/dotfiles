@@ -10,7 +10,6 @@ let
     rclone-sync = "rclone sync --create-empty-src-dirs --interactive";
     rm = "rm --interactive=once";
     vi = "neovide";
-    vimdiff = "neovide -- -d";
     xclip = "xclip -selection clipboard";
   };
   history-search = ''
