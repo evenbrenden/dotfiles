@@ -54,13 +54,6 @@
   fonts = {
     enableDefaultFonts = true;
     fontconfig.allowBitmaps = false; # Fixes some blocky fonts in Firefox
-    fonts = [
-      (pkgs.nerdfonts.override {
-        fonts = [
-          "FiraCode" # For Neovide
-        ];
-      })
-    ];
   };
   networking.firewall.enable = true;
   nix = {
