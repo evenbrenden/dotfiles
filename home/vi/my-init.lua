@@ -101,12 +101,6 @@ vim.g.neoformat_enabled_scala = {'scalafmt'}
 vim.g.neoformat_enabled_shell = {'shfmt'}
 vim.g.neoformat_enabled_typescript = {'prettier'}
 
--- Neovide
-if vim.g.neovide then
-    vim.o.guifont = "FiraCode_Nerd_Font:h12"
-    vim.g.neovide_cursor_animation_length = 0
-end
-
 -- Netrw
 vim.g.netrw_preview = 1
 vim.g.netrw_winsize = 30

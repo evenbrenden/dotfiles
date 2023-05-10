@@ -9,7 +9,7 @@ let
     mv = "mv --interactive";
     rclone-sync = "rclone sync --create-empty-src-dirs --interactive";
     rm = "rm --interactive=once";
-    vi = "neovide";
+    vi = "nvim";
     xclip = "xclip -selection clipboard";
   };
   history-search = ''
@@ -41,7 +41,7 @@ let
     export FFF_KEY_BULK_RENAME_ALL="off"
   '';
   shell-variables-misc = ''
-    export EDITOR='neovide --nofork'
+    export EDITOR=nvim
     export LESS=-Ri
   '';
 in {
