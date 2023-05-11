@@ -11,6 +11,7 @@
     (import ./set-dpi.nix { inherit pkgs; })
     (import ./toggle-keyboard-layout.nix { inherit pkgs; })
     (import ./toggle-wifi.nix { inherit pkgs; })
+    xcwd
     xrandr-invert-colors
   ];
   xdg.configFile = {
