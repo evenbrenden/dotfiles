@@ -21,8 +21,8 @@
         lsp = [
           haskell-language-server
           metals
+          nil
           python39Packages.python-lsp-server
-          rnix-lsp
           sumneko-lua-language-server
           nodePackages.typescript
           nodePackages.typescript-language-server

@@ -65,8 +65,8 @@ function SetupLSP(key_opts)
     local lspconfig = require 'lspconfig'
     lspconfig.hls.setup {on_attach = on_attach}
     lspconfig.metals.setup {on_attach = on_attach}
+    lspconfig.nil_ls.setup {on_attach = on_attach}
     lspconfig.pylsp.setup {on_attach = on_attach}
-    lspconfig.rnix.setup {on_attach = on_attach}
     lspconfig.sumneko_lua.setup {
         on_attach = on_attach,
         settings = {
