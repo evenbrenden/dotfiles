@@ -4,7 +4,7 @@
   home.packages = with pkgs;
     let
       plugins = [ carla sfizz ];
-      programs = [ ft2-clone polyphone reaper ];
+      programs = [ ft2-clone reaper ];
     in plugins ++ programs;
 
   home.sessionVariables = {
