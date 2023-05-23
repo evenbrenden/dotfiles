@@ -4,8 +4,13 @@
   home.packages = with pkgs;
     let
       plugins = [ carla sfizz ];
-      programs = [ ft2-clone reaper ];
+      programs = [ reaper ];
     in plugins ++ programs;
+
+  xdg.desktopEntries.ft2-clone = {
+    name = "Fasttracker II clone";
+    exec = "${pkgs.ft2-clone}/bin/ft2-clone";
+  };
 
   home.sessionVariables = {
     DSSI_PATH = "$HOME/.dssi:$HOME/.nix-profile/lib/dssi:/run/current-system/sw/lib/dssi";
