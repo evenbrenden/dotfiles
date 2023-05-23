@@ -16,15 +16,9 @@
       "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
       "VeraCrypt/Favorite Volumes.xml".source = ./dotfiles/veracrypt-favorite-volumes.xml;
     };
-    desktopEntries = {
-      ft2-clone = {
-        name = "FT2 clone";
-        exec = "ft2-clone";
-      };
-      spotify = {
-        name = "Spotify";
-        exec = "spotify --force-device-scale-factor=1.5";
-      };
+    desktopEntries.spotify = {
+      name = "Spotify";
+      exec = "${pkgs.spotify}/bin/spotify --force-device-scale-factor=1.5";
     };
   };
 
@@ -84,7 +78,6 @@
         slack
         smartmontools
         snes9x-gtk
-        spotify
         standardnotes
         transmission-gtk
         tree
