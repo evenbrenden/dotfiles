@@ -16,9 +16,15 @@
       "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
       "VeraCrypt/Favorite Volumes.xml".source = ./dotfiles/veracrypt-favorite-volumes.xml;
     };
-    desktopEntries.spotify = {
-      name = "Spotify";
-      exec = "spotify --force-device-scale-factor=1.5";
+    desktopEntries = {
+      ft2-clone = {
+        name = "FT2 clone";
+        exec = "ft2-clone";
+      };
+      spotify = {
+        name = "Spotify";
+        exec = "spotify --force-device-scale-factor=1.5";
+      };
     };
   };
 
