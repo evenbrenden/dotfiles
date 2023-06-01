@@ -1,7 +1,6 @@
 { pkgs, dpi }:
 
 {
-  hardware.video.hidpi.enable = true;
   services.xserver = {
     displayManager = {
       sessionCommands = let

@@ -65,10 +65,7 @@ function SetupLSP(key_opts)
     local lspconfig = require 'lspconfig'
     lspconfig.hls.setup {on_attach = on_attach}
     lspconfig.idris2_lsp.setup {on_attach = on_attach} -- https://github.com/claymager/idris2-pkgs
-    lspconfig.metals.setup {on_attach = on_attach}
-    lspconfig.nil_ls.setup {on_attach = on_attach}
-    lspconfig.pylsp.setup {on_attach = on_attach}
-    lspconfig.sumneko_lua.setup {
+    lspconfig.lua_ls.setup {
         on_attach = on_attach,
         settings = {
             Lua = {
@@ -78,6 +75,9 @@ function SetupLSP(key_opts)
             }
         }
     }
+    lspconfig.metals.setup {on_attach = on_attach}
+    lspconfig.nil_ls.setup {on_attach = on_attach}
+    lspconfig.pylsp.setup {on_attach = on_attach}
     lspconfig.tsserver.setup {
         on_attach = on_attach,
         cmd = {

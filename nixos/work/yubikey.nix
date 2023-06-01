@@ -2,7 +2,7 @@
 
 { pkgs, ... }: {
 
-  environment.systemPackages = [ pkgs.yubioath-desktop ];
+  environment.systemPackages = [ pkgs.yubioath-flutter ];
 
   services = {
     pcscd.enable = true;

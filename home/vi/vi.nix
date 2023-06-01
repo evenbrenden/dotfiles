@@ -20,10 +20,10 @@
         git-gutter = [ git ];
         lsp = [
           haskell-language-server
+          lua-language-server
           metals
           nil
           python39Packages.python-lsp-server
-          sumneko-lua-language-server
           nodePackages.typescript
           nodePackages.typescript-language-server
         ];

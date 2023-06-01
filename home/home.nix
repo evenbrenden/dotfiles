@@ -23,14 +23,8 @@
   };
 
   # Programs
-  imports = [ ./alacritty.nix ./bash.nix ./daw.nix ./git.nix ./i3/i3.nix ./mimeapps.nix ./parcellite.nix ./vi/vi.nix ];
-  nixpkgs.overlays = with pkgs; [
-    # https://github.com/NixOS/nixpkgs/pull/182069#issuecomment-1213432500
-    (self: super: {
-      firefox = super.firefox.overrideAttrs (old: { libs = old.libs + ":" + lib.makeLibraryPath [ pkgs.nss_latest ]; });
-    })
-    (import ./metals.nix)
-  ];
+  imports = [ ./alacritty.nix ./bash.nix ./daw.nix ./git.nix ./i3/i3.nix ./mimeapps.nix ./vi/vi.nix ];
+  nixpkgs.overlays = [ (import ./metals.nix) ];
   programs = {
     direnv = {
       enable = true;
@@ -89,7 +83,6 @@
     in programming ++ miscellaneous;
 
   # Services
-  disabledModules = [ "services/parcellite.nix" ];
   services = {
     dunst = {
       enable = true;
