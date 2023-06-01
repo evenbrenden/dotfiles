@@ -66,6 +66,9 @@ augroup END
 ]])
 vim.g.WMGraphviz_output = 'svg'
 
+-- Idris2
+vim.cmd('autocmd FileType idris2 setlocal tabstop=4 shiftwidth=4')
+
 -- Hoogle
 vim.api.nvim_set_keymap('n', '<LocalLeader>h',
                         ':silent !xdg-open https://hoogle.haskell.org<CR>',
