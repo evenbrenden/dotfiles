@@ -61,8 +61,6 @@ in {
   boot = {
     extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
     kernelModules = [ "acpi_call" "amdgpu" ];
-    # For mainline support of rtw89 wireless networking
-    kernelPackages = lib.mkIf (lib.versionOlder pkgs.linux.version "5.16") pkgs.linuxPackages_latest;
     kernelParams = [ "acpi_backlight=native" "mem_sleep_default=deep" ];
     initrd = {
       luks = {
@@ -82,7 +80,6 @@ in {
   };
   environment.variables.AMD_VULKAN_ICD = lib.mkDefault "RADV";
   hardware = {
-    firmware = [ pkgs.rtw89-firmware ]; # Wireless
     opengl = {
       driSupport = lib.mkDefault true;
       driSupport32Bit = lib.mkDefault true;
