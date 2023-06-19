@@ -52,6 +52,11 @@ vim.api.nvim_set_keymap('i', '<C-o>', '<C-x><C-o>', {noremap = true}) -- omnifun
 vim.opt.termguicolors = true
 vim.cmd('colorscheme blue-mood')
 
+-- Copilot
+vim.api.nvim_set_keymap('n', '<Leader>cc', ':Copilot<CR>', key_opts)
+vim.api.nvim_set_keymap('n', '<Leader>cd', ':Copilot disable<CR>', key_opts)
+vim.api.nvim_set_keymap('n', '<Leader>ce', ':Copilot enable<CR>', key_opts)
+
 -- GitGutter
 vim.opt.updatetime = 100
 

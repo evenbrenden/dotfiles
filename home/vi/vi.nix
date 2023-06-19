@@ -8,6 +8,7 @@
     '';
     extraPackages = with pkgs;
       let
+        copilot = [ nodejs ];
         formatting = [
           haskellPackages.fourmolu
           luaformatter
@@ -28,7 +29,7 @@
           nodePackages.typescript-language-server
         ];
         telescope = [ clang fd nodejs ripgrep tree-sitter ];
-      in formatting ++ git-gutter ++ lsp ++ telescope;
+      in copilot ++ formatting ++ git-gutter ++ lsp ++ telescope;
     plugins = with pkgs.vimPlugins;
       let
         blue-mood-vim = pkgs.vimUtils.buildVimPlugin {
@@ -52,6 +53,7 @@
         telescope = [ nvim-treesitter telescope-nvim ];
       in [
         blue-mood-vim
+        copilot-vim
         idris2-vim
         kotlin-vim
         neoformat
