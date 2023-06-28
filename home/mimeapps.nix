@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   xdg.mimeApps = {
@@ -11,6 +11,11 @@
       "application/x-extension-xhtml" = [ "firefox.desktop" ];
       "application/x-extension-xht" = [ "firefox.desktop" ];
       "application/xhtml+xml" = [ "firefox.desktop" ];
+      "audio/flac" = [ "vlc.desktop" ];
+      "audio/mp4" = [ "vlc.desktop" ];
+      "audio/mpeg" = [ "vlc.desktop" ];
+      "audio/x-aiff" = [ "vlc.desktop" ];
+      "audio/x-wav" = [ "vlc.desktop" ];
       "image/gif" = [ "org.nomacs.ImageLounge.desktop" ];
       "image/jpeg" = [ "org.nomacs.ImageLounge.desktop" ];
       "image/png" = [ "org.nomacs.ImageLounge.desktop" ];
