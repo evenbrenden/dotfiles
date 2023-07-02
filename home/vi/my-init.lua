@@ -57,7 +57,7 @@ vim.api.nvim_set_keymap('n', '<Leader>cc', ':Copilot<CR>', key_opts)
 vim.api.nvim_set_keymap('n', '<Leader>cd', ':Copilot disable<CR>', key_opts)
 vim.api.nvim_set_keymap('n', '<Leader>ce', ':Copilot enable<CR>', key_opts)
 vim.g.copilot_filetypes = {markdown = false, text = false}
-vim.cmd('Copilot disable')
+vim.g.copilot_enabled = false
 
 -- GitGutter
 vim.opt.updatetime = 100
