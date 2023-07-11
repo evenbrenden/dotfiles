@@ -44,6 +44,7 @@
         abcde
         arandr
         audacity
+        binutils # For strings (to make less print binary files)
         chromium
         colorpicker
         curl
