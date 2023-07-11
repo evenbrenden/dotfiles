@@ -49,6 +49,7 @@
         curl
         unstable.discord
         dos2unix
+        file
         firefox
         fff
         flac
