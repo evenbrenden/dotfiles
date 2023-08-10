@@ -3,7 +3,12 @@
 {
   home.packages = with pkgs;
     let
-      plugins = [ carla sfizz ];
+      plugins = [
+        carla
+        (import ./greg-sullivan-e-pianos.nix { inherit pkgs; })
+        sfizz
+        (import ./virtuosity-drums.nix { inherit pkgs; })
+      ];
       programs = [ reaper ];
     in plugins ++ programs;
 
