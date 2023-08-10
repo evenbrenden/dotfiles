@@ -24,7 +24,6 @@
 
   # Programs
   imports = [ ./alacritty.nix ./bash.nix ./daw.nix ./git.nix ./i3/i3.nix ./mimeapps.nix ./vi/vi.nix ];
-  nixpkgs.overlays = [ (import ./metals.nix) ];
   programs = {
     direnv = {
       enable = true;
@@ -39,7 +38,7 @@
   };
   home.packages = with pkgs;
     let
-      programming = [ docker-compose ghc graphviz python3 shellcheck virtualenv ];
+      programming = [ docker-compose ghc graphviz metals python3 shellcheck virtualenv ];
       miscellaneous = [
         abcde
         arandr
