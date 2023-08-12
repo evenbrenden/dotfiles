@@ -7,6 +7,7 @@ let
     git-root = ''cd "$(git rev-parse --show-toplevel)"'';
     ls = "ls -Ah --color=auto";
     mv = "mv --interactive";
+    rclone-bisync = "rclone bisync --interactive";
     rclone-sync = "rclone sync --create-empty-src-dirs --interactive";
     rm = "rm --interactive=once";
     vi = "nvim";
