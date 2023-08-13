@@ -11,7 +11,7 @@ pkgs.stdenv.mkDerivation {
   };
 
   installPhase = ''
-    mkdir -p $out/lib/sfz/GregSullivan.E-Pianos
-    cp -r * $out/lib/sfz/GregSullivan.E-Pianos
+    mkdir -p $out/share/daw/sfz/GregSullivan.E-Pianos
+    cp -r * $out/share/daw/sfz/GregSullivan.E-Pianos
   '';
 }
