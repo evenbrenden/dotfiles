@@ -5,9 +5,13 @@
     let
       plugins = [
         carla
-        (import ./greg-sullivan-e-pianos.nix { inherit pkgs; })
+        (import ./fretls.nix { inherit pkgs; })
+        (import ./impulse-responses.nix { inherit pkgs; })
+        (import ./instruments.nix { inherit pkgs; })
+        (import ./midi.nix { inherit pkgs; })
         sfizz
         (import ./virtuosity-drums.nix { inherit pkgs; })
+        (import ./yamaha-tx81z-lately-bass.nix { inherit pkgs; })
       ];
       programs = [ reaper ];
     in plugins ++ programs;
