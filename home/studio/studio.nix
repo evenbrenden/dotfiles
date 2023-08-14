@@ -3,18 +3,20 @@
 {
   home.packages = with pkgs;
     let
+      locals = [
+        (import ./digital-sound-factory.nix { inherit pkgs; })
+        (import ./lexicon-lxp-1.nix { inherit pkgs; })
+        (import ./samples-from-mars.nix { inherit pkgs; })
+      ];
       plugins = [
         carla
         (import ./fretls.nix { inherit pkgs; })
-        (import ./impulse-responses.nix { inherit pkgs; })
-        (import ./instruments.nix { inherit pkgs; })
-        (import ./midi.nix { inherit pkgs; })
         sfizz
         (import ./virtuosity-drums.nix { inherit pkgs; })
         (import ./yamaha-tx81z-lately-bass.nix { inherit pkgs; })
       ];
       programs = [ reaper ];
-    in plugins ++ programs;
+    in locals ++ plugins ++ programs;
 
   xdg.desktopEntries.ft2-clone = {
     name = "Fasttracker II clone";
