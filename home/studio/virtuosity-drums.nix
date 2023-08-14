@@ -12,7 +12,7 @@ pkgs.stdenv.mkDerivation {
   };
 
   installPhase = ''
-    mkdir -p $out/share/studio/sfz/virtuosity_drums
-    cp -r * $out/share/studio/sfz/virtuosity_drums
+    mkdir -p $out/share/studio/instruments/virtuosity-drums
+    cp -r * $out/share/studio/instruments/virtuosity-drums
   '';
 }
