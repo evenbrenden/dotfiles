@@ -3,14 +3,12 @@
 {
   home.packages = with pkgs;
     let
-      locals = [
-        (import ./digital-sound-factory.nix { inherit pkgs; })
-        (import ./lexicon-lxp-1-impulse-responses.nix { inherit pkgs; })
-        (import ./samples-from-mars.nix { inherit pkgs; })
-      ];
+      locals =
+        [ (import ./digital-sound-factory.nix { inherit pkgs; }) (import ./samples-from-mars.nix { inherit pkgs; }) ];
       plugins = [
         carla
         (import ./fretls.nix { inherit pkgs; })
+        (import ./lexicon-lxp-1-impulse-responses.nix { inherit pkgs; })
         sfizz
         (import ./virtuosity-drums.nix { inherit pkgs; })
         (import ./yamaha-tx81z-lately-bass.nix { inherit pkgs; })
