@@ -23,7 +23,7 @@
   };
 
   # Programs
-  imports = [ ./alacritty.nix ./bash.nix ./daw/daw.nix ./git.nix ./i3/i3.nix ./mimeapps.nix ./vi/vi.nix ];
+  imports = [ ./alacritty.nix ./bash.nix ./studio/studio.nix ./git.nix ./i3/i3.nix ./mimeapps.nix ./vi/vi.nix ];
   programs = {
     direnv = {
       enable = true;
