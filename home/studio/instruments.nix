@@ -6,7 +6,7 @@ pkgs.stdenv.mkDerivation {
   src = pkgs.requireFile {
     name = "instruments.tar.gz";
     url = "instruments.tar.gz";
-    sha256 = "14q9z068zjrc5himd34rf93z98xbfmnszwdcmg209ghkbq4cndlj";
+    sha256 = "1hdfgr6m2bdjxmwkvk0fy92b7pjs1z5px81100qiinvg0m54wg2c";
   };
 
   installPhase = ''
