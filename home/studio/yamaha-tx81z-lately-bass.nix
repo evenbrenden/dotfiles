@@ -9,7 +9,7 @@ pkgs.stdenv.mkDerivation {
   };
 
   installPhase = ''
-    mkdir -p $out/share/studio/sfz/yamaha_tx81z_lately_bass
-    cp -r * $out/share/studio/sfz/yamaha_tx81z_lately_bass
+    mkdir -p $out/share/studio/instruments/yamaha-tx81z-lately-bass
+    cp -r * $out/share/studio/instruments/yamaha-tx81z-lately-bass
   '';
 }
