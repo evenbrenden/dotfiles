@@ -5,7 +5,7 @@
     let
       locals = [
         (import ./digital-sound-factory.nix { inherit pkgs; })
-        (import ./lexicon-lxp-1.nix { inherit pkgs; })
+        (import ./lexicon-lxp-1-impulse-responses.nix { inherit pkgs; })
         (import ./samples-from-mars.nix { inherit pkgs; })
       ];
       plugins = [
