@@ -10,7 +10,7 @@ pkgs.stdenv.mkDerivation {
   };
 
   installPhase = ''
-    mkdir -p $out/share/studio/instruments/samples-from-mars
-    cp -r * $out/share/studio/instruments/samples-from-mars
+    mkdir -p $out/share/sfz/samples-from-mars
+    cp -r * $out/share/sfz/samples-from-mars
   '';
 }
