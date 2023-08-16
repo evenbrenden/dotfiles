@@ -19,9 +19,9 @@
   # Because some types of resources do not have established environment variables (like SFZ_PATH)
   # that plugins can use to look up locations, we link them to the home directory for easy access.
   home.file = {
-    "studio/ir".source = config.lib.file.mkOutOfStoreSymlink /home/evenbrenden/.nix-profile/share/ir;
-    "studio/sf2".source = config.lib.file.mkOutOfStoreSymlink /home/evenbrenden/.nix-profile/share/sf2;
-    "studio/sfz".source = config.lib.file.mkOutOfStoreSymlink /home/evenbrenden/.nix-profile/share/sfz;
+    "studio/ir".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/ir";
+    "studio/sf2".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/sf2";
+    "studio/sfz".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/sfz";
   };
 
   xdg.desktopEntries.ft2-clone = {
