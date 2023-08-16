@@ -9,7 +9,7 @@ pkgs.stdenv.mkDerivation {
   };
 
   installPhase = ''
-    mkdir -p $out/share/studio/instruments/fretls
-    cp -r * $out/share/studio/instruments/fretls
+    mkdir -p $out/share/sfz/fretls
+    cp -r * $out/share/sfz/fretls
   '';
 }
