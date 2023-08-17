@@ -8,6 +8,7 @@
       plugins = [
         carla
         (import ./fretls.nix { inherit pkgs; })
+        (import ./instant-midi-drum-patterns.nix { inherit pkgs; })
         (import ./lexicon-lxp-1-impulse-responses.nix { inherit pkgs; })
         sfizz
         (import ./virtuosity-drums.nix { inherit pkgs; })
@@ -20,6 +21,7 @@
   # that plugins can use to look up locations, we link them to the home directory for easy access.
   home.file = {
     "studio/ir".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/ir";
+    "studio/midi".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/midi";
     "studio/sf2".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/sf2";
     "studio/sfz".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/sfz";
   };
