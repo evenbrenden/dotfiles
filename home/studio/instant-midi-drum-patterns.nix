@@ -1,3 +1,5 @@
+# https://web.archive.org/web/20190305092857/http://www.fivepinpress.com/drum_patterns.html
+
 { pkgs }:
 
 pkgs.stdenv.mkDerivation {
@@ -8,10 +10,8 @@ pkgs.stdenv.mkDerivation {
     sha256 = "sha256-mklEKxQ5DlRzuvw4QvR20SRp/zGGOUadClk1keBqdy8=";
   };
 
-  installPhase = let url = "https://web.archive.org/web/20190305092857/http://www.fivepinpress.com/drum_patterns.html";
-  in ''
+  installPhase = ''
     mkdir -p $out/share/midi/instant-midi-drum-patterns
     cp -r * $out/share/midi/instant-midi-drum-patterns
-    echo ${url} > $out/share/midi/instant-midi-drum-patterns/instant-midi-drum-patterns.url
   '';
 }
