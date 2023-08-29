@@ -162,7 +162,7 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym $mod+Shift+w exec --no-startup-id toggle-wifi
 
 # bluetooth control
-bindsym $mod+Shift+b exec --no-startup-id rfkill toggle bluetooth
+bindsym $mod+Shift+b exec --no-startup-id rfkill toggle bluetooth && pkill -x -USR1 i3status
 
 # things xrandr
 bindsym $mod+Ctrl+a exec --no-startup-id autorandr --force --change clone-largest
