@@ -28,11 +28,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1693328946,
-        "narHash": "sha256-pLP44OCBg67i4TTCi9q4bD73Ol9fBmBVogwg72Yq4HA=",
+        "lastModified": 1693383738,
+        "narHash": "sha256-TUo3Qq9ANjaD8kuTmT/eVCBtBYv0sC1ZZY5n0l0sf2s=",
         "ref": "refs/heads/main",
-        "rev": "1e8146306a2b5452e478b91d3914a0c3b7a73630",
-        "revCount": 70,
+        "rev": "fb82030201b8c9cc3dea6ce8250d493a88af2645",
+        "revCount": 72,
         "type": "git",
         "url": "https://codeberg.org/evenbrenden/i3quo"
       },
