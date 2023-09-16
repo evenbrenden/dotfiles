@@ -3,8 +3,12 @@
 {
   home.packages = with pkgs;
     let
-      locals =
-        [ (import ./digital-sound-factory.nix { inherit pkgs; }) (import ./samples-from-mars.nix { inherit pkgs; }) ];
+      locals = [
+        (import ./bolder-sounds.nix { inherit pkgs; })
+        (import ./digital-sound-factory.nix { inherit pkgs; })
+        (import ./ivy-audio.nix { inherit pkgs; })
+        (import ./samples-from-mars.nix { inherit pkgs; })
+      ];
       plugins = [
         carla
         (import ./fretls.nix { inherit pkgs; })
