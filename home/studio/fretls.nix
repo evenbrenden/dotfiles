@@ -5,7 +5,7 @@ pkgs.stdenv.mkDerivation {
 
   src = fetchGit {
     url = "git@github.com:evenbrenden/fretls.git";
-    rev = "0f00a4eaa2d6d49ca9ac96e3e80457482f158888";
+    rev = "2edb90532195140ca0d0ac0e55bf48a89e3937ee";
   };
 
   installPhase = ''
