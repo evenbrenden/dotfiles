@@ -13,6 +13,7 @@
         carla
         (import ./fretls.nix { inherit pkgs; })
         (import ./instant-midi-drum-patterns.nix { inherit pkgs; })
+        (import ./jsteeldrum.nix { inherit pkgs; })
         (import ./lexicon-lxp-1-impulse-responses.nix { inherit pkgs; })
         sfizz
         (import ./virtuosity-drums.nix { inherit pkgs; })
