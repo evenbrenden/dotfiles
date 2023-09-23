@@ -13,6 +13,6 @@ pkgs.stdenv.mkDerivation {
 
   installPhase = ''
     mkdir -p $out/share/sfz/virtuosity-drums
-    cp -r * $out/share/sfz/virtuosity-drums
+    cp -a * $out/share/sfz/virtuosity-drums
   '';
 }

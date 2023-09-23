@@ -11,6 +11,6 @@ pkgs.stdenv.mkDerivation {
 
   installPhase = ''
     mkdir -p $out/share/sfz/samples-from-mars
-    cp -r * $out/share/sfz/samples-from-mars
+    cp -a * $out/share/sfz/samples-from-mars
   '';
 }

@@ -10,6 +10,6 @@ pkgs.stdenv.mkDerivation {
 
   installPhase = ''
     mkdir -p $out/share/sfz/fretls
-    cp -r * $out/share/sfz/fretls
+    cp -a * $out/share/sfz/fretls
   '';
 }

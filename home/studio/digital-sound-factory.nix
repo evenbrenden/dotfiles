@@ -11,6 +11,6 @@ pkgs.stdenv.mkDerivation {
 
   installPhase = ''
     mkdir -p $out/share/soundfonts/digital-sound-factory
-    cp -r * $out/share/soundfonts/digital-sound-factory
+    cp -a * $out/share/soundfonts/digital-sound-factory
   '';
 }

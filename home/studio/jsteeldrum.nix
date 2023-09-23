@@ -12,6 +12,6 @@ pkgs.stdenv.mkDerivation {
 
   installPhase = ''
     mkdir -p $out/share/sfz/jsteeldrum
-    cp -r * $out/share/sfz/jsteeldrum
+    cp -a * $out/share/sfz/jsteeldrum
   '';
 }

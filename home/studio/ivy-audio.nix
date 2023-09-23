@@ -11,6 +11,6 @@ pkgs.stdenv.mkDerivation {
 
   installPhase = ''
     mkdir -p $out/share/sfz/ivy-audio
-    cp -r * $out/share/sfz/ivy-audio
+    cp -a * $out/share/sfz/ivy-audio
   '';
 }

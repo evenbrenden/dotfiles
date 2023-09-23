@@ -12,6 +12,6 @@ pkgs.stdenv.mkDerivation {
 
   installPhase = ''
     mkdir -p $out/share/midi/instant-midi-drum-patterns
-    cp -r * $out/share/midi/instant-midi-drum-patterns
+    cp -a * $out/share/midi/instant-midi-drum-patterns
   '';
 }
