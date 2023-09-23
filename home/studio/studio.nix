@@ -16,6 +16,7 @@
         (import ./jsteeldrum.nix { inherit pkgs; })
         (import ./lexicon-lxp-1-impulse-responses.nix { inherit pkgs; })
         sfizz
+        soundfont-fluid
         (import ./virtuosity-drums.nix { inherit pkgs; })
         (import ./yamaha-tx81z-lately-bass.nix { inherit pkgs; })
       ];
