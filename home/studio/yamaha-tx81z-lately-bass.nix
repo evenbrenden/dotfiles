@@ -9,6 +9,6 @@ pkgs.stdenv.mkDerivation {
   };
 
   installPhase = ''
-    install -Dm644 -t $out/share/sfz/yamaha-tx81z-lately-bass *
+    install -Dm444 -t $out/share/sfz/yamaha-tx81z-lately-bass *
   '';
 }
