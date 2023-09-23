@@ -11,6 +11,6 @@ pkgs.stdenv.mkDerivation {
 
   installPhase = ''
     mkdir -p $out/share/sfz/bolder-sounds
-    cp -r * $out/share/sfz/bolder-sounds
+    cp -a * $out/share/sfz/bolder-sounds
   '';
 }

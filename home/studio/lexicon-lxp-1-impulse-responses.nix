@@ -13,6 +13,6 @@ pkgs.stdenv.mkDerivation {
 
   installPhase = ''
     mkdir -p $out/share/ir/lexicon-lxp-1-impulse-responses
-    cp -r * $out/share/ir/lexicon-lxp-1-impulse-responses
+    cp -a * $out/share/ir/lexicon-lxp-1-impulse-responses
   '';
 }
