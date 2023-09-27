@@ -46,7 +46,7 @@
         };
         naxos = nixpkgs-stable.lib.nixosSystem {
           inherit system;
-          modules = commonModules ++ [ ./nixos/naxos/configuration.nix ];
+          modules = commonModules ++ [ ./nixos/naxos/configuration.nix musnix.nixosModules.musnix ];
         };
         work = nixpkgs-stable.lib.nixosSystem {
           inherit system;
