@@ -19,6 +19,9 @@ in {
     ./x1c7-audio-hacks.nix
   ];
 
+  # DAW
+  musnix.enable = true;
+
   # Steam
   programs.steam.enable = true;
   hardware.steam-hardware.enable = true;
