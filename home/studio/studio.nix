@@ -11,6 +11,7 @@
       ];
       plugins = [
         carla
+        (import ./dsmolken-double-bass.nix { inherit pkgs; })
         (import ./fretls.nix { inherit pkgs; })
         (import ./instant-midi-drum-patterns.nix { inherit pkgs; })
         (import ./jsteeldrum.nix { inherit pkgs; })
