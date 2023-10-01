@@ -29,7 +29,8 @@
     "studio/ir".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/ir";
     "studio/midi".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/midi";
     "studio/sfz".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/sfz";
-    "studio/soundfonts".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/soundfonts";
+    "studio/soundfonts".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/soundfonts";
   };
 
   xdg.desktopEntries.ft2-clone = {
