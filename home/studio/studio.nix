@@ -12,13 +12,14 @@
       plugins = [
         carla
         (import ./dsmolken-double-bass.nix { inherit pkgs; })
-        (import ./fretls.nix { inherit pkgs; })
+        (import ./fretls-dry.nix { inherit pkgs; })
         (import ./instant-midi-drum-patterns.nix { inherit pkgs; })
         (import ./jsteeldrum.nix { inherit pkgs; })
         (import ./lexicon-lxp-1-impulse-responses.nix { inherit pkgs; })
         sfizz
         soundfont-fluid
         (import ./virtuosity-drums.nix { inherit pkgs; })
+        (import ./wet-fretls.nix { inherit pkgs; })
         (import ./yamaha-tx81z-lately-bass.nix { inherit pkgs; })
       ];
       programs = [ reaper ];
