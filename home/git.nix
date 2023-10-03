@@ -22,6 +22,7 @@ in {
       init.defaultBranch = "main";
       pull.rebase = true;
       push.default = "simple";
+      url = { "git@github.schibsted.io:" = { insteadOf = "https://github.schibsted.io/"; }; };
     };
     ignores = let
       metals = [ ".bloop/" ".metals/" "project/.bloop/" "project/metals.sbt" "project/project/" ];
