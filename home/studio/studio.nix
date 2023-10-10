@@ -10,6 +10,7 @@
         (import ./samples-from-mars.nix { inherit pkgs; })
       ];
       plugins = [
+        (import ./ac-upright.nix { inherit pkgs; })
         carla
         (import ./dsmolken-double-bass.nix { inherit pkgs; })
         (import ./fretls-dry.nix { inherit pkgs; })
