@@ -9,7 +9,7 @@
         (import ./ivy-audio.nix { inherit pkgs; })
         (import ./samples-from-mars.nix { inherit pkgs; })
       ];
-      plugins = [
+      remotes = [
         (import ./ac-upright.nix { inherit pkgs; })
         carla
         (import ./dsmolken-double-bass.nix { inherit pkgs; })
@@ -17,14 +17,14 @@
         (import ./instant-midi-drum-patterns.nix { inherit pkgs; })
         (import ./jsteeldrum.nix { inherit pkgs; })
         (import ./lexicon-lxp-1-impulse-responses.nix { inherit pkgs; })
+        reaper
         sfizz
         soundfont-fluid
         (import ./virtuosity-drums.nix { inherit pkgs; })
         (import ./wet-fretls.nix { inherit pkgs; })
         (import ./yamaha-tx81z-lately-bass.nix { inherit pkgs; })
       ];
-      programs = [ reaper ];
-    in locals ++ plugins ++ programs;
+    in locals ++ remotes;
 
   # Because some types of resources do not have established environment variables (like SFZ_PATH)
   # that plugins can use to look up locations, we link them to the home directory for easy access.
