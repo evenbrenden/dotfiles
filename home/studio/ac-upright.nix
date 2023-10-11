@@ -5,7 +5,7 @@ pkgs.stdenv.mkDerivation {
 
   src = fetchGit {
     url = "git@github.com:evenbrenden/ac-upright.git";
-    rev = "c9f055a364fb147b65e2c22fe3656c9af5eaa66d";
+    rev = "907ee4f1dc66ee1375a7bcd7fd47f58ab2105f62";
   };
 
   installPhase = ''
