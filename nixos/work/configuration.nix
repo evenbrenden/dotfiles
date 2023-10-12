@@ -87,7 +87,7 @@ in {
       extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
     };
   };
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  services.xserver.videoDrivers = [ "amdgpu" "displaylink" ];
 
   # Misc
   system.stateVersion = "22.05";
