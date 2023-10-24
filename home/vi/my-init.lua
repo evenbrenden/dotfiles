@@ -104,7 +104,7 @@ vim.g.neoformat_enabled_python = {'autopep8'}
 vim.g.neoformat_enabled_haskell = {'ormolu'}
 vim.g.neoformat_haskell_ormolu = {
     exe = 'fourmolu',
-    args = {'--stdin-input-file', vim.fn.getcwd()},
+    args = {'--stdin-input-file', vim.api.nvim_buf_get_name(0)},
     stdin = 1
 }
 vim.g.neoformat_enabled_lua = {'luaformat'}
