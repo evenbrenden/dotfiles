@@ -55,7 +55,6 @@
         blue-mood-vim
         copilot-vim
         idris2-vim
-        kotlin-vim
         neoformat
         nvim-lspconfig
         sfz-vim
@@ -70,6 +69,7 @@
         vim-markdown
         vim-nix
         vim-pico8-syntax
+        vim-polyglot
         purescript-vim
         wmgraphviz-vim
       ] ++ telescope;
