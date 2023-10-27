@@ -9,6 +9,7 @@ vim.opt.autoindent = true
 vim.opt.backspace = 'indent,eol,start'
 vim.opt.expandtab = true
 vim.opt.foldenable = false
+vim.opt.foldlevel = 99
 vim.opt.foldmethod = 'indent'
 vim.opt.guicursor = ''
 vim.opt.hidden = true
