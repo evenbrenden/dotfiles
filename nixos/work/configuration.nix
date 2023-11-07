@@ -53,7 +53,11 @@ in {
 
   # Services
   services = {
-    clamav.daemon.enable = true;
+    # Run sudo freshclam once to update the database
+    clamav = {
+      daemon.enable = true;
+      updater.enable = true;
+    };
     fstrim.enable = lib.mkDefault true;
     gnome.gnome-keyring.enable = true; # For Appgate SDP
   };
