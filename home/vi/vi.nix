@@ -53,6 +53,7 @@
         telescope = [ nvim-treesitter telescope-nvim ];
       in [
         blue-mood-vim
+        catppuccin-nvim
         copilot-vim
         idris2-vim
         neoformat
