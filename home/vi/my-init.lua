@@ -7,6 +7,7 @@ vim.g.maplocalleader = '.'
 -- Settings
 vim.opt.autoindent = true
 vim.opt.backspace = 'indent,eol,start'
+vim.opt.cursorcolumn = 'cursorcolumn'
 vim.opt.expandtab = true
 vim.opt.foldenable = false
 vim.opt.foldlevel = 99
