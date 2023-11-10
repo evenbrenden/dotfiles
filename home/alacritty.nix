@@ -1,15 +1,17 @@
 { config, pkgs, ... }:
 
 let
-  blue-mood = builtins.fetchGit {
-    url = "git@codeberg.org:evenbrenden/blue-mood-alacritty.git";
-    rev = "ea964a846560fe44da85ab4c4c50da63588c08fb";
+  alacritty-theme = pkgs.fetchFromGitHub {
+    owner = "alacritty";
+    repo = "alacritty-theme";
+    rev = "808b81b2e88884e8eca5d951b89f54983fa6c237";
+    sha256 = "sha256-g5tM6VBPLXin5s7X0PpzWOOGTEwHpVUurWOPqM/O13A=";
   };
 in {
   programs.alacritty = {
     enable = true;
     settings = {
-      import = [ "${blue-mood}/blue-mood.yml" ];
+      import = [ "${alacritty-theme}/themes/alabaster.yaml" ];
       font = {
         normal = { family = "DejaVu Sans Mono"; };
         size = 12.0;

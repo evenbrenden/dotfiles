@@ -53,7 +53,7 @@ vim.api.nvim_set_keymap('i', '<C-o>', '<C-x><C-o>', {noremap = true}) -- omnifun
 
 -- Colors
 vim.opt.termguicolors = true
-vim.cmd('colorscheme blue-mood')
+vim.cmd('colorscheme alabaster')
 
 -- Copilot
 vim.api.nvim_set_keymap('n', '<Leader>cc', ':Copilot<CR>', key_opts)
