@@ -32,13 +32,13 @@
       in copilot ++ formatting ++ git-gutter ++ lsp ++ telescope;
     plugins = with pkgs.vimPlugins;
       let
-        blue-mood-vim = pkgs.vimUtils.buildVimPlugin {
-          name = "blue-mood-vim";
-          src = pkgs.fetchFromGitHub {
-            owner = "evenbrenden";
-            repo = "blue-mood-vim";
-            rev = "57fa7d9e0f11b78179e59b27a89ccdf63e158e67";
-            sha256 = "sha256-C5u5M2aihTKpJO7u+AusouuoVT8sI4omtml2cKjomNQ=";
+        alabaster-nvim = pkgs.vimUtils.buildVimPlugin {
+          name = "alabaster.nvim";
+          src = pkgs.fetchFromSourcehut {
+            owner = "~p00f";
+            repo = "alabaster.nvim";
+            rev = "49864f478a2d33fdea93ca3523c475a7cc54b168";
+            sha256 = "sha256-qEeY6uCbWxStrbAt3ADliVbOELyuuY4GwHkmsQMkfHM=";
           };
         };
         sfz-vim = pkgs.vimUtils.buildVimPlugin {
@@ -52,7 +52,7 @@
         };
         telescope = [ nvim-treesitter telescope-nvim ];
       in [
-        blue-mood-vim
+        alabaster-nvim
         copilot-vim
         idris2-vim
         neoformat
