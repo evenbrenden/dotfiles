@@ -4,6 +4,6 @@ pkgs.writeShellApplication {
   name = "refresh-wallpaper";
   runtimeInputs = with pkgs; [ hsetroot ];
   text = ''
-    hsetroot -cover ${./henri-matisse-les-codomas.jpeg}
+    hsetroot -alpha 96 -cover ${./henri-rosseau-le-reve.jpeg}
   '';
 }
