@@ -1,14 +1,14 @@
 { pkgs }:
 let
-  # https://trisquel.info/en/forum/old-fashioned-tiled-wallpaper
-  awesome_bg_0 = builtins.fetchurl {
-    url = "https://trisquel.info/files/awesome_bg_0.png";
-    sha256 = "04jszqp8g63s7dm6k07j8plq4dx5c3cv6rp3xzx5ihxhl433jc9k";
+  # https://unsplash.com/photos/green-trees-9HDfRHhCxME
+  green-trees = builtins.fetchurl {
+    url = "https://images.unsplash.com/photo-1492741428243-892c600f7dbc";
+    sha256 = "0zzrk7m5a9gjdgm35icnddli8g7i6cnwcvpwnv54f9wfpnviins9";
   };
 in pkgs.writeShellApplication {
   name = "refresh-wallpaper";
   runtimeInputs = with pkgs; [ hsetroot ];
   text = ''
-    hsetroot -alpha 64 -tile ${awesome_bg_0}
+    hsetroot -alpha 128 -cover ${green-trees}
   '';
 }
