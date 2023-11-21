@@ -5,6 +5,6 @@ pkgs.writeShellApplication {
   name = "refresh-wallpaper";
   runtimeInputs = with pkgs; [ hsetroot ];
   text = ''
-    hsetroot -add '#8B108B' -add '#8B4D10' -gradient 45
+    hsetroot -add '#8B108B' -add '#8B4D10' -gradient 0
   '';
 }
