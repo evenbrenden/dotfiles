@@ -1,14 +1,10 @@
 { pkgs }:
-let
-  # https://unsplash.com/photos/green-trees-9HDfRHhCxME
-  green-trees = builtins.fetchurl {
-    url = "https://images.unsplash.com/photo-1492741428243-892c600f7dbc";
-    sha256 = "0zzrk7m5a9gjdgm35icnddli8g7i6cnwcvpwnv54f9wfpnviins9";
-  };
-in pkgs.writeShellApplication {
+
+# Tetradic colors #104E8B #8B108B #8B4D10 #118B10
+pkgs.writeShellApplication {
   name = "refresh-wallpaper";
   runtimeInputs = with pkgs; [ hsetroot ];
   text = ''
-    hsetroot -alpha 128 -cover ${green-trees}
+    hsetroot -add '#8B108B' -add '#8B4D10' -gradient 45
   '';
 }
