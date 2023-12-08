@@ -12,16 +12,17 @@
     musnix.inputs.nixpkgs.follows = "nixpkgs-stable";
     i3quo.url = "git+https://codeberg.org/evenbrenden/i3quo";
     i3quo.inputs.nixpkgs.follows = "nixpkgs-stable";
+    attic.url = "github:zhaofengli/attic";
   };
 
-  outputs = { nixpkgs-stable, nixpkgs-unstable, home-manager, musnix, i3quo, ... }:
+  outputs = { nixpkgs-stable, nixpkgs-unstable, home-manager, musnix, i3quo, attic, ... }:
     let
       system = "x86_64-linux";
       # https://discourse.nixos.org/t/using-nixpkgs-legacypackages-system-vs-import/17462/3
       pkgs = import nixpkgs-stable {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ i3quo.overlay overlay-unstable ];
+        overlays = [ i3quo.overlay overlay-unstable attic.overlays.default ];
       };
       overlay-unstable = final: prev: {
         unstable = import nixpkgs-unstable {
