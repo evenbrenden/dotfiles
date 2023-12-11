@@ -22,7 +22,7 @@
       pkgs = import nixpkgs-stable {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ i3quo.overlay overlay-unstable attic.overlays.default ];
+        overlays = common-overlays;
       };
       overlay-unstable = final: prev: {
         unstable = import nixpkgs-unstable {
@@ -30,6 +30,7 @@
           config.allowUnfree = true;
         };
       };
+      common-overlays = [ i3quo.overlay overlay-unstable attic.overlays.default ];
       # https://discourse.nixos.org/t/nix-run-refuses-to-evaluate-unfree-packages-even-though-allowunfree-true-in-my-config/13653/5
       nix-settings = {
         nix = {
@@ -39,7 +40,7 @@
       };
     in {
       # sudo nixos-rebuild switch --flake .#[configuration]
-      nixosConfigurations = let commonModules = [ nix-settings { nixpkgs.pkgs = pkgs; } ];
+      nixosConfigurations = let commonModules = [ nix-settings { nixpkgs.overlays = common-overlays; } ];
       in {
         gaucho = nixpkgs-stable.lib.nixosSystem {
           inherit system;
