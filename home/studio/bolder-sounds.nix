@@ -6,7 +6,7 @@ pkgs.stdenv.mkDerivation {
   src = pkgs.requireFile {
     name = "bolder-sounds.tar.gz";
     url = "bolder-sounds.tar.gz";
-    sha256 = "15hdsl2wq8a4rcx28ylsvw4sz7fd959x4q4n9fn7crxcfr4w8pw7";
+    sha256 = "0p93l3nls8x8a70b5g6fpsrki8f12xdblvrp6fhzjss6ps57harb";
   };
 
   installPhase = ''
