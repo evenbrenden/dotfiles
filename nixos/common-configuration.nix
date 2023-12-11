@@ -14,7 +14,6 @@
     openssh.enable = false;
     udisks2.enable = true;
   };
-  nixpkgs.overlays = [ (import ./i3.nix) ];
 
   # For Chromecast to work (https://github.com/NixOS/nixpkgs/issues/49630)
   # -With Chromium, run: chromium --load-media-router-component-extension=1
@@ -52,7 +51,7 @@
 
   # Misc
   fonts = {
-    enableDefaultFonts = true;
+    enableDefaultPackages = true;
     fontconfig.allowBitmaps = false; # Fixes some blocky fonts in Firefox
   };
   networking.firewall.enable = true;
