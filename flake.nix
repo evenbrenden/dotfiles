@@ -4,9 +4,9 @@
   # nix flake update
   inputs = {
     # nix flake lock --update-input [input]
-    nixpkgs-stable.url = "nixpkgs/nixos-23.05";
+    nixpkgs-stable.url = "nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "nixpkgs/nixpkgs-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-23.05";
+    home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-stable";
     musnix.url = "github:musnix/musnix";
     musnix.inputs.nixpkgs.follows = "nixpkgs-stable";
