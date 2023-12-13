@@ -75,7 +75,7 @@
         p7zip
         pandoc
         pavucontrol
-        (import ./wallpaper/refresh-wallpaper.nix { inherit pkgs; })
+        (import ./refresh-wallpaper.nix { inherit pkgs; })
         rclone
         unstable.signal-desktop
         simplescreenrecorder
