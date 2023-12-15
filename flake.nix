@@ -67,16 +67,7 @@
       # home-manager switch --flake .#[username]
       homeConfigurations.evenbrenden = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [
-          {
-            home = rec {
-              username = "evenbrenden";
-              homeDirectory = "/home/${username}";
-              stateVersion = "22.05";
-            };
-          }
-          ./home/home.nix
-        ];
+        modules = [ ./home/home.nix ];
       };
     };
 }

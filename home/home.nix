@@ -1,6 +1,12 @@
 { pkgs, ... }:
 
 {
+  # User
+  home = {
+    username = "evenbrenden";
+    homeDirectory = "/home/evenbrenden";
+  };
+
   # Dotfiles
   home.file = {
     ".abcde.conf".source = ./dotfiles/abcde.conf;
@@ -116,6 +122,7 @@
   };
 
   # Misc
+  home.stateVersion = "22.05";
   nixpkgs.config.allowUnfree = true;
   xdg.enable = true;
 }
