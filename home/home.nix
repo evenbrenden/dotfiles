@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Dotfiles
@@ -9,7 +9,6 @@
     ".ssr/settings.conf".source = ./dotfiles/ssr.conf;
   };
   xdg = {
-    enable = true;
     configFile = {
       "autorandr/postswitch".source = ./dotfiles/autorandr-postswitch;
       "fourmolu.yaml".source = ./dotfiles/fourmolu.yaml;
@@ -17,22 +16,10 @@
       "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
       "VeraCrypt/Favorite Volumes.xml".source = ./dotfiles/veracrypt-favorite-volumes.xml;
     };
-    desktopEntries.spotify = {
-      name = "Spotify";
-      exec = "${pkgs.spotify}/bin/spotify --force-device-scale-factor=1.5";
-    };
   };
 
   # Programs
-  imports = [ ./alacritty.nix ./bash.nix ./studio/studio.nix ./git.nix ./i3/i3.nix ./mimeapps.nix ./vi/vi.nix ];
-  nixpkgs.overlays = with pkgs;
-    [
-      # https://github.com/NixOS/nixpkgs/pull/182069#issuecomment-1213432500
-      (self: super: {
-        firefox =
-          super.firefox.overrideAttrs (old: { libs = old.libs + ":" + lib.makeLibraryPath [ pkgs.nss_latest ]; });
-      })
-    ];
+  imports = [ ./alacritty.nix ./bash.nix ./git.nix ./i3/i3.nix ./mimeapps.nix ./studio/studio.nix ./vi/vi.nix ];
   programs = {
     direnv = {
       enable = true;
@@ -91,6 +78,10 @@
         xclip
       ];
     in programming ++ miscellaneous;
+  xdg.desktopEntries.spotify = {
+    name = "Spotify";
+    exec = "${pkgs.spotify}/bin/spotify --force-device-scale-factor=1.5";
+  };
 
   # Services
   services = {
@@ -126,4 +117,5 @@
 
   # Misc
   nixpkgs.config.allowUnfree = true;
+  xdg.enable = true;
 }
