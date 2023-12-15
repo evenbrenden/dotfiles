@@ -48,7 +48,7 @@
         };
       };
     in {
-      # sudo nixos-rebuild switch --flake .#[configuration]
+      # sudo -EH nixos-rebuild switch --flake .#[configuration]
       nixosConfigurations = let commonModules = [ nix-settings { nixpkgs.overlays = common-overlays; } ];
       in {
         gaucho = nixpkgs-stable.lib.nixosSystem {
