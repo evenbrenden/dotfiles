@@ -30,7 +30,16 @@
           config.allowUnfree = true;
         };
       };
-      common-overlays = [ i3quo.overlay overlay-unstable attic.overlays.default ];
+      common-overlays = [
+        i3quo.overlay
+        overlay-unstable
+        attic.overlays.default
+        # https://github.com/NixOS/nixpkgs/pull/182069#issuecomment-1213432500
+        (self: super: {
+          firefox = super.firefox.overrideAttrs
+            (old: { libs = old.libs + ":" + pkgs.lib.makeLibraryPath [ pkgs.nss_latest ]; });
+        })
+      ];
       # https://discourse.nixos.org/t/nix-run-refuses-to-evaluate-unfree-packages-even-though-allowunfree-true-in-my-config/13653/5
       nix-settings = {
         nix = {
