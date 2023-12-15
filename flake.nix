@@ -49,7 +49,17 @@
       };
     in {
       # sudo -EH nixos-rebuild switch --flake .#[configuration]
-      nixosConfigurations = let commonModules = [ nix-settings { nixpkgs.overlays = common-overlays; } ];
+      nixosConfigurations = let
+        commonModules = [
+          nix-settings
+          { nixpkgs.overlays = common-overlays; }
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.evenbrenden = import ./home/home.nix;
+          }
+        ];
       in {
         gaucho = nixpkgs-stable.lib.nixosSystem {
           inherit system;
@@ -63,11 +73,6 @@
           inherit system;
           modules = commonModules ++ [ ./nixos/work/configuration.nix ];
         };
-      };
-      # home-manager switch --flake .#[username]
-      homeConfigurations.evenbrenden = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ ./home/home.nix ];
       };
     };
 }
