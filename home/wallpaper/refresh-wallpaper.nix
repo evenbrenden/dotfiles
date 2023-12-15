@@ -1,28 +1,18 @@
 { pkgs }:
 
 let
-  math-is-universal = pkgs.stdenv.mkDerivation {
-    name = "math-is-universal";
-    src = pkgs.fetchurl {
-      url = "https://i.imgur.com/FYxA2.jpeg";
-      sha256 = "sha256-+dWII8TNDqWXkgAkSCqSFM/Sppu4JpEyFZrTDYxkdDo=";
-    };
-    unpackPhase = ''
-      cp -a $src input.jpeg
-    '';
-    buildInputs = [ pkgs.imagemagick ];
-    buildPhase = ''
-      convert -bordercolor '#37201C' -border 84 -resize 50% input.jpeg output.jpeg
-    '';
-    installPhase = ''
-      mkdir -p $out
-      cp -a output.jpeg $out/math-is-universal.jpeg
-    '';
+  narcissus = pkgs.fetchurl {
+    url = "https://elemmental.com/wp-content/uploads/2018/12/Andy-Dixon-Narcissus-Painting-139-X-80-2018.jpg";
+    sha256 = "sha256-NbDYibYjSq3u2z7206H2Rl4W/DOcKLuLhz00PEMgwbo=";
+  };
+  the-witchs-broom = pkgs.fetchurl {
+    url = "https://jimstar11.com/NGC6960_Bicolor4.jpg";
+    sha256 = "sha256-eZbTyC1JzE7kQ0ngNRYjrznOLeCCBlcXsFq0omJ8C3s=";
   };
 in pkgs.writeShellApplication {
   name = "refresh-wallpaper";
   runtimeInputs = with pkgs; [ hsetroot ];
   text = ''
-    hsetroot -solid '#265F64' -center ${math-is-universal}/math-is-universal.jpeg
+    hsetroot -cover ${the-witchs-broom} -center ${narcissus}
   '';
 }
