@@ -40,10 +40,10 @@
           attic.overlays.default
         ];
       };
-      home-manager-config-module = {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.users.evenbrenden = import ./home/home.nix;
+      home-manager-config-module.home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        users.evenbrenden = import ./home/home.nix;
       };
       common-modules =
         [ nix-config-module nixpkgs-overlays-module home-manager.nixosModules.home-manager home-manager-config-module ];
