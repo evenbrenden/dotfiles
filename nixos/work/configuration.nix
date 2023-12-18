@@ -47,23 +47,23 @@ in {
     hostName = "${hostname}";
     hosts = {
       "10.227.2.5" = [
-        "e-000b-europe-north1-c-gje0qo.europe-north1.gcp.glb.confluent.cloud"
-        "e-000b.europe-north1-c.gje0qo.europe-north1.gcp.glb.confluent.cloud"
-        "e-000d-europe-north1-c-gje0qo.europe-north1.gcp.glb.confluent.cloud"
-        "e-000d.europe-north1-c.gje0qo.europe-north1.gcp.glb.confluent.cloud"
+        "lkc-19xox3-000b-europe-north1-c-gje0qo.europe-north1.gcp.glb.confluent.cloud"
+        "lkc-19xox3-000b.europe-north1-c.gje0qo.europe-north1.gcp.glb.confluent.cloud"
+        "lkc-19xox3-000d-europe-north1-c-gje0qo.europe-north1.gcp.glb.confluent.cloud"
+        "lkc-19xox3-000d.europe-north1-c.gje0qo.europe-north1.gcp.glb.confluent.cloud"
       ];
       "10.227.2.6" = [
-        "e-000c-europe-north1-b-gje0qo.europe-north1.gcp.glb.confluent.cloud"
-        "e-000c.europe-north1-b.gje0qo.europe-north1.gcp.glb.confluent.cloud"
-        "e-000e-europe-north1-b-gje0qo.europe-north1.gcp.glb.confluent.cloud"
-        "e-000e.europe-north1-b.gje0qo.europe-north1.gcp.glb.confluent.cloud"
+        "lkc-19xox3-000e-europe-north1-b-gje0qo.europe-north1.gcp.glb.confluent.cloud"
+        "lkc-19xox3-000e.europe-north1-b.gje0qo.europe-north1.gcp.glb.confluent.cloud"
+        "lkc-19xox3-000c-europe-north1-b-gje0qo.europe-north1.gcp.glb.confluent.cloud"
+        "lkc-19xox3-000c.europe-north1-b.gje0qo.europe-north1.gcp.glb.confluent.cloud"
       ];
       "10.227.2.7" = [
-        "e-0010-europe-north1-a-gje0qo.europe-north1.gcp.glb.confluent.cloud"
-        "e-0010.europe-north1-a.gje0qo.europe-north1.gcp.glb.confluent.cloud"
-        "e-000f-europe-north1-a-gje0qo.europe-north1.gcp.glb.confluent.cloud"
-        "e-000f.europe-north1-a.gje0qo.europe-north1.gcp.glb.confluent.cloud"
         "lkc-19xox3-gje0qo.europe-north1.gcp.glb.confluent.cloud"
+        "lkc-19xox3-0010-europe-north1-a-gje0qo.europe-north1.gcp.glb.confluent.cloud"
+        "lkc-19xox3-0010.europe-north1-a.gje0qo.europe-north1.gcp.glb.confluent.cloud"
+        "lkc-19xox3-000f-europe-north1-a-gje0qo.europe-north1.gcp.glb.confluent.cloud"
+        "lkc-19xox3-000f.europe-north1-a.gje0qo.europe-north1.gcp.glb.confluent.cloud"
       ];
       "127.0.0.1" = [ "local.finn.no" ];
     };
