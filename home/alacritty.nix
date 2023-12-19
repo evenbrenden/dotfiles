@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 let
   blue-mood = builtins.fetchGit {
     url = "git@codeberg.org:evenbrenden/blue-mood-alacritty.git";
