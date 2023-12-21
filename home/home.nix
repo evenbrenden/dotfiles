@@ -4,7 +4,7 @@
   # User
   home = {
     username = "evenbrenden";
-    homeDirectory = "/home/evenbrenden";
+    homeDirectory = "/home/${config.home.username}";
   };
 
   # Dotfiles
