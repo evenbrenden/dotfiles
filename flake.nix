@@ -13,9 +13,10 @@
     i3quo.url = "git+https://codeberg.org/evenbrenden/i3quo";
     i3quo.inputs.nixpkgs.follows = "nixpkgs-stable";
     attic.url = "github:zhaofengli/attic";
+    sops-nix.url = "github:Mic92/sops-nix";
   };
 
-  outputs = { nixpkgs-stable, nixpkgs-unstable, home-manager, musnix, i3quo, attic, ... }:
+  outputs = { nixpkgs-stable, nixpkgs-unstable, home-manager, musnix, i3quo, attic, sops-nix, ... }:
     let
       nix-config-module = {
         nix = {
@@ -44,6 +45,7 @@
         useGlobalPkgs = true;
         useUserPackages = true;
         users.evenbrenden = import ./home/home.nix;
+        extraSpecialArgs = { sops-nix = sops-nix.homeManagerModules.sops; };
       };
       common-modules =
         [ nix-config-module nixpkgs-overlays-module home-manager.nixosModules.home-manager home-manager-config-module ];
