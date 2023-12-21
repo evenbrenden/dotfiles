@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, sops-nix, ... }:
 
 {
   # User
@@ -25,7 +25,17 @@
   };
 
   # Programs
-  imports = [ ./alacritty.nix ./bash.nix ./git.nix ./i3/i3.nix ./mimeapps.nix ./studio/studio.nix ./vi/vi.nix ];
+  imports = [
+    ./alacritty.nix
+    ./bash.nix
+    ./git.nix
+    ./i3/i3.nix
+    ./mimeapps.nix
+    sops-nix
+    ./ssh.nix
+    ./studio/studio.nix
+    ./vi/vi.nix
+  ];
   programs = {
     direnv = {
       enable = true;
@@ -43,6 +53,7 @@
       programming = [ docker-compose ghc graphviz metals python3 shellcheck virtualenv ];
       miscellaneous = [
         abcde
+        age
         arandr
         audacity
         binutils # For strings (to make less print binary files)
@@ -75,6 +86,7 @@
         slack
         smartmontools
         snes9x-gtk
+        sops
         standardnotes
         transmission-gtk
         tree
@@ -118,6 +130,16 @@
         Description = "Home Manager System Tray";
         Requires = [ "graphical-session-pre.target" ];
       };
+    };
+  };
+
+  # SOPS
+  sops = {
+    age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt"; # Need this or will silently fail
+    defaultSopsFile = ../secrets/secrets.yaml;
+    secrets = {
+      codeberg-private-key.path = "${config.home.homeDirectory}/.ssh/codeberg-private-key";
+      github-private-key.path = "${config.home.homeDirectory}/.ssh/github-private-key";
     };
   };
 
