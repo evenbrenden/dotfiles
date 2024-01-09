@@ -49,6 +49,12 @@
     };
   };
 
+  # AV (run sudo freshclam once to update the database)
+  services.clamav = {
+    daemon.enable = true;
+    updater.enable = true;
+  };
+
   # Misc
   fonts = {
     enableDefaultPackages = true;
