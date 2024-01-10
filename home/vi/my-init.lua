@@ -13,6 +13,7 @@ vim.opt.foldlevel = 99
 vim.opt.foldmethod = 'indent'
 vim.opt.guicursor = ''
 vim.opt.hidden = true
+vim.opt.history = 10000
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.spell = false
