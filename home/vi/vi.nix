@@ -50,7 +50,10 @@
             sha256 = "0brk6847n8wd8zb57wp7wjxyc7i3r0q29riv8ppy39j5lpdsbbss";
           };
         };
-        telescope = [ nvim-treesitter telescope-nvim ];
+        telescope = [
+          nvim-treesitter # https://github.com/nvim-treesitter/nvim-treesitter/issues/3092
+          telescope-nvim
+        ];
       in [
         blue-mood-vim
         copilot-vim
