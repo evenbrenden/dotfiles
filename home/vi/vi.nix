@@ -50,10 +50,7 @@
             sha256 = "0brk6847n8wd8zb57wp7wjxyc7i3r0q29riv8ppy39j5lpdsbbss";
           };
         };
-        telescope = [
-          nvim-treesitter # https://github.com/nvim-treesitter/nvim-treesitter/issues/3092
-          telescope-nvim
-        ];
+        telescope = [ nvim-treesitter telescope-nvim ];
       in [
         blue-mood-vim
         copilot-vim
@@ -77,6 +74,15 @@
         wmgraphviz-vim
       ] ++ telescope;
   };
-  xdg.configFile."nvim/lua/my-init.lua".source = ./my-init.lua;
-  xdg.configFile."nvim/lua/my-lsp.lua".source = ./my-lsp.lua;
+  xdg.configFile = {
+    "nvim/lua/my-init.lua".source = ./my-init.lua;
+    "nvim/lua/my-lsp.lua".source = ./my-lsp.lua;
+    # https://discourse.nixos.org/t/conflicts-between-treesitter-withallgrammars-and-builtin-neovim-parsers-lua-c/33536/3
+    "nvim/parser".source = "${
+        pkgs.symlinkJoin {
+          name = "treesitter-parsers";
+          paths = (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: with plugins; [ c lua query ])).dependencies;
+        }
+      }/parser";
+  };
 }
