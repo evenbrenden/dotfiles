@@ -9,7 +9,7 @@ in {
     settings = {
       import = [ "${blue-mood}/blue-mood.yml" ];
       font = {
-        normal = { family = "DejaVu Sans Mono"; };
+        family = "DejaVu Sans Mono";
         size = 12.0;
       };
     };
