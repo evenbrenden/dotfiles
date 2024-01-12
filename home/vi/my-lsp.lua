@@ -85,4 +85,5 @@ function SetupLSP(key_opts)
             'tsserver'
         }
     }
+    lspconfig.yamlls.setup {}
 end

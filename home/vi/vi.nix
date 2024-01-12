@@ -27,6 +27,7 @@
           python39Packages.python-lsp-server
           nodePackages.typescript
           nodePackages.typescript-language-server
+          yaml-language-server
         ];
         telescope = [ clang fd nodejs ripgrep tree-sitter ];
       in copilot ++ formatting ++ git-gutter ++ lsp ++ telescope;
