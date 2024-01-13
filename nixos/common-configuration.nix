@@ -59,6 +59,7 @@
   fonts = {
     enableDefaultPackages = true;
     fontconfig.allowBitmaps = false; # Fixes some blocky fonts in Firefox
+    packages = [ pkgs.dejavu_fonts ];
   };
   networking.firewall.enable = true;
   nix = {
