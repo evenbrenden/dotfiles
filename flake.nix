@@ -3,7 +3,7 @@
 
   # nix flake update
   inputs = {
-    # nix flake lock --update-input [input]
+    # nix flake lock --update-input <input>
     nixpkgs-stable.url = "nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "nixpkgs/nixpkgs-unstable";
     home-manager.url = "github:nix-community/home-manager/release-23.11";
@@ -51,7 +51,7 @@
         [ nix-config-module nixpkgs-overlays-module home-manager.nixosModules.home-manager home-manager-config-module ];
       system = "x86_64-linux";
     in {
-      # sudo -EH nixos-rebuild switch --flake .#[configuration]
+      # sudo -u <user> nixos-rebuild switch --flake .#<configuration>
       nixosConfigurations = {
         gaucho = nixpkgs-stable.lib.nixosSystem {
           inherit system;
