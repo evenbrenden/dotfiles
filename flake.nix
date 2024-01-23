@@ -51,7 +51,7 @@
         [ nix-config-module nixpkgs-overlays-module home-manager.nixosModules.home-manager home-manager-config-module ];
       system = "x86_64-linux";
     in {
-      # sudo -u <user> nixos-rebuild switch --flake .#<configuration>
+      # sudo -u <username> nixos-rebuild switch --flake .#<configuration>
       nixosConfigurations = {
         gaucho = nixpkgs-stable.lib.nixosSystem {
           inherit system;
