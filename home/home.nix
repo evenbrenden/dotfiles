@@ -92,6 +92,7 @@
         vlc
         whatsapp-for-linux
         xclip
+        (import ./x-www-browser.nix { inherit pkgs; })
       ];
     in programming ++ miscellaneous;
   xdg.desktopEntries.spotify = {
