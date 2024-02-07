@@ -44,10 +44,6 @@
     };
     home-manager.enable = true;
     man.enable = false;
-    vscode = {
-      enable = true;
-      mutableExtensionsDir = true;
-    };
   };
   home.packages = with pkgs;
     let
