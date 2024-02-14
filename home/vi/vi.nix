@@ -55,6 +55,7 @@
       in [
         blue-mood-vim
         copilot-vim
+        hurl
         idris2-vim
         neoformat
         nvim-lspconfig
