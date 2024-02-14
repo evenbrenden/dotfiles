@@ -47,8 +47,17 @@
   };
   home.packages = with pkgs;
     let
-      programming =
-        [ docker-compose (import ./fmtall.nix { inherit pkgs; }) ghc graphviz metals python3 shellcheck virtualenv ];
+      programming = [
+        docker-compose
+        (import ./fmtall.nix { inherit pkgs; })
+        ghc
+        graphviz
+        hurl
+        metals
+        python3
+        shellcheck
+        virtualenv
+      ];
       miscellaneous = [
         abcde
         age
