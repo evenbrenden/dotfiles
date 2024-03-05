@@ -18,7 +18,7 @@
     configFile = {
       "autorandr/postswitch".source = ./dotfiles/autorandr-postswitch;
       "fourmolu.yaml".source = ./dotfiles/fourmolu.yaml;
-      "ghostwriter/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
+      "kde.org/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
       "parcellite/parcelliterc".source = ./dotfiles/parcelliterc;
       "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
       "VeraCrypt/Favorite Volumes.xml".source = ./dotfiles/veracrypt-favorite-volumes.xml;
