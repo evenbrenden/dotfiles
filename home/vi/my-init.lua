@@ -145,5 +145,8 @@ augroup END
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 
+-- https://superuser.com/questions/1642954/how-to-start-vim-with-a-clean-jumplist
+vim.cmd('autocmd VimEnter * :clearjumps')
+
 require 'my-lsp'
 SetupLSP(key_opts)
