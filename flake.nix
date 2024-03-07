@@ -36,6 +36,12 @@
             # https://github.com/NixOS/nixpkgs/pull/182069#issuecomment-1213432500
             firefox = prev.firefox.overrideAttrs
               (old: { libs = old.libs + ":" + prev.lib.makeLibraryPath [ prev.nss_latest ]; });
+            sof-firmware = with prev;
+              import ./nixos/naxos/sof-firmware.nix {
+                inherit fetchurl;
+                inherit lib;
+                inherit stdenvNoCC;
+              };
           })
           i3quo.overlay
           attic.overlays.default
