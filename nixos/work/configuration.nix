@@ -31,7 +31,6 @@ in {
     nodejs
     nodePackages.pnpm
     sbt
-    vault
     yarn
     xmlformat
   ];
