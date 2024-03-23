@@ -8,7 +8,7 @@ font pango:monospace 12
 bindsym $mod+Return exec alacritty --working-directory "$(xcwd)"
 
 # dmenu launcher
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -sb #007755'
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -fn 12 -sb #007755'
 
 # use mouse+$mod to move (left-click) or resize (right-click) floating windows
 floating_modifier $mod
