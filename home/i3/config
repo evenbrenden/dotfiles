@@ -2,13 +2,13 @@
 set $mod Mod4
 
 # font for all i3 things
-font pango:monospace 12
+font pango:DejaVu Sans Mono 12
 
 # terminal launcher
 bindsym $mod+Return exec alacritty --working-directory "$(xcwd)"
 
 # dmenu launcher
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -fn Monospace-12 -sb #007755'
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -fn DejaVuSansMono-12 -sb #007755'
 
 # use mouse+$mod to move (left-click) or resize (right-click) floating windows
 floating_modifier $mod
