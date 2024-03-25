@@ -80,10 +80,7 @@ function SetupLSP(key_opts)
     lspconfig.pylsp.setup {on_attach = on_attach}
     lspconfig.tsserver.setup {
         on_attach = on_attach,
-        cmd = {
-            'typescript-language-server', '--stdio', '--tsserver-path',
-            'tsserver'
-        }
+        cmd = {'typescript-language-server', '--stdio'}
     }
     lspconfig.yamlls.setup {}
 end
