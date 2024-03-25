@@ -1,14 +1,14 @@
 { pkgs }:
 
 let
-  water-lillies = pkgs.fetchurl {
-    url = "https://upload.wikimedia.org/wikipedia/commons/6/64/Claude_Monet_-_Water_Lilies,_1917-1919.JPG";
-    sha256 = "sha256-Q80IpSUFGWFagCIYpzeYz48MEN5yLdLvvPFljXzqL9o=";
+  world-map = pkgs.fetchurl {
+    url = "https://www.surfertoday.com/images/stories/political-world-map.jpg";
+    sha256 = "sha256-Weg/3pCT+rZEGTJL6D8xStxyIVzv20O+P22aMI+A89g=";
   };
 in pkgs.writeShellApplication {
   name = "refresh-wallpaper";
   runtimeInputs = with pkgs; [ hsetroot ];
   text = ''
-    hsetroot -cover ${water-lillies}
+    hsetroot -cover ${world-map}
   '';
 }
