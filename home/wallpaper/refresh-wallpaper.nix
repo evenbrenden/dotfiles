@@ -1,14 +1,14 @@
 { pkgs }:
 
 let
-  landscape-drawing = pkgs.fetchurl {
-    url = "https://i.etsystatic.com/27770216/r/il/5eb29a/3176801816/il_fullxfull.3176801816_r95l.jpg";
-    sha256 = "sha256-WPpbBW7NwxBOKg93ofqOfEOprD1SvxChKZvzkcTqHC8=";
+  water-lillies = pkgs.fetchurl {
+    url = "https://upload.wikimedia.org/wikipedia/commons/6/64/Claude_Monet_-_Water_Lilies,_1917-1919.JPG";
+    sha256 = "sha256-Q80IpSUFGWFagCIYpzeYz48MEN5yLdLvvPFljXzqL9o=";
   };
 in pkgs.writeShellApplication {
   name = "refresh-wallpaper";
   runtimeInputs = with pkgs; [ hsetroot ];
   text = ''
-    hsetroot -fill ${landscape-drawing}
+    hsetroot -cover ${water-lillies}
   '';
 }
