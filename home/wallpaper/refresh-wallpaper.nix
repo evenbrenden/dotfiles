@@ -1,14 +1,14 @@
 { pkgs }:
 
-let
-  world-map = pkgs.fetchurl {
-    url = "https://www.surfertoday.com/images/stories/political-world-map.jpg";
-    sha256 = "sha256-Weg/3pCT+rZEGTJL6D8xStxyIVzv20O+P22aMI+A89g=";
-  };
-in pkgs.writeShellApplication {
+pkgs.writeShellApplication {
   name = "refresh-wallpaper";
   runtimeInputs = with pkgs; [ hsetroot ];
   text = ''
-    hsetroot -cover ${world-map}
+    current_hour=$(date +%H)
+    if [ "$current_hour" -ge 6 ] && [ "$current_hour" -lt 18 ]; then
+      hsetroot -add '#FA2AB4' -add '#FDE507' -gradient 30
+    else
+      hsetroot -add '#069AFC' -add '#D00E91' -gradient 30
+    fi
   '';
 }
