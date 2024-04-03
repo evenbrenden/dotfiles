@@ -1,0 +1,25 @@
+From 0462dfbe1503d0383051113d147c0afd3086492f Mon Sep 17 00:00:00 2001
+From: Even Brenden <evenbrenden@users.noreply.github.com>
+Date: Wed, 3 Apr 2024 14:46:12 +0200
+Subject: [PATCH 1/1] Linux: Include basic Norwegian
+
+---
+ linux/no.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/linux/no.txt b/linux/no.txt
+index f5f4a5b..21889db 100644
+--- a/linux/no.txt
++++ b/linux/no.txt
+@@ -3,6 +3,8 @@
+ partial alphanumeric_keys
+ xkb_symbols "norwerty" {
+ 
++    include "no(basic)"
++
+     name[Group1]="Norwegian - Norwerty";
+ 
+     key <TLDE>  { [     grave,	asciitilde, section, onehalf ]	};
+-- 
+2.42.0
+

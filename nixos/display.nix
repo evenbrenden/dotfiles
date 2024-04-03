@@ -30,10 +30,11 @@
         '';
       };
       enable = true;
-      extraLayouts.norwerty = {
+      extraLayouts.norwerty = let norwerty = import ./norwerty/norwerty.nix { inherit pkgs; };
+      in {
         description = "Norwerty";
         languages = [ "no" ];
-        symbolsFile = ./norwerty/norwerty;
+        symbolsFile = "${norwerty}/share/X11/xkb/symbols/norwerty";
       };
       layout = "us";
       libinput = {
