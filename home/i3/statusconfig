@@ -23,28 +23,28 @@ order += "tztime local"
 
 volume master {
     format = "%volume"
-    format_muted = "mute"
+    format_muted = "Mute"
 }
 
 wireless _first_ {
     format_up = "%essid (%quality)"
-    format_down = "down"
+    format_down = "Down"
     format_quality = "%d%s"
 }
 
 ethernet _first_ {
     format_up = "%ip (%speed)"
-    format_down = "down"
+    format_down = "Down"
 }
 
 battery all {
     format = "%status %percentage %remaining"
-    format_down = ""
+    format_down = "No battery"
     integer_battery_capacity = true
-    status_chr = "charging"
-    status_bat = "battery"
-    status_unk = "unknown"
-    status_full = "full"
+    status_chr = "Charging"
+    status_bat = "Battery"
+    status_unk = "Unknown"
+    status_full = "Full"
 }
 
 disk "/" {
@@ -61,5 +61,5 @@ load {
 }
 
 tztime local {
-    format = "week %V %Y-%m-%d %H:%M:%S"
+    format = "Week %V %Y-%m-%d %H:%M:%S"
 }
