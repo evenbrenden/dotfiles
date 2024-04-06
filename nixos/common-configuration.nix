@@ -11,9 +11,11 @@
     fprintd.enable = false;
     fwupd.enable = true;
     gnome.at-spi2-core.enable = true; # https://github.com/NixOS/nixpkgs/issues/16327
+    gnome.gnome-keyring.enable = true; # For Appgate SDP
     openssh.enable = false;
     udisks2.enable = true;
   };
+  programs.appgate-sdp.enable = true;
 
   # For Chromecast to work (https://github.com/NixOS/nixpkgs/issues/49630)
   # -With Chromium, run: chromium --load-media-router-component-extension=1

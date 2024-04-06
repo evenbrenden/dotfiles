@@ -34,7 +34,6 @@ in {
     yarn
     xmlformat
   ];
-  programs.appgate-sdp.enable = true;
 
   # User
   users.users.${username} = {
@@ -72,10 +71,7 @@ in {
   };
 
   # Services
-  services = {
-    fstrim.enable = lib.mkDefault true;
-    gnome.gnome-keyring.enable = true; # For Appgate SDP
-  };
+  services.fstrim.enable = lib.mkDefault true;
 
   # Boot and hardware
   boot = {
