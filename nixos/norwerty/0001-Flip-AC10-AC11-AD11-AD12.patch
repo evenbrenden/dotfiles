@@ -1,0 +1,47 @@
+From 802172b7a20e70fbf59b8d37e1c6b42008fadb59 Mon Sep 17 00:00:00 2001
+From: Even Brenden <evenbrenden@users.noreply.github.com>
+Date: Sun, 7 Apr 2024 12:12:20 +0200
+Subject: [PATCH 1/1] Flip AC10 + AC11 + AD11 + AD12
+
+---
+ linux/no.txt | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/linux/no.txt b/linux/no.txt
+index f5f4a5b..5c45594 100644
+--- a/linux/no.txt
++++ b/linux/no.txt
+@@ -3,6 +3,8 @@
+ partial alphanumeric_keys
+ xkb_symbols "norwerty" {
+ 
++    include "no(basic)"
++
+     name[Group1]="Norwegian - Norwerty";
+ 
+     key <TLDE>  { [     grave,	asciitilde, section, onehalf ]	};
+@@ -29,8 +31,8 @@ xkb_symbols "norwerty" {
+     key <AD08>	{ [         i,          I 		     ]	};
+     key <AD09>	{ [         o,          O,  braceleft	     ]	};
+     key <AD10>	{ [         p,          P,  braceright 	     ]	};
+-    key <AD11>	{ [	    aring,  Aring,  bracketleft,  braceleft ]  };
+-    key <AD12>	{ [dead_acute, dead_grave,  bracketright,  braceright ]  };
++    key <AD11>	{ [ bracketleft, braceleft, aring, Aring ]  };
++    key <AD12>	{ [ bracketright, braceright, dead_acute, dead_grave ]  };
+     key <AC01>	{ [         a,          A   		     ]	};
+     key <AC02>	{ [         s,          S 		     ]	};
+     key <AC03>	{ [         d,          D 		     ]	};
+@@ -40,8 +42,8 @@ xkb_symbols "norwerty" {
+     key <AC07>	{ [         j,          J 		     ]	};
+     key <AC08>	{ [         k,          K 		     ]	};
+     key <AC09>	{ [         l,          L 		     ]	};
+-    key <AC10>	{ [    oslash,   Ooblique,     semicolon,  colon ]  };
+-    key <AC11>	{ [        ae,         AE,    apostrophe,  quotedbl ]  };
++    key <AC10>	{ [ semicolon, colon, oslash, Ooblique ]  };
++    key <AC11>	{ [ apostrophe, quotedbl, ae, AE ]  };
+  
+     key <BKSL>	{ [ backslash,        bar		     ]	};
+     key <AB01>	{ [         z,          Z 		     ]	};
+-- 
+2.42.0
+
