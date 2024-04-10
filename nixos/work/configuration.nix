@@ -62,7 +62,7 @@ in {
         "lkc-19xox3-000f-europe-north1-a-gje0qo.europe-north1.gcp.glb.confluent.cloud"
         "lkc-19xox3-000f.europe-north1-a.gje0qo.europe-north1.gcp.glb.confluent.cloud"
       ];
-      "127.0.0.1" = [ "local.finn.no" ];
+      "127.0.0.1" = [ "local.finn.no" "local.tori.fi" ];
     };
   };
   services.xserver.displayManager.autoLogin = {
