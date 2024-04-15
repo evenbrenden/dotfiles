@@ -36,7 +36,7 @@
         languages = [ "no" ];
         symbolsFile = "${norwerty}/share/X11/xkb/symbols/norwerty";
       };
-      layout = "norwerty";
+      layout = "us";
       libinput = {
         enable = true;
         touchpad.tapping = true;
