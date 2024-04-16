@@ -53,7 +53,6 @@
         ghc
         graphviz
         hurl
-        metals
         python3
         shellcheck
         virtualenv

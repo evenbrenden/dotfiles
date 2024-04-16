@@ -22,7 +22,7 @@
         lsp = [
           haskell-language-server
           lua-language-server
-          metals
+          unstable.metals
           nil
           python39Packages.python-lsp-server
           nodePackages.typescript
