@@ -52,7 +52,7 @@
     };
   };
 
-  # AV (run sudo freshclam once to update the database (https://github.com/NixOS/nixpkgs/pull/270290))
+  # AV
   services.clamav = {
     daemon.enable = true;
     updater.enable = true;
