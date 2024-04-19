@@ -2,6 +2,7 @@
 
 let
   aliases = {
+    clamdscan = "clamdscan --fdpass";
     cp = "cp --interactive";
     diff = "diff --color=auto";
     git-root = ''cd "$(git rev-parse --show-toplevel)"'';
