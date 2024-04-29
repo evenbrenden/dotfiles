@@ -47,16 +47,8 @@
   };
   home.packages = with pkgs;
     let
-      programming = [
-        docker-compose
-        (import ./fmtall.nix { inherit pkgs; })
-        ghc
-        graphviz
-        hurl
-        python3
-        shellcheck
-        virtualenv
-      ];
+      programming =
+        [ docker-compose (import ./fmtall.nix { inherit pkgs; }) ghc graphviz hurl python3 shellcheck virtualenv ];
       miscellaneous = [
         abcde
         age
@@ -102,7 +94,22 @@
         xclip
         (import ./x-www-browser.nix { inherit pkgs; })
       ];
-    in programming ++ miscellaneous;
+      work = [
+        attic-client
+        avro-tools
+        dbeaver
+        (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+        jdk
+        jetbrains.idea-community
+        k9s
+        kubectl
+        nodejs
+        nodePackages.pnpm
+        sbt
+        yarn
+        xmlformat
+      ];
+    in programming ++ miscellaneous ++ work;
   xdg.desktopEntries.spotify = {
     name = "Spotify";
     exec = "${pkgs.spotify}/bin/spotify --force-device-scale-factor=1.5";
