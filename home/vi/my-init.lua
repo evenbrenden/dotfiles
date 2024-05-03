@@ -53,6 +53,7 @@ vim.opt.completeopt = 'menu'
 vim.api.nvim_set_keymap('i', '<C-o>', '<C-x><C-o>', {noremap = true}) -- omnifunc
 
 -- Colors
+vim.opt.background = 'light'
 vim.opt.termguicolors = true
 vim.cmd('colorscheme alabaster')
 
