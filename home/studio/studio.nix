@@ -29,11 +29,14 @@
   # Because some types of resources do not have established environment variables (like SFZ_PATH)
   # that plugins can use to look up locations, we link them to the home directory for easy access.
   home.file = {
-    "studio/ir".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/ir";
-    "studio/midi".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/midi";
-    "studio/sfz".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/sfz";
+    "studio/ir".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/ir"; # Broken!
+    "studio/midi".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/midi"; # Broken!
+    "studio/sfz".source =
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/sfz"; # Broken!
     "studio/soundfonts".source =
-      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/soundfonts";
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-profile/share/soundfonts"; # Broken!
   };
 
   xdg.desktopEntries.ft2-clone = {
@@ -42,12 +45,12 @@
   };
 
   home.sessionVariables = {
-    DSSI_PATH = "$HOME/.dssi:$HOME/.nix-profile/lib/dssi:/run/current-system/sw/lib/dssi";
-    LADSPA_PATH = "$HOME/.ladspa:$HOME/.nix-profile/lib/ladspa:/run/current-system/sw/lib/ladspa";
-    LV2_PATH = "$HOME/.lv2:$HOME/.nix-profile/lib/lv2:/run/current-system/sw/lib/lv2";
-    LXVST_PATH = "$HOME/.lxvst:$HOME/.nix-profile/lib/lxvst:/run/current-system/sw/lib/lxvst";
+    DSSI_PATH = "$HOME/.dssi:/etc/profiles/per-user/evenbrenden/lib/dssi:/run/current-system/sw/lib/dssi";
+    LADSPA_PATH = "$HOME/.ladspa:/etc/profiles/per-user/evenbrenden/lib/ladspa:/run/current-system/sw/lib/ladspa";
+    LV2_PATH = "$HOME/.lv2:/etc/profiles/per-user/evenbrenden/lib/lv2:/run/current-system/sw/lib/lv2";
+    LXVST_PATH = "$HOME/.lxvst:/etc/profiles/per-user/evenbrenden/lib/lxvst:/run/current-system/sw/lib/lxvst";
     UHE_RT_PRIO = 64; # For u-he plugins
-    VST_PATH = "$HOME/.vst:$HOME/.nix-profile/lib/vst:/run/current-system/sw/lib/vst";
-    VST3_PATH = "$HOME/.vst3:$HOME/.nix-profile/lib/vst3:/run/current-system/sw/lib/vst3";
+    VST_PATH = "$HOME/.vst:/etc/profiles/per-user/evenbrenden/lib/vst:/run/current-system/sw/lib/vst";
+    VST3_PATH = "$HOME/.vst3:/etc/profiles/per-user/evenbrenden/lib/vst3:/run/current-system/sw/lib/vst3";
   };
 }
