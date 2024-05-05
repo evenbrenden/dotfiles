@@ -43,8 +43,8 @@
 
   home.sessionVariables = {
     LV2_PATH = builtins.concatStringsSep ":" [ "$HOME/.lv2" "/etc/profiles/per-user/evenbrenden/lib/lv2" ];
+    UHE_RT_PRIO = 64; # For u-he plugins
     VST_PATH = builtins.concatStringsSep ":" [ "$HOME/.vst" "/etc/profiles/per-user/evenbrenden/lib/vst" ];
     VST3_PATH = builtins.concatStringsSep ":" [ "$HOME/.vst3" "/etc/profiles/per-user/evenbrenden/lib/vst3" ];
-    UHE_RT_PRIO = 64; # For u-he plugins
   };
 }
