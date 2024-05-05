@@ -59,6 +59,7 @@
   };
 
   # Misc
+  environment.pathsToLink = [ "/share/ir" "/share/midi" "/share/sfz" "/share/soundfonts" ];
   fonts = {
     enableDefaultPackages = true;
     fontconfig.allowBitmaps = false; # Fixes some blocky fonts in Firefox
