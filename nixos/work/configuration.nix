@@ -14,7 +14,6 @@ in {
       inherit pkgs;
       inherit username;
     })
-    ./yubikey.nix
     ./hardware-configuration.nix
   ];
 
@@ -23,31 +22,7 @@ in {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
   };
-  networking = {
-    hostName = "${hostname}";
-    hosts = {
-      "10.227.2.5" = [
-        "lkc-19xox3-000b-europe-north1-c-gje0qo.europe-north1.gcp.glb.confluent.cloud"
-        "lkc-19xox3-000b.europe-north1-c.gje0qo.europe-north1.gcp.glb.confluent.cloud"
-        "lkc-19xox3-000d-europe-north1-c-gje0qo.europe-north1.gcp.glb.confluent.cloud"
-        "lkc-19xox3-000d.europe-north1-c.gje0qo.europe-north1.gcp.glb.confluent.cloud"
-      ];
-      "10.227.2.6" = [
-        "lkc-19xox3-000e-europe-north1-b-gje0qo.europe-north1.gcp.glb.confluent.cloud"
-        "lkc-19xox3-000e.europe-north1-b.gje0qo.europe-north1.gcp.glb.confluent.cloud"
-        "lkc-19xox3-000c-europe-north1-b-gje0qo.europe-north1.gcp.glb.confluent.cloud"
-        "lkc-19xox3-000c.europe-north1-b.gje0qo.europe-north1.gcp.glb.confluent.cloud"
-      ];
-      "10.227.2.7" = [
-        "lkc-19xox3-gje0qo.europe-north1.gcp.glb.confluent.cloud"
-        "lkc-19xox3-0010-europe-north1-a-gje0qo.europe-north1.gcp.glb.confluent.cloud"
-        "lkc-19xox3-0010.europe-north1-a.gje0qo.europe-north1.gcp.glb.confluent.cloud"
-        "lkc-19xox3-000f-europe-north1-a-gje0qo.europe-north1.gcp.glb.confluent.cloud"
-        "lkc-19xox3-000f.europe-north1-a.gje0qo.europe-north1.gcp.glb.confluent.cloud"
-      ];
-      "127.0.0.1" = [ "local.finn.no" "local.tori.fi" ];
-    };
-  };
+  networking.hostName = "${hostname}";
   services.xserver.displayManager.autoLogin = {
     enable = true;
     user = "${username}";
