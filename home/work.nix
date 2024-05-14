@@ -6,7 +6,7 @@
     avro-tools
     dbeaver
     (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
-    jdk
+    jdk21
     jetbrains.idea-community
     k9s
     kubectl
