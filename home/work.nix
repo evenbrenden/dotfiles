@@ -10,9 +10,10 @@
     jetbrains.idea-community
     k9s
     kubectl
+    (maven.override { jdk = jdk21; })
     nodejs
     nodePackages.pnpm
-    sbt
+    (sbt.override { jre = jdk21; })
     yarn
     xmlformat
   ];
