@@ -92,7 +92,7 @@ vim.api.nvim_set_keymap('n', 'gh',
 vim.opt.concealcursor = 'nc'
 vim.opt.conceallevel = 2
 ToggleConcealLevel = function()
-    if vim.opt.conceallevel:get() == 0 then
+    if vim.opt.conceallevel:get() == 0 then -- Ignoring undefined field warning
         vim.opt.conceallevel = 2
     else
         vim.opt.conceallevel = 0

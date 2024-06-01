@@ -78,6 +78,10 @@
     };
   };
   nixpkgs.config.allowUnfree = true;
+  services.libinput = {
+    enable = true;
+    touchpad.tapping = true;
+  };
   time.timeZone = "Europe/Amsterdam";
   users.users.root.initialHashedPassword =
     "$6$v.fIgZCsq1yKDoVm$LZqzWgHJk9BmP3tmOhyVPsVbMhQzzAEOluMe6cV37YvYEPZwU0yIiH1i9lG1L9f68CyY9TXMfzfHV81X80RGR1";

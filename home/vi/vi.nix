@@ -12,9 +12,9 @@
         formatting = [
           haskellPackages.fourmolu
           luaformatter
-          nixfmt
+          nixfmt-classic
           nodePackages.prettier
-          python39Packages.autopep8
+          python312Packages.autopep8
           scalafmt
           shfmt
         ];
@@ -24,7 +24,7 @@
           lua-language-server
           unstable.metals
           nil
-          python39Packages.python-lsp-server
+          python312Packages.python-lsp-server
           nodePackages.typescript
           nodePackages.typescript-language-server
           yaml-language-server
@@ -60,7 +60,7 @@
         neoformat
         nvim-lspconfig
         sfz-vim
-        suda-vim
+        vim-suda
         tcomment_vim
         vim-airline
         vim-auto-save

@@ -23,7 +23,7 @@ in {
     extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
   };
   networking.hostName = "${hostname}";
-  services.xserver.displayManager.autoLogin = {
+  services.displayManager.autoLogin = {
     enable = true;
     user = "${username}";
   };
