@@ -95,7 +95,6 @@
         smartmontools
         snes9x-gtk
         sops
-        standardnotes
         transmission-gtk
         tree
         veracrypt

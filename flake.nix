@@ -4,9 +4,9 @@
   # nix flake update
   inputs = {
     # nix flake lock --update-input <input>
-    nixpkgs-stable.url = "nixpkgs/nixos-23.11";
+    nixpkgs-stable.url = "nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "nixpkgs/nixpkgs-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-23.11";
+    home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-stable";
     musnix.url = "github:musnix/musnix";
     musnix.inputs.nixpkgs.follows = "nixpkgs-stable";
@@ -20,9 +20,11 @@
     let
       nix-config-module = {
         nix = {
-          # https://discourse.nixos.org/t/nix-run-refuses-to-evaluate-unfree-packages-even-though-allowunfree-true-in-my-config/13653/5
-          nixPath = [ "nixpkgs=${nixpkgs-unstable}" ];
-          registry.nixpkgs.flake = nixpkgs-unstable;
+          nixPath = [ "nixpkgs=${nixpkgs-stable}" "unstable=${nixpkgs-unstable}" ];
+          registry = {
+            # nixpkgs.flake = nixpkgs-stable; is already set
+            unstable.flake = nixpkgs-unstable;
+          };
         };
       };
       nixpkgs-overlays-module = {
@@ -33,9 +35,6 @@
               inherit system;
               config.allowUnfree = true;
             };
-            # https://github.com/NixOS/nixpkgs/pull/182069#issuecomment-1213432500
-            firefox = prev.firefox.overrideAttrs
-              (old: { libs = old.libs + ":" + prev.lib.makeLibraryPath [ prev.nss_latest ]; });
             sof-firmware = with prev;
               import ./nixos/naxos/sof-firmware.nix {
                 inherit fetchurl;

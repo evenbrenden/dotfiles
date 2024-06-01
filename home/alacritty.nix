@@ -4,14 +4,14 @@ let
   alacritty-theme = pkgs.fetchFromGitHub {
     owner = "alacritty";
     repo = "alacritty-theme";
-    rev = "808b81b2e88884e8eca5d951b89f54983fa6c237";
-    sha256 = "sha256-g5tM6VBPLXin5s7X0PpzWOOGTEwHpVUurWOPqM/O13A=";
+    rev = "94e1dc0b9511969a426208fbba24bd7448493785";
+    sha256 = "sha256-bPup3AKFGVuUC8CzVhWJPKphHdx0GAc62GxWsUWQ7Xk=";
   };
 in {
   programs.alacritty = {
     enable = true;
     settings = {
-      import = [ "${alacritty-theme}/themes/alabaster.yaml" ];
+      import = [ "${alacritty-theme}/themes/alabaster.toml" ];
       font = {
         size = 12.0;
         normal = {
