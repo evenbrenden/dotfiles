@@ -67,16 +67,15 @@
   };
   networking.firewall.enable = true;
   nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
     # Binary cache for haskell.nix
     settings = {
       trusted-public-keys = [ "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=" ];
       substituters = [ "https://cache.iog.io" ];
     };
-    # Enable flakes
-    package = pkgs.nixFlakes;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
   };
   nixpkgs.config.allowUnfree = true;
   time.timeZone = "Europe/Amsterdam";
