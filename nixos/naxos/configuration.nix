@@ -19,6 +19,9 @@ in {
     ./x1c7-audio-hacks.nix
   ];
 
+  # Fingerprint
+  services.fprintd.enable = true;
+
   # DAW
   musnix.enable = true;
 

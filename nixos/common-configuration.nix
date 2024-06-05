@@ -8,7 +8,6 @@
   programs.ssh.startAgent = true;
   networking.networkmanager.enable = true;
   services = {
-    fprintd.enable = false;
     fwupd.enable = true;
     gnome.at-spi2-core.enable = true; # https://github.com/NixOS/nixpkgs/issues/16327
     gnome.gnome-keyring.enable = true; # For Appgate SDP
