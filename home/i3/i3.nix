@@ -5,7 +5,6 @@
     alacritty
     autorandr
     brightnessctl
-    emote
     flameshot
     i3quo
     playerctl

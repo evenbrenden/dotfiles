@@ -29,6 +29,7 @@
   imports = [
     ./alacritty.nix
     ./bash.nix
+    ./emote.nix
     ./git.nix
     ./i3/i3.nix
     ./mimeapps.nix
