@@ -200,6 +200,3 @@ exec --no-startup-id autorandr --force --change clone-largest
 
 # disable bluetooth
 exec --no-startup-id rfkill block bluetooth
-
-# start emote
-exec --no-startup-id emote
