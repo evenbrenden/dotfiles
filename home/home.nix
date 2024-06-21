@@ -105,10 +105,6 @@
         (import ./x-www-browser.nix { inherit pkgs; })
       ];
     in programming ++ miscellaneous;
-  xdg.desktopEntries.spotify = {
-    name = "Spotify";
-    exec = "${pkgs.spotify}/bin/spotify --force-device-scale-factor=1.5";
-  };
 
   # Services
   services = {
