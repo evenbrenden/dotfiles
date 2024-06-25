@@ -15,6 +15,7 @@ in {
       inherit username;
     })
     ./hardware-configuration.nix
+    ./yubikey.nix
   ];
 
   # User
@@ -29,6 +30,7 @@ in {
   };
 
   # Services
+  services.fprintd.enable = true;
   services.fstrim.enable = lib.mkDefault true;
 
   # Boot and hardware
