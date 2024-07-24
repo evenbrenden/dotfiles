@@ -90,7 +90,7 @@
         pavucontrol
         (import ./wallpaper/refresh-wallpaper.nix { inherit pkgs; })
         rclone
-        unstable.signal-desktop
+        signal-desktop
         simplescreenrecorder
         slack
         smartmontools
