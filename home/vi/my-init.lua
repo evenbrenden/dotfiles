@@ -108,10 +108,10 @@ vim.opt.foldenable = false
 vim.api.nvim_set_keymap('n', '<LocalLeader>f', ':Neoformat<CR>', key_opts)
 vim.api.nvim_set_keymap('v', '<LocalLeader>f', ":'<,'>Neoformat<CR>", key_opts)
 vim.g.neoformat_enabled_python = {'autopep8'}
-vim.g.neoformat_enabled_haskell = {'ormolu'}
-vim.g.neoformat_haskell_ormolu = {
+vim.g.neoformat_enabled_haskell = {'fourmolu'}
+vim.g.neoformat_haskell_fourmolu = {
     exe = 'fourmolu',
-    args = {'--stdin-input-file', vim.api.nvim_buf_get_name(0)},
+    args = {'--stdin-input-file', '%:p'},
     stdin = 1
 }
 vim.g.neoformat_enabled_lua = {'luaformat'}
