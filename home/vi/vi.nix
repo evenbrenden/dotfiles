@@ -83,7 +83,8 @@
     "nvim/parser".source = "${
         pkgs.symlinkJoin {
           name = "treesitter-parsers";
-          paths = (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: with plugins; [ c lua query ])).dependencies;
+          paths = (pkgs.vimPlugins.nvim-treesitter.withPlugins
+            (plugins: with plugins; [ c lua query vim vimdoc ])).dependencies;
         }
       }/parser";
   };
