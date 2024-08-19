@@ -82,6 +82,7 @@
         irssi
         jq
         libheif
+        libnotify
         libreoffice
         nomacs
         okular
