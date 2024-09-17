@@ -30,7 +30,7 @@ let
     GIT_PS1_SHOWUNTRACKEDFILES=1
     GIT_PS1_SHOWUPSTREAM="auto"
     GIT_PS1_STATESEPARATOR=""
-    PROMPT_COMMAND='__git_ps1 "$DEFAULT_PS1" "" "$GIT_INFO"'
+    PROMPT_COMMAND='history -a; __git_ps1 "$DEFAULT_PS1" "" "$GIT_INFO"'
   '';
   shell-variables-fff = ''
     export FFF_FAV1=~/Downloads
