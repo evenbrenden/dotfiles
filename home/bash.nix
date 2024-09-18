@@ -43,13 +43,16 @@ let
     export EDITOR=nvim
     export LESS=-Ri
   '';
+  fzf = ''
+    eval "$(${pkgs.lib.getExe pkgs.fzf} --bash)"
+  '';
 in {
   programs.bash = {
     enable = true;
     historyControl = [ "erasedups" "ignoredups" "ignorespace" ];
     historyFileSize = 100000;
     historySize = 10000;
-    initExtra = builtins.concatStringsSep "\n" [ history-search prompt shell-variables-fff shell-variables-misc ];
+    initExtra = builtins.concatStringsSep "\n" [ history-search prompt shell-variables-fff shell-variables-misc fzf ];
     shellAliases = aliases;
     shellOptions = [ "histappend" ];
   };
