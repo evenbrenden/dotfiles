@@ -45,6 +45,7 @@ let
   '';
   fzf = ''
     eval "$(${pkgs.lib.getExe pkgs.fzf} --bash)"
+    export FZF_ALT_C_OPTS="--walker dir,follow"
   '';
 in {
   programs.bash = {
