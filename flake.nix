@@ -59,10 +59,6 @@
     in {
       # sudo -u <username> nixos-rebuild switch --flake .#<configuration>
       nixosConfigurations = {
-        gaucho = nixpkgs-stable.lib.nixosSystem {
-          inherit system;
-          modules = common-modules ++ [ ./nixos/gaucho/configuration.nix musnix.nixosModules.musnix ];
-        };
         naxos = nixpkgs-stable.lib.nixosSystem {
           inherit system;
           modules = common-modules ++ [ ./nixos/naxos/configuration.nix musnix.nixosModules.musnix ];
