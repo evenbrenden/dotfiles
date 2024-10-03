@@ -26,7 +26,7 @@ vim.opt.smartcase = true
 vim.opt.smarttab = true
 vim.opt.softtabstop = 0
 vim.opt.splitright = true
-vim.opt.tabstop = 8
+vim.opt.tabstop = 4
 vim.opt.wildmenu = true
 
 -- ALWAYS use the clipboard for ALL operations
