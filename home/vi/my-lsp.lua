@@ -63,7 +63,7 @@ function SetupLSP(key_opts)
                                                  {max_width = 85})
 
     local lspconfig = require 'lspconfig'
-    lspconfig.clangd.setup {}
+    lspconfig.clangd.setup {on_attach = on_attach}
     lspconfig.hls.setup {on_attach = on_attach}
     lspconfig.idris2_lsp.setup {on_attach = on_attach} -- https://github.com/claymager/idris2-pkgs
     lspconfig.lua_ls.setup {
