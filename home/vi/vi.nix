@@ -20,7 +20,7 @@
         ];
         git-gutter = [ git ];
         lsp = [
-          clang-tools
+          unstable.clang-tools
           haskell-language-server
           lua-language-server
           unstable.metals
