@@ -183,6 +183,7 @@ bindsym $mod+k exec --no-startup-id toggle-keyboard-layout
 # notifications control
 bindsym $mod+n exec --no-startup-id dunstctl set-paused toggle && pkill -x -USR1 i3status
 bindsym $mod+c exec --no-startup-id dunstctl close
+bindsym $mod+Shift+d exec --no-startup-id systemctl --user restart dunst.service
 
 # print screen
 bindsym $mod+p exec --no-startup-id flameshot gui
