@@ -35,7 +35,6 @@
               inherit system;
               config.allowUnfree = true;
             };
-            signal-desktop = import ./home/signal-desktop.nix { pkgs = prev; };
             sof-firmware = with prev;
               import ./nixos/naxos/sof-firmware.nix {
                 inherit fetchurl;
