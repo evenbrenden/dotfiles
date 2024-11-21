@@ -20,7 +20,7 @@
       '';
       displayManager.sessionCommands = let
         xresources = pkgs.writeText "Xresources" ''
-          Xcursor.size: 32
+          Xcursor.size: 48
           Xcursor.theme: Adwaita
           XTerm*faceName: DejaVu Sans Mono
           XTerm*faceSize: 12
