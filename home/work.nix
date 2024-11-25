@@ -5,7 +5,7 @@
     attic-client
     avro-tools
     dbeaver-bin
-    (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+    (unstable.google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     jdk21
     jetbrains.idea-community
     k9s
