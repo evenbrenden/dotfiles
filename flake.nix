@@ -55,7 +55,6 @@
         [ nix-config-module nixpkgs-overlays-module home-manager.nixosModules.home-manager home-manager-config-module ];
       system = "x86_64-linux";
     in {
-      # ./switch --flake .#<configuration>
       nixosConfigurations = {
         naxos = nixpkgs-stable.lib.nixosSystem {
           inherit system;
