@@ -15,7 +15,7 @@
           # This node behaves the same way (and this is the default value)
           hda-verb /dev/snd/hwC0D0 0x1a SET_PIN_WIDGET_CONTROL 0x0
         '';
-        path = [ pkgs.alsaTools ];
+        path = [ pkgs.alsa-tools ];
         after = [ "multi-user.target" "sound.target" "graphical.target" ] ++ sleep-targets;
         wantedBy = [ "sound.target" ] ++ sleep-targets;
       };

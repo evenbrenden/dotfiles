@@ -7,7 +7,7 @@
       script = ''
         amixer -c 0 set 'Auto-Mute Mode' 'Disabled'
       '';
-      path = [ pkgs.alsaUtils ];
+      path = [ pkgs.alsa-utils ];
       after = [ "multi-user.target" "sound.target" "graphical.target" ];
       wantedBy = [ "sound.target" ];
     };

@@ -2,7 +2,8 @@
 
 { pkgs, ... }: {
 
-  environment.systemPackages = [ pkgs.yubioath-flutter ];
+  # https://github.com/NixOS/nixpkgs/issues/353664
+  # environment.systemPackages = [ pkgs.yubioath-flutter ];
 
   security.pam.services = {
     login.u2fAuth = true;

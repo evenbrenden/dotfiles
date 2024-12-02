@@ -4,19 +4,18 @@
   # nix flake update
   inputs = {
     # nix flake lock --update-input <input>
-    nixpkgs-stable.url = "nixpkgs/nixos-24.05";
+    nixpkgs-stable.url = "nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "nixpkgs/nixpkgs-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-stable";
     musnix.url = "github:musnix/musnix";
     musnix.inputs.nixpkgs.follows = "nixpkgs-stable";
     i3quo.url = "git+https://codeberg.org/evenbrenden/i3quo";
     i3quo.inputs.nixpkgs.follows = "nixpkgs-stable";
-    attic.url = "github:zhaofengli/attic";
     sops-nix.url = "github:Mic92/sops-nix";
   };
 
-  outputs = { nixpkgs-stable, nixpkgs-unstable, home-manager, musnix, i3quo, attic, sops-nix, ... }:
+  outputs = { nixpkgs-stable, nixpkgs-unstable, home-manager, musnix, i3quo, sops-nix, ... }:
     let
       nix-config-module = {
         nix = {
@@ -43,7 +42,6 @@
               };
           })
           i3quo.overlay
-          attic.overlays.default
         ];
       };
       home-manager-config-module.home-manager = {
@@ -51,12 +49,13 @@
         useUserPackages = true;
         users.evenbrenden = import ./home/home.nix;
         extraSpecialArgs = { sops-nix = sops-nix.homeManagerModules.sops; };
+        backupFileExtension = "backup";
       };
       common-modules =
         [ nix-config-module nixpkgs-overlays-module home-manager.nixosModules.home-manager home-manager-config-module ];
       system = "x86_64-linux";
     in {
-      # sudo -u <username> nixos-rebuild switch --flake .#<configuration>
+      # ./switch --flake .#<configuration>
       nixosConfigurations = {
         naxos = nixpkgs-stable.lib.nixosSystem {
           inherit system;
