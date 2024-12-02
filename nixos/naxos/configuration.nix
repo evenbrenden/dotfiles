@@ -27,8 +27,10 @@ in {
 
   # Steam
   programs.steam.enable = true;
-  hardware.steam-hardware.enable = true;
-  hardware.opengl.driSupport32Bit = true;
+  hardware = {
+    steam-hardware.enable = true;
+    graphics.enable32Bit = true;
+  };
   environment.systemPackages = [ pkgs.steam-run ];
 
   # User

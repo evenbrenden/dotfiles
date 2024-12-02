@@ -10,7 +10,7 @@
     jetbrains.idea-community
     k9s
     kubectl
-    (maven.override { jdk = jdk21; })
+    (maven.override { jdk_headless = jdk21_headless; })
     nodejs
     nodePackages.pnpm
     (sbt.override { jre = jdk21; })

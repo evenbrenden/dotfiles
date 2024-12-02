@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+set -e
+
+nixos-rebuild build "$@" # sudo => no fetch private repos
+sudo nix-env --profile /nix/var/nix/profiles/system --set ./result
+sudo ./result/bin/switch-to-configuration switch

@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./display.nix ./screen-locking.nix ./work.nix ];
+  imports = [ ./display.nix ./screen-locking.nix ./sound.nix ./work.nix ];
 
   # Programs
   nixpkgs.config.chromium.enableWideVine = true;
@@ -21,19 +21,6 @@
   # -With Chromium, run: chromium --load-media-router-component-extension=1
   # -With VLC, temporarily disable firewall: systemctl stop firewall.service
   services.avahi.enable = true; # Needed for Chromium
-
-  # Sound
-  hardware = {
-    bluetooth.enable = true;
-    enableAllFirmware = true;
-    enableRedistributableFirmware = true;
-  };
-  sound.enable = true;
-  hardware.pulseaudio = {
-    enable = true;
-    package = pkgs.pulseaudio.override { bluetoothSupport = true; };
-  };
-  nixpkgs.config.pulseaudio = true; # Explicit PulseAudio support in applications
 
   # Disk and boot
   boot = {
@@ -66,7 +53,7 @@
   };
   networking.firewall.enable = true;
   nix = {
-    package = pkgs.nixFlakes;
+    package = pkgs.nixVersions.stable;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';

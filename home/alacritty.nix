@@ -11,7 +11,7 @@ in {
   programs.alacritty = {
     enable = true;
     settings = {
-      import = [ "${alacritty-theme}/themes/alabaster.toml" ];
+      general.import = [ "${alacritty-theme}/themes/alabaster.toml" ];
       font = {
         size = 12.0;
         normal = {

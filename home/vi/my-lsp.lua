@@ -79,7 +79,7 @@ function SetupLSP(key_opts)
     lspconfig.metals.setup {on_attach = on_attach}
     lspconfig.nil_ls.setup {on_attach = on_attach}
     lspconfig.pylsp.setup {on_attach = on_attach}
-    lspconfig.tsserver.setup {
+    lspconfig.ts_ls.setup {
         on_attach = on_attach,
         cmd = {'typescript-language-server', '--stdio'}
     }

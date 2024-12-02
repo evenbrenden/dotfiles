@@ -6,7 +6,8 @@
 
   # Vagrant
   boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
-  environment.systemPackages = [ pkgs.vagrant ];
+  # https://github.com/NixOS/nixpkgs/issues/348938
+  # environment.systemPackages = [ pkgs.vagrant ];
   virtualisation.libvirtd.enable = true;
 
   # Groups
