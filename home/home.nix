@@ -68,7 +68,6 @@
         audacity
         binutils # For strings (to make less print binary files)
         chromium
-        colorpicker
         curl
         unstable.discord
         dos2unix
@@ -98,12 +97,13 @@
         smartmontools
         snes9x-gtk
         sops
-        transmission-gtk
+        transmission_4-gtk
         tree
         veracrypt
         vlc
         whatsapp-for-linux
         xclip
+        xcolor
         (import ./x-www-browser.nix { inherit pkgs; })
       ];
     in programming ++ miscellaneous;
