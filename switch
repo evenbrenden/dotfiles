@@ -2,6 +2,11 @@
 
 set -e
 
-nixos-rebuild build "$@" # sudo => no fetch private repos
+if [ "$#" -ne 1 ]; then
+    echo "Usage: switch <configuration>"
+    exit 1
+fi
+
+nixos-rebuild build --flake .#"$1" # sudo => no fetch private repos
 sudo nix-env --profile /nix/var/nix/profiles/system --set ./result
 sudo ./result/bin/switch-to-configuration switch
