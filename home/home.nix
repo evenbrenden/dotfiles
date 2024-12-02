@@ -56,6 +56,7 @@
         graphviz
         haskellPackages.cabal-fmt
         hurl
+        mypy
         python3
         shellcheck
         virtualenv
