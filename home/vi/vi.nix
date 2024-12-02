@@ -25,7 +25,7 @@
           lua-language-server
           unstable.metals
           nil
-          python312Packages.python-lsp-server
+          (pkgs.python3.withPackages (pp: [ pp.pylsp-mypy pp.python-lsp-server ]))
           nodePackages.typescript
           nodePackages.typescript-language-server
           yaml-language-server
