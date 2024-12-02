@@ -12,7 +12,8 @@ function SetupLSP(key_opts)
                                 ':lua vim.diagnostic.setloclist()<CR>', key_opts)
 
         -- Note that \n has the digraph LF and is printed as ^@ in completion items
-        vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+        vim.api.nvim_buf_set_option_value(bufnr, 'omnifunc',
+                                          'v:lua.vim.lsp.omnifunc')
 
         vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD',
                                     ':lua vim.lsp.buf.declaration()<CR>',
