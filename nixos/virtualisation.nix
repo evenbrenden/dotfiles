@@ -7,7 +7,7 @@
 
     # VirtualBox
     virtualbox.host = {
-      enable = true;
+      enable = false;
       # https://discourse.nixos.org/t/virtualbox-keeps-getting-rebuilt/6612
       enableExtensionPack = true;
     };
