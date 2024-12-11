@@ -64,9 +64,12 @@
     };
   };
   nixpkgs.config.allowUnfree = true;
-  services.libinput = {
-    enable = true;
-    touchpad.tapping = true;
+  services = {
+    blueman.enable = true;
+    libinput = {
+      enable = true;
+      touchpad.tapping = true;
+    };
   };
   time.timeZone = "Europe/Amsterdam";
   users.users.root.initialHashedPassword =
