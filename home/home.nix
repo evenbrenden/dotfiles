@@ -114,7 +114,6 @@
       enable = true;
       configFile = ./dotfiles/dunstrc;
     };
-    # flameshot gui no work
     flameshot = {
       enable = true;
       settings = {
