@@ -13,6 +13,7 @@
     (maven.override { jdk_headless = jdk21_headless; })
     nodejs
     nodePackages.pnpm
+    openssl
     (sbt.override { jre = jdk21; })
     yarn
     xmlformat
