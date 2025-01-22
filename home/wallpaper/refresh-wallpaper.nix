@@ -1,7 +1,7 @@
 { pkgs }:
 
+# https://github.com/himdel/hsetroot/issues/42
 let
-  # https://github.com/himdel/hsetroot/issues/42
   the-expanding-universe = pkgs.stdenv.mkDerivation {
     name = "the-expanding-universe";
     src = null;
