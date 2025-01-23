@@ -121,7 +121,7 @@ vim.g.neoformat_enabled_scala = {'scalafmt'}
 vim.g.neoformat_enabled_sh = {'shfmt'}
 vim.g.neoformat_sh_shfmt = {
     exe = 'shfmt',
-    args = {'--case-indent', '--space-redirects'}
+    args = {'--case-indent', '--indent', '4', '--space-redirects'}
 }
 vim.g.neoformat_enabled_typescript = {'prettier'}
 
