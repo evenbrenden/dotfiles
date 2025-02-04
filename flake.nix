@@ -40,6 +40,15 @@
                 inherit lib;
                 inherit stdenvNoCC;
               };
+            # https://github.com/NixOS/nixpkgs/issues/376743
+            veracrypt = prev.veracrypt.overrideAttrs (finalAttrs: prevAttrs: rec {
+              pname = "veracrypt";
+              version = "1.26.15";
+              src = prev.fetchurl {
+                url = "https://launchpad.net/veracrypt/trunk/${version}/+download/VeraCrypt_${version}_Source.tar.bz2";
+                hash = "sha256-upcCUDDiG5sjMbfrCJcBFjwyr0t+BFNfM1uvjXSnSRY=";
+              };
+            });
           })
           i3quo.overlay
         ];
