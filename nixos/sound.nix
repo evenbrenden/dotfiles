@@ -3,7 +3,6 @@
 {
   environment.systemPackages = with pkgs; [ alsa-utils pavucontrol ];
   hardware = {
-    bluetooth.enable = true;
     enableAllFirmware = true;
     enableRedistributableFirmware = true;
     pulseaudio = {
