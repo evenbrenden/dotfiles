@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VeraCrypt>
 	<favorites>
-		<volume mountpoint="/media/ted15" readonly="0" slotnumber="1" system="0">/dev/sda1</volume>
+		<volume mountpoint="/media/drive" readonly="0" slotnumber="1" system="0">/dev/sda1</volume>
 	</favorites>
 </VeraCrypt>
