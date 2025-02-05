@@ -44,6 +44,10 @@
     updater.enable = true;
   };
 
+  # Bluetooth
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
   # Misc
   environment.pathsToLink = [ "/share/ir" "/share/midi" "/share/sfz" "/share/soundfonts" ];
   fonts = {
@@ -65,7 +69,6 @@
   };
   nixpkgs.config.allowUnfree = true;
   services = {
-    blueman.enable = true;
     libinput = {
       enable = true;
       touchpad.tapping = true;
