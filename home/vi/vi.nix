@@ -43,6 +43,16 @@
             sha256 = "sha256-qEeY6uCbWxStrbAt3ADliVbOELyuuY4GwHkmsQMkfHM=";
           };
         };
+        codecompanion-nvim = pkgs.vimUtils.buildVimPlugin {
+          pname = "codecompanion.nvim";
+          version = "v12.0.1";
+          src = pkgs.fetchFromGitHub {
+            owner = "olimorris";
+            repo = "codecompanion.nvim";
+            rev = "d8faa04af632eee5fde55bfeba689e4c0dfb997f";
+            sha256 = "sha256-eDvU8ld6IuopLNKcPoonCrqqZBO8TTEq6wuC2le1y74=";
+          };
+        };
         sfz-vim = pkgs.vimUtils.buildVimPlugin {
           name = "sfz-vim";
           src = pkgs.fetchFromGitHub {
@@ -55,6 +65,7 @@
         telescope = [ nvim-treesitter telescope-nvim ];
       in [
         alabaster-nvim
+        codecompanion-nvim
         copilot-vim
         hurl
         idris2-vim
@@ -85,7 +96,7 @@
         pkgs.symlinkJoin {
           name = "treesitter-parsers";
           paths = (pkgs.vimPlugins.nvim-treesitter.withPlugins
-            (plugins: with plugins; [ c lua query vim vimdoc ])).dependencies;
+            (plugins: with plugins; [ c lua query markdown vim vimdoc yaml ])).dependencies;
         }
       }/parser";
   };
