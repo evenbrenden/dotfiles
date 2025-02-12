@@ -58,14 +58,16 @@ vim.opt.termguicolors = true
 vim.cmd('colorscheme alabaster')
 
 -- CodeCompanion
+---@diagnostic disable-next-line: undefined-field
 require("codecompanion").setup({
     strategies = {chat = {adapter = "copilot"}, inline = {adapter = "copilot"}}
 })
+vim.api.nvim_set_keymap('n', '<Leader>ce', ':CodeCompanion /explain<CR>',
+                        key_opts) -- Line
+vim.api.nvim_set_keymap('v', '<Leader>ce', ":'<,'>CodeCompanion /explain<CR>",
+                        key_opts) -- Selection
 
 -- Copilot
-vim.api.nvim_set_keymap('n', '<Leader>cc', ':Copilot<CR>', key_opts)
-vim.api.nvim_set_keymap('n', '<Leader>cd', ':Copilot disable<CR>', key_opts)
-vim.api.nvim_set_keymap('n', '<Leader>ce', ':Copilot enable<CR>', key_opts)
 vim.g.copilot_filetypes = {markdown = false, text = false}
 
 -- GitGutter
@@ -140,8 +142,6 @@ vim.api.nvim_set_keymap('n', '<Leader>r', ':%s/\\<<C-r><C-w>\\>//g<Left><Left>',
                         key_opts)
 
 -- Telescope
-vim.api.nvim_set_keymap('n', '<Leader>c', ':Telescope codecompanion<CR>',
-                        key_opts)
 vim.api.nvim_set_keymap('n', '<Leader>f', ':Telescope find_files<CR>', key_opts)
 vim.api.nvim_set_keymap('n', '<Leader>g', ':Telescope live_grep<CR>', key_opts)
 vim.api.nvim_set_keymap('n', '<Leader>s',
