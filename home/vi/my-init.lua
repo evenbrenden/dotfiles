@@ -63,9 +63,12 @@ require("codecompanion").setup({
     strategies = {chat = {adapter = "copilot"}, inline = {adapter = "copilot"}}
 })
 vim.api.nvim_set_keymap('n', '<Leader>ce', ':CodeCompanion /explain<CR>',
-                        key_opts) -- Line
+                        key_opts)
 vim.api.nvim_set_keymap('v', '<Leader>ce', ":'<,'>CodeCompanion /explain<CR>",
-                        key_opts) -- Selection
+                        key_opts)
+vim.api.nvim_set_keymap('n', '<Leader>cf', ':CodeCompanion /fix<CR>', key_opts)
+vim.api.nvim_set_keymap('v', '<Leader>cf', ":'<,'>CodeCompanion /fix<CR>",
+                        key_opts)
 
 -- Copilot
 vim.g.copilot_filetypes = {markdown = false, text = false}
