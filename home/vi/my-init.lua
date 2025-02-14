@@ -62,12 +62,13 @@ vim.cmd('colorscheme alabaster')
 require("codecompanion").setup({
     strategies = {chat = {adapter = "copilot"}, inline = {adapter = "copilot"}}
 })
+vim.api.nvim_set_keymap('n', '<Leader>cc',
+                        ':CodeCompanionChat @full_stack_dev<CR>', key_opts)
+vim.api.nvim_set_keymap('v', '<Leader>cc',
+                        ":'<,'>CodeCompanionChat @full_stack_dev<CR>", key_opts)
 vim.api.nvim_set_keymap('n', '<Leader>ce', ':CodeCompanion /explain<CR>',
                         key_opts)
 vim.api.nvim_set_keymap('v', '<Leader>ce', ":'<,'>CodeCompanion /explain<CR>",
-                        key_opts)
-vim.api.nvim_set_keymap('n', '<Leader>cf', ':CodeCompanion /fix<CR>', key_opts)
-vim.api.nvim_set_keymap('v', '<Leader>cf', ":'<,'>CodeCompanion /fix<CR>",
                         key_opts)
 
 -- Copilot
