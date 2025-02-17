@@ -60,6 +60,15 @@ vim.cmd('colorscheme alabaster')
 -- CodeCompanion
 ---@diagnostic disable-next-line: undefined-field
 require("codecompanion").setup({
+    opts = {
+        adapters = {
+            copilot = function()
+                return require("codecompanion.adapters").extend("copilot", {
+                    schema = {model = {default = "claude-3.5-sonnet"}}
+                })
+            end
+        }
+    },
     strategies = {chat = {adapter = "copilot"}, inline = {adapter = "copilot"}}
 })
 vim.api.nvim_set_keymap('n', '<Leader>cc',
