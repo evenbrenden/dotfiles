@@ -57,28 +57,9 @@ vim.opt.background = 'light'
 vim.opt.termguicolors = true
 vim.cmd('colorscheme alabaster')
 
--- CodeCompanion
----@diagnostic disable-next-line: undefined-field
-require("codecompanion").setup({
-    opts = {
-        adapters = {
-            copilot = function()
-                return require("codecompanion.adapters").extend("copilot", {
-                    schema = {model = {default = "claude-3.5-sonnet"}}
-                })
-            end
-        }
-    },
-    strategies = {chat = {adapter = "copilot"}, inline = {adapter = "copilot"}}
-})
-vim.api.nvim_set_keymap('n', '<Leader>cc',
-                        ':CodeCompanionChat @full_stack_dev<CR>', key_opts)
-vim.api.nvim_set_keymap('v', '<Leader>cc',
-                        ":'<,'>CodeCompanionChat @full_stack_dev<CR>", key_opts)
-vim.api.nvim_set_keymap('n', '<Leader>ce', ':CodeCompanion /explain<CR>',
-                        key_opts)
-vim.api.nvim_set_keymap('v', '<Leader>ce', ":'<,'>CodeCompanion /explain<CR>",
-                        key_opts)
+-- avante.nvim
+require("avante_lib").load()
+require("avante").setup({provider = "copilot", copilot = {max_tokens = 64000}})
 
 -- Copilot
 vim.g.copilot_filetypes = {markdown = false, text = false}
