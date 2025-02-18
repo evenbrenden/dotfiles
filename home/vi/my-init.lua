@@ -57,13 +57,6 @@ vim.opt.background = 'light'
 vim.opt.termguicolors = true
 vim.cmd('colorscheme alabaster')
 
--- avante.nvim
-require("avante_lib").load()
-require("avante").setup({provider = "copilot", copilot = {max_tokens = 64000}})
-
--- Copilot
-vim.g.copilot_filetypes = {markdown = false, text = false}
-
 -- GitGutter
 vim.opt.updatetime = 100
 
@@ -158,3 +151,6 @@ vim.cmd('autocmd VimEnter * :clearjumps')
 
 require 'my-lsp'
 SetupLSP(key_opts)
+
+require 'my-aia'
+SetupAIA()
