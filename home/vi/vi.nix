@@ -55,8 +55,14 @@
         telescope = [ nvim-treesitter telescope-nvim ];
       in [
         alabaster-nvim
-        avante-nvim
-        copilot-vim
+        ({
+          plugin = avante-nvim;
+          optional = true;
+        })
+        ({
+          plugin = copilot-vim;
+          optional = true;
+        })
         hurl
         idris2-vim
         neoformat

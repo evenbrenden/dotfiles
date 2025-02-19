@@ -153,4 +153,4 @@ require 'my-lsp'
 SetupLSP(key_opts)
 
 require 'my-aia'
-SetupAIA()
+if os.getenv("NVIM_AIA") == "1" then SetupAIA() end
