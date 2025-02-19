@@ -1,4 +1,4 @@
-function SetupAIA()
+function SetupAssistants()
     -- avante.nvim
     vim.cmd.packadd("avante.nvim")
     require("avante_lib").load()

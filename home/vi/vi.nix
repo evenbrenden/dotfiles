@@ -87,7 +87,7 @@
   xdg.configFile = {
     "nvim/lua/my-init.lua".source = ./my-init.lua;
     "nvim/lua/my-lsp.lua".source = ./my-lsp.lua;
-    "nvim/lua/my-aia.lua".source = ./my-aia.lua;
+    "nvim/lua/my-assistants.lua".source = ./my-assistants.lua;
     # https://discourse.nixos.org/t/conflicts-between-treesitter-withallgrammars-and-builtin-neovim-parsers-lua-c/33536/3
     "nvim/parser".source = "${
         pkgs.symlinkJoin {
