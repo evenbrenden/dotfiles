@@ -152,5 +152,7 @@ vim.cmd('autocmd VimEnter * :clearjumps')
 require 'my-lsp'
 SetupLSP(key_opts)
 
-require 'my-aia'
-if os.getenv("NVIM_AIA") == "1" then SetupAIA() end
+if os.getenv("NVIM_ASSISTANTS") == "1" then
+    require 'my-assistants'
+    SetupAssistants()
+end
