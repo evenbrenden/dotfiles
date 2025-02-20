@@ -24,10 +24,8 @@ in {
       push.default = "simple";
       url = { "git@github.schibsted.io:" = { insteadOf = "https://github.schibsted.io/"; }; };
     };
-    ignores = let
-      metals = [ ".bloop/" ".metals/" "project/.bloop/" "project/metals.sbt" "project/project/" ];
-      lua-language-server = [ ".luarc.json" ];
-    in [ ".aider*" ".direnv/" ".envrc" "*.swp" ] ++ metals ++ lua-language-server;
+    ignores = let metals = [ ".bloop/" ".metals/" "project/.bloop/" "project/metals.sbt" "project/project/" ];
+    in [ ".aider*" ".direnv/" ".envrc" ".luarc.json" "*.swp" ] ++ metals;
     includes = [
       {
         condition = "hasconfig:remote.*.url:**/*github.com*/**";
