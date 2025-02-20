@@ -27,7 +27,7 @@ in {
     ignores = let
       metals = [ ".bloop/" ".metals/" "project/.bloop/" "project/metals.sbt" "project/project/" ];
       lua-language-server = [ ".luarc.json" ];
-    in [ ".direnv/" ".envrc" "*.swp" ] ++ metals ++ lua-language-server;
+    in [ ".aider*" ".direnv/" ".envrc" "*.swp" ] ++ metals ++ lua-language-server;
     includes = [
       {
         condition = "hasconfig:remote.*.url:**/*github.com*/**";

@@ -10,6 +10,7 @@
   # Dotfiles
   home.file = {
     ".abcde.conf".source = ./dotfiles/abcde.conf;
+    ".aider.conf.yml".source = ./dotfiles/aider.conf.yml;
     ".ghci".source = ./dotfiles/ghci;
     ".prettierrc".source = ./dotfiles/prettierrc;
     ".ssr/settings.conf".source = ./dotfiles/ssr.conf;
@@ -50,6 +51,7 @@
   home.packages = with pkgs;
     let
       programming = [
+        unstable.aider-chat
         docker-compose
         (import ./fmtall.nix { inherit pkgs; })
         ghc
