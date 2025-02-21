@@ -1,3 +1,4 @@
 gitignore: false
+model: gpt-4o
 multiline: true
 watch-files: true
