@@ -49,18 +49,6 @@
                 hash = "sha256-upcCUDDiG5sjMbfrCJcBFjwyr0t+BFNfM1uvjXSnSRY=";
               };
             });
-            vimPlugins = prev.vimPlugins // {
-              avante-nvim = final.unstable.vimPlugins.avante-nvim.overrideAttrs (finalAttrs: prevAttrs: rec {
-                pname = "avante.nvim";
-                version = "0.0.19";
-                src = prev.fetchFromGitHub {
-                  owner = "yetone";
-                  repo = "avante.nvim";
-                  tag = "v${version}";
-                  hash = "sha256-/WvkMsyhaYa3TLOg6QBVz1dvHO4vr1PdeSF7zVIOUcY=";
-                };
-              });
-            };
           })
           i3quo.overlay
         ];

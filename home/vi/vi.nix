@@ -56,10 +56,6 @@
       in [
         alabaster-nvim
         ({
-          plugin = avante-nvim;
-          optional = true;
-        })
-        ({
           plugin = copilot-vim;
           optional = true;
         })
