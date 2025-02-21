@@ -12,7 +12,7 @@ let
     rclone-sync = "rclone sync --create-empty-src-dirs --no-update-dir-modtime --interactive";
     rm = "rm --interactive=once";
     vi = "nvim";
-    via = "NVIM_ASSISTANTS=1 nvim";
+    via = "NVIM_ASSISTANTS=1 ${pkgs.lib.meta.getExe' pkgs.dotenvy "dotenvy"} nvim";
     xclip = "xclip -selection clipboard";
   };
   history-search = ''
