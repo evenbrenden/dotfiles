@@ -1,4 +1,9 @@
+auto-commits: false
+auto-lint: false
+chat-mode: ask
+dirty-commits: false
 gitignore: false
 model: gpt-4o
 multiline: true
+subtree-only: true
 watch-files: true
