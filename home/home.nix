@@ -101,7 +101,7 @@
         sops
         transmission_4-gtk
         tree
-        veracrypt
+        unstable.veracrypt
         vlc
         whatsapp-for-linux
         xclip
