@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./display.nix ./keyboard-and-mouse.nix ./screen-locking.nix ./sound.nix ./work.nix ];
+  imports = [ ./display.nix ./keyboard-and-mouse.nix ./sound.nix ./work.nix ];
 
   # Programs
   # This can be moved to home-manager
