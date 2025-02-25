@@ -1,6 +1,5 @@
 auto-commits: false
 auto-lint: false
-chat-mode: ask
 dirty-commits: false
 gitignore: false
 model: gpt-4o
