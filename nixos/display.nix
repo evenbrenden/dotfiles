@@ -25,8 +25,13 @@
           XTerm*faceName: DejaVu Sans Mono
           XTerm*faceSize: 12
         '';
+        screen-locking = ''
+          xset s off
+          xset -dpms
+        '';
       in ''
         ${pkgs.xorg.xrdb}/bin/xrdb -merge <${xresources}
+        ${screen-locking}
       '';
       enable = true;
       windowManager.i3.enable = true;
