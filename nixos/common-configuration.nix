@@ -1,19 +1,26 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./display.nix ./screen-locking.nix ./sound.nix ./work.nix ];
+  imports = [ ./display.nix ./keyboard-and-mouse.nix ./screen-locking.nix ./sound.nix ./work.nix ];
 
   # Programs
+  # This can be moved to home-manager
   programs.ssh.startAgent = true;
+
   networking.networkmanager.enable = true;
   services = {
     fwupd.enable = true;
     gnome.at-spi2-core.enable = true; # https://github.com/NixOS/nixpkgs/issues/16327
+
+    # This can be moved to home-manager
     gnome.gnome-keyring.enable = true; # For Appgate SDP
     openssh.enable = false;
+
     udisks2.enable = true;
   };
   programs.appgate-sdp.enable = true;
+
+  # This can be moved to home-manager
   environment.systemPackages = with pkgs; [ lshw pciutils ]; # Debug WLAN
 
   # For Chromecast to work (https://github.com/NixOS/nixpkgs/issues/49630)
@@ -49,12 +56,17 @@
 
   # Misc
   environment.pathsToLink = [ "/share/ir" "/share/midi" "/share/sfz" "/share/soundfonts" ];
+
+  # This can be moved to home-manager
   fonts = {
     enableDefaultPackages = true;
     fontconfig.allowBitmaps = false; # Fixes some blocky fonts in Firefox
     packages = [ pkgs.dejavu_fonts ];
   };
+
   networking.firewall.enable = true;
+
+  # This can be moved to home-manager
   nix = {
     package = pkgs.nixVersions.stable;
     extraOptions = ''
@@ -67,12 +79,7 @@
     };
   };
   nixpkgs.config.allowUnfree = true;
-  services = {
-    libinput = {
-      enable = true;
-      touchpad.tapping = true;
-    };
-  };
+
   time.timeZone = "Europe/Amsterdam";
   users.users.root.initialHashedPassword =
     "$6$v.fIgZCsq1yKDoVm$LZqzWgHJk9BmP3tmOhyVPsVbMhQzzAEOluMe6cV37YvYEPZwU0yIiH1i9lG1L9f68CyY9TXMfzfHV81X80RGR1";

@@ -1,7 +1,9 @@
 { pkgs, ... }:
 
 {
+  # This can be moved to home-manager
   environment.systemPackages = with pkgs; [ alsa-utils pavucontrol ];
+
   hardware = {
     enableAllFirmware = true;
     enableRedistributableFirmware = true;
