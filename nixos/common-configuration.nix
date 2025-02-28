@@ -4,7 +4,6 @@
   imports = [ ./display.nix ./screen-locking.nix ./sound.nix ./work.nix ];
 
   # Programs
-  nixpkgs.config.chromium.enableWideVine = true;
   programs.ssh.startAgent = true;
   networking.networkmanager.enable = true;
   services = {
