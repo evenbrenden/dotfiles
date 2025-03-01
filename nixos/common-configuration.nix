@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./display.nix ./keyboard-and-mouse.nix ./sound.nix ./work.nix ];
+  imports = [ ./chromecast.nix ./display.nix ./keyboard-and-mouse.nix ./sound.nix ./work.nix ];
 
   # Programs
   # This can be moved to home-manager
@@ -22,11 +22,6 @@
 
   # This can be moved to home-manager
   environment.systemPackages = with pkgs; [ lshw pciutils ]; # Debug WLAN
-
-  # For Chromecast to work (https://github.com/NixOS/nixpkgs/issues/49630)
-  # -With Chromium, run: chromium --load-media-router-component-extension=1
-  # -With VLC, temporarily disable firewall: systemctl stop firewall.service
-  services.avahi.enable = true; # Needed for Chromium
 
   # Disk and boot
   boot = {
