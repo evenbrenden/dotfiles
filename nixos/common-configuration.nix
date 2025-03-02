@@ -46,14 +46,6 @@
 
   # Misc
   environment.pathsToLink = [ "/share/ir" "/share/midi" "/share/sfz" "/share/soundfonts" ];
-
-  # This can be moved to home-manager
-  fonts = {
-    enableDefaultPackages = true;
-    fontconfig.allowBitmaps = false; # Fixes some blocky fonts in Firefox
-    packages = [ pkgs.dejavu_fonts ];
-  };
-
   networking.firewall.enable = true;
 
   # This can be moved to home-manager
