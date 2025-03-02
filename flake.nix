@@ -17,33 +17,6 @@
 
   outputs = { nixpkgs-stable, nixpkgs-unstable, home-manager, musnix, i3quo, sops-nix, ... }:
     let
-      nix-config-module = {
-        nix = {
-          nixPath = [ "nixpkgs=${nixpkgs-stable}" "unstable=${nixpkgs-unstable}" ];
-          registry = {
-            # nixpkgs.flake = nixpkgs-stable; is already set
-            unstable.flake = nixpkgs-unstable;
-          };
-        };
-      };
-      nixpkgs-overlays-module = {
-        nixpkgs.overlays = [
-          (final: prev: {
-            # https://discourse.nixos.org/t/using-nixpkgs-legacypackages-system-vs-import/17462/3
-            unstable = import nixpkgs-unstable {
-              inherit system;
-              config.allowUnfree = true;
-            };
-            sof-firmware = with prev;
-              import ./nixos/naxos/sof-firmware.nix {
-                inherit fetchurl;
-                inherit lib;
-                inherit stdenvNoCC;
-              };
-          })
-          i3quo.overlay
-        ];
-      };
       home-manager-config-module.home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
@@ -51,8 +24,12 @@
         extraSpecialArgs = { sops-nix = sops-nix.homeManagerModules.sops; };
         backupFileExtension = "backup";
       };
-      common-modules =
-        [ nix-config-module nixpkgs-overlays-module home-manager.nixosModules.home-manager home-manager-config-module ];
+      common-modules = [
+        (import ./nix.nix { inherit nixpkgs-stable nixpkgs-unstable; })
+        (import ./nixpkgs.nix { inherit system nixpkgs-unstable i3quo; })
+        home-manager.nixosModules.home-manager
+        home-manager-config-module
+      ];
       system = "x86_64-linux";
     in {
       nixosConfigurations = {
