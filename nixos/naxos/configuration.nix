@@ -10,7 +10,7 @@ in {
       inherit pkgs;
       dpi = 144;
     })
-    ../laptop-alsa-state.nix
+    ./laptop-alsa-state.nix
     (import ../virtualisation.nix {
       inherit pkgs;
       inherit username;
