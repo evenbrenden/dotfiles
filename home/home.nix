@@ -67,6 +67,7 @@
       miscellaneous = [
         abcde
         age
+        alsa-utils
         arandr
         audacity
         binutils # For strings (to make less print binary files)
@@ -154,6 +155,7 @@
   };
 
   # Misc
+  home.keyboard.layout = "us";
   home.stateVersion = "22.05";
   nixpkgs.config.allowUnfree = true;
   xdg.enable = true;

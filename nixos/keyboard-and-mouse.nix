@@ -27,8 +27,6 @@
           languages = [ "no" ];
           symbolsFile = "${norwerty}/share/X11/xkb/symbols/norwerty";
         };
-        # This can be moved to home-manager
-        layout = "us";
       };
     };
   };
