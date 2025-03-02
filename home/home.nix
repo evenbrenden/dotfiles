@@ -159,4 +159,11 @@
   home.stateVersion = "22.05";
   nixpkgs.config.allowUnfree = true;
   xdg.enable = true;
+  xresources.extraConfig = ''
+    Xcursor.size: 48
+    Xcursor.theme: Adwaita
+    ! For XTerm
+    XTerm*faceName: DejaVu Sans Mono
+    XTerm*faceSize: 12
+  '';
 }
