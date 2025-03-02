@@ -4,23 +4,18 @@
   imports = [ ./chromecast.nix ./display.nix ./keyboard-and-mouse.nix ./sound.nix ./work.nix ];
 
   # Programs
-  # This can be moved to home-manager
-  programs.ssh.startAgent = true;
-
   networking.networkmanager.enable = true;
   services = {
     fwupd.enable = true;
-    gnome.at-spi2-core.enable = true; # https://github.com/NixOS/nixpkgs/issues/16327
-
-    # This can be moved to home-manager
-    gnome.gnome-keyring.enable = true; # For Appgate SDP
+    gnome = {
+      at-spi2-core.enable = true; # https://github.com/NixOS/nixpkgs/issues/16327
+      gnome-keyring.enable = true; # For Appgate SDP
+    };
     openssh.enable = false;
-
     udisks2.enable = true;
   };
   programs.appgate-sdp.enable = true;
 
-  # This can be moved to home-manager
   environment.systemPackages = with pkgs; [ lshw pciutils ]; # Debug WLAN
 
   # Disk and boot
