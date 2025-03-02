@@ -15,7 +15,6 @@
     udisks2.enable = true;
   };
   programs.appgate-sdp.enable = true;
-
   environment.systemPackages = with pkgs; [ lshw pciutils ]; # Debug WLAN
 
   # Disk and boot
