@@ -31,6 +31,7 @@
     ./alacritty.nix
     ./bash.nix
     ./emote.nix
+    ./fonts.nix
     ./git.nix
     ./i3/i3.nix
     ./mimeapps.nix
