@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-  # This can be moved to home-manager
   systemd.services = {
     auto-mute-mode = {
       description = "Set Auto-Mute Mode";
