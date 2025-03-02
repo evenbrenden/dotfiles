@@ -163,7 +163,6 @@
   xresources.extraConfig = ''
     Xcursor.size: 48
     Xcursor.theme: Adwaita
-    ! For XTerm
     XTerm*faceName: DejaVu Sans Mono
     XTerm*faceSize: 12
   '';
