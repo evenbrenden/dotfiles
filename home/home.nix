@@ -134,9 +134,10 @@
       extraOptions = [ "--no-icon" ];
     };
     picom = {
-      backend = "xr_glx_hybrid"; # For xsecurelock
+      backend = "glx"; # https://github.com/google/xsecurelock/issues/97#issuecomment-1183086902
       enable = true;
-      fade = false; # https://github.com/google/xsecurelock/issues/97#issuecomment-1100903794
+      fadeExclude =
+        [ "class_g = 'xsecurelock'" ]; # https://github.com/google/xsecurelock/issues/97#issuecomment-1183086902
       vSync = true; # Combat screen tearing
     };
   };
