@@ -1,21 +1,32 @@
 { pkgs, ... }:
 
 {
+  xsession = {
+    enable = true;
+    windowManager.i3 = {
+      enable = true;
+      config = null;
+      extraConfig = builtins.readFile ./config;
+    };
+    scriptPath = ".hm-xsession"; # https://discourse.nixos.org/t/opening-i3-from-home-manager-automatically/4849/8
+  };
+
+  xdg.configFile."i3status/config".source = ./statusconfig;
+
   home.packages = with pkgs; [
     alacritty
     autorandr
     brightnessctl
+    dmenu
     flameshot
+    i3status
     i3quo
     playerctl
     (import ./set-dpi.nix { inherit pkgs; })
+    systemd
     tesseract
     (import ./toggle-keyboard-layout.nix { inherit pkgs; })
     xcwd
     xrandr-invert-colors
   ];
-  xdg.configFile = {
-    "i3/config".source = ./config;
-    "i3status/config".source = ./statusconfig;
-  };
 }
