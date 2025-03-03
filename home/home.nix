@@ -133,13 +133,6 @@
       enable = true;
       extraOptions = [ "--no-icon" ];
     };
-    picom = {
-      backend = "glx"; # https://github.com/google/xsecurelock/issues/97#issuecomment-1183086902
-      enable = true;
-      fadeExclude =
-        [ "class_g = 'xsecurelock'" ]; # https://github.com/google/xsecurelock/issues/97#issuecomment-1183086902
-      vSync = true; # Combat screen tearing
-    };
   };
   systemd.user = {
     startServices = true;

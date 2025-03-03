@@ -4,7 +4,6 @@
   services = {
     displayManager.defaultSession = "none+i3";
     xserver = {
-      # Combat screen tearing
       deviceSection = ''
         Option "TearFree" "true"
       '';
