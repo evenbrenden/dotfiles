@@ -13,7 +13,7 @@
       desktopManager.session = [{
         name = "home-manager";
         start = ''
-          ${pkgs.runtimeShell} $HOME/.hm-xsession &
+          ${pkgs.runtimeShell} $HOME/.xsession &
           waitPID=$!
         '';
       }];
