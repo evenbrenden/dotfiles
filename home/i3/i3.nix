@@ -14,7 +14,13 @@
   xdg.configFile."i3status/config".source = ./statusconfig;
 
   home.packages = with pkgs; [
-    alacritty
+    (pkgs.writeShellApplication {
+      name = "alacritty-xcwd";
+      runtimeInputs = [ alacritty xcwd ];
+      text = ''
+        alacritty --working-directory "$(xcwd)"
+      '';
+    })
     autorandr
     brightnessctl
     dmenu
@@ -26,7 +32,6 @@
     systemd
     tesseract
     (import ./toggle-keyboard-layout.nix { inherit pkgs; })
-    xcwd
     xrandr-invert-colors
   ];
 }
