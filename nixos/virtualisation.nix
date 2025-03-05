@@ -2,10 +2,7 @@
 
 {
   virtualisation = {
-    # Docker
     docker.enable = true;
-
-    # VirtualBox
     virtualbox.host = {
       enable = false;
       # https://discourse.nixos.org/t/virtualbox-keeps-getting-rebuilt/6612
@@ -13,6 +10,5 @@
     };
   };
 
-  # Groups
   users.users.${username}.extraGroups = [ "docker" "vboxusers" ];
 }

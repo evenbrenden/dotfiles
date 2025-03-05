@@ -4,6 +4,15 @@
   systemd = {
     services = let sleep-targets = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
     in {
+      auto-mute-mode = {
+        description = "Set Auto-Mute Mode";
+        script = ''
+          amixer -c 0 set 'Auto-Mute Mode' 'Disabled'
+        '';
+        path = [ pkgs.alsa-utils ];
+        after = [ "multi-user.target" "sound.target" "graphical.target" ];
+        wantedBy = [ "sound.target" ];
+      };
       # This addresses the "(...) slight "pop" in headphones when content volume transitions to/from 0."
       # It attenuates the pops to the point that they are virtually inaudible
       # Note that the pops are "Also present on mainline and in Windows."

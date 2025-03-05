@@ -1,52 +1,76 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./chromecast.nix ./display.nix ./keyboard-and-mouse.nix ./sound.nix ./work.nix ];
-
-  # Programs
-  networking.networkmanager.enable = true;
-  services = {
-    fwupd.enable = true;
-    gnome = {
-      at-spi2-core.enable = true; # https://github.com/NixOS/nixpkgs/issues/16327
-      gnome-keyring.enable = true; # For Appgate SDP
-    };
-    openssh.enable = false;
-    udisks2.enable = true;
-  };
-  programs.appgate-sdp.enable = true;
-  environment.systemPackages = with pkgs; [ lshw pciutils ]; # Debug WLAN
-
-  # Disk and boot
   boot = {
     tmp.cleanOnBoot = true;
     kernel.sysctl."fs.inotify.max_user_watches" = 524288;
     supportedFilesystems = [ "ntfs" ];
   };
 
-  # Power management
-  services = {
-    logind.lidSwitch = "ignore";
-    upower = {
+  environment = {
+    pathsToLink = [ "/share/ir" "/share/midi" "/share/sfz" "/share/soundfonts" ];
+    systemPackages = with pkgs; [ lshw pciutils ]; # Debug WLAN
+  };
+  hardware = {
+    enableAllFirmware = true;
+    enableRedistributableFirmware = true;
+    pulseaudio = {
       enable = true;
-      criticalPowerAction = "PowerOff";
+      package = pkgs.pulseaudio.override { bluetoothSupport = true; };
     };
   };
 
-  # AV
-  services.clamav = {
-    daemon.enable = true;
-    updater.enable = true;
+  imports = [ ./appgate.nix ./bluetooth.nix ./chromecast.nix ];
+
+  networking = {
+    firewall.enable = true;
+    networkmanager.enable = true;
   };
 
-  # Bluetooth
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
+  services = {
+    clamav = {
+      daemon.enable = true;
+      updater.enable = true;
+    };
+    displayManager.defaultSession = "home-manager";
+    fprintd.enable = true;
+    fwupd.enable = true;
+    gnome.at-spi2-core.enable = true; # https://github.com/NixOS/nixpkgs/issues/16327
+    libinput = {
+      enable = true;
+      touchpad.tapping = true;
+    };
+    logind.lidSwitch = "ignore";
+    openssh.enable = false;
+    pipewire.enable = false;
+    upower = {
+      criticalPowerAction = "PowerOff";
+      enable = true;
+    };
+    xserver = {
+      # https://discourse.nixos.org/t/opening-i3-from-home-manager-automatically/4849/8
+      desktopManager.session = [{
+        name = "home-manager";
+        start = ''
+          ${pkgs.runtimeShell} $HOME/.xsession &
+          waitPID=$!
+        '';
+      }];
+      deviceSection = ''
+        Option "TearFree" "true"
+      '';
+      enable = true;
+      xkb.extraLayouts.norwerty = {
+        description = "Norwerty";
+        languages = [ "no" ];
+        symbolsFile = let norwerty = import ./norwerty/norwerty.nix { inherit pkgs; };
+        in "${norwerty}/share/X11/xkb/symbols/norwerty";
+      };
+    };
+  };
 
-  # Misc
-  environment.pathsToLink = [ "/share/ir" "/share/midi" "/share/sfz" "/share/soundfonts" ];
-  networking.firewall.enable = true;
   time.timeZone = "Europe/Amsterdam";
+
   users.users.root.initialHashedPassword =
     "$6$v.fIgZCsq1yKDoVm$LZqzWgHJk9BmP3tmOhyVPsVbMhQzzAEOluMe6cV37YvYEPZwU0yIiH1i9lG1L9f68CyY9TXMfzfHV81X80RGR1";
 }

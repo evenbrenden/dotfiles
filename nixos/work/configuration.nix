@@ -4,36 +4,6 @@ let
   username = "evenbrenden";
   hostname = "work";
 in {
-  imports = [
-    ../common-configuration.nix
-    (import ../dpi.nix {
-      inherit pkgs;
-      dpi = 120;
-    })
-    (import ../virtualisation.nix {
-      inherit pkgs;
-      inherit username;
-    })
-    ./hardware-configuration.nix
-    ./yubikey.nix
-  ];
-
-  # User
-  users.users.${username} = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
-  };
-  networking.hostName = "${hostname}";
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "${username}";
-  };
-
-  # Services
-  services.fprintd.enable = true;
-  services.fstrim.enable = lib.mkDefault true;
-
-  # Boot and hardware
   boot = {
     extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
     kernelModules = [ "acpi_call" "amdgpu" ];
@@ -54,7 +24,23 @@ in {
       systemd-boot.enable = true;
     };
   };
+
   environment.variables.AMD_VULKAN_ICD = lib.mkDefault "RADV";
+
+  imports = [
+    ../common-configuration.nix
+    (import ../dpi.nix {
+      dpi = 120;
+      inherit pkgs;
+    })
+    ./hardware-configuration.nix
+    (import ../virtualisation.nix {
+      inherit pkgs;
+      inherit username;
+    })
+    ./yubikey.nix
+  ];
+
   hardware = {
     graphics = {
       enable32Bit = lib.mkDefault true;
@@ -62,8 +48,22 @@ in {
       extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
     };
   };
-  services.xserver.videoDrivers = [ "amdgpu" "displaylink" ];
 
-  # Misc
+  networking.hostName = "${hostname}";
+
+  users.users.${username} = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
+  };
+
+  services = {
+    displayManager.autoLogin = {
+      enable = true;
+      user = "${username}";
+    };
+    fstrim.enable = lib.mkDefault true;
+    xserver.videoDrivers = [ "amdgpu" "displaylink" ];
+  };
+
   system.stateVersion = "22.05";
 }
