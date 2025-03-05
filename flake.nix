@@ -23,21 +23,25 @@
       ];
       home-manager-config-module.home-manager = {
         backupFileExtension = "backup";
-        extraSpecialArgs = { sops-nix = sops-nix.homeManagerModules.sops; };
+        extraSpecialArgs = {
+          sops-nix = sops-nix.homeManagerModules.sops;
+          inherit username;
+        };
         useGlobalPkgs = true;
         useUserPackages = true;
-        users.evenbrenden = import ./home/home.nix;
+        users.${username} = import ./home/home.nix;
       };
       system = "x86_64-linux";
+      username = "evenbrenden";
     in {
       formatter.${system} = import ./formatter.nix { pkgs = nixpkgs-stable.legacyPackages.${system}; }; # nix fmt
       nixosConfigurations = {
         naxos = nixpkgs-stable.lib.nixosSystem {
-          modules = common-modules ++ [ ./nixos/naxos/configuration.nix musnix.nixosModules.musnix ];
+          modules = common-modules ++ [ (import ./nixos/naxos/configuration.nix username) musnix.nixosModules.musnix ];
           inherit system;
         };
         work = nixpkgs-stable.lib.nixosSystem {
-          modules = common-modules ++ [ ./nixos/work/configuration.nix ];
+          modules = common-modules ++ [ (import ./nixos/work/configuration.nix username) ];
           inherit system;
         };
       };
