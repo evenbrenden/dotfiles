@@ -2,11 +2,7 @@
 
 pkgs.writeShellApplication {
   name = "toggle-keyboard-layout";
-  runtimeInputs = with pkgs; [
-    gawk
-    procps # For pkill
-    xorg.setxkbmap
-  ];
+  runtimeInputs = with pkgs; [ gawk procps xorg.setxkbmap ];
   text = ''
     layout=$(setxkbmap -query | awk 'NR==3 {print $2}')
 
