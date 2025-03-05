@@ -25,10 +25,10 @@
   environment.variables.AMD_VULKAN_ICD = lib.mkDefault "RADV";
 
   imports = [
-    (import ../common-configuration.nix {
-      inherit pkgs;
+    ../common-configuration.nix
+    (import ../dpi.nix {
       dpi = 120;
-      username = "evenbrenden";
+      inherit pkgs;
     })
     ./hardware-configuration.nix
     ./yubikey.nix

@@ -1,6 +1,7 @@
-{ dpi, pkgs, username, ... }:
+{ pkgs, ... }:
 
-{
+let username = "evenbrenden";
+in {
   boot = {
     tmp.cleanOnBoot = true;
     kernel.sysctl."fs.inotify.max_user_watches" = 524288;
@@ -25,10 +26,6 @@
     ./appgate.nix
     ./bluetooth.nix
     ./chromecast.nix
-    (import ./dpi.nix {
-      inherit dpi;
-      inherit pkgs;
-    })
     (import ./virtualisation.nix {
       inherit pkgs;
       inherit username;
