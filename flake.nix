@@ -34,7 +34,6 @@
       system = "x86_64-linux";
       username = "evenbrenden";
     in {
-      formatter.${system} = import ./formatter.nix { pkgs = nixpkgs-stable.legacyPackages.${system}; }; # nix fmt
       nixosConfigurations = {
         naxos = nixpkgs-stable.lib.nixosSystem {
           modules = common-modules ++ [ (import ./nixos/naxos/configuration.nix username) musnix.nixosModules.musnix ];

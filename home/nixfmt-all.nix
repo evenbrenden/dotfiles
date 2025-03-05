@@ -1,9 +1,9 @@
 { pkgs }:
 
 pkgs.writeShellApplication {
-  name = "formatter";
+  name = "nixfmt-all";
   runtimeInputs = [ pkgs.nixfmt-classic ];
   text = ''
-    nixfmt --width=120 "$@"
+    find . -name '*.nix' -exec sh -c 'nixfmt "$1"' shell {} \;
   '';
 }

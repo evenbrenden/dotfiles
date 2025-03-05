@@ -37,6 +37,7 @@
           haskellPackages.cabal-fmt
           hurl
           mypy
+          (import ./nixfmt-all.nix { inherit pkgs; })
           python3
           shellcheck
           virtualenv
