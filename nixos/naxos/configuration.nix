@@ -17,10 +17,10 @@
   };
 
   imports = [
-    (import ../common-configuration.nix {
-      inherit pkgs;
+    ../common-configuration.nix
+    (import ../dpi.nix {
       dpi = 144;
-      username = "evenbrenden";
+      inherit pkgs;
     })
     ./hardware-configuration.nix
     ./steam.nix
