@@ -5,6 +5,4 @@
 3. Reboot and follow instructions. Encrypt drive and opt out of any desktop environment.
 4. Restart and clone this repo.
 5. Either add a new machine by merging and adjusting `/etc/nixos/` (and [this](https://github.com/NixOS/nixos-hardware)) or reuse an existing machine.
-6. Switch NixOS configuration with `sudo nixos-rebuild switch --flake .#[configuration]`.
-7. Build Home Manager with `nix build .#homeConfigurations.[configuration].activationPackage`.
-8. Install Home Manager and switch configuration with `result/activate && rm -rf result`.
+6. Switch configuration with `./switch [configuration]`.
