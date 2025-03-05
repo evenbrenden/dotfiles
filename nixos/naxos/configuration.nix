@@ -1,9 +1,6 @@
 { pkgs, ... }:
 
-let
-  username = "evenbrenden";
-  hostname = "naxos";
-in {
+{
   boot = {
     initrd.luks.devices.root = {
       allowDiscards = true;
@@ -20,30 +17,19 @@ in {
   };
 
   imports = [
-    ../common-configuration.nix
-    (import ../dpi.nix {
-      dpi = 144;
+    (import ../common-configuration.nix {
       inherit pkgs;
+      dpi = 144;
+      username = "evenbrenden";
     })
     ./hardware-configuration.nix
     ./steam.nix
-    (import ../virtualisation.nix {
-      inherit pkgs;
-      inherit username;
-    })
     ./x1c7-audio-hacks.nix
   ];
 
   musnix.enable = true;
 
-  networking.hostName = "${hostname}";
-
-  services = {
-    displayManager.autoLogin = {
-      enable = true;
-      user = "${username}";
-    };
-  };
+  networking.hostName = "naxos";
 
   system.stateVersion = "20.03";
 
@@ -57,10 +43,5 @@ in {
       after = [ "multi-user.target" "sound.target" "graphical.target" ];
       wantedBy = [ "sound.target" ];
     };
-  };
-
-  users.users.${username} = {
-    extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
-    isNormalUser = true;
   };
 }
