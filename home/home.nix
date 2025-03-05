@@ -17,7 +17,7 @@
   };
   xdg = {
     configFile = {
-      "autorandr/postswitch".source = ./dotfiles/autorandr-postswitch;
+      "autorandr/postswitch".source = pkgs.lib.getExe (import ./refresh-wallpaper.nix { inherit pkgs; });
       "fourmolu.yaml".source = ./dotfiles/fourmolu.yaml;
       "kde.org/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
       "parcellite/parcelliterc".source = ./dotfiles/parcelliterc;
@@ -94,7 +94,6 @@
         p7zip
         pandoc
         pavucontrol
-        (import ./wallpaper/refresh-wallpaper.nix { inherit pkgs; })
         rclone
         unstable.signal-desktop
         simplescreenrecorder
