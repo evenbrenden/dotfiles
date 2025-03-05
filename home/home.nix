@@ -82,7 +82,7 @@
         whatsapp-for-linux
         xclip
         xcolor
-        (import ./x-www-browser-hack.nix { inherit pkgs; })
+        (import ./x-www-browser.nix { inherit pkgs; })
       ] ++ programming;
     stateVersion = "22.05";
     username = username;
