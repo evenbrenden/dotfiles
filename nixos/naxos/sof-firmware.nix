@@ -1,7 +1,4 @@
-{ lib
-, fetchurl
-, stdenvNoCC
-}:
+{ lib, fetchurl, stdenvNoCC }:
 
 stdenvNoCC.mkDerivation rec {
   pname = "sof-firmware";

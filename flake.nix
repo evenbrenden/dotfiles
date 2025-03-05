@@ -30,6 +30,7 @@
       };
       system = "x86_64-linux";
     in {
+      formatter.${system} = import ./formatter.nix { pkgs = nixpkgs-stable.legacyPackages.${system}; }; # nix fmt
       nixosConfigurations = {
         naxos = nixpkgs-stable.lib.nixosSystem {
           modules = common-modules ++ [ ./nixos/naxos/configuration.nix musnix.nixosModules.musnix ];
