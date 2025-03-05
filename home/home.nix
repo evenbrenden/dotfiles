@@ -31,7 +31,7 @@
         programming = [
           unstable.aider-chat
           docker-compose
-          (import ./fmtall.nix { inherit pkgs; })
+          (import ./fourmolu-all.nix { inherit pkgs; })
           ghc
           graphviz
           haskellPackages.cabal-fmt
