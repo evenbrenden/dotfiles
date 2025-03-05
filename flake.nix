@@ -1,9 +1,7 @@
 {
   description = "evenbrenden/dotfiles";
 
-  # nix flake update
   inputs = {
-    # nix flake lock --update-input <input>
     nixpkgs-stable.url = "nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "nixpkgs/nixpkgs-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
