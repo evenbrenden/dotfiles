@@ -1,6 +1,8 @@
 # https://nixos.wiki/wiki/Yubikey
 
-{ pkgs, ... }: {
+{ pkgs, ... }:
+
+{
   environment.systemPackages = [ pkgs.yubioath-flutter ];
 
   security.pam.services = {
