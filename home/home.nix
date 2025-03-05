@@ -1,32 +1,6 @@
 { config, pkgs, sops-nix, ... }:
 
 {
-  # User
-  home = {
-    username = "evenbrenden";
-    homeDirectory = "/home/${config.home.username}";
-  };
-
-  # Dotfiles
-  home.file = {
-    ".abcde.conf".source = ./dotfiles/abcde.conf;
-    ".aider.conf.yml".source = ./dotfiles/aider.conf.yml;
-    ".ghci".source = ./dotfiles/ghci;
-    ".prettierrc".source = ./dotfiles/prettierrc;
-    ".ssr/settings.conf".source = ./dotfiles/ssr.conf;
-  };
-  xdg = {
-    configFile = {
-      "autorandr/postswitch".source = pkgs.lib.getExe (import ./refresh-wallpaper.nix { inherit pkgs; });
-      "fourmolu.yaml".source = ./dotfiles/fourmolu.yaml;
-      "kde.org/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
-      "parcellite/parcelliterc".source = ./dotfiles/parcelliterc;
-      "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
-      "VeraCrypt/Favorite Volumes.xml".source = ./dotfiles/veracrypt-favorite-volumes.xml;
-    };
-  };
-
-  # Programs
   imports = [
     ./alacritty.nix
     ./bash.nix
@@ -34,7 +8,6 @@
     ./fonts.nix
     ./git.nix
     ./i3/i3.nix
-    ./mimeapps.nix
     ./screen-locking.nix
     sops-nix
     ./ssh.nix
@@ -42,36 +15,38 @@
     ./vi/vi.nix
     ./work.nix
   ];
-  programs = {
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
+
+  home = {
+    file = {
+      ".abcde.conf".source = ./dotfiles/abcde.conf;
+      ".aider.conf.yml".source = ./dotfiles/aider.conf.yml;
+      ".ghci".source = ./dotfiles/ghci;
+      ".prettierrc".source = ./dotfiles/prettierrc;
+      ".ssr/settings.conf".source = ./dotfiles/ssr.conf;
     };
-    home-manager.enable = true;
-    man.enable = false;
-  };
-  home.packages = with pkgs;
-    let
-      programming = [
-        unstable.aider-chat
-        docker-compose
-        (import ./fmtall.nix { inherit pkgs; })
-        ghc
-        graphviz
-        haskellPackages.cabal-fmt
-        hurl
-        mypy
-        python3
-        shellcheck
-        virtualenv
-      ];
-      miscellaneous = [
+    homeDirectory = "/home/${config.home.username}";
+    keyboard.layout = "us";
+    packages = with pkgs;
+      let
+        programming = [
+          unstable.aider-chat
+          docker-compose
+          (import ./fmtall.nix { inherit pkgs; })
+          ghc
+          graphviz
+          haskellPackages.cabal-fmt
+          hurl
+          mypy
+          python3
+          shellcheck
+          virtualenv
+        ];
+      in [
         abcde
         age
         alsa-utils
         arandr
         audacity
-        binutils # For strings (to make less print binary files)
         chromium
         curl
         unstable.discord
@@ -98,7 +73,6 @@
         unstable.signal-desktop
         simplescreenrecorder
         slack
-        smartmontools
         snes9x-gtk
         sops
         transmission_4-gtk
@@ -108,15 +82,25 @@
         whatsapp-for-linux
         xclip
         xcolor
-        (import ./x-www-browser.nix { inherit pkgs; })
-      ];
-    in programming ++ miscellaneous;
+        (import ./x-www-browser-hack.nix { inherit pkgs; })
+      ] ++ programming;
+    stateVersion = "22.05";
+    username = "evenbrenden";
+  };
 
-  # Services
+  programs = {
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
+    home-manager.enable = true;
+    man.enable = false;
+  };
+
   services = {
     dunst = {
-      enable = true;
       configFile = ./dotfiles/dunstrc;
+      enable = true;
     };
     flameshot = {
       enable = true;
@@ -127,12 +111,21 @@
         };
       };
     };
-    # Ctrl+Alt+H
     parcellite = {
       enable = true;
       extraOptions = [ "--no-icon" ];
     };
   };
+
+  sops = {
+    age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt"; # Need this or will silently fail
+    defaultSopsFile = ../secrets/secrets.yaml;
+    secrets = {
+      codeberg-org-private-key.path = "${config.home.homeDirectory}/.ssh/codeberg-org-private-key";
+      github-com-private-key.path = "${config.home.homeDirectory}/.ssh/github-com-private-key";
+    };
+  };
+
   systemd.user = {
     startServices = true;
     # https://github.com/nix-community/home-manager/issues/2064#issuecomment-887300055
@@ -144,24 +137,52 @@
     };
   };
 
-  # SOPS
-  sops = {
-    age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt"; # Need this or will silently fail
-    defaultSopsFile = ../secrets/secrets.yaml;
-    secrets = {
-      codeberg-org-private-key.path = "${config.home.homeDirectory}/.ssh/codeberg-org-private-key";
-      github-com-private-key.path = "${config.home.homeDirectory}/.ssh/github-com-private-key";
+  xdg = {
+    configFile = {
+      "autorandr/postswitch".source = pkgs.lib.getExe (import ./refresh-wallpaper.nix { inherit pkgs; });
+      "fourmolu.yaml".source = ./dotfiles/fourmolu.yaml;
+      "kde.org/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
+      "parcellite/parcelliterc".source = ./dotfiles/parcelliterc;
+      "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
+      "VeraCrypt/Favorite Volumes.xml".source = ./dotfiles/veracrypt-favorite-volumes.xml;
+    };
+    enable = true;
+    mimeApps = {
+      defaultApplications = {
+        "application/pdf" = [ "okularApplication_pdf.desktop" ];
+        "application/x-extension-htm" = [ "firefox.desktop" ];
+        "application/x-extension-html" = [ "firefox.desktop" ];
+        "application/x-extension-shtml" = [ "firefox.desktop" ];
+        "application/x-extension-xhtml" = [ "firefox.desktop" ];
+        "application/x-extension-xht" = [ "firefox.desktop" ];
+        "application/xhtml+xml" = [ "firefox.desktop" ];
+        "audio/flac" = [ "vlc.desktop" ];
+        "audio/mp4" = [ "vlc.desktop" ];
+        "audio/mpeg" = [ "vlc.desktop" ];
+        "audio/x-aiff" = [ "vlc.desktop" ];
+        "audio/x-wav" = [ "vlc.desktop" ];
+        "image/gif" = [ "org.nomacs.ImageLounge.desktop" ];
+        "image/jpeg" = [ "org.nomacs.ImageLounge.desktop" ];
+        "image/png" = [ "org.nomacs.ImageLounge.desktop" ];
+        "image/svg+xml" = [ "org.nomacs.ImageLounge.desktop" ];
+        "text/html" = [ "firefox.desktop" ];
+        "x-scheme-handler/about" = [ "firefox.desktop" "appgate.desktop" ];
+        "x-scheme-handler/chrome" = [ "firefox.desktop" ];
+        "x-scheme-handler/http" = [ "firefox.desktop" ];
+        "x-scheme-handler/https" = [ "firefox.desktop" ];
+        "x-scheme-handler/magnet" = [ "transmission-gtk.desktop" ];
+        "x-scheme-handler/msteams" = [ "teams.desktop" ];
+        "x-scheme-handler/unknown" = [ "firefox.desktop" "appgate.desktop" ];
+      };
     };
   };
 
-  # Misc
-  home.keyboard.layout = "us";
-  home.stateVersion = "22.05";
-  xdg.enable = true;
   xresources.extraConfig = ''
     Xcursor.size: 48
     Xcursor.theme: Adwaita
     XTerm*faceName: DejaVu Sans Mono
     XTerm*faceSize: 12
   '';
+
+  xsession.enable = true;
 }

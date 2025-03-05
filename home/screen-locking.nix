@@ -28,13 +28,14 @@ with pkgs.lib;
     # Disable with: systemctl --user stop xidlehook.service
     xidlehook = {
       enable = true;
+      not-when-fullscreen = true;
       timers = [{
         command = "${getExe' pkgs.systemd "loginctl"} lock-session \${XDG_SESSION_ID}";
         delay = 15 * 60;
       }];
-      not-when-fullscreen = true;
     };
   };
+
   systemd.user.services.disable-xset-s-and-dpms = {
     Unit = {
       Description = "Disable X Screen Saver and DPMS";

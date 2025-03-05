@@ -8,5 +8,6 @@
       "github.com".identityFile = "${config.sops.secrets.github-com-private-key.path}";
     };
   };
+
   services.ssh-agent.enable = true;
 }
