@@ -1,5 +1,9 @@
 local key_opts = {noremap = true, silent = true}
 
+-- Leaders needs to be set before key bindings that use them
+vim.g.mapleader = ','
+vim.g.maplocalleader = '.'
+
 -- ALWAYS use the clipboard for ALL operations
 vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
 
@@ -78,10 +82,6 @@ vim.api.nvim_set_keymap('n', '<LocalLeader>h',
 vim.api.nvim_set_keymap('n', 'gh',
                         ':silent !xdg-open https://hoogle.haskell.org/?hoogle=<C-r><C-w><CR>',
                         key_opts)
-
--- Leaders
-vim.g.mapleader = ','
-vim.g.maplocalleader = '.'
 
 -- LSP
 require 'my-lsp'
