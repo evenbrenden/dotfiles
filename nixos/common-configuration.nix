@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ dpi, pkgs, username, ... }:
 
 {
   boot = {
@@ -20,7 +20,19 @@
     };
   };
 
-  imports = [ ./appgate.nix ./bluetooth.nix ./chromecast.nix ];
+  imports = [
+    ./appgate.nix
+    ./bluetooth.nix
+    ./chromecast.nix
+    (import ./dpi.nix {
+      inherit dpi;
+      inherit pkgs;
+    })
+    (import ./virtualisation.nix {
+      inherit pkgs;
+      inherit username;
+    })
+  ];
 
   networking = {
     firewall.enable = true;
@@ -32,7 +44,13 @@
       daemon.enable = true;
       updater.enable = true;
     };
-    displayManager.defaultSession = "home-manager";
+    displayManager = {
+      autoLogin = {
+        enable = true;
+        user = "${username}";
+      };
+      defaultSession = "home-manager";
+    };
     fprintd.enable = true;
     fwupd.enable = true;
     gnome.at-spi2-core.enable = true; # https://github.com/NixOS/nixpkgs/issues/16327
@@ -71,6 +89,12 @@
 
   time.timeZone = "Europe/Amsterdam";
 
-  users.users.root.initialHashedPassword =
-    "$6$v.fIgZCsq1yKDoVm$LZqzWgHJk9BmP3tmOhyVPsVbMhQzzAEOluMe6cV37YvYEPZwU0yIiH1i9lG1L9f68CyY9TXMfzfHV81X80RGR1";
+  users.users = {
+    ${username} = {
+      extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
+      isNormalUser = true;
+    };
+    root.initialHashedPassword =
+      "$6$v.fIgZCsq1yKDoVm$LZqzWgHJk9BmP3tmOhyVPsVbMhQzzAEOluMe6cV37YvYEPZwU0yIiH1i9lG1L9f68CyY9TXMfzfHV81X80RGR1";
+  };
 }

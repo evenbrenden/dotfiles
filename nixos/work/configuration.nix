@@ -1,9 +1,6 @@
 { config, lib, pkgs, ... }:
 
-let
-  username = "evenbrenden";
-  hostname = "work";
-in {
+{
   boot = {
     extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
     kernelModules = [ "acpi_call" "amdgpu" ];
@@ -28,16 +25,12 @@ in {
   environment.variables.AMD_VULKAN_ICD = lib.mkDefault "RADV";
 
   imports = [
-    ../common-configuration.nix
-    (import ../dpi.nix {
-      dpi = 120;
+    (import ../common-configuration.nix {
       inherit pkgs;
+      dpi = 120;
+      username = "evenbrenden";
     })
     ./hardware-configuration.nix
-    (import ../virtualisation.nix {
-      inherit pkgs;
-      inherit username;
-    })
     ./yubikey.nix
   ];
 
@@ -49,18 +42,9 @@ in {
     };
   };
 
-  networking.hostName = "${hostname}";
-
-  users.users.${username} = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
-  };
+  networking.hostName = "work";
 
   services = {
-    displayManager.autoLogin = {
-      enable = true;
-      user = "${username}";
-    };
     fstrim.enable = lib.mkDefault true;
     xserver.videoDrivers = [ "amdgpu" "displaylink" ];
   };

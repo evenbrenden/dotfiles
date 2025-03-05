@@ -1,4 +1,4 @@
-{ pkgs, dpi }:
+{ dpi, pkgs }:
 
 {
   services.xserver = {
