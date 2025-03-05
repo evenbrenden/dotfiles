@@ -11,6 +11,7 @@
     pathsToLink = [ "/share/ir" "/share/midi" "/share/sfz" "/share/soundfonts" ];
     systemPackages = with pkgs; [ lshw pciutils ]; # Debug WLAN
   };
+
   hardware = {
     enableAllFirmware = true;
     enableRedistributableFirmware = true;
