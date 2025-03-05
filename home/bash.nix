@@ -8,8 +8,8 @@ let
     git-root = ''cd "$(git rev-parse --show-toplevel)"'';
     ls = "ls -Ah --color=auto";
     mv = "mv --interactive";
-    # --no-update-dir-modtime while waiting for backend support
-    rclone-sync = "rclone sync --create-empty-src-dirs --no-update-dir-modtime --interactive";
+    rclone-sync =
+      "rclone sync --create-empty-src-dirs --no-update-dir-modtime --interactive"; # --no-update-dir-modtime while waiting for backend support
     rm = "rm --interactive=once";
     vi = "nvim";
     via = "NVIM_ASSISTANTS=1 nvim";
@@ -35,7 +35,6 @@ let
   '';
   shell-variables-fff = ''
     export FFF_FAV1=~/Downloads
-    export FFF_FAV2=/media/ted15/music
     # https://github.com/dylanaraps/fff/issues/180
     export FFF_KEY_BULK_RENAME="off"
     export FFF_KEY_BULK_RENAME_ALL="off"
@@ -59,8 +58,7 @@ in {
     shellAliases = aliases;
     shellOptions = [ "histappend" ];
   };
-  home.packages = with pkgs;
-    [
-      git # For git-prompt.sh
-    ];
+  home.packages = [
+    pkgs.git # For git-prompt.sh
+  ];
 }

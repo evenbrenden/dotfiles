@@ -11,7 +11,6 @@ in {
   programs.alacritty = {
     enable = true;
     settings = {
-      general.import = [ "${alacritty-theme}/themes/alabaster.toml" ];
       font = {
         size = 12.0;
         normal = {
@@ -31,6 +30,7 @@ in {
           style = "Bold Oblique";
         };
       };
+      general.import = [ "${alacritty-theme}/themes/alabaster.toml" ];
     };
   };
 }

@@ -19,12 +19,9 @@
 
   xdg.configFile."i3status/config".source = ./statusconfig;
 
-  xsession = {
+  xsession.windowManager.i3 = {
+    config = null;
     enable = true;
-    windowManager.i3 = {
-      config = null;
-      enable = true;
-      extraConfig = builtins.readFile ./config;
-    };
+    extraConfig = builtins.readFile ./config;
   };
 }

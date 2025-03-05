@@ -1,20 +1,26 @@
 { pkgs, ... }:
 
-let
-  githubAddress = {
-    user = "evenbrenden";
-    host = "users.noreply.github.com";
-  };
-  codebergAddress = {
-    user = "evenbrenden";
-    host = "noreply.codeberg.org";
-  };
-  schibstedAddress = {
-    user = "even.steen.brenden";
-    host = "schibsted.com";
-  };
-in {
-  home.packages = [ (import ./git-replace.nix { inherit pkgs; }) pkgs.tig ];
+{
+  home.packages = let
+    git-replace = pkgs.writeShellApplication {
+      name = "git-replace";
+      runtimeInputs = with pkgs; [ git ];
+      text = ''
+        if [[ $# -ne 2 ]]
+        then
+            echo "Usage: git-replace <what> <with>"
+            exit 0
+        fi
+
+        what=$1
+        with=$2
+
+        # PS: Use single quotes and escape all things regex
+        git grep -l "$what" | xargs -r sed -i s/"$what"/"$with"/g
+      '';
+    };
+  in [ git-replace pkgs.tig ];
+
   programs.git = {
     enable = true;
     extraConfig = {
@@ -24,9 +30,22 @@ in {
       push.default = "simple";
       url = { "git@github.schibsted.io:" = { insteadOf = "https://github.schibsted.io/"; }; };
     };
-    ignores = let metals = [ ".bloop/" ".metals/" "project/.bloop/" "project/metals.sbt" "project/project/" ];
-    in [ ".aider*" ".direnv/" ".envrc" ".luarc.json" "*.swp" ] ++ metals;
-    includes = [
+    ignores = let metals = [ ".bloop" ".metals" "metals.sbt" ];
+    in [ ".aider*" ".direnv" ".envrc" ".luarc.json" "*.swp" ] ++ metals;
+    includes = let
+      codebergAddress = {
+        user = "evenbrenden";
+        host = "noreply.codeberg.org";
+      };
+      githubAddress = {
+        user = "evenbrenden";
+        host = "users.noreply.github.com";
+      };
+      schibstedAddress = {
+        user = "even.steen.brenden";
+        host = "schibsted.com";
+      };
+    in [
       {
         condition = "hasconfig:remote.*.url:**/*github.com*/**";
         contents.user = {
