@@ -1,7 +1,36 @@
 function SetupLSP(key_opts)
-
     local on_attach = function(_, bufnr)
+        -- Basics
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Space>ca',
+                                    ':lua vim.lsp.buf.code_action()<CR>',
+                                    key_opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD',
+                                    ':lua vim.lsp.buf.declaration()<CR>',
+                                    key_opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd',
+                                    ':lua vim.lsp.buf.definition()<CR>',
+                                    key_opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Space>f',
+                                    ':lua vim.lsp.buf.formatting()<CR>',
+                                    key_opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K',
+                                    ':lua vim.lsp.buf.hover()<CR>', key_opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi',
+                                    ':lua vim.lsp.buf.implementation()<CR>',
+                                    key_opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr',
+                                    ':lua vim.lsp.buf.references()<CR>',
+                                    key_opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Space>rn',
+                                    ':lua vim.lsp.buf.rename()<CR>', key_opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>',
+                                    ':lua vim.lsp.buf.signature_help()<CR>',
+                                    key_opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Space>D',
+                                    ':lua vim.lsp.buf.type_definition()<CR>',
+                                    key_opts)
 
+        -- Diagnostics
         vim.api.nvim_set_keymap('n', '<Space>e',
                                 ':lua vim.diagnostic.open_float()<CR>', key_opts)
         vim.api.nvim_set_keymap('n', '[d',
@@ -11,24 +40,7 @@ function SetupLSP(key_opts)
         vim.api.nvim_set_keymap('n', '<Space>q',
                                 ':lua vim.diagnostic.setloclist()<CR>', key_opts)
 
-        -- Note that \n has the digraph LF and is printed as ^@ in completion items
-        vim.api.nvim_set_option_value('omnifunc', 'v:lua.vim.lsp.omnifunc',
-                                      {buf = bufnr})
-
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD',
-                                    ':lua vim.lsp.buf.declaration()<CR>',
-                                    key_opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd',
-                                    ':lua vim.lsp.buf.definition()<CR>',
-                                    key_opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K',
-                                    ':lua vim.lsp.buf.hover()<CR>', key_opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi',
-                                    ':lua vim.lsp.buf.implementation()<CR>',
-                                    key_opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>',
-                                    ':lua vim.lsp.buf.signature_help()<CR>',
-                                    key_opts)
+        -- Workspace
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Space>wa',
                                     ':lua vim.lsp.buf.add_workspace_folder()<CR>',
                                     key_opts)
@@ -38,30 +50,13 @@ function SetupLSP(key_opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Space>wl',
                                     ':lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',
                                     key_opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Space>D',
-                                    ':lua vim.lsp.buf.type_definition()<CR>',
-                                    key_opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Space>rn',
-                                    ':lua vim.lsp.buf.rename()<CR>', key_opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Space>ca',
-                                    ':lua vim.lsp.buf.code_action()<CR>',
-                                    key_opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr',
-                                    ':lua vim.lsp.buf.references()<CR>',
-                                    key_opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Space>f',
-                                    ':lua vim.lsp.buf.formatting()<CR>',
-                                    key_opts)
 
-        -- Telescope
+        -- Other
+        vim.api.nvim_set_option_value('omnifunc', 'v:lua.vim.lsp.omnifunc',
+                                      {buf = bufnr}) -- Note that \n has the digraph LF and is printed as ^@ in completion items
         vim.api.nvim_set_keymap('n', '<LocalLeader>s',
                                 ':Telescope lsp_workspace_symbols<CR>', key_opts)
     end
-
-    -- https://www.reddit.com/r/neovim/comments/tx40m2/is_it_possible_to_improve_lsp_hover_look/
-    vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-                                                 vim.lsp.handlers.hover,
-                                                 {max_width = 85})
 
     local lspconfig = require 'lspconfig'
     lspconfig.clangd.setup {on_attach = on_attach}
@@ -92,4 +87,9 @@ function SetupLSP(key_opts)
         cmd = {'typescript-language-server', '--stdio'}
     }
     lspconfig.yamlls.setup {}
+
+    -- https://www.reddit.com/r/neovim/comments/tx40m2/is_it_possible_to_improve_lsp_hover_look/
+    vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+                                                 vim.lsp.handlers.hover,
+                                                 {max_width = 85})
 end

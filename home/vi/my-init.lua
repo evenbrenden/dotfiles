@@ -1,10 +1,35 @@
 local key_opts = {noremap = true, silent = true}
 
--- Leaders
-vim.g.mapleader = ','
-vim.g.maplocalleader = '.'
+-- ALWAYS use the clipboard for ALL operations
+vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
 
--- Settings
+-- Assistants
+if os.getenv("NVIM_ASSISTANTS") == "1" then
+    require 'my-assistants'
+    SetupAssistants()
+end
+
+-- Auto-save
+vim.api.nvim_set_keymap('n', '<Leader>a', ':AutoSaveToggle<CR>', key_opts)
+vim.g.auto_save_events = {"TextChanged", "TextChangedI"}
+
+-- Clear highlighted search matches
+vim.api.nvim_set_keymap('n', '<Leader><Space>', ':noh<CR>', key_opts)
+
+-- Clear jumplist
+-- https://superuser.com/questions/1642954/how-to-start-vim-with-a-clean-jumplist
+vim.cmd('autocmd VimEnter * :clearjumps')
+
+-- Completion
+vim.opt.completeopt = 'menu'
+vim.api.nvim_set_keymap('i', '<C-o>', '<C-x><C-o>', {noremap = true}) -- omnifunc
+
+-- Colors
+vim.opt.background = 'light'
+vim.opt.termguicolors = true
+vim.cmd('colorscheme alabaster')
+
+-- General
 vim.opt.autoindent = true
 vim.opt.backspace = 'indent,eol,start'
 vim.opt.expandtab = true
@@ -28,34 +53,6 @@ vim.opt.softtabstop = 0
 vim.opt.splitright = true
 vim.opt.tabstop = 4
 vim.opt.wildmenu = true
-
--- ALWAYS use the clipboard for ALL operations
-vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
-
--- Yank relative path of current file
-vim.api.nvim_set_keymap('n', '<Leader>cp', ":call setreg('+', expand('%'))<CR>",
-                        key_opts)
-
--- Auto-save
-vim.api.nvim_set_keymap('n', '<Leader>a', ':AutoSaveToggle<CR>', key_opts)
-vim.g.auto_save_events = {"TextChanged", "TextChangedI"}
-
--- Better Whitespace
--- https://www.markdownguide.org/basic-syntax#line-break-best-practices
-vim.api.nvim_set_keymap('n', 'wd', ':StripWhitespace<CR>', key_opts)
-vim.api.nvim_set_keymap('n', 'wt', ':ToggleWhitespace<CR>', key_opts)
-
--- Clear highlighted search matches
-vim.api.nvim_set_keymap('n', '<Leader><Space>', ':noh<CR>', key_opts)
-
--- Completion
-vim.opt.completeopt = 'menu'
-vim.api.nvim_set_keymap('i', '<C-o>', '<C-x><C-o>', {noremap = true}) -- omnifunc
-
--- Colors
-vim.opt.background = 'light'
-vim.opt.termguicolors = true
-vim.cmd('colorscheme alabaster')
 
 -- GitGutter
 vim.opt.updatetime = 100
@@ -81,6 +78,14 @@ vim.api.nvim_set_keymap('n', '<LocalLeader>h',
 vim.api.nvim_set_keymap('n', 'gh',
                         ':silent !xdg-open https://hoogle.haskell.org/?hoogle=<C-r><C-w><CR>',
                         key_opts)
+
+-- Leaders
+vim.g.mapleader = ','
+vim.g.maplocalleader = '.'
+
+-- LSP
+require 'my-lsp'
+SetupLSP(key_opts)
 
 -- Markdown
 vim.opt.concealcursor = 'nc'
@@ -124,6 +129,12 @@ vim.g.netrw_preview = 1
 vim.g.netrw_winsize = 30
 vim.api.nvim_set_keymap('n', '<Leader>e', ':Explore<CR>', key_opts)
 
+-- Perl
+vim.g.loaded_perl_provider = 0
+
+-- Ruby
+vim.g.loaded_ruby_provider = 0
+
 -- Search and replace
 vim.api.nvim_set_keymap('n', '<Leader>r', ':%s/\\<<C-r><C-w>\\>//g<Left><Left>',
                         key_opts)
@@ -134,6 +145,11 @@ vim.api.nvim_set_keymap('n', '<Leader>g', ':Telescope live_grep<CR>', key_opts)
 vim.api.nvim_set_keymap('n', '<Leader>s',
                         ':Telescope grep_string search=<C-r><C-w><CR>', key_opts)
 
+-- Whitespace
+-- https://www.markdownguide.org/basic-syntax#line-break-best-practices
+vim.api.nvim_set_keymap('n', 'wd', ':StripWhitespace<CR>', key_opts)
+vim.api.nvim_set_keymap('n', 'wt', ':ToggleWhitespace<CR>', key_opts)
+
 -- YAML
 vim.cmd([[
 augroup yaml
@@ -142,17 +158,6 @@ augroup yaml
 augroup END
 ]])
 
--- Nope
-vim.g.loaded_perl_provider = 0
-vim.g.loaded_ruby_provider = 0
-
--- https://superuser.com/questions/1642954/how-to-start-vim-with-a-clean-jumplist
-vim.cmd('autocmd VimEnter * :clearjumps')
-
-require 'my-lsp'
-SetupLSP(key_opts)
-
-if os.getenv("NVIM_ASSISTANTS") == "1" then
-    require 'my-assistants'
-    SetupAssistants()
-end
+-- Yank relative path of current file
+vim.api.nvim_set_keymap('n', '<Leader>cp', ":call setreg('+', expand('%'))<CR>",
+                        key_opts)
