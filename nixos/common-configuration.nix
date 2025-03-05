@@ -1,7 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 
-let username = "evenbrenden";
-in {
+{
   boot = {
     tmp.cleanOnBoot = true;
     kernel.sysctl."fs.inotify.max_user_watches" = 524288;

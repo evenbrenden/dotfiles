@@ -1,4 +1,4 @@
-{ config, pkgs, sops-nix, ... }:
+{ config, pkgs, sops-nix, username, ... }:
 
 {
   imports = [
@@ -85,7 +85,7 @@
         (import ./x-www-browser-hack.nix { inherit pkgs; })
       ] ++ programming;
     stateVersion = "22.05";
-    username = "evenbrenden";
+    username = username;
   };
 
   programs = {

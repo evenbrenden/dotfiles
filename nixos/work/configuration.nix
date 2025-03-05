@@ -1,3 +1,5 @@
+username:
+
 { config, lib, pkgs, ... }:
 
 {
@@ -25,7 +27,7 @@
   environment.variables.AMD_VULKAN_ICD = lib.mkDefault "RADV";
 
   imports = [
-    ../common-configuration.nix
+    (import ../common-configuration.nix { inherit pkgs username; })
     (import ../dpi.nix {
       dpi = 120;
       inherit pkgs;

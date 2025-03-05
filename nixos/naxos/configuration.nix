@@ -1,3 +1,5 @@
+username:
+
 { pkgs, ... }:
 
 {
@@ -17,7 +19,7 @@
   };
 
   imports = [
-    ../common-configuration.nix
+    (import ../common-configuration.nix { inherit pkgs username; })
     (import ../dpi.nix {
       dpi = 144;
       inherit pkgs;
