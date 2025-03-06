@@ -18,6 +18,7 @@
       common-modules = [
         home-manager-config-module
         home-manager.nixosModules.home-manager
+        musnix.nixosModules.musnix
         (import ./nix.nix { inherit nixpkgs-stable nixpkgs-unstable; })
         (import ./nixpkgs.nix { inherit system nixpkgs-unstable i3quo; })
       ];
@@ -36,7 +37,7 @@
     in {
       nixosConfigurations = {
         naxos = nixpkgs-stable.lib.nixosSystem {
-          modules = common-modules ++ [ (import ./nixos/naxos/configuration.nix username) musnix.nixosModules.musnix ];
+          modules = common-modules ++ [ (import ./nixos/naxos/configuration.nix username) ];
           inherit system;
         };
         work = nixpkgs-stable.lib.nixosSystem {
