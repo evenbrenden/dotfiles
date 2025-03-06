@@ -10,13 +10,7 @@ in {
     inherit config;
     overlays = [
       (final: prev: {
-        nixfmt-classic = prev.writeShellApplication {
-          name = "nixfmt";
-          runtimeInputs = [ prev.nixfmt-classic ];
-          text = ''
-            nixfmt --width=120 "$@"
-          '';
-        };
+        nixfmt-classic = import home/nixfmt.nix { pkgs = prev; };
         sof-firmware = with prev; import ./nixos/naxos/sof-firmware.nix { inherit fetchurl lib stdenvNoCC; };
         # https://discourse.nixos.org/t/using-nixpkgs-legacypackages-system-vs-import/17462/3
         unstable = import nixpkgs-unstable { inherit system config; };
