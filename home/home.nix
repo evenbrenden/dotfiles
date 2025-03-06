@@ -170,6 +170,7 @@
         "x-scheme-handler/msteams" = [ "teams.desktop" ];
         "x-scheme-handler/unknown" = [ "firefox.desktop" "appgate.desktop" ];
       };
+      enable = true;
     };
   };
 
