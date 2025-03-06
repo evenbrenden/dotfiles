@@ -12,25 +12,25 @@
       "studio/soundfonts".source =
         config.lib.file.mkOutOfStoreSymlink "/etc/profiles/per-user/${config.home.username}/share/soundfonts";
     };
-    packages = with pkgs.studio;
-      let
-        locals = [ bolder-sounds digital-sound-factory ivy-audio samples-from-mars ];
-        remotes = [
-          ac-upright
-          pkgs.carla
-          dsmolken-double-bass
-          fretls-dry
-          instant-midi-drum-patterns
-          jsteeldrum
-          lexicon-lxp-1-impulse-responses
-          pkgs.reaper
-          pkgs.sfizz
-          pkgs.soundfont-fluid
-          virtuosity-drums
-          wet-fretls
-          yamaha-tx81z-lately-bass
-        ];
-      in locals ++ remotes;
+    packages = with pkgs; [
+      ac-upright
+      bolder-sounds
+      carla
+      digital-sound-factory
+      dsmolken-double-bass
+      fretls-dry
+      instant-midi-drum-patterns
+      ivy-audio
+      jsteeldrum
+      lexicon-lxp-1-impulse-responses
+      reaper
+      samples-from-mars
+      sfizz
+      soundfont-fluid
+      virtuosity-drums
+      wet-fretls
+      yamaha-tx81z-lately-bass
+    ];
     sessionVariables = {
       LV2_PATH = "/etc/profiles/per-user/${config.home.username}/lib/lv2";
       UHE_RT_PRIO = 64; # For u-he plugins
