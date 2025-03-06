@@ -20,7 +20,7 @@
         home-manager.nixosModules.home-manager
         musnix.nixosModules.musnix
         (import ./nix.nix { inherit nixpkgs-stable nixpkgs-unstable; })
-        (import ./nixpkgs.nix { inherit i3quo nixpkgs-unstable system; })
+        (import ./nixpkgs/nixpkgs.nix { inherit i3quo nixpkgs-unstable system; })
       ];
       home-manager-config-module.home-manager = {
         backupFileExtension = "backup";
