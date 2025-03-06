@@ -1,4 +1,4 @@
-{ system, nixpkgs-unstable, i3quo }:
+{ i3quo, nixpkgs-unstable, system }:
 
 let
   config = {
