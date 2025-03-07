@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    (import ./alacritty-xcwd.nix { inherit pkgs; })
+    alacritty-xcwd
     autorandr
     brightnessctl
     dmenu
@@ -10,18 +10,18 @@
     i3status
     i3quo
     playerctl
-    (import ./set-dpi.nix { inherit pkgs; })
+    set-dpi
     systemd
     tesseract
-    (import ./toggle-keyboard-layout.nix { inherit pkgs; })
+    toggle-keyboard-layout
     xrandr-invert-colors
   ];
 
-  xdg.configFile."i3status/config".source = ./statusconfig;
+  xdg.configFile."i3status/config".source = ./dotfiles/i3statusconfig;
 
   xsession.windowManager.i3 = {
     config = null;
     enable = true;
-    extraConfig = builtins.readFile ./config;
+    extraConfig = builtins.readFile ./dotfiles/i3config;
   };
 }
