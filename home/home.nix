@@ -143,6 +143,7 @@
       "autorandr/postswitch".source = pkgs.lib.getExe pkgs.refresh-wallpaper;
       "fourmolu.yaml".source = ./dotfiles/fourmolu.yaml;
       "kde.org/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
+      "nixpkgs/config.nix".source = ./dotfiles/nixpkgs-config.nix;
       "parcellite/parcelliterc".source = ./dotfiles/parcelliterc;
       "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
       "VeraCrypt/Favorite Volumes.xml".source = ./dotfiles/veracrypt-favorite-volumes.xml;
