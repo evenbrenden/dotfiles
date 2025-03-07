@@ -1,25 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = let
-    git-replace = pkgs.writeShellApplication {
-      name = "git-replace";
-      runtimeInputs = with pkgs; [ git ];
-      text = ''
-        if [[ $# -ne 2 ]]
-        then
-            echo "Usage: git-replace <what> <with>"
-            exit 0
-        fi
-
-        what=$1
-        with=$2
-
-        # PS: Use single quotes and escape all things regex
-        git grep -l "$what" | xargs -r sed -i s/"$what"/"$with"/g
-      '';
-    };
-  in [ git-replace pkgs.tig ];
+  home.packages = [ pkgs.git-replace pkgs.tig ];
 
   programs.git = {
     enable = true;

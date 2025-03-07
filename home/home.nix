@@ -7,11 +7,11 @@
     ./emote.nix
     ./fonts.nix
     ./git.nix
-    ./i3/i3.nix
+    ./i3.nix
     ./screen-locking.nix
     sops-nix
     ./ssh.nix
-    ./studio/studio.nix
+    ./studio.nix
     ./vi/vi.nix
     ./work.nix
   ];
@@ -31,13 +31,13 @@
         programming = [
           unstable.aider-chat
           docker-compose
-          (import ./fourmolu-all.nix { inherit pkgs; })
+          fourmolu-all
           ghc
           graphviz
           haskellPackages.cabal-fmt
           hurl
           mypy
-          (import ./nixfmt-all.nix { inherit pkgs; })
+          nixfmt-all
           python3
           shellcheck
           virtualenv
@@ -83,7 +83,7 @@
         whatsapp-for-linux
         xclip
         xcolor
-        (import ./x-www-browser.nix { inherit pkgs; })
+        x-www-browser
       ] ++ programming;
     stateVersion = "22.05";
     username = username;
@@ -140,7 +140,7 @@
 
   xdg = {
     configFile = {
-      "autorandr/postswitch".source = pkgs.lib.getExe (import ./refresh-wallpaper.nix { inherit pkgs; });
+      "autorandr/postswitch".source = pkgs.lib.getExe pkgs.refresh-wallpaper;
       "fourmolu.yaml".source = ./dotfiles/fourmolu.yaml;
       "kde.org/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
       "parcellite/parcelliterc".source = ./dotfiles/parcelliterc;
