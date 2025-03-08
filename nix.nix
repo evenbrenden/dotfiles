@@ -7,12 +7,9 @@
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
-    nixPath = [ "nixpkgs=${nixpkgs-stable}" "unstable=${nixpkgs-unstable}" ];
+    nixPath = [ "nixpkgs=${nixpkgs-stable}" ];
     package = pkgs.nixVersions.stable;
-    registry = {
-      nixpkgs.flake = nixpkgs-stable;
-      unstable.flake = nixpkgs-unstable;
-    };
+    registry.nixpkgs.flake = nixpkgs-stable;
     # haskell.nix
     settings = {
       trusted-public-keys = [ "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=" ];
