@@ -19,8 +19,8 @@
         home-manager-config-module
         home-manager.nixosModules.home-manager
         musnix.nixosModules.musnix
-        (import ./nix.nix { inherit nixpkgs-stable nixpkgs-unstable; })
-        (import ./nixpkgs/nixpkgs.nix { inherit i3quo nixpkgs-unstable system; })
+        nix-config
+        nixpkgs-config
       ];
       home-manager-config-module.home-manager = {
         backupFileExtension = "backup";
@@ -32,6 +32,8 @@
         useUserPackages = true;
         users.${username} = import ./home/home.nix;
       };
+      nix-config = import ./nix.nix { inherit nixpkgs-stable nixpkgs-unstable; };
+      nixpkgs-config = import ./nixpkgs/nixpkgs.nix { inherit i3quo nixpkgs-unstable system; };
       system = "x86_64-linux";
       username = "evenbrenden";
     in {
