@@ -1,4 +1,4 @@
-{ nixpkgs-stable, nixpkgs-unstable }:
+{ nixpkgs-stable }:
 
 { pkgs, ... }:
 
