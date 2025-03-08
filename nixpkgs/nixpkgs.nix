@@ -19,7 +19,6 @@ in {
         set-dpi = import ./set-dpi.nix { pkgs = prev; };
         sof-firmware = with prev; import ./sof-firmware.nix { inherit fetchurl lib stdenvNoCC; };
         toggle-keyboard-layout = import ./toggle-keyboard-layout.nix { pkgs = prev; };
-        # https://discourse.nixos.org/t/using-nixpkgs-legacypackages-system-vs-import/17462/3
         unstable = import nixpkgs-unstable { inherit system config; };
         x-www-browser = import ./x-www-browser.nix { pkgs = prev; };
       })
