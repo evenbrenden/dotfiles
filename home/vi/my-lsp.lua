@@ -11,8 +11,7 @@ function SetupLSP(key_opts)
                                     ':lua vim.lsp.buf.definition()<CR>',
                                     key_opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Space>f',
-                                    ':lua vim.lsp.buf.formatting()<CR>',
-                                    key_opts)
+                                    ':lua vim.lsp.buf.format()<CR>', key_opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K',
                                     ':lua vim.lsp.buf.hover()<CR>', key_opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi',
