@@ -61,6 +61,7 @@ function SetupLSP(key_opts)
     lspconfig.clangd.setup {on_attach = on_attach}
     lspconfig.hls.setup {on_attach = on_attach}
     lspconfig.idris2_lsp.setup {on_attach = on_attach} -- https://github.com/claymager/idris2-pkgs
+    lspconfig.kotlin_language_server.setup {on_attach = on_attach}
     lspconfig.lua_ls.setup {
         on_attach = on_attach,
         settings = {
