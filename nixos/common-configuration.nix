@@ -24,7 +24,6 @@
   imports = [
     ./appgate.nix
     ./bluetooth.nix
-    ./chromecast.nix
     (import ./virtualisation.nix {
       inherit pkgs;
       inherit username;
