@@ -40,7 +40,6 @@
           nixfmt-all
           python3
           shellcheck
-          virtualenv
         ];
       in [
         abcde
