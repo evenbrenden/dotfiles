@@ -115,6 +115,13 @@
       enable = true;
       extraOptions = [ "--no-icon" ];
     };
+    picom = {
+      backend = "glx";
+      enable = true;
+      # https://github.com/google/xsecurelock/issues/97#issuecomment-1183086902
+      fadeExclude = [ "class_g = 'xsecurelock'" ];
+      vSync = true;
+    };
   };
 
   sops = {
