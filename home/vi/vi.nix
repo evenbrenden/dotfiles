@@ -11,7 +11,6 @@
         copilot = [ nodejs ];
         formatting = [
           haskellPackages.fourmolu
-          unstable.ktlint
           luaformatter
           nixfmt-classic
           nodePackages.prettier
@@ -23,7 +22,6 @@
         lsp = [
           unstable.clang-tools
           haskell-language-server
-          unstable.kotlin-language-server
           lua-language-server
           unstable.metals
           nil
@@ -62,7 +60,6 @@
         })
         hurl
         idris2-vim
-        kotlin-vim
         neoformat
         nvim-lspconfig
         nvim-treesitter
