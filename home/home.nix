@@ -154,6 +154,10 @@
       "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
       "VeraCrypt/Favorite Volumes.xml".source = ./dotfiles/veracrypt-favorite-volumes.xml;
     };
+    desktopEntries.xtrlock-pam = {
+      name = "xtrlock-pam";
+      exec = "${pkgs.lib.getExe' pkgs.xtrlock-pam "xtrlock-pam"} -b none";
+    };
     enable = true;
     mimeApps = {
       defaultApplications = {
