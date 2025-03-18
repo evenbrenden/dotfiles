@@ -195,6 +195,7 @@ bindsym $mod+Shift+p exec --no-startup-id flameshot full -p ~/Downloads/
 
 # lock screen
 bindsym $mod+Shift+l exec --no-startup-id loginctl lock-session $XDG_SESSION_ID
+bindsym --release $mod+Shift+k exec --no-startup-id xtrlock-pam -b none
 
 # sleep
 bindsym $mod+Shift+s exec --no-startup-id systemctl hybrid-sleep
