@@ -201,6 +201,3 @@ bindsym $mod+Shift+s exec --no-startup-id systemctl hybrid-sleep
 
 # set display
 exec --no-startup-id autorandr --force --change clone-largest
-
-# disable bluetooth
-exec --no-startup-id rfkill block bluetooth
