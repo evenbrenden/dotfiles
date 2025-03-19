@@ -11,7 +11,6 @@ in {
     overlays = [
       (final: prev: {
         alacritty-xcwd = import ./alacritty-xcwd.nix { pkgs = prev; };
-        autorandr-postswitch = import ./autorandr-postswitch.nix { pkgs = final; };
         fourmolu-all = import ./fourmolu-all.nix { pkgs = prev; };
         git-replace = import ./git-replace.nix { pkgs = prev; };
         nixfmt-all = import ./nixfmt-all.nix { pkgs = final; };
