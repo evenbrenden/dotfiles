@@ -165,13 +165,13 @@ bindsym $mod+Shift+w exec --no-startup-id rfkill toggle wlan && pkill -x -USR1 i
 bindsym $mod+Shift+b exec --no-startup-id rfkill toggle bluetooth && pkill -x -USR1 i3status
 
 # things xrandr
-bindsym $mod+Ctrl+a exec --no-startup-id autorandr --force --change clone-largest
-bindsym $mod+Ctrl+i exec --no-startup-id xrandr-invert-colors
+bindsym $mod+Ctrl+a exec --no-startup-id refresh-display
 bindsym $mod+Ctrl+6 exec --no-startup-id set-dpi 96
 bindsym $mod+Ctrl+7 exec --no-startup-id set-dpi 120
 bindsym $mod+Ctrl+8 exec --no-startup-id set-dpi 144
 bindsym $mod+Ctrl+9 exec --no-startup-id set-dpi 168
 bindsym $mod+Ctrl+0 exec --no-startup-id set-dpi 192
+bindsym $mod+Ctrl+i exec --no-startup-id xrandr-invert-colors
 
 # brightness control
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
