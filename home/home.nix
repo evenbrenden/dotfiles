@@ -146,7 +146,15 @@
 
   xdg = {
     configFile = {
-      "autorandr/postswitch".source = pkgs.lib.getExe pkgs.autorandr-postswitch;
+      "autorandr/postswitch".source = pkgs.lib.getExe (pkgs.writeShellApplication {
+        name = "autorandr-postswitch";
+        runtimeInputs = with pkgs; [ refresh-wallpaper systemd ];
+        text = ''
+          refresh-wallpaper
+          systemctl --user restart dunst.service
+          systemctl --user restart parcellite.service
+        '';
+      });
       "fourmolu.yaml".source = ./dotfiles/fourmolu.yaml;
       "kde.org/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
       "nixpkgs/config.nix".source = ./dotfiles/nixpkgs-config.nix;
