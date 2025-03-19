@@ -146,7 +146,7 @@
 
   xdg = {
     configFile = {
-      "autorandr/postswitch".source = pkgs.lib.getExe pkgs.refresh-display;
+      "autorandr/postswitch".source = pkgs.lib.getExe pkgs.autorandr-postswitch;
       "fourmolu.yaml".source = ./dotfiles/fourmolu.yaml;
       "kde.org/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
       "nixpkgs/config.nix".source = ./dotfiles/nixpkgs-config.nix;
