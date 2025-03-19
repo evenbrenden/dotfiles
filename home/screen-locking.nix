@@ -15,8 +15,8 @@ with pkgs.lib;
           runtimeInputs = [ pkgs.refresh-display pkgs.xsecurelock ];
           text = ''
             XSECURELOCK_DISCARD_FIRST_KEYPRESS=0 \
-            XSECURELOCK_KEY_XF86Display_COMMAND=refresh-display \
             XSECURELOCK_KEY_F7_COMMAND=refresh-display \
+            XSECURELOCK_KEY_XF86Display_COMMAND=refresh-display \
             xsecurelock
           '';
         };
