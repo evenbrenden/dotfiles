@@ -150,6 +150,7 @@
         name = "autorandr-postswitch";
         runtimeInputs = with pkgs; [ refresh-wallpaper systemd ];
         text = ''
+          # Things that need a bump post display changes
           refresh-wallpaper
           systemctl --user restart dunst.service
           systemctl --user restart parcellite.service
