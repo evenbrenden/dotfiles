@@ -1,7 +1,7 @@
 { pkgs }:
 
-# https://github.com/himdel/hsetroot/issues/42
 let
+  # https://github.com/himdel/hsetroot/issues/42
   the-expanding-universe = pkgs.stdenv.mkDerivation {
     name = "the-expanding-universe";
     src = null;
@@ -17,15 +17,24 @@ let
       cp the-expanding-universe-b.png $out/share/wallpapers/the-expanding-universe-b.png
     '';
   };
+  refresh-wallpaper = pkgs.writeShellApplication {
+    name = "refresh-wallpaper";
+    runtimeInputs = with pkgs; [ hsetroot ];
+    text = ''
+      current_hour=$(date +%H)
+      if [ "$current_hour" -ge 6 ] && [ "$current_hour" -lt 18 ]; then
+        hsetroot -fill ${the-expanding-universe}/share/wallpapers/the-expanding-universe-a.png
+      else
+        hsetroot -fill ${the-expanding-universe}/share/wallpapers/the-expanding-universe-b.png
+      fi
+    '';
+  };
 in pkgs.writeShellApplication {
-  name = "refresh-wallpaper";
-  runtimeInputs = with pkgs; [ hsetroot ];
+  name = "refresh-display";
+  runtimeInputs = with pkgs; [ refresh-wallpaper systemd ];
   text = ''
-    current_hour=$(date +%H)
-    if [ "$current_hour" -ge 6 ] && [ "$current_hour" -lt 18 ]; then
-      hsetroot -fill ${the-expanding-universe}/share/wallpapers/the-expanding-universe-a.png
-    else
-      hsetroot -fill ${the-expanding-universe}/share/wallpapers/the-expanding-universe-b.png
-    fi
+    refresh-wallpaper
+    systemctl --user restart dunst.service
+    systemctl --user restart parcellite.service
   '';
 }
