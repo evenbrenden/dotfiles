@@ -19,7 +19,7 @@ let
   };
 in pkgs.writeShellApplication {
   name = "refresh-wallpaper";
-  runtimeInputs = with pkgs; [ hsetroot ];
+  runtimeInputs = with pkgs; [ coreutils hsetroot ];
   text = ''
     current_hour=$(date +%H)
     if [ "$current_hour" -ge 6 ] && [ "$current_hour" -lt 18 ]; then
