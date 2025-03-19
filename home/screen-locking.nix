@@ -12,12 +12,11 @@ with pkgs.lib;
         # https://github.com/google/xsecurelock/issues/182
         xsecurelock-command = pkgs.writeShellApplication {
           name = "xsecurelock-command";
-          runtimeInputs = [ pkgs.autorandr pkgs.xsecurelock ];
-          text = let autorandr-command = "autorandr --force --change clone-largest";
-          in ''
+          runtimeInputs = [ pkgs.refresh-display pkgs.xsecurelock ];
+          text = ''
             XSECURELOCK_DISCARD_FIRST_KEYPRESS=0 \
-            XSECURELOCK_KEY_XF86Display_COMMAND='${autorandr-command}' \
-            XSECURELOCK_KEY_F7_COMMAND='${autorandr-command}' \
+            XSECURELOCK_KEY_XF86Display_COMMAND=refresh-display \
+            XSECURELOCK_KEY_F7_COMMAND=refresh-display \
             xsecurelock
           '';
         };

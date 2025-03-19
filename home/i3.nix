@@ -10,6 +10,7 @@
     i3status
     i3quo
     playerctl
+    refresh-display
     set-dpi
     systemd
     tesseract
