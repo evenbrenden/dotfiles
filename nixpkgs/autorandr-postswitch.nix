@@ -30,7 +30,7 @@ let
     '';
   };
 in pkgs.writeShellApplication {
-  name = "refresh-display";
+  name = "autorandr-postswitch";
   runtimeInputs = with pkgs; [ refresh-wallpaper systemd ];
   text = ''
     refresh-wallpaper
