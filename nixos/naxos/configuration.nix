@@ -34,16 +34,4 @@ username:
   networking.hostName = "naxos";
 
   system.stateVersion = "20.03";
-
-  systemd.services = {
-    auto-mute-mode = {
-      description = "Set Auto-Mute Mode";
-      script = ''
-        amixer -c 0 set 'Auto-Mute Mode' 'Disabled'
-      '';
-      path = [ pkgs.alsa-utils ];
-      after = [ "multi-user.target" "sound.target" "graphical.target" ];
-      wantedBy = [ "sound.target" ];
-    };
-  };
 }
