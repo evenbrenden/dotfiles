@@ -74,6 +74,12 @@
         Option "TearFree" "true"
       '';
       enable = true;
+      xkb.extraLayouts.norwerty = {
+        description = "Norwerty";
+        languages = [ "no" ];
+        symbolsFile = let norwerty = import ./norwerty/norwerty.nix { inherit pkgs; };
+        in "${norwerty}/share/X11/xkb/symbols/norwerty";
+      };
     };
   };
 
