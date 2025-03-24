@@ -7,11 +7,9 @@ pkgs.stdenv.mkDerivation {
   src = pkgs.fetchFromGitHub {
     owner = "tobiasvl";
     repo = "norwerty";
-    rev = "4de0b54129867d4f123fc038a4cf847503717898";
-    sha256 = "sha256-7qdsRVIKDJlp8QMzJhjqQNnNBv8IeOw/ucb0lP+QWNc=";
+    rev = "3d2cd0f1fda8744525bcfe3df1a1ce0578858195";
+    sha256 = "sha256-AroOqU8aV3oid24WzTOsYhuHUULRNhA124lIuSIvZHo=";
   };
-
-  patches = [ ./0001-Linux-Include-basic-Norwegian.patch ];
 
   installPhase = ''
     mkdir -p $out/share/X11/xkb/symbols
