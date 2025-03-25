@@ -21,7 +21,7 @@
       };
     };
     user.services = {
-      # So that Auto-Mute Mode is disabled on boot
+      # So that auto-mute mode is disabled on boot
       auto-mute-mode = {
         description = "Set Auto-Mute Mode";
         script = ''
