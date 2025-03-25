@@ -11,7 +11,7 @@ pkgs.stdenv.mkDerivation {
     sha256 = "sha256-AroOqU8aV3oid24WzTOsYhuHUULRNhA124lIuSIvZHo=";
   };
 
-  patches = [ ./0001-Linux-Include-basic-Norwegian.patch ];
+  patches = [ ./0001-Make-Linux-layout-standalone.patch ];
 
   installPhase = ''
     mkdir -p $out/share/X11/xkb/symbols

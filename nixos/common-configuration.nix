@@ -75,7 +75,7 @@
       '';
       enable = true;
       xkb.extraLayouts.norwerty = {
-        description = "Norwegian - Norwerty";
+        description = "The Norwerty Keyboard Layout";
         languages = [ "nor" "nob" "nno" ];
         symbolsFile = "${pkgs.norwerty}/share/X11/xkb/symbols/norwerty";
       };
