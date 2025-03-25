@@ -75,8 +75,8 @@
       '';
       enable = true;
       xkb.extraLayouts.norwerty = {
-        description = "Norwerty";
-        languages = [ "no" ];
+        description = "Norwegian - Norwerty";
+        languages = [ "nor" "nob" "nno" ];
         symbolsFile = "${pkgs.norwerty}/share/X11/xkb/symbols/norwerty";
       };
     };
