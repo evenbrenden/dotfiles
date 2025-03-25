@@ -15,7 +15,7 @@ in {
         git-replace = import ./git-replace.nix { pkgs = prev; };
         nixfmt-all = import ./nixfmt-all.nix { pkgs = final; };
         nixfmt-classic = import ./nixfmt-classic.nix { pkgs = prev; };
-        norwerty = import ./norwerty.nix { pkgs = prev; };
+        norwerty = import ./norwerty/norwerty.nix { pkgs = prev; };
         refresh-display = import ./refresh-display.nix { pkgs = prev; };
         refresh-wallpaper = import ./refresh-wallpaper.nix { pkgs = prev; };
         set-dpi = import ./set-dpi.nix { pkgs = prev; };

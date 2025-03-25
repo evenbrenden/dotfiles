@@ -11,6 +11,8 @@ pkgs.stdenv.mkDerivation {
     sha256 = "sha256-AroOqU8aV3oid24WzTOsYhuHUULRNhA124lIuSIvZHo=";
   };
 
+  patches = [ ./0001-Linux-Include-basic-Norwegian.patch ];
+
   installPhase = ''
     mkdir -p $out/share/X11/xkb/symbols
     install -Dm444 linux/no.txt $out/share/X11/xkb/symbols/norwerty
