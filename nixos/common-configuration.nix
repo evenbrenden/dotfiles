@@ -74,11 +74,7 @@
         Option "TearFree" "true"
       '';
       enable = true;
-      xkb.extraLayouts.norwerty = {
-        description = "The Norwerty Keyboard Layout";
-        languages = [ "nor" "nob" "nno" ];
-        symbolsFile = "${pkgs.norwerty}/share/X11/xkb/symbols/norwerty";
-      };
+      xkb.dir = "${pkgs.xkeyboardconfig-norwerty}/etc/X11/xkb";
     };
   };
 
