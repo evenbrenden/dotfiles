@@ -1,7 +1,6 @@
-diff --git a/rules/base.xml b/rules/base.xml
-index 1dc8fba..3486ca2 100644
---- a/rules/base.xml
-+++ b/rules/base.xml
+diff -ruN a/rules/base.xml b/rules/base.xml
+--- a/rules/base.xml	2024-10-01 21:44:26.000000000 +0200
++++ b/rules/base.xml	2025-03-27 15:38:37.414982701 +0100
 @@ -5538,6 +5538,12 @@
              </languageList>
            </configItem>
@@ -15,11 +14,10 @@ index 1dc8fba..3486ca2 100644
        </variantList>
      </layout>
      <layout>
-diff --git a/symbols/no b/symbols/no
-index fb46bea..8536de1 100644
---- a/symbols/no
-+++ b/symbols/no
-@@ -280,3 +280,63 @@ partial alphanumeric_keys
+diff -ruN a/symbols/no b/symbols/no
+--- a/symbols/no	2024-10-01 21:44:26.000000000 +0200
++++ b/symbols/no	2025-03-27 15:38:22.813903250 +0100
+@@ -280,3 +280,63 @@
  	xkb_symbols "sun_type6" {
  	include "sun_vndr/no(sun_type6)"
  };
