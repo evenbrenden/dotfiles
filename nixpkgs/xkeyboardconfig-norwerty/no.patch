@@ -1,6 +1,8 @@
---- a/symbols/no	2024-10-01 21:44:26.000000000 +0200
-+++ b/symbols/no	2025-03-27 11:33:06.756586081 +0100
-@@ -280,3 +280,63 @@
+diff --git a/symbols/no b/symbols/no
+index fb46bea..8536de1 100644
+--- a/symbols/no
++++ b/symbols/no
+@@ -280,3 +280,63 @@ partial alphanumeric_keys
  	xkb_symbols "sun_type6" {
  	include "sun_vndr/no(sun_type6)"
  };
@@ -64,18 +66,3 @@
 +
 +    include "level3(ralt_switch)"
 +};
---- a/rules/base.xml	2024-10-01 21:44:26.000000000 +0200
-+++ b/rules/base.xml	2025-03-27 11:35:58.433732940 +0100
-@@ -5538,6 +5538,12 @@
-             </languageList>
-           </configItem>
-         </variant>
-+        <variant>
-+          <configItem>
-+            <name>norwerty</name>
-+            <description>Norwerty</description>
-+          </configItem>
-+        </variant>
-       </variantList>
-     </layout>
-     <layout>
