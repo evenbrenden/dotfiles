@@ -1,6 +1,6 @@
 diff -ruN a/rules/base.xml b/rules/base.xml
 --- a/rules/base.xml	2024-10-01 21:44:26.000000000 +0200
-+++ b/rules/base.xml	2025-03-27 15:38:37.414982701 +0100
++++ b/rules/base.xml	2025-03-28 08:27:18.815763769 +0100
 @@ -5538,6 +5538,12 @@
              </languageList>
            </configItem>
@@ -16,14 +16,13 @@ diff -ruN a/rules/base.xml b/rules/base.xml
      <layout>
 diff -ruN a/symbols/no b/symbols/no
 --- a/symbols/no	2024-10-01 21:44:26.000000000 +0200
-+++ b/symbols/no	2025-03-27 15:38:22.813903250 +0100
-@@ -280,3 +280,63 @@
- 	xkb_symbols "sun_type6" {
- 	include "sun_vndr/no(sun_type6)"
++++ b/symbols/no	2025-03-28 08:26:38.699397886 +0100
+@@ -274,6 +274,66 @@
+     name[Group1]= "Norwegian (Colemak-DH Wide)";
  };
-+
-+//Norwerty by Tobias V. Langhoff
-+//Based on Swerty by Johan E. Gustafsson
+ 
++// Norwerty by Tobias V. Langhoff
++// Based on Swerty by Johan E. Gustafsson
 +partial alphanumeric_keys
 +xkb_symbols "norwerty" {
 +
@@ -81,3 +80,7 @@ diff -ruN a/symbols/no b/symbols/no
 +
 +    include "level3(ralt_switch)"
 +};
++
+ // EXTRAS:
+ 
+ partial alphanumeric_keys
