@@ -28,6 +28,7 @@
       inherit pkgs;
       inherit username;
     })
+    ./xkb.nix
   ];
 
   networking = {
@@ -74,7 +75,6 @@
         Option "TearFree" "true"
       '';
       enable = true;
-      xkb.dir = "${pkgs.xkeyboardconfig-norwerty}/etc/X11/xkb";
     };
   };
 
