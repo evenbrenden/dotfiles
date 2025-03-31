@@ -29,7 +29,7 @@ username:
   imports = [
     (import ../common-configuration.nix { inherit pkgs username; })
     (import ../dpi.nix {
-      dpi = 120;
+      dpi = 144;
       inherit pkgs;
     })
     ./hardware-configuration.nix
