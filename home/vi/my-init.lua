@@ -8,10 +8,8 @@ vim.g.maplocalleader = '.'
 vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
 
 -- Assistants
-if os.getenv("NVIM_ASSISTANTS") == "1" then
-    require 'my-assistants'
-    SetupAssistants()
-end
+require 'my-assistants'
+SetupAssistants()
 
 -- Auto-save
 vim.api.nvim_set_keymap('n', '<Leader>a', ':AutoSaveToggle<CR>', key_opts)
