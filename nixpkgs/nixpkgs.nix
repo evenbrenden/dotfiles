@@ -10,7 +10,6 @@ in {
     inherit config;
     overlays = [
       (final: prev: {
-        alacritty-xcwd = import ./alacritty-xcwd.nix { pkgs = prev; };
         fourmolu-all = import ./fourmolu-all.nix { pkgs = prev; };
         git-replace = import ./git-replace.nix { pkgs = prev; };
         nixfmt-all = import ./nixfmt-all.nix { pkgs = final; };

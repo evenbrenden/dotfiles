@@ -5,7 +5,7 @@ set $mod Mod4
 font pango:DejaVu Sans Mono 12
 
 # terminal launcher
-bindsym $mod+Return exec alacritty-xcwd
+bindsym $mod+Return exec alacritty --working-directory "$(xcwd)"
 
 # dmenu launcher
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -fn DejaVuSansMono-12 -sb #007755'

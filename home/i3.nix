@@ -2,7 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    alacritty-xcwd
     autorandr
     brightnessctl
     dmenu
@@ -15,6 +14,7 @@
     systemd
     tesseract
     toggle-keyboard-layout
+    xcwd
     xrandr-invert-colors
     xtrlock-pam
   ];
