@@ -67,6 +67,7 @@
       displayManager.session = [{
         manage = "window";
         name = "home-manager";
+        # This might make SHLVL=2
         start = ''
           ${pkgs.runtimeShell} $HOME/.xsession &
           waitPID=$!
