@@ -63,11 +63,11 @@
       enable = true;
     };
     xserver = {
+      # Note that moving window manager management from NixOS to Home Manager made SHLVL=2
       # https://discourse.nixos.org/t/opening-i3-from-home-manager-automatically/4849/11
       displayManager.session = [{
         manage = "window";
         name = "home-manager";
-        # This might make SHLVL=2
         start = ''
           ${pkgs.runtimeShell} $HOME/.xsession &
           waitPID=$!
