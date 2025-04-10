@@ -46,7 +46,7 @@
         enable = true;
         user = "${username}";
       };
-      defaultSession = "home-manager";
+      defaultSession = "none+home-manager";
     };
     fprintd.enable = true;
     fwupd.enable = true;
@@ -63,8 +63,9 @@
       enable = true;
     };
     xserver = {
-      # https://discourse.nixos.org/t/opening-i3-from-home-manager-automatically/4849/8
-      desktopManager.session = [{
+      # https://discourse.nixos.org/t/opening-i3-from-home-manager-automatically/4849/11
+      displayManager.session = [{
+        manage = "window";
         name = "home-manager";
         start = ''
           ${pkgs.runtimeShell} $HOME/.xsession &
