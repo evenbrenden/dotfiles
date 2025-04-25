@@ -24,7 +24,7 @@ with pkgs.lib;
       xss-lock.extraOptions = [ "--transfer-sleep-lock" ];
     };
     # https://github.com/nix-community/home-manager/pull/6533
-    # Disable with: systemctl --user stop xidlehook.service
+    # systemctl --user stop xidlehook.service
     xidlehook = {
       enable = true;
       not-when-fullscreen = true;
