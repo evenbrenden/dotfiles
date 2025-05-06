@@ -6,8 +6,8 @@ sink_name: str = 'alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi
 headphones_name: str = 'Headphones'
 speaker_name: str = 'Speaker'
 
-output = subprocess.run(['pactl', 'list', 'sinks'], stdout=subprocess.PIPE)
-verbose: str = output.stdout.decode()
+output = subprocess.check_output(['pactl', 'list', 'sinks'])
+verbose: str = output.decode('utf-8')
 sink: str = verbose.partition(sink_name)[2]
 ports: str = sink.partition('Ports')[2]
 headphones: str = ports.partition(headphones_name)[2]
