@@ -13,7 +13,7 @@
       url = { "git@github.schibsted.io:" = { insteadOf = "https://github.schibsted.io/"; }; };
     };
     ignores = let metals = [ ".bloop" ".metals" "metals.sbt" ];
-    in [ ".aider*" ".direnv" ".envrc" ".luarc.json" "*.swp" ] ++ metals;
+    in [ ".aider*" ".direnv" ".envrc" ".luarc.json" "__pycache__" "*.swp" ] ++ metals;
     includes = let
       codebergAddress = {
         user = "evenbrenden";
