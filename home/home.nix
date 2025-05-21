@@ -40,6 +40,7 @@
           nixfmt-all
           python3
           shellcheck
+          unstable.uv
         ];
       in [
         abcde
