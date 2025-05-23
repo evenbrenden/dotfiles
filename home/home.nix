@@ -29,7 +29,7 @@
     packages = with pkgs;
       let
         programming = [
-          unstable.aider-chat
+          unstable.aider-chat-with-playwright
           docker-compose
           fourmolu-all
           ghc
