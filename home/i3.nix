@@ -9,6 +9,7 @@
     i3status
     i3quo
     playerctl
+    pulseaudio
     refresh-display
     set-dpi
     systemd
