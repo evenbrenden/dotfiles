@@ -58,6 +58,7 @@ in {
     shellOptions = [ "histappend" ];
   };
   home.packages = [
+    pkgs.fzf
     pkgs.git # For git-prompt.sh
   ];
 }

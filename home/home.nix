@@ -56,7 +56,6 @@
         firefox
         fff
         flac
-        fzf
         ghostwriter
         gimp
         gparted
