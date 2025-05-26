@@ -125,7 +125,7 @@
   };
 
   sops = {
-    age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt"; # Need this or will silently fail
+    age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
     defaultSopsFile = ../secrets/secrets.yaml;
     secrets = {
       codeberg-org-private-key.path = "${config.home.homeDirectory}/.ssh/codeberg-org-private-key";
