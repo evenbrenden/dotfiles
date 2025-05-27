@@ -17,7 +17,6 @@
     toggle-keyboard-layout
     xcwd
     xrandr-invert-colors
-    xtrlock-pam
   ];
 
   xdg.configFile."i3status/config".source = ./dotfiles/i3statusconfig;
