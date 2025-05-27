@@ -23,7 +23,7 @@
           style = "Bold Oblique";
         };
       };
-      general.import = [ "${pkgs.alacritty-theme}/alabaster.toml" ];
     };
+    theme = "alabaster";
   };
 }

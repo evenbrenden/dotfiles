@@ -15,10 +15,6 @@
   hardware = {
     enableAllFirmware = true;
     enableRedistributableFirmware = true;
-    pulseaudio = {
-      enable = true;
-      package = pkgs.pulseaudio.override { bluetoothSupport = true; };
-    };
   };
 
   imports = [
@@ -58,6 +54,10 @@
     logind.lidSwitch = "ignore";
     openssh.enable = false;
     pipewire.enable = false;
+    pulseaudio = {
+      enable = true;
+      package = pkgs.pulseaudio.override { bluetoothSupport = true; };
+    };
     upower = {
       criticalPowerAction = "PowerOff";
       enable = true;
