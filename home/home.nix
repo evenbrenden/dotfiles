@@ -56,7 +56,7 @@
         firefox
         fff
         flac
-        ghostwriter
+        kdePackages.ghostwriter
         gimp
         gparted
         irssi
@@ -65,7 +65,7 @@
         libnotify
         libreoffice
         nomacs
-        okular
+        kdePackages.okular
         p7zip
         pandoc
         pavucontrol
