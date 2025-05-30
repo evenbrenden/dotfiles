@@ -53,10 +53,7 @@
         };
       in [
         alabaster-nvim
-        ({
-          plugin = copilot-vim;
-          optional = true;
-        })
+        copilot-vim
         hurl
         idris2-vim
         neoformat
