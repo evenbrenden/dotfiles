@@ -10,7 +10,6 @@ function SetupAssistants()
         ["lua"] = true,
         ["nix"] = true,
         ["python"] = true,
-        ["scala"] = true,
         ["sh"] = true,
         ["typescript"] = true
     }

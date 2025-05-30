@@ -2,6 +2,6 @@ auto-commits: false
 auto-lint: false
 dirty-commits: false
 gitignore: false
-model: gpt-4o
+model: opus
 subtree-only: true
 watch-files: true

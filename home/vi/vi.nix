@@ -23,7 +23,6 @@
           unstable.clang-tools
           haskell-language-server
           lua-language-server
-          unstable.metals
           nil
           (pkgs.python3.withPackages (pp: [ pp.pylsp-mypy pp.python-lsp-server ]))
           nodePackages.typescript
