@@ -18,7 +18,6 @@
   };
 
   imports = [
-    ./appgate.nix
     ./bluetooth.nix
     (import ./virtualisation.nix {
       inherit pkgs;

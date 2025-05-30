@@ -13,7 +13,6 @@
     ./ssh.nix
     ./studio.nix
     ./vi/vi.nix
-    ./work.nix
   ];
 
   home = {
@@ -178,13 +177,13 @@
         "image/png" = [ "org.nomacs.ImageLounge.desktop" ];
         "image/svg+xml" = [ "org.nomacs.ImageLounge.desktop" ];
         "text/html" = [ "firefox.desktop" ];
-        "x-scheme-handler/about" = [ "firefox.desktop" "appgate.desktop" ];
+        "x-scheme-handler/about" = [ "firefox.desktop" ];
         "x-scheme-handler/chrome" = [ "firefox.desktop" ];
         "x-scheme-handler/http" = [ "firefox.desktop" ];
         "x-scheme-handler/https" = [ "firefox.desktop" ];
         "x-scheme-handler/magnet" = [ "transmission-gtk.desktop" ];
         "x-scheme-handler/msteams" = [ "teams.desktop" ];
-        "x-scheme-handler/unknown" = [ "firefox.desktop" "appgate.desktop" ];
+        "x-scheme-handler/unknown" = [ "firefox.desktop" ];
       };
       enable = true;
     };

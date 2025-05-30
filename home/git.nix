@@ -10,7 +10,6 @@
       init.defaultBranch = "main";
       pull.rebase = true;
       push.default = "simple";
-      url = { "git@github.schibsted.io:" = { insteadOf = "https://github.schibsted.io/"; }; };
     };
     ignores = let metals = [ ".bloop" ".metals" "metals.sbt" ];
     in [ ".aider*" ".direnv" ".envrc" ".luarc.json" "*.swp" ] ++ metals;
@@ -22,10 +21,6 @@
       githubAddress = {
         user = "evenbrenden";
         host = "users.noreply.github.com";
-      };
-      schibstedAddress = {
-        user = "even.steen.brenden";
-        host = "schibsted.com";
       };
     in [
       {
@@ -40,13 +35,6 @@
         contents.user = {
           name = "Even Brenden";
           email = codebergAddress.user + "@" + codebergAddress.host;
-        };
-      }
-      {
-        condition = "hasconfig:remote.*.url:**/*github.schibsted.io*/**";
-        contents.user = {
-          name = "Even Brenden";
-          email = schibstedAddress.user + "@" + schibstedAddress.host;
         };
       }
     ];

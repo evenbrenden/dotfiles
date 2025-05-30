@@ -42,10 +42,6 @@
           modules = common-modules ++ [ (import ./nixos/naxos/configuration.nix username) ];
           inherit system;
         };
-        work = nixpkgs-stable.lib.nixosSystem {
-          modules = common-modules ++ [ (import ./nixos/work/configuration.nix username) ];
-          inherit system;
-        };
       };
     };
 }
