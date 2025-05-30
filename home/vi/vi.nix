@@ -73,7 +73,6 @@
         vim-nix
         vim-pico8-syntax
         vim-polyglot
-        purescript-vim
         wmgraphviz-vim
       ];
   };
