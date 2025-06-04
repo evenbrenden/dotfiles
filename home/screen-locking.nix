@@ -4,7 +4,6 @@ with pkgs.lib;
 
 {
   services = {
-    # https://github.com/nix-community/home-manager/pull/6534
     screen-locker = {
       enable = true;
       lockCmd = let
@@ -23,8 +22,6 @@ with pkgs.lib;
       in "${getExe xsecurelock-command}";
       xss-lock.extraOptions = [ "--transfer-sleep-lock" ];
     };
-    # https://github.com/nix-community/home-manager/pull/6533
-    # systemctl --user stop xidlehook.service
     xidlehook = {
       enable = true;
       not-when-fullscreen = true;
