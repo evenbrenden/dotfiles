@@ -31,16 +31,6 @@
         after = [ "multi-user.target" "sound.target" "graphical.target" ];
         wantedBy = [ "sound.target" ];
       };
-      # So that headphone jack is made right on boot
-      jiggle-headphone-jack = {
-        description = "Jiggle headphone jack";
-        script = ''
-          python3 ${./set-pulseaudio-sink-port.py}
-        '';
-        path = [ pkgs.pulseaudio pkgs.python3 ];
-        after = [ "default.target" ];
-        wantedBy = [ "pulseaudio.service" ];
-      };
       # So that mic mute LED is made right on boot
       jiggle-mic-mute-led = {
         description = "Jiggle mic mute LED";
