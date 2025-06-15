@@ -15,31 +15,33 @@
 
   outputs = { i3quo, home-manager, musnix, nixpkgs-stable, nixpkgs-unstable, sops-nix, ... }:
     let
-      common-modules = [
-        home-manager-config-module
-        home-manager.nixosModules.home-manager
-        musnix.nixosModules.musnix
-        nix-config
-        nixpkgs-config
-      ];
-      home-manager-config-module.home-manager = {
-        backupFileExtension = "backup";
-        extraSpecialArgs = {
-          sops-nix = sops-nix.homeManagerModules.sops;
-          inherit username;
+      home-manager-config-module = username: {
+        home-manager = {
+          backupFileExtension = "backup";
+          extraSpecialArgs = {
+            sops-nix = sops-nix.homeManagerModules.sops;
+            inherit username;
+          };
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          users.${username} = import ./home/home.nix;
         };
-        useGlobalPkgs = true;
-        useUserPackages = true;
-        users.${username} = import ./home/home.nix;
       };
       nix-config = import ./nix.nix { inherit nixpkgs-stable; };
       nixpkgs-config = import ./nixpkgs/nixpkgs.nix { inherit i3quo nixpkgs-unstable system; };
       system = "x86_64-linux";
-      username = "evenbrenden";
     in {
       nixosConfigurations = {
-        naxos = nixpkgs-stable.lib.nixosSystem {
-          modules = common-modules ++ [ (import ./nixos/naxos/configuration.nix username) ];
+        naxos = let username = "evenbrenden";
+        in nixpkgs-stable.lib.nixosSystem {
+          modules = [
+            (import ./nixos/naxos/configuration.nix username)
+            (home-manager-config-module username)
+            home-manager.nixosModules.home-manager
+            musnix.nixosModules.musnix
+            nix-config
+            nixpkgs-config
+          ];
           inherit system;
         };
       };
