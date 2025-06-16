@@ -76,7 +76,6 @@
         sops
         transmission_4-gtk
         tree
-        unstable.veracrypt
         vlc
         whatsapp-for-linux
         xclip
@@ -160,7 +159,6 @@
       "nixpkgs/config.nix".source = ./dotfiles/nixpkgs-config.nix;
       "parcellite/parcelliterc".source = ./dotfiles/parcelliterc;
       "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
-      "VeraCrypt/Favorite Volumes.xml".source = ./dotfiles/veracrypt-favorite-volumes.xml;
     };
     enable = true;
     mimeApps = {
