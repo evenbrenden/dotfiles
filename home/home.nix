@@ -49,6 +49,7 @@
         audacity
         chromium
         curl
+        cryptsetup
         unstable.discord
         dos2unix
         file
@@ -57,7 +58,6 @@
         flac
         kdePackages.ghostwriter
         gimp
-        gparted
         irssi
         jq
         libheif
@@ -67,6 +67,7 @@
         kdePackages.okular
         p7zip
         pandoc
+        parted
         pavucontrol
         rclone
         unstable.signal-desktop
