@@ -22,7 +22,7 @@
         "${pkgs.digital-sound-factory}/share/soundfonts/digital-sound-factory";
       "studio/soundfonts/FluidR3_GM2-2.sf2".source = "${pkgs.soundfont-fluid}/share/soundfonts/FluidR3_GM2-2.sf2";
     };
-    packages = with pkgs; [ carla reaper sfizz ];
+    packages = [ pkgs.carla pkgs.reaper pkgs.sfizz ];
     sessionVariables = {
       LV2_PATH = lib.strings.concatStringsSep ":" [ "${pkgs.carla}/lib/lv2" "${pkgs.sfizz}/lib/lv2" ];
       UHE_RT_PRIO = 64; # For u-he plugins
