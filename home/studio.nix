@@ -8,18 +8,13 @@
       "studio/midi/instant-midi-drum-patterns".source =
         "${pkgs.instant-midi-drum-patterns}/share/midi/instant-midi-drum-patterns";
       "studio/sfz/ac-upright".source = "${pkgs.ac-upright}/share/sfz/ac-upright";
-      "studio/sfz/bolder-sounds".source = "${pkgs.bolder-sounds}/share/sfz/bolder-sounds";
       "studio/sfz/dsmolken-double-bass".source = "${pkgs.dsmolken-double-bass}/share/sfz/dsmolken-double-bass";
       "studio/sfz/fretls-dry".source = "${pkgs.fretls-dry}/share/sfz/fretls-dry";
-      "studio/sfz/ivy-audio".source = "${pkgs.ivy-audio}/share/sfz/ivy-audio";
       "studio/sfz/jsteeldrum".source = "${pkgs.jsteeldrum}/share/sfz/jsteeldrum";
-      "studio/sfz/samples-from-mars".source = "${pkgs.samples-from-mars}/share/sfz/samples-from-mars";
       "studio/sfz/virtuosity-drums".source = "${pkgs.virtuosity-drums}/share/sfz/virtuosity-drums";
       "studio/sfz/wet-fretls".source = "${pkgs.wet-fretls}/share/sfz/wet-fretls";
       "studio/sfz/yamaha-tx81z-lately-bass".source =
         "${pkgs.yamaha-tx81z-lately-bass}/share/sfz/yamaha-tx81z-lately-bass";
-      "studio/soundfonts/digital-sound-factory".source =
-        "${pkgs.digital-sound-factory}/share/soundfonts/digital-sound-factory";
       "studio/soundfonts/FluidR3_GM2-2.sf2".source = "${pkgs.soundfont-fluid}/share/soundfonts/FluidR3_GM2-2.sf2";
     };
     packages = [ pkgs.carla pkgs.reaper pkgs.sfizz ];
