@@ -25,7 +25,6 @@ username:
       inherit pkgs;
     })
     ./hardware-configuration.nix
-    ./steam.nix
     ./x1c7-audio-hacks.nix
   ];
 
