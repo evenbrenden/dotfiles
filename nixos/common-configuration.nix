@@ -7,10 +7,7 @@
     supportedFilesystems = [ "ntfs" ];
   };
 
-  environment = {
-    pathsToLink = [ "/share/ir" "/share/midi" "/share/sfz" "/share/soundfonts" ];
-    systemPackages = with pkgs; [ lshw pciutils ]; # Debug WLAN
-  };
+  environment.systemPackages = with pkgs; [ lshw pciutils ]; # Debug WLAN
 
   hardware = {
     enableAllFirmware = true;
