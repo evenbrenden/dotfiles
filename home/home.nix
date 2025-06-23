@@ -9,9 +9,9 @@
     ./git.nix
     ./i3.nix
     ./screen-locking.nix
-    sops-nix
+    # sops-nix
     ./ssh.nix
-    ./studio.nix
+    # ./studio.nix
     ./vi/vi.nix
   ];
 
@@ -74,7 +74,7 @@
         simplescreenrecorder
         slack
         snes9x-gtk
-        sops
+        # sops
         transmission_4-gtk
         tree
         vlc
@@ -123,14 +123,14 @@
     };
   };
 
-  sops = {
-    age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
-    defaultSopsFile = ../secrets/secrets.yaml;
-    secrets = {
-      codeberg-org-private-key.path = "${config.home.homeDirectory}/.ssh/codeberg-org-private-key";
-      github-com-private-key.path = "${config.home.homeDirectory}/.ssh/github-com-private-key";
-    };
-  };
+  # sops = {
+  #   age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
+  #   defaultSopsFile = ../secrets/secrets.yaml;
+  #   secrets = {
+  #     codeberg-org-private-key.path = "${config.home.homeDirectory}/.ssh/codeberg-org-private-key";
+  #     github-com-private-key.path = "${config.home.homeDirectory}/.ssh/github-com-private-key";
+  #   };
+  # };
 
   systemd.user = {
     startServices = true;

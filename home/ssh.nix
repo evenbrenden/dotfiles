@@ -3,10 +3,10 @@
 {
   programs.ssh = {
     enable = true;
-    matchBlocks = {
-      "codeberg.org".identityFile = "${config.sops.secrets.codeberg-org-private-key.path}";
-      "github.com".identityFile = "${config.sops.secrets.github-com-private-key.path}";
-    };
+    # matchBlocks = {
+    #   "codeberg.org".identityFile = "${config.sops.secrets.codeberg-org-private-key.path}";
+    #   "github.com".identityFile = "${config.sops.secrets.github-com-private-key.path}";
+    # };
   };
 
   services.ssh-agent.enable = true;
