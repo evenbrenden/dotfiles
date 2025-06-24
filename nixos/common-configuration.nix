@@ -59,7 +59,7 @@
       enable = true;
     };
     xserver = {
-      # Note that these sessions are started via xsession-wrapper which makes SHLVL be 2
+      # Note that these sessions are started via xsession-wrapper which increments SHLVL
       # https://discourse.nixos.org/t/opening-i3-from-home-manager-automatically/4849/11
       displayManager.session = [{
         manage = "window";
