@@ -26,7 +26,6 @@ in {
         x-www-browser = import ./x-www-browser.nix { pkgs = prev; };
       })
       i3quo.overlay
-      (import ./studio/studio.nix)
     ];
   };
 }
