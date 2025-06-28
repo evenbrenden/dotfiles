@@ -3,6 +3,7 @@
 {
   imports = [
     ./alacritty.nix
+    ./audio.nix
     ./bash.nix
     ./emote.nix
     ./fonts.nix
@@ -11,7 +12,6 @@
     ./screen-locking.nix
     sops-nix
     ./ssh.nix
-    ./studio.nix
     ./vi/vi.nix
   ];
 
