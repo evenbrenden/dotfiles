@@ -59,12 +59,7 @@
   };
 
   xdg = {
-    configFile = {
-      "REAPER/Configurations/config.ReaperConfigZip".source = ./dotfiles/REAPER/config.ReaperConfigZip;
-      "REAPER/TrackTemplates/ReaDrums.RTrackTemplate".source = ./dotfiles/REAPER/ReaDrums.RTrackTemplate;
-      "REAPER/TrackTemplates/ReaDrums Rack (GM version).RTrackTemplate".source =
-        ./dotfiles/REAPER/ReaDrums_Rack_GM_version.RTrackTemplate;
-    };
+    configFile."REAPER/Configurations/reaper.ReaperConfigZip".source = ./dotfiles/reaper.ReaperConfigZip;
     desktopEntries.ft2-clone = {
       name = "Fasttracker II clone";
       exec = "${pkgs.ft2-clone}/bin/ft2-clone";
