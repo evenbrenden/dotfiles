@@ -1,13 +1,12 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 let
   bolder-sounds = pkgs.stdenv.mkDerivation {
     name = "bolder-sounds";
 
-    src = pkgs.requireFile {
-      name = "bolder-sounds.tar.gz";
-      url = "bolder-sounds.tar.gz";
-      sha256 = "0p93l3nls8x8a70b5g6fpsrki8f12xdblvrp6fhzjss6ps57harb";
+    src = builtins.fetchTarball {
+      url = "file://${config.xdg.dataHome}/bundles/bolder-sounds.tar.gz";
+      sha256 = "1xxsb83dwrq3xi1fc825fxphbhjscr7v3nr86a07zsbdyy6lihzc";
     };
 
     installPhase = ''
@@ -18,10 +17,9 @@ let
   digital-sound-factory = pkgs.stdenv.mkDerivation {
     name = "digital-sound-factory";
 
-    src = pkgs.requireFile {
-      name = "digital-sound-factory.tar.gz";
-      url = "digital-sound-factory.tar.gz";
-      sha256 = "0r7vsifk8apy4ywnr11sc1rr3sf3iqx8gv18f990hdbn81spmvbf";
+    src = builtins.fetchTarball {
+      url = "file://${config.xdg.dataHome}/bundles/digital-sound-factory.tar.gz";
+      sha256 = "140nw2c3dcxzfr6ivg6bw0kkhz1p936nrb3549f2z6c1qpc1sxlm";
     };
 
     installPhase = ''
@@ -32,10 +30,9 @@ let
   ivy-audio = pkgs.stdenv.mkDerivation {
     name = "ivy-audio";
 
-    src = pkgs.requireFile {
-      name = "ivy-audio.tar.gz";
-      url = "ivy-audio.tar.gz";
-      sha256 = "1lyi254srlgmyyzgd0lyd5ybcgw13pankw7s0nk83afjgp3hmfmx";
+    src = builtins.fetchTarball {
+      url = "file://${config.xdg.dataHome}/bundles/ivy-audio.tar.gz";
+      sha256 = "0jx29iag0qmzki59ph3nl14qwva0hfjj0sw9nfxhggjm41sxrba9";
     };
 
     installPhase = ''
@@ -46,10 +43,9 @@ let
   samples-from-mars = pkgs.stdenv.mkDerivation {
     name = "samples-from-mars";
 
-    src = pkgs.requireFile {
-      name = "samples-from-mars.tar.gz";
-      url = "samples-from-mars.tar.gz";
-      sha256 = "1zndas1akl75yx2x201ngs2dcj148mhja7b5j1vf1sqrx3jidfvr";
+    src = builtins.fetchTarball {
+      url = "file://${config.xdg.dataHome}/bundles/samples-from-mars.tar.gz";
+      sha256 = "0lqbvfqxdk8nbsfsjrpd45gqk6a3nxsxjl0kqi40rhpvx4vfyqc1";
     };
 
     installPhase = ''
