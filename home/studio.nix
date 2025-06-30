@@ -5,7 +5,7 @@ let
     name = "bolder-sounds";
 
     src = builtins.fetchTarball {
-      url = "file://${config.xdg.dataHome}/bundles/bolder-sounds.tar.gz";
+      url = "file://${config.home.homeDirectory}/sync/studio/bundles/bolder-sounds.tar.gz";
       sha256 = "1xxsb83dwrq3xi1fc825fxphbhjscr7v3nr86a07zsbdyy6lihzc";
     };
 
@@ -18,7 +18,7 @@ let
     name = "digital-sound-factory";
 
     src = builtins.fetchTarball {
-      url = "file://${config.xdg.dataHome}/bundles/digital-sound-factory.tar.gz";
+      url = "file://${config.home.homeDirectory}/sync/studio/bundles/digital-sound-factory.tar.gz";
       sha256 = "140nw2c3dcxzfr6ivg6bw0kkhz1p936nrb3549f2z6c1qpc1sxlm";
     };
 
@@ -31,7 +31,7 @@ let
     name = "ivy-audio";
 
     src = builtins.fetchTarball {
-      url = "file://${config.xdg.dataHome}/bundles/ivy-audio.tar.gz";
+      url = "file://${config.home.homeDirectory}/sync/studio/bundles/ivy-audio.tar.gz";
       sha256 = "0jx29iag0qmzki59ph3nl14qwva0hfjj0sw9nfxhggjm41sxrba9";
     };
 
@@ -44,7 +44,7 @@ let
     name = "samples-from-mars";
 
     src = builtins.fetchTarball {
-      url = "file://${config.xdg.dataHome}/bundles/samples-from-mars.tar.gz";
+      url = "file://${config.home.homeDirectory}/sync/studio/bundles/samples-from-mars.tar.gz";
       sha256 = "0lqbvfqxdk8nbsfsjrpd45gqk6a3nxsxjl0kqi40rhpvx4vfyqc1";
     };
 
