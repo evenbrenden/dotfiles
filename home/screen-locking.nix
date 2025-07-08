@@ -3,6 +3,7 @@
 with pkgs.lib;
 
 {
+  # systemctl --user stop xss-lock.service
   services.screen-locker = {
     enable = true;
     inactiveInterval = 15;
