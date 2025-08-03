@@ -75,6 +75,7 @@
         slack
         snes9x-gtk
         sops
+        tomb
         transmission_4-gtk
         tree
         vlc
