@@ -28,8 +28,6 @@
     networkmanager.enable = true;
   };
 
-  programs.openvpn3.enable = true;
-
   services = {
     clamav = {
       daemon.enable = true;
