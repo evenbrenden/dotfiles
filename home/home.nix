@@ -117,7 +117,7 @@
     };
     picom = {
       backend = "glx";
-      enable = true;
+      enable = !config.targets.genericLinux.enable;
       # https://github.com/google/xsecurelock/issues/97#issuecomment-1183086902
       fadeExclude = [ "class_g = 'xsecurelock'" ];
       vSync = true;
