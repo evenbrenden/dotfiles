@@ -29,11 +29,19 @@
       };
       nix-config = import ./nix.nix { inherit nixpkgs-stable; };
       nixpkgs-config = import ./nixpkgs/nixpkgs.nix { inherit i3quo nixpkgs-unstable system; };
+      username = "evenbrenden";
       system = "x86_64-linux";
     in {
+      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs-stable (nixpkgs-config.nixpkgs // { inherit system; });
+        modules = [ ./home/home.nix nix-config nixpkgs-config { targets.genericLinux.enable = true; } ];
+        extraSpecialArgs = {
+          sops-nix = sops-nix.homeManagerModules.sops;
+          inherit username;
+        };
+      };
       nixosConfigurations = {
-        naxos = let username = "evenbrenden";
-        in nixpkgs-stable.lib.nixosSystem {
+        naxos = nixpkgs-stable.lib.nixosSystem {
           modules = [
             (import ./nixos/naxos/configuration.nix username)
             (home-manager-config-module username)

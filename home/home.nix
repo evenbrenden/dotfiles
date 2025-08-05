@@ -47,7 +47,6 @@
       in [
         abcde
         age
-        alsa-utils
         arandr
         audacity
         chromium
@@ -56,7 +55,6 @@
         unstable.discord
         dos2unix
         file
-        firefox
         fff
         flac
         kdePackages.ghostwriter
@@ -75,7 +73,6 @@
         rclone
         unstable.signal-desktop
         simplescreenrecorder
-        slack
         snes9x-gtk
         sops
         sox
@@ -86,7 +83,7 @@
         whatsapp-for-linux
         xclip
         xcolor
-      ] ++ programming;
+      ] ++ programming ++ lib.optionals (!config.targets.genericLinux.enable) [ alsa-utils firefox slack ];
     stateVersion = "22.05";
     username = username;
   };
@@ -120,7 +117,7 @@
     };
     picom = {
       backend = "glx";
-      enable = true;
+      enable = !config.targets.genericLinux.enable;
       # https://github.com/google/xsecurelock/issues/97#issuecomment-1183086902
       fadeExclude = [ "class_g = 'xsecurelock'" ];
       vSync = true;
