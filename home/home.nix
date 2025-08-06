@@ -37,6 +37,7 @@
           hurl
           mypy
           nixfmt-all
+          pipx
           pre-commit
           python3
           shellcheck
