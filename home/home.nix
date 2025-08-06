@@ -77,6 +77,7 @@
         slack
         snes9x-gtk
         sops
+        sox
         tomb
         transmission_4-gtk
         tree
