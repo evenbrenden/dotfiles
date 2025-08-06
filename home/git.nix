@@ -12,7 +12,7 @@
       push.default = "simple";
     };
     ignores = let metals = [ ".bloop" ".metals" "metals.sbt" ];
-    in [ ".aider*" ".direnv" ".envrc" ".luarc.json" "*.swp" ] ++ metals;
+    in [ ".aider*" ".direnv" ".envrc" ".luarc.json" "*.swp" ".venv" ] ++ metals;
     includes = let
       codebergAddress = {
         user = "evenbrenden";
