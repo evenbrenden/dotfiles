@@ -37,6 +37,7 @@
           hurl
           mypy
           nixfmt-all
+          pre-commit
           python3
           shellcheck
           unstable.uv
