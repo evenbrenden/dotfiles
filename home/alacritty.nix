@@ -1,27 +1,28 @@
 { pkgs, ... }:
 
 let
-  settings = ''
-    [font]
-    size = 12.0
-    [font.bold]
-    family = "DejaVu Sans Mono"
-    style = "Bold"
+  settings = pkgs.lib.strings.concatStringsSep "\n" [
+    ''
+      [font]
+      size = 12.0
+      [font.bold]
+      family = "DejaVu Sans Mono"
+      style = "Bold"
 
-    [font.bold_italic]
-    family = "DejaVu Sans Mono"
-    style = "Bold Oblique"
+      [font.bold_italic]
+      family = "DejaVu Sans Mono"
+      style = "Bold Oblique"
 
-    [font.italic]
-    family = "DejaVu Sans Mono"
-    style = "Oblique"
+      [font.italic]
+      family = "DejaVu Sans Mono"
+      style = "Oblique"
 
-    [font.normal]
-    family = "DejaVu Sans Mono"
-    style = "Book"
-
-    ${builtins.readFile "${pkgs.alacritty-theme}/share/alacritty-theme/alabaster.toml"}
-  '';
+      [font.normal]
+      family = "DejaVu Sans Mono"
+      style = "Book"
+    ''
+    (builtins.readFile "${pkgs.alacritty-theme}/share/alacritty-theme/alabaster.toml")
+  ];
 in {
   home.packages = [ pkgs.alacritty ];
   xdg.configFile."alacritty/alacritty.toml".text = settings;
