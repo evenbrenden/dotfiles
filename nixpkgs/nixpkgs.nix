@@ -23,7 +23,6 @@ in {
         xorg = prev.xorg // {
           xkeyboardconfig-norwerty = import ./xkeyboardconfig-norwerty/xkeyboardconfig-norwerty.nix { pkgs = prev; };
         };
-        x-www-browser = import ./x-www-browser.nix { pkgs = prev; };
       })
       i3quo.overlay
     ];

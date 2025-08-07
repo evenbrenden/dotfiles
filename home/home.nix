@@ -86,7 +86,6 @@
         whatsapp-for-linux
         xclip
         xcolor
-        x-www-browser
       ] ++ programming;
     stateVersion = "22.05";
     username = username;
