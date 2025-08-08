@@ -44,20 +44,25 @@
           shellcheck
           unstable.uv
         ];
-      in lib.optionals (!config.targets.genericLinux.enable) [ alsa-utils firefox slack ] ++ [
+      in lib.optionals (!config.targets.genericLinux.enable) [
+        alsa-utils
+        chromium
+        unstable.discord
+        firefox
+        kdePackages.ghostwriter
+        unstable.signal-desktop
+        slack
+      ] ++ [
         abcde
         age
         arandr
         audacity
-        chromium
         curl
         cryptsetup
-        unstable.discord
         dos2unix
         file
         fff
         flac
-        kdePackages.ghostwriter
         gimp
         irssi
         jq
@@ -71,7 +76,6 @@
         parted
         pavucontrol
         rclone
-        unstable.signal-desktop
         simplescreenrecorder
         snes9x-gtk
         sops
