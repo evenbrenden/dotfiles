@@ -163,30 +163,32 @@
       "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
     };
     enable = true;
-    mimeApps = {
-      defaultApplications = {
-        "application/pdf" = [ "okularApplication_pdf.desktop" ];
-        "application/x-extension-html" = [ "firefox.desktop" ];
-        "audio/flac" = [ "vlc.desktop" ];
-        "audio/mp4" = [ "vlc.desktop" ];
-        "audio/mpeg" = [ "vlc.desktop" ];
-        "audio/x-aiff" = [ "vlc.desktop" ];
-        "audio/x-wav" = [ "vlc.desktop" ];
-        "image/gif" = [ "org.nomacs.ImageLounge.desktop" ];
-        "image/jpeg" = [ "org.nomacs.ImageLounge.desktop" ];
-        "image/png" = [ "org.nomacs.ImageLounge.desktop" ];
-        "image/svg+xml" = [ "org.nomacs.ImageLounge.desktop" ];
-        "text/html" = [ "firefox.desktop" ];
-        "x-scheme-handler/about" = [ "firefox.desktop" ];
-        "x-scheme-handler/chrome" = [ "firefox.desktop" ];
-        "x-scheme-handler/http" = [ "firefox.desktop" ];
-        "x-scheme-handler/https" = [ "firefox.desktop" ];
-        "x-scheme-handler/magnet" = [ "transmission-gtk.desktop" ];
-        "x-scheme-handler/msteams" = [ "teams.desktop" ];
-        "x-scheme-handler/unknown" = [ "firefox.desktop" ];
+    mimeApps =
+      let firefox = if config.targets.genericLinux.enable then "firefox_firefox.desktop" else "firefox.desktop";
+      in {
+        defaultApplications = {
+          "application/pdf" = [ "okularApplication_pdf.desktop" ];
+          "application/x-extension-html" = [ firefox ];
+          "audio/flac" = [ "vlc.desktop" ];
+          "audio/mp4" = [ "vlc.desktop" ];
+          "audio/mpeg" = [ "vlc.desktop" ];
+          "audio/x-aiff" = [ "vlc.desktop" ];
+          "audio/x-wav" = [ "vlc.desktop" ];
+          "image/gif" = [ "org.nomacs.ImageLounge.desktop" ];
+          "image/jpeg" = [ "org.nomacs.ImageLounge.desktop" ];
+          "image/png" = [ "org.nomacs.ImageLounge.desktop" ];
+          "image/svg+xml" = [ "org.nomacs.ImageLounge.desktop" ];
+          "text/html" = [ firefox ];
+          "x-scheme-handler/about" = [ firefox ];
+          "x-scheme-handler/chrome" = [ firefox ];
+          "x-scheme-handler/http" = [ firefox ];
+          "x-scheme-handler/https" = [ firefox ];
+          "x-scheme-handler/magnet" = [ "transmission-gtk.desktop" ];
+          "x-scheme-handler/msteams" = [ "teams.desktop" ];
+          "x-scheme-handler/unknown" = [ firefox ];
+        };
+        enable = true;
       };
-      enable = true;
-    };
   };
 
   xresources.extraConfig = ''
