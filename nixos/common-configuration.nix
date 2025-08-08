@@ -7,8 +7,6 @@
     supportedFilesystems = [ "ntfs" ];
   };
 
-  environment.systemPackages = with pkgs; [ lshw pciutils ]; # Debug WLAN
-
   hardware = {
     enableAllFirmware = true;
     enableRedistributableFirmware = true;
