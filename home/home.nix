@@ -44,7 +44,7 @@
           shellcheck
           unstable.uv
         ];
-      in [
+      in lib.optionals (!config.targets.genericLinux.enable) [ alsa-utils firefox slack ] ++ [
         abcde
         age
         arandr
@@ -83,7 +83,7 @@
         whatsapp-for-linux
         xclip
         xcolor
-      ] ++ programming ++ lib.optionals (!config.targets.genericLinux.enable) [ alsa-utils firefox slack ];
+      ] ++ programming;
     stateVersion = "22.05";
     username = username;
   };
