@@ -114,7 +114,6 @@ vim.g.neoformat_haskell_fourmolu = {
 vim.g.neoformat_enabled_lua = {'luaformat'}
 vim.g.neoformat_enabled_nix = {'nixfmt'}
 vim.g.neoformat_nix_nixfmt = {exe = 'nixfmt', stdin = 1}
-vim.g.neoformat_enabled_scala = {'scalafmt'}
 vim.g.neoformat_enabled_sh = {'shfmt'}
 vim.g.neoformat_sh_shfmt = {
     exe = 'shfmt',
