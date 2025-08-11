@@ -11,7 +11,7 @@
       pull.rebase = true;
       push.default = "simple";
     };
-    ignores = [ ".aider*" ".direnv" ".envrc" ".luarc.json" "*.swp" ".venv" ];
+    ignores = [ ".aider*" "compile_commands.json" ".direnv" ".envrc" ".luarc.json" "*.swp" ".venv" ];
     includes = let
       codebergAddress = {
         user = "evenbrenden";
