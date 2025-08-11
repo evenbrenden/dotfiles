@@ -47,7 +47,7 @@ let
     export FZF_ALT_C_OPTS="--walker dir,follow"
     export FZF_CTRL_T_OPTS="--walker file,dir,follow"
   '';
-  # https://github.com/NixOS/nixpkgs/pull/267069
+  # https://github.com/NixOS/nixpkgs/issues/432786
   alsa-hack = let
     alsa-plugin-dir = pkgs.symlinkJoin {
       name = "all-alsa-plugins";
