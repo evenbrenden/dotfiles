@@ -11,8 +11,7 @@
       pull.rebase = true;
       push.default = "simple";
     };
-    ignores = let metals = [ ".bloop" ".metals" "metals.sbt" ];
-    in [ ".aider*" ".direnv" ".envrc" ".luarc.json" "*.swp" ".venv" ] ++ metals;
+    ignores = [ ".aider*" ".direnv" ".envrc" ".luarc.json" "*.swp" ".venv" ];
     includes = let
       codebergAddress = {
         user = "evenbrenden";
