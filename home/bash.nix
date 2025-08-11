@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 let
   aliases = {
@@ -47,13 +47,23 @@ let
     export FZF_ALT_C_OPTS="--walker dir,follow"
     export FZF_CTRL_T_OPTS="--walker file,dir,follow"
   '';
+  # https://github.com/NixOS/nixpkgs/pull/267069
+  alsa-hack = let
+    alsa-plugin-dir = pkgs.symlinkJoin {
+      name = "all-alsa-plugins";
+      paths = map (path: "${path}/lib/alsa-lib") [ pkgs.alsa-plugins pkgs.pipewire ];
+    };
+  in ''
+    export ALSA_PLUGIN_DIR="${alsa-plugin-dir}"
+  '';
 in {
   programs.bash = {
     enable = true;
     historyControl = [ "erasedups" "ignoredups" "ignorespace" ];
     historyFileSize = 100000;
     historySize = 10000;
-    initExtra = builtins.concatStringsSep "\n" [ history-search prompt shell-variables-fff shell-variables-misc fzf ];
+    initExtra = builtins.concatStringsSep "\n" ([ history-search prompt shell-variables-fff shell-variables-misc fzf ]
+      ++ pkgs.lib.optional (config.targets.genericLinux.enable) alsa-hack);
     shellAliases = aliases;
     shellOptions = [ "histappend" ];
   };

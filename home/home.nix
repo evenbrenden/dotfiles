@@ -45,7 +45,6 @@
           unstable.uv
         ];
       in lib.optionals (!config.targets.genericLinux.enable) [
-        alsa-utils
         chromium
         unstable.discord
         firefox
@@ -55,6 +54,7 @@
       ] ++ [
         abcde
         age
+        alsa-utils
         arandr
         audacity
         curl
