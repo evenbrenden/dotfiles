@@ -21,6 +21,11 @@ let
     bind '"\e[B": history-search-forward'
   '';
   prompt = ''
+    virtualenv() {
+        if [[ -n "$VIRTUAL_ENV" ]]; then
+            echo "(\[\033[0;35m\]$(basename "$VIRTUAL_ENV")\[\033[0m\]) "
+        fi
+    }
     source ${pkgs.git}/share/git/contrib/completion/git-prompt.sh
     DEFAULT_PS1='\n\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] '
     GIT_INFO='(%s)\[\033[0m\] '
@@ -30,7 +35,7 @@ let
     GIT_PS1_SHOWUNTRACKEDFILES=1
     GIT_PS1_SHOWUPSTREAM="auto"
     GIT_PS1_STATESEPARATOR=""
-    PROMPT_COMMAND='history -a; history -r; __git_ps1 "$DEFAULT_PS1" "" "$GIT_INFO"'
+    PROMPT_COMMAND='history -a; history -r; __git_ps1 "$DEFAULT_PS1" "$(virtualenv)" "$GIT_INFO"'
   '';
   shell-variables-fff = ''
     export FFF_FAV1=~/Downloads
