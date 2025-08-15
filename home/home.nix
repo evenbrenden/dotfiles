@@ -13,6 +13,7 @@
     ./ssh.nix
     ./studio.nix
     ./vi/vi.nix
+    ./work.nix
   ];
 
   home = {
@@ -37,9 +38,7 @@
           hurl
           mypy
           nixfmt-all
-          pipx
           poetry
-          pre-commit
           python3
           shellcheck
           unstable.uv
