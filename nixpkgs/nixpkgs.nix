@@ -10,6 +10,7 @@ in {
     inherit config;
     overlays = [
       (final: prev: {
+        alsa-utils = prev.callPackage (import ./alsa-utils.nix) { }; # https://github.com/NixOS/nixpkgs/issues/432786
         fourmolu-all = import ./fourmolu-all.nix { pkgs = prev; };
         git-replace = import ./git-replace.nix { pkgs = prev; };
         nixfmt-all = import ./nixfmt-all.nix { pkgs = final; };
