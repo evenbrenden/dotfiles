@@ -26,6 +26,8 @@
     networkmanager.enable = true;
   };
 
+  programs.nix-ld.enable = true;
+
   services = {
     clamav = {
       daemon.enable = true;
@@ -47,6 +49,10 @@
     };
     logind.lidSwitch = "ignore";
     openssh.enable = false;
+    openvpn.servers.work = {
+      config = "config /home/${username}/openvpn/work.ovpn";
+      updateResolvConf = true;
+    };
     pipewire.enable = false;
     pulseaudio = {
       enable = true;
