@@ -38,7 +38,6 @@
           hurl
           mypy
           nixfmt-all
-          poetry
           python3
           shellcheck
           unstable.uv
