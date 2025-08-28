@@ -58,7 +58,7 @@ function SetupLSP(key_opts)
     end
 
     local lspconfig = require 'lspconfig'
-    lspconfig.clangd.setup {on_attach = on_attach}
+    lspconfig.clangd.setup {on_attach = on_attach, cmd = {"clangd_wrapper"}}
     lspconfig.hls.setup {on_attach = on_attach}
     lspconfig.idris2_lsp.setup {on_attach = on_attach} -- https://github.com/claymager/idris2-pkgs
     lspconfig.lua_ls.setup {

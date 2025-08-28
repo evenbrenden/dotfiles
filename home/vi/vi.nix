@@ -19,7 +19,7 @@
         ];
         git-gutter = [ git ];
         lsp = [
-          unstable.clang-tools
+          clangd_wrapper
           haskell-language-server
           lua-language-server
           nil

@@ -11,6 +11,7 @@ in {
     overlays = [
       (final: prev: {
         alsa-utils = prev.callPackage (import ./alsa-utils.nix) { }; # https://github.com/NixOS/nixpkgs/issues/432786
+        clangd_wrapper = import ./clangd_wrapper.nix { pkgs = prev; };
         fourmolu-all = import ./fourmolu-all.nix { pkgs = prev; };
         git-replace = import ./git-replace.nix { pkgs = prev; };
         huddly = import ./huddly.nix;
