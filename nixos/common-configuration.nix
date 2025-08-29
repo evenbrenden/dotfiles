@@ -18,6 +18,10 @@
       inherit pkgs;
       inherit username;
     })
+    (import ./work.nix {
+      inherit pkgs;
+      inherit username;
+    })
     ./xkb.nix
   ];
 

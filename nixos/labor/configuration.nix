@@ -39,13 +39,7 @@ username:
 
   networking.hostName = "labor";
 
-  services = {
-    openvpn.servers.huddly = {
-      config = "config /root/nixos/openvpn/oslo_office_vpn_evenbrenden.ovpn";
-      updateResolvConf = true;
-    };
-    xserver.videoDrivers = [ "displaylink" "modesetting" ];
-  };
+  services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
 
   system.stateVersion = "25.05";
 }

@@ -13,6 +13,7 @@ in {
         alsa-utils = prev.callPackage (import ./alsa-utils.nix) { }; # https://github.com/NixOS/nixpkgs/issues/432786
         fourmolu-all = import ./fourmolu-all.nix { pkgs = prev; };
         git-replace = import ./git-replace.nix { pkgs = prev; };
+        huddly = import ./huddly.nix;
         nixfmt-all = import ./nixfmt-all.nix { pkgs = final; };
         nixfmt-classic = import ./nixfmt-classic.nix { pkgs = prev; };
         refresh-display = import ./refresh-display.nix { pkgs = prev; };
