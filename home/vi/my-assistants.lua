@@ -5,6 +5,7 @@ function SetupAssistants()
         ["c"] = true,
         ["cpp"] = true,
         ["dockerfile"] = true,
+        ["dot"] = true,
         ["haskell"] = true,
         ["javascript"] = true,
         ["lua"] = true,
