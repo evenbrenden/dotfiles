@@ -40,30 +40,16 @@
           inherit username;
         };
       };
-      nixosConfigurations = {
-        naxos = nixpkgs-stable.lib.nixosSystem {
-          modules = [
-            (import ./nixos/naxos/configuration.nix username)
-            (home-manager-config-module username)
-            home-manager.nixosModules.home-manager
-            musnix.nixosModules.musnix
-            nix-config
-            nixpkgs-config
-          ];
-          inherit system;
-        };
-        labor = let username = "evenbrenden";
-        in nixpkgs-stable.lib.nixosSystem {
-          modules = [
-            (import ./nixos/labor/configuration.nix username)
-            (home-manager-config-module username)
-            home-manager.nixosModules.home-manager
-            musnix.nixosModules.musnix
-            nix-config
-            nixpkgs-config
-          ];
-          inherit system;
-        };
+      nixosConfigurations.naxos = nixpkgs-stable.lib.nixosSystem {
+        modules = [
+          (import ./nixos/naxos/configuration.nix username)
+          (home-manager-config-module username)
+          home-manager.nixosModules.home-manager
+          musnix.nixosModules.musnix
+          nix-config
+          nixpkgs-config
+        ];
+        inherit system;
       };
     };
 }
