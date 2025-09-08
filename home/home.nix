@@ -40,7 +40,6 @@
           nixfmt-all
           python3
           shellcheck
-          unstable.uv
         ];
       in lib.optionals (!config.targets.genericLinux.enable) [
         chromium
