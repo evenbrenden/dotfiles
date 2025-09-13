@@ -1,6 +1,7 @@
 { config, ... }:
 
 {
+  # https://github.com/nix-community/home-manager/pull/7737
   programs.ssh = {
     enable = true;
     matchBlocks = {
