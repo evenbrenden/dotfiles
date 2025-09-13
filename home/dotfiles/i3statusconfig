@@ -5,6 +5,7 @@ general {
 }
 
 order += "volume master"
+order += "path_exists VPN"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery all"
@@ -16,6 +17,12 @@ order += "tztime local"
 volume master {
     format = "%volume"
     format_muted = "Mute"
+}
+
+path_exists VPN {
+    path = "/sys/class/net/tun0"
+    format = "%title"
+    format_down = ""
 }
 
 wireless _first_ {
