@@ -1,4 +1,4 @@
 fetchGit {
   url = "git@github.com:evenbrenden/huddly.git";
-  rev = "b75464a28a187396b210dd8b93051fe9335dff95";
+  rev = "66bd77e21e672184cd81bda6fae0a284c634bc1e";
 }
