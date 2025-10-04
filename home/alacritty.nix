@@ -5,6 +5,7 @@ let
     ''
       [font]
       size = 12.0
+
       [font.bold]
       family = "DejaVu Sans Mono"
       style = "Bold"
