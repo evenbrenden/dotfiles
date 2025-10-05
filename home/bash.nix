@@ -23,7 +23,7 @@ let
   prompt = ''
     virtualenv() {
         if [[ -n "$VIRTUAL_ENV" ]]; then
-            echo "(\[\033[0;35m\]$(basename "$VIRTUAL_ENV")\[\033[0m\]) "
+            echo "(\[\033[0;35m\]venv\[\033[0m\]) "
         fi
     }
     source ${pkgs.git}/share/git/contrib/completion/git-prompt.sh
