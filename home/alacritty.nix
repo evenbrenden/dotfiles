@@ -3,6 +3,9 @@
 let
   settings = pkgs.lib.strings.concatStringsSep "\n" [
     ''
+      [env]
+      TERM = "xterm-256color"
+
       [font]
       size = 12.0
 
