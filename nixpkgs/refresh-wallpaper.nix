@@ -21,11 +21,11 @@ in pkgs.writeShellApplication {
   name = "refresh-wallpaper";
   runtimeInputs = with pkgs; [ coreutils hsetroot ];
   text = ''
-    current_hour=$(date +%H)
-    if [ "$current_hour" -ge 6 ] && [ "$current_hour" -lt 18 ]; then
-      hsetroot -fill ${the-expanding-universe}/share/wallpapers/the-expanding-universe-a.png
+    month=$(date +%m)
+    if [ "$month" -ge 11 ] || [ "$month" -le 3 ]; then
+        hsetroot -fill ${the-expanding-universe}/share/wallpapers/the-expanding-universe-b.png
     else
-      hsetroot -fill ${the-expanding-universe}/share/wallpapers/the-expanding-universe-b.png
+        hsetroot -fill ${the-expanding-universe}/share/wallpapers/the-expanding-universe-a.png
     fi
   '';
 }
