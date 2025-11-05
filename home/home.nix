@@ -51,7 +51,7 @@
       ] ++ [
         abcde
         age
-        alsa-utils
+        unstable.alsa-utils # https://github.com/NixOS/nixpkgs/issues/432786
         arandr
         audacity
         curl
