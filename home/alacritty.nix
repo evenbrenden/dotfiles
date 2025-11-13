@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   settings = pkgs.lib.strings.concatStringsSep "\n" [
@@ -28,7 +28,6 @@ let
     (builtins.readFile "${pkgs.alacritty-theme}/share/alacritty-theme/alabaster.toml")
   ];
 in {
-  # https://github.com/NixOS/nixpkgs/issues/122671
-  home.packages = pkgs.lib.optional (!config.targets.genericLinux.enable) pkgs.alacritty;
+  home.packages = [ pkgs.alacritty ];
   xdg.configFile."alacritty/alacritty.toml".text = settings;
 }
