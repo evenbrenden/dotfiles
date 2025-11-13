@@ -52,8 +52,7 @@
           ];
           inherit system;
         };
-        labor = let username = "evenbrenden";
-        in nixpkgs-stable.lib.nixosSystem {
+        labor = nixpkgs-stable.lib.nixosSystem {
           modules = [
             (import ./nixos/labor/configuration.nix username)
             (home-manager-config-module username)
