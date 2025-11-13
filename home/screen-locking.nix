@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 with pkgs.lib;
 
@@ -9,7 +9,7 @@ with pkgs.lib;
     inactiveInterval = 15;
     # https://github.com/google/xsecurelock/issues/186
     # https://github.com/google/xsecurelock/issues/182
-    lockCmd = if config.targets.genericLinux.enable then "xsecurelock" else "${getExe pkgs.xsecurelock}";
+    lockCmd = "${getExe pkgs.xsecurelock}";
     lockCmdEnv = [
       "XSECURELOCK_DISCARD_FIRST_KEYPRESS=0"
       "XSECURELOCK_KEY_F7_COMMAND=${getExe pkgs.refresh-display}"
