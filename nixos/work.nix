@@ -32,9 +32,4 @@
       };
     in [ huddly-udev-rules ];
   };
-
-  systemd.tmpfiles = {
-    rules = [ "L+ /bin/bash - - - - /run/current-system/sw/bin/bash" ];
-    settings."keep-idl-cc-files"."/tmp/*.idl.cc".X.age = "-";
-  };
 }
