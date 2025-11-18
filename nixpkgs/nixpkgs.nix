@@ -11,7 +11,6 @@ in {
     overlays = [
       (final: prev: {
         clangd_wrapper = import ./clangd_wrapper.nix { pkgs = prev; };
-        enable-touchpad-tapping = import ./enable-touchpad-tapping.nix { pkgs = prev; };
         fourmolu-all = import ./fourmolu-all.nix { pkgs = prev; };
         git-replace = import ./git-replace.nix { pkgs = prev; };
         huddly = import ./huddly.nix;
