@@ -135,6 +135,20 @@
   };
 
   systemd.user = {
+    services = if config.targets.genericLinux.enable then {
+      enable-touchpad-tapping = {
+        Unit = {
+          Description = "Enable touchpad tapping";
+          After = [ "graphical-session.target" ];
+        };
+        Service = {
+          Type = "oneshot";
+          ExecStart = "${pkgs.lib.getExe pkgs.enable-touchpad-tapping}";
+        };
+        Install.WantedBy = [ "graphical-session.target" ];
+      };
+    } else
+      { };
     startServices = true;
     # https://github.com/nix-community/home-manager/issues/2064#issuecomment-887300055
     targets.tray = {
