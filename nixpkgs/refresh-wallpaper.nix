@@ -10,7 +10,7 @@ in pkgs.writeShellApplication {
   runtimeInputs = with pkgs; [ coreutils hsetroot ];
   text = ''
     current_hour=$(date +%H)
-    if [ "$current_hour" -ge 0 ] && [ "$current_hour" -lt 12 ]; then
+    if [ "$current_hour" -ge 9 ] && [ "$current_hour" -lt 21 ]; then
         hsetroot -fill ${the-expanding-universe}/the-expanding-universe-a.png
     else
         hsetroot -fill ${the-expanding-universe}/the-expanding-universe-b.png

@@ -12,7 +12,7 @@
   timers.refresh-wallpaper = {
     Unit.Description = "Wallpaper timer";
     Timer = {
-      OnCalendar = [ "12:00" "00:00" ];
+      OnCalendar = [ "09:00" "21:00" ];
       Persistent = true;
     };
     Install.WantedBy = [ "timers.target" ];
