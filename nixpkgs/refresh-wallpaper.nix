@@ -1,31 +1,19 @@
 { pkgs }:
 
-# https://github.com/himdel/hsetroot/issues/42
 let
-  the-expanding-universe = pkgs.stdenv.mkDerivation {
-    name = "the-expanding-universe";
-    src = null;
-    unpackPhase = "true";
-    nativeBuildInputs = [ pkgs.imagemagick ];
-    buildPhase = ''
-      magick -size 5120x2160 -define gradient:angle=30 gradient:#FDE507-#FA2AB4 the-expanding-universe-a.png
-      magick -size 5120x2160 -define gradient:angle=30 gradient:#D00E91-#069AFC the-expanding-universe-b.png
-    '';
-    installPhase = ''
-      mkdir -p $out/share/wallpapers
-      cp the-expanding-universe-a.png $out/share/wallpapers/the-expanding-universe-a.png
-      cp the-expanding-universe-b.png $out/share/wallpapers/the-expanding-universe-b.png
-    '';
+  the-expanding-universe = fetchGit {
+    url = "git@codeberg.org:evenbrenden/the-expanding-universe.git";
+    rev = "a43dcfaed76fbac5d5757e949b66ffbe372f9cea";
   };
 in pkgs.writeShellApplication {
   name = "refresh-wallpaper";
   runtimeInputs = with pkgs; [ coreutils hsetroot ];
   text = ''
-    month=$(date +%m)
-    if [ "$month" -ge 11 ] || [ "$month" -le 3 ]; then
-        hsetroot -fill ${the-expanding-universe}/share/wallpapers/the-expanding-universe-b.png
+    current_hour=$(date +%H)
+    if [ "$current_hour" -ge 0 ] && [ "$current_hour" -lt 12 ]; then
+        hsetroot -fill ${the-expanding-universe}/the-expanding-universe-a.png
     else
-        hsetroot -fill ${the-expanding-universe}/share/wallpapers/the-expanding-universe-a.png
+        hsetroot -fill ${the-expanding-universe}/the-expanding-universe-b.png
     fi
   '';
 }
