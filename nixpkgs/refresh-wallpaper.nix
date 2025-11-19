@@ -3,7 +3,7 @@
 let
   the-expanding-universe = fetchGit {
     url = "git@codeberg.org:evenbrenden/the-expanding-universe.git";
-    rev = "03f3b4fe930204de024a2791af9ad0cbb8b7ce9a";
+    rev = "b00e083d2d258087850cb20c543dc14908fe03e9";
   };
 in pkgs.writeShellApplication {
   name = "refresh-wallpaper";
