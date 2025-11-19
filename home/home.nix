@@ -157,7 +157,7 @@
         Requires = [ "graphical-session-pre.target" ];
       };
     };
-  } // (import ./refresh-wallpaper.nix { inherit pkgs; });
+  };
 
   xdg = {
     configFile = {
