@@ -165,7 +165,7 @@
         name = "autorandr-postswitch";
         runtimeInputs = with pkgs; [ hsetroot systemd ];
         text = ''
-          hsetroot -solid '#7A3E9D' # Alabaster magenta
+          hsetroot -solid '#7A3E9D' # tonsky Alabaster magenta
           # Things that need a bump post display changes
           systemctl --user restart dunst.service
           systemctl --user restart parcellite.service
