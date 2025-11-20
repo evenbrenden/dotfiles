@@ -18,7 +18,6 @@ in {
         nixfmt-all = import ./nixfmt-all.nix { pkgs = final; };
         nixfmt-classic = import ./nixfmt-classic.nix { pkgs = prev; };
         refresh-display = import ./refresh-display.nix { pkgs = prev; };
-        refresh-wallpaper = import ./refresh-wallpaper.nix { pkgs = prev; };
         set-dpi = import ./set-dpi.nix { pkgs = prev; };
         sof-firmware = with prev; import ./sof-firmware.nix { inherit fetchurl lib stdenvNoCC; };
         toggle-keyboard-layout = import ./toggle-keyboard-layout.nix { pkgs = prev; };

@@ -163,10 +163,10 @@
     configFile = {
       "autorandr/postswitch".source = pkgs.lib.getExe (pkgs.writeShellApplication {
         name = "autorandr-postswitch";
-        runtimeInputs = with pkgs; [ refresh-wallpaper systemd ];
+        runtimeInputs = with pkgs; [ hsetroot systemd ];
         text = ''
+          hsetroot -solid '#7A3E9D' # Alabaster magenta
           # Things that need a bump post display changes
-          refresh-wallpaper
           systemctl --user restart dunst.service
           systemctl --user restart parcellite.service
         '';
