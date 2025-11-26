@@ -32,24 +32,29 @@
       username = "evenbrenden";
       system = "x86_64-linux";
     in {
-      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs-stable (nixpkgs-config.nixpkgs // { inherit system; });
-        modules = [ ./home/home.nix nix-config nixpkgs-config { targets.genericLinux.enable = true; } ];
-        extraSpecialArgs = {
-          sops-nix = sops-nix.homeManagerModules.sops;
-          inherit username;
+      nixosConfigurations = {
+        naxos = nixpkgs-stable.lib.nixosSystem {
+          modules = [
+            (import ./nixos/naxos/configuration.nix username)
+            (home-manager-config-module username)
+            home-manager.nixosModules.home-manager
+            musnix.nixosModules.musnix
+            nix-config
+            nixpkgs-config
+          ];
+          inherit system;
         };
-      };
-      nixosConfigurations.naxos = nixpkgs-stable.lib.nixosSystem {
-        modules = [
-          (import ./nixos/naxos/configuration.nix username)
-          (home-manager-config-module username)
-          home-manager.nixosModules.home-manager
-          musnix.nixosModules.musnix
-          nix-config
-          nixpkgs-config
-        ];
-        inherit system;
+        labor = nixpkgs-stable.lib.nixosSystem {
+          modules = [
+            (import ./nixos/labor/configuration.nix username)
+            (home-manager-config-module username)
+            home-manager.nixosModules.home-manager
+            musnix.nixosModules.musnix
+            nix-config
+            nixpkgs-config
+          ];
+          inherit system;
+        };
       };
     };
 }

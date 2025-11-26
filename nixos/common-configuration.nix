@@ -50,7 +50,6 @@
       touchpad.tapping = true;
     };
     logind.lidSwitch = "ignore";
-    openssh.enable = false;
     pipewire.enable = false;
     pulseaudio = {
       enable = true;

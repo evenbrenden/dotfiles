@@ -41,25 +41,22 @@
           python3
           shellcheck
         ];
-      in lib.optionals (!config.targets.genericLinux.enable) [
-        chromium
-        unstable.discord
-        firefox
-        kdePackages.ghostwriter
-        unstable.signal-desktop
-        slack
-      ] ++ [
+      in [
         abcde
         age
-        unstable.alsa-utils # https://github.com/NixOS/nixpkgs/issues/432786
+        alsa-utils
         arandr
         audacity
+        chromium
         curl
         cryptsetup
+        unstable.discord
         dos2unix
         file
+        firefox
         fff
         flac
+        kdePackages.ghostwriter
         gimp
         irssi
         jq
@@ -73,7 +70,9 @@
         parted
         pavucontrol
         rclone
+        unstable.signal-desktop
         simplescreenrecorder
+        slack
         snes9x-gtk
         sops
         sox
@@ -118,7 +117,7 @@
     };
     picom = {
       backend = "glx";
-      enable = !config.targets.genericLinux.enable;
+      enable = true;
       # https://github.com/google/xsecurelock/issues/97#issuecomment-1183086902
       fadeExclude = [ "class_g = 'xsecurelock'" ];
       vSync = true;
@@ -135,20 +134,6 @@
   };
 
   systemd.user = {
-    services = if config.targets.genericLinux.enable then {
-      enable-touchpad-tapping = {
-        Unit = {
-          Description = "Enable touchpad tapping";
-          After = [ "graphical-session.target" ];
-        };
-        Service = {
-          Type = "oneshot";
-          ExecStart = "${pkgs.lib.getExe pkgs.enable-touchpad-tapping}";
-        };
-        Install.WantedBy = [ "graphical-session.target" ];
-      };
-    } else
-      { };
     startServices = true;
     # https://github.com/nix-community/home-manager/issues/2064#issuecomment-887300055
     targets.tray = {
@@ -178,32 +163,31 @@
       "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
     };
     enable = true;
-    mimeApps =
-      let firefox = if config.targets.genericLinux.enable then "firefox_firefox.desktop" else "firefox.desktop";
-      in {
-        defaultApplications = {
-          "application/pdf" = [ "okularApplication_pdf.desktop" ];
-          "application/x-extension-html" = [ firefox ];
-          "audio/flac" = [ "vlc.desktop" ];
-          "audio/mp4" = [ "vlc.desktop" ];
-          "audio/mpeg" = [ "vlc.desktop" ];
-          "audio/x-aiff" = [ "vlc.desktop" ];
-          "audio/x-wav" = [ "vlc.desktop" ];
-          "image/gif" = [ "org.nomacs.ImageLounge.desktop" ];
-          "image/jpeg" = [ "org.nomacs.ImageLounge.desktop" ];
-          "image/png" = [ "org.nomacs.ImageLounge.desktop" ];
-          "image/svg+xml" = [ "org.nomacs.ImageLounge.desktop" ];
-          "text/html" = [ firefox ];
-          "x-scheme-handler/about" = [ firefox ];
-          "x-scheme-handler/chrome" = [ firefox ];
-          "x-scheme-handler/http" = [ firefox ];
-          "x-scheme-handler/https" = [ firefox ];
-          "x-scheme-handler/magnet" = [ "transmission-gtk.desktop" ];
-          "x-scheme-handler/msteams" = [ "teams.desktop" ];
-          "x-scheme-handler/unknown" = [ firefox ];
-        };
-        enable = true;
+    mimeApps = let firefox = "firefox.desktop";
+    in {
+      defaultApplications = {
+        "application/pdf" = [ "okularApplication_pdf.desktop" ];
+        "application/x-extension-html" = [ firefox ];
+        "audio/flac" = [ "vlc.desktop" ];
+        "audio/mp4" = [ "vlc.desktop" ];
+        "audio/mpeg" = [ "vlc.desktop" ];
+        "audio/x-aiff" = [ "vlc.desktop" ];
+        "audio/x-wav" = [ "vlc.desktop" ];
+        "image/gif" = [ "org.nomacs.ImageLounge.desktop" ];
+        "image/jpeg" = [ "org.nomacs.ImageLounge.desktop" ];
+        "image/png" = [ "org.nomacs.ImageLounge.desktop" ];
+        "image/svg+xml" = [ "org.nomacs.ImageLounge.desktop" ];
+        "text/html" = [ firefox ];
+        "x-scheme-handler/about" = [ firefox ];
+        "x-scheme-handler/chrome" = [ firefox ];
+        "x-scheme-handler/http" = [ firefox ];
+        "x-scheme-handler/https" = [ firefox ];
+        "x-scheme-handler/magnet" = [ "transmission-gtk.desktop" ];
+        "x-scheme-handler/msteams" = [ "teams.desktop" ];
+        "x-scheme-handler/unknown" = [ firefox ];
       };
+      enable = true;
+    };
   };
 
   xresources.extraConfig = ''
