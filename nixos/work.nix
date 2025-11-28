@@ -33,8 +33,5 @@
     in [ huddly-udev-rules ];
   };
 
-  systemd.tmpfiles.rules = [
-    "L+ /bin/bash - - - - /run/current-system/sw/bin/bash"
-    "d /var/lock 0755 ${username} users -" # i2c_chip_lock_test.cpp
-  ];
+  systemd.tmpfiles.rules = [ "L+ /bin/bash - - - - /run/current-system/sw/bin/bash" ];
 }
