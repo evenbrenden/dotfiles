@@ -53,13 +53,13 @@
       in [
         alabaster-nvim
         copilot-vim
+        graphviz-vim
         hurl
         idris2-vim
         neoformat
         nvim-lspconfig
         nvim-treesitter
         sfz-vim
-        vim-suda
         tcomment_vim
         telescope-nvim
         vim-airline
@@ -72,7 +72,7 @@
         vim-nix
         vim-pico8-syntax
         vim-polyglot
-        graphviz-vim
+        vim-suda
       ];
   };
 
