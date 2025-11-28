@@ -60,15 +60,7 @@ vim.opt.wildmenu = true
 vim.opt.updatetime = 100
 
 -- GraphViz
-vim.cmd([[
-augroup graphviz
-  autocmd!
-  autocmd FileType dot nnoremap <buffer> <LocalLeader>c :GraphvizCompile<CR>
-  " GraphvizInteractive does not play well with code that does not compile
-  autocmd FileType dot nnoremap <buffer> <LocalLeader>i :Dispatch dot -Tx11 %:p<CR>
-augroup END
-]])
-vim.g.WMGraphviz_output = 'svg'
+vim.g.graphviz_output_format = 'svg'
 
 -- Idris2
 vim.cmd('autocmd FileType idris2 setlocal tabstop=4 shiftwidth=4')
