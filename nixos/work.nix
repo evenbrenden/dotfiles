@@ -6,7 +6,6 @@
   networking.firewall.allowedUDPPorts = [
     42105 # falconpyclient
     50124 # falconpyclient
-    52124 # test_udp.cpp
   ];
 
   programs.nix-ld.enable = true;
