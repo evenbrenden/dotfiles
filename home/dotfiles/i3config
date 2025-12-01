@@ -180,7 +180,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
 # change keyboard layout
 bindsym $mod+k exec --no-startup-id toggle-keyboard-layout
 
-# notifications control
+# notification control
 bindsym $mod+n exec --no-startup-id dunstctl set-paused toggle && pkill -x -USR1 i3status
 bindsym $mod+c exec --no-startup-id dunstctl close
 
