@@ -1,12 +1,15 @@
-{ pkgs, username, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [ cacert ];
 
-  networking.firewall.allowedUDPPorts = [
-    42105 # falconpyclient
-    50124 # falconpyclient
-  ];
+  networking = {
+    firewall.allowedUDPPorts = [
+      42105 # falconpyclient
+      50124 # falconpyclient
+    ];
+    networkmanager.plugins = [ pkgs.networkmanager-openvpn ];
+  };
 
   programs.nix-ld.enable = true;
 
@@ -15,11 +18,6 @@
       enable = true;
       openFirewall = true;
       nssmdns4 = true;
-    };
-    openvpn.servers.work = {
-      autoStart = false;
-      config = "config /home/${username}/openvpn/work.ovpn";
-      updateResolvConf = true;
     };
     udev.packages = let
       huddly-udev-rules = pkgs.stdenv.mkDerivation {
