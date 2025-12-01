@@ -3,15 +3,16 @@ username:
 { config, pkgs, ... }:
 
 {
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    systemd-boot = {
-      configurationLimit = 50;
-      enable = true;
+  boot = {
+    kernelParams = [ "acpi.ec_no_wakeup=1" "amd_pstate=active" ];
+    loader = {
+      efi.canTouchEfiVariables = true;
+      systemd-boot = {
+        configurationLimit = 50;
+        enable = true;
+      };
     };
   };
-
-  boot.kernelParams = [ "acpi.ec_no_wakeup=1" "amd_pstate=active" ];
 
   imports = [
     (import ../common-configuration.nix { inherit pkgs username; })
