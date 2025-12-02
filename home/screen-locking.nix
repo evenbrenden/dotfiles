@@ -18,15 +18,5 @@ with pkgs.lib;
     xss-lock.extraOptions = [ "--transfer-sleep-lock" ];
   };
 
-  systemd.user.services.disable-xset-s-and-dpms = {
-    Unit = {
-      Description = "Disable DPMS";
-      After = [ "xss-lock.service" ];
-    };
-    Install.WantedBy = [ "xss-lock.service" ];
-    Service = {
-      Type = "oneshot";
-      ExecStart = "${getExe pkgs.bash} -c '${getExe pkgs.xorg.xset} -dpms'";
-    };
-  };
+  xsession.profileExtra = "xset -dpms";
 }

@@ -57,11 +57,16 @@ function SetupLSP(key_opts)
                                 ':Telescope lsp_workspace_symbols<CR>', key_opts)
     end
 
-    local lspconfig = require 'lspconfig'
-    lspconfig.clangd.setup {on_attach = on_attach, cmd = {"clangd_wrapper"}}
-    lspconfig.hls.setup {on_attach = on_attach}
-    lspconfig.idris2_lsp.setup {on_attach = on_attach} -- https://github.com/claymager/idris2-pkgs
-    lspconfig.lua_ls.setup {
+    vim.lsp.config('clangd', {on_attach = on_attach, cmd = {"clangd_wrapper"}})
+    vim.lsp.enable('clangd')
+
+    vim.lsp.config('hls', {on_attach = on_attach})
+    vim.lsp.enable('hls')
+
+    vim.lsp.config('idris2_lsp', {on_attach = on_attach}) -- https://github.com/claymager/idris2-pkgs
+    vim.lsp.enable('idris2_lsp')
+
+    vim.lsp.config('lua_ls', {
         on_attach = on_attach,
         settings = {
             Lua = {
@@ -70,24 +75,29 @@ function SetupLSP(key_opts)
                 workspace = {library = vim.api.nvim_get_runtime_file("", true)}
             }
         }
-    }
-    lspconfig.nil_ls.setup {on_attach = on_attach}
-    lspconfig.pylsp.setup {
+    })
+    vim.lsp.enable('lua_ls')
+
+    vim.lsp.config('nil_ls', {on_attach = on_attach})
+    vim.lsp.enable('nil_ls')
+
+    vim.lsp.config('pylsp', {
         on_attach = on_attach,
         settings = {
             pylsp = {
                 plugins = {pylsp_mypy = {enabled = true, live_mode = true}}
             }
         }
-    }
-    lspconfig.ts_ls.setup {
+    })
+    vim.lsp.enable('pylsp')
+
+    vim.lsp.config('ts_ls', {
         on_attach = on_attach,
         cmd = {'typescript-language-server', '--stdio'}
-    }
-    lspconfig.yamlls.setup {}
+    })
+    vim.lsp.enable('ts_ls')
 
-    -- https://www.reddit.com/r/neovim/comments/tx40m2/is_it_possible_to_improve_lsp_hover_look/
-    vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-                                                 vim.lsp.handlers.hover,
-                                                 {max_width = 85})
+    vim.lsp.config('yamlls', {})
+    vim.lsp.enable('yamlls')
+
 end

@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     autorandr
     brightnessctl
+    clipmenu
     dmenu
     flameshot
     i3status

@@ -49,7 +49,7 @@
       enable = true;
       touchpad.tapping = true;
     };
-    logind.lidSwitch = "ignore";
+    logind.settings.Login.HandleLidSwitch = "ignore";
     pipewire.enable = false;
     pulseaudio = {
       enable = true;

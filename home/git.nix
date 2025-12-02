@@ -5,7 +5,7 @@
 
   programs.git = {
     enable = true;
-    extraConfig = {
+    settings = {
       core.whitespace = "trailing-space";
       init.defaultBranch = "main";
       pull.rebase = true;

@@ -180,9 +180,13 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
 # change keyboard layout
 bindsym $mod+k exec --no-startup-id toggle-keyboard-layout
 
+# clipboard history
+bindsym $mod+period exec clipmenu -i -fn DejaVuSansMono-12 -sb '#007755'
+bindsym $mod+Shift+period exec clipdel -d '.*'
+
 # notification control
 bindsym $mod+n exec --no-startup-id dunstctl set-paused toggle && pkill -x -USR1 i3status
-bindsym $mod+c exec --no-startup-id dunstctl close
+bindsym $mod+Shift+n exec --no-startup-id dunstctl close
 
 # print screen
 bindsym $mod+p exec --no-startup-id flameshot gui

@@ -4,11 +4,11 @@
   inputs = {
     i3quo.url = "git+https://codeberg.org/evenbrenden/i3quo";
     i3quo.inputs.nixpkgs.follows = "nixpkgs-stable";
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
+    home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-stable";
     musnix.url = "github:musnix/musnix";
     musnix.inputs.nixpkgs.follows = "nixpkgs-stable";
-    nixpkgs-stable.url = "nixpkgs/nixos-25.05";
+    nixpkgs-stable.url = "nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "nixpkgs/nixpkgs-unstable";
     sops-nix.url = "github:Mic92/sops-nix";
   };

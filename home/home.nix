@@ -4,6 +4,7 @@
   imports = [
     ./alacritty.nix
     ./bash.nix
+    ./clipmenu.nix
     ./emote.nix
     ./fonts.nix
     ./git.nix
@@ -80,7 +81,7 @@
         transmission_4-gtk
         tree
         vlc
-        whatsapp-for-linux
+        wasistlos
         xclip
         xcolor
       ] ++ programming;
@@ -110,10 +111,6 @@
           showStartupLaunchMessage = false;
         };
       };
-    };
-    parcellite = {
-      enable = true;
-      extraOptions = [ "--no-icon" ];
     };
     picom = {
       backend = "glx";
@@ -153,13 +150,11 @@
           hsetroot -solid '#7A3E9D' # A dark moderate violet
           # Things that need a bump post display changes
           systemctl --user restart dunst.service
-          systemctl --user restart parcellite.service
         '';
       });
       "fourmolu.yaml".source = ./dotfiles/fourmolu.yaml;
       "kde.org/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
       "nixpkgs/config.nix".source = ./dotfiles/nixpkgs-config.nix;
-      "parcellite/parcelliterc".source = ./dotfiles/parcelliterc;
       "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
     };
     enable = true;
