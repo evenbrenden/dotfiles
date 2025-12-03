@@ -1,4 +1,4 @@
-# modifier = windows key
+# modifier = super left
 set $mod Mod4
 
 # font for all i3 things
