@@ -180,7 +180,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
 # change keyboard layout
 bindsym $mod+k exec --no-startup-id toggle-keyboard-layout
 
-# clipboard history
+# clipboard journal
 bindsym $mod+j exec --no-startup-id clipmenu -i -fn DejaVuSansMono-12 -sb '#007755'
 bindsym $mod+Shift+j exec --no-startup-id clipdel -d '.*'
 
