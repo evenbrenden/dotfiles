@@ -1,69 +1,69 @@
-# modifier = super left
+# Modifier is left Super
 set $mod Mod4
 
-# font for all things i3
+# Font
 font pango:DejaVu Sans Mono 12
 
-# launch terminal
+# Terminal
 bindsym $mod+Return exec alacritty --working-directory "$(xcwd)"
 
-# desktop programs
+# Desktop programs
 bindsym $mod+d exec i3-dmenu-desktop --dmenu='dmenu -i -fn DejaVuSansMono-12 -sb #007755'
 
-# use mouse+$mod to move (left-click) or resize (right-click) floating windows
+# Modifier + left-click to move and modifier + right-click to resize floating windows
 floating_modifier $mod
 
-# keep current window focused no matter where the mouse pointer is
+# Keep current window focused no matter where the mouse pointer is
 focus_follows_mouse no
 
-# kill focused window
+# Kill focused window
 bindsym $mod+Shift+q kill
 
-# window navigation
+# Window navigation
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move windows
+# Move windows
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
+# Split in horizontal orientation
 bindsym $mod+h split h
 
-# split in vertical orientation
+# Split in vertical orientation
 bindsym $mod+v split v
 
-# split in opposite orientation
+# Split in opposite orientation
 bindsym $mod+t split toggle
 
-# enter fullscreen mode for the focused container
+# Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout
+# Change container layout
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# always start with tabs
+# Always start with tabs
 workspace_layout tabbed
 
-# toggle tiling/floating
+# Toggle tiling/floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling/floating windows
+# Change focus between tiling/floating window
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
+# Focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
+# Focus the child container
 bindsym $mod+z focus child
 
-# define names for default workspaces for which we configure key bindings later on
+# Default workspaces
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -75,7 +75,7 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# switch to workspace
+# Switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -87,7 +87,7 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
-# move focused container to workspace
+# Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
@@ -99,40 +99,38 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-# move the current workspace to the next output
+# Move the current workspace to the next output
 bindsym $mod+x move workspace to output next
 
-# toggle sticky for the current floating window
+# Toggle sticky for the current floating window
 bindsym $mod+y sticky toggle
 
-# size and resize gaps
+# Resize gaps
 bindsym $mod+minus gaps horizontal all minus 128
 bindsym $mod+plus gaps horizontal all plus 128
 
-# reload the configuration file
+# Reload the configuration file
 bindsym $mod+Shift+c reload
 
-# restart i3 inplace (preserves your layout/session and can be used to upgrade i3)
+# Restart i3 (in-place)
 bindsym $mod+Shift+r restart
 
-# resize window (you can also use the mouse for that)
+# Resize window (can also be done with the mouse)
 mode "resize" {
-    # these bindings trigger as soon as you enter the resize mode
-
-    # same bindings, but for the arrow keys
+    # Resize mode keyboard bindings
     bindsym Left resize shrink width 10 px or 10 ppt
     bindsym Down resize grow height 10 px or 10 ppt
     bindsym Up resize shrink height 10 px or 10 ppt
     bindsym Right resize grow width 10 px or 10 ppt
 
-    # back to normal: Return or Escape or $mod+r
+    # Back to normal mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
     bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
 
-# start i3bar to display a workspace bar
+# i3bar
 bar {
     status_command i3status | i3quo
     colors {
@@ -141,30 +139,29 @@ bar {
     }
 }
 
-# set colors
+# Colors
 client.focused #4c9978 #287755 #ffffff #2ef49e #287755
 
-# audio control
+# Audio control
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -3dB
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3dB
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && pkill -x -USR1 i3status
-# for keyboards with no mic mute key
-bindsym $mod+m exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && pkill -x -USR1 i3status
+bindsym $mod+m exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && pkill -x -USR1 i3status # For keyboards with no mic mute key
 
-# playback control
+# Playback control
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
-# wifi control
+# WiFi control
 bindsym $mod+Shift+w exec --no-startup-id rfkill toggle wlan && pkill -x -USR1 i3status
 
-# bluetooth control
+# Bluetooth control
 bindsym $mod+Shift+b exec --no-startup-id rfkill toggle bluetooth && pkill -x -USR1 i3status
 
-# things xrandr
+# Things xrandr
 bindsym $mod+Ctrl+a exec --no-startup-id refresh-display
 bindsym $mod+Ctrl+6 exec --no-startup-id set-dpi 96
 bindsym $mod+Ctrl+7 exec --no-startup-id set-dpi 120
@@ -173,28 +170,28 @@ bindsym $mod+Ctrl+9 exec --no-startup-id set-dpi 168
 bindsym $mod+Ctrl+0 exec --no-startup-id set-dpi 192
 bindsym $mod+Ctrl+i exec --no-startup-id xrandr-invert-colors
 
-# brightness control
+# Brightness control
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
 
-# change keyboard layout
+# Keyboard layout
 bindsym $mod+k exec --no-startup-id toggle-keyboard-layout
 
-# clipboard journal
+# Clipboard journal
 bindsym $mod+j exec --no-startup-id clipmenu -i -fn DejaVuSansMono-12 -sb '#007755'
 bindsym $mod+Shift+j exec --no-startup-id clipdel -d '.*'
 
-# notification control
+# Notification control
 bindsym $mod+n exec --no-startup-id dunstctl set-paused toggle && pkill -x -USR1 i3status
 bindsym $mod+Shift+n exec --no-startup-id dunstctl close
 
-# print screen
+# Print screen
 bindsym $mod+p exec flameshot gui
 bindsym $mod+Ctrl+p exec flameshot gui --accept-on-select --raw | tesseract stdin stdout | xclip -selection clipboard
 bindsym $mod+Shift+p exec --no-startup-id flameshot full -p ~/Downloads/
 
-# lock screen
+# Lock screen
 bindsym $mod+Shift+l exec --no-startup-id loginctl lock-session $XDG_SESSION_ID
 
-# refresh display
+# Refresh display
 exec --no-startup-id refresh-display
