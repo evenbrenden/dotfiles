@@ -8,7 +8,7 @@ font pango:DejaVu Sans Mono 12
 bindsym $mod+Return exec alacritty --working-directory "$(xcwd)"
 
 # Desktop programs
-bindsym $mod+d exec i3-dmenu-desktop --dmenu='dmenu -i -fn DejaVuSansMono-12 -sb #007755'
+bindsym $mod+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn DejaVuSansMono-12 -sb #007755"
 
 # Modifier + left-click to move and modifier + right-click to resize floating windows
 floating_modifier $mod
@@ -178,8 +178,8 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
 bindsym $mod+k exec --no-startup-id toggle-keyboard-layout
 
 # Clipboard journal
-bindsym $mod+j exec --no-startup-id clipmenu -i -fn DejaVuSansMono-12 -sb '#007755'
-bindsym $mod+Shift+j exec --no-startup-id clipdel -d '.*'
+bindsym $mod+j exec --no-startup-id clipmenu -i -fn DejaVuSansMono-12 -sb "#007755"
+bindsym $mod+Shift+j exec --no-startup-id clipdel -d ".*"
 
 # Notification control
 bindsym $mod+n exec --no-startup-id dunstctl set-paused toggle && pkill -x -USR1 i3status
