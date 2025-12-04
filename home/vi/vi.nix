@@ -21,6 +21,7 @@
         lsp = [
           clangd_wrapper
           haskell-language-server
+          idris2Packages.idris2Lsp
           lua-language-server
           nil
           (pkgs.python3.withPackages (pp: [ pp.pylsp-mypy pp.python-lsp-server ]))
