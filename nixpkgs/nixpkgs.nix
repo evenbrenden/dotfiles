@@ -14,6 +14,7 @@ in {
         fourmolu-all = import ./fourmolu-all.nix { pkgs = prev; };
         git-replace = import ./git-replace.nix { pkgs = prev; };
         huddly = import ./huddly.nix;
+        huddly-cli = import ./huddly-cli.nix { pkgs = prev; };
         nixfmt-all = import ./nixfmt-all.nix { pkgs = final; };
         nixfmt-classic = import ./nixfmt-classic.nix { pkgs = prev; };
         refresh-display = import ./refresh-display.nix { pkgs = prev; };
