@@ -41,7 +41,15 @@ username:
       enable = true;
       extraConfig = builtins.readFile "${pkgs.huddly}/ssh/sshd_config";
     };
+    openvpn.servers.work.autoStart = true;
     xserver.videoDrivers = [ "displaylink" "modesetting" ];
+  };
+
+  # Waiting for VPN connection
+  systemd.services.sshd.serviceConfig = {
+    RestartSec = 60;
+    StartLimitIntervalSec = 600;
+    StartLimitBurst = 10;
   };
 
   system.stateVersion = "25.05";
