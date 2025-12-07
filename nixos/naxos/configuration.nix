@@ -34,7 +34,6 @@ username:
 
   services = {
     openssh.enable = false;
-    openvpn.servers.work.autoStart = false;
     xserver.videoDrivers = [ "displaylink" ];
   };
 
