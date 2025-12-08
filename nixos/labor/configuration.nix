@@ -21,7 +21,7 @@ username:
       inherit pkgs;
     })
     ./hardware-configuration.nix
-    ./ssh.nix
+    ./sshd.nix
   ];
 
   hardware = {
