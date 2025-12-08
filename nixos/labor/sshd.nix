@@ -12,7 +12,7 @@
   # Waiting for VPN connection
   systemd.services.sshd.serviceConfig = {
     RestartSec = 60;
-    StartLimitIntervalSec = 600;
+    StartLimitInterval = 600;
     StartLimitBurst = 10;
   };
 }
