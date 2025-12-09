@@ -57,7 +57,7 @@ function SetupLSP(key_opts)
                                 ':Telescope lsp_workspace_symbols<CR>', key_opts)
     end
 
-    vim.lsp.config('clangd', {on_attach = on_attach, cmd = {"clangd_wrapper"}})
+    vim.lsp.config('clangd', {on_attach = on_attach})
     vim.lsp.enable('clangd')
 
     vim.lsp.config('hls', {on_attach = on_attach})

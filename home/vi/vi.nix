@@ -19,7 +19,7 @@
         ];
         git-gutter = [ git ];
         lsp = [
-          clangd_wrapper
+          llvmPackages_19.clang-tools
           haskell-language-server
           idris2Packages.idris2Lsp
           lua-language-server
