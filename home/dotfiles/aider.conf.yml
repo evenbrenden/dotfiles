@@ -3,5 +3,6 @@ auto-lint: false
 dirty-commits: false
 gitignore: false
 model: opus
+read: AGENTS.md
 subtree-only: true
 watch-files: true
