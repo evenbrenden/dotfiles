@@ -16,9 +16,9 @@
       openFirewall = true;
       nssmdns4 = true;
     };
-    openvpn.servers.work = {
+    openvpn.servers.mobile = {
       autoStart = false;
-      config = "config /home/${username}/openvpn/work.ovpn";
+      config = "config /home/${username}/openvpn/mobile.ovpn";
       updateResolvConf = true;
     };
     udev.packages = let
