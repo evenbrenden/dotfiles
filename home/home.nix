@@ -50,6 +50,7 @@
         alsa-utils
         arandr
         audacity
+        bitwarden-cli
         chromium
         curl
         cryptsetup
