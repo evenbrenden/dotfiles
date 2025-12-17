@@ -1,0 +1,3 @@
+approval_policy = "untrusted"
+model = "gpt-5.1-codex-max"
+sandbox_mode = "workspace-write"
