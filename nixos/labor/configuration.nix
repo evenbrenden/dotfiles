@@ -36,7 +36,10 @@ username:
 
   networking.hostName = "labor";
 
-  services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
+  services = {
+    openssh.enable = false;
+    xserver.videoDrivers = [ "displaylink" "modesetting" ];
+  };
 
   system.stateVersion = "25.05";
 }
