@@ -55,6 +55,7 @@
       enable = true;
       package = pkgs.pulseaudio.override { bluetoothSupport = true; };
     };
+    openssh.enable = false;
     upower = {
       criticalPowerAction = "PowerOff";
       enable = true;
