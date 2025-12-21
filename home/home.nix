@@ -127,8 +127,10 @@
     age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
     defaultSopsFile = ../secrets/secrets.yaml;
     secrets = {
-      codeberg-org-private-key.path = "${config.home.homeDirectory}/.ssh/codeberg-org-private-key";
-      github-com-private-key.path = "${config.home.homeDirectory}/.ssh/github-com-private-key";
+      evenbrenden_at_noreply_dot_codeberg_dot_org.path =
+        "${config.home.homeDirectory}/.ssh/evenbrenden_at_noreply_dot_codeberg_dot_org";
+      evenbrenden_at_users_dot_noreply_dot_github_dot_com.path =
+        "${config.home.homeDirectory}/.ssh/evenbrenden_at_users_dot_noreply_dot_github_dot_com";
     };
   };
 

@@ -5,8 +5,14 @@
     enable = true;
     enableDefaultConfig = false;
     matchBlocks = {
-      "codeberg.org".identityFile = "${config.sops.secrets.codeberg-org-private-key.path}";
-      "github.com".identityFile = "${config.sops.secrets.github-com-private-key.path}";
+      "codeberg.org" = {
+        addKeysToAgent = "yes";
+        identityFile = "${config.sops.secrets.evenbrenden_at_noreply_dot_codeberg_dot_org.path}";
+      };
+      "github.com" = {
+        addKeysToAgent = "yes";
+        identityFile = "${config.sops.secrets.evenbrenden_at_users_dot_noreply_dot_github_dot_com.path}";
+      };
       "*" = {
         addKeysToAgent = "no";
         controlMaster = "no";
