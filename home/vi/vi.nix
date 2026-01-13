@@ -15,6 +15,7 @@
           nixfmt-classic
           nodePackages.prettier
           python312Packages.autopep8
+          rustfmt
           shfmt
         ];
         git-gutter = [ git ];
