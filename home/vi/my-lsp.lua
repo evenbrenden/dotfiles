@@ -91,6 +91,9 @@ function SetupLSP(key_opts)
     })
     vim.lsp.enable('pylsp')
 
+    vim.lsp.config('rust_analyzer', {on_attach = on_attach})
+    vim.lsp.enable('rust_analyzer')
+
     vim.lsp.config('ts_ls', {
         on_attach = on_attach,
         cmd = {'typescript-language-server', '--stdio'}

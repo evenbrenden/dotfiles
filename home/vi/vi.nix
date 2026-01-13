@@ -26,6 +26,7 @@
           lua-language-server
           nil
           (pkgs.python3.withPackages (pp: [ pp.pylsp-mypy pp.python-lsp-server ]))
+          rust-analyzer
           nodePackages.typescript
           nodePackages.typescript-language-server
           yaml-language-server
