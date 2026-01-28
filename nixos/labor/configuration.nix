@@ -34,7 +34,14 @@ username:
 
   musnix.enable = true;
 
-  networking.hostName = "labor";
+  networking = {
+    hostName = "labor";
+    # Set a static IP for wired connection on USB hub
+    interfaces.enp198s0f4u1u1.ipv4.addresses = [{
+      address = "10.0.0.1";
+      prefixLength = 24;
+    }];
+  };
 
   services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
 
