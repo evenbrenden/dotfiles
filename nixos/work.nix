@@ -26,8 +26,8 @@
         name = "huddly-udev-rules";
         src = pkgs.huddly;
         installPhase = ''
-          mkdir -p $out/etc/udev/rules.d
-          cp $src/udev/* $out/etc/udev/rules.d/
+          mkdir -p $out/lib/udev/rules.d
+          cp $src/udev/* $out/lib/udev/rules.d/
         '';
       };
     in [ huddly-udev-rules ];
@@ -35,5 +35,8 @@
 
   systemd.tmpfiles.rules = [ "L+ /bin/bash - - - - /run/current-system/sw/bin/bash" ];
 
-  users.users.${username}.extraGroups = [ "plugdev" ]; # udev
+  users = {
+    groups.plugdev = { };
+    users.${username}.extraGroups = [ "plugdev" ]; # udev
+  };
 }
