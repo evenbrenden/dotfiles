@@ -34,4 +34,6 @@
   };
 
   systemd.tmpfiles.rules = [ "L+ /bin/bash - - - - /run/current-system/sw/bin/bash" ];
+
+  users.users.${username}.extraGroups = [ "plugdev" ]; # udev
 }
