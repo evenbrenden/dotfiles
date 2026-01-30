@@ -34,7 +34,8 @@ username:
 
   musnix.enable = true;
 
-  networking.hostName = "labor";
+  # For DDS
+  networking.firewall.trustedInterfaces = [ "enp198s0f4u1u1" ];
 
   services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
 
