@@ -2,7 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    busybox
     codex
     huddly-cli
     libqalculate
