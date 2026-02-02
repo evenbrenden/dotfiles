@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     codex
     huddly-cli
-    inetutils
     libqalculate
     meld
     netron
