@@ -97,7 +97,6 @@
       nix-direnv.enable = true;
     };
     home-manager.enable = true;
-    man.enable = false;
   };
 
   services = {
