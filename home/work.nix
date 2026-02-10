@@ -9,6 +9,7 @@
     netron
     networkmanagerapplet
     poppler-utils
+    ripgrep
     roomeqwizard
     usbutils
   ];
