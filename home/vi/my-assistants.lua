@@ -12,6 +12,7 @@ function SetupAssistants()
         ["lua"] = true,
         ["nix"] = true,
         ["python"] = true,
+        ["rust"] = true,
         ["sh"] = true,
         ["typescript"] = true
     }
