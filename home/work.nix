@@ -14,5 +14,5 @@
     usbutils
   ];
 
-  programs.ssh.includes = [ "${pkgs.huddly}/ssh/huddly" ];
+  programs.ssh.includes = [ "${pkgs.huddly}/ssh/huddly" "${pkgs.huddly}/ssh/fish" ];
 }
