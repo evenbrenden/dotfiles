@@ -35,7 +35,7 @@ username:
   musnix.enable = true;
 
   networking = {
-    firewall.trustedInterfaces = [ "enp198s0f4u1u1" ]; # For DDS
+    firewall.trustedInterfaces = [ "enp1s0f0" "enp198s0f4u1u1" ]; # For DDS
     hostName = "labor";
   };
 
