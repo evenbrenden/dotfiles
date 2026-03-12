@@ -3,11 +3,6 @@
 {
   environment.systemPackages = with pkgs; [ cacert ];
 
-  networking.firewall.allowedUDPPorts = [
-    42105 # falconpyclient
-    50124 # falconpyclient
-  ];
-
   programs.nix-ld.enable = true;
 
   services = {

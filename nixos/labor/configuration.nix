@@ -35,7 +35,7 @@ username:
   musnix.enable = true;
 
   networking = {
-    firewall.trustedInterfaces = [ "enp198s0f4u1u1" ]; # For DDS
+    firewall.trustedInterfaces = [ "enp198s0f4u1u1" ]; # DDS + falconpycli
     hostName = "labor";
   };
 
