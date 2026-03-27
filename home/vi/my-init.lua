@@ -107,6 +107,11 @@ vim.g.neoformat_enabled_lua = {'luaformat'}
 vim.g.neoformat_enabled_nix = {'nixfmt'}
 vim.g.neoformat_nix_nixfmt = {exe = 'nixfmt', stdin = 1}
 vim.g.neoformat_enabled_rust = {'rustfmt'}
+vim.g.neoformat_rust_rustfmt = {
+    exe = 'rustfmt',
+    args = {'--edition', '2024'},
+    stdin = 1
+}
 vim.g.neoformat_enabled_sh = {'shfmt'}
 vim.g.neoformat_sh_shfmt = {
     exe = 'shfmt',
