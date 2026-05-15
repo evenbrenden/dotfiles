@@ -57,9 +57,11 @@ in {
   home = {
     file = {
       ".lv2/carla.lv2".source = "${pkgs.carla}/lib/lv2/carla.lv2";
-      ".lv2/sfizz.lv2".source = "${pkgs.unstable.sfizz-ui}/lib/lv2/sfizz.lv2";
+      ".lv2/sfizz.lv2".source =
+        "${pkgs.unstable.sfizz-ui}/lib/lv2/sfizz.lv2"; # https://github.com/sfztools/sfizz-ui/issues/152
       ".vst/carla.vst".source = "${pkgs.carla}/lib/vst/carla.vst";
-      ".vst3/sfizz.vst3".source = "${pkgs.unstable.sfizz-ui}/lib/vst3/sfizz.vst3";
+      ".vst3/sfizz.vst3".source =
+        "${pkgs.unstable.sfizz-ui}/lib/vst3/sfizz.vst3"; # https://github.com/sfztools/sfizz-ui/issues/152
     };
     packages = [ pkgs.carla pkgs.reaper pkgs.unstable.sfizz-ui ];
     sessionVariables.UHE_RT_PRIO = 64;
