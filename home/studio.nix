@@ -40,6 +40,25 @@ let
       cp -a * $out/share/sfz/ivy-audio
     '';
   };
+  kiarchive = pkgs.stdenv.mkDerivation {
+    name = "kiarchive";
+
+    src = builtins.fetchurl {
+      url = "https://kiarchive.com/kiarchive.7z";
+      sha256 = "06q3dln7i81k2npqxkqi71l0zplh2671m9smhpclb4n1gz5m0ynj";
+    };
+
+    nativeBuildInputs = [ pkgs.p7zip ];
+
+    unpackPhase = ''
+      7z x $src
+    '';
+
+    installPhase = ''
+      mkdir -p $out/share/xi/kiarchive
+      cp -a * $out/share/xi/kiarchive
+    '';
+  };
   samples-from-mars = pkgs.stdenv.mkDerivation {
     name = "samples-from-mars";
 
@@ -120,6 +139,7 @@ in {
       };
       "soundfonts/digital-sound-factory".source = "${digital-sound-factory}/share/soundfonts/digital-sound-factory";
       "soundfonts/FluidR3_GM2-2.sf2".source = "${pkgs.soundfont-fluid}/share/soundfonts/FluidR3_GM2-2.sf2";
+      "xi/kiarchive".source = "${kiarchive}/share/xi/kiarchive";
     };
     desktopEntries.ft2-clone = {
       name = "Fasttracker II clone";
