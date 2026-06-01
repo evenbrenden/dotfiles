@@ -8,8 +8,7 @@ let
     git-root = ''cd "$(git rev-parse --show-toplevel)"'';
     ls = "ls -Ah --color=auto";
     mv = "mv --interactive";
-    # https://github.com/rclone/rclone/issues/8317#issuecomment-2654881520
-    rclone-sync = "rclone sync --create-empty-src-dirs --no-update-dir-modtime --interactive";
+    rclone-sync = "rclone sync --create-empty-src-dirs --interactive";
     rm = "rm --interactive=once";
     vi = "nvim";
     xclip = "xclip -selection clipboard";
