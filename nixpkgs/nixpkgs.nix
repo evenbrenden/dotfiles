@@ -15,15 +15,12 @@ in {
         huddly = import ./huddly.nix;
         huddly-cli = import ./huddly-cli.nix { pkgs = prev; };
         nixfmt-all = import ./nixfmt-all.nix { pkgs = final; };
-        nixfmt-classic = import ./nixfmt-classic.nix { pkgs = prev; };
         refresh-display = import ./refresh-display.nix { pkgs = prev; };
         set-dpi = import ./set-dpi.nix { pkgs = prev; };
         sof-firmware = with prev; import ./sof-firmware.nix { inherit fetchurl lib stdenvNoCC; };
         toggle-keyboard-layout = import ./toggle-keyboard-layout.nix { pkgs = prev; };
         unstable = import nixpkgs-unstable { inherit config system; };
-        xorg = prev.xorg // {
-          xkeyboardconfig-norwerty = import ./xkeyboardconfig-norwerty/xkeyboardconfig-norwerty.nix { pkgs = prev; };
-        };
+        xkeyboardconfig-norwerty = import ./xkeyboardconfig-norwerty/xkeyboardconfig-norwerty.nix { pkgs = prev; };
       })
       i3quo.overlay
     ];

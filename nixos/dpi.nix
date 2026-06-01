@@ -7,7 +7,7 @@
         Xft.dpi: ${toString dpi}
       '';
     in ''
-      ${pkgs.xorg.xrdb}/bin/xrdb -merge <${xresources}
+      ${pkgs.xrdb}/bin/xrdb -merge <${xresources}
     '';
     dpi = dpi;
   };

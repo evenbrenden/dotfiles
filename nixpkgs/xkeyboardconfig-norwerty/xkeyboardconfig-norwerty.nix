@@ -1,4 +1,4 @@
 { pkgs }:
 
-pkgs.xorg.xkeyboardconfig.overrideAttrs
+pkgs.xkeyboardconfig.overrideAttrs
 (prevAttrs: { patches = (prevAttrs.patches or [ ]) ++ [ ./xkeyboardconfig-norwerty.patch ]; })

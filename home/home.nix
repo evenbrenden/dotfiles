@@ -76,14 +76,12 @@
         unstable.signal-desktop
         simplescreenrecorder
         slack
-        snes9x-gtk
         sops
         sox
         tomb
         transmission_4-gtk
         tree
         vlc
-        wasistlos
         xclip
         xcolor
       ] ++ programming;
@@ -158,7 +156,6 @@
       "fourmolu.yaml".source = ./dotfiles/fourmolu.yaml;
       "kde.org/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
       "nixpkgs/config.nix".source = ./dotfiles/nixpkgs-config.nix;
-      "snes9x/snes9x.conf".source = ./dotfiles/snes9x.conf;
     };
     enable = true;
     mimeApps = let firefox = "firefox.desktop";

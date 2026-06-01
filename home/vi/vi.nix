@@ -9,15 +9,7 @@
     extraPackages = with pkgs;
       let
         copilot = [ nodejs ];
-        formatting = [
-          haskellPackages.fourmolu
-          luaformatter
-          nixfmt-classic
-          nodePackages.prettier
-          python312Packages.autopep8
-          rustfmt
-          shfmt
-        ];
+        formatting = [ haskellPackages.fourmolu luaformatter nixfmt prettier python312Packages.autopep8 rustfmt shfmt ];
         git-gutter = [ git ];
         lsp = [
           llvmPackages_19.clang-tools
@@ -27,8 +19,8 @@
           nil
           (pkgs.python3.withPackages (pp: [ pp.pylsp-mypy pp.python-lsp-server ]))
           rust-analyzer
-          nodePackages.typescript
-          nodePackages.typescript-language-server
+          typescript
+          typescript-language-server
           yaml-language-server
         ];
         telescope = [ clang fd nodejs ripgrep tree-sitter ];
@@ -77,6 +69,8 @@
         vim-polyglot
         vim-suda
       ];
+    withPython3 = false;
+    withRuby = false;
   };
 
   xdg.configFile = {
