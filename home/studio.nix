@@ -72,22 +72,26 @@ let
       cp -a * $out/share/sfz/samples-from-mars
     '';
   };
-in {
+in
+{
   home = {
     file = {
       ".lv2/carla.lv2".source = "${pkgs.carla}/lib/lv2/carla.lv2";
-      ".lv2/sfizz.lv2".source =
-        "${pkgs.unstable.sfizz-ui}/lib/lv2/sfizz.lv2"; # https://github.com/sfztools/sfizz-ui/issues/152
+      ".lv2/sfizz.lv2".source = "${pkgs.unstable.sfizz-ui}/lib/lv2/sfizz.lv2"; # https://github.com/sfztools/sfizz-ui/issues/152
       ".vst/carla.vst".source = "${pkgs.carla}/lib/vst/carla.vst";
-      ".vst3/sfizz.vst3".source =
-        "${pkgs.unstable.sfizz-ui}/lib/vst3/sfizz.vst3"; # https://github.com/sfztools/sfizz-ui/issues/152
+      ".vst3/sfizz.vst3".source = "${pkgs.unstable.sfizz-ui}/lib/vst3/sfizz.vst3"; # https://github.com/sfztools/sfizz-ui/issues/152
     };
-    packages = [ pkgs.carla pkgs.reaper pkgs.unstable.sfizz-ui ];
+    packages = [
+      pkgs.carla
+      pkgs.reaper
+      pkgs.unstable.sfizz-ui
+    ];
     sessionVariables.UHE_RT_PRIO = 64;
   };
 
   xdg = {
-    configFile."REAPER/Configurations/reaper.ReaperConfigZip".source = ./dotfiles/reaper.ReaperConfigZip;
+    configFile."REAPER/Configurations/reaper.ReaperConfigZip".source =
+      ./dotfiles/reaper.ReaperConfigZip;
     dataFile = {
       "impulse-responses/lexicon-lxp-1-impulse-responses".source = pkgs.fetchFromGitea {
         domain = "codeberg.org";
@@ -137,8 +141,10 @@ in {
         url = "http://www.tiltshiftgallery.se/audio/yamaha_tx81z_lately_bass.zip";
         sha256 = "sha256-KViSOLl3+M1VYWE+i2Y38jJK8SuNS56eHhKb8wkwGTA=";
       };
-      "soundfonts/digital-sound-factory".source = "${digital-sound-factory}/share/soundfonts/digital-sound-factory";
-      "soundfonts/FluidR3_GM2-2.sf2".source = "${pkgs.soundfont-fluid}/share/soundfonts/FluidR3_GM2-2.sf2";
+      "soundfonts/digital-sound-factory".source =
+        "${digital-sound-factory}/share/soundfonts/digital-sound-factory";
+      "soundfonts/FluidR3_GM2-2.sf2".source =
+        "${pkgs.soundfont-fluid}/share/soundfonts/FluidR3_GM2-2.sf2";
       "xi/kiarchive".source = "${kiarchive}/share/xi/kiarchive";
     };
     desktopEntries.ft2-clone = {

@@ -1,11 +1,16 @@
-{ i3quo, nixpkgs-unstable, system }:
+{
+  i3quo,
+  nixpkgs-unstable,
+  system,
+}:
 
 let
   config = {
     allowUnfree = true;
     pulseaudio = true; # https://nixos.wiki/wiki/PulseAudio
   };
-in {
+in
+{
   nixpkgs = {
     inherit config;
     overlays = [
@@ -20,7 +25,9 @@ in {
         sof-firmware = with prev; import ./sof-firmware.nix { inherit fetchurl lib stdenvNoCC; };
         toggle-keyboard-layout = import ./toggle-keyboard-layout.nix { pkgs = prev; };
         unstable = import nixpkgs-unstable { inherit config system; };
-        xkeyboardconfig-norwerty = import ./xkeyboardconfig-norwerty/xkeyboardconfig-norwerty.nix { pkgs = prev; };
+        xkeyboardconfig-norwerty = import ./xkeyboardconfig-norwerty/xkeyboardconfig-norwerty.nix {
+          pkgs = prev;
+        };
       })
       i3quo.overlay
     ];

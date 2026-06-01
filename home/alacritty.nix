@@ -27,7 +27,8 @@ let
     ''
     (builtins.readFile "${pkgs.alacritty-theme}/share/alacritty-theme/alabaster.toml")
   ];
-in {
+in
+{
   home.packages = [ pkgs.alacritty ];
   xdg.configFile."alacritty/alacritty.toml".text = settings;
 }

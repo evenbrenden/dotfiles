@@ -16,16 +16,18 @@
       config = "config /home/${username}/openvpn/mobile.ovpn";
       updateResolvConf = true;
     };
-    udev.packages = let
-      huddly-udev-rules = pkgs.stdenv.mkDerivation {
-        name = "huddly-udev-rules";
-        src = pkgs.huddly;
-        installPhase = ''
-          mkdir -p $out/lib/udev/rules.d
-          cp $src/udev/* $out/lib/udev/rules.d/
-        '';
-      };
-    in [ huddly-udev-rules ];
+    udev.packages =
+      let
+        huddly-udev-rules = pkgs.stdenv.mkDerivation {
+          name = "huddly-udev-rules";
+          src = pkgs.huddly;
+          installPhase = ''
+            mkdir -p $out/lib/udev/rules.d
+            cp $src/udev/* $out/lib/udev/rules.d/
+          '';
+        };
+      in
+      [ huddly-udev-rules ];
   };
 
   systemd.tmpfiles.rules = [ "L+ /bin/bash - - - - /run/current-system/sw/bin/bash" ];

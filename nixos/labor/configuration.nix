@@ -4,7 +4,10 @@ username:
 
 {
   boot = {
-    kernelParams = [ "acpi.ec_no_wakeup=1" "amd_pstate=active" ];
+    kernelParams = [
+      "acpi.ec_no_wakeup=1"
+      "amd_pstate=active"
+    ];
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot = {
@@ -39,7 +42,10 @@ username:
     hostName = "labor";
   };
 
-  services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
+  services.xserver.videoDrivers = [
+    "displaylink"
+    "modesetting"
+  ];
 
   system.stateVersion = "25.05";
 }

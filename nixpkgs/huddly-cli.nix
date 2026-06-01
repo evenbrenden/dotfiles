@@ -9,9 +9,16 @@ pkgs.stdenv.mkDerivation {
     hash = "sha256-YAEMNbwJmnOFGLuQJu3fR5Bl30PgV0bx46diyKcvuiY=";
   };
 
-  nativeBuildInputs = with pkgs; [ autoPatchelfHook makeWrapper unzip ];
+  nativeBuildInputs = with pkgs; [
+    autoPatchelfHook
+    makeWrapper
+    unzip
+  ];
 
-  buildInputs = with pkgs; [ libz stdenv.cc.cc ];
+  buildInputs = with pkgs; [
+    libz
+    stdenv.cc.cc
+  ];
 
   dontBuild = true;
   dontStrip = true;
@@ -20,17 +27,25 @@ pkgs.stdenv.mkDerivation {
     unzip $src
   '';
 
-  installPhase = let runtimeDeps = with pkgs; lib.makeLibraryPath [ libusb1 openssl ];
-  in ''
-    unzipped="huddly"
-    target="$out/bin"
-    unwrapped="$target/huddly-unwrapped"
-    wrapped="$target/huddly"
+  installPhase =
+    let
+      runtimeDeps =
+        with pkgs;
+        lib.makeLibraryPath [
+          libusb1
+          openssl
+        ];
+    in
+    ''
+      unzipped="huddly"
+      target="$out/bin"
+      unwrapped="$target/huddly-unwrapped"
+      wrapped="$target/huddly"
 
-    mkdir -p "$target"
-    cp "$unzipped" "$unwrapped"
-    chmod +x "$unwrapped"
+      mkdir -p "$target"
+      cp "$unzipped" "$unwrapped"
+      chmod +x "$unwrapped"
 
-    makeWrapper "$unwrapped" "$wrapped" --set LD_LIBRARY_PATH "${runtimeDeps}"
-  '';
+      makeWrapper "$unwrapped" "$wrapped" --set LD_LIBRARY_PATH "${runtimeDeps}"
+    '';
 }

@@ -1,4 +1,10 @@
-{ config, pkgs, sops-nix, username, ... }:
+{
+  config,
+  pkgs,
+  sops-nix,
+  username,
+  ...
+}:
 
 {
   imports = [
@@ -29,7 +35,8 @@
     };
     homeDirectory = "/home/${config.home.username}";
     keyboard.layout = "us";
-    packages = with pkgs;
+    packages =
+      with pkgs;
       let
         programming = [
           unstable.aider-chat-with-playwright
@@ -44,7 +51,8 @@
           python3
           shellcheck
         ];
-      in [
+      in
+      [
         abcde
         age
         alsa-utils
@@ -84,7 +92,8 @@
         vlc
         xclip
         xcolor
-      ] ++ programming;
+      ]
+      ++ programming;
     stateVersion = "22.05";
     username = username;
   };
@@ -124,10 +133,8 @@
     age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
     defaultSopsFile = ../secrets/secrets.yaml;
     secrets = {
-      evenbrenden_at_noreply_dot_codeberg_dot_org.path =
-        "${config.home.homeDirectory}/.ssh/evenbrenden_at_noreply_dot_codeberg_dot_org";
-      evenbrenden_at_users_dot_noreply_dot_github_dot_com.path =
-        "${config.home.homeDirectory}/.ssh/evenbrenden_at_users_dot_noreply_dot_github_dot_com";
+      evenbrenden_at_noreply_dot_codeberg_dot_org.path = "${config.home.homeDirectory}/.ssh/evenbrenden_at_noreply_dot_codeberg_dot_org";
+      evenbrenden_at_users_dot_noreply_dot_github_dot_com.path = "${config.home.homeDirectory}/.ssh/evenbrenden_at_users_dot_noreply_dot_github_dot_com";
     };
   };
 
@@ -144,45 +151,53 @@
 
   xdg = {
     configFile = {
-      "autorandr/postswitch".source = pkgs.lib.getExe (pkgs.writeShellApplication {
-        name = "autorandr-postswitch";
-        runtimeInputs = with pkgs; [ hsetroot systemd ];
-        text = ''
-          hsetroot -solid '#7A3E9D' # A dark moderate violet
-          # Things that need a bump post display changes
-          systemctl --user restart dunst.service
-        '';
-      });
+      "autorandr/postswitch".source = pkgs.lib.getExe (
+        pkgs.writeShellApplication {
+          name = "autorandr-postswitch";
+          runtimeInputs = with pkgs; [
+            hsetroot
+            systemd
+          ];
+          text = ''
+            hsetroot -solid '#7A3E9D' # A dark moderate violet
+            # Things that need a bump post display changes
+            systemctl --user restart dunst.service
+          '';
+        }
+      );
       "fourmolu.yaml".source = ./dotfiles/fourmolu.yaml;
       "kde.org/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
       "nixpkgs/config.nix".source = ./dotfiles/nixpkgs-config.nix;
     };
     enable = true;
-    mimeApps = let firefox = "firefox.desktop";
-    in {
-      defaultApplications = {
-        "application/pdf" = [ "okularApplication_pdf.desktop" ];
-        "application/x-extension-html" = [ firefox ];
-        "audio/flac" = [ "vlc.desktop" ];
-        "audio/mp4" = [ "vlc.desktop" ];
-        "audio/mpeg" = [ "vlc.desktop" ];
-        "audio/x-aiff" = [ "vlc.desktop" ];
-        "audio/x-wav" = [ "vlc.desktop" ];
-        "image/gif" = [ "org.nomacs.ImageLounge.desktop" ];
-        "image/jpeg" = [ "org.nomacs.ImageLounge.desktop" ];
-        "image/png" = [ "org.nomacs.ImageLounge.desktop" ];
-        "image/svg+xml" = [ "org.nomacs.ImageLounge.desktop" ];
-        "text/html" = [ firefox ];
-        "x-scheme-handler/about" = [ firefox ];
-        "x-scheme-handler/chrome" = [ firefox ];
-        "x-scheme-handler/http" = [ firefox ];
-        "x-scheme-handler/https" = [ firefox ];
-        "x-scheme-handler/magnet" = [ "transmission-gtk.desktop" ];
-        "x-scheme-handler/msteams" = [ "teams.desktop" ];
-        "x-scheme-handler/unknown" = [ firefox ];
+    mimeApps =
+      let
+        firefox = "firefox.desktop";
+      in
+      {
+        defaultApplications = {
+          "application/pdf" = [ "okularApplication_pdf.desktop" ];
+          "application/x-extension-html" = [ firefox ];
+          "audio/flac" = [ "vlc.desktop" ];
+          "audio/mp4" = [ "vlc.desktop" ];
+          "audio/mpeg" = [ "vlc.desktop" ];
+          "audio/x-aiff" = [ "vlc.desktop" ];
+          "audio/x-wav" = [ "vlc.desktop" ];
+          "image/gif" = [ "org.nomacs.ImageLounge.desktop" ];
+          "image/jpeg" = [ "org.nomacs.ImageLounge.desktop" ];
+          "image/png" = [ "org.nomacs.ImageLounge.desktop" ];
+          "image/svg+xml" = [ "org.nomacs.ImageLounge.desktop" ];
+          "text/html" = [ firefox ];
+          "x-scheme-handler/about" = [ firefox ];
+          "x-scheme-handler/chrome" = [ firefox ];
+          "x-scheme-handler/http" = [ firefox ];
+          "x-scheme-handler/https" = [ firefox ];
+          "x-scheme-handler/magnet" = [ "transmission-gtk.desktop" ];
+          "x-scheme-handler/msteams" = [ "teams.desktop" ];
+          "x-scheme-handler/unknown" = [ firefox ];
+        };
+        enable = true;
       };
-      enable = true;
-    };
   };
 
   xresources.extraConfig = ''

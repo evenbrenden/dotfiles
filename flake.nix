@@ -13,7 +13,16 @@
     sops-nix.url = "github:Mic92/sops-nix";
   };
 
-  outputs = { i3quo, home-manager, musnix, nixpkgs-stable, nixpkgs-unstable, sops-nix, ... }:
+  outputs =
+    {
+      i3quo,
+      home-manager,
+      musnix,
+      nixpkgs-stable,
+      nixpkgs-unstable,
+      sops-nix,
+      ...
+    }:
     let
       home-manager-config-module = username: {
         home-manager = {
@@ -31,7 +40,8 @@
       nixpkgs-config = import ./nixpkgs/nixpkgs.nix { inherit i3quo nixpkgs-unstable system; };
       username = "evenbrenden";
       system = "x86_64-linux";
-    in {
+    in
+    {
       nixosConfigurations = {
         naxos = nixpkgs-stable.lib.nixosSystem {
           modules = [

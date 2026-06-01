@@ -63,14 +63,16 @@
     xserver = {
       # Note that these sessions are started via xsession-wrapper which increments SHLVL
       # https://discourse.nixos.org/t/opening-i3-from-home-manager-automatically/4849/11
-      displayManager.session = [{
-        manage = "window";
-        name = "home-manager";
-        start = ''
-          ${pkgs.runtimeShell} $HOME/.xsession &
-          waitPID=$!
-        '';
-      }];
+      displayManager.session = [
+        {
+          manage = "window";
+          name = "home-manager";
+          start = ''
+            ${pkgs.runtimeShell} $HOME/.xsession &
+            waitPID=$!
+          '';
+        }
+      ];
       deviceSection = ''
         Option "TearFree" "true"
       '';
@@ -82,10 +84,14 @@
 
   users.users = {
     ${username} = {
-      extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+        "audio"
+        "video"
+      ];
       isNormalUser = true;
     };
-    root.initialHashedPassword =
-      "$6$v.fIgZCsq1yKDoVm$LZqzWgHJk9BmP3tmOhyVPsVbMhQzzAEOluMe6cV37YvYEPZwU0yIiH1i9lG1L9f68CyY9TXMfzfHV81X80RGR1";
+    root.initialHashedPassword = "$6$v.fIgZCsq1yKDoVm$LZqzWgHJk9BmP3tmOhyVPsVbMhQzzAEOluMe6cV37YvYEPZwU0yIiH1i9lG1L9f68CyY9TXMfzfHV81X80RGR1";
   };
 }

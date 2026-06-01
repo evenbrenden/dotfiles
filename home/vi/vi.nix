@@ -6,10 +6,19 @@
     extraConfig = ''
       lua require 'my-init'
     '';
-    extraPackages = with pkgs;
+    extraPackages =
+      with pkgs;
       let
         copilot = [ nodejs ];
-        formatting = [ haskellPackages.fourmolu luaformatter nixfmt prettier python312Packages.autopep8 rustfmt shfmt ];
+        formatting = [
+          haskellPackages.fourmolu
+          luaformatter
+          nixfmt
+          prettier
+          python312Packages.autopep8
+          rustfmt
+          shfmt
+        ];
         git-gutter = [ git ];
         lsp = [
           llvmPackages_19.clang-tools
@@ -17,15 +26,26 @@
           idris2Packages.idris2Lsp
           lua-language-server
           nil
-          (pkgs.python3.withPackages (pp: [ pp.pylsp-mypy pp.python-lsp-server ]))
+          (pkgs.python3.withPackages (pp: [
+            pp.pylsp-mypy
+            pp.python-lsp-server
+          ]))
           rust-analyzer
           typescript
           typescript-language-server
           yaml-language-server
         ];
-        telescope = [ clang fd nodejs ripgrep tree-sitter ];
-      in copilot ++ formatting ++ git-gutter ++ lsp ++ telescope;
-    plugins = with pkgs.vimPlugins;
+        telescope = [
+          clang
+          fd
+          nodejs
+          ripgrep
+          tree-sitter
+        ];
+      in
+      copilot ++ formatting ++ git-gutter ++ lsp ++ telescope;
+    plugins =
+      with pkgs.vimPlugins;
       let
         alabaster-nvim = pkgs.vimUtils.buildVimPlugin {
           name = "alabaster.nvim";
@@ -45,7 +65,8 @@
             sha256 = "0brk6847n8wd8zb57wp7wjxyc7i3r0q29riv8ppy39j5lpdsbbss";
           };
         };
-      in [
+      in
+      [
         alabaster-nvim
         copilot-vim
         graphviz-vim
@@ -79,11 +100,21 @@
     "nvim/lua/my-lsp.lua".source = ./my-lsp.lua;
     # https://discourse.nixos.org/t/conflicts-between-treesitter-withallgrammars-and-builtin-neovim-parsers-lua-c/33536/3
     "nvim/parser".source = "${
-        pkgs.symlinkJoin {
-          name = "treesitter-parsers";
-          paths = (pkgs.vimPlugins.nvim-treesitter.withPlugins
-            (plugins: with plugins; [ c lua query markdown vim vimdoc yaml ])).dependencies;
-        }
-      }/parser";
+      pkgs.symlinkJoin {
+        name = "treesitter-parsers";
+        paths =
+          (pkgs.vimPlugins.nvim-treesitter.withPlugins (
+            plugins: with plugins; [
+              c
+              lua
+              query
+              markdown
+              vim
+              vimdoc
+              yaml
+            ]
+          )).dependencies;
+      }
+    }/parser";
   };
 }

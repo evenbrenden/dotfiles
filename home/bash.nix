@@ -52,13 +52,24 @@ let
     export FZF_ALT_C_OPTS="--walker dir,follow"
     export FZF_CTRL_T_OPTS="--walker file,dir,follow"
   '';
-in {
+in
+{
   programs.bash = {
     enable = true;
-    historyControl = [ "erasedups" "ignoredups" "ignorespace" ];
+    historyControl = [
+      "erasedups"
+      "ignoredups"
+      "ignorespace"
+    ];
     historyFileSize = 100000;
     historySize = 10000;
-    initExtra = builtins.concatStringsSep "\n" [ history-search prompt shell-variables-fff shell-variables-misc fzf ];
+    initExtra = builtins.concatStringsSep "\n" [
+      history-search
+      prompt
+      shell-variables-fff
+      shell-variables-misc
+      fzf
+    ];
     shellAliases = aliases;
     shellOptions = [ "histappend" ];
   };
