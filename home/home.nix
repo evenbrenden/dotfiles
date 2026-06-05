@@ -41,7 +41,6 @@
         programming = [
           unstable.aider-chat-with-playwright
           docker-compose
-          fourmolu-all
           ghc
           graphviz
           haskellPackages.cabal-fmt
