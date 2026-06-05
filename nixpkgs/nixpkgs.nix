@@ -19,7 +19,6 @@ in
         git-replace = import ./git-replace.nix { pkgs = prev; };
         huddly = import ./huddly.nix;
         huddly-cli = import ./huddly-cli.nix { pkgs = prev; };
-        nixfmt-all = import ./nixfmt-all.nix { pkgs = final; };
         refresh-display = import ./refresh-display.nix { pkgs = prev; };
         set-dpi = import ./set-dpi.nix { pkgs = prev; };
         sof-firmware = with prev; import ./sof-firmware.nix { inherit fetchurl lib stdenvNoCC; };

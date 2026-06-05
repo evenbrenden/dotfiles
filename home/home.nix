@@ -47,7 +47,6 @@
           haskellPackages.cabal-fmt
           hurl
           mypy
-          nixfmt-all
           python3
           shellcheck
         ];

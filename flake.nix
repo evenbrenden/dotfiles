@@ -42,6 +42,7 @@
       system = "x86_64-linux";
     in
     {
+      formatter.${system} = nixpkgs-stable.legacyPackages.${system}.nixfmt-tree;
       nixosConfigurations = {
         naxos = nixpkgs-stable.lib.nixosSystem {
           modules = [
