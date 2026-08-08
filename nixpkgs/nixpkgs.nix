@@ -14,7 +14,7 @@ in
   nixpkgs = {
     inherit config;
     overlays = [
-      (final: prev: {
+      (_: prev: {
         git-replace = import ./git-replace.nix { pkgs = prev; };
         huddly = import ./huddly.nix;
         huddly-cli = import ./huddly-cli.nix { pkgs = prev; };
