@@ -11,6 +11,6 @@
       ''
         ${pkgs.xrdb}/bin/xrdb -merge <${xresources}
       '';
-    dpi = dpi;
+    inherit dpi;
   };
 }

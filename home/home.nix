@@ -48,6 +48,7 @@
           mypy
           python3
           shellcheck
+          statix
         ];
       in
       [
@@ -93,7 +94,7 @@
       ]
       ++ programming;
     stateVersion = "22.05";
-    username = username;
+    inherit username;
   };
 
   programs = {

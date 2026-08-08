@@ -1,4 +1,4 @@
-{ ... }:
+_:
 
 {
   services.clipmenu.enable = true;
