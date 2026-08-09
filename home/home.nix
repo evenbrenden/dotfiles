@@ -48,7 +48,6 @@
           mypy
           python3
           shellcheck
-          statix
         ];
       in
       [
