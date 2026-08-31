@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    codex
+    claude-code
     huddly-cli
     libqalculate
     meld
