@@ -9,10 +9,13 @@
   programs.git = {
     enable = true;
     settings = {
+      commit.gpgSign = true;
       core.whitespace = "trailing-space";
+      gpg.format = "ssh";
       init.defaultBranch = "main";
       pull.rebase = true;
       push.default = "simple";
+      user.signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIk8RlmFgSSsa2J+P/eTdHEsOPmHPEkOYkYYYWcRR5gn evenbrenden";
     };
     ignores = [
       ".aider*"
