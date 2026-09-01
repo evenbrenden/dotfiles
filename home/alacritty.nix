@@ -24,6 +24,12 @@ let
       [font.normal]
       family = "DejaVu Sans Mono"
       style = "Book"
+
+      [keyboard]
+      bindings = [
+        # claude-code
+        { key = "Return", mods = "Shift", chars = "\u001b\r" },
+      ]
     ''
     (builtins.readFile "${pkgs.alacritty-theme}/share/alacritty-theme/alabaster.toml")
   ];
