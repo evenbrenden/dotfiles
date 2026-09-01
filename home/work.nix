@@ -15,7 +15,7 @@
   ];
 
   programs.ssh.includes = [
-    "${pkgs.huddly}/ssh/huddly"
-    "${pkgs.huddly}/ssh/fish"
+    "${pkgs.huddly}/ssh/ssh_ci_config"
+    "${pkgs.huddly}/ssh/ssh_config"
   ];
 }
