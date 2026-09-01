@@ -88,16 +88,6 @@ function SetupLSP(key_opts)
     vim.lsp.config('nil_ls', {on_attach = on_attach})
     vim.lsp.enable('nil_ls')
 
-    vim.lsp.config('pylsp', {
-        on_attach = on_attach,
-        settings = {
-            pylsp = {
-                plugins = {pylsp_mypy = {enabled = true, live_mode = true}}
-            }
-        }
-    })
-    vim.lsp.enable('pylsp')
-
     vim.lsp.config('rust_analyzer', {on_attach = on_attach})
     vim.lsp.enable('rust_analyzer')
 
@@ -106,6 +96,9 @@ function SetupLSP(key_opts)
         cmd = {'typescript-language-server', '--stdio'}
     })
     vim.lsp.enable('ts_ls')
+
+    vim.lsp.config('ty', {on_attach = on_attach})
+    vim.lsp.enable('ty')
 
     vim.lsp.config('yamlls', {})
     vim.lsp.enable('yamlls')

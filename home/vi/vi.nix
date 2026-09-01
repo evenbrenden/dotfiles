@@ -26,11 +26,8 @@
           idris2Packages.idris2Lsp
           lua-language-server
           nil
-          (pkgs.python3.withPackages (pp: [
-            pp.pylsp-mypy
-            pp.python-lsp-server
-          ]))
           rust-analyzer
+          ty
           typescript
           typescript-language-server
           yaml-language-server
