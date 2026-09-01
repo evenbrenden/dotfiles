@@ -27,8 +27,6 @@
     file = {
       ".abcde.conf".source = ./dotfiles/abcde.conf;
       ".aider.conf.yml".source = ./dotfiles/aider.conf.yml;
-      ".claude/CLAUDE.md".source = ./dotfiles/AGENTS.md;
-      ".claude/settings.json".source = ./dotfiles/claude.json;
       ".ghci".source = ./dotfiles/ghci;
       ".prettierrc".source = ./dotfiles/prettierrc;
       ".ssr/settings.conf".source = ./dotfiles/ssr.conf;
