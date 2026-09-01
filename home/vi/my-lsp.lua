@@ -33,9 +33,11 @@ function SetupLSP(key_opts)
         vim.api.nvim_set_keymap('n', '<Space>e',
                                 ':lua vim.diagnostic.open_float()<CR>', key_opts)
         vim.api.nvim_set_keymap('n', '[d',
-                                ':lua vim.diagnostic.goto_prev()<CR>', key_opts)
+                                ':lua vim.diagnostic.jump({count=-1})<CR>',
+                                key_opts)
         vim.api.nvim_set_keymap('n', ']d',
-                                ':lua vim.diagnostic.goto_next()<CR>', key_opts)
+                                ':lua vim.diagnostic.jump({count=1})<CR>',
+                                key_opts)
         vim.api.nvim_set_keymap('n', '<Space>q',
                                 ':lua vim.diagnostic.setloclist()<CR>', key_opts)
 
