@@ -59,6 +59,10 @@ function SetupLSP(key_opts)
                                 ':Telescope lsp_workspace_symbols<CR>', key_opts)
     end
 
+    vim.lsp.config('*', {
+        capabilities = {general = {positionEncodings = {'utf-16'}}}
+    })
+
     vim.lsp.config('clangd', {on_attach = on_attach})
     vim.lsp.enable('clangd')
 
