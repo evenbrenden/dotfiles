@@ -82,6 +82,7 @@ function SetupLSP(key_opts)
             }
         }
     })
+    vim.lsp.config('lua_ls', {on_attach = on_attach})
     vim.lsp.enable('lua_ls')
 
     vim.lsp.config('nil_ls', {on_attach = on_attach})
