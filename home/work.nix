@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -23,7 +23,7 @@
     settings = {
       "hubba" = {
         AddKeysToAgent = "yes";
-        IdentityFile = "~/.ssh/even.brenden";
+        IdentityFile = "${config.home.homeDirectory}/.ssh/even.brenden";
         Hostname = "10.100.99.169";
       };
     };
