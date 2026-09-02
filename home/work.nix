@@ -29,7 +29,4 @@
       };
     };
   };
-
-  xdg.configFile."nono/profiles/falcon-app.json".source =
-    "${pkgs.huddly}/nono/profiles/falcon-app.json";
 }
