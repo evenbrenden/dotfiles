@@ -28,7 +28,7 @@ let
       [keyboard]
       bindings = [
         # claude-code
-        { key = "Return", mods = "Shift", chars = "\u001b\r" },
+        { key = "Return", mods = "Shift", chars = "\n" }
       ]
     ''
     (builtins.readFile "${pkgs.alacritty-theme}/share/alacritty-theme/alabaster.toml")
