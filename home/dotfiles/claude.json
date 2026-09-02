@@ -1,0 +1,11 @@
+{
+  "enabledPlugins": {
+    "nono@nolabs-ai": true
+  },
+  "permissions": {
+    "ask": ["Bash(git*)", "Bash(gh*)"],
+    "defaultMode": "auto"
+  },
+  "skipAutoPermissionPrompt": true,
+  "theme": "auto"
+}

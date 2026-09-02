@@ -26,6 +26,7 @@
   home = {
     file = {
       ".abcde.conf".source = ./dotfiles/abcde.conf;
+      ".claude/settings.json".source = ./dotfiles/claude.json;
       ".ghci".source = ./dotfiles/ghci;
       ".prettierrc".source = ./dotfiles/prettierrc;
       ".ssr/settings.conf".source = ./dotfiles/ssr.conf;
