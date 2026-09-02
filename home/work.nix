@@ -9,6 +9,7 @@
     meld
     netron
     networkmanagerapplet
+    nono
     poppler-utils
     ripgrep
     roomeqwizard
