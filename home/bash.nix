@@ -20,17 +20,6 @@ let
     bind '"\eOB": history-search-forward'
     bind '"\e[B": history-search-forward'
   '';
-  nono-claude = ''
-    claude() {
-        local profile="claude-code"
-        if [[ -n "$1" ]]
-        then
-            profile="$1"
-            shift
-        fi
-        nono run --allow-cwd --profile "$profile" -- claude "$@"
-    }
-  '';
   prompt = ''
     virtualenv() {
         if [[ -n "$VIRTUAL_ENV" ]]; then
@@ -76,7 +65,6 @@ in
     historySize = 10000;
     initExtra = builtins.concatStringsSep "\n" [
       history-search
-      nono-claude
       prompt
       shell-variables-fff
       shell-variables-misc
