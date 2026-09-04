@@ -19,6 +19,7 @@
     };
     ignores = [
       ".clangd"
+      ".claude"
       "compile_commands.json"
       ".direnv"
       ".envrc"
