@@ -127,7 +127,7 @@
   sops = {
     age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
     defaultSopsFile = ../secrets/secrets.yaml;
-    secrets.evenbrenden.path = "${config.home.homeDirectory}/.ssh/evenbrenden";
+    secrets.evenbrenden-priv.path = "${config.home.homeDirectory}/.ssh/evenbrenden-priv";
   };
 
   systemd.user = {

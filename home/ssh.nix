@@ -7,11 +7,11 @@
     settings = {
       "codeberg.org" = {
         AddKeysToAgent = "yes";
-        IdentityFile = "${config.sops.secrets.evenbrenden.path}";
+        IdentityFile = "${config.sops.secrets.evenbrenden-priv.path}";
       };
       "github.com" = {
         AddKeysToAgent = "yes";
-        IdentityFile = "${config.sops.secrets.evenbrenden.path}";
+        IdentityFile = "${config.sops.secrets.evenbrenden-priv.path}";
       };
       "*" = {
         AddKeysToAgent = "no";
