@@ -25,7 +25,7 @@
     settings = {
       "hubba" = {
         AddKeysToAgent = "yes";
-        IdentityFile = "${config.home.homeDirectory}/.ssh/even.brenden";
+        IdentityFile = "${config.home.homeDirectory}/.ssh/evenbrenden-work";
         Hostname = "10.100.99.169";
       };
     };
