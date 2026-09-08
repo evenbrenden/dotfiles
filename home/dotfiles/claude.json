@@ -2,6 +2,7 @@
   "enabledPlugins": {
     "nono@nolabs-ai": true
   },
+  "model": "opus",
   "permissions": {
     "ask": ["Bash(git push *)", "Bash(gh pr merge *)"],
     "defaultMode": "auto"
