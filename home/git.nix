@@ -27,6 +27,7 @@
       ".nix"
       "*.swp"
       ".venv"
+      ".worktrees"
     ];
     includes =
       let
