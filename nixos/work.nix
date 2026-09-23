@@ -16,6 +16,10 @@
       config = "config /home/${username}/openvpn/mobile.ovpn";
       updateResolvConf = true;
     };
+    tailscale = {
+      enable = true;
+      package = pkgs.unstable.tailscale;
+    };
     udev.packages =
       let
         huddly-udev-rules = pkgs.stdenv.mkDerivation {
