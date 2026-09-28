@@ -32,6 +32,8 @@ username:
 
   networking.hostName = "naxos";
 
+  programs.openssh.enable = false;
+
   services.xserver.videoDrivers = [ "displaylink" ];
 
   system.stateVersion = "20.03";

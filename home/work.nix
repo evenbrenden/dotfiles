@@ -16,17 +16,10 @@
     usbutils
   ];
 
-  programs.ssh = {
-    includes = [
-      "${pkgs.huddly}/ssh/smartbase"
-      "${pkgs.huddly}/ssh/ssh_ci_config"
-      "${pkgs.huddly}/ssh/ssh_config"
-    ];
-    settings = {
-      "hubba" = {
-        AddKeysToAgent = "yes";
-        IdentityFile = "${config.home.homeDirectory}/.ssh/evenbrenden-work";
-      };
+  programs.ssh.settings = {
+    "labor" = {
+      AddKeysToAgent = "yes";
+      IdentityFile = "${config.home.homeDirectory}/.ssh/evenbrenden-work";
     };
   };
 }
