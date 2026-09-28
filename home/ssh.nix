@@ -14,7 +14,7 @@
         IdentityFile = "${config.sops.secrets.evenbrenden-priv.path}";
       };
       "*" = {
-        AddKeysToAgent = "no";
+        AddKeysToAgent = "yes";
         ControlMaster = "no";
         ControlPersist = "no";
         ForwardAgent = false;
