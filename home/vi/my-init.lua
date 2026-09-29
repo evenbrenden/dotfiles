@@ -4,10 +4,10 @@ local key_opts = {noremap = true, silent = true}
 vim.g.mapleader = ','
 vim.g.maplocalleader = '.'
 
--- ALWAYS use the clipboard for ALL operations
+-- Always use the clipboard for all operations
 vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
 
--- SSH clipboard things
+-- Local to remote paste is still terminal paste
 if vim.env.SSH_TTY or vim.env.SSH_CONNECTION then
     local osc52 = require('vim.ui.clipboard.osc52')
 
