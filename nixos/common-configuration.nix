@@ -55,6 +55,11 @@
       enable = true;
       package = pkgs.pulseaudio.override { bluetoothSupport = true; };
     };
+    openssh = {
+      extraConfig = ''
+        AcceptEnv COLORTERM
+      '';
+    };
     upower = {
       criticalPowerAction = "PowerOff";
       enable = true;
