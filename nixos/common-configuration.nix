@@ -42,7 +42,6 @@
       };
       defaultSession = "none+home-manager";
     };
-    fprintd.enable = true;
     fwupd.enable = true;
     gnome.at-spi2-core.enable = true; # https://github.com/NixOS/nixpkgs/issues/16327
     libinput = {
