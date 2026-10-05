@@ -5,6 +5,7 @@ general {
 }
 
 order += "volume master"
+order += "ethernet tailscale0"
 order += "ethernet tun0"
 order += "wireless _first_"
 order += "ethernet _first_"
@@ -17,6 +18,11 @@ order += "tztime local"
 volume master {
     format = "%volume"
     format_muted = "Mute"
+}
+
+ethernet tailscale0 {
+    format_up = "Tailscale"
+    format_down = ""
 }
 
 ethernet tun0 {
