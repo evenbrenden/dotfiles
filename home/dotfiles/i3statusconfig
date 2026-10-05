@@ -5,7 +5,7 @@ general {
 }
 
 order += "volume master"
-order += "path_exists VPN"
+order += "ethernet tun0"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery all"
@@ -19,9 +19,8 @@ volume master {
     format_muted = "Mute"
 }
 
-path_exists VPN {
-    path = "/sys/class/net/tun0"
-    format = "%title"
+ethernet tun0 {
+    format_up = "VPN"
     format_down = ""
 }
 
