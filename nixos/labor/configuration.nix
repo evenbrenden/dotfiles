@@ -42,7 +42,10 @@ username:
   networking = {
     firewall = {
       interfaces."tailscale0".allowedTCPPorts = [ 22 ]; # Restrict SSH to Tailscale.
-      trustedInterfaces = [ "enp198s0f4u1u1" ]; # DDS + falconpycli
+      trustedInterfaces = [
+        "enp1s0f0" # Tests
+        "enp198s0f4u1u1" # DDS + falconpycli
+      ];
     };
     hostName = "labor";
   };
