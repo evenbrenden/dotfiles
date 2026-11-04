@@ -46,6 +46,7 @@
           mypy
           python3
           shellcheck
+          spec
         ];
       in
       [
