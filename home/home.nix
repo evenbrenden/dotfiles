@@ -55,6 +55,7 @@
         arandr
         audacity
         chromium
+        clear-downloads
         curl
         cryptsetup
         unstable.discord
