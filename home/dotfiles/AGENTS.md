@@ -1,7 +1,15 @@
-Use periods instead of semicolons in code comments (new sentence).
+# Code comments
 
-Avoid genitive form, just skip the "'s" (e.g. "Tom's diner" -> "Tom diner") in code comments.
+Use periods instead of semicolons (new sentence).
 
-Use a single hyphen ("-") for em and en dash (instead of "--") in code comments.
+Avoid genitive form, just skip the "'s" (e.g. "Tom's diner" -> "Tom diner").
 
-In code comments, spell out abbreviations the first time they are mentioned.
+Use a single hyphen ("-") for em and en dash (instead of "--").
+
+Spell out abbreviations the first time they are mentioned.
+
+# Git
+
+Never make merge commits. Rebase instead.
+
+Do not rewrite history unless explicitly told.
