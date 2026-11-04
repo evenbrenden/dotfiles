@@ -15,7 +15,6 @@ in
     inherit config;
     overlays = [
       (final: prev: {
-        clear-downloads = import ./clear-downloads.nix { pkgs = prev; };
         git-replace = import ./git-replace.nix { pkgs = prev; };
         huddly = import ./huddly.nix;
         huddly-cli = import ./huddly-cli.nix { pkgs = prev; };
