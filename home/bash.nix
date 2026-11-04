@@ -46,6 +46,7 @@ let
   shell-variables-misc = ''
     export EDITOR=nvim
     export LESS=-Ri
+    export TMPDIR=/tmp
   '';
   fzf = ''
     eval "$(${pkgs.lib.getExe pkgs.fzf} --bash)"
