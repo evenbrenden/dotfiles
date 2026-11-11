@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    claude-code
+    unstable.claude-code
     gh
     huddly-cli
     libqalculate
