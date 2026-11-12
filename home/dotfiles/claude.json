@@ -2,7 +2,6 @@
   "enabledPlugins": {
     "nono@nolabs-ai": true
   },
-  "model": "opus",
   "permissions": {
     "ask": ["Bash(gh pr merge *)"],
     "defaultMode": "auto"
