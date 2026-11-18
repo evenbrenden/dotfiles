@@ -3,7 +3,7 @@
     "nono@nolabs-ai": true
   },
   "permissions": {
-    "ask": ["Bash(gh pr merge *)"],
+    "ask": ["Bash(gh *)"],
     "defaultMode": "auto"
   },
   "skipAutoPermissionPrompt": true,
