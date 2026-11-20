@@ -1,4 +1,7 @@
 {
+  "attribution": {
+    "sessionUrl": false
+  },
   "enabledPlugins": {
     "nono@nolabs-ai": true
   },
