@@ -5,10 +5,7 @@
 }:
 
 let
-  config = {
-    allowUnfree = true;
-    pulseaudio = true; # https://nixos.wiki/wiki/PulseAudio
-  };
+  config.allowUnfree = true;
 in
 {
   nixpkgs = {
