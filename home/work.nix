@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  dbus.packages = [ pkgs.gcr ]; # For keyring password prompter
+
   home.packages = with pkgs; [
     unstable.claude-code
     gh
@@ -13,6 +15,7 @@
     poppler-utils
     ripgrep
     roomeqwizard
+    libsecret
     usbutils
   ];
 
@@ -21,5 +24,10 @@
       AddKeysToAgent = "yes";
       IdentityFile = "${config.home.homeDirectory}/.ssh/evenbrenden-work";
     };
+  };
+
+  services.gnome-keyring = {
+    enable = true;
+    components = [ "secrets" ];
   };
 }
