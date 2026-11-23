@@ -4,6 +4,7 @@
   dbus.packages = [ pkgs.gcr ]; # For keyring password prompter
 
   home.packages = with pkgs; [
+    agent
     unstable.claude-code
     gh
     herdr
@@ -17,6 +18,7 @@
     ripgrep
     roomeqwizard
     libsecret
+    spec
     usbutils
   ];
 

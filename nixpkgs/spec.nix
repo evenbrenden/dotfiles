@@ -1,16 +1,15 @@
-{ pkgs }:
+{ pkgs, agent }:
 
 # NONO_PROFILE=<profile> spec <name>
 
 pkgs.writeShellApplication {
   name = "spec";
-  # Use claude-code and nono from environment.
   runtimeInputs = [
+    agent
     pkgs.git
   ];
   text = ''
     name="$1"
-    export name # https://github.com/nolabs-ai/nono/issues/2107
 
     branch="$USER/$name"
     git_common_dir="$(git rev-parse --git-common-dir)"
@@ -26,9 +25,7 @@ pkgs.writeShellApplication {
     cd "$worktree_dir"
     $EDITOR "$temp_file"
     prompt="$(cat "$temp_file")"
-    export prompt # https://github.com/nolabs-ai/nono/issues/2107
 
-    # https://github.com/nolabs-ai/nono/issues/2107
-    HERDR_AGENT=claude sh -c 'nono run -- claude --name "$name" --remote-control -- "$prompt"; exit $?'
+    agent --name "$name" --remote-control -- "$prompt"
   '';
 }
