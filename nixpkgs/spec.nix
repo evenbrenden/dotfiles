@@ -25,8 +25,6 @@ pkgs.writeShellApplication {
     cd "$worktree_dir"
     $EDITOR "$temp_file"
     prompt="$(cat "$temp_file")"
-
-    # https://github.com/nolabs-ai/nono/issues/2107
-    HERDR_AGENT=claude sh -c 'nono run -- claude --name "$name" --remote-control -- "$prompt"; exit $?'
+    nono run -- claude --name "$name" --remote-control -- "$prompt"
   '';
 }
