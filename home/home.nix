@@ -160,6 +160,7 @@
         }
       );
       "fourmolu.yaml".source = ./dotfiles/fourmolu.yaml;
+      "herdr/config.toml".source = ./dotfiles/herdr.toml;
       "kde.org/ghostwriter.conf".source = ./dotfiles/ghostwriter.conf;
       "nixpkgs/config.nix".source = ./dotfiles/nixpkgs-config.nix;
     };
