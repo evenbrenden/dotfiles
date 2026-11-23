@@ -54,8 +54,8 @@ let
     export FZF_CTRL_T_OPTS="--walker file,dir,follow"
   '';
   # https://github.com/nolabs-ai/nono/issues/2107
-  nono-2107 = ''
-    nono-2107() {
+  agent = ''
+    agent() {
       HERDR_AGENT=claude sh -c 'nono run -- claude "$@"; exit $?' sh "$@"
     }
   '';
@@ -76,7 +76,7 @@ in
       shell-variables-fff
       shell-variables-misc
       fzf
-      nono-2107
+      agent
     ];
     shellAliases = aliases;
     shellOptions = [ "histappend" ];
