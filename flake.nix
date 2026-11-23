@@ -2,9 +2,10 @@
   description = "evenbrenden/dotfiles";
 
   inputs = {
-    herdr-nix = {
-      url = "github:kevinpita/herdr-nix";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
+    # Remove come Home Manager 26.11
+    herdr = {
+      url = "github:herdrdev/herdr/v0.9.5";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     i3quo = {
       url = "git+https://codeberg.org/evenbrenden/i3quo";
@@ -21,7 +22,7 @@
 
   outputs =
     {
-      herdr-nix,
+      herdr,
       i3quo,
       home-manager,
       musnix,
@@ -35,7 +36,6 @@
         home-manager = {
           backupFileExtension = "backup";
           extraSpecialArgs = {
-            herdr-nix = herdr-nix.homeModules.default;
             sops-nix = sops-nix.homeManagerModules.sops;
             inherit username;
           };
@@ -45,7 +45,14 @@
         };
       };
       nix-config = import ./nix.nix { inherit nixpkgs-stable; };
-      nixpkgs-config = import ./nixpkgs/nixpkgs.nix { inherit i3quo nixpkgs-unstable system; };
+      nixpkgs-config = import ./nixpkgs/nixpkgs.nix {
+        inherit
+          herdr
+          i3quo
+          nixpkgs-unstable
+          system
+          ;
+      };
       username = "evenbrenden";
       system = "x86_64-linux";
     in

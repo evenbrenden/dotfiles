@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  herdr-nix,
   sops-nix,
   username,
   ...
@@ -15,7 +14,6 @@
     ./emote.nix
     ./fonts.nix
     ./git.nix
-    herdr-nix
     ./i3.nix
     ./screen-locking.nix
     sops-nix

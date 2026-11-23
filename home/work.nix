@@ -6,6 +6,7 @@
   home.packages = with pkgs; [
     unstable.claude-code
     gh
+    herdr
     huddly-cli
     libqalculate
     meld
@@ -19,13 +20,10 @@
     usbutils
   ];
 
-  programs = {
-    herdr.enable = true;
-    ssh.settings = {
-      "labor" = {
-        AddKeysToAgent = "yes";
-        IdentityFile = "${config.home.homeDirectory}/.ssh/evenbrenden-work";
-      };
+  programs.ssh.settings = {
+    "labor" = {
+      AddKeysToAgent = "yes";
+      IdentityFile = "${config.home.homeDirectory}/.ssh/evenbrenden-work";
     };
   };
 

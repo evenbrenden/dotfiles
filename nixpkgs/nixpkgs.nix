@@ -1,4 +1,5 @@
 {
+  herdr,
   i3quo,
   nixpkgs-unstable,
   system,
@@ -13,6 +14,7 @@ in
     overlays = [
       (final: prev: {
         git-replace = import ./git-replace.nix { pkgs = prev; };
+        herdr = herdr.packages.${system}.default;
         huddly = import ./huddly.nix;
         huddly-cli = import ./huddly-cli.nix { pkgs = prev; };
         refresh-display = import ./refresh-display.nix { pkgs = prev; };
