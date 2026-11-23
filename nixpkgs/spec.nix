@@ -10,6 +10,7 @@ pkgs.writeShellApplication {
   ];
   text = ''
     name="$1"
+    export name # https://github.com/nolabs-ai/nono/issues/2107
 
     branch="$USER/$name"
     git_common_dir="$(git rev-parse --git-common-dir)"
@@ -25,6 +26,9 @@ pkgs.writeShellApplication {
     cd "$worktree_dir"
     $EDITOR "$temp_file"
     prompt="$(cat "$temp_file")"
-    nono run -- claude --name "$name" --remote-control -- "$prompt"
+    export prompt # https://github.com/nolabs-ai/nono/issues/2107
+
+    # https://github.com/nolabs-ai/nono/issues/2107
+    HERDR_AGENT=claude sh -c 'nono run -- claude --name "$name" --remote-control -- "$prompt"; exit $?'
   '';
 }
