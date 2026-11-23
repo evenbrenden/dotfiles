@@ -2,8 +2,14 @@
   description = "evenbrenden/dotfiles";
 
   inputs = {
-    i3quo.url = "git+https://codeberg.org/evenbrenden/i3quo";
-    i3quo.inputs.nixpkgs.follows = "nixpkgs-stable";
+    herdr-nix = {
+      url = "github:kevinpita/herdr-nix";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
+    i3quo = {
+      url = "git+https://codeberg.org/evenbrenden/i3quo";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
     home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-stable";
     musnix.url = "github:musnix/musnix";
@@ -15,6 +21,7 @@
 
   outputs =
     {
+      herdr-nix,
       i3quo,
       home-manager,
       musnix,
@@ -28,6 +35,7 @@
         home-manager = {
           backupFileExtension = "backup";
           extraSpecialArgs = {
+            herdr-nix = herdr-nix.homeModules.default;
             sops-nix = sops-nix.homeManagerModules.sops;
             inherit username;
           };
