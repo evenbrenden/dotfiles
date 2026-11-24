@@ -7,18 +7,6 @@
   "enabledPlugins": {
     "nono@nolabs-ai": true
   },
-  "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "echo 'unset LD_LIBRARY_PATH' >> \"$CLAUDE_ENV_FILE\""
-          }
-        ]
-      }
-    ]
-  },
   "permissions": {
     "ask": ["Bash(gh *)"],
     "defaultMode": "auto"
